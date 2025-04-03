@@ -1,0 +1,62 @@
+name: ✅ CI
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize, closed]
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+      id-token: write   # This is required for requesting the JWT
+      contents: read    # This is required for actions/checkout
+
+jobs:
+  lint:
+    name: 🚨 Lint code
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - name: 👩‍💻 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.12"
+
+      - name: 📦 Install deps
+        run: |
+          pip install black==24.10.0
+
+      - name: 🚨 Lint code
+        run: |
+          black --check --line-length 80 tests radiant_fhir_transform_cli
+
+  test:
+    name: ✅ Unit test
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - name: 👩‍💻 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.12"
+
+      - name: 📦 Install deps
+        run: |
+          pip install --upgrade virtualenv
+          virtualenv -p python3 venv
+          source venv/bin/activate
+          pip install -e .
+          pip install .[dev]
+
+      - name: ✅ Unit Test
+        run: |
+          source venv/bin/activate
+          pytest --show-capture={no,stdout,stderr} ./tests/unit
+
