@@ -1,0 +1,40 @@
+[project]
+name = "radiant_fhir_transform_cli"
+version = "0.0.1"
+authors = [
+  { name="Charles Haynes", email="haynescd@chop.edu" },
+  { name="Natasha Singh", email="singhn4@chop.edu" },
+]
+description = "CLI transforming FHIR ndjson into flat CSV"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache License",
+    "Operating System :: Linux",
+]
+dependencies = [
+  "click==8.1.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.3",
+  "pytest-mock==3.14.0",
+  "faker==36.1.1",
+  "black==24.10.0",
+]
+
+[project.scripts]
+radiant = "radiant_fhir_transform_cli.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/radiant-network/radiant-fhir-transformers"
+Issues = "https://github.com/radiant-network/radiant-fhir-transformers/issues"
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+exclude = ["data"]
