@@ -1,5 +1,3 @@
 """
 Global Pytest Fixtures
 """
-
-
