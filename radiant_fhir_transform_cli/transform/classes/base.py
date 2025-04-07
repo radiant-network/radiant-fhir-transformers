@@ -97,7 +97,9 @@ class FhirResourceTransformer:
 
         logger.info(
             "Transformed %s %s into %s",
-            self.resource_type, resource_idx, pformat(result)
+            self.resource_type,
+            resource_idx,
+            pformat(result),
         )
         return result
 
@@ -118,7 +120,7 @@ class FhirResourceTransformer:
               dictionaries for each record and returns a list of all
               dictionaries at the end.
         """
-        with open(ndjson_filepath, 'r') as f:
+        with open(ndjson_filepath, "r") as f:
             for i, line in enumerate(f):
                 yield self.transform_resource(i, json.loads(line.strip()))
 
@@ -139,7 +141,7 @@ class FhirResourceTransformer:
               dictionaries for each record and returns a list of all
               dictionaries at the end.
         """
-        with open(json_filepath, 'r') as f:
+        with open(json_filepath, "r") as f:
             data = json.load(f)
             if isinstance(data, dict):
                 objs = [data]
@@ -161,6 +163,6 @@ class FhirResourceTransformer:
         Returns:
             None
         """
-        return pandas.DataFrame(
-            [r for r in row_dicts]
-        ).to_csv(csv_filepath, index=False)
+        return pandas.DataFrame([r for r in row_dicts]).to_csv(
+            csv_filepath, index=False
+        )

@@ -1,16 +1,29 @@
 """
-Test transformer classes with test helpers in tests.data
+Unit tests for FHIR resource transformers
+
+This module contains unit tests that validate the functionality of FHIR
+resource transformers by using test helper classes defined in the
+`tests.data.test_helpers`.
+
+The tests ensure that the transformer classes correctly transform the
+FHIR resource data into the expected output.
+
+Tests include:
+    - Instantiating test helper classes.
+    - Dynamically loading the corresponding transformer class based on the
+      resource type.
+    - Transforming the resource using the transformer.
+    - Validating the transformed output against the expected result.
+
 """
+
 import pytest
 
 from radiant_fhir_transform_cli.transform.classes import transformers
 from tests.data import test_helpers
 
 
-@pytest.mark.parametrize(
-    "test_helper_cls",
-    list(test_helpers.values())
-)
+@pytest.mark.parametrize("test_helper_cls", list(test_helpers.values()))
 def test_transformers(test_helper_cls):
     """
     Test every transformer class. Use test helper classes in tests.data

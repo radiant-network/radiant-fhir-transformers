@@ -1,3 +1,6 @@
+"""
+Test helper class for FHIR resource type Patient
+"""
 
 from tests.data.base import FhirResourceTestHelper
 
@@ -220,6 +223,25 @@ EXPECTED_OUTPUT = {
 
 
 class PatientTestHelper(FhirResourceTestHelper):
+    """
+    A helper class for testing transformations of the FHIR 'Patient' resource.
+
+    This class extends the FhirResourceTestHelper and is specifically
+    designed to assist in testing the transformation of the 'Patient' resource.
+
+    It predefines the resource type as 'Patient'
+    and initializes the resource with the specific 'Patient' resource payload
+    and its expected transformation output.
+
+    Attributes:
+        resource_type (str): The type of FHIR resource being tested, which
+          is set to 'Patient'.
+
+        resource (dict): The raw FHIR 'Patient' resource payload to be tested.
+
+        expected_output (dict): The expected transformation result of the
+          'Patient' resource payload.
+    """
 
     resource_type = "Patient"
 
