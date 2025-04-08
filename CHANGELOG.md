@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.1.1
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#10](https://github.com/radiant-network/radiant-fhir-transformers/pull/10) -  :mute: Rm print stmt, set logging to debug - [5e8a8459](https://github.com/radiant-network/radiant-fhir-transformers/commit/5e8a8459d6f8646ef830830efa9781bd08db4fcd) by [znatty22](https://github.com/znatty22)
+
+
 ## Release 0.1.0
 
 ### Summary
