@@ -4,7 +4,7 @@
 name: Release generator
 
 on:
-  pull_request:
+  push:
     types:
       - merged
     branches:
@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   create_release:
-    if: contains( github.event.pull_request.labels.*.name, 'release')
+    if: contains(github.event.pull_request.labels.*.name, 'release')
     runs-on: ubuntu-latest
     steps:
 
