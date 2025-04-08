@@ -83,7 +83,6 @@ class FhirResourceTransformer:
         result = {}
         for col_name, fhir_path_expression in self.transform_dict.items():
             values = evaluate(resource_dict, fhir_path_expression)
-            print(values)
 
             if isinstance(values, list):
                 if len(values) > 0:
@@ -95,7 +94,7 @@ class FhirResourceTransformer:
 
             result[col_name] = value
 
-        logger.info(
+        logger.debug(
             "Transformed %s %s into %s",
             self.resource_type,
             resource_idx,
