@@ -182,6 +182,7 @@ cython_debug/
 *.python-version
 
 data/
+!tests/data
 pyvenv.cfg
 
 .DS_Store
