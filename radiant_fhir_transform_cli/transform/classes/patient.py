@@ -16,13 +16,29 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
+RACE_EXTENSION = "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+ETHNICITY_EXTENSION = (
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
+)
 
 TRANSFORM_DICT = {
+    "identifier_mrn": "identifier.where(type.text = 'EPI').value",
+    "id": "identifier.where(type.text = 'FHIR STU3').value",
+    "race": f"extension.where(url = '{RACE_EXTENSION}').extension.where(url = 'text').valueString",
+    "ethnicity": f"extension.where(url = '{ETHNICITY_EXTENSION}').extension.where(url = 'text').valueString",
     "given_name": "name.where(use='official').given.first()",
     "family_name": "name.where(use='official').family",
     "active": "active",
     "birth_date": "birthDate",
     "gender": "gender",
+    "deceased_boolean": "deceasedBoolean",
+    "deceased_date_time": "deceasedDateTime",
+    "address_line": "address.where(use='home').line.first()",
+    "address_city": "address.where(use='home').city",
+    "address_state": "address.where(use='home').state",
+    "address_postal_code": "address.where(use='home').postalCode",
+    "address_country": "address.where(use='home').country",
+    "communication_language": "communication.where(preferred=true).language.text",
 }
 
 
