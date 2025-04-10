@@ -1,5 +1,18 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.2.0
+
+### Summary
+
+- Emojis: ? x2
+- Categories: Other Changes x2
+
+### New features and changes
+
+- [#13](https://github.com/radiant-network/radiant-fhir-transformers/pull/13) -  :sparkles: Add initial Observation Resource support - [86891735](https://github.com/radiant-network/radiant-fhir-transformers/commit/8689173517594b2a97bb7f48c2577ada053599e9) by [haynescd](https://github.com/haynescd)
+- [#12](https://github.com/radiant-network/radiant-fhir-transformers/pull/12) -  :bento: Add fields to Patient Transformer - [f549c8cb](https://github.com/radiant-network/radiant-fhir-transformers/commit/f549c8cba35e8bdfc7fb629810542c7d54852c8b) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 0.1.1
 
 ### Summary
