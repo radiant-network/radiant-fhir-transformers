@@ -29,8 +29,7 @@ RESOURCE = {
             "coding": [
                 {
                     "system": "urn:oid:1.2.840.114350.1.13.20.3.7.10.798268.30",
-                    "code": "Lab",
-                    "display": "Lab",
+                    "code": "lab",
                 }
             ],
             "text": "Lab",
@@ -56,7 +55,7 @@ RESOURCE = {
         "text": "Rapid Sars-CoV-2",
     },
     "subject": {
-        "reference": "Observation/evrlLhFNe5BfHZQD39Kr9nfIA0e.TcZOdE0gOPoRXlGs3",
+        "reference": "Patient/evrlLhFNe5BfHZQD39Kr9nfIA0e.TcZOdE0gOPoRXlGs3",
         "display": "CareEverywhere,Sammy",
     },
     "encounter": {
@@ -86,14 +85,23 @@ RESOURCE = {
     "referenceRange": [{"text": "Negative"}],
 }
 
-EXPECTED_OUTPUT = {
-    "id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-    "category": "laboratory",
-    "subject_id": "Observation/evrlLhFNe5BfHZQD39Kr9nfIA0e.TcZOdE0gOPoRXlGs3",
-}
+EXPECTED_OUTPUT = [
+    {
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
+        "category_coding_system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "category_coding_code": "laboratory",
+        "category_coding_display": "Laboratory",
+    },
+    {
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
+        "category_coding_system": "urn:oid:1.2.840.114350.1.13.20.3.7.10.798268.30",
+        "category_coding_code": "lab",
+        "category_coding_display": None,
+    },
+]
 
 
-class ObservationTestHelper(FhirResourceTestHelper):
+class ObservationCategoryCodingTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Observation' resource.
 
@@ -115,6 +123,7 @@ class ObservationTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
+    resource_subtype = "category_coding"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

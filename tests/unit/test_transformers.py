@@ -17,6 +17,7 @@ Tests include:
 
 """
 
+import pandas as pd
 import pytest
 
 from radiant_fhir_transform_cli.transform.classes import transformers
@@ -33,12 +34,32 @@ def test_transformers(test_helper_cls):
 
     # Instantiate transformer class based on resource type
     resource_type = test_helper_cls.resource_type
-    cls = transformers.get(resource_type)
+    resource_subtype = test_helper.resource_subtype
+
+    cls = next(
+        (
+            clz
+            for clz in transformers.get(resource_type, [])
+            if getattr(clz(), "resource_subtype", None) == resource_subtype
+        ),
+        None,
+    )
+
     transformer = cls()
 
     # Transform
-    out = transformer.transform_resource(0, test_helper.resource)
+    outs = transformer.transform_resource(0, test_helper.resource)
+    # Convert to DataFrames
+    df_actual = pd.DataFrame(outs)
+    df_expected = pd.DataFrame(test_helper.expected_output)
 
-    # Check output
-    for k, v in out.items():
-        assert test_helper.expected_output[k] == v
+    # Sort columns to ensure consistent comparison
+    df_actual = df_actual[sorted(df_actual.columns)]
+    df_expected = df_expected[sorted(df_expected.columns)]
+
+    print(outs)
+    print(test_helper.expected_output)
+    # Compare
+    pd.testing.assert_frame_equal(
+        df_actual, df_expected, check_dtype=False, check_exact=False
+    )

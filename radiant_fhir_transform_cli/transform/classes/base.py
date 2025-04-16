@@ -1,7 +1,7 @@
 import json
 import logging
-from typing import Generator, Iterable
 from pprint import pformat
+from typing import Any, Generator, Iterable, Optional
 
 import pandas
 from fhirpathpy import evaluate
@@ -22,9 +22,28 @@ def _validate_transform_dict(cls_name, transform_dict):
     if not transform_dict:
         raise ValueError(msg)
 
-    for key, value in transform_dict.items():
-        if not isinstance(key, str) or not isinstance(value, str):
+    for transform_config in transform_dict:
+        fhir_path = transform_config.get("fhir_path")
+        columns = transform_config.get("columns")
+
+        if not fhir_path or not isinstance(columns, dict):
             raise ValueError(msg)
+
+    def extract_column_values(item: Any, columns_dict: dict) -> dict:
+        """Extracts column values from a single FHIR item based on column mappings."""
+        if isinstance(item, dict):
+            return {
+                col_name: item.get(fhir_key)
+                for col_name, fhir_key in columns_dict.items()
+            }
+
+        if isinstance(item, (str, int, float, bool)) and len(columns_dict) == 1:
+            col_name = next(iter(columns_dict))
+            return {col_name: item}
+
+        raise ValueError(
+            "Unable to extract columns: unexpected item structure or ambiguous mapping."
+        )
 
 
 class FhirResourceTransformer:
@@ -50,7 +69,8 @@ class FhirResourceTransformer:
     def __init__(
         self,
         resource_type: str,
-        transform_dict: dict[str, str],
+        resource_subtype: Optional[str],
+        transform_dict: list[dict[str, str | dict]],
     ):
         """
         Initializes the transformer with the resource type and column map.
@@ -60,6 +80,7 @@ class FhirResourceTransformer:
             transform_dict (dict): FHIRPath-to-column name mapping.
         """
         self.resource_type = resource_type
+        self.resource_subtype = resource_subtype
 
         # Validate transforms
         _validate_transform_dict(type(self).__name__, transform_dict)
@@ -67,7 +88,7 @@ class FhirResourceTransformer:
 
     def transform_resource(
         self, resource_idx: int, resource_dict: dict
-    ) -> dict:
+    ) -> list[dict]:
         """
         Transforms the given FHIR resource dictionary based on the column map.
 
@@ -81,18 +102,56 @@ class FhirResourceTransformer:
             dict: A dictionary with column names and evaluated FHIRPath values.
         """
         result = {}
-        for col_name, fhir_path_expression in self.transform_dict.items():
-            values = evaluate(resource_dict, fhir_path_expression)
+        subtype_results = []
+        for config in self.transform_dict:
+            is_subtype = True if self.resource_subtype else False
+            fhir_path_expression = config["fhir_path"]
+            columns_dict: dict = config["columns"]
 
-            if isinstance(values, list):
-                if len(values) > 0:
-                    value = values[0]
+            raw_items = evaluate(resource_dict, fhir_path_expression)
+            # base case
+            if isinstance(raw_items, list) and len(raw_items) == 1:
+                raw_item = raw_items[0]
+                if isinstance(raw_item, dict):
+                    for col_name, fhir_path_key in columns_dict.items():
+                        result[col_name] = raw_item.get(fhir_path_key)
                 else:
-                    value = None
-            else:
-                value = values
+                    if len(columns_dict.items()) > 1:
+                        raise ValueError("Column is undeterministic!")
 
-            result[col_name] = value
+                    col_name = next(iter(columns_dict))
+                    value = raw_item
+                    result[col_name] = value
+            elif isinstance(raw_items, list) and len(raw_items) > 1:
+                if not is_subtype:
+                    raise ValueError("Normalizing only supported by subtypes")
+
+                if subtype_results:
+                    raise ValueError(
+                        "Transformation error... Multi list not supported"
+                    )
+                for raw_item in raw_items:
+                    subtype_result = {}
+                    if isinstance(raw_item, dict):
+                        for col_name, fhir_path_key in columns_dict.items():
+                            subtype_result[col_name] = raw_item.get(
+                                fhir_path_key
+                            )
+                    else:
+                        if len(columns_dict.items()) > 1:
+                            raise ValueError("Column is undeterministic!")
+
+                        col_name = next(iter(columns_dict))
+                        subtype_result[col_name] = raw_item
+                    subtype_results.append(subtype_result)
+                logger.debug(
+                    "Attempting to transform subtype %s", pformat(raw_items)
+                )
+            else:
+                col_name = next(iter(columns_dict))
+
+                result[col_name] = None
+                logger.debug("Unknown Type %s", pformat(raw_items))
 
         logger.debug(
             "Transformed %s %s into %s",
@@ -100,11 +159,20 @@ class FhirResourceTransformer:
             resource_idx,
             pformat(result),
         )
-        return result
+
+        if subtype_results:
+            for subtype_result in subtype_results:
+                for key in result:
+                    subtype_result[key] = result[key]
+            results = subtype_results
+        else:
+            results = [result]
+
+        return results
 
     def transform_from_ndjson(
         self, ndjson_filepath: str
-    ) -> Generator[dict, None, list[dict]]:
+    ) -> Generator[list[dict], None, None]:
         """
         Transforms data from an NDJSON file into a list of dictionaries.
 
@@ -125,7 +193,7 @@ class FhirResourceTransformer:
 
     def transform_from_json(
         self, json_filepath
-    ) -> Generator[dict, None, list[dict]]:
+    ) -> Generator[list[dict], None, None]:
         """
         Transforms data from a JSON file into a list of dictionaries.
 
@@ -148,7 +216,7 @@ class FhirResourceTransformer:
                 objs = data
 
             for i, resource in enumerate(objs):
-                self.transform_resource(i, resource)
+                yield self.transform_resource(i, resource)
 
     def write_to_csv(self, row_dicts: Iterable[dict], csv_filepath):
         """

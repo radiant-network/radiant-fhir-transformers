@@ -26,6 +26,7 @@ class FhirResourceTestHelper:
     """
 
     resource_type = None
+    resource_subtype = None
 
     def __init__(self, resource_payload, expected_transform_output):
         self.resource = resource_payload
