@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.2.1
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#15](https://github.com/radiant-network/radiant-fhir-transformers/pull/15) -  Add observation vital lab - [12cdd39f](https://github.com/radiant-network/radiant-fhir-transformers/commit/12cdd39fb11f490d0c12336640b7cbb6ac20de44) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 0.2.0
 
 ### Summary
