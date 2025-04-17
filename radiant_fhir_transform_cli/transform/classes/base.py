@@ -36,6 +36,7 @@ accommodate resource-specific fields and transformation logic.
 
 import json
 import logging
+import uuid
 from pprint import pformat
 from typing import Any, Generator, Iterable, Optional
 
@@ -46,10 +47,10 @@ logger = logging.getLogger(__name__)
 
 
 class DataType:
-    INTEGER: "int"
-    STRING: "str"
-    BOOLEAN: "bool"
-    DATETIME: "datetime"
+    INTEGER = "int"
+    STRING = "str"
+    BOOLEAN = "bool"
+    DATETIME = "datetime"
 
 
 def _validate_transform_dict(cls_name, transform_dict):
@@ -69,7 +70,7 @@ def _validate_transform_dict(cls_name, transform_dict):
         fhir_path = transform_config.get("fhir_path")
         columns = transform_config.get("columns")
 
-        if not fhir_path or not isinstance(columns, dict):
+        if not isinstance(columns, dict):
             raise ValueError(msg)
 
 
@@ -171,6 +172,15 @@ class FhirResourceTransformer:
             fhir_path_expression = config["fhir_path"]
             fhir_reference = config.get("fhir_reference")
             columns_dict: dict = config["columns"]
+
+            # If subtype allow id to be generated via uuid
+            if (
+                self.resource_subtype
+                and fhir_path_expression is None
+                and columns_dict.get("id") is not None
+            ):
+                base_result["id"] = uuid.uuid4()
+                continue
 
             raw_items = evaluate(resource_dict, fhir_path_expression)
 
