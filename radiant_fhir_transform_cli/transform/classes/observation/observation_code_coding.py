@@ -7,6 +7,13 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 )
 
 TRANSFORM_DICT = [
+    # Primary Key
+    {
+        "fhir_path": None,
+        "columns": {
+            "id": {"fhir_key": None, "type": "str"},
+        },
+    },
     # Foreign Key
     {
         "fhir_path": "id",
