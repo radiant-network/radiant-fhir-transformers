@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.2.2
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#17](https://github.com/radiant-network/radiant-fhir-transformers/pull/17) -  Add id for subtypes - [a90694e1](https://github.com/radiant-network/radiant-fhir-transformers/commit/a90694e169da252ccb6adae435e81c8a066e0690) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 0.2.1
 
 ### Summary
