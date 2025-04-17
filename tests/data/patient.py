@@ -2,6 +2,9 @@
 Test helper class for FHIR resource type Patient
 """
 
+from radiant_fhir_transform_cli.transform.classes.patient import (
+    PatientTransformer,
+)
 from tests.data.base import FhirResourceTestHelper
 
 RESOURCE = {
@@ -303,6 +306,7 @@ class PatientTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Patient"
+    transformer = PatientTransformer
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

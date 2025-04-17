@@ -25,104 +25,132 @@ TRANSFORM_DICT = [
     # Id
     {
         "fhir_path": "id",
-        "columns": {
-            "id": "id",
-        },
+        "columns": {"id": {"fhir_key": "id", "type": "str"}},
     },
     {
         "fhir_path": "identifier.where(type.text = 'EPI').value",
         "columns": {
-            "identifier_mrn": "identifier.where(type.text = 'EPI').value",
+            "identifier_mrn": {
+                "fhir_key": "identifier.where(type.text = 'EPI').value",
+                "type": "str",
+            }
         },
     },
     {
         "fhir_path": f"extension.where(url = '{RACE_EXTENSION}').extension.where(url = 'text').valueString",
         "columns": {
-            "race": f"extension.where(url = '{RACE_EXTENSION}').extension.where(url = 'text').valueString",
+            "race": {
+                "fhir_key": f"extension.where(url = '{RACE_EXTENSION}').extension.where(url = 'text').valueString",
+                "type": "str",
+            }
         },
     },
     {
         "fhir_path": f"extension.where(url = '{ETHNICITY_EXTENSION}').extension.where(url = 'text').valueString",
         "columns": {
-            "ethnicity": f"extension.where(url = '{ETHNICITY_EXTENSION}').extension.where(url = 'text').valueString",
+            "ethnicity": {
+                "fhir_key": f"extension.where(url = '{ETHNICITY_EXTENSION}').extension.where(url = 'text').valueString",
+                "type": "str",
+            }
         },
     },
     {
         "fhir_path": "name.where(use='official').given.first()",
         "columns": {
-            "given_name": "name.where(use='official').given.first()",
+            "given_name": {
+                "fhir_key": "name.where(use='official').given.first()",
+                "type": "str",
+            }
         },
     },
     {
         "fhir_path": "name.where(use='official').family",
         "columns": {
-            "family_name": "name.where(use='official').given.first()",
+            "family_name": {
+                "fhir_key": "name.where(use='official').given.first()",
+                "type": "str",
+            }
         },
     },
     {
         "fhir_path": "active",
-        "columns": {
-            "active": "active",
-        },
+        "columns": {"active": {"fhir_key": "active", "type": "str"}},
     },
     {
         "fhir_path": "birthDate",
-        "columns": {
-            "birth_date": "birthDate",
-        },
+        "columns": {"birth_date": {"fhir_key": "birthDate", "type": "str"}},
     },
     {
         "fhir_path": "gender",
-        "columns": {
-            "gender": "gender",
-        },
+        "columns": {"gender": {"fhir_key": "gender", "type": "str"}},
     },
     {
         "fhir_path": "deceasedBoolean",
         "columns": {
-            "deceased_boolean": "deceasedBoolean",
+            "deceased_boolean": {"fhir_key": "deceasedBoolean", "type": "bool"}
         },
     },
     {
         "fhir_path": "deceasedDateTime",
         "columns": {
-            "deceased_date_time": "deceasedDateTime",
+            "deceased_date_time": {
+                "fhir_key": "deceasedDateTime",
+                "type": "datetime",
+            }
         },
     },
     {
         "fhir_path": "address.where(use='home').line.first()",
         "columns": {
-            "address_line": "address.where(use='home').line.first()",
+            "address_line": {
+                "fhir_key": "address.where(use='home').line.first()",
+                "type": "str",
+            }
         },
     },
     {
         "fhir_path": "address.where(use='home').city",
         "columns": {
-            "address_city": "address.where(use='home').city",
+            "address_city": {
+                "fhir_key": "address.where(use='home').city",
+                "type": "str",
+            }
         },
     },
     {
         "fhir_path": "address.where(use='home').state",
         "columns": {
-            "address_state": "address.where(use='home').state",
+            "address_state": {
+                "fhir_key": "address.where(use='home').state",
+                "type": "str",
+            }
         },
     },
     {
         "fhir_path": "address.where(use='home').postalCode",
         "columns": {
-            "address_postal_code": "address.where(use='home').postalCode",
+            "address_postal_code": {
+                "fhir_key": "address.where(use='home').postalCode",
+                "type": "str",
+            }
         },
     },
     {
         "fhir_path": "address.where(use='home').country",
         "columns": {
-            "address_country": "address.where(use='home').country",
+            "address_country": {
+                "fhir_key": "address.where(use='home').country",
+                "type": "str",
+            }
         },
     },
     {
         "fhir_path": "communication.where(preferred=true).language.text",
         "columns": {
-            "communication_language": "communication.where(preferred=true).language.text",
+            "communication_language": {
+                "fhir_key": "communication.where(preferred=true).language.text",
+                "type": "str",
+            }
         },
     },
 ]

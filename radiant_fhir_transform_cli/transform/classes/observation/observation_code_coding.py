@@ -7,15 +7,15 @@ TRANSFORM_DICT = [
     {
         "fhir_path": "id",
         "columns": {
-            "observation_id": "id",
+            "observation_id": {"fhir_key": "id", "type": "str"},
         },
     },
     {
         "fhir_path": "code.coding",
         "columns": {
-            "category_coding_system": "system",
-            "category_coding_code": "code",
-            "category_coding_display": "display",
+            "code_coding_system": {"fhir_key": "system", "type": "str"},
+            "code_coding_code": {"fhir_key": "code", "type": "str"},
+            "code_coding_display": {"fhir_key": "display", "type": "str"},
         },
     },
 ]

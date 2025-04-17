@@ -4,21 +4,14 @@ Test data helper classes
 
 from tests.data.observation import (
     ObservationCategoryCodingTestHelper,
+    ObservationCodeCodingTestHelper,
     ObservationTestHelper,
 )
 from tests.data.patient import PatientTestHelper
 
-test_helpers = {
-    (
-        PatientTestHelper.resource_type,
-        PatientTestHelper.resource_subtype,
-    ): PatientTestHelper,
-    (
-        ObservationTestHelper.resource_type,
-        ObservationTestHelper.resource_subtype,
-    ): ObservationTestHelper,
-    (
-        ObservationCategoryCodingTestHelper.resource_type,
-        ObservationCategoryCodingTestHelper.resource_subtype,
-    ): ObservationCategoryCodingTestHelper,
-}
+test_helpers = [
+    PatientTestHelper,
+    ObservationTestHelper,
+    ObservationCategoryCodingTestHelper,
+    ObservationCodeCodingTestHelper,
+]
