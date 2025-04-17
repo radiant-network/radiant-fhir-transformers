@@ -9,7 +9,10 @@ from tests.data.observation import (
 from tests.data.patient import PatientTestHelper
 
 test_helpers = {
-    # PatientTestHelper.resource_type: PatientTestHelper,
+    (
+        PatientTestHelper.resource_type,
+        PatientTestHelper.resource_subtype,
+    ): PatientTestHelper,
     (
         ObservationTestHelper.resource_type,
         ObservationTestHelper.resource_subtype,

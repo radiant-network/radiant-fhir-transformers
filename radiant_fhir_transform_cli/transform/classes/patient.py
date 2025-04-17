@@ -21,25 +21,111 @@ ETHNICITY_EXTENSION = (
     "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
 )
 
-TRANSFORM_DICT = {
-    "identifier_mrn": "identifier.where(type.text = 'EPI').value",
-    "id": "identifier.where(type.text = 'FHIR STU3').value",
-    "race": f"extension.where(url = '{RACE_EXTENSION}').extension.where(url = 'text').valueString",
-    "ethnicity": f"extension.where(url = '{ETHNICITY_EXTENSION}').extension.where(url = 'text').valueString",
-    "given_name": "name.where(use='official').given.first()",
-    "family_name": "name.where(use='official').family",
-    "active": "active",
-    "birth_date": "birthDate",
-    "gender": "gender",
-    "deceased_boolean": "deceasedBoolean",
-    "deceased_date_time": "deceasedDateTime",
-    "address_line": "address.where(use='home').line.first()",
-    "address_city": "address.where(use='home').city",
-    "address_state": "address.where(use='home').state",
-    "address_postal_code": "address.where(use='home').postalCode",
-    "address_country": "address.where(use='home').country",
-    "communication_language": "communication.where(preferred=true).language.text",
-}
+TRANSFORM_DICT = [
+    # Id
+    {
+        "fhir_path": "id",
+        "columns": {
+            "id": "id",
+        },
+    },
+    {
+        "fhir_path": "identifier.where(type.text = 'EPI').value",
+        "columns": {
+            "identifier_mrn": "identifier.where(type.text = 'EPI').value",
+        },
+    },
+    {
+        "fhir_path": f"extension.where(url = '{RACE_EXTENSION}').extension.where(url = 'text').valueString",
+        "columns": {
+            "race": f"extension.where(url = '{RACE_EXTENSION}').extension.where(url = 'text').valueString",
+        },
+    },
+    {
+        "fhir_path": f"extension.where(url = '{ETHNICITY_EXTENSION}').extension.where(url = 'text').valueString",
+        "columns": {
+            "ethnicity": f"extension.where(url = '{ETHNICITY_EXTENSION}').extension.where(url = 'text').valueString",
+        },
+    },
+    {
+        "fhir_path": "name.where(use='official').given.first()",
+        "columns": {
+            "given_name": "name.where(use='official').given.first()",
+        },
+    },
+    {
+        "fhir_path": "name.where(use='official').family",
+        "columns": {
+            "family_name": "name.where(use='official').given.first()",
+        },
+    },
+    {
+        "fhir_path": "active",
+        "columns": {
+            "active": "active",
+        },
+    },
+    {
+        "fhir_path": "birthDate",
+        "columns": {
+            "birth_date": "birthDate",
+        },
+    },
+    {
+        "fhir_path": "gender",
+        "columns": {
+            "gender": "gender",
+        },
+    },
+    {
+        "fhir_path": "deceasedBoolean",
+        "columns": {
+            "deceased_boolean": "deceasedBoolean",
+        },
+    },
+    {
+        "fhir_path": "deceasedDateTime",
+        "columns": {
+            "deceased_date_time": "deceasedDateTime",
+        },
+    },
+    {
+        "fhir_path": "address.where(use='home').line.first()",
+        "columns": {
+            "address_line": "address.where(use='home').line.first()",
+        },
+    },
+    {
+        "fhir_path": "address.where(use='home').city",
+        "columns": {
+            "address_city": "address.where(use='home').city",
+        },
+    },
+    {
+        "fhir_path": "address.where(use='home').state",
+        "columns": {
+            "address_state": "address.where(use='home').state",
+        },
+    },
+    {
+        "fhir_path": "address.where(use='home').postalCode",
+        "columns": {
+            "address_postal_code": "address.where(use='home').postalCode",
+        },
+    },
+    {
+        "fhir_path": "address.where(use='home').country",
+        "columns": {
+            "address_country": "address.where(use='home').country",
+        },
+    },
+    {
+        "fhir_path": "communication.where(preferred=true).language.text",
+        "columns": {
+            "communication_language": "communication.where(preferred=true).language.text",
+        },
+    },
+]
 
 
 class PatientTransformer(FhirResourceTransformer):
@@ -62,4 +148,4 @@ class PatientTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Patient", TRANSFORM_DICT)
+        super().__init__("Patient", None, TRANSFORM_DICT)
