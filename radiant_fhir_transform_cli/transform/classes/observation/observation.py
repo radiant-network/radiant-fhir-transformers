@@ -1,15 +1,5 @@
 """
 FHIR Observation transformer
-
-Map nested fields in the Observation resource to keys in a flat dict which
-represents a row in a csv file
-
-Transform Dictionary
---------------------
-- Keys are output columns in a csv file.
-
-- Values are FHIR path expressions to
-  the field value to be extracted from the FHIR JSON object
 """
 
 from radiant_fhir_transform_cli.transform.classes.base import (
@@ -41,7 +31,7 @@ TRANSFORM_DICT = [
     {
         "fhir_path": "code.text",
         "columns": {
-            "code_coding_text": {"fhir_key": "text", "type": "str"},
+            "code_text": {"fhir_key": "text", "type": "str"},
         },
     },
     {

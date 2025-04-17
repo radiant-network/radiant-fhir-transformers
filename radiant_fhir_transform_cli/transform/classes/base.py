@@ -1,3 +1,39 @@
+"""
+FHIR transformers
+
+This transformation dictionary defines how to extract and map fields from FHIR
+resource JSON objects into a flat dictionary format suitable for CSV output
+or other tabular representations.
+
+Transform Dictionary
+--------------------
+Structure:
+- Each item in the list corresponds to a specific field in the FHIR Observation
+resource.
+- 'fhir_path': A string representing the path to the desired field within the
+FHIR resource.
+- 'columns': A dictionary mapping output CSV column names to their corresponding
+extraction details:
+    - 'fhir_key': The key used to extract the value from the FHIR resource.
+    - 'type': The expected data type of the extracted value (e.g., 'str', 'int').
+
+Example Entry:
+{
+    "fhir_path": "id",
+    "columns": {
+        "id": {
+            "fhir_key": "id",
+            "type": "str"
+        }
+    }
+}
+Usage:
+This dictionary is utilized by the `FhirResourceTransformer` base class and its
+subclasses to systematically extract and transform data from FHIR resources into
+a flat structure. Subclasses must create their own dictionary to
+accommodate resource-specific fields and transformation logic.
+"""
+
 import json
 import logging
 from pprint import pformat

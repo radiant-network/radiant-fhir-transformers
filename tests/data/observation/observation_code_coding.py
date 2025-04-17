@@ -1,5 +1,5 @@
 """
-Test helper class for FHIR resource type Observation
+Test helper class for FHIR resource type Observation subtype Code Coding
 """
 
 from radiant_fhir_transform_cli.transform.classes.observation.observation_code_coding import (

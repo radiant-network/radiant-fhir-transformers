@@ -1,3 +1,7 @@
+"""
+FHIR Observation Category Coding transformer
+"""
+
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
@@ -23,21 +27,20 @@ TRANSFORM_DICT = [
 
 class ObservationCategoryCodingTransformer(FhirResourceTransformer):
     """
-    A transformer class for the 'Observation' resource in FHIR.
+    Transformer class for the 'Observation' resource in FHIR, focusing on the 'category.coding' element.
 
-    Transform Patient JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
+    This class transforms FHIR Observation JSON objects into flat dictionaries suitable for CSV output,
+    extracting and processing information from the 'category.coding' field.
 
     Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_dict (dict): The transformation dictionary used to map
-          and transform the resource data
+        resource_type (str): The type of FHIR resource being transformed ('Observation').
+        subtype (str): Specifies the sub-element of the resource to focus on ('category.coding').
+        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
-        __init__(self):
-            Initializes the ObservationTransformer instance with the resource
-            type 'Observation' and a transformation dictionary.
+        __init__():
+            Initializes the ObservationCategoryCodingTransformer instance with the resource type 'Observation',
+            subtype 'category.coding', and the specified transformation dictionary.
     """
 
     def __init__(self):

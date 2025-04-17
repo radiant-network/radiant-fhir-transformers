@@ -49,7 +49,6 @@ def test_transformers(test_helper_cls):
     df_actual = df_actual[sorted(df_actual.columns)]
     df_expected = df_expected[sorted(df_expected.columns)]
 
-    print(outs)
     # Compare
     pd.testing.assert_frame_equal(
         df_actual, df_expected, check_dtype=False, check_exact=False

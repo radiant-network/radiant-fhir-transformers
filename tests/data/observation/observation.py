@@ -93,7 +93,7 @@ EXPECTED_OUTPUT = [
         "id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "resource_type": "Observation",
         "status": "final",
-        "code_coding_text": "Rapid Sars-CoV-2",
+        "code_text": "Rapid Sars-CoV-2",
         "subject_reference": "evrlLhFNe5BfHZQD39Kr9nfIA0e.TcZOdE0gOPoRXlGs3",
         "subject_display": "CareEverywhere,Sammy",
         "encounter_reference": "e.mnIF2M9LQgwkDzhr2PCKA3",
