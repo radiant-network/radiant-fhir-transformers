@@ -6,6 +6,9 @@ from radiant_fhir_transform_cli.transform.classes.observation import (
     ObservationCategoryCodingTransformer,
     ObservationTransformer,
 )
+from radiant_fhir_transform_cli.transform.classes.observation.observation_code_coding import (
+    ObservationCodeCodingTransformer,
+)
 from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
 )
@@ -16,5 +19,6 @@ transformers = {
     "Observation": [
         ObservationTransformer,
         ObservationCategoryCodingTransformer,
+        ObservationCodeCodingTransformer,
     ],
 }
