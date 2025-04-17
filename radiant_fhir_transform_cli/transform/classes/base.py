@@ -29,21 +29,22 @@ def _validate_transform_dict(cls_name, transform_dict):
         if not fhir_path or not isinstance(columns, dict):
             raise ValueError(msg)
 
-    def extract_column_values(item: Any, columns_dict: dict) -> dict:
-        """Extracts column values from a single FHIR item based on column mappings."""
-        if isinstance(item, dict):
-            return {
-                col_name: item.get(fhir_key)
-                for col_name, fhir_key in columns_dict.items()
-            }
 
-        if isinstance(item, (str, int, float, bool)) and len(columns_dict) == 1:
-            col_name = next(iter(columns_dict))
-            return {col_name: item}
+def extract_column_values(item: Any, columns_dict: dict) -> dict:
+    """Extracts column values from a single FHIR item based on column mappings."""
+    if isinstance(item, dict):
+        return {
+            col_name: item.get(fhir_key)
+            for col_name, fhir_key in columns_dict.items()
+        }
 
-        raise ValueError(
-            "Unable to extract columns: unexpected item structure or ambiguous mapping."
-        )
+    if isinstance(item, (str, int, float, bool)) and len(columns_dict) == 1:
+        col_name = next(iter(columns_dict))
+        return {col_name: item}
+
+    raise ValueError(
+        "Unable to extract columns: unexpected item structure or ambiguous mapping."
+    )
 
 
 class FhirResourceTransformer:
@@ -101,74 +102,75 @@ class FhirResourceTransformer:
         Returns:
             dict: A dictionary with column names and evaluated FHIRPath values.
         """
-        result = {}
+        base_result = {}
         subtype_results = []
         for config in self.transform_dict:
-            is_subtype = True if self.resource_subtype else False
             fhir_path_expression = config["fhir_path"]
             columns_dict: dict = config["columns"]
 
             raw_items = evaluate(resource_dict, fhir_path_expression)
-            # base case
+
+            # Base case... single result from fhir path
             if isinstance(raw_items, list) and len(raw_items) == 1:
-                raw_item = raw_items[0]
-                if isinstance(raw_item, dict):
-                    for col_name, fhir_path_key in columns_dict.items():
-                        result[col_name] = raw_item.get(fhir_path_key)
-                else:
-                    if len(columns_dict.items()) > 1:
-                        raise ValueError("Column is undeterministic!")
-
-                    col_name = next(iter(columns_dict))
-                    value = raw_item
-                    result[col_name] = value
+                base_result.update(
+                    self._handle_single_result(raw_items[0], columns_dict)
+                )
+            # handle subtypes
             elif isinstance(raw_items, list) and len(raw_items) > 1:
-                if not is_subtype:
-                    raise ValueError("Normalizing only supported by subtypes")
-
                 if subtype_results:
                     raise ValueError(
                         "Transformation error... Multi list not supported"
                     )
-                for raw_item in raw_items:
-                    subtype_result = {}
-                    if isinstance(raw_item, dict):
-                        for col_name, fhir_path_key in columns_dict.items():
-                            subtype_result[col_name] = raw_item.get(
-                                fhir_path_key
-                            )
-                    else:
-                        if len(columns_dict.items()) > 1:
-                            raise ValueError("Column is undeterministic!")
-
-                        col_name = next(iter(columns_dict))
-                        subtype_result[col_name] = raw_item
-                    subtype_results.append(subtype_result)
-                logger.debug(
-                    "Attempting to transform subtype %s", pformat(raw_items)
+                subtype_results = self._handle_list_result(
+                    raw_items, columns_dict
                 )
+            # Unknown Result Type
             else:
-                col_name = next(iter(columns_dict))
+                logger.debug(
+                    "Unexpected FHIRPath result type %s", pformat(raw_items)
+                )
+                base_result.update({col: None for col in columns_dict})
 
-                result[col_name] = None
-                logger.debug("Unknown Type %s", pformat(raw_items))
+        if subtype_results:
+            final_results = [
+                {**subtype_result, **base_result}
+                for subtype_result in subtype_results
+            ]
+        else:
+            final_results = [base_result]
 
         logger.debug(
             "Transformed %s %s into %s",
             self.resource_type,
             resource_idx,
-            pformat(result),
+            pformat(final_results),
         )
 
-        if subtype_results:
-            for subtype_result in subtype_results:
-                for key in result:
-                    subtype_result[key] = result[key]
-            results = subtype_results
-        else:
-            results = [result]
+        return final_results
 
-        return results
+    def _handle_single_result(self, raw_item: Any, columns_dict: dict) -> dict:
+        try:
+            return extract_column_values(raw_item, columns_dict)
+        except ValueError as e:
+            logger.warning(
+                "Failed to extract values from %s: %s",
+                pformat(raw_item),
+                str(e),
+            )
+        return {col: None for col in columns_dict}
+
+    def _handle_list_result(
+        self, raw_items: list, columns_dict: dict
+    ) -> list[dict]:
+        """Handles extraction from multiple FHIRPath results."""
+        if not self.resource_subtype:
+            raise ValueError(
+                "Multiple results from FHIRPath are only supported for subtypes"
+            )
+
+        return [
+            self._handle_single_result(item, columns_dict) for item in raw_items
+        ]
 
     def transform_from_ndjson(
         self, ndjson_filepath: str

@@ -75,49 +75,98 @@ TRANSFORM_DICT = [
         },
     },
     {
-        "fhir_path": "valueQuantity.value",
+        "fhir_path": "valueQuantity",
         "columns": {
-            "value_quantity_value": "valueQuantity.value",
+            "value_quantity_value": "value",
+            "value_quantity_unit": "unit",
+            "value_quantity_code": "code",
+            "value_quantity_system": "system",
+        },
+    },
+    {
+        "fhir_path": "valueCodeableConcept.text",
+        "columns": {
+            "value_codeable_concept_text": "valueCodeableConcept.text",
+        },
+    },
+    {
+        "fhir_path": "valueRange.low",
+        "columns": {
+            "value_range_low_value": "value",
+            "value_range_low_unit": "unit",
+        },
+    },
+    {
+        "fhir_path": "valueRange.high",
+        "columns": {
+            "value_range_high_value": "value",
+            "value_range_high_unit": "unit",
+        },
+    },
+    {
+        "fhir_path": "valueRatio.numerator",
+        "columns": {
+            "value_ratio_numerator_value": "value",
+            "value_ratio_numerator_unit": "unit",
+            "value_ratio_numerator_code": "code",
+        },
+    },
+    {
+        "fhir_path": "valueRatio.denominator",
+        "columns": {
+            "value_ratio_denominator_value": "value",
+            "value_ratio_denominator_unit": "unit",
+            "value_ratio_denominator_code": "code",
+        },
+    },
+    {
+        "fhir_path": "valueString",
+        "columns": {
+            "value_string": "valueString",
+        },
+    },
+    {
+        "fhir_path": "valueBoolean",
+        "columns": {
+            "value_boolean": "valueBoolean",
+        },
+    },
+    {
+        "fhir_path": "valueInteger",
+        "columns": {
+            "value_integer": "valueInteger",
+        },
+    },
+    {
+        "fhir_path": "effectiveDateTime",
+        "columns": {
+            "effective_datetime": "effectiveDateTime",
+        },
+    },
+    {
+        "fhir_path": "issued",
+        "columns": {
+            "issued": "issued",
+        },
+    },
+    {
+        "fhir_path": "effectivePeriod",
+        "columns": {
+            "effective_period_start": "start",
+            "effective_period_end": "end",
         },
     },
 ]
 
 TRANSFORM_DICT_OLD = {
-    "id": "id",
-    "resource_type": "resourceType",
-    "status": "status",
-    "code_text": "code.text",
-    # "subject_reference": "subject.reference",
     # "notes": "note.text",
-    # "value_quantity_value": "valueQuantity.value",
-    # "value_quantity_unit": "valueQuantity.unit",
-    # "value_quantity_code": "valueQuantity.code",
-    # "value_quantity_system": "valueQuantity.system",
     # "value_codeable_concept_coding_codes": "valueCodeableConcept.coding.code",
     # "value_codeable_concept_coding_displays": "valueCodeableConcept.coding.display",
     # "value_codeable_concept_coding_systems": "valueCodeableConcept.coding.system",
     # "value_codeable_concept_text": "valueCodeableConcept.text",
-    # "value_range_low_value": "valueRange.low.value",
-    # "value_range_low_unit": "valueRange.low.unit",
-    # "value_range_high_value": "valueRange.high.value",
-    # "value_range_high_unit": "valueRange.high.unit",
-    # "value_ratio_numerator_value": "valueRation.numerator.value",
-    # "value_ratio_numerator_unit": "valueRation.numerator.unit",
-    # "value_ratio_numerator_code": "valueRation.numerator.code",
-    # "value_ratio_numerator_system": "valueRation.numerator.system",
-    # "value_ratio_denominator_value": "valueRation.denominator.value",
-    # "value_ratio_denominator_unit": "valueRation.denominator.unit",
-    # "value_ratio_denominator_code": "valueRation.denominator.code",
-    # "value_ratio_denominator_system": "valueRation.denominator.system",
-    # "value_string": "valueString",
     # # "component_code_coding_codes": "component.code.coding.code",
     # # "component_code_coding_systems": "component.code.coding.system",
     # # "component_code_coding_display": "component.code.coding.display",
-    # "component_coding_texts": "component.code.text",
-    # "component_value_quantity_values": "component.valueQuantity.value",
-    # "component_value_quantity_units": "component.valueQuantity.unit",
-    # "component_value_quantity_codes": "component.valueQuantity.code",
-    # "component_value_quantity_system": "component.valueQuantity.system",
 }
 
 
