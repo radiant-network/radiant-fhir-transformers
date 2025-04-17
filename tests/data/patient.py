@@ -2,6 +2,9 @@
 Test helper class for FHIR resource type Patient
 """
 
+from radiant_fhir_transform_cli.transform.classes.patient import (
+    PatientTransformer,
+)
 from tests.data.base import FhirResourceTestHelper
 
 RESOURCE = {
@@ -258,25 +261,27 @@ RESOURCE = {
     },
 }
 
-EXPECTED_OUTPUT = {
-    "given_name": "Betty",
-    "family_name": "MyChart",
-    "birth_date": "2010-02-03",
-    "active": True,
-    "gender": "Female",
-    "identifier_mrn": "82001496",
-    "id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
-    "race": "Unknown",
-    "ethnicity": "Unknown",
-    "deceased_boolean": False,
-    "deceased_date_time": None,
-    "address_line": "1234 Administration Blvd",
-    "address_city": "SOUTHAMPTON",
-    "address_state": "PA",
-    "address_postal_code": "18966",
-    "address_country": "US",
-    "communication_language": "English",
-}
+EXPECTED_OUTPUT = [
+    {
+        "given_name": "Betty",
+        "family_name": "MyChart",
+        "birth_date": "2010-02-03",
+        "active": True,
+        "gender": "Female",
+        "identifier_mrn": "82001496",
+        "id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "race": "Unknown",
+        "ethnicity": "Unknown",
+        "deceased_boolean": False,
+        "deceased_date_time": None,
+        "address_line": "1234 Administration Blvd",
+        "address_city": "SOUTHAMPTON",
+        "address_state": "PA",
+        "address_postal_code": "18966",
+        "address_country": "US",
+        "communication_language": "English",
+    }
+]
 
 
 class PatientTestHelper(FhirResourceTestHelper):
@@ -301,6 +306,7 @@ class PatientTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Patient"
+    transformer = PatientTransformer
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)
