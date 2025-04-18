@@ -6,6 +6,7 @@ from radiant_fhir_transform_cli.transform.classes.observation import (
     ObservationCategoryCodingTransformer,
     ObservationComponentTransformer,
     ObservationExtensionTransformer,
+    ObservationNoteTransformer,
     ObservationTransformer,
 )
 from radiant_fhir_transform_cli.transform.classes.observation.observation_code_coding import (
@@ -24,5 +25,6 @@ transformers = {
         ObservationCodeCodingTransformer,
         ObservationComponentTransformer,
         ObservationExtensionTransformer,
+        ObservationNoteTransformer,
     ],
 }
