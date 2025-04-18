@@ -1,5 +1,5 @@
 """
-FHIR Observation Category Coding transformer
+FHIR Observation Extension transformer
 """
 
 from radiant_fhir_transform_cli.transform.classes.base import (
@@ -21,26 +21,35 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "category.coding",
+        "fhir_path": "extension",
         "columns": {
-            "category_coding_system": {"fhir_key": "system", "type": "str"},
-            "category_coding_code": {"fhir_key": "code", "type": "str"},
-            "category_coding_display": {"fhir_key": "display", "type": "str"},
+            "extension_url": {
+                "fhir_key": "url",
+                "type": "str",
+            },
+            "extension_value_identifier_system": {
+                "fhir_key": "valueIdentifier.system",
+                "type": "str",
+            },
+            "extension_value_identifier_value": {
+                "fhir_key": "valueIdentifier.value",
+                "type": "str",
+            },
         },
     },
 ]
 
 
-class ObservationCategoryCodingTransformer(FhirResourceTransformer):
+class ObservationExtensionTransformer(FhirResourceTransformer):
     """
-    Transformer class for the 'Observation' resource in FHIR, focusing on the 'category.coding' element.
+    Transformer class for the 'Observation' resource in FHIR, focusing on the 'extension' element.
 
     This class transforms FHIR Observation JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'category.coding' field.
+    extracting and processing information from the 'extension' field.
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Observation').
-        subtype (str): Specifies the sub-element of the resource to focus on ('category.coding').
+        subtype (str): Specifies the sub-element of the resource to focus on ('extension').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
@@ -50,4 +59,4 @@ class ObservationCategoryCodingTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Observation", "category_coding", TRANSFORM_SCHEMA)
+        super().__init__("Observation", "extension", TRANSFORM_SCHEMA)

@@ -36,12 +36,16 @@ accommodate resource-specific fields and transformation logic.
 
 import json
 import logging
-import uuid
+from dataclasses import dataclass, field
 from pprint import pformat
 from typing import Any, Generator, Iterable, Optional
 
 import pandas
 from fhirpathpy import evaluate
+
+from ..exceptions import FhirTransformError
+from ..result_handler import ResultHandlerFactory
+from ..transformer_config import TransformationSchema
 
 logger = logging.getLogger(__name__)
 
@@ -74,41 +78,27 @@ def _validate_transform_dict(cls_name, transform_dict):
             raise ValueError(msg)
 
 
-def extract_fhir_reference_prefix(fhir_raw_value: Any) -> str:
-    if not isinstance(fhir_raw_value, str):
-        logger.warning(
-            "Incorrect use of fhir_reference field... Must be a string"
-        )
-        return fhir_raw_value
+@dataclass
+class FhirTransformationResultBuilder:
+    base_attributes: dict[str, Any] = field(default_factory=dict)
+    list_member_rows: list[dict[str, Any]] = field(default_factory=list)
 
-    return fhir_raw_value.rsplit("/", 1)[-1]
+    def add_base_attributes(self, values: dict[str, Any]) -> None:
+        self.base_attributes.update(values)
 
+    def add_list_member_rows(self, rows: list[dict[str, Any]]) -> None:
+        if self.list_member_rows:
+            raise FhirTransformError(
+                "Cannot add multiple list member expansions"
+            )
+        self.list_member_rows = rows
 
-def extract_column_values(
-    item: Any, columns_dict: dict, fhir_ref: Optional[str]
-) -> dict:
-    """Extracts column values from a single FHIR item based on column mappings."""
-    if isinstance(item, dict):
-        values = {
-            col_name: item.get(col_config_dict["fhir_key"])
-            for col_name, col_config_dict in columns_dict.items()
-        }
-        if fhir_ref:
-            print(f"fhir reference {fhir_ref}  {values[fhir_ref]}")
-            values[fhir_ref] = extract_fhir_reference_prefix(values[fhir_ref])
-        return values
-
-    if isinstance(item, (str, int, float, bool)) and len(columns_dict) == 1:
-        # TODO exception or log when columsn are more than 1 Create Custom exception
-        col_name = next(iter(columns_dict))
-
-        if fhir_ref:
-            item = extract_fhir_reference_prefix(item)
-        return {col_name: item}
-
-    raise ValueError(
-        "Unable to extract columns: unexpected item structure or ambiguous mapping."
-    )
+    def build_result(self) -> list[dict[str, Any]]:
+        if not self.list_member_rows:
+            return [self.base_attributes]
+        return [
+            {**self.base_attributes, **row} for row in self.list_member_rows
+        ]
 
 
 class FhirResourceTransformer:
@@ -118,7 +108,7 @@ class FhirResourceTransformer:
     Extracts values from FHIR resources using FHIRPath expressions defined
     in the transform_dict.
 
-    Transform dict
+    Transform schema
     --------------
     Keys are output columns in a csv file. Values are FHIR path expressions to
     the field value to be extracted from the FHIR JSON object
@@ -127,7 +117,7 @@ class FhirResourceTransformer:
 
     Attributes:
         resource_type (str): The type of the FHIR resource (e.g., 'Patient').
-        transform_dict (dict): A mapping of output columns to FHIRPath
+        transform_schema (list[dict]): A mapping of output columns to FHIRPath
           expressions
     """
 
@@ -135,7 +125,7 @@ class FhirResourceTransformer:
         self,
         resource_type: str,
         resource_subtype: Optional[str],
-        transform_dict: list[dict[str, str | dict]],
+        transform_schema: list[dict[str, str | dict]],
     ):
         """
         Initializes the transformer with the resource type and column map.
@@ -148,8 +138,8 @@ class FhirResourceTransformer:
         self.resource_subtype = resource_subtype
 
         # Validate transforms
-        _validate_transform_dict(type(self).__name__, transform_dict)
-        self.transform_dict = transform_dict
+        _validate_transform_dict(type(self).__name__, transform_schema)
+        self.transform_dict = transform_schema
 
     def transform_resource(
         self, resource_idx: int, resource_dict: dict
@@ -166,55 +156,27 @@ class FhirResourceTransformer:
         Returns:
             dict: A dictionary with column names and evaluated FHIRPath values.
         """
-        base_result = {}
-        subtype_results = []
-        for config in self.transform_dict:
-            fhir_path_expression = config["fhir_path"]
-            fhir_reference = config.get("fhir_reference")
-            columns_dict: dict = config["columns"]
+        transform_result_builder = FhirTransformationResultBuilder()
+        transformation_schema = TransformationSchema(self.transform_dict)
+        for config in transformation_schema.configs:
+            fhir_path_expression = config.fhir_path
 
-            # If subtype allow id to be generated via uuid
-            if (
-                self.resource_subtype
-                and fhir_path_expression is None
-                and columns_dict.get("id") is not None
-            ):
-                base_result["id"] = uuid.uuid4()
-                continue
+            raw_items = (
+                evaluate(resource_dict, fhir_path_expression)
+                if fhir_path_expression
+                else None
+            )
+            fhir_path_output_handler = ResultHandlerFactory.get_handler(
+                raw_items, config, is_subtype=self.resource_subtype is not None
+            )
 
-            raw_items = evaluate(resource_dict, fhir_path_expression)
-
-            # Base case... single result from fhir path
-            if isinstance(raw_items, list) and len(raw_items) == 1:
-                base_result.update(
-                    self._handle_single_result(
-                        raw_items[0], columns_dict, fhir_reference
-                    )
-                )
-            # handle subtypes
-            elif isinstance(raw_items, list) and len(raw_items) > 1:
-                if subtype_results:
-                    raise ValueError(
-                        "Transformation error... Multi list not supported"
-                    )
-                subtype_results = self._handle_list_result(
-                    raw_items, columns_dict, fhir_reference
-                )
-            # Unknown Result Type
+            result = fhir_path_output_handler.handle(raw_items, config)
+            if len(result) == 1:
+                transform_result_builder.add_base_attributes(result[0])
             else:
-                logger.warning(
-                    "Unexpected FHIRPath result type %s", pformat(raw_items)
-                )
-                base_result.update({col: None for col in columns_dict})
+                transform_result_builder.add_list_member_rows(result)
 
-        if subtype_results:
-            final_results = [
-                {**subtype_result, **base_result}
-                for subtype_result in subtype_results
-            ]
-        else:
-            final_results = [base_result]
-
+        final_results = transform_result_builder.build_result()
         logger.debug(
             "Transformed %s %s into %s",
             self.resource_type,
@@ -223,33 +185,6 @@ class FhirResourceTransformer:
         )
 
         return final_results
-
-    def _handle_single_result(
-        self, raw_item: Any, columns_dict: dict, fhir_ref: Optional[str]
-    ) -> dict:
-        try:
-            return extract_column_values(raw_item, columns_dict, fhir_ref)
-        except ValueError as e:
-            logger.warning(
-                "Failed to extract values from %s: %s",
-                pformat(raw_item),
-                str(e),
-            )
-        return {col: None for col in columns_dict}
-
-    def _handle_list_result(
-        self, raw_items: list, columns_dict: dict, fhir_ref: Optional[str]
-    ) -> list[dict]:
-        """Handles extraction from multiple FHIRPath results."""
-        if not self.resource_subtype:
-            raise ValueError(
-                "Multiple results from FHIRPath are only supported for subtypes"
-            )
-
-        return [
-            self._handle_single_result(item, columns_dict, fhir_ref)
-            for item in raw_items
-        ]
 
     def transform_from_ndjson(
         self, ndjson_filepath: str

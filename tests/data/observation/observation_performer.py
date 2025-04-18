@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type Observation subtype Category Coding
+Test helper class for FHIR resource type Observation subtype performer
 """
 
-from radiant_fhir_transform_cli.transform.classes.observation.observation_category_coding import (
-    ObservationCategoryCodingTransformer,
+from radiant_fhir_transform_cli.transform.classes.observation import (
+    ObservationPerformerTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -12,20 +12,18 @@ from .observation_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "category_coding_system": "http://terminology.hl7.org/CodeSystem/observation-category",
-        "category_coding_code": "laboratory",
-        "category_coding_display": "Laboratory",
+        "performer_reference": "erZ.j;lkj;lskdjfjffd",
+        "performer_display": "Sammy, Test",
     },
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "category_coding_system": "urn:oid:1.2.840.114350.1.13.20.3.7.10.798268.30",
-        "category_coding_code": "lab",
-        "category_coding_display": None,
+        "performer_reference": "erZ.abcdefg",
+        "performer_display": "Charlie, Tester",
     },
 ]
 
 
-class ObservationCategoryCodingTestHelper(FhirResourceTestHelper):
+class ObservationPerformerTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Observation' resource.
 
@@ -47,8 +45,8 @@ class ObservationCategoryCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "category_coding"
-    transformer = ObservationCategoryCodingTransformer
+    resource_subtype = "performer"
+    transformer = ObservationPerformerTransformer
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

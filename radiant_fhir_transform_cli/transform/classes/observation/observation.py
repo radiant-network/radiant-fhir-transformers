@@ -10,9 +10,8 @@ OBSERVATION_CATEGORY = (
     "http://terminology.hl7.org/CodeSystem/observation-category"
 )
 
-# TODO: If fhir_reference set remove prefix from id essentially remove everything '*/'
 
-TRANSFORM_DICT = [
+TRANSFORM_SCHEMA = [
     # Id
     {
         "fhir_path": "id",
@@ -196,4 +195,4 @@ class ObservationTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Observation", None, TRANSFORM_DICT)
+        super().__init__("Observation", None, TRANSFORM_SCHEMA)

@@ -1,3 +1,10 @@
 from .observation import ObservationTransformer
 from .observation_category_coding import ObservationCategoryCodingTransformer
 from .observation_code_coding import ObservationCodeCodingTransformer
+from .observation_component import ObservationComponentTransformer
+from .observation_extension import ObservationExtensionTransformer
+from .observation_note import ObservationNoteTransformer
+from .observation_performer import ObservationPerformerTransformer
+from .observation_value_codeable_concept_coding import (
+    ObservationValueCodeableConceptCodingTransformer,
+)

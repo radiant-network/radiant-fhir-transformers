@@ -1,9 +1,10 @@
 """
-Test helper class for FHIR resource type Observation subtype Code Coding
+Test helper class for FHIR resource type Observation subtype
+    valueCodeableConcept.coding
 """
 
-from radiant_fhir_transform_cli.transform.classes.observation.observation_code_coding import (
-    ObservationCodeCodingTransformer,
+from radiant_fhir_transform_cli.transform.classes.observation import (
+    ObservationValueCodeableConceptCodingTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -12,26 +13,29 @@ from .observation_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "code_coding_system": "http://loinc.org",
-        "code_coding_code": "94500-6",
-        "code_coding_display": "SARS-CoV-2 (COVID-19) RNA [Presence] in Respiratory system specimen by NAA with probe detection",
+        "value_codeable_concept_coding_system": "http://snomed.info/sct_1",
+        "value_codeable_concept_coding_code": "260415000",
+        "value_codeable_concept_coding_display": None,
+        "value_codeable_concept_text": "Negative",
     },
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "code_coding_system": "urn:oid:1.2.840.114350.1.13.20.3.7.5.737384.600012",
-        "code_coding_code": "RCOVID",
-        "code_coding_display": None,
+        "value_codeable_concept_coding_system": "http://snomed.info/sct_2",
+        "value_codeable_concept_coding_code": "9999999",
+        "value_codeable_concept_coding_display": None,
+        "value_codeable_concept_text": "Negative",
     },
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "code_coding_system": "urn:oid:1.2.840.114350.1.13.20.3.7.2.768282",
-        "code_coding_code": "123090220",
-        "code_coding_display": "Rapid Sars-CoV-2",
+        "value_codeable_concept_coding_system": "http://snomed.info/sct_3",
+        "value_codeable_concept_coding_code": "8888888",
+        "value_codeable_concept_coding_display": None,
+        "value_codeable_concept_text": "Negative",
     },
 ]
 
 
-class ObservationCodeCodingTestHelper(FhirResourceTestHelper):
+class ObservationValueCodeableConceptCodingTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Observation' resource.
 
@@ -53,8 +57,8 @@ class ObservationCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "code_coding"
-    transformer = ObservationCodeCodingTransformer
+    resource_subtype = "value_codeable_concept_coding"
+    transformer = ObservationValueCodeableConceptCodingTransformer
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

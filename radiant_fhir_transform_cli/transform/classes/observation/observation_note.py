@@ -1,5 +1,5 @@
 """
-FHIR Observation Category Coding transformer
+FHIR Observation Note transformer
 """
 
 from radiant_fhir_transform_cli.transform.classes.base import (
@@ -21,33 +21,34 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "category.coding",
+        "fhir_path": "note.text",
         "columns": {
-            "category_coding_system": {"fhir_key": "system", "type": "str"},
-            "category_coding_code": {"fhir_key": "code", "type": "str"},
-            "category_coding_display": {"fhir_key": "display", "type": "str"},
+            "note_text": {
+                "fhir_key": "note.text",
+                "type": "str",
+            },
         },
     },
 ]
 
 
-class ObservationCategoryCodingTransformer(FhirResourceTransformer):
+class ObservationNoteTransformer(FhirResourceTransformer):
     """
-    Transformer class for the 'Observation' resource in FHIR, focusing on the 'category.coding' element.
+    Transformer class for the 'Observation' resource in FHIR, focusing on the 'note' element.
 
     This class transforms FHIR Observation JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'category.coding' field.
+    extracting and processing information from the 'extension' field.
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Observation').
-        subtype (str): Specifies the sub-element of the resource to focus on ('category.coding').
+        subtype (str): Specifies the sub-element of the resource to focus on ('note').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
         __init__():
             Initializes the ObservationCategoryCodingTransformer instance with the resource type 'Observation',
-            subtype 'category.coding', and the specified transformation dictionary.
+            subtype 'note', and the specified transformation dictionary.
     """
 
     def __init__(self):
-        super().__init__("Observation", "category_coding", TRANSFORM_SCHEMA)
+        super().__init__("Observation", "note", TRANSFORM_SCHEMA)
