@@ -43,9 +43,9 @@ from typing import Any, Generator, Iterable, Optional
 import pandas
 from fhirpathpy import evaluate
 
-from .exceptions import FhirTransformError
-from .result_handler import ResultHandlerFactory
-from .transformer_config import TransformationSchema
+from ..exceptions import FhirTransformError
+from ..result_handler import ResultHandlerFactory
+from ..transformer_config import TransformationSchema
 
 logger = logging.getLogger(__name__)
 
