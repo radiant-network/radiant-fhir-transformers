@@ -3,6 +3,7 @@ List of FHIR ndjson to dict transformers
 """
 
 from radiant_fhir_transform_cli.transform.classes.observation import (
+    ObservationBasedOnTransformer,
     ObservationCategoryCodingTransformer,
     ObservationComponentTransformer,
     ObservationExtensionTransformer,
@@ -30,5 +31,6 @@ transformers = {
         ObservationNoteTransformer,
         ObservationPerformerTransformer,
         ObservationValueCodeableConceptCodingTransformer,
+        ObservationBasedOnTransformer,
     ],
 }

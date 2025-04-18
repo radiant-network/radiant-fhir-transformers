@@ -1,4 +1,5 @@
 from .observation import ObservationTestHelper
+from .observation_based_on import ObservationBasedOnTestHelper
 from .observation_category_coding import ObservationCategoryCodingTestHelper
 from .observation_code_coding import ObservationCodeCodingTestHelper
 from .observation_component import ObservationComponentTestHelper

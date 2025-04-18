@@ -3,6 +3,7 @@ Test data helper classes
 """
 
 from tests.data.observation import (
+    ObservationBasedOnTestHelper,
     ObservationCategoryCodingTestHelper,
     ObservationCodeCodingTestHelper,
     ObservationComponentTestHelper,
@@ -24,4 +25,5 @@ test_helpers = [
     ObservationNoteTestHelper,
     ObservationPerformerTestHelper,
     ObservationValueCodeableConceptCodingTestHelper,
+    ObservationBasedOnTestHelper,
 ]

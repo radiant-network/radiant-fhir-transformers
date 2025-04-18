@@ -1,4 +1,5 @@
 from .observation import ObservationTransformer
+from .observation_based_on import ObservationBasedOnTransformer
 from .observation_category_coding import ObservationCategoryCodingTransformer
 from .observation_code_coding import ObservationCodeCodingTransformer
 from .observation_component import ObservationComponentTransformer
