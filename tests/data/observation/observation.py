@@ -74,6 +74,7 @@ class ObservationTestHelper(FhirResourceTestHelper):
     resource_type = "Observation"
     resource_subtype = None
     transformer = ObservationTransformer
+    expected_table_name = "observation"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

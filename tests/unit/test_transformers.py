@@ -39,6 +39,8 @@ def test_transformers(test_helper_cls):
 
     transformer = cls()
 
+    assert test_helper.expected_table_name == transformer.table_name
+
     # Transform
     outs = transformer.transform_resource(0, test_helper.resource)
     # Convert to DataFrames

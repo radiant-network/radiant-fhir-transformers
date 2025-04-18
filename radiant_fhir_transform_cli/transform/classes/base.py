@@ -43,6 +43,8 @@ from typing import Any, Generator, Iterable, Optional
 import pandas
 from fhirpathpy import evaluate
 
+from radiant_fhir_transform_cli.utils.misc import camel_to_snake
+
 from ..exceptions import FhirTransformError
 from ..result_handler import ResultHandlerFactory
 from ..transformer_config import TransformationSchema
@@ -101,6 +103,15 @@ class FhirTransformationResultBuilder:
         ]
 
 
+def generate_table_name(
+    resource_type: str, resource_subtype: Optional[str]
+) -> str:
+    table_name = camel_to_snake(resource_type)
+    if resource_subtype:
+        table_name = f"{table_name}_{camel_to_snake(resource_subtype)}"
+    return table_name
+
+
 class FhirResourceTransformer:
     """
     Abstract base class to transform FHIR resources into a column dictionary
@@ -136,6 +147,7 @@ class FhirResourceTransformer:
         """
         self.resource_type = resource_type
         self.resource_subtype = resource_subtype
+        self.table_name = generate_table_name(resource_type, resource_subtype)
 
         # Validate transforms
         _validate_transform_dict(type(self).__name__, transform_schema)

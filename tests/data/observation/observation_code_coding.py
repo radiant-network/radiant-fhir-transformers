@@ -55,6 +55,7 @@ class ObservationCodeCodingTestHelper(FhirResourceTestHelper):
     resource_type = "Observation"
     resource_subtype = "code_coding"
     transformer = ObservationCodeCodingTransformer
+    expected_table_name = "observation_code_coding"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)
