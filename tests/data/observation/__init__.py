@@ -4,3 +4,4 @@ from .observation_code_coding import ObservationCodeCodingTestHelper
 from .observation_component import ObservationComponentTestHelper
 from .observation_extension import ObservationExtensionTestHelper
 from .observation_note import ObservationNoteTestHelper
+from .observation_performer import ObservationPerformerTestHelper

@@ -6,6 +6,8 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
+# TODO component.code.text
+
 TRANSFORM_DICT = [
     {
         "fhir_path": None,

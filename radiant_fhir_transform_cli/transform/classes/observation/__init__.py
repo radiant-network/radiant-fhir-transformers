@@ -4,3 +4,4 @@ from .observation_code_coding import ObservationCodeCodingTransformer
 from .observation_component import ObservationComponentTransformer
 from .observation_extension import ObservationExtensionTransformer
 from .observation_note import ObservationNoteTransformer
+from .observation_performer import ObservationPerformerTransformer

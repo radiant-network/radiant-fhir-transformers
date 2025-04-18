@@ -31,6 +31,7 @@ class TransformConfig:
     fhir_reference: Optional[str] = None
 
 
+# TODO: update to transform_config
 def convert_transform_dict(
     transform_dict: list[dict[str, str | dict]],
 ) -> list[TransformConfig]:
