@@ -5,6 +5,7 @@ Test data helper classes
 from tests.data.observation import (
     ObservationCategoryCodingTestHelper,
     ObservationCodeCodingTestHelper,
+    ObservationComponentTestHelper,
     ObservationTestHelper,
 )
 from tests.data.patient import PatientTestHelper
@@ -14,4 +15,5 @@ test_helpers = [
     ObservationTestHelper,
     ObservationCategoryCodingTestHelper,
     ObservationCodeCodingTestHelper,
+    ObservationComponentTestHelper,
 ]
