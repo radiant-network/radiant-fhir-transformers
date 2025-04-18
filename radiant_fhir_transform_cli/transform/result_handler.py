@@ -146,7 +146,6 @@ class NoOpHandler(ResultHandler):
     def handle(
         self, raw_result: Any, config: TransformConfig
     ) -> list[dict[str, Any]]:
-        print(raw_result)
         return [{col: None for col in config.columns.keys()}]
 
 
