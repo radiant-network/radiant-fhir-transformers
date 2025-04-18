@@ -6,8 +6,6 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-# TODO component.code.text
-
 TRANSFORM_DICT = [
     {
         "fhir_path": None,
@@ -23,115 +21,92 @@ TRANSFORM_DICT = [
         },
     },
     {
-        "fhir_path": "component.dataAbsentReason",
+        "fhir_path": "component",
         "columns": {
             "component_data_absent_reason_system": {
-                "fhir_key": "system",
+                "fhir_key": "dataAbsentReason.system",
                 "type": "str",
             },
             "component_data_absent_reason_code": {
-                "fhir_key": "code",
+                "fhir_key": "dataAbsentReason.code",
                 "type": "str",
             },
             "component_data_absent_reason_display": {
-                "fhir_key": "display",
+                "fhir_key": "dataAbsentReason.display",
                 "type": "str",
             },
-        },
-    },
-    {
-        "fhir_path": "component.valueQuantity",
-        "columns": {
+            "component_code_text": {
+                "fhir_key": "code.text",
+                "type": "str",
+            },
             "component_value_quantity_value": {
-                "fhir_key": "value",
+                "fhir_key": "valueQuantity.value",
                 "type": "str",
             },
             "component_value_quantity_unit": {
-                "fhir_key": "unit",
+                "fhir_key": "valueQuantity.unit",
                 "type": "str",
             },
             "component_value_quantity_code": {
-                "fhir_key": "code",
+                "fhir_key": "valueQuantity.code",
                 "type": "str",
             },
             "component_value_quantity_system": {
-                "fhir_key": "system",
+                "fhir_key": "valueQuantity.system",
                 "type": "str",
             },
-        },
-    },
-    {
-        "fhir_path": "component.valueRange",
-        "columns": {
             "component_value_range_low_value": {
-                "fhir_key": "low.value",
-                "type": "str",
+                "fhir_key": "valueRange.low.value",
+                "type": "int",
             },
             "component_value_range_low_unit": {
-                "fhir_key": "low.unit",
+                "fhir_key": "valueRange.low.unit",
                 "type": "str",
             },
             "component_value_range_high_value": {
-                "fhir_key": "high.value",
-                "type": "str",
+                "fhir_key": "valueRange.high.value",
+                "type": "int",
             },
             "component_value_range_high_unit": {
-                "fhir_key": "high.unit",
+                "fhir_key": "valueRange.high.unit",
                 "type": "str",
             },
-        },
-    },
-    {
-        "fhire_path": "componentvalueRatio",
-        "columns": {
             "component_value_ratio_numerator_value": {
-                "fhir_key": "numerator.value",
-                "type": "str",
+                "fhir_key": "valueRatio.numerator.value",
+                "type": "int",
             },
             "component_value_ratio_numerator_unit": {
-                "fhir_key": "numerator.unit",
+                "fhir_key": "valueRatio.numerator.unit",
                 "type": "str",
             },
             "component_value_ratio_numerator_code": {
-                "fhir_key": "numerator.code",
+                "fhir_key": "valueRatio.numerator.code",
                 "type": "str",
             },
             "component_value_ratio_denominator_value": {
-                "fhir_key": "denominator.value",
-                "type": "str",
+                "fhir_key": "valueRatio.denominator.value",
+                "type": "int",
             },
             "component_value_ratio_denominator_unit": {
-                "fhir_key": "denominator.unit",
+                "fhir_key": "valueRatio.denominator.unit",
                 "type": "str",
             },
             "component_value_ratio_denominator_code": {
-                "fhir_key": "denominator.code",
+                "fhir_key": "valueRatio.denominator.code",
                 "type": "str",
             },
-        },
-    },
-    {
-        "fhire_path": "componentvalueString",
-        "columns": {
-            "component_value_string": {"fhir_key": "valueString", "type": "str"}
-        },
-    },
-    {
-        "fhire_path": "componentvalueBoolean",
-        "columns": {
+            "component_value_string": {
+                "fhir_key": "valueString",
+                "type": "str",
+            },
             "component_value_boolean": {
                 "fhir_key": "valueBoolean",
                 "type": "bool",
             },
-        },
-    },
-    {
-        "fhire_path": "component.valueInteger",
-        "columns": {
             "component_value_integer": {
                 "fhir_key": "valueInteger",
                 "type": "int",
-            }
+            },
         },
     },
 ]

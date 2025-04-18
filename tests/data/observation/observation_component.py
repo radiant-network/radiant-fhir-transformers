@@ -145,6 +145,7 @@ EXPECTED_OUTPUT = [
         "component_value_range_low_unit": "test",
         "component_value_range_high_value": 6,
         "component_value_range_high_unit": "test",
+        "component_code_text": "Systolic blood pressure",
     },
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
@@ -168,6 +169,7 @@ EXPECTED_OUTPUT = [
         "component_value_range_low_unit": "test1",
         "component_value_range_high_value": 3,
         "component_value_range_high_unit": "test1",
+        "component_code_text": "Diastolic blood pressure",
     },
 ]
 
