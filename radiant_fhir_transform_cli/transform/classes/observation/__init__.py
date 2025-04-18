@@ -5,3 +5,6 @@ from .observation_component import ObservationComponentTransformer
 from .observation_extension import ObservationExtensionTransformer
 from .observation_note import ObservationNoteTransformer
 from .observation_performer import ObservationPerformerTransformer
+from .observation_value_codeable_concept_coding import (
+    ObservationValueCodeableConceptCodingTransformer,
+)

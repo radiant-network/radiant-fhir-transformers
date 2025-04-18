@@ -10,6 +10,7 @@ from tests.data.observation import (
     ObservationNoteTestHelper,
     ObservationPerformerTestHelper,
     ObservationTestHelper,
+    ObservationValueCodeableConceptCodingTestHelper,
 )
 from tests.data.patient import PatientTestHelper
 
@@ -22,4 +23,5 @@ test_helpers = [
     ObservationExtensionTestHelper,
     ObservationNoteTestHelper,
     ObservationPerformerTestHelper,
+    ObservationValueCodeableConceptCodingTestHelper,
 ]
