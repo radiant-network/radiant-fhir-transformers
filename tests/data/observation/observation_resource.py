@@ -5,7 +5,11 @@ RESOURCE = {
         {
             "reference": "ServiceRequest/eKSdPx93PPg7jLqFtgAKjJbL1RWvYEkyba5u.yiQaXZE3",
             "display": "Rapid SARS-CoV-2 PCR",
-        }
+        },
+        {
+            "reference": "ServiceRequest/elkj;lskdjf;ljl;ghghhhddddddjj.yiQaXZE3",
+            "display": "Rapid TESTER",
+        },
     ],
     "extension": [
         {
