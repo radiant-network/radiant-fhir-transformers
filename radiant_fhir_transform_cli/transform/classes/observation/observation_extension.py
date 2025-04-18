@@ -6,7 +6,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_DICT = [
+TRANSFORM_SCHEMA = [
     {
         "fhir_path": None,
         "columns": {
@@ -59,4 +59,4 @@ class ObservationExtensionTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Observation", "extension", TRANSFORM_DICT)
+        super().__init__("Observation", "extension", TRANSFORM_SCHEMA)

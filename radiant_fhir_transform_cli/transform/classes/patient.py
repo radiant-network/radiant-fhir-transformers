@@ -11,7 +11,7 @@ ETHNICITY_EXTENSION = (
     "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity"
 )
 
-TRANSFORM_DICT = [
+TRANSFORM_SCHEMA = [
     # Id
     {
         "fhir_path": "id",
@@ -156,7 +156,7 @@ class PatientTransformer(FhirResourceTransformer):
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed
-        transform_dict (dict): The transformation dictionary used to map
+        transform_schema (list[dict]): The transformation dictionary used to map
           and transform the resource data
 
     Methods:
@@ -166,4 +166,4 @@ class PatientTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Patient", None, TRANSFORM_DICT)
+        super().__init__("Patient", None, TRANSFORM_SCHEMA)

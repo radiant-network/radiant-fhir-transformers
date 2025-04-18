@@ -11,7 +11,7 @@ OBSERVATION_CATEGORY = (
 )
 
 
-TRANSFORM_DICT = [
+TRANSFORM_SCHEMA = [
     # Id
     {
         "fhir_path": "id",
@@ -195,4 +195,4 @@ class ObservationTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Observation", None, TRANSFORM_DICT)
+        super().__init__("Observation", None, TRANSFORM_SCHEMA)

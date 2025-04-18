@@ -31,12 +31,11 @@ class TransformConfig:
     fhir_reference: Optional[str] = None
 
 
-# TODO: update to transform_config
-def convert_transform_dict(
-    transform_dict: list[dict[str, str | dict]],
+def extract_raw_transform_schema(
+    transform_schema: list[dict[str, str | dict]],
 ) -> list[TransformConfig]:
     configs = []
-    for entry in transform_dict:
+    for entry in transform_schema:
         fhir_path = entry.get("fhir_path")
         fhir_reference = entry.get("fhir_reference")
         raw_columns = entry.get("columns", {})
@@ -62,8 +61,8 @@ class TransformationSchema:
     resource_type: str = ""
     resource_subtype: Optional[str] = None
 
-    def __init__(self, transform_dict: list[dict[str, str | dict]]):
-        self.configs = convert_transform_dict(transform_dict)
+    def __init__(self, transform_schema: list[dict[str, str | dict]]):
+        self.configs = extract_raw_transform_schema(transform_schema)
 
     def __post_init__(self):
         self._validate()

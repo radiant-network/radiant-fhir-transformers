@@ -6,7 +6,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_DICT = [
+TRANSFORM_SCHEMA = [
     # Primary Key
     {
         "fhir_path": None,
@@ -51,4 +51,4 @@ class ObservationCodeCodingTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Observation", "code_coding", TRANSFORM_DICT)
+        super().__init__("Observation", "code_coding", TRANSFORM_SCHEMA)

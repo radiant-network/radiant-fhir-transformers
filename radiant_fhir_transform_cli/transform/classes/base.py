@@ -108,7 +108,7 @@ class FhirResourceTransformer:
     Extracts values from FHIR resources using FHIRPath expressions defined
     in the transform_dict.
 
-    Transform dict
+    Transform schema
     --------------
     Keys are output columns in a csv file. Values are FHIR path expressions to
     the field value to be extracted from the FHIR JSON object
@@ -117,7 +117,7 @@ class FhirResourceTransformer:
 
     Attributes:
         resource_type (str): The type of the FHIR resource (e.g., 'Patient').
-        transform_dict (dict): A mapping of output columns to FHIRPath
+        transform_schema (list[dict]): A mapping of output columns to FHIRPath
           expressions
     """
 
@@ -125,7 +125,7 @@ class FhirResourceTransformer:
         self,
         resource_type: str,
         resource_subtype: Optional[str],
-        transform_dict: list[dict[str, str | dict]],
+        transform_schema: list[dict[str, str | dict]],
     ):
         """
         Initializes the transformer with the resource type and column map.
@@ -138,8 +138,8 @@ class FhirResourceTransformer:
         self.resource_subtype = resource_subtype
 
         # Validate transforms
-        _validate_transform_dict(type(self).__name__, transform_dict)
-        self.transform_dict = transform_dict
+        _validate_transform_dict(type(self).__name__, transform_schema)
+        self.transform_dict = transform_schema
 
     def transform_resource(
         self, resource_idx: int, resource_dict: dict
