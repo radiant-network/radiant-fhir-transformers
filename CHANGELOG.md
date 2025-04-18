@@ -1,5 +1,18 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.4.0
+
+### Summary
+
+- Emojis: ? x2
+- Categories: Other Changes x2
+
+### New features and changes
+
+- [#22](https://github.com/radiant-network/radiant-fhir-transformers/pull/22) -  add based on subtype - [50a6c22b](https://github.com/radiant-network/radiant-fhir-transformers/commit/50a6c22ba846fa32afcd3cb7e9f72ecaa0978e7f) by [haynescd](https://github.com/haynescd)
+- [#21](https://github.com/radiant-network/radiant-fhir-transformers/pull/21) -  add table-name to transformers - [7420a28d](https://github.com/radiant-network/radiant-fhir-transformers/commit/7420a28d0f6c18cbef4075290b6e0ddc6bd6d48e) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 0.3.0
 
 ### Summary
