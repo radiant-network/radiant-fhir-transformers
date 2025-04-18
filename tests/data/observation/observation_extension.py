@@ -49,6 +49,7 @@ class ObservationExtensionTestHelper(FhirResourceTestHelper):
     resource_type = "Observation"
     resource_subtype = "extension"
     transformer = ObservationExtensionTransformer
+    expected_table_name = "observation_extension"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

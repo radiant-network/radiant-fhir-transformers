@@ -307,6 +307,7 @@ class PatientTestHelper(FhirResourceTestHelper):
 
     resource_type = "Patient"
     transformer = PatientTransformer
+    expected_table_name = "patient"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

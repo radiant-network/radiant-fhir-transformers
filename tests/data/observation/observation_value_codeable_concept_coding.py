@@ -59,6 +59,7 @@ class ObservationValueCodeableConceptCodingTestHelper(FhirResourceTestHelper):
     resource_type = "Observation"
     resource_subtype = "value_codeable_concept_coding"
     transformer = ObservationValueCodeableConceptCodingTransformer
+    expected_table_name = "observation_value_codeable_concept_coding"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

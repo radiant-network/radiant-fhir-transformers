@@ -5,6 +5,7 @@ Miscellaneous Utility Functions
 import datetime
 import importlib
 import os
+import re
 import time
 from urllib.parse import urlparse
 
@@ -97,3 +98,20 @@ def ensure_directory_exists(file_path: str):
     directory = os.path.dirname(file_path)
     if not os.path.isdir(directory):
         os.makedirs(directory)
+
+
+def camel_to_snake(name: str) -> str:
+    """
+    Converts a CamelCase or camelCase string to snake_case.
+
+    Args:
+        name: The CamelCase string.
+
+    Returns:
+        str: The converted snake_case string.
+    """
+    # Add underscore before uppercase letters (excluding first char)
+    s1 = re.sub(r"(.)([A-Z][a-z]+)", r"\1_\2", name)
+
+    # Handle multiple uppercase sequences (e.g. JSONParser -> json_parser)
+    return re.sub(r"([a-z0-9])([A-Z])", r"\1_\2", s1).lower()

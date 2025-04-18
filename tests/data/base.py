@@ -28,6 +28,7 @@ class FhirResourceTestHelper:
     resource_type = None
     resource_subtype = None
     transformer = None
+    expected_table_name = None
 
     def __init__(self, resource_payload, expected_transform_output):
         self.resource = resource_payload
