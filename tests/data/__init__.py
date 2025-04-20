@@ -2,6 +2,7 @@
 Test data helper classes
 """
 
+from tests.data.medication_request import MedicationRequestTestHelper
 from tests.data.observation import (
     ObservationBasedOnTestHelper,
     ObservationCategoryCodingTestHelper,
@@ -26,4 +27,5 @@ test_helpers = [
     ObservationPerformerTestHelper,
     ObservationValueCodeableConceptCodingTestHelper,
     ObservationBasedOnTestHelper,
+    MedicationRequestTestHelper,
 ]

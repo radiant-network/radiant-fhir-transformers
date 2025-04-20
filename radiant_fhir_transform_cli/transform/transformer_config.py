@@ -12,6 +12,7 @@ class DataType(str, Enum):
     STRING = "str"
     BOOLEAN = "bool"
     DATETIME = "datetime"
+    DATE = "date"
 
 
 @dataclass

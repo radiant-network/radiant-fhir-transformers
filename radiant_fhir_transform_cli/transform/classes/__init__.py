@@ -19,6 +19,8 @@ from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
 )
 
+from .medication_request import MedicationRequestTransformer
+
 # Map FHIR resource type to its transformer class
 transformers = {
     "Patient": [PatientTransformer],
@@ -33,4 +35,5 @@ transformers = {
         ObservationValueCodeableConceptCodingTransformer,
         ObservationBasedOnTransformer,
     ],
+    "MedicationRequest": [MedicationRequestTransformer],
 }

@@ -57,6 +57,7 @@ class DataType:
     STRING = "str"
     BOOLEAN = "bool"
     DATETIME = "datetime"
+    DATE = "date"
 
 
 def _validate_transform_dict(cls_name, transform_dict):
