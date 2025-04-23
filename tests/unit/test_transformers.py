@@ -20,6 +20,9 @@ Tests include:
 import pandas as pd
 import pytest
 
+from radiant_fhir_transform_cli.transform.classes.observation import (
+    ObservationExtensionTransformer,
+)
 from tests.data import test_helpers
 
 
@@ -60,3 +63,56 @@ def test_transformers(test_helper_cls):
     pd.testing.assert_frame_equal(
         df_actual, df_expected, check_dtype=False, check_exact=False
     )
+
+
+def test_transformers_with_empty_rows():
+    """
+    Test Transformer Base class that filters out rows with empty data...
+    Should return empty list
+    """
+
+    test_resource = {
+        "resourceType": "Observation",
+        "id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
+        "extension": [
+            {
+                "valueIdentifier": {
+                    "system": "",
+                    "value": "",
+                },
+                "url": "",
+            },
+            {
+                "valueIdentifier": {
+                    "system": "",
+                    "value": "",
+                },
+                "url": "",
+            },
+        ],
+    }
+
+    transformer = ObservationExtensionTransformer()
+    out = transformer.transform_resource(0, test_resource)
+    assert not out
+
+    extensions = [
+        {
+            "valueIdentifier": {
+                "system": "",
+                "value": "",
+            },
+            "url": "",
+        },
+        {
+            "valueIdentifier": {
+                "system": "urn:oid:1.2.840.114350.1.13.20.3.7.2.707684",
+                "value": "555",
+            },
+            "url": "http://open.epic.com/FHIR/StructureDefinition/extension/template-id",
+        },
+    ]
+
+    test_resource["extension"] = extensions
+    out = transformer.transform_resource(0, test_resource)
+    assert len(out) == 1
