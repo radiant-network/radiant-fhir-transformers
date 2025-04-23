@@ -84,6 +84,12 @@ def _validate_transform_dict(cls_name, transform_dict):
 class FhirTransformationResultBuilder:
     base_attributes: dict[str, Any] = field(default_factory=dict)
     list_member_rows: list[dict[str, Any]] = field(default_factory=list)
+    is_subtype: bool = False
+
+    def __init__(self, resource_subtype: Optional[str]) -> None:
+        self.is_subtype = True if resource_subtype else False
+        self.base_attributes = {}
+        self.list_member_rows = []
 
     def add_base_attributes(self, values: dict[str, Any]) -> None:
         self.base_attributes.update(values)
@@ -96,11 +102,19 @@ class FhirTransformationResultBuilder:
         self.list_member_rows = rows
 
     def build_result(self) -> list[dict[str, Any]]:
-        if not self.list_member_rows:
+        if not self.is_subtype:
             return [self.base_attributes]
-        return [
-            {**self.base_attributes, **row} for row in self.list_member_rows
-        ]
+        else:
+            data = [
+                row
+                for row in self.list_member_rows
+                if any(v not in (None, "") for v in row.values())
+            ]
+            return (
+                [{**self.base_attributes, **row} for row in data]
+                if data
+                else []
+            )
 
 
 def generate_table_name(
@@ -168,7 +182,9 @@ class FhirResourceTransformer:
         Returns:
             dict: A dictionary with column names and evaluated FHIRPath values.
         """
-        transform_result_builder = FhirTransformationResultBuilder()
+        transform_result_builder = FhirTransformationResultBuilder(
+            self.resource_subtype
+        )
         transformation_schema = TransformationSchema(self.transform_dict)
         for config in transformation_schema.configs:
             fhir_path_expression = config.fhir_path
