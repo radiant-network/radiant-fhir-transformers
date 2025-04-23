@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.5.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#26](https://github.com/radiant-network/radiant-fhir-transformers/pull/26) -  :bug: Filter out empty rows - [40135f3a](https://github.com/radiant-network/radiant-fhir-transformers/commit/40135f3a507bec96f6d46221199fca3df01bb497) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 0.4.0
 
 ### Summary
