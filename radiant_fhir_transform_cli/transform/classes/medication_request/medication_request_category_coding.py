@@ -21,17 +21,11 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "reasonCode.coding",
+        "fhir_path": "category.coding",
         "columns": {
-            "reason_code_coding_system": {"fhir_key": "system", "type": "str"},
-            "reason_code_coding_code": {"fhir_key": "code", "type": "str"},
-            "reason_code_coding_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "reasonCode.text",
-        "columns": {
-            "category_text": {"fhir_key": "text", "type": "str"},
+            "category_coding_system": {"fhir_key": "system", "type": "str"},
+            "category_coding_code": {"fhir_key": "code", "type": "str"},
+            "category_coding_display": {"fhir_key": "display", "type": "str"},
         },
     },
 ]
