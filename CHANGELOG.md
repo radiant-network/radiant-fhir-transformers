@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.6.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#28](https://github.com/radiant-network/radiant-fhir-transformers/pull/28) -  :bug: Check if str before stripping reference_id - [53e8d678](https://github.com/radiant-network/radiant-fhir-transformers/commit/53e8d6783fd365aa69d03b99a3637fa1dc223593) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 0.5.0
 
 ### Summary
