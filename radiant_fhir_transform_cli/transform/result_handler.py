@@ -42,10 +42,6 @@ def extract_from_str(item: str, mapping: TransformConfig):
     return {next(iter(mapping.columns)): item}
 
 
-def extract_fhir_reference_prefix(fhir_raw_value: str) -> str:
-    return fhir_raw_value.rsplit("/", 1)[-1]
-
-
 EXTRACTION_STRATEGIES = {
     dict: extract_from_dict,
     str: extract_from_str,
@@ -88,7 +84,7 @@ class SingleResultHandler(ResultHandler):
             return self._create_null_row(config)
         values = strategy(item, config)
         if config.fhir_reference:
-            values[config.fhir_reference] = extract_fhir_reference_prefix(
+            values[config.fhir_reference] = self._extract_reference_id(
                 values[config.fhir_reference]
             )
         return values
