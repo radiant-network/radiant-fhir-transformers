@@ -82,14 +82,14 @@ def _validate_transform_dict(cls_name, transform_dict):
 
 @dataclass
 class FhirTransformationResultBuilder:
+    foreign_key_col: Optional[str]
     base_attributes: dict[str, Any] = field(default_factory=dict)
     list_member_rows: list[dict[str, Any]] = field(default_factory=list)
-    is_subtype: bool = False
 
-    def __init__(self, resource_subtype: Optional[str]) -> None:
-        self.is_subtype = True if resource_subtype else False
+    def __init__(self, foreign_key_col: Optional[str]) -> None:
         self.base_attributes = {}
         self.list_member_rows = []
+        self.foreign_key_col = foreign_key_col
 
     def add_base_attributes(self, values: dict[str, Any]) -> None:
         self.base_attributes.update(values)
@@ -101,20 +101,26 @@ class FhirTransformationResultBuilder:
             )
         self.list_member_rows = rows
 
+    def __id_cols(self) -> list[str]:
+        return ["id", self.foreign_key_col] if self.foreign_key_col else ["id"]
+
     def build_result(self) -> list[dict[str, Any]]:
-        if not self.is_subtype:
-            return [self.base_attributes]
-        else:
-            data = [
-                row
-                for row in self.list_member_rows
-                if any(v not in (None, "") for v in row.values())
-            ]
-            return (
-                [{**self.base_attributes, **row} for row in data]
-                if data
-                else []
+        data = (
+            [{**self.base_attributes, **row} for row in self.list_member_rows]
+            if self.list_member_rows
+            else [self.base_attributes]
+        )
+        # for every row check if cols have data except for id and foreign_key
+        data = [
+            row
+            for row in data
+            if any(
+                v not in (None, "")
+                for k, v in row.items()
+                if k not in self.__id_cols()
             )
+        ]
+        return data
 
 
 def generate_table_name(
@@ -182,10 +188,10 @@ class FhirResourceTransformer:
         Returns:
             dict: A dictionary with column names and evaluated FHIRPath values.
         """
-        transform_result_builder = FhirTransformationResultBuilder(
-            self.resource_subtype
-        )
         transformation_schema = TransformationSchema(self.transform_dict)
+        transform_result_builder = FhirTransformationResultBuilder(
+            transformation_schema.foreign_key
+        )
         for config in transformation_schema.configs:
             fhir_path_expression = config.fhir_path
 

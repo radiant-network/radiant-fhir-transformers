@@ -58,7 +58,6 @@ def test_transformers(test_helper_cls):
     if resource_subtype:
         df_actual = df_actual.drop(columns=["id"])
 
-    print(outs)
     # Compare
     pd.testing.assert_frame_equal(
         df_actual, df_expected, check_dtype=False, check_exact=False
