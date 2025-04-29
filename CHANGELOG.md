@@ -1,5 +1,18 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.6.0
+
+### Summary
+
+- Emojis: ? x2
+- Categories: Other Changes x2
+
+### New features and changes
+
+- [#30](https://github.com/radiant-network/radiant-fhir-transformers/pull/30) -  :necktie: Add foreign_key field and DocumentReference - [a4060986](https://github.com/radiant-network/radiant-fhir-transformers/commit/a4060986ebaa801d71c1bec760905259d9fd1bec) by [haynescd](https://github.com/haynescd)
+- [#28](https://github.com/radiant-network/radiant-fhir-transformers/pull/28) -  :bug: Check if str before stripping reference_id - [53e8d678](https://github.com/radiant-network/radiant-fhir-transformers/commit/53e8d6783fd365aa69d03b99a3637fa1dc223593) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 0.5.0
 
 ### Summary
