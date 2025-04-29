@@ -16,6 +16,7 @@ TRANSFORM_SCHEMA = [
     # Foreign Key
     {
         "fhir_path": "id",
+        "is_foreign_key": True,
         "columns": {
             "observation_id": {"fhir_key": "id", "type": "str"},
         },
