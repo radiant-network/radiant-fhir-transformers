@@ -24,6 +24,9 @@ from radiant_fhir_transform_cli.transform.classes.patient import (
 )
 from radiant_fhir_transform_cli.transform.classes.service_request import (
     ServiceRequestTransformer,
+    ServiceRequestCodeCodingTransformer,
+    ServiceRequestReasonCodeTransformer,
+    ServiceRequestContainedTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -46,5 +49,8 @@ transformers = {
     ],
     "ServiceRequest": [
         ServiceRequestTransformer,
+        ServiceRequestCodeCodingTransformer,
+        ServiceRequestReasonCodeTransformer,
+        ServiceRequestContainedTransformer,
     ],
 }

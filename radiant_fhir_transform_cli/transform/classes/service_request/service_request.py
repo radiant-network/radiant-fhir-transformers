@@ -10,36 +10,30 @@ TRANSFORM_SCHEMA = [
     # Id
     {
         "fhir_path": "id",
-        "columns": {"id": {"fhir_key": "id", "type": "str"}},
+        "columns": {"id": {"type": "str"}},
     },
     {
         "fhir_path": "resourceType",
         "columns": {
-            "resource_type": {"fhir_key": "resourceType", "type": "str"}
+            "resource_type": {"type": "str"}
         },
     },
     {
         "fhir_path": "text.status",
         "columns": {
-            "text_status": {"fhir_key": "status", "type": "str"}
-        },
-    },
-    {
-        "fhir_path": "text.div",
-        "columns": {
-            "text_div": {"fhir_key": "div", "type": "str"}
+            "text_status": {"type": "str"}
         },
     },
     {
         "fhir_path": "status",
         "columns": {
-            "status": {"fhir_key": "status", "type": "str"}
+            "status": { "type": "str"}
         },
     },
     {
         "fhir_path": "intent",
         "columns": {
-            "intent": {"fhir_key": "div", "type": "str"}
+            "intent": {"fhir_key": "intent", "type": "str"}
         },
     },
     {
