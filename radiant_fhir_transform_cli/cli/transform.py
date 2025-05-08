@@ -67,13 +67,12 @@ def transform(
         for rt in resource_transformers:
             transformer = rt()
 
-            timestamp = datetime.now().strftime(
-            "%Y%m%d%H%M%S")
-            
+            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+
             transfomer_name = transformer.table_name
 
             output_filepath = f"{output_dir}/{transfomer_name}-{timestamp}.csv"
-    
+
             # Transform json or ndjson file
             if input_filepath.endswith(".ndjson"):
                 rows = transformer.transform_from_ndjson(input_filepath)

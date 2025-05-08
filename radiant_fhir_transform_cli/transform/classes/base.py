@@ -223,7 +223,7 @@ class FhirResourceTransformer:
 
     def transform_from_ndjson(
         self, ndjson_filepath: str
-    ) -> Generator[list[dict[str,Any]], None, None]:
+    ) -> Generator[list[dict[str, Any]], None, None]:
         """
         Transforms data from an NDJSON file into a list of dictionaries.
 
@@ -244,7 +244,7 @@ class FhirResourceTransformer:
 
     def transform_from_json(
         self, json_filepath
-    ) -> Generator[list[dict[str,Any]], None, None]:
+    ) -> Generator[list[dict[str, Any]], None, None]:
         """
         Transforms data from a JSON file into a list of dictionaries.
 
@@ -269,7 +269,9 @@ class FhirResourceTransformer:
             for i, resource in enumerate(objs):
                 yield self.transform_resource(i, resource)
 
-    def write_to_csv(self, row_dicts: Iterable[dict[str,Any]], csv_filepath: str):
+    def write_to_csv(
+        self, row_dicts: Iterable[dict[str, Any]], csv_filepath: str
+    ):
         """
         Writes a list of dictionaries to a CSV file.
 
@@ -284,6 +286,10 @@ class FhirResourceTransformer:
         first_batch = True
         for row_dict in row_dicts:
             df = pandas.DataFrame(row_dict)
-            df.to_csv(csv_filepath, mode='w' if first_batch else 'a',
-                      header=first_batch, index=False)
+            df.to_csv(
+                csv_filepath,
+                mode="w" if first_batch else "a",
+                header=first_batch,
+                index=False,
+            )
             first_batch = False
