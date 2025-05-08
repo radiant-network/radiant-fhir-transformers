@@ -43,7 +43,7 @@ def extract_raw_transform_schema(
         is_foreign_key = entry.get("is_foreign_key", False)
         columns = {
             col_name: ColumnConfig(
-                fhir_key=col_cfg["fhir_key"], type=DataType(col_cfg["type"])
+                fhir_key=col_cfg.get("fhir_key"), type=DataType(col_cfg["type"])
             )
             for col_name, col_cfg in raw_columns.items()
         }
