@@ -34,13 +34,43 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "intent",
         "columns": {
-            "intent": {"fhir_key": "intent", "type": "str"}
+            "intent": {"type": "str"}
         },
     },
     {
+        "fhir_path": "priority",
+        "columns": {
+            "priority": { "type": "str"}
+        },
+    },  
+    {
+        "fhir_path": "doNotPerform",
+        "columns": {
+            "do_not_perform": { "type": "str"}
+        },
+    },  
+    {
         "fhir_path": "code.text",
         "columns": {
-            "code_text": {"fhir_key": "text", "type": "str"},
+            "code_text": { "type": "str"},
+        },
+    },
+    {
+        "fhir_path": "quantityQuantity",
+        "columns": {
+            "quantity_quantity": { "type": "str"},
+        },
+    },
+    {
+        "fhir_path": "quantityRatio",
+        "columns": {
+            "quantity_ratio": { "type": "str"},
+        },
+    },
+    {
+        "fhir_path": "quantityRange",
+        "columns": {
+            "quantity_range": { "type": "str"},
         },
     },
     {
@@ -55,9 +85,55 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
+        "fhir_path": "encounter",
+        "fhir_reference": "encounter_reference",
+        "columns": {
+            "encounter_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
+            "encounter_display": {"fhir_key": "display", "type": "str"},
+        },
+    },
+    {
         "fhir_path": "occurrenceDateTime",
         "columns": {
-            "occurence_date_time": {"fhir_key": "occurrenceDateTime", "type": "str"}
+            "occurence_date_time": {"type": "str"}
+        },
+    },
+    {
+        "fhir_path": "occurrencePeriod",
+        "columns": {
+            "occurence_period_start": {"fhir_key": "start","type": "str"},
+            "occurence_period_end": {"fhir_key": "end","type": "str"},
+        },
+    },
+    {
+        "fhir_path": "occurrenceTiming.repeat",
+        "columns": {
+            "occurence_timing_repeat_count": {"fhir_key": "count", "type": "str"},
+            "occurence_timing_repeat_count_max": {"fhir_key": "countMax", "type": "str"},
+            "occurence_timing_repeat_frequency": {"fhir_key": "frequency", "type": "str"},
+            "occurence_timing_repeat_period": {"fhir_key": "period", "type": "str"},
+            "occurence_timing_repeat_period_unit": {"fhir_key": "periodUnit", "type": "str"},
+        },
+    },
+    {
+        "fhir_path": "asNeededBoolean.value",
+        "columns": {
+            "as_needed_boolean_value": {"type": "str"}
+        },
+    },
+    {
+        "fhir_path": "asNeededCodeableConcept.text",
+        "columns": {
+            "as_needed_codeable_concept_text": {"type": "str"}
+        },
+    },
+    {
+        "fhir_path": "authoredOn",
+        "columns": {
+            "authored_on": {"type": "str"}
         },
     },
     {
@@ -69,6 +145,19 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "requester_display": {"fhir_key": "display", "type": "str"},
+        },
+    },
+    {
+        "fhir_path": "performerType",
+        "columns": {
+            "performer_type_coding": {"fhir_key": "coding", "type": "str"},
+            "performer_type_text": {"fhir_key": "text", "type": "str"}
+        },
+    },
+    {
+        "fhir_path": "patientInstruction",
+        "columns": {
+            "patient_instruction": { "type": "str"},
         },
     },
 ]
