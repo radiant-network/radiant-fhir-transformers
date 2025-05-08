@@ -24,6 +24,7 @@ TRANSFORM_SCHEMA = [
             "text_status": {"type": "str"}
         },
     },
+    
     {
         "fhir_path": "status",
         "columns": {
