@@ -22,6 +22,12 @@ from radiant_fhir_transform_cli.transform.classes.observation.observation_code_c
 from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
 )
+from radiant_fhir_transform_cli.transform.classes.medication import (
+    MedicationTransformer,
+    MedicationCodeCodingTransformer,
+    MedicationFormCodingTransformer,
+    MedicationIngredientTransformer,
+)
 
 # Map FHIR resource type to its transformer class
 transformers = {
@@ -40,5 +46,11 @@ transformers = {
     "DocumentReference": [
         DocumentReferenceTransformer,
         DocumentReferenceContentTransformer,
+    ],
+    "Medication": [
+        MedicationTransformer,
+        MedicationCodeCodingTransformer,
+        MedicationFormCodingTransformer,
+        MedicationIngredientTransformer,
     ],
 }
