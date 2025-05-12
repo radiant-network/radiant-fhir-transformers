@@ -3,6 +3,7 @@ Test data helper classes
 """
 
 from tests.data.document_reference import (
+    DocumentReferenceAuthorTestHelper,
     DocumentReferenceContentTestHelper,
     DocumentReferenceIdentifierTestHelper,
     DocumentReferenceTestHelper,
@@ -36,4 +37,5 @@ test_helpers = [
     DocumentReferenceContentTestHelper,
     DocumentReferenceTypeCodingTestHelper,
     DocumentReferenceIdentifierTestHelper,
+    DocumentReferenceAuthorTestHelper,
 ]
