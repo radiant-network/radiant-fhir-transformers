@@ -25,8 +25,7 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "instantiatesUri",
         "columns": {
-            "instantiates_uri_url": {"fhir_key": "url", "type": "str"},
-            "instantiates_uri_value": {"fhir_key": "url", "type": "str"},
+            "instantiates_uri_value": {"fhir_key": "value", "type": "str"},
         },
     },
 ]

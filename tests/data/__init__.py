@@ -22,6 +22,25 @@ from tests.data.patient import PatientTestHelper
 from tests.data.service_request import (
     ServiceRequestTestHelper,
     ServiceRequestBasedOnTestHelper,
+    ServiceRequestBodySiteTestHelper,
+    ServiceRequestCategoryTestHelper,
+    ServiceRequestCodeCodingTestHelper,
+    ServiceRequestContainedTestHelper,
+    ServiceRequestIdentifierTestHelper,
+    ServiceRequestInstantiatesUriTestHelper,
+    ServiceRequestInsuranceTestHelper,
+    ServiceRequestLocationCodeTestHelper,
+    ServiceRequestLocationReferenceTestHelper,
+    ServiceRequestNoteTestHelper,
+    ServiceRequestOrderDetailTestHelper,
+    ServiceRequestPerformerTestHelper,
+    ServiceRequestReasonCodeTestHelper,
+    ServiceRequestReasonReferenceTestHelper,
+    ServiceRequestRelevantHistoryTestHelper,
+    ServiceRequestReplacesTestHelper,
+    ServiceRequestSpecimenTestHelper,
+    ServiceRequestSupportingInfoTestHelper
+
 )
 
 test_helpers = [
@@ -39,4 +58,22 @@ test_helpers = [
     DocumentReferenceContentTestHelper,
     ServiceRequestTestHelper,
     ServiceRequestBasedOnTestHelper,
+    ServiceRequestBodySiteTestHelper,
+    ServiceRequestCategoryTestHelper,
+    ServiceRequestCodeCodingTestHelper,
+    ServiceRequestContainedTestHelper,
+    ServiceRequestIdentifierTestHelper,
+    ServiceRequestInstantiatesUriTestHelper,
+    ServiceRequestInsuranceTestHelper,
+    ServiceRequestLocationCodeTestHelper,
+    ServiceRequestLocationReferenceTestHelper,
+    ServiceRequestNoteTestHelper,
+    ServiceRequestOrderDetailTestHelper,
+    ServiceRequestPerformerTestHelper,
+    ServiceRequestReasonCodeTestHelper,
+    ServiceRequestReasonReferenceTestHelper,
+    ServiceRequestRelevantHistoryTestHelper,
+    ServiceRequestReplacesTestHelper,
+    ServiceRequestSpecimenTestHelper,
+    ServiceRequestSupportingInfoTestHelper
 ]

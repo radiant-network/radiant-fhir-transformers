@@ -3,7 +3,7 @@ Test helper class for FHIR resource type ServiceRequest subtype bodySite
 """
 
 from radiant_fhir_transform_cli.transform.classes import (
-    ServiceRequestBasedOnTransformer,
+    ServiceRequestBodySiteTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 

@@ -25,6 +25,7 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "reasonCode",
         "columns": {
+            "reason_code_coding": {"fhir_key": "coding", "type": "str"},
             "reason_code_text": {"fhir_key": "text", "type": "str"},
         },
     },
