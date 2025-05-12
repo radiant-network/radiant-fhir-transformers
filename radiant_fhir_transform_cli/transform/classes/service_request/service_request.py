@@ -43,12 +43,12 @@ TRANSFORM_SCHEMA = [
             "priority": { "type": "str"}
         },
     },  
-    {
-        "fhir_path": "doNotPerform",
-        "columns": {
-            "do_not_perform": { "type": "str"}
-        },
-    },  
+     {
+         "fhir_path": "doNotPerform",
+         "columns": {
+             "do_not_perform": { "type": "str"}
+         },
+     },  
     {
         "fhir_path": "code.text",
         "columns": {
@@ -58,19 +58,35 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "quantityQuantity",
         "columns": {
-            "quantity_quantity": { "type": "str"},
+            "quantity_quantity_value": { "fhir_key": "value","type": "str"},
+            "quantity_quantity_comparator": { "fhir_key": "comparator","type": "str"},
+            "quantity_quantity_unit": { "fhir_key": "unit","type": "str"},
+            "quantity_quantity_system": { "fhir_key": "system","type": "str"},
+            "quantity_quantity_code": { "fhir_key": "code","type": "str"},
         },
     },
     {
         "fhir_path": "quantityRatio",
         "columns": {
-            "quantity_ratio": { "type": "str"},
+            "quantity_ratio_numerator_value": {"fhir_key": "numerator.value", "type": "str"},
+            "quantity_ratio_numerator_comparator": { "fhir_key": "numerator.comparator","type": "str"},
+            "quantity_ratio_numerator_unit": { "fhir_key": "numerator.unit","type": "str"},
+            "quantity_ratio_numerator_system": { "fhir_key": "numerator.system","type": "str"},
+            "quantity_ratio_numerator_code": { "fhir_key": "numerator.code","type": "str"},
+            "quantity_ratio_denominator_value": {"fhir_key": "denominator.value", "type": "str"},
+            "quantity_ratio_denominator_comparator": { "fhir_key": "denominator.comparator","type": "str"},
+            "quantity_ratio_denominator_unit": { "fhir_key": "denominator.unit","type": "str"},
+            "quantity_ratio_denominator_system": { "fhir_key": "denominator.system","type": "str"},
+            "quantity_ratio_denominator_code": { "fhir_key": "denominator.code","type": "str"},
         },
     },
     {
         "fhir_path": "quantityRange",
         "columns": {
-            "quantity_range": { "type": "str"},
+            "quantity_range_low_value": {"fhir_key":"low.value", "type": "str"},
+            "quantity_range_low_unit": {"fhir_key":"low.unit", "type": "str"},
+            "quantity_range_high_value": {"fhir_key":"high.value", "type": "str"},
+            "quantity_range_high_unit": {"fhir_key":"high.unit", "type": "str"},
         },
     },
     {
@@ -98,30 +114,30 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "occurrenceDateTime",
         "columns": {
-            "occurence_date_time": {"type": "str"}
+            "occurrence_date_time": {"type": "str"}
         },
     },
     {
         "fhir_path": "occurrencePeriod",
         "columns": {
-            "occurence_period_start": {"fhir_key": "start","type": "str"},
-            "occurence_period_end": {"fhir_key": "end","type": "str"},
+            "occurrence_period_start": {"fhir_key": "start","type": "str"},
+            "occurrence_period_end": {"fhir_key": "end","type": "str"},
         },
     },
     {
         "fhir_path": "occurrenceTiming.repeat",
         "columns": {
-            "occurence_timing_repeat_count": {"fhir_key": "count", "type": "str"},
-            "occurence_timing_repeat_count_max": {"fhir_key": "countMax", "type": "str"},
-            "occurence_timing_repeat_frequency": {"fhir_key": "frequency", "type": "str"},
-            "occurence_timing_repeat_period": {"fhir_key": "period", "type": "str"},
-            "occurence_timing_repeat_period_unit": {"fhir_key": "periodUnit", "type": "str"},
+            "occurrence_timing_repeat_count": {"fhir_key": "count", "type": "str"},
+            "occurrence_timing_repeat_count_max": {"fhir_key": "countMax", "type": "str"},
+            "occurrence_timing_repeat_frequency": {"fhir_key": "frequency", "type": "str"},
+            "occurrence_timing_repeat_period": {"fhir_key": "period", "type": "str"},
+            "occurrence_timing_repeat_period_unit": {"fhir_key": "periodUnit", "type": "str"},
         },
     },
     {
-        "fhir_path": "asNeededBoolean.value",
+        "fhir_path": "asNeededBoolean",
         "columns": {
-            "as_needed_boolean_value": {"type": "str"}
+            "as_needed_boolean": {"type": "str"}
         },
     },
     {

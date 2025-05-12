@@ -19,6 +19,11 @@ from tests.data.observation import (
 )
 from tests.data.patient import PatientTestHelper
 
+from tests.data.service_request import (
+    ServiceRequestTestHelper,
+    ServiceRequestBasedOnTestHelper,
+)
+
 test_helpers = [
     PatientTestHelper,
     ObservationTestHelper,
@@ -32,4 +37,6 @@ test_helpers = [
     ObservationBasedOnTestHelper,
     DocumentReferenceTestHelper,
     DocumentReferenceContentTestHelper,
+    ServiceRequestTestHelper,
+    ServiceRequestBasedOnTestHelper,
 ]

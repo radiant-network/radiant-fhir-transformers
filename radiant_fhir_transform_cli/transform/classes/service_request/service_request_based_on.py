@@ -18,7 +18,7 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "id",
         "is_foreign_key": True,
         "columns": {
-            "observation_id": {"fhir_key": "id", "type": "str"},
+            "service_request_id": {"fhir_key": "id", "type": "str"},
         },
     },
     {
