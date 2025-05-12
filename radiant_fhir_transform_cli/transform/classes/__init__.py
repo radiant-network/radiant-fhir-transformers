@@ -3,8 +3,11 @@ List of FHIR ndjson to dict transformers
 """
 
 from radiant_fhir_transform_cli.transform.classes.document_reference import (
+    DocumentReferenceAuthorTransformer,
     DocumentReferenceContentTransformer,
+    DocumentReferenceIdentifierTransformer,
     DocumentReferenceTransformer,
+    DocumentReferenceTypeCodingTransformer,
 )
 from radiant_fhir_transform_cli.transform.classes.observation import (
     ObservationBasedOnTransformer,
@@ -40,5 +43,8 @@ transformers = {
     "DocumentReference": [
         DocumentReferenceTransformer,
         DocumentReferenceContentTransformer,
+        DocumentReferenceTypeCodingTransformer,
+        DocumentReferenceIdentifierTransformer,
+        DocumentReferenceAuthorTransformer,
     ],
 }

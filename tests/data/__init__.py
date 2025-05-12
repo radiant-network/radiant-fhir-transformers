@@ -3,8 +3,11 @@ Test data helper classes
 """
 
 from tests.data.document_reference import (
+    DocumentReferenceAuthorTestHelper,
     DocumentReferenceContentTestHelper,
+    DocumentReferenceIdentifierTestHelper,
     DocumentReferenceTestHelper,
+    DocumentReferenceTypeCodingTestHelper,
 )
 from tests.data.observation import (
     ObservationBasedOnTestHelper,
@@ -32,4 +35,7 @@ test_helpers = [
     ObservationBasedOnTestHelper,
     DocumentReferenceTestHelper,
     DocumentReferenceContentTestHelper,
+    DocumentReferenceTypeCodingTestHelper,
+    DocumentReferenceIdentifierTestHelper,
+    DocumentReferenceAuthorTestHelper,
 ]
