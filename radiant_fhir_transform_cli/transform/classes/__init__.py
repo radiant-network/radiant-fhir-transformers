@@ -55,7 +55,6 @@ from radiant_fhir_transform_cli.transform.classes.medication import (
     MedicationCodeCodingTransformer,
     MedicationFormCodingTransformer,
     MedicationIngredientTransformer,
-
 )
 
 # Map FHIR resource type to its transformer class

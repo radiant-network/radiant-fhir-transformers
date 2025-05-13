@@ -12,8 +12,8 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "service_request_id": "di_abcd_efg",
-        "insurance_reference":"Coverage/abc-123",
-        "insurance_display": "BCBS of Atlantis"
+        "insurance_reference": "Coverage/abc-123",
+        "insurance_display": "BCBS of Atlantis",
     },
 ]
 

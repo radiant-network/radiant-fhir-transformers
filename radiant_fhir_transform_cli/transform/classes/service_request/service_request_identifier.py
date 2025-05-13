@@ -29,10 +29,22 @@ TRANSFORM_SCHEMA = [
             "identifier_system": {"fhir_key": "system", "type": "str"},
             "identifier_value": {"fhir_key": "value", "type": "str"},
             "identifier_period": {"fhir_key": "period", "type": "str"},
-            "identifier_assigner_organization_reference": {"fhir_key": "assigner.organization.reference", "type": "str"},
-            "identifier_assigner_organization_type": {"fhir_key": "assigner.organization.type", "type": "str"},
-            "identifier_assigner_organization_display": {"fhir_key": "assigner.organization.display", "type": "str"},
-            "identifier_assigner_organization_identifier": {"fhir_key": "assigner.organization.identifier", "type": "str"},            
+            "identifier_assigner_organization_reference": {
+                "fhir_key": "assigner.organization.reference",
+                "type": "str",
+            },
+            "identifier_assigner_organization_type": {
+                "fhir_key": "assigner.organization.type",
+                "type": "str",
+            },
+            "identifier_assigner_organization_display": {
+                "fhir_key": "assigner.organization.display",
+                "type": "str",
+            },
+            "identifier_assigner_organization_identifier": {
+                "fhir_key": "assigner.organization.identifier",
+                "type": "str",
+            },
         },
     },
 ]

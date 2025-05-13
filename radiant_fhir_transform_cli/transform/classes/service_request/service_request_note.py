@@ -27,9 +27,15 @@ TRANSFORM_SCHEMA = [
         "columns": {
             "note_text": {"fhir_key": "text", "type": "str"},
             "note_author_string": {"fhir_key": "authorString", "type": "str"},
-            "note_author_reference_reference": {"fhir_key": "authorReference.reference", "type": "str"},
-            "note_author_reference_display": {"fhir_key": "authorReference.display", "type": "str"},  
-            "note_time": {"fhir_key": "time", "type": "str"},                                  
+            "note_author_reference_reference": {
+                "fhir_key": "authorReference.reference",
+                "type": "str",
+            },
+            "note_author_reference_display": {
+                "fhir_key": "authorReference.display",
+                "type": "str",
+            },
+            "note_time": {"fhir_key": "time", "type": "datetime"},
         },
     },
 ]

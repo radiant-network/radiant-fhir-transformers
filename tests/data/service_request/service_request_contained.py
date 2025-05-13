@@ -12,23 +12,23 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "service_request_id": "di_abcd_efg",
-        "contained_resource_type":"Observation",
+        "contained_resource_type": "Observation",
         "contained_id": "fasting",
         "contained_status": "final",
-        "contained_code_text":None,
-        "contained_subject_reference":"Patient/example",
-        "contained_subject_display":None,
-        "contained_collection_collected_date_time": None
+        "contained_code_text": None,
+        "contained_subject_reference": "Patient/example",
+        "contained_subject_display": None,
+        "contained_collection_collected_date_time": None,
     },
     {
         "service_request_id": "di_abcd_efg",
-        "contained_resource_type":"Specimen",
+        "contained_resource_type": "Specimen",
         "contained_id": "serum",
         "contained_status": None,
-        "contained_code_text":None,
-        "contained_subject_reference":"Patient/example",
-        "contained_subject_display":None,
-        "contained_collection_collected_date_time": "2015-08-16T06:40:17Z"
+        "contained_code_text": None,
+        "contained_subject_reference": "Patient/example",
+        "contained_subject_display": None,
+        "contained_collection_collected_date_time": "2015-08-16T06:40:17Z",
     },
 ]
 

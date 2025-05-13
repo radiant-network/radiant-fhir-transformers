@@ -12,11 +12,11 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "service_request_id": "di_abcd_efg",
-            "note_text": "patient is afraid of needles",
-            "note_author_string": "Serena Shrink",
-            "note_author_reference_reference": None,
-            "note_author_reference_display": None,  
-            "note_time": "2014-02-14",       
+        "note_text": "patient is afraid of needles",
+        "note_author_string": "Serena Shrink",
+        "note_author_reference_reference": None,
+        "note_author_reference_display": None,
+        "note_time": "2014-02-14",
     },
 ]
 

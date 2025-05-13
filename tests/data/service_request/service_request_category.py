@@ -12,7 +12,13 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "service_request_id": "di_abcd_efg",
-        "category_coding": [{'system': 'http://snomed.info/sct', 'code': '103696004', 'display': 'Patient referral to specialist'}],
+        "category_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "103696004",
+                "display": "Patient referral to specialist",
+            }
+        ],
         "category_text": None,
     },
 ]

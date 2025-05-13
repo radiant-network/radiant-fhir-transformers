@@ -25,7 +25,10 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "supportingInfo",
         "columns": {
-            "supporting_info_reference": {"fhir_key": "reference", "type": "str"},
+            "supporting_info_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
             "supporting_info_display": {"fhir_key": "display", "type": "str"},
         },
     },

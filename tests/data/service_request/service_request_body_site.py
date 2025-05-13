@@ -12,7 +12,7 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "service_request_id": "di_abcd_efg",
-        "body_site_coding": [{'display': 'Right arm'}],
+        "body_site_coding": [{"display": "Right arm"}],
         "body_site_text": "Right arm",
     },
 ]

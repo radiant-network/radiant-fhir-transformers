@@ -25,13 +25,25 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "contained",
         "columns": {
-            "contained_resource_type": {"fhir_key": "resourceType", "type": "str"},
+            "contained_resource_type": {
+                "fhir_key": "resourceType",
+                "type": "str",
+            },
             "contained_id": {"fhir_key": "id", "type": "str"},
             "contained_status": {"fhir_key": "status", "type": "str"},
-            "contained_code_text": {"fhir_key": "code.text", "type": "str"}, 
-            "contained_subject_reference": {"fhir_key": "subject.reference", "type": "str"}, 
-            "contained_subject_display": {"fhir_key": "subject.display", "type": "str"},   
-            "contained_collection_collected_date_time": {"fhir_key": "collection.collectedDateTime", "type": "str"},   
+            "contained_code_text": {"fhir_key": "code.text", "type": "str"},
+            "contained_subject_reference": {
+                "fhir_key": "subject.reference",
+                "type": "str",
+            },
+            "contained_subject_display": {
+                "fhir_key": "subject.display",
+                "type": "str",
+            },
+            "contained_collection_collected_date_time": {
+                "fhir_key": "collection.collectedDateTime",
+                "type": "str",
+            },
         },
     },
 ]

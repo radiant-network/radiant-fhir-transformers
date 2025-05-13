@@ -25,7 +25,10 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "reasonReference",
         "columns": {
-            "reason_reference_reference": {"fhir_key": "reference", "type": "str"},
+            "reason_reference_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
             "reason_reference_display": {"fhir_key": "display", "type": "str"},
         },
     },

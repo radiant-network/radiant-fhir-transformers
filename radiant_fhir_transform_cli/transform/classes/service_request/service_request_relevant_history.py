@@ -25,7 +25,10 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "relevantHistory",
         "columns": {
-            "relevant_history_reference": {"fhir_key": "reference", "type": "str"},
+            "relevant_history_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
             "relevant_history_display": {"fhir_key": "display", "type": "str"},
         },
     },

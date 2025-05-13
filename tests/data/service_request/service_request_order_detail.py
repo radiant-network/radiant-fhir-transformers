@@ -12,7 +12,13 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "service_request_id": "di_abcd_efg",
-        "order_detail_coding": [{'system': 'http://snomed.info/sct', 'code': '243144002', 'display': 'Patient triggered inspiratory assistance (procedure)'}],
+        "order_detail_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "243144002",
+                "display": "Patient triggered inspiratory assistance (procedure)",
+            }
+        ],
         "order_detail_text": "IPPB",
     },
     {

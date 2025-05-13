@@ -25,8 +25,14 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "locationReference",
         "columns": {
-            "location_reference_reference": {"fhir_key": "reference", "type": "str"},
-            "location_reference_display": {"fhir_key": "display", "type": "str"},
+            "location_reference_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
+            "location_reference_display": {
+                "fhir_key": "display",
+                "type": "str",
+            },
         },
     },
 ]
@@ -51,4 +57,6 @@ class ServiceRequestLocationReferenceTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("ServiceRequest", "location_reference", TRANSFORM_SCHEMA)
+        super().__init__(
+            "ServiceRequest", "location_reference", TRANSFORM_SCHEMA
+        )

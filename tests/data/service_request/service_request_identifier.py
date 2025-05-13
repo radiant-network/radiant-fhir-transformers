@@ -14,12 +14,12 @@ EXPECTED_OUTPUT = [
         "service_request_id": "di_abcd_efg",
         "identifier_type_text": "Placer",
         "identifier_system": "urn:oid:1.3.4.5.6.7",
-        "identifier_value":"2345234234234",
+        "identifier_value": "2345234234234",
         "identifier_period": None,
         "identifier_assigner_organization_reference": None,
         "identifier_assigner_organization_type": None,
         "identifier_assigner_organization_display": None,
-        "identifier_assigner_organization_identifier": None,  
+        "identifier_assigner_organization_identifier": None,
     },
 ]
 

@@ -12,8 +12,8 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "service_request_id": "di_abcd_efg",
-        "reason_reference_reference":None,
-        "reason_reference_display":  "Patient has a spinal fracture"
+        "reason_reference_reference": None,
+        "reason_reference_display": "Patient has a spinal fracture",
     },
 ]
 

@@ -12,8 +12,8 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "service_request_id": "di_abcd_efg",
-        "location_reference_reference":"Location/zyx-vut",
-        "location_reference_display": "The Pitt"
+        "location_reference_reference": "Location/zyx-vut",
+        "location_reference_display": "The Pitt",
     },
 ]
 
