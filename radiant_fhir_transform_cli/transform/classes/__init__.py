@@ -3,8 +3,11 @@ List of FHIR ndjson to dict transformers
 """
 
 from radiant_fhir_transform_cli.transform.classes.document_reference import (
+    DocumentReferenceAuthorTransformer,
     DocumentReferenceContentTransformer,
+    DocumentReferenceIdentifierTransformer,
     DocumentReferenceTransformer,
+    DocumentReferenceTypeCodingTransformer,
 )
 from radiant_fhir_transform_cli.transform.classes.observation import (
     ObservationBasedOnTransformer,
@@ -22,6 +25,7 @@ from radiant_fhir_transform_cli.transform.classes.observation.observation_code_c
 from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
 )
+
 from radiant_fhir_transform_cli.transform.classes.service_request import (
     ServiceRequestTransformer,
     ServiceRequestCodeCodingTransformer,
@@ -43,6 +47,14 @@ from radiant_fhir_transform_cli.transform.classes.service_request import (
     ServiceRequestInsuranceTransformer,
     ServiceRequestBodySiteTransformer,
     ServiceRequestRelevantHistoryTransformer,
+
+from radiant_fhir_transform_cli.transform.classes.medication import (
+    MedicationTransformer,
+    MedicationIdentifierTransformer,
+    MedicationCodeCodingTransformer,
+    MedicationFormCodingTransformer,
+    MedicationIngredientTransformer,
+
 )
 
 # Map FHIR resource type to its transformer class
@@ -62,6 +74,16 @@ transformers = {
     "DocumentReference": [
         DocumentReferenceTransformer,
         DocumentReferenceContentTransformer,
+        DocumentReferenceTypeCodingTransformer,
+        DocumentReferenceIdentifierTransformer,
+        DocumentReferenceAuthorTransformer,
+    ],
+    "Medication": [
+        MedicationTransformer,
+        MedicationIdentifierTransformer,
+        MedicationCodeCodingTransformer,
+        MedicationFormCodingTransformer,
+        MedicationIngredientTransformer,
     ],
     "ServiceRequest": [
         ServiceRequestTransformer,

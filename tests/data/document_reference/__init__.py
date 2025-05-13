@@ -1,2 +1,7 @@
 from .document_reference import DocumentReferenceTestHelper
+from .document_reference_author import DocumentReferenceAuthorTestHelper
 from .document_reference_content import DocumentReferenceContentTestHelper
+from .document_reference_identifier import DocumentReferenceIdentifierTestHelper
+from .document_reference_type_coding import (
+    DocumentReferenceTypeCodingTestHelper,
+)

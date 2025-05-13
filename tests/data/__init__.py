@@ -3,8 +3,11 @@ Test data helper classes
 """
 
 from tests.data.document_reference import (
+    DocumentReferenceAuthorTestHelper,
     DocumentReferenceContentTestHelper,
+    DocumentReferenceIdentifierTestHelper,
     DocumentReferenceTestHelper,
+    DocumentReferenceTypeCodingTestHelper,
 )
 from tests.data.observation import (
     ObservationBasedOnTestHelper,
@@ -18,6 +21,13 @@ from tests.data.observation import (
     ObservationValueCodeableConceptCodingTestHelper,
 )
 from tests.data.patient import PatientTestHelper
+from tests.data.medication import (
+    MedicationTestHelper,
+    MedicationIdentifierTestHelper,
+    MedicationCodeCodingTestHelper,
+    MedicationFormCodingTestHelper,
+    MedicationIngredientTestHelper,
+)
 
 from tests.data.service_request import (
     ServiceRequestTestHelper,
@@ -56,6 +66,9 @@ test_helpers = [
     ObservationBasedOnTestHelper,
     DocumentReferenceTestHelper,
     DocumentReferenceContentTestHelper,
+    DocumentReferenceTypeCodingTestHelper,
+    DocumentReferenceIdentifierTestHelper,
+    DocumentReferenceAuthorTestHelper,
     ServiceRequestTestHelper,
     ServiceRequestBasedOnTestHelper,
     ServiceRequestBodySiteTestHelper,
@@ -76,4 +89,9 @@ test_helpers = [
     ServiceRequestReplacesTestHelper,
     ServiceRequestSpecimenTestHelper,
     ServiceRequestSupportingInfoTestHelper
+    MedicationTestHelper,
+    MedicationIdentifierTestHelper,
+    MedicationCodeCodingTestHelper,
+    MedicationFormCodingTestHelper,
+    MedicationIngredientTestHelper,
 ]
