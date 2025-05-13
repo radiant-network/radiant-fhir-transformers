@@ -55,13 +55,6 @@ EXPECTED_OUTPUT = [
         "authored_on": "2014-02-14",
         "requester_reference": "example.doc",
         "requester_display": "Dr. Adam Careful",
-        "performer_type_coding": [
-            {
-                "system": "http://orionhealth.com/fhir/apps/specialties",
-                "code": "ent",
-                "display": "ENT",
-            }
-        ],
         "performer_type_text": "Ear Nose and Throat",
         "patient_instruction": "Start with 30kg 10-15 repetitions for three sets and increase in increments of 5kg when you feel ready",
     }

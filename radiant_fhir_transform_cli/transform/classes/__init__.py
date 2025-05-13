@@ -47,6 +47,7 @@ from radiant_fhir_transform_cli.transform.classes.service_request import (
     ServiceRequestInsuranceTransformer,
     ServiceRequestBodySiteTransformer,
     ServiceRequestRelevantHistoryTransformer,
+    ServiceRequestPerformerTypeCodingTransformer,
 )
 
 from radiant_fhir_transform_cli.transform.classes.medication import (
@@ -106,5 +107,6 @@ transformers = {
         ServiceRequestInsuranceTransformer,
         ServiceRequestBodySiteTransformer,
         ServiceRequestRelevantHistoryTransformer,
+        ServiceRequestPerformerTypeCodingTransformer,
     ],
 }

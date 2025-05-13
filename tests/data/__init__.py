@@ -51,6 +51,7 @@ from tests.data.service_request import (
     ServiceRequestReplacesTestHelper,
     ServiceRequestSpecimenTestHelper,
     ServiceRequestSupportingInfoTestHelper,
+    ServiceRequestPerformerTypeCodingTestHelper,
 )
 
 test_helpers = [
@@ -89,6 +90,7 @@ test_helpers = [
     ServiceRequestReplacesTestHelper,
     ServiceRequestSpecimenTestHelper,
     ServiceRequestSupportingInfoTestHelper,
+    ServiceRequestPerformerTypeCodingTestHelper,
     MedicationTestHelper,
     MedicationIdentifierTestHelper,
     MedicationCodeCodingTestHelper,

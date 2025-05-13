@@ -28,3 +28,6 @@ from .service_request_specimen import ServiceRequestSpecimenTestHelper
 from .service_request_supporting_info import (
     ServiceRequestSupportingInfoTestHelper,
 )
+from .service_request_performer_type_coding import (
+    ServiceRequestPerformerTypeCodingTestHelper,
+)

@@ -28,3 +28,6 @@ from .service_request_body_site import ServiceRequestBodySiteTransformer
 from .service_request_relevant_history import (
     ServiceRequestRelevantHistoryTransformer,
 )
+from .service_request_performer_type_coding import (
+    ServiceRequestPerformerTypeCodingTransformer,
+)

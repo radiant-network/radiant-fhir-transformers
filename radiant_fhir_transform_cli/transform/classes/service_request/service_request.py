@@ -203,11 +203,8 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "performerType",
-        "columns": {
-            "performer_type_coding": {"fhir_key": "coding", "type": "str"},
-            "performer_type_text": {"fhir_key": "text", "type": "str"},
-        },
+        "fhir_path": "performerType.text",
+        "columns": {"performer_type_text": {"type": "str"}},
     },
     {
         "fhir_path": "patientInstruction",
