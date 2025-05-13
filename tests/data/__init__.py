@@ -28,6 +28,9 @@ from tests.data.medication import (
     MedicationFormCodingTestHelper,
     MedicationIngredientTestHelper,
 )
+from tests.data.specimen import(
+    SpecimenTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -50,4 +53,5 @@ test_helpers = [
     MedicationCodeCodingTestHelper,
     MedicationFormCodingTestHelper,
     MedicationIngredientTestHelper,
+    SpecimenTestHelper,
 ]

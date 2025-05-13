@@ -95,83 +95,83 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "collection.collectedDuration",
+        "fhir_path": "collection.Duration",
         "columns": {
-            "collection_collected_duration_value": {
+            "collection_duration_value": {
                 "fhir_key": "value",
                 "type": "str",
             },
-            "collection_collected_duration_comparator": {
+            "collection_duration_comparator": {
                 "fhir_key": "comparator",
                 "type": "str",
             },
-            "collection_collected_duration_unit": {
+            "collection_duration_unit": {
                 "fhir_key": "unit",
                 "type": "str",
             },
-            "collection_collected_duration_system": {
+            "collection_duration_system": {
                 "fhir_key": "system",
                 "type": "str",
             },
-            "collection_collected_duration_code": {
+            "collection_duration_code": {
                 "fhir_key": "code",
                 "type": "str",
             },
         },
     },
     {
-        "fhir_path": "collection.collectedQuantity",
+        "fhir_path": "collection.quantity",
         "columns": {
-            "collection_collected_quantity_value": {
+            "collection_quantity_value": {
                 "fhir_key": "value",
                 "type": "str",
             },
-            "collection_collected_quantity_unit": {
+            "collection_quantity_unit": {
                 "fhir_key": "unit",
                 "type": "str",
             },
-            "collection_collected_quantity_system": {
+            "collection_quantity_system": {
                 "fhir_key": "system",
                 "type": "str",
             },
-            "collection_collected_quantity_code": {
+            "collection_quantity_code": {
                 "fhir_key": "code",
                 "type": "str",
             },
         },
     },
     {
-        "fhir_path": "collection.collectedMethod.text",
+        "fhir_path": "collection.method.text",
         "columns": {
-            "collection_collected_method_text": {"type": "str"},
+            "collection_method_text": {"type": "str"},
         },
     },
     {
-        "fhir_path": "collection.collectedBodySite.text",
+        "fhir_path": "collection.bodySite.text",
         "columns": {
-            "collection_collected_body_site_text": {"type": "str"},
+            "collection_body_site_text": {"type": "str"},
         },
     },
     {
         "fhir_path": "collection.fastingStatusDuration",
         "columns": {
-            "collected_fasting_status_duration_value": {
+            "collection_fasting_status_duration_value": {
                 "fhir_key": "value",
                 "type": "str",
             },
-            "collected_fasting_status_duration_comparator": {
+            "collection_fasting_status_duration_comparator": {
                 "fhir_key": "comparator",
                 "type": "str",
             },
-            "collected_fasting_status_duration_unit": {
+            "collection_fasting_status_duration_unit": {
                 "fhir_key": "unit",
                 "type": "str",
             },
-            "collected_fasting_status_duration_system": {
+            "collection_fasting_status_duration_system": {
                 "fhir_key": "system",
                 "type": "str",
             },
-            "collected_fasting_status_duration_code": {
+            "collection_fasting_status_duration_code": {
                 "fhir_key": "code",
                 "type": "str",
             },
@@ -181,12 +181,6 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "collection.fastingStatus.text",
         "columns": {
             "collection_fasting_status_text": {"type": "str"},
-        },
-    },
-    {
-        "fhir_path": "condition.text",
-        "columns": {
-            "condition_text": {"type": "str"},
         },
     },
 ]

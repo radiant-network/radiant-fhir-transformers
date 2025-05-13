@@ -75,4 +75,18 @@ transformers = {
         MedicationFormCodingTransformer,
         MedicationIngredientTransformer,
     ],
+
+    "Specimen": [
+    SpecimenTransformer,
+    SpecimenCollectionBodySiteCodingTransformer,
+    SpecimenCollectionFastingStatusCodingTransformer,
+    SpecimenTypeCodingTransformer,
+    SpecimenConditionCodingTransformer,
+    SpecimenContainerTransformer,
+    SpecimenMethodCodingTransformer,
+    SpecimenParentTransformer,
+    SpecimenProcessingTransformer,
+    SpecimenRequestTransformer,
+    SpecimentNoteTransformer,
+    ]
 }
