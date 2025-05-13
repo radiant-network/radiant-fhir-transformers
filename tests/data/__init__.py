@@ -21,6 +21,13 @@ from tests.data.observation import (
     ObservationValueCodeableConceptCodingTestHelper,
 )
 from tests.data.patient import PatientTestHelper
+from tests.data.medication import (
+    MedicationTestHelper,
+    MedicationIdentifierTestHelper,
+    MedicationCodeCodingTestHelper,
+    MedicationFormCodingTestHelper,
+    MedicationIngredientTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -38,4 +45,9 @@ test_helpers = [
     DocumentReferenceTypeCodingTestHelper,
     DocumentReferenceIdentifierTestHelper,
     DocumentReferenceAuthorTestHelper,
+    MedicationTestHelper,
+    MedicationIdentifierTestHelper,
+    MedicationCodeCodingTestHelper,
+    MedicationFormCodingTestHelper,
+    MedicationIngredientTestHelper,
 ]
