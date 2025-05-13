@@ -18,7 +18,7 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "id",
         "is_foreign_key": True,
         "columns": {
-            "specimen_id": { "type": "str"},
+            "specimen_id": {"type": "str"},
         },
     },
     {

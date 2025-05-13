@@ -33,6 +33,20 @@ from radiant_fhir_transform_cli.transform.classes.medication import (
     MedicationIngredientTransformer,
 )
 
+from radiant_fhir_transform_cli.transform.classes.specimen import (
+    SpecimenTransformer,
+    SpecimenCollectionBodySiteCodingTransformer,
+    SpecimenCollectionFastingStatusCodingTransformer,
+    SpecimenTypeCodingTransformer,
+    SpecimenConditionCodingTransformer,
+    SpecimenContainerTransformer,
+    SpecimenMethodCodingTransformer,
+    SpecimenParentTransformer,
+    SpecimenProcessingTransformer,
+    SpecimenRequestTransformer,
+    SpecimentNoteTransformer,
+)
+
 # Map FHIR resource type to its transformer class
 transformers = {
     "Patient": [PatientTransformer],

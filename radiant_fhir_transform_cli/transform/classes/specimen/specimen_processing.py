@@ -25,13 +25,31 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "processing",
         "columns": {
-            "processing_description": {"fhir_key": "description", "type": "str"},
-            "processing_procedure_coding": {"fhir_key": "procedure.coding", "type": "str"},
-            "processing_procedure_text": {"fhir_key": "procedure.text", "type": "str"}, 
+            "processing_description": {
+                "fhir_key": "description",
+                "type": "str",
+            },
+            "processing_procedure_coding": {
+                "fhir_key": "procedure.coding",
+                "type": "str",
+            },
+            "processing_procedure_text": {
+                "fhir_key": "procedure.text",
+                "type": "str",
+            },
             "processing_additive": {"fhir_key": "additive", "type": "str"},
-            "processing_time_date_time": {"fhir_key": "timeDateTime", "type": "datetime"},
-            "processing_time_period_start": {"fhir_key": "timePeriod.start", "type": "datetime"},
-            "processing_time_period_end": {"fhir_key": "timePeriod.end", "type": "datetime"},           
+            "processing_time_date_time": {
+                "fhir_key": "timeDateTime",
+                "type": "datetime",
+            },
+            "processing_time_period_start": {
+                "fhir_key": "timePeriod.start",
+                "type": "datetime",
+            },
+            "processing_time_period_end": {
+                "fhir_key": "timePeriod.end",
+                "type": "datetime",
+            },
         },
     },
 ]

@@ -25,9 +25,18 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "collection.bodySite.coding",
         "columns": {
-            "collection_body_site_coding_system": {"fhir_key": "system", "type": "str"},
-            "collection_body_site_coding_code": {"fhir_key": "code", "type": "str"},
-            "collection_body_site_coding_display": {"fhir_key": "display", "type": "str"},
+            "collection_body_site_coding_system": {
+                "fhir_key": "system",
+                "type": "str",
+            },
+            "collection_body_site_coding_code": {
+                "fhir_key": "code",
+                "type": "str",
+            },
+            "collection_body_site_coding_display": {
+                "fhir_key": "display",
+                "type": "str",
+            },
         },
     },
 ]
@@ -52,4 +61,6 @@ class SpecimenCollectionBodySiteCodingTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Specimen", "collection_body_site_coding", TRANSFORM_SCHEMA)
+        super().__init__(
+            "Specimen", "collection_body_site_coding", TRANSFORM_SCHEMA
+        )
