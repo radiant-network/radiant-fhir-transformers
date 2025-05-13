@@ -77,8 +77,44 @@ RESOURCE={
         }
       ],
       "text": "Right median cubital vein",
-    }
+    },
+    "fastingStatusCodeableConcept": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "123",
+          "display": "yes"
+        }
+      ],
+      "text": "fasting since midnight",
+    },
+  "fastingStatusDuration":{
+    "value":"3",
+    "unit":"days",
+    "system":"ucum.org",
+    "code":"3d"
+
+      },
   },
+  "processing": [
+    {
+      "description": "Acidify to pH < 3.0 with 6 N HCl.",
+      "procedure": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0373",
+            "code": "ACID"
+          }
+        ]
+      },
+      "additive": [
+        {
+          "display": "6 N HCl"
+        }
+      ],
+      "timeDateTime": "2015-08-18T08:10:00Z"
+    }
+  ],
   "container": [
     {
       "identifier": [
@@ -103,9 +139,37 @@ RESOURCE={
       }
     }
   ],
+"condition":[ {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "abc1",
+          "display": "bad heart"
+        }
+      ],
+      "text": "example_condition",
+    },
+   {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "abc3",
+          "display": "worse heart"
+        }
+      ],
+      "text": "example_condition_2",
+    },
+],
+"parent": [{
+    "reference": "Specimen/example1",
+    "display": "Whole Blood"
+  },
+],
   "note": [
     {
-      "text": "Specimen is grossly lipemic"
+      "text": "Specimen is grossly lipemic",
+      "authorString":"Doctor Judy",
+      "time":"2011-03-01T07:03:00Z"
     }
   ]
 }

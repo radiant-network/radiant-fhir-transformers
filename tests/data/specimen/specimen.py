@@ -40,12 +40,12 @@ EXPECTED_OUTPUT = [
         "collection_quantity_code":None,
         "collection_method_text": "Venous Line",
         "collection_body_site_text": "Right median cubital vein", 
-        "collection_fasting_status_duration_value": None,
+        "collection_fasting_status_duration_value": "3",
         "collection_fasting_status_duration_comparator": None,
-        "collection_fasting_status_duration_unit": None,
-        "collection_fasting_status_duration_system": None,
-        "collection_fasting_status_duration_code": None,
-        "collection_fasting_status_text": None
+        "collection_fasting_status_duration_unit": "days",
+        "collection_fasting_status_duration_system": "ucum.org",
+        "collection_fasting_status_duration_code": "3d",
+        "collection_fasting_status_codeable_concept_text": "fasting since midnight"
 
     }
 ]

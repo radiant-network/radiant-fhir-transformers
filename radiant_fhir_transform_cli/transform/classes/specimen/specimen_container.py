@@ -45,35 +45,35 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "capacity.code",
                 "type": "str",
             },
-            "specimen_quantity_value": {
+            "container_specimen_quantity_value": {
                 "fhir_key": "specimenQuantity.value",
                 "type": "str",
             },
-            "specimen_quantity_unit": {
+            "container_specimen_quantity_unit": {
                 "fhir_key": "specimenQuantity.unit",
                 "type": "str",
             },
-            "specimen_quantity_system": {
+            "container_specimen_quantity_system": {
                 "fhir_key": "specimenQuantity.system",
                 "type": "str",
             },
-            "specimen_quantity_code": {
+            "container_specimen_quantity_code": {
                 "fhir_key": "specimenQuantity.code",
                 "type": "str",
             },
-            "specimen_additive_codeable_concept_text": {
+            "container_specimen_additive_codeable_concept_text": {
                 "fhir_key": "specimen.additiveCodeableConcept.text",
                 "type": "str",
             },
-            "specimen_additive_codeable_concept_coding": {
+            "container_specimen_additive_codeable_concept_coding": {
                 "fhir_key": "specimen.additiveCodeableConcept.coding",
                 "type": "str",
             },
-            "specimen_additive_reference_reference": {
+            "container_specimen_additive_reference_reference": {
                 "fhir_key": "specimen.additiveReference.reference",
                 "type": "str",
             },
-            "specimen_additive_reference_display": {
+            "container_specimen_additive_reference_display": {
                 "fhir_key": "specimen.additiveReference.display",
                 "type": "str",
             },

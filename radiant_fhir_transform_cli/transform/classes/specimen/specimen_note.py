@@ -41,7 +41,7 @@ TRANSFORM_SCHEMA = [
 ]
 
 
-class SpecimentNoteTransformer(FhirResourceTransformer):
+class SpecimenNoteTransformer(FhirResourceTransformer):
     """
     Transformer class for the 'Specimen' resource in FHIR, focusing on the 'note' element.
 

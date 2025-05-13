@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type Specimen subtype request
+Test helper class for FHIR resource type Specimen subtype collectionMethodCoding
 """
 
 from radiant_fhir_transform_cli.transform.classes import (
-    SpecimenRequestTransformer,
+    SpecimenCollectionMethodCodingTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -12,13 +12,14 @@ from .specimen import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "specimen_id": "101",
-        "request_reference": "example",
-        "request_display": None,
+        "collection_method_coding_system": "http://terminology.hl7.org/CodeSystem/v2-0488",
+        "collection_method_coding_code": "LNV",
+        "collection_method_coding_display": None,
     },
 ]
 
 
-class SpecimenRequestTestHelper(FhirResourceTestHelper):
+class SpecimenCollectionMethodCodingTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Specimen' resource.
 
@@ -40,9 +41,9 @@ class SpecimenRequestTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "request"
-    transformer = SpecimenRequestTransformer
-    expected_table_name = "specimen_request"
+    resource_subtype = "collection_method_coding"
+    transformer = SpecimenCollectionMethodCodingTransformer
+    expected_table_name = "specimen_collection_method_coding"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

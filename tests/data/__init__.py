@@ -30,6 +30,16 @@ from tests.data.medication import (
 )
 from tests.data.specimen import(
     SpecimenTestHelper,
+    SpecimenCollectionBodySiteCodingTestHelper,
+    SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper,
+    SpecimenCollectionMethodCodingTestHelper,
+    SpecimenConditionTestHelper,
+    SpecimenContainerTestHelper,
+    SpecimenNoteTestHelper,
+    SpecimenParentTestHelper,
+    SpecimenRequestTestHelper,
+    SpecimenProcessingTestHelper,
+    SpecimenTypeCodingTestHelper
 )
 
 test_helpers = [
@@ -54,4 +64,14 @@ test_helpers = [
     MedicationFormCodingTestHelper,
     MedicationIngredientTestHelper,
     SpecimenTestHelper,
+    SpecimenCollectionBodySiteCodingTestHelper,
+    SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper,
+    SpecimenCollectionMethodCodingTestHelper,
+    SpecimenConditionTestHelper,
+    SpecimenContainerTestHelper,
+    SpecimenNoteTestHelper,
+    SpecimenParentTestHelper,
+    SpecimenRequestTestHelper,
+    SpecimenProcessingTestHelper,
+    SpecimenTypeCodingTestHelper
 ]

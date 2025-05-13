@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type Specimen subtype request
+Test helper class for FHIR resource type Specimen subtype condition
 """
 
 from radiant_fhir_transform_cli.transform.classes import (
-    SpecimenRequestTransformer,
+    SpecimenConditionTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -12,13 +12,18 @@ from .specimen import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "specimen_id": "101",
-        "request_reference": "example",
-        "request_display": None,
+        "condition_text": "example_condition",
+        "condition_coding": [{'system': 'http://snomed.info/sct', 'code': 'abc1', 'display': 'bad heart'}],
+    },
+    {
+        "specimen_id": "101",
+        "condition_text": "example_condition_2",
+        "condition_coding": [{'system': 'http://snomed.info/sct', 'code': 'abc3', 'display': 'worse heart'}],
     },
 ]
 
 
-class SpecimenRequestTestHelper(FhirResourceTestHelper):
+class SpecimenConditionTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Specimen' resource.
 
@@ -40,9 +45,9 @@ class SpecimenRequestTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "request"
-    transformer = SpecimenRequestTransformer
-    expected_table_name = "specimen_request"
+    resource_subtype = "condition"
+    transformer = SpecimenConditionTransformer
+    expected_table_name = "specimen_condition"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

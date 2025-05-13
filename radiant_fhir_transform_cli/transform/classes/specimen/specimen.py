@@ -178,9 +178,9 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "collection.fastingStatus.text",
+        "fhir_path": "collection.fastingStatusCodeableConcept.text",
         "columns": {
-            "collection_fasting_status_text": {"type": "str"},
+            "collection_fasting_status_codeable_concept_text": {"type": "str"},
         },
     },
 ]

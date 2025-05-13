@@ -24,14 +24,14 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "condition",
         "columns": {
-            "condition_coding_coding": {"fhir_key": "coding", "type": "str"},
-            "condition_coding_text": {"fhir_key": "text", "type": "str"},
+            "condition_coding": {"fhir_key": "coding", "type": "str"},
+            "condition_text": {"fhir_key": "text", "type": "str"},
         },
     },
 ]
 
 
-class SpecimenConditionCodingTransformer(FhirResourceTransformer):
+class SpecimenConditionTransformer(FhirResourceTransformer):
     """
     Transformer class for the 'Specimen' resource in FHIR, focusing on the 'condition' element.
 
