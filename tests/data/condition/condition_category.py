@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type Condition subtype Category Coding
+Test helper class for FHIR resource type Condition subtype Category
 """
 
-from radiant_fhir_transform_cli.transform.classes.condition.condition_category_coding import (
-    ConditionCategoryCodingTransformer,
+from radiant_fhir_transform_cli.transform.classes.condition.condition_category import (
+    ConditionCategoryTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -12,20 +12,22 @@ from .condition_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "condition_id": "f201",
-        "category_coding_system": "http://snomed.info/sct",
-        "category_coding_code": "55607006",
-        "category_coding_display": "Problem",
-    },
-    {
-        "condition_id": "f201",
-        "category_coding_system": "http://terminology.hl7.org/CodeSystem/condition-category",
-        "category_coding_code": "problem-list-item",
-        "category_coding_display": None,
-    },
+        "category_coding":
+            [{
+            "system": "http://snomed.info/sct",
+            "code": "55607006",
+            "display": "Problem"
+            },
+            {
+            "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+            "code": "problem-list-item"
+            }],
+        "category_text": None
+    }
 ]
 
 
-class ConditionCategoryCodingTestHelper(FhirResourceTestHelper):
+class ConditionCategoryTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Condition' resource.
 
@@ -47,9 +49,9 @@ class ConditionCategoryCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "category_coding"
-    transformer = ConditionCategoryCodingTransformer
-    expected_table_name = "condition_category_coding"
+    resource_subtype = "category"
+    transformer = ConditionCategoryTransformer
+    expected_table_name = "condition_category"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

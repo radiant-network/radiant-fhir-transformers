@@ -40,7 +40,7 @@ from radiant_fhir_transform_cli.transform.classes.condition import (
     ConditionSeverityCodingTransformer,
     ConditionClinicalStatusCodingTransformer,
     ConditionVerificationStatusCodingTransformer,
-    ConditionCategoryCodingTransformer,
+    ConditionCategoryTransformer,
     ConditionBodySiteCodingTransformer,
     ConditionEvidenceTransformer,
 )
@@ -81,7 +81,7 @@ transformers = {
         ConditionClinicalStatusCodingTransformer,
         ConditionVerificationStatusCodingTransformer,
         ConditionBodySiteCodingTransformer,
-        ConditionCategoryCodingTransformer,
+        ConditionCategoryTransformer,
         ConditionEvidenceTransformer,
     ],
 }

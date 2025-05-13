@@ -1,5 +1,5 @@
 """
-FHIR Condition Category Coding transformer
+FHIR Condition Category transformer
 """
 
 from radiant_fhir_transform_cli.transform.classes.base import (
@@ -23,17 +23,16 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "category.coding",
+        "fhir_path": "category",
         "columns": {
-            "category_coding_system": {"fhir_key": "system", "type": "str"},
-            "category_coding_code": {"fhir_key": "code", "type": "str"},
-            "category_coding_display": {"fhir_key": "display", "type": "str"},
+            "category_coding": {"fhir_key": "coding", "type": "str"},
+            "category_text": {"fhir_key": "text", "type": "str"},
         },
     },
 ]
 
 
-class ConditionCategoryCodingTransformer(FhirResourceTransformer):
+class ConditionCategoryTransformer(FhirResourceTransformer):
     """
     A transformer class for the 'Condition' resource in FHIR, focusing on the 'category.coding' element.
 
@@ -52,4 +51,4 @@ class ConditionCategoryCodingTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Condition", "category_coding", TRANSFORM_SCHEMA)
+        super().__init__("Condition", "category", TRANSFORM_SCHEMA)
