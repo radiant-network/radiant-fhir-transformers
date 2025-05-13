@@ -40,6 +40,9 @@ from radiant_fhir_transform_cli.transform.classes.condition import (
     ConditionSeverityCodingTransformer,
     ConditionClinicalStatusCodingTransformer,
     ConditionVerificationStatusCodingTransformer,
+    ConditionCategoryCodingTransformer,
+    ConditionBodySiteCodingTransformer,
+    ConditionEvidenceTransformer
 )
 
 # Map FHIR resource type to its transformer class
@@ -76,6 +79,9 @@ transformers = {
         ConditionIdentifierTransformer,
         ConditionSeverityCodingTransformer,
         ConditionClinicalStatusCodingTransformer,
-        ConditionVerificationStatusCodingTransformer
+        ConditionVerificationStatusCodingTransformer,
+        ConditionBodySiteCodingTransformer,
+        ConditionCategoryCodingTransformer,
+        ConditionEvidenceTransformer
     ]
 }
