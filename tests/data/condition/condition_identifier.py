@@ -12,7 +12,7 @@ from .condition_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "condition_id": "f201",
-        "identifier_value":  "12345",
+        "identifier_value": "12345",
         "identifier_use": None,
         "identifier_system": None,
     },

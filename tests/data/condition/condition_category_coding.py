@@ -12,7 +12,7 @@ from .condition_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "condition_id": "f201",
-        "category_coding_system":  "http://snomed.info/sct",
+        "category_coding_system": "http://snomed.info/sct",
         "category_coding_code": "55607006",
         "category_coding_display": "Problem",
     },
@@ -21,7 +21,7 @@ EXPECTED_OUTPUT = [
         "category_coding_system": "http://terminology.hl7.org/CodeSystem/condition-category",
         "category_coding_code": "problem-list-item",
         "category_coding_display": None,
-    }
+    },
 ]
 
 

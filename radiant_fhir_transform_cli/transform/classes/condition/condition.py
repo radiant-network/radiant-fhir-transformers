@@ -7,9 +7,12 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 )
 
 CONDITION_CATEGORY = "http://terminology.hl7.org/CodeSystem/condition-category"
-CONDITION_CLINICAL_STATUS = "http://terminology.hl7.org/CodeSystem/condition-clinical"
-CONDITION_VERIFICATION_STATUS = "http://terminology.hl7.org/CodeSystem/condition-ver-status"
-
+CONDITION_CLINICAL_STATUS = (
+    "http://terminology.hl7.org/CodeSystem/condition-clinical"
+)
+CONDITION_VERIFICATION_STATUS = (
+    "http://terminology.hl7.org/CodeSystem/condition-ver-status"
+)
 
 
 TRANSFORM_SCHEMA = [
@@ -19,19 +22,15 @@ TRANSFORM_SCHEMA = [
     },
     {
         "fhir_path": "resourceType",
-        "columns": {
-            "resource_type": {"type": "str"}
-        },
+        "columns": {"resource_type": {"type": "str"}},
     },
-
     {
         "fhir_path": "code.text",
         "columns": {
             "code_text": {"type": "str"},
         },
     },
-
-    # subject 
+    # subject
     {
         "fhir_path": "subject",
         "fhir_reference": "subject_reference",
@@ -43,7 +42,7 @@ TRANSFORM_SCHEMA = [
             "subject_display": {"fhir_key": "display", "type": "str"},
         },
     },
-    #encounter
+    # encounter
     {
         "fhir_path": "encounter",
         "fhir_reference": "encounter_reference",
@@ -55,93 +54,88 @@ TRANSFORM_SCHEMA = [
             "encounter_display": {"fhir_key": "display", "type": "str"},
         },
     },
-
-    # onset 
+    # onset
     {
         "fhir_path": "onsetDateTime",
-        "columns": {
-            "onsetDateTime": {"type": "datetime"}
-        },
+        "columns": {"onsetDateTime": {"type": "datetime"}},
     },
     {
         "fhir_path": "onsetAge",
         "columns": {
-            "onset_age_value": { "fhir_key": "value","type": "str"},
-            "onset_age_unit": { "fhir_key": "unit","type": "str"},
-            "onset_age_system": { "fhir_key": "system","type": "str"},
-            "onset_age_code": { "fhir_key": "code","type": "str"},
+            "onset_age_value": {"fhir_key": "value", "type": "str"},
+            "onset_age_unit": {"fhir_key": "unit", "type": "str"},
+            "onset_age_system": {"fhir_key": "system", "type": "str"},
+            "onset_age_code": {"fhir_key": "code", "type": "str"},
         },
     },
     {
         "fhir_path": "onsetPeriod",
         "columns": {
-            "onset_period_start": { "fhir_key": "start","type": "datetime"},
-            "onset_period_end": { "fhir_key": "end","type": "datetime"},
+            "onset_period_start": {"fhir_key": "start", "type": "datetime"},
+            "onset_period_end": {"fhir_key": "end", "type": "datetime"},
         },
     },
     {
         "fhir_path": "onsetRange",
         "columns": {
-            "onset_range_low_value": {"fhir_key":"low.value", "type": "str"},
-            "onset_range_low_unit": {"fhir_key":"low.unit", "type": "str"},
-            "onset_range_high_value": {"fhir_key":"high.value", "type": "str"},
-            "onset_range_high_unit": {"fhir_key":"high.unit", "type": "str"},
+            "onset_range_low_value": {"fhir_key": "low.value", "type": "str"},
+            "onset_range_low_unit": {"fhir_key": "low.unit", "type": "str"},
+            "onset_range_high_value": {"fhir_key": "high.value", "type": "str"},
+            "onset_range_high_unit": {"fhir_key": "high.unit", "type": "str"},
         },
     },
     {
         "fhir_path": "onsetString",
-        "columns": {
-            "onsetString": {"type": "str"}
-        },
+        "columns": {"onsetString": {"type": "str"}},
     },
-
     # abatement
     {
         "fhir_path": "abatementDateTime",
-        "columns": {
-            "abatementDateTime": {"type": "datetime"}
-        },
+        "columns": {"abatementDateTime": {"type": "datetime"}},
     },
     {
         "fhir_path": "abatementAge",
         "columns": {
-            "abatement_age_value": { "fhir_key": "value","type": "str"},
-            "abatement_age_unit": { "fhir_key": "unit","type": "str"},
-            "abatement_age_system": { "fhir_key": "system","type": "str"},
-            "abatement_age_code": { "fhir_key": "code","type": "str"},
+            "abatement_age_value": {"fhir_key": "value", "type": "str"},
+            "abatement_age_unit": {"fhir_key": "unit", "type": "str"},
+            "abatement_age_system": {"fhir_key": "system", "type": "str"},
+            "abatement_age_code": {"fhir_key": "code", "type": "str"},
         },
     },
     {
         "fhir_path": "abatementPeriod",
         "columns": {
-            "abatement_period_start": { "fhir_key": "start","type": "datetime"},
-            "abatement_period_end": { "fhir_key": "end","type": "datetime"},
+            "abatement_period_start": {"fhir_key": "start", "type": "datetime"},
+            "abatement_period_end": {"fhir_key": "end", "type": "datetime"},
         },
     },
     {
         "fhir_path": "abatementRange",
         "columns": {
-            "abatement_range_low_value": {"fhir_key":"low.value", "type": "str"},
-            "abatement_range_low_unit": {"fhir_key":"low.unit", "type": "str"},
-            "abatement_range_high_value": {"fhir_key":"high.value", "type": "str"},
-            "abatement_range_high_unit": {"fhir_key":"high.unit", "type": "str"},
+            "abatement_range_low_value": {
+                "fhir_key": "low.value",
+                "type": "str",
+            },
+            "abatement_range_low_unit": {"fhir_key": "low.unit", "type": "str"},
+            "abatement_range_high_value": {
+                "fhir_key": "high.value",
+                "type": "str",
+            },
+            "abatement_range_high_unit": {
+                "fhir_key": "high.unit",
+                "type": "str",
+            },
         },
     },
     {
         "fhir_path": "abatementString",
-        "columns": {
-            "abatementString": {"type": "str"}
-        },
+        "columns": {"abatementString": {"type": "str"}},
     },
-
     # recorded Date
     {
         "fhir_path": "recordedDate",
-        "columns": {
-            "recordedDate": {"type": "datetime"}
-        },
+        "columns": {"recordedDate": {"type": "datetime"}},
     },
-
     # recorder
     {
         "fhir_path": "recorder",
@@ -154,7 +148,6 @@ TRANSFORM_SCHEMA = [
             "recorder_display": {"fhir_key": "display", "type": "str"},
         },
     },
-
     # asserter
     {
         "fhir_path": "asserter",

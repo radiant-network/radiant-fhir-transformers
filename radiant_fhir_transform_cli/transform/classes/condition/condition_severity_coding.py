@@ -19,7 +19,7 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "id",
         "is_foreign_key": True,
         "columns": {
-            "condition_id": { "type": "str"},
+            "condition_id": {"type": "str"},
         },
     },
     {
@@ -31,6 +31,7 @@ TRANSFORM_SCHEMA = [
         },
     },
 ]
+
 
 class ConditionSeverityCodingTransformer(FhirResourceTransformer):
     """

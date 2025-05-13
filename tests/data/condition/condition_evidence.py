@@ -16,7 +16,7 @@ EXPECTED_OUTPUT = [
         "evidence_code": "258710007",
         "evidence_display": "degrees C",
         "evidence_detail_reference": "f202",
-        "evidence_detail_display": "Temperature"
+        "evidence_detail_display": "Temperature",
     }
 ]
 

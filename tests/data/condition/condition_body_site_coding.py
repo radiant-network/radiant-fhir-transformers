@@ -12,7 +12,7 @@ from .condition_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "condition_id": "f201",
-        "body_site_coding_system":  "http://snomed.info/sct",
+        "body_site_coding_system": "http://snomed.info/sct",
         "body_site_coding_code": "38266002",
         "body_site_coding_display": "Entire body as a whole",
     },

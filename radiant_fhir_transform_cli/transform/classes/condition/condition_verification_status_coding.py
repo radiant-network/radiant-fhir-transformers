@@ -19,17 +19,24 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "id",
         "is_foreign_key": True,
         "columns": {
-            "condition_id": { "type": "str"},
+            "condition_id": {"type": "str"},
         },
     },
     {
         "fhir_path": "verificationStatus.coding",
         "columns": {
-            "verification_status_coding_system": {"fhir_key": "system", "type": "str"},
-            "verification_status_coding_code": {"fhir_key": "code", "type": "str"},
+            "verification_status_coding_system": {
+                "fhir_key": "system",
+                "type": "str",
+            },
+            "verification_status_coding_code": {
+                "fhir_key": "code",
+                "type": "str",
+            },
         },
     },
 ]
+
 
 class ConditionVerificationStatusCodingTransformer(FhirResourceTransformer):
     """
@@ -50,4 +57,6 @@ class ConditionVerificationStatusCodingTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Condition", "verification_status_coding", TRANSFORM_SCHEMA)
+        super().__init__(
+            "Condition", "verification_status_coding", TRANSFORM_SCHEMA
+        )

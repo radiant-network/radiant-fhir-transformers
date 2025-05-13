@@ -19,17 +19,21 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "id",
         "is_foreign_key": True,
         "columns": {
-            "condition_id": { "type": "str"},
+            "condition_id": {"type": "str"},
         },
     },
     {
         "fhir_path": "clinicalStatus.coding",
         "columns": {
-            "clinical_status_coding_system": {"fhir_key": "system", "type": "str"},
+            "clinical_status_coding_system": {
+                "fhir_key": "system",
+                "type": "str",
+            },
             "clinical_status_coding_code": {"fhir_key": "code", "type": "str"},
         },
     },
 ]
+
 
 class ConditionClinicalStatusCodingTransformer(FhirResourceTransformer):
     """
@@ -50,4 +54,6 @@ class ConditionClinicalStatusCodingTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Condition", "clinical_status_coding", TRANSFORM_SCHEMA)
+        super().__init__(
+            "Condition", "clinical_status_coding", TRANSFORM_SCHEMA
+        )
