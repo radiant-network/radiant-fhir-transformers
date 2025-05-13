@@ -147,7 +147,10 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "occurrencePeriod",
         "columns": {
-            "occurrence_period_start": {"fhir_key": "start", "type": "datetime"},
+            "occurrence_period_start": {
+                "fhir_key": "start",
+                "type": "datetime",
+            },
             "occurrence_period_end": {"fhir_key": "end", "type": "datetime"},
         },
     },

@@ -50,8 +50,7 @@ from tests.data.service_request import (
     ServiceRequestRelevantHistoryTestHelper,
     ServiceRequestReplacesTestHelper,
     ServiceRequestSpecimenTestHelper,
-    ServiceRequestSupportingInfoTestHelper
-
+    ServiceRequestSupportingInfoTestHelper,
 )
 
 test_helpers = [
