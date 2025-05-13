@@ -10,6 +10,8 @@ from .specimen_processing import SpecimenProcessingTransformer
 from .specimen_request import SpecimenRequestTransformer
 from .specimen_parent import SpecimenParentTransformer
 from .specimen_note import SpecimenNoteTransformer
-from .specimen_collection_method_coding import SpecimenCollectionMethodCodingTransformer
+from .specimen_collection_method_coding import (
+    SpecimenCollectionMethodCodingTransformer,
+)
 from .specimen_condition import SpecimenConditionTransformer
 from .specimen_container import SpecimenContainerTransformer

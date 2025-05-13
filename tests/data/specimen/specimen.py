@@ -20,9 +20,9 @@ EXPECTED_OUTPUT = [
         "accession_identifier_period": None,
         "accession_identifier_assigner_reference": None,
         "accession_identifier_assigner_display": None,
-        "type_text":"venous blood",
-        "subject_reference":"example",
-        "subject_display":"Peter Patient",
+        "type_text": "venous blood",
+        "subject_reference": "example",
+        "subject_display": "Peter Patient",
         "received_time": "2011-03-04T07:03:00Z",
         "collection_collector_reference": "example",
         "collection_collector_display": None,
@@ -36,17 +36,16 @@ EXPECTED_OUTPUT = [
         "collection_duration_code": None,
         "collection_quantity_value": 6,
         "collection_quantity_unit": "mL",
-        "collection_quantity_system":None,
-        "collection_quantity_code":None,
+        "collection_quantity_system": None,
+        "collection_quantity_code": None,
         "collection_method_text": "Venous Line",
-        "collection_body_site_text": "Right median cubital vein", 
+        "collection_body_site_text": "Right median cubital vein",
         "collection_fasting_status_duration_value": "3",
         "collection_fasting_status_duration_comparator": None,
         "collection_fasting_status_duration_unit": "days",
         "collection_fasting_status_duration_system": "ucum.org",
         "collection_fasting_status_duration_code": "3d",
-        "collection_fasting_status_codeable_concept_text": "fasting since midnight"
-
+        "collection_fasting_status_codeable_concept_text": "fasting since midnight",
     }
 ]
 

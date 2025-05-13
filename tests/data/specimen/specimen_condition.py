@@ -13,12 +13,24 @@ EXPECTED_OUTPUT = [
     {
         "specimen_id": "101",
         "condition_text": "example_condition",
-        "condition_coding": [{'system': 'http://snomed.info/sct', 'code': 'abc1', 'display': 'bad heart'}],
+        "condition_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "abc1",
+                "display": "bad heart",
+            }
+        ],
     },
     {
         "specimen_id": "101",
         "condition_text": "example_condition_2",
-        "condition_coding": [{'system': 'http://snomed.info/sct', 'code': 'abc3', 'display': 'worse heart'}],
+        "condition_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "abc3",
+                "display": "worse heart",
+            }
+        ],
     },
 ]
 

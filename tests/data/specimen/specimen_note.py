@@ -12,11 +12,11 @@ from .specimen import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "specimen_id": "101",
-        "note_text":"Specimen is grossly lipemic",
+        "note_text": "Specimen is grossly lipemic",
         "note_author_string": "Doctor Judy",
         "note_author_reference_reference": None,
         "note_author_reference_display": None,
-        "note_time":"2011-03-01T07:03:00Z"
+        "note_time": "2011-03-01T07:03:00Z",
     },
 ]
 

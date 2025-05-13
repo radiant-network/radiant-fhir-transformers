@@ -24,9 +24,18 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "collection.method.coding",
         "columns": {
-            "collection_method_coding_system": {"fhir_key": "system", "type": "str"},
-            "collection_method_coding_code": {"fhir_key": "code", "type": "str"},
-            "collection_method_coding_display": {"fhir_key": "display", "type": "str"},
+            "collection_method_coding_system": {
+                "fhir_key": "system",
+                "type": "str",
+            },
+            "collection_method_coding_code": {
+                "fhir_key": "code",
+                "type": "str",
+            },
+            "collection_method_coding_display": {
+                "fhir_key": "display",
+                "type": "str",
+            },
         },
     },
 ]
@@ -51,4 +60,6 @@ class SpecimenCollectionMethodCodingTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("Specimen", "collection_method_coding", TRANSFORM_SCHEMA)
+        super().__init__(
+            "Specimen", "collection_method_coding", TRANSFORM_SCHEMA
+        )

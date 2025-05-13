@@ -12,7 +12,7 @@ from .specimen import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "specimen_id": "101",
-        "container_identifier": [{'value': '48736-15394-75465'}],
+        "container_identifier": [{"value": "48736-15394-75465"}],
         "container_description": "Green Gel tube",
         "container_type_text": "Vacutainer",
         "container_type_coding": None,
@@ -20,14 +20,14 @@ EXPECTED_OUTPUT = [
         "container_capacity_unit": "mL",
         "container_capacity_system": None,
         "container_capacity_code": None,
-        "container_specimen_quantity_value":6,
-        "container_specimen_quantity_unit":"mL",
-        "container_specimen_quantity_system":None,
-        "container_specimen_quantity_code":None,
-        "container_specimen_additive_codeable_concept_text":None,
-        "container_specimen_additive_codeable_concept_coding":None,
-        "container_specimen_additive_reference_reference":None,
-        "container_specimen_additive_reference_display":None
+        "container_specimen_quantity_value": 6,
+        "container_specimen_quantity_unit": "mL",
+        "container_specimen_quantity_system": None,
+        "container_specimen_quantity_code": None,
+        "container_specimen_additive_codeable_concept_text": None,
+        "container_specimen_additive_codeable_concept_coding": None,
+        "container_specimen_additive_reference_reference": None,
+        "container_specimen_additive_reference_display": None,
     },
 ]
 

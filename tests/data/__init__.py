@@ -28,7 +28,7 @@ from tests.data.medication import (
     MedicationFormCodingTestHelper,
     MedicationIngredientTestHelper,
 )
-from tests.data.specimen import(
+from tests.data.specimen import (
     SpecimenTestHelper,
     SpecimenCollectionBodySiteCodingTestHelper,
     SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper,
@@ -39,7 +39,7 @@ from tests.data.specimen import(
     SpecimenParentTestHelper,
     SpecimenRequestTestHelper,
     SpecimenProcessingTestHelper,
-    SpecimenTypeCodingTestHelper
+    SpecimenTypeCodingTestHelper,
 )
 
 test_helpers = [
@@ -73,5 +73,5 @@ test_helpers = [
     SpecimenParentTestHelper,
     SpecimenRequestTestHelper,
     SpecimenProcessingTestHelper,
-    SpecimenTypeCodingTestHelper
+    SpecimenTypeCodingTestHelper,
 ]

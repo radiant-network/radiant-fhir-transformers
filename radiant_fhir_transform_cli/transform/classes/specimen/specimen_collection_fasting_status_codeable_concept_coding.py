@@ -42,7 +42,9 @@ TRANSFORM_SCHEMA = [
 ]
 
 
-class SpecimenCollectionFastingStatusCodeableConceptCodingTransformer(FhirResourceTransformer):
+class SpecimenCollectionFastingStatusCodeableConceptCodingTransformer(
+    FhirResourceTransformer
+):
     """
     Transformer class for the 'Specimen' resource in FHIR, focusing on the 'collection.fastingStatusCodeableConcept.coding' element.
 
@@ -62,5 +64,7 @@ class SpecimenCollectionFastingStatusCodeableConceptCodingTransformer(FhirResour
 
     def __init__(self):
         super().__init__(
-            "Specimen", "collection_fasting_status_codeable_concept_coding", TRANSFORM_SCHEMA
+            "Specimen",
+            "collection_fasting_status_codeable_concept_coding",
+            TRANSFORM_SCHEMA,
         )
