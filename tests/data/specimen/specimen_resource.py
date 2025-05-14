@@ -40,8 +40,11 @@ RESOURCE = {
         ],
         "text": "venous blood",
     },
-    "subject": {"reference": "Patient/example", "display": "Peter Patient",
-                "type":"Patient"},
+    "subject": {
+        "reference": "Patient/example",
+        "display": "Peter Patient",
+        "type": "Patient",
+    },
     "receivedTime": "2011-03-04T07:03:00Z",
     "request": [{"reference": "ServiceRequest/example"}],
     "collection": {
