@@ -36,7 +36,7 @@ class SpecimenConditionTransformer(FhirResourceTransformer):
     Transformer class for the 'Specimen' resource in FHIR, focusing on the 'condition' element.
 
     This class transforms FHIR Specimen JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'category' field.
+    extracting and processing information from the 'condition' field.
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Specimen').

@@ -37,7 +37,7 @@ class SpecimenTypeCodingTransformer(FhirResourceTransformer):
     Transformer class for the 'Specimen' resource in FHIR, focusing on the 'type.coding' element.
 
     This class transforms FHIR Specimen JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'category.coding' field.
+    extracting and processing information from the 'type.coding' field.
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Specimen').

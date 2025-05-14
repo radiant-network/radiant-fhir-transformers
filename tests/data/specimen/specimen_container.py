@@ -28,6 +28,7 @@ EXPECTED_OUTPUT = [
         "container_specimen_additive_codeable_concept_coding": None,
         "container_specimen_additive_reference_reference": None,
         "container_specimen_additive_reference_display": None,
+        "container_specimen_additive_reference_type":None,
     },
 ]
 

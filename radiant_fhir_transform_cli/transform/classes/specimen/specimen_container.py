@@ -77,6 +77,10 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "specimen.additiveReference.display",
                 "type": "str",
             },
+            "container_specimen_additive_reference_type": {
+                "fhir_key": "specimen.additiveReference.type",
+                "type": "str",
+            },
         },
     },
 ]

@@ -33,6 +33,10 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "display",
                 "type": "str",
             },
+            "parent_type": {
+                "fhir_key": "type",
+                "type": "str",
+            },
         },
     },
 ]
@@ -43,7 +47,7 @@ class SpecimenParentTransformer(FhirResourceTransformer):
     Transformer class for the 'Specimen' resource in FHIR, focusing on the 'parent' element.
 
     This class transforms FHIR Specimen JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'extension' field.
+    extracting and processing information from the 'parent' field.
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Specimen').

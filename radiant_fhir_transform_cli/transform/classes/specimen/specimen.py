@@ -26,8 +26,12 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "accession_identifier_value": {"fhir_key": "value", "type": "str"},
-            "accession_identifier_period": {
-                "fhir_key": "period",
+            "accession_identifier_period_start": {
+                "fhir_key": "period.start",
+                "type": "str",
+            },
+            "accession_identifier_period_end": {
+                "fhir_key": "period.end",
                 "type": "str",
             },
             "accession_identifier_assigner_reference": {
@@ -36,6 +40,10 @@ TRANSFORM_SCHEMA = [
             },
             "accession_identifier_assigner_display": {
                 "fhir_key": "assigner.display",
+                "type": "str",
+            },
+            "accession_identifier_assigner_type": {
+                "fhir_key": "assigner.type",
                 "type": "str",
             },
         },
@@ -57,6 +65,10 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "subject_display": {"fhir_key": "display", "type": "str"},
+            "subject_type": {
+                "fhir_key": "type",
+                "type": "str",
+            },
         },
     },
     {
@@ -73,6 +85,10 @@ TRANSFORM_SCHEMA = [
             },
             "collection_collector_display": {
                 "fhir_key": "display",
+                "type": "str",
+            },
+            "collection_collector_type": {
+                "fhir_key": "type",
                 "type": "str",
             },
         },
@@ -95,7 +111,7 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "collection.Duration",
+        "fhir_path": "collection.duration",
         "columns": {
             "collection_duration_value": {
                 "fhir_key": "value",

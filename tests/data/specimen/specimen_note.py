@@ -16,6 +16,7 @@ EXPECTED_OUTPUT = [
         "note_author_string": "Doctor Judy",
         "note_author_reference_reference": None,
         "note_author_reference_display": None,
+    "note_author_reference_type": None,
         "note_time": "2011-03-01T07:03:00Z",
     },
 ]

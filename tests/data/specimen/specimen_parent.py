@@ -14,6 +14,7 @@ EXPECTED_OUTPUT = [
         "specimen_id": "101",
         "parent_reference": "example1",
         "parent_display": "Whole Blood",
+        "parent_type":None,
     },
 ]
 
