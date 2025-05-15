@@ -194,7 +194,6 @@ class FhirResourceTransformer:
         )
         for config in transformation_schema.configs:
             fhir_path_expression = config.fhir_path
-
             raw_items = (
                 evaluate(resource_dict, fhir_path_expression)
                 if fhir_path_expression
