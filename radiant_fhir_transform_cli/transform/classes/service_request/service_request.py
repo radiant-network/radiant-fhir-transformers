@@ -108,12 +108,25 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "quantity_range_low_unit": {"fhir_key": "low.unit", "type": "str"},
+            "quantity_range_low_system": {
+                "fhir_key": "low.system",
+                "type": "str",
+            },
+            "quantity_range_low_code": {"fhir_key": "low.code", "type": "str"},
             "quantity_range_high_value": {
                 "fhir_key": "high.value",
                 "type": "str",
             },
             "quantity_range_high_unit": {
                 "fhir_key": "high.unit",
+                "type": "str",
+            },
+            "quantity_range_high_system": {
+                "fhir_key": "high.system",
+                "type": "str",
+            },
+            "quantity_range_high_code": {
+                "fhir_key": "high.code",
                 "type": "str",
             },
         },
@@ -127,6 +140,7 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "subject_display": {"fhir_key": "display", "type": "str"},
+            "subject_type": {"fhir_key": "type", "type": "str"},
         },
     },
     {
@@ -138,6 +152,7 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "encounter_display": {"fhir_key": "display", "type": "str"},
+            "encounter_type": {"fhir_key": "type", "type": "str"},
         },
     },
     {
@@ -200,6 +215,7 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "requester_display": {"fhir_key": "display", "type": "str"},
+            "requester_type": {"fhir_key": "type", "type": "str"},
         },
     },
     {
