@@ -6,14 +6,6 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-CONDITION_CATEGORY = "http://terminology.hl7.org/CodeSystem/condition-category"
-CONDITION_CLINICAL_STATUS = (
-    "http://terminology.hl7.org/CodeSystem/condition-clinical"
-)
-CONDITION_VERIFICATION_STATUS = (
-    "http://terminology.hl7.org/CodeSystem/condition-ver-status"
-)
-
 
 TRANSFORM_SCHEMA = [
     {
@@ -57,7 +49,7 @@ TRANSFORM_SCHEMA = [
     # onset
     {
         "fhir_path": "onsetDateTime",
-        "columns": {"onsetDateTime": {"type": "datetime"}},
+        "columns": {"onset_date_time": {"type": "datetime"}},
     },
     {
         "fhir_path": "onsetAge",
@@ -80,18 +72,22 @@ TRANSFORM_SCHEMA = [
         "columns": {
             "onset_range_low_value": {"fhir_key": "low.value", "type": "str"},
             "onset_range_low_unit": {"fhir_key": "low.unit", "type": "str"},
+            "onset_range_low_system": {"fhir_key": "low.system", "type": "str"},
+            "onset_range_low_code": {"fhir_key": "low.code", "type": "str"},
             "onset_range_high_value": {"fhir_key": "high.value", "type": "str"},
             "onset_range_high_unit": {"fhir_key": "high.unit", "type": "str"},
+            "onset_range_high_system": {"fhir_key": "high.system", "type": "str"},
+            "onset_range_high_code": {"fhir_key": "high.code", "type": "str"},
         },
     },
     {
         "fhir_path": "onsetString",
-        "columns": {"onsetString": {"type": "str"}},
+        "columns": {"onset_string": {"type": "str"}},
     },
     # abatement
     {
         "fhir_path": "abatementDateTime",
-        "columns": {"abatementDateTime": {"type": "datetime"}},
+        "columns": {"abatement_date_time": {"type": "datetime"}},
     },
     {
         "fhir_path": "abatementAge",
@@ -112,29 +108,24 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "abatementRange",
         "columns": {
-            "abatement_range_low_value": {
-                "fhir_key": "low.value",
-                "type": "str",
-            },
+            "abatement_range_low_value": {"fhir_key": "low.value", "type": "str"},
             "abatement_range_low_unit": {"fhir_key": "low.unit", "type": "str"},
-            "abatement_range_high_value": {
-                "fhir_key": "high.value",
-                "type": "str",
-            },
-            "abatement_range_high_unit": {
-                "fhir_key": "high.unit",
-                "type": "str",
-            },
+            "abatement_range_low_system": {"fhir_key": "low.system", "type": "str"},
+            "abatement_range_low_code": {"fhir_key": "low.code", "type": "str"},
+            "abatement_range_high_value": {"fhir_key": "high.value", "type": "str"},
+            "abatement_range_high_unit": {"fhir_key": "high.unit", "type": "str"},
+            "abatement_range_high_system": {"fhir_key": "high.system", "type": "str"},
+            "abatement_range_high_code": {"fhir_key": "high.code", "type": "str"},
         },
     },
     {
         "fhir_path": "abatementString",
-        "columns": {"abatementString": {"type": "str"}},
+        "columns": {"abatement_string": {"type": "str"}},
     },
     # recorded Date
     {
         "fhir_path": "recordedDate",
-        "columns": {"recordedDate": {"type": "datetime"}},
+        "columns": {"recorded_date": {"type": "datetime"}},
     },
     # recorder
     {
