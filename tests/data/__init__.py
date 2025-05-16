@@ -29,6 +29,18 @@ from tests.data.medication import (
     MedicationIngredientTestHelper,
 )
 
+from tests.data.condition import (
+    ConditionTestHelper,
+    ConditionIdentifierTestHelper,
+    ConditionSeverityCodingTestHelper,
+    ConditionClinicalStatusCodingTestHelper,
+    ConditionVerificationStatusCodingTestHelper,
+    ConditionCodeCodingTestHelper,
+    ConditionBodySiteCodingTestHelper,
+    ConditionCategoryTestHelper,
+    ConditionEvidenceTestHelper,
+)
+
 test_helpers = [
     PatientTestHelper,
     ObservationTestHelper,
@@ -50,4 +62,13 @@ test_helpers = [
     MedicationCodeCodingTestHelper,
     MedicationFormCodingTestHelper,
     MedicationIngredientTestHelper,
+    ConditionTestHelper,
+    ConditionIdentifierTestHelper,
+    ConditionSeverityCodingTestHelper,
+    ConditionClinicalStatusCodingTestHelper,
+    ConditionVerificationStatusCodingTestHelper,
+    ConditionCodeCodingTestHelper,
+    ConditionBodySiteCodingTestHelper,
+    ConditionCategoryTestHelper,
+    ConditionEvidenceTestHelper,
 ]
