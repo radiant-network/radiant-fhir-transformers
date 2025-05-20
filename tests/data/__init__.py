@@ -40,6 +40,7 @@ from tests.data.specimen import (
     SpecimenRequestTestHelper,
     SpecimenProcessingTestHelper,
     SpecimenTypeCodingTestHelper,
+    SpecimenIdentifierTestHelper,
 )
 
 test_helpers = [
@@ -73,5 +74,6 @@ test_helpers = [
     SpecimenParentTestHelper,
     SpecimenRequestTestHelper,
     SpecimenProcessingTestHelper,
+    SpecimenIdentifierTestHelper,
     SpecimenTypeCodingTestHelper,
 ]

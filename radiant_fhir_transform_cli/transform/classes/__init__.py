@@ -45,6 +45,7 @@ from radiant_fhir_transform_cli.transform.classes.specimen import (
     SpecimenProcessingTransformer,
     SpecimenRequestTransformer,
     SpecimenNoteTransformer,
+    SpecimenIdentifierTransformer
 )
 
 # Map FHIR resource type to its transformer class
@@ -87,5 +88,6 @@ transformers = {
         SpecimenProcessingTransformer,
         SpecimenRequestTransformer,
         SpecimenNoteTransformer,
+        SpecimenIdentifierTransformer,
     ],
 }
