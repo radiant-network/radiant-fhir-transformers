@@ -15,3 +15,4 @@ from .specimen_collection_method_coding import (
 )
 from .specimen_condition import SpecimenConditionTransformer
 from .specimen_container import SpecimenContainerTransformer
+from .specimen_identifier import SpecimenIdentifierTransformer
