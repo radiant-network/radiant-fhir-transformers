@@ -66,6 +66,7 @@ from tests.data.medication_request import (
 from tests.data.diagnostic_report import (
     DiagnosticReportIdentifierTestHelper,
     DiagnosticReportTestHelper,
+    DiagnosticReportBasedOnTestHelper,
 )
 
 test_helpers = [
@@ -122,4 +123,5 @@ test_helpers = [
     MedicationRequestEventHistoryTestHelper,
     DiagnosticReportIdentifierTestHelper,
     DiagnosticReportTestHelper,
+    DiagnosticReportBasedOnTestHelper,
 ]

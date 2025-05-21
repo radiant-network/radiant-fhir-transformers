@@ -18,6 +18,7 @@ RESOURCE = {
         {"system": "http://acme.com/lab/reports", "value": "5234342"}
     ],
     "status": "final",
+    "basedOn": [{"reference": "ServiceRequest/req"}],
     "category": [
         {
             "coding": [
