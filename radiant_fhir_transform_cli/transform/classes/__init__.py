@@ -140,5 +140,5 @@ transformers = {
     "DiagnosticReport": [
         DiagnosticReportIdentifierTransformer,
         DiagnosticReportTransformer,
-    ]
+    ],
 }

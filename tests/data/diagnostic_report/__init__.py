@@ -1,1 +1,2 @@
 from .diagnostic_report_identifier import DiagnosticReportIdentifierTestHelper
+from .diagnostic_report import DiagnosticReportTestHelper
