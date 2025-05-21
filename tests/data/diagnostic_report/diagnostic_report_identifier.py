@@ -11,7 +11,7 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "r1",
+        "diagnostic_report_id": "101",
         "identifier_use": None,
         "identifier_system": "http://acme.com/lab/reports",
         "identifier_value": "5234342",
