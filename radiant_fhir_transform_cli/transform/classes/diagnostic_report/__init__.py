@@ -8,3 +8,6 @@ from .diagnostic_report_result import DiagnosticReportResultTransformer
 from .diagnostic_report_presented_form import (
     DiagnosticReportPresentedFormTransformer,
 )
+from .diagnostic_report_conclusion_code import (
+    DiagnosticReportConclusionCodeTransformer,
+)

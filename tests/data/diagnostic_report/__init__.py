@@ -8,3 +8,6 @@ from .diagnostic_report_result import DiagnosticReportResultTestHelper
 from .diagnostic_report_presented_form import (
     DiagnosticReportPresentedFormTestHelper,
 )
+from .diagnostic_report_conclusion_code import (
+    DiagnosticReportConclusionCodeTestHelper,
+)

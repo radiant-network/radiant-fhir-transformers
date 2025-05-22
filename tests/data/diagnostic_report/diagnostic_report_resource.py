@@ -70,6 +70,17 @@ RESOURCE = {
         {"reference": "Observation/r17"},
     ],
     "conclusion": "Core lab",
+    "conclusionCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "428763004",
+                    "display": "Bacteremia due to staphylococcus",
+                }
+            ]
+        }
+    ],
     "presentedForm": [
         {
             "contentType": "application/pdf",
