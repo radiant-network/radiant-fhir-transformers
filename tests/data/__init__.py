@@ -69,6 +69,7 @@ from tests.data.diagnostic_report import (
     DiagnosticReportBasedOnTestHelper,
     DiagnosticReportCategoryTestHelper,
     DiagnosticReportCodeCodingTestHelper,
+    DiagnosticReportPerformerTestHelper,
 )
 
 test_helpers = [
@@ -128,4 +129,5 @@ test_helpers = [
     DiagnosticReportBasedOnTestHelper,
     DiagnosticReportCategoryTestHelper,
     DiagnosticReportCodeCodingTestHelper,
+    DiagnosticReportPerformerTestHelper,
 ]

@@ -3,3 +3,4 @@ from .diagnostic_report import DiagnosticReportTestHelper
 from .diagnostic_report_based_on import DiagnosticReportBasedOnTestHelper
 from .diagnostic_report_category import DiagnosticReportCategoryTestHelper
 from .diagnostic_report_code_coding import DiagnosticReportCodeCodingTestHelper
+from .diagnostic_report_performer import DiagnosticReportPerformerTestHelper
