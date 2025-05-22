@@ -30,6 +30,7 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "supporting_info_display": {"fhir_key": "display", "type": "str"},
+            "supporting_info_type": {"fhir_key": "type", "type": "str"},
         },
     },
 ]
