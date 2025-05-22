@@ -2,3 +2,4 @@ from .diagnostic_report import DiagnosticReportTransformer
 from .diagnostic_report_identifier import DiagnosticReportIdentifierTransformer
 from .diagnostic_report_based_on import DiagnosticReportBasedOnTransformer
 from .diagnostic_report_category import DiagnosticReportCategoryTransformer
+from .diagnostic_report_code_coding import DiagnosticReportCodeCodingTransformer
