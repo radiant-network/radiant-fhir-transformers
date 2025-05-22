@@ -16,8 +16,8 @@ EXPECTED_OUTPUT = [
         "identifier_system": "urn:oid:1.3.4.5.6.7",
         "identifier_value": "2345234234234",
         "identifier_period_start": None,
-        "identifier_period_end":None,
-        "identifier_use":None,
+        "identifier_period_end": None,
+        "identifier_use": None,
     },
 ]
 

@@ -14,7 +14,7 @@ EXPECTED_OUTPUT = [
         "service_request_id": "di_abcd_efg",
         "location_code_coding": None,
         "location_code_text": "Pediatrics",
-        "location_code_type":None,
+        "location_code_type": None,
     },
 ]
 

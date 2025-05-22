@@ -14,7 +14,7 @@ EXPECTED_OUTPUT = [
         "service_request_id": "di_abcd_efg",
         "supporting_info_reference": "#fasting",
         "supporting_info_display": "Fasting status",
-        "supporting_info_type":None,
+        "supporting_info_type": None,
     },
 ]
 

@@ -40,9 +40,9 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "subject.display",
                 "type": "str",
             },
-            "contained_subject_type":{
+            "contained_subject_type": {
                 "fhir_key": "subject.type",
-                "type": "str",                
+                "type": "str",
             },
             "contained_collection_collected_date_time": {
                 "fhir_key": "collection.collectedDateTime",
