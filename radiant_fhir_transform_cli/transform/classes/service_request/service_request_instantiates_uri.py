@@ -40,13 +40,13 @@ class ServiceRequestInstantiatesUriTransformer(FhirResourceTransformer):
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('ServiceRequest').
-        subtype (str): Specifies the sub-element of the resource to focus on ('instantiatesUri').
+        subtype (str): Specifies the sub-element of the resource to focus on ('instantiates_uri').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
         __init__():
             Initializes the ServiceRequestInstantiatesUriTransformer instance with the resource type 'ServiceRequest',
-            subtype 'instantiatesUri', and the specified transformation dictionary.
+            subtype 'instantiates_uri', and the specified transformation dictionary.
     """
 
     def __init__(self):

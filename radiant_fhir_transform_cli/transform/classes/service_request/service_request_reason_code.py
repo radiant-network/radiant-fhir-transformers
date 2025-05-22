@@ -41,7 +41,7 @@ class ServiceRequestReasonCodeTransformer(FhirResourceTransformer):
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('ServiceRequest').
-        subtype (str): Specifies the sub-element of the resource to focus on ('reasonCode').
+        subtype (str): Specifies the sub-element of the resource to focus on ('reason_code').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:

@@ -45,13 +45,13 @@ class ServiceRequestRelevantHistoryTransformer(FhirResourceTransformer):
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('ServiceRequest').
-        subtype (str): Specifies the sub-element of the resource to focus on ('relevantHistory').
+        subtype (str): Specifies the sub-element of the resource to focus on ('relevant_history').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
         __init__():
             Initializes the ServiceRequestRelevantHistoryTransformer instance with the resource type 'ServiceRequest',
-            subtype 'relevantHistory', and the specified transformation dictionary.
+            subtype 'relevant_history', and the specified transformation dictionary.
     """
 
     def __init__(self):

@@ -45,13 +45,13 @@ class ServiceRequestSupportingInfoTransformer(FhirResourceTransformer):
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('ServiceRequest').
-        subtype (str): Specifies the sub-element of the resource to focus on ('supportingInfo').
+        subtype (str): Specifies the sub-element of the resource to focus on ('supporting_info').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
         __init__():
             Initializes the ServiceRequestPerformerTransformer instance with the resource type 'ServiceRequest',
-            subtype 'supportingInfo', and the specified transformation dictionary.
+            subtype 'supporting_info', and the specified transformation dictionary.
     """
 
     def __init__(self):
