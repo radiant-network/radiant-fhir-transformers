@@ -12,3 +12,6 @@ from .diagnostic_report_conclusion_code import (
     DiagnosticReportConclusionCodeTestHelper,
 )
 from .diagnostic_report_media import DiagnosticReportMediaTestHelper
+from .diagnostic_report_imaging_study import (
+    DiagnosticReportImagingStudyTestHelper,
+)

@@ -90,6 +90,12 @@ RESOURCE = {
             },
         }
     ],
+    "imagingStudy": [
+        {
+            "reference": "ImagingStudy/myimage",
+            "display": "some Mri image",
+        },
+    ],
     "presentedForm": [
         {
             "contentType": "application/pdf",

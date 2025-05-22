@@ -12,3 +12,6 @@ from .diagnostic_report_conclusion_code import (
     DiagnosticReportConclusionCodeTransformer,
 )
 from .diagnostic_report_media import DiagnosticReportMediaTransformer
+from .diagnostic_report_imaging_study import (
+    DiagnosticReportImagingStudyTransformer,
+)
