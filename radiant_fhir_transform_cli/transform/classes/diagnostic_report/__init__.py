@@ -18,3 +18,4 @@ from .diagnostic_report_imaging_study import (
 from .diagnostic_report_results_interpreter import (
     DiagnosticReportResultsInterpreterTransformer,
 )
+from .diagnostic_report_specimen import DiagnosticReportSpecimenTransformer

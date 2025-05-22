@@ -81,6 +81,11 @@ RESOURCE = {
             ]
         }
     ],
+    "specimen": [
+        {"reference": "Specimen/rtt", "display": "Red Top Tube"},
+        {"reference": "Specimen/ltt", "display": "Lavender Top Tube"},
+        {"reference": "Specimen/urine", "display": "Urine Sample"},
+    ],
     "media": [
         {
             "comment": "some comment",
