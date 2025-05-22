@@ -14,12 +14,11 @@ EXPECTED_OUTPUT = [
         "diagnostic_report_id": "101",
         "presented_form_content_type": "application/pdf",
         "presented_form_language": "en-AU",
-        # TODO: how to handle base64binary data type input?
-        # "presentedForm_data":"",
+        # note: per natasha, the presentedForm.data field is an actual binary attachment and we need to handle it differently
+        # "presented_form_data":"",
         "presented_form_url": None,
         "presented_form_size": None,
-        # TODO: how to handle base64binary data type input?
-        # "presented_form_hash": "",
+        "presented_form_hash": "L9ThxnotKPzthJ7hu3bnORuT6xI=",
         "presented_form_title": "HTML Report",
         "presented_form_creation": None,
     }

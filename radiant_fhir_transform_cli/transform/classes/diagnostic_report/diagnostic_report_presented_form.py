@@ -30,12 +30,11 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "presented_form_language": {"fhir_key": "language", "type": "str"},
-            # TODO: how to handle base64binary data type input?
-            # "presentedForm_data": {"fhir_key": "type","type": "str",},
+            # note: per natasha, the presentedForm.data field is an actual binary attachment and we need to handle it differently
+            # "presented_form_data": {"fhir_key": "type","type": "str",},
             "presented_form_url": {"fhir_key": "url", "type": "str"},
             "presented_form_size": {"fhir_key": "size", "type": "int"},
-            # TODO: how to handle base64binary data type input?
-            # "presented_form_hash": {"fhir_key": "hash", "type": "str"},
+            "presented_form_hash": {"fhir_key": "hash", "type": "str"},
             "presented_form_title": {"fhir_key": "title", "type": "str"},
             "presented_form_creation": {"fhir_key": "url", "type": "datetime"},
         },
