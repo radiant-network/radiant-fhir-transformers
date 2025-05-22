@@ -14,6 +14,7 @@ EXPECTED_OUTPUT = [
         "service_request_id": "di_abcd_efg",
         "performer_reference": "Practitioner/f202",
         "performer_display": None,
+        "performer_type":None,
     },
 ]
 
