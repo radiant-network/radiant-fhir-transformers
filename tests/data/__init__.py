@@ -63,6 +63,21 @@ from tests.data.medication_request import (
     MedicationRequestDetectedIssueTestHelper,
     MedicationRequestEventHistoryTestHelper,
 )
+from tests.data.diagnostic_report import (
+    DiagnosticReportIdentifierTestHelper,
+    DiagnosticReportTestHelper,
+    DiagnosticReportBasedOnTestHelper,
+    DiagnosticReportCategoryTestHelper,
+    DiagnosticReportCodeCodingTestHelper,
+    DiagnosticReportPerformerTestHelper,
+    DiagnosticReportResultTestHelper,
+    DiagnosticReportPresentedFormTestHelper,
+    DiagnosticReportConclusionCodeTestHelper,
+    DiagnosticReportMediaTestHelper,
+    DiagnosticReportImagingStudyTestHelper,
+    DiagnosticReportResultsInterpreterTestHelper,
+    DiagnosticReportSpecimenTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -116,4 +131,17 @@ test_helpers = [
     MedicationRequestSubstitutionReasonCodingTestHelper,
     MedicationRequestDetectedIssueTestHelper,
     MedicationRequestEventHistoryTestHelper,
+    DiagnosticReportIdentifierTestHelper,
+    DiagnosticReportTestHelper,
+    DiagnosticReportBasedOnTestHelper,
+    DiagnosticReportCategoryTestHelper,
+    DiagnosticReportCodeCodingTestHelper,
+    DiagnosticReportPerformerTestHelper,
+    DiagnosticReportResultTestHelper,
+    DiagnosticReportPresentedFormTestHelper,
+    DiagnosticReportConclusionCodeTestHelper,
+    DiagnosticReportMediaTestHelper,
+    DiagnosticReportImagingStudyTestHelper,
+    DiagnosticReportResultsInterpreterTestHelper,
+    DiagnosticReportSpecimenTestHelper,
 ]
