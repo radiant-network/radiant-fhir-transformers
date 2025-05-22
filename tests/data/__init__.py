@@ -73,6 +73,7 @@ from tests.data.diagnostic_report import (
     DiagnosticReportResultTestHelper,
     DiagnosticReportPresentedFormTestHelper,
     DiagnosticReportConclusionCodeTestHelper,
+    DiagnosticReportMediaTestHelper,
 )
 
 test_helpers = [
@@ -136,4 +137,5 @@ test_helpers = [
     DiagnosticReportResultTestHelper,
     DiagnosticReportPresentedFormTestHelper,
     DiagnosticReportConclusionCodeTestHelper,
+    DiagnosticReportMediaTestHelper,
 ]

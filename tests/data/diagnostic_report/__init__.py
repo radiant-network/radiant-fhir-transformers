@@ -11,3 +11,4 @@ from .diagnostic_report_presented_form import (
 from .diagnostic_report_conclusion_code import (
     DiagnosticReportConclusionCodeTestHelper,
 )
+from .diagnostic_report_media import DiagnosticReportMediaTestHelper

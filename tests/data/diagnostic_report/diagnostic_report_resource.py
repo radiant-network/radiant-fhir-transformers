@@ -81,6 +81,15 @@ RESOURCE = {
             ]
         }
     ],
+    "media": [
+        {
+            "comment": "some comment",
+            "link": {
+                "reference": "Media/123",
+                "display": "a slide image",
+            },
+        }
+    ],
     "presentedForm": [
         {
             "contentType": "application/pdf",
