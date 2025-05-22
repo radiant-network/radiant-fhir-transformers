@@ -18,6 +18,7 @@ EXPECTED_OUTPUT = [
         "contained_code_text": None,
         "contained_subject_reference": "Patient/example",
         "contained_subject_display": None,
+        "contained_subject_type":None,
         "contained_collection_collected_date_time": None,
     },
     {
