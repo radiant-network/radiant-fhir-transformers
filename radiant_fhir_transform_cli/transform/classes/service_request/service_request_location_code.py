@@ -27,6 +27,7 @@ TRANSFORM_SCHEMA = [
         "columns": {
             "location_code_coding": {"fhir_key": "coding", "type": "str"},
             "location_code_text": {"fhir_key": "text", "type": "str"},
+            "location_code_type": {"fhir_key": "type", "type": "str"},
         },
     },
 ]
