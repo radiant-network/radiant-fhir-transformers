@@ -5,3 +5,6 @@ from .diagnostic_report_category import DiagnosticReportCategoryTransformer
 from .diagnostic_report_code_coding import DiagnosticReportCodeCodingTransformer
 from .diagnostic_report_performer import DiagnosticReportPerformerTransformer
 from .diagnostic_report_result import DiagnosticReportResultTransformer
+from .diagnostic_report_presented_form import (
+    DiagnosticReportPresentedFormTransformer,
+)

@@ -77,6 +77,7 @@ from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
     DiagnosticReportCodeCodingTransformer,
     DiagnosticReportPerformerTransformer,
     DiagnosticReportResultTransformer,
+    DiagnosticReportPresentedFormTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -150,5 +151,6 @@ transformers = {
         DiagnosticReportCodeCodingTransformer,
         DiagnosticReportPerformerTransformer,
         DiagnosticReportResultTransformer,
+        DiagnosticReportPresentedFormTransformer,
     ],
 }
