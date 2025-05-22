@@ -27,6 +27,7 @@ TRANSFORM_SCHEMA = [
         "columns": {
             "specimen_reference": {"fhir_key": "reference", "type": "str"},
             "specimen_display": {"fhir_key": "display", "type": "str"},
+            "specimen_type": {"fhir_key": "type", "type": "str"},
         },
     },
 ]
