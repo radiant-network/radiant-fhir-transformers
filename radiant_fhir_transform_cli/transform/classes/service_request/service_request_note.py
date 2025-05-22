@@ -35,6 +35,10 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "authorReference.display",
                 "type": "str",
             },
+            "note_author_reference_type":{
+                "fhir_key": "authorReference.type",
+                "type": "str",
+            },
             "note_time": {"fhir_key": "time", "type": "datetime"},
         },
     },
