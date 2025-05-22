@@ -54,7 +54,6 @@ from radiant_fhir_transform_cli.transform.classes.medication_request import (
     MedicationRequestDetectedIssueTransformer,
     MedicationRequestEventHistoryTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.specimen import (
     SpecimenTransformer,
     SpecimenCollectionBodySiteCodingTransformer,
@@ -67,6 +66,16 @@ from radiant_fhir_transform_cli.transform.classes.specimen import (
     SpecimenProcessingTransformer,
     SpecimenRequestTransformer,
     SpecimenNoteTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.organization import (
+    OrganizationTransformer,
+    OrganizationIdentifierTransformer,
+    OrganizationTypeTransformer,
+    OrganizationAliasTransformer,
+    OrganizationTelecomTransformer,
+    OrganizationAddressTransformer,
+    OrganizationContactTransformer,
+    OrganizationEndpointTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -131,5 +140,15 @@ transformers = {
         MedicationRequestSubstitutionReasonCodingTransformer,
         MedicationRequestDetectedIssueTransformer,
         MedicationRequestEventHistoryTransformer,
+    ],
+    "Organization": [
+        OrganizationTransformer,
+        OrganizationIdentifierTransformer,
+        OrganizationTypeTransformer,
+        OrganizationAliasTransformer,
+        OrganizationTelecomTransformer,
+        OrganizationAddressTransformer,
+        OrganizationContactTransformer,
+        OrganizationEndpointTransformer,
     ],
 }
