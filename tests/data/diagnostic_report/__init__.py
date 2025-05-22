@@ -15,3 +15,6 @@ from .diagnostic_report_media import DiagnosticReportMediaTestHelper
 from .diagnostic_report_imaging_study import (
     DiagnosticReportImagingStudyTestHelper,
 )
+from .diagnostic_report_results_interpreter import (
+    DiagnosticReportResultsInterpreterTestHelper,
+)

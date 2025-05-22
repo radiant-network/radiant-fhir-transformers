@@ -90,6 +90,12 @@ RESOURCE = {
             },
         }
     ],
+    "resultsInterpreter": [
+        {
+            "reference": "Practitioner/Drdrjr",
+            "display": "Dr. Doctor Jr.",
+        },
+    ],
     "imagingStudy": [
         {
             "reference": "ImagingStudy/myimage",
