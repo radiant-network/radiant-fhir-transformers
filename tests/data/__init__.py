@@ -63,6 +63,16 @@ from tests.data.medication_request import (
     MedicationRequestDetectedIssueTestHelper,
     MedicationRequestEventHistoryTestHelper,
 )
+from tests.data.organization import (
+    OrganizationTestHelper,
+    OrganizationIdentifierTestHelper,
+    OrganizationTypeTestHelper,
+    OrganizationAliasTestHelper,
+    OrganizationTelecomTestHelper,
+    OrganizationAddressTestHelper,
+    OrganizationContactTestHelper,
+    OrganizationEndpointTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -116,4 +126,12 @@ test_helpers = [
     MedicationRequestSubstitutionReasonCodingTestHelper,
     MedicationRequestDetectedIssueTestHelper,
     MedicationRequestEventHistoryTestHelper,
+    OrganizationTestHelper,
+    OrganizationIdentifierTestHelper,
+    OrganizationTypeTestHelper,
+    OrganizationAliasTestHelper,
+    OrganizationTelecomTestHelper,
+    OrganizationAddressTestHelper,
+    OrganizationContactTestHelper,
+    OrganizationEndpointTestHelper,
 ]
