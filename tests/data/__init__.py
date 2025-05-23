@@ -74,6 +74,7 @@ from tests.data.condition import (
     ConditionBodySiteTestHelper,
     ConditionCategoryTestHelper,
     ConditionEvidenceTestHelper,
+    ConditionStageTestHelper,
 )
 
 test_helpers = [
@@ -106,6 +107,7 @@ test_helpers = [
     ConditionBodySiteTestHelper,
     ConditionCategoryTestHelper,
     ConditionEvidenceTestHelper,
+    ConditionStageTestHelper,
     SpecimenTestHelper,
     SpecimenCollectionBodySiteCodingTestHelper,
     SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper,
