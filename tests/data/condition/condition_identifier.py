@@ -17,7 +17,7 @@ EXPECTED_OUTPUT = [
         "identifier_system": None,
         "identifier_period_start": None,
         "identifier_period_end":None,
-        "identifier_text":None,
+        "identifier_type_text":None,
     },
 ]
 

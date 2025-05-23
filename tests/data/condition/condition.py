@@ -47,6 +47,9 @@ EXPECTED_OUTPUT = [
         "recorder_display": None,
         "asserter_reference": "f201",
         "asserter_display": None,
+        "clinical_status_text": None,
+        "verification_status_text": None,
+        "severity_text": None,
     }
 ]
 

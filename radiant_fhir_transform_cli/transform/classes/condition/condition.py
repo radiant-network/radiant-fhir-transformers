@@ -151,6 +151,26 @@ TRANSFORM_SCHEMA = [
             "asserter_display": {"fhir_key": "display", "type": "str"},
         },
     },
+
+    {
+        "fhir_path": "clinicalStatus.text",
+        "columns": {
+            "clinical_status_text": {"type": "str"},
+        },
+    },
+    {
+        "fhir_path": "verificationStatus.text",
+        "columns": {
+            "verification_status_text": {"type": "str"},
+        },
+    },
+    {
+        "fhir_path": "severity.text",
+        "columns": {
+            "severity_text": {"type": "str"},
+        },
+    },
+
 ]
 
 
