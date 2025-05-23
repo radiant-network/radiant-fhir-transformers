@@ -14,6 +14,7 @@ EXPECTED_OUTPUT = [
         "condition_id": "f201",
         "verification_status_coding_system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
         "verification_status_coding_code": "confirmed",
+        "verification_status_coding_display": None,
     },
 ]
 

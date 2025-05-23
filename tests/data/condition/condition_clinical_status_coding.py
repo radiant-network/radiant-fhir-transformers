@@ -14,6 +14,7 @@ EXPECTED_OUTPUT = [
         "condition_id": "f201",
         "clinical_status_coding_system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
         "clinical_status_coding_code": "resolved",
+        "clinical_status_coding_display": None,
     },
 ]
 

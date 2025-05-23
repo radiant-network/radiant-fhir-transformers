@@ -33,6 +33,10 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "code",
                 "type": "str",
             },
+            "verification_status_coding_display": {
+                "fhir_key": "display",
+                "type": "str",
+            },
         },
     },
 ]
