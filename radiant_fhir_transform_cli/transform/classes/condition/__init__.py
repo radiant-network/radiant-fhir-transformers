@@ -8,6 +8,6 @@ from .condition_severity_coding import ConditionSeverityCodingTransformer
 from .condition_verification_status_coding import (
     ConditionVerificationStatusCodingTransformer,
 )
-from .condition_body_site_coding import ConditionBodySiteCodingTransformer
+from .condition_body_site import ConditionBodySiteTransformer
 from .condition_category import ConditionCategoryTransformer
 from .condition_evidence import ConditionEvidenceTransformer

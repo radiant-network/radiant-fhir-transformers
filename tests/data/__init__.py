@@ -36,7 +36,7 @@ from tests.data.condition import (
     ConditionClinicalStatusCodingTestHelper,
     ConditionVerificationStatusCodingTestHelper,
     ConditionCodeCodingTestHelper,
-    ConditionBodySiteCodingTestHelper,
+    ConditionBodySiteTestHelper,
     ConditionCategoryTestHelper,
     ConditionEvidenceTestHelper,
 )
@@ -68,7 +68,7 @@ test_helpers = [
     ConditionClinicalStatusCodingTestHelper,
     ConditionVerificationStatusCodingTestHelper,
     ConditionCodeCodingTestHelper,
-    ConditionBodySiteCodingTestHelper,
+    ConditionBodySiteTestHelper,
     ConditionCategoryTestHelper,
     ConditionEvidenceTestHelper,
 ]

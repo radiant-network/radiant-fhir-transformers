@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type Condition subtype Body Site Coding
+Test helper class for FHIR resource type Condition subtype Body Site 
 """
 
-from radiant_fhir_transform_cli.transform.classes.condition.condition_body_site_coding import (
-    ConditionBodySiteCodingTransformer,
+from radiant_fhir_transform_cli.transform.classes.condition.condition_body_site import (
+    ConditionBodySiteTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -12,14 +12,17 @@ from .condition_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "condition_id": "f201",
-        "body_site_coding_system": "http://snomed.info/sct",
-        "body_site_coding_code": "38266002",
-        "body_site_coding_display": "Entire body as a whole",
+        "body_site_coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "38266002",
+            "display": "Entire body as a whole"
+        }],
+        "body_site_text": None,
     },
 ]
 
 
-class ConditionBodySiteCodingTestHelper(FhirResourceTestHelper):
+class ConditionBodySiteTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Condition' resource.
 
@@ -41,9 +44,9 @@ class ConditionBodySiteCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "body_site_coding"
-    transformer = ConditionBodySiteCodingTransformer
-    expected_table_name = "condition_body_site_coding"
+    resource_subtype = "body_site"
+    transformer = ConditionBodySiteTransformer
+    expected_table_name = "condition_body_site"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)
