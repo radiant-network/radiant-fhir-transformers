@@ -26,12 +26,13 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "subject",
         "fhir_reference": "subject_reference",
-        "columns": {
+          "columns": {
             "subject_reference": {
                 "fhir_key": "reference",
                 "type": "str",
             },
             "subject_display": {"fhir_key": "display", "type": "str"},
+            "subject_type": {"fhir_key": "type", "type": "str"},
         },
     },
     # encounter
@@ -44,6 +45,7 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "encounter_display": {"fhir_key": "display", "type": "str"},
+            "encounter_type": {"fhir_key": "type", "type": "str"},
         },
     },
     # onset
@@ -137,6 +139,7 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "recorder_display": {"fhir_key": "display", "type": "str"},
+            "recorder_type": {"fhir_key": "type", "type": "str"},
         },
     },
     # asserter
@@ -149,6 +152,7 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "asserter_display": {"fhir_key": "display", "type": "str"},
+            "asserter_type": {"fhir_key": "type", "type": "str"},
         },
     },
 
