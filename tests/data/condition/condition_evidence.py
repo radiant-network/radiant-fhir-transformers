@@ -12,11 +12,20 @@ from .condition_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "condition_id": "f201",
-        "evidence_system": "http://snomed.info/sct",
-        "evidence_code": "258710007",
-        "evidence_display": "degrees C",
-        "evidence_detail_reference": "f202",
-        "evidence_detail_display": "Temperature",
+        "evidence_code": [
+                {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "258710007",
+                            "display": "degrees C",
+                        }
+                    ]
+                }
+            ],
+        "evidence_detail": [
+            {"reference": "Observation/f202", "display": "Temperature"}
+        ],
     }
 ]
 

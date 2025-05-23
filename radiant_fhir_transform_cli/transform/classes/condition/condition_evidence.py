@@ -23,22 +23,10 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "evidence.code.coding",
+        "fhir_path": "evidence",
         "columns": {
-            "evidence_system": {"fhir_key": "system", "type": "str"},
             "evidence_code": {"fhir_key": "code", "type": "str"},
-            "evidence_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "evidence.detail",
-        "fhir_reference": "evidence_detail_reference",
-        "columns": {
-            "evidence_detail_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "evidence_detail_display": {"fhir_key": "display", "type": "str"},
+            "evidence_detail": {"fhir_key": "detail", "type": "str"},
         },
     },
 ]
