@@ -69,6 +69,19 @@ from radiant_fhir_transform_cli.transform.classes.specimen import (
     SpecimenNoteTransformer,
 )
 
+from radiant_fhir_transform_cli.transform.classes.condition import (
+    ConditionTransformer,
+    ConditionCodeCodingTransformer,
+    ConditionIdentifierTransformer,
+    ConditionSeverityCodingTransformer,
+    ConditionClinicalStatusCodingTransformer,
+    ConditionVerificationStatusCodingTransformer,
+    ConditionCategoryTransformer,
+    ConditionBodySiteTransformer,
+    ConditionEvidenceTransformer,
+    ConditionStageTransformer,
+)
+
 # Map FHIR resource type to its transformer class
 transformers = {
     "Patient": [PatientTransformer],
@@ -96,6 +109,18 @@ transformers = {
         MedicationCodeCodingTransformer,
         MedicationFormCodingTransformer,
         MedicationIngredientTransformer,
+    ],
+    "Condition": [
+        ConditionTransformer,
+        ConditionCodeCodingTransformer,
+        ConditionIdentifierTransformer,
+        ConditionSeverityCodingTransformer,
+        ConditionClinicalStatusCodingTransformer,
+        ConditionVerificationStatusCodingTransformer,
+        ConditionBodySiteTransformer,
+        ConditionCategoryTransformer,
+        ConditionEvidenceTransformer,
+        ConditionStageTransformer,
     ],
     "Specimen": [
         SpecimenTransformer,

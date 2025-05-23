@@ -64,6 +64,19 @@ from tests.data.medication_request import (
     MedicationRequestEventHistoryTestHelper,
 )
 
+from tests.data.condition import (
+    ConditionTestHelper,
+    ConditionIdentifierTestHelper,
+    ConditionSeverityCodingTestHelper,
+    ConditionClinicalStatusCodingTestHelper,
+    ConditionVerificationStatusCodingTestHelper,
+    ConditionCodeCodingTestHelper,
+    ConditionBodySiteTestHelper,
+    ConditionCategoryTestHelper,
+    ConditionEvidenceTestHelper,
+    ConditionStageTestHelper,
+)
+
 test_helpers = [
     PatientTestHelper,
     ObservationTestHelper,
@@ -85,6 +98,16 @@ test_helpers = [
     MedicationCodeCodingTestHelper,
     MedicationFormCodingTestHelper,
     MedicationIngredientTestHelper,
+    ConditionTestHelper,
+    ConditionIdentifierTestHelper,
+    ConditionSeverityCodingTestHelper,
+    ConditionClinicalStatusCodingTestHelper,
+    ConditionVerificationStatusCodingTestHelper,
+    ConditionCodeCodingTestHelper,
+    ConditionBodySiteTestHelper,
+    ConditionCategoryTestHelper,
+    ConditionEvidenceTestHelper,
+    ConditionStageTestHelper,
     SpecimenTestHelper,
     SpecimenCollectionBodySiteCodingTestHelper,
     SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper,
