@@ -34,20 +34,20 @@ TRANSFORM_SCHEMA = [
 
 class ConditionCategoryTransformer(FhirResourceTransformer):
     """
-    A transformer class for the 'Condition' resource in FHIR, focusing on the 'category.coding' element.
+    A transformer class for the 'Condition' resource in FHIR, focusing on the 'category' element.
 
     This class transforms FHIR Condition JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'category.coding' field.
+    extracting and processing information from the 'category' field.
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Condition').
-        subtype (str): Specifies the sub-element of the resource to focus on ('category_coding').
+        subtype (str): Specifies the sub-element of the resource to focus on ('category').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
         __init__():
-            Initializes the ConditioncategoryCodingTransformer instance with the resource type 'Condition',
-            subtype 'category_coding', and the specified transformation dictionary.
+            Initializes the ConditionCategoryTransformer instance with the resource type 'Condition',
+            subtype 'category', and the specified transformation dictionary.
     """
 
     def __init__(self):
