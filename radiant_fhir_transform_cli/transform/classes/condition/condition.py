@@ -26,7 +26,7 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "subject",
         "fhir_reference": "subject_reference",
-          "columns": {
+        "columns": {
             "subject_reference": {
                 "fhir_key": "reference",
                 "type": "str",
@@ -78,7 +78,10 @@ TRANSFORM_SCHEMA = [
             "onset_range_low_code": {"fhir_key": "low.code", "type": "str"},
             "onset_range_high_value": {"fhir_key": "high.value", "type": "str"},
             "onset_range_high_unit": {"fhir_key": "high.unit", "type": "str"},
-            "onset_range_high_system": {"fhir_key": "high.system", "type": "str"},
+            "onset_range_high_system": {
+                "fhir_key": "high.system",
+                "type": "str",
+            },
             "onset_range_high_code": {"fhir_key": "high.code", "type": "str"},
         },
     },
@@ -110,14 +113,32 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "abatementRange",
         "columns": {
-            "abatement_range_low_value": {"fhir_key": "low.value", "type": "str"},
+            "abatement_range_low_value": {
+                "fhir_key": "low.value",
+                "type": "str",
+            },
             "abatement_range_low_unit": {"fhir_key": "low.unit", "type": "str"},
-            "abatement_range_low_system": {"fhir_key": "low.system", "type": "str"},
+            "abatement_range_low_system": {
+                "fhir_key": "low.system",
+                "type": "str",
+            },
             "abatement_range_low_code": {"fhir_key": "low.code", "type": "str"},
-            "abatement_range_high_value": {"fhir_key": "high.value", "type": "str"},
-            "abatement_range_high_unit": {"fhir_key": "high.unit", "type": "str"},
-            "abatement_range_high_system": {"fhir_key": "high.system", "type": "str"},
-            "abatement_range_high_code": {"fhir_key": "high.code", "type": "str"},
+            "abatement_range_high_value": {
+                "fhir_key": "high.value",
+                "type": "str",
+            },
+            "abatement_range_high_unit": {
+                "fhir_key": "high.unit",
+                "type": "str",
+            },
+            "abatement_range_high_system": {
+                "fhir_key": "high.system",
+                "type": "str",
+            },
+            "abatement_range_high_code": {
+                "fhir_key": "high.code",
+                "type": "str",
+            },
         },
     },
     {
@@ -155,7 +176,6 @@ TRANSFORM_SCHEMA = [
             "asserter_type": {"fhir_key": "type", "type": "str"},
         },
     },
-
     {
         "fhir_path": "clinicalStatus.text",
         "columns": {
@@ -174,7 +194,6 @@ TRANSFORM_SCHEMA = [
             "severity_text": {"type": "str"},
         },
     },
-
 ]
 
 

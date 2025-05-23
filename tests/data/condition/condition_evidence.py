@@ -13,16 +13,16 @@ EXPECTED_OUTPUT = [
     {
         "condition_id": "f201",
         "evidence_code": [
-                {
-                    "coding": [
-                        {
-                            "system": "http://snomed.info/sct",
-                            "code": "258710007",
-                            "display": "degrees C",
-                        }
-                    ]
-                }
-            ],
+            {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "258710007",
+                        "display": "degrees C",
+                    }
+                ]
+            }
+        ],
         "evidence_detail": [
             {"reference": "Observation/f202", "display": "Temperature"}
         ],

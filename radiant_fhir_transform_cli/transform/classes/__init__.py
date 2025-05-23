@@ -119,7 +119,7 @@ transformers = {
         ConditionBodySiteTransformer,
         ConditionCategoryTransformer,
         ConditionEvidenceTransformer,
-    ]
+    ],
     "Specimen": [
         SpecimenTransformer,
         SpecimenCollectionBodySiteCodingTransformer,

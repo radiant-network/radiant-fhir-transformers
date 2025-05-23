@@ -30,8 +30,10 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "clinical_status_coding_code": {"fhir_key": "code", "type": "str"},
-
-            "clinical_status_coding_display": {"fhir_key": "display", "type": "str"},
+            "clinical_status_coding_display": {
+                "fhir_key": "display",
+                "type": "str",
+            },
         },
     },
 ]

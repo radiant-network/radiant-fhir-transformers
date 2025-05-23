@@ -29,7 +29,10 @@ TRANSFORM_SCHEMA = [
             "identifier_system": {"fhir_key": "system", "type": "str"},
             "identifier_value": {"fhir_key": "value", "type": "str"},
             "identifier_type_text": {"fhir_key": "type.text", "type": "str"},
-            "identifier_period_start": {"fhir_key": "period.start", "type": "str"},
+            "identifier_period_start": {
+                "fhir_key": "period.start",
+                "type": "str",
+            },
             "identifier_period_end": {"fhir_key": "period.end", "type": "str"},
         },
     },
