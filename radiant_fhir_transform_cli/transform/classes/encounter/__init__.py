@@ -1,2 +1,3 @@
 from .encounter import EncounterTransformer
 from .encounter_identifier import EncounterIdentifierTransformer
+from .encounter_status_history import EncounterStatusHistoryTransformer
