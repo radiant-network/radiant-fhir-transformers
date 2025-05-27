@@ -1,1 +1,2 @@
 from .encounter import EncounterTestHelper
+from .encounter_identifier import EncounterIdentifierTestHelper

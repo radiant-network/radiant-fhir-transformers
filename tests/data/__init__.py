@@ -66,6 +66,7 @@ from tests.data.medication_request import (
 
 from tests.data.encounter import (
     EncounterTestHelper,
+    EncounterIdentifierTestHelper,
 )
 
 test_helpers = [
@@ -121,4 +122,5 @@ test_helpers = [
     MedicationRequestDetectedIssueTestHelper,
     MedicationRequestEventHistoryTestHelper,
     EncounterTestHelper,
+    EncounterIdentifierTestHelper,
 ]
