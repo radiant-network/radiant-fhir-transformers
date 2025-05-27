@@ -69,6 +69,9 @@ from radiant_fhir_transform_cli.transform.classes.specimen import (
     SpecimenNoteTransformer,
 )
 
+from radiant_fhir_transform_cli.transform.classes.encounter import (
+    EncounterTransformer,)
+
 # Map FHIR resource type to its transformer class
 transformers = {
     "Patient": [PatientTransformer],
@@ -132,4 +135,5 @@ transformers = {
         MedicationRequestDetectedIssueTransformer,
         MedicationRequestEventHistoryTransformer,
     ],
+    "Encounter": [EncounterTransformer],
 }
