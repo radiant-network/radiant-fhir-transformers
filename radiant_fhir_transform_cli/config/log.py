@@ -23,9 +23,9 @@ VERBOTEN_PATTERNS = {
 }
 
 VERBOTEN_PATTERNS['"access_token":".+"'] = '"access_token":"<ACCESS_TOKEN>"'
-VERBOTEN_PATTERNS["'Authorization': '.+'"] = (
-    "'Authorization': '<AUTHORIZATION>'"
-)
+VERBOTEN_PATTERNS[
+    "'Authorization': '.+'"
+] = "'Authorization': '<AUTHORIZATION>'"
 
 MB_50 = 52428800
 MAX_BYTES = MB_50

@@ -25,7 +25,10 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "stage",
         "columns": {
-            "stage_summary_coding": {"fhir_key": "summary.coding", "type": "str"},
+            "stage_summary_coding": {
+                "fhir_key": "summary.coding",
+                "type": "str",
+            },
             "stage_summary_text": {"fhir_key": "summary.text", "type": "str"},
             "stage_assessment": {"fhir_key": "assessment", "type": "str"},
             "stage_type_coding": {"fhir_key": "type.coding", "type": "str"},
