@@ -6,26 +6,35 @@ from radiant_fhir_transform_cli.transform.classes.encounter import (
 )
 from tests.data.base import FhirResourceTestHelper
 from .encounter_resource import RESOURCE
+
 EXPECTED_OUTPUT = [
     {
-        "id": "enc001",
+        "id": "f201",
         "resource_type": "Encounter",
-        "status": "in-progress",
+        "status": "finished",
         "class_code": "AMB",
         "class_system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
         "class_display": "ambulatory",
-        "subject_reference": "#pat001",
-        "subject_type": "Patient",
-        "subject_display": "Patient 1",
-        "period_start": "2023-01-01T10:00:00Z",
-        "period_end": "2023-01-01T11:00:00Z",
-        "length_value": 60.0,
+        "subject_reference": "f201",
+        "subject_type": None,
+        "subject_display": "Roel",
+        "period_start": None,
+        "period_end": None,
+        "length_value": None,
         "length_comparator": None,
-        "length_unit": "min",
-        "length_system": "http://unitsofmeasure.org",
-        "length_code": "[min]",
+        "length_unit": None,
+        "length_system": None,
+        "length_code": None,
+        "service_provider_reference": "f201",
+        "service_provider_type": None,
+        "service_provider_display": None,
+        "part_of_reference": None,
+        "part_of_type": None,
+        "part_of_display": None,
     }
 ]
+
+
 class EncounterTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Encounter' resource.
@@ -46,6 +55,7 @@ class EncounterTestHelper(FhirResourceTestHelper):
 
         expected_table_name (str): The expected name of the table after transformation.
     """
+
     resource_type = "Encounter"
     resource_subtype = None
     transformer = EncounterTransformer

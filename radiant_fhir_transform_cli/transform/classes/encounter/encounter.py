@@ -7,7 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 )
 
 TRANSFORM_SCHEMA = [
-     {
+    {
         "fhir_path": "id",
         "columns": {"id": {"fhir_key": "id", "type": "str"}},
     },
@@ -62,7 +62,10 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "serviceProvider",
         "fhir_reference": "service_provider_reference",
         "columns": {
-            "service_provider_reference": {"fhir_key": "reference", "type": "str"},
+            "service_provider_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
             "service_provider_type": {"fhir_key": "type", "type": "str"},
             "service_provider_display": {"fhir_key": "display", "type": "str"},
         },
@@ -75,8 +78,7 @@ TRANSFORM_SCHEMA = [
             "part_of_type": {"fhir_key": "type", "type": "str"},
             "part_of_display": {"fhir_key": "display", "type": "str"},
         },
-    }
-    
+    },
 ]
 
 

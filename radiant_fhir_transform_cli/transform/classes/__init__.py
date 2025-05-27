@@ -70,7 +70,8 @@ from radiant_fhir_transform_cli.transform.classes.specimen import (
 )
 
 from radiant_fhir_transform_cli.transform.classes.encounter import (
-    EncounterTransformer,)
+    EncounterTransformer,
+)
 
 # Map FHIR resource type to its transformer class
 transformers = {
