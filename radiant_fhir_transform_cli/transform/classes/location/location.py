@@ -51,6 +51,7 @@ TRANSFORM_SCHEMA = [
             "address_use": {"fhir_key": "use", "type": "str"},
             "address_type": {"fhir_key": "type", "type": "str"},
             "address_text": {"fhir_key": "text", "type": "str"},
+            "address_line": {"fhir_key": "line", "type": "str"},
             "address_city": {"fhir_key": "city", "type": "str"},
             "address_district": {"fhir_key": "district", "type": "str"},
             "address_state": {"fhir_key": "state", "type": "str"},

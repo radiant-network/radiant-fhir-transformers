@@ -23,6 +23,7 @@ EXPECTED_OUTPUT = [
         "address_use": None,
         "address_type": None,
         "address_text": None,
+        "address_line": ["550 South Goddard Blvd"],
         "address_city": "King of Prussia",
         "address_district": None,
         "address_state": "Pennsylvania",

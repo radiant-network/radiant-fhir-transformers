@@ -3,7 +3,6 @@ from .location_identifier import LocationIdentifierTransformer
 from .location_alias import LocationAliasTransformer
 from .location_type import LocationTypeTransformer
 from .location_telecom import LocationTelecomTransformer
-from .location_address_line import LocationAddressLineTransformer
 from .location_physical_type_coding import LocationPhysicalTypeCodingTransformer
 from .location_hours_of_operation import LocationHoursOfOperationTransformer
 from .location_endpoint import LocationEndpointTransformer
