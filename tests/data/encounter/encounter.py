@@ -1,6 +1,7 @@
 """
 Test helper class for FHIR resource type Encounter
 """
+
 from radiant_fhir_transform_cli.transform.classes.encounter import (
     EncounterTransformer,
 )

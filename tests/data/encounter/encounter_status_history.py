@@ -3,7 +3,7 @@ Test helper class for FHIR resource type Encounter subtype StatusHistory
 """
 
 from radiant_fhir_transform_cli.transform.classes.encounter import (
-    EncounterStatusHistoryTransformer
+    EncounterStatusHistoryTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -17,6 +17,7 @@ EXPECTED_OUTPUT = [
         "status_history_period_end": None,
     },
 ]
+
 
 class EncounterStatusHistoryTestHelper(FhirResourceTestHelper):
     """
