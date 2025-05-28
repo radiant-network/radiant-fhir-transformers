@@ -15,6 +15,9 @@ EXPECTED_OUTPUT = [
         "identifier_use": None,
         "identifier_system": "http://ehr.acme.org/identifiers/collections",
         "identifier_value": "23234352356",
+        "identifier_type_text": None,
+        "identifier_period_start": None,
+        "identifier_period_end": None,
     }
 ]
 
