@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type Encounter subtype Identifier
+Test helper class for FHIR resource type Encounter subtype StatusHistory
 """
 
 from radiant_fhir_transform_cli.transform.classes.encounter import (
-    EncounterIdentifierTransformer,
+    EncounterStatusHistoryTransformer
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -12,14 +12,13 @@ from .encounter_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "encounter_id": "f203",
-        "identifier_use": "temp",
-        "identifier_system": None,
-        "identifier_value": "Encounter_Roel_20130311",
-    }
+        "status_history_status": "arrived",
+        "status_history_period_start": "2013-03-08",
+        "status_history_period_end": None,
+    },
 ]
 
-
-class EncounterIdentifierTestHelper(FhirResourceTestHelper):
+class EncounterStatusHistoryTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Encounter' resource.
 
@@ -41,9 +40,9 @@ class EncounterIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Encounter"
-    resource_subtype = "identifier"
-    transformer = EncounterIdentifierTransformer
-    expected_table_name = "encounter_identifier"
+    resource_subtype = "status_history"
+    transformer = EncounterStatusHistoryTransformer
+    expected_table_name = "encounter_status_history"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)
