@@ -1,5 +1,21 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.7.0
+
+### Summary
+
+- Emojis: ? x3, ✨ x2
+- Categories: Additions x2, Other Changes x3
+
+### New features and changes
+
+- [#40](https://github.com/radiant-network/radiant-fhir-transformers/pull/40) -  D3b 1413 add specimen transformers - [d4e1acc4](https://github.com/radiant-network/radiant-fhir-transformers/commit/d4e1acc4ff1956ee023592bcd73d7cfc90919504) by [calkinsh](https://github.com/calkinsh)
+- [#43](https://github.com/radiant-network/radiant-fhir-transformers/pull/43) - ✨ Add MedicationRequest Transformer Classes - [b32d7cc7](https://github.com/radiant-network/radiant-fhir-transformers/commit/b32d7cc7d956d153bb10467514c8c07dfc7d3936) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#36](https://github.com/radiant-network/radiant-fhir-transformers/pull/36) - ✨ Add Medication Transformer Classes - [bfe18d65](https://github.com/radiant-network/radiant-fhir-transformers/commit/bfe18d65efa556205a3e8fdefda6a42c5f5246d9) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#37](https://github.com/radiant-network/radiant-fhir-transformers/pull/37) -  Finish document reference - [ac52718e](https://github.com/radiant-network/radiant-fhir-transformers/commit/ac52718e245f82fcf1553e2074e3d0e18ecc6d2b) by [haynescd](https://github.com/haynescd)
+- [#32](https://github.com/radiant-network/radiant-fhir-transformers/pull/32) -  Fix issues - [71924197](https://github.com/radiant-network/radiant-fhir-transformers/commit/71924197b20f2e920096dbf5e721e8445bbb6675) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 0.6.0
 
 ### Summary
