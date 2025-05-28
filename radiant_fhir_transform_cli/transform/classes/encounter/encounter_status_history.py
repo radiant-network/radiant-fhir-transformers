@@ -24,10 +24,10 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "statusHistory",
         "columns": {
-            "status_history_status": {"fhir_key": "statusHistory.status", "type": "str"},
-            "status_history_period_start": {"fhir_key": "statusHistory.period.start", "type": "datetime"},
-            "status_history_period_end": {"fhir_key": "statusHistory.period.end", "type": "datetime"},
-        }
+            "status_history_status": {"fhir_key": "status", "type": "str"},
+            "status_history_period_start": {"fhir_key": "period.start", "type": "datetime"},
+            "status_history_period_end": {"fhir_key": "period.end", "type": "datetime"},
+        },
     },
 ]
 class EncounterStatusHistoryTransformer(FhirResourceTransformer):
