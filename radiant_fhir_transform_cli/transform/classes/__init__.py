@@ -25,6 +25,31 @@ from radiant_fhir_transform_cli.transform.classes.observation.observation_code_c
 from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
 )
+
+from radiant_fhir_transform_cli.transform.classes.service_request import (
+    ServiceRequestTransformer,
+    ServiceRequestCodeCodingTransformer,
+    ServiceRequestReasonCodeTransformer,
+    ServiceRequestContainedTransformer,
+    ServiceRequestIdentifierTransformer,
+    ServiceRequestPerformerTransformer,
+    ServiceRequestSupportingInfoTransformer,
+    ServiceRequestSpecimenTransformer,
+    ServiceRequestNoteTransformer,
+    ServiceRequestInstantiatesUriTransformer,
+    ServiceRequestBasedOnTransformer,
+    ServiceRequestReplacesTransformer,
+    ServiceRequestCategoryTransformer,
+    ServiceRequestOrderDetailTransformer,
+    ServiceRequestLocationCodeTransformer,
+    ServiceRequestLocationReferenceTransformer,
+    ServiceRequestReasonReferenceTransformer,
+    ServiceRequestInsuranceTransformer,
+    ServiceRequestBodySiteTransformer,
+    ServiceRequestRelevantHistoryTransformer,
+    ServiceRequestPerformerTypeCodingTransformer,
+)
+
 from radiant_fhir_transform_cli.transform.classes.medication import (
     MedicationTransformer,
     MedicationIdentifierTransformer,
@@ -78,7 +103,6 @@ from radiant_fhir_transform_cli.transform.classes.procedure import (
     ProcedureUsedReferenceTransformer,
     ProcedureUsedCodeTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.specimen import (
     SpecimenTransformer,
     SpecimenCollectionBodySiteCodingTransformer,
@@ -91,6 +115,26 @@ from radiant_fhir_transform_cli.transform.classes.specimen import (
     SpecimenProcessingTransformer,
     SpecimenRequestTransformer,
     SpecimenNoteTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.location import (
+    LocationTransformer,
+    LocationIdentifierTransformer,
+    LocationAliasTransformer,
+    LocationTypeTransformer,
+    LocationTelecomTransformer,
+    LocationPhysicalTypeCodingTransformer,
+    LocationHoursOfOperationTransformer,
+    LocationEndpointTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.organization import (
+    OrganizationTransformer,
+    OrganizationIdentifierTransformer,
+    OrganizationTypeTransformer,
+    OrganizationAliasTransformer,
+    OrganizationTelecomTransformer,
+    OrganizationAddressTransformer,
+    OrganizationContactTransformer,
+    OrganizationEndpointTransformer,
 )
 
 from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
@@ -136,6 +180,29 @@ transformers = {
         MedicationCodeCodingTransformer,
         MedicationFormCodingTransformer,
         MedicationIngredientTransformer,
+    ],
+    "ServiceRequest": [
+        ServiceRequestTransformer,
+        ServiceRequestCodeCodingTransformer,
+        ServiceRequestReasonCodeTransformer,
+        ServiceRequestContainedTransformer,
+        ServiceRequestIdentifierTransformer,
+        ServiceRequestPerformerTransformer,
+        ServiceRequestSupportingInfoTransformer,
+        ServiceRequestSpecimenTransformer,
+        ServiceRequestNoteTransformer,
+        ServiceRequestInstantiatesUriTransformer,
+        ServiceRequestBasedOnTransformer,
+        ServiceRequestReplacesTransformer,
+        ServiceRequestCategoryTransformer,
+        ServiceRequestOrderDetailTransformer,
+        ServiceRequestLocationCodeTransformer,
+        ServiceRequestLocationReferenceTransformer,
+        ServiceRequestReasonReferenceTransformer,
+        ServiceRequestInsuranceTransformer,
+        ServiceRequestBodySiteTransformer,
+        ServiceRequestRelevantHistoryTransformer,
+        ServiceRequestPerformerTypeCodingTransformer,
     ],
     "Specimen": [
         SpecimenTransformer,
@@ -186,6 +253,26 @@ transformers = {
         DiagnosticReportImagingStudyTransformer,
         DiagnosticReportResultsInterpreterTransformer,
         DiagnosticReportSpecimenTransformer,
+    ],
+    "Location": [
+        LocationTransformer,
+        LocationIdentifierTransformer,
+        LocationAliasTransformer,
+        LocationTypeTransformer,
+        LocationTelecomTransformer,
+        LocationPhysicalTypeCodingTransformer,
+        LocationHoursOfOperationTransformer,
+        LocationEndpointTransformer,
+    ],
+    "Organization": [
+        OrganizationTransformer,
+        OrganizationIdentifierTransformer,
+        OrganizationTypeTransformer,
+        OrganizationAliasTransformer,
+        OrganizationTelecomTransformer,
+        OrganizationAddressTransformer,
+        OrganizationContactTransformer,
+        OrganizationEndpointTransformer,
     ],
     "Procedure": [
         ProcedureTransformer,
