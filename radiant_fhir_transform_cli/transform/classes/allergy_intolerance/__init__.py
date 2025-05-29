@@ -2,4 +2,7 @@ from .allergy_intolerance import AllergyIntoleranceTransformer
 from .allergy_intolerance_clinical_status_coding import (
     AllergyIntoleranceClinicalStatusCodingTransformer,
 )
-from .allergy_intolerance_verification_status_coding import AllergyIntoleranceVerificationStatusCodingTransformer
+from .allergy_intolerance_verification_status_coding import (
+    AllergyIntoleranceVerificationStatusCodingTransformer,
+)
+from .allergy_intolerance_category import AllergyIntoleranceCategoryTransformer
