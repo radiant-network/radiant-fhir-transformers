@@ -10,14 +10,14 @@ from .encounter_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "encounter_id": "f203",
-        "encounter_type_coding": [
+        "type_coding": [
                 {
                     "system": "http://snomed.info/sct",
                     "code": "183807002",
                     "display": "Inpatient stay for nine days",
                 }
             ],
-        "encounter_type_text": None,
+        "type_text": None,
     }
 ]
 class EncounterTypeTestHelper(FhirResourceTestHelper):

@@ -3,3 +3,4 @@ from .encounter_identifier import EncounterIdentifierTransformer
 from .encounter_status_history import EncounterStatusHistoryTransformer
 from .encounter_class import EncounterClassTransformer
 from .encounter_type import EncounterTypeTransformer
+from .encounter_priority_coding import EncounterPriorityCodingTransformer

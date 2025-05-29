@@ -133,6 +133,7 @@ from radiant_fhir_transform_cli.transform.classes.encounter import (
     EncounterStatusHistoryTransformer,
     EncounterClassTransformer,
     EncounterTypeTransformer,
+    EncounterPriorityCodingTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -261,5 +262,6 @@ transformers = {
         EncounterStatusHistoryTransformer,
         EncounterClassTransformer,
         EncounterTypeTransformer,
+        EncounterPriorityCodingTransformer,
     ],
 }

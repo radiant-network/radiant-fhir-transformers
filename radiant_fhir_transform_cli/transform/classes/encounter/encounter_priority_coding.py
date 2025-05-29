@@ -1,5 +1,5 @@
 """ 
-Fhir Encounter Type Class
+Fhir Encounter Priority Coding Class
 """
 
 from radiant_fhir_transform_cli.transform.classes.base import FhirResourceTransformer
@@ -20,26 +20,27 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "type",
+        "fhir_path": "priority.coding",
         "columns": {
-            "type_coding": {"fhir_key": "coding", "type": "str"},
-            "type_text": {"fhir_key": "text", "type": "str"},
+            "priority_coding_system": {"fhir_key": "system", "type": "str"},
+            "priority_coding_code": {"fhir_key": "code", "type": "str"},
+            "priority_coding_display": {"fhir_key": "display", "type": "str"},
         },
     },
 ]
 
-class EncounterTypeTransformer(FhirResourceTransformer):
+class EncounterPriorityCodingTransformer(FhirResourceTransformer):
     """
-    A transformer class for the 'Encounter' resource in FHIR, focusing on the 'type' element.
+    A transformer class for the 'Encounter' resource in FHIR, focusing on the 'priority.coding' element.
 
     This class transforms FHIR Encounter JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'type' field.
+    extracting and processing information from the 'priority.coding' field.
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Encounter').
-        subtype (str): Specifies the sub-element of the resource to focus on ('type').
+        subtype (str): Specifies the sub-element of the resource to focus on ('priority_coding').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
     """
 
     def __init__(self):
-        super().__init__("Encounter", "type", TRANSFORM_SCHEMA)
+        super().__init__("Encounter", "priority_coding", TRANSFORM_SCHEMA)

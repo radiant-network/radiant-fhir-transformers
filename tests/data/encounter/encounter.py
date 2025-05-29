@@ -16,6 +16,7 @@ EXPECTED_OUTPUT = [
         "class_code": "IMP",
         "class_system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
         "class_display": "inpatient encounter",
+        "priority_text": None,
         "subject_reference": "f201",
         "subject_type": None,
         "subject_display": "Roel",
