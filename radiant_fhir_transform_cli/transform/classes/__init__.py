@@ -137,6 +137,22 @@ from radiant_fhir_transform_cli.transform.classes.organization import (
     OrganizationEndpointTransformer,
 )
 
+from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
+    DiagnosticReportIdentifierTransformer,
+    DiagnosticReportTransformer,
+    DiagnosticReportBasedOnTransformer,
+    DiagnosticReportCategoryTransformer,
+    DiagnosticReportCodeCodingTransformer,
+    DiagnosticReportPerformerTransformer,
+    DiagnosticReportResultTransformer,
+    DiagnosticReportPresentedFormTransformer,
+    DiagnosticReportConclusionCodeTransformer,
+    DiagnosticReportMediaTransformer,
+    DiagnosticReportImagingStudyTransformer,
+    DiagnosticReportResultsInterpreterTransformer,
+    DiagnosticReportSpecimenTransformer,
+)
+
 # Map FHIR resource type to its transformer class
 transformers = {
     "Patient": [PatientTransformer],
@@ -222,6 +238,21 @@ transformers = {
         MedicationRequestSubstitutionReasonCodingTransformer,
         MedicationRequestDetectedIssueTransformer,
         MedicationRequestEventHistoryTransformer,
+    ],
+    "DiagnosticReport": [
+        DiagnosticReportIdentifierTransformer,
+        DiagnosticReportTransformer,
+        DiagnosticReportBasedOnTransformer,
+        DiagnosticReportCategoryTransformer,
+        DiagnosticReportCodeCodingTransformer,
+        DiagnosticReportPerformerTransformer,
+        DiagnosticReportResultTransformer,
+        DiagnosticReportPresentedFormTransformer,
+        DiagnosticReportConclusionCodeTransformer,
+        DiagnosticReportMediaTransformer,
+        DiagnosticReportImagingStudyTransformer,
+        DiagnosticReportResultsInterpreterTransformer,
+        DiagnosticReportSpecimenTransformer,
     ],
     "Location": [
         LocationTransformer,
