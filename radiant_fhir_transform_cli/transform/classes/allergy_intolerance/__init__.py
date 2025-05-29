@@ -9,3 +9,4 @@ from .allergy_intolerance_category import AllergyIntoleranceCategoryTransformer
 from .allergy_intolerance_code_coding import (
     AllergyIntoleranceCodeCodingTransformer,
 )
+from .allergy_intolerance_note import AllergyIntoleranceNoteTransformer

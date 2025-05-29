@@ -155,6 +155,7 @@ from tests.data.allergy_intolerance import (
     AllergyIntoleranceVerificationStatusCodingTestHelper,
     AllergyIntoleranceCategoryTestHelper,
     AllergyIntoleranceCodeCodingTestHelper,
+    AllergyIntoleranceNoteTestHelper,
 )
 
 test_helpers = [
@@ -287,4 +288,5 @@ test_helpers = [
     AllergyIntoleranceVerificationStatusCodingTestHelper,
     AllergyIntoleranceCategoryTestHelper,
     AllergyIntoleranceCodeCodingTestHelper,
+    AllergyIntoleranceNoteTestHelper,
 ]

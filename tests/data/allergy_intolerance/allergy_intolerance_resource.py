@@ -49,7 +49,9 @@ RESOURCE = {
     "lastOccurrence": "2012-06",
     "note": [
         {
-            "text": "The criticality is high becasue of the observed anaphylactic reaction when challenged with cashew extract."
+            "text": "The criticality is high becasue of the observed anaphylactic reaction when challenged with cashew extract.",
+            "authorString": "Doctor J",
+            "time": "2014-02-14",
         }
     ],
     "reaction": [
@@ -103,7 +105,9 @@ RESOURCE = {
             "severity": "moderate",
             "note": [
                 {
-                    "text": "The patient reports that the onset of urticaria was within 15 minutes of eating cashews."
+                    "text": "The patient reports that the onset of urticaria was within 15 minutes of eating cashews.",
+                    "authorString": "Doctor J",
+                    "time": "2014-02-14",
                 }
             ],
         },

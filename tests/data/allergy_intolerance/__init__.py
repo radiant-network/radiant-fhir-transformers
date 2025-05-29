@@ -9,3 +9,4 @@ from .allergy_intolerance_category import AllergyIntoleranceCategoryTestHelper
 from .allergy_intolerance_code_coding import (
     AllergyIntoleranceCodeCodingTestHelper,
 )
+from .allergy_intolerance_note import AllergyIntoleranceNoteTestHelper
