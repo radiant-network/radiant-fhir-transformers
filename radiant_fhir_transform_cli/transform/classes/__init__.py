@@ -159,6 +159,7 @@ from radiant_fhir_transform_cli.transform.classes.allergy_intolerance import (
     AllergyIntoleranceClinicalStatusCodingTransformer,
     AllergyIntoleranceVerificationStatusCodingTransformer,
     AllergyIntoleranceCategoryTransformer,
+    AllergyIntoleranceCodeCodingTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -312,5 +313,6 @@ transformers = {
         AllergyIntoleranceClinicalStatusCodingTransformer,
         AllergyIntoleranceVerificationStatusCodingTransformer,
         AllergyIntoleranceCategoryTransformer,
+        AllergyIntoleranceCodeCodingTransformer,
     ],
 }

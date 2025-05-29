@@ -6,3 +6,6 @@ from .allergy_intolerance_verification_status_coding import (
     AllergyIntoleranceVerificationStatusCodingTestHelper,
 )
 from .allergy_intolerance_category import AllergyIntoleranceCategoryTestHelper
+from .allergy_intolerance_code_coding import (
+    AllergyIntoleranceCodeCodingTestHelper,
+)
