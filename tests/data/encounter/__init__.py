@@ -4,3 +4,4 @@ from .encounter_status_history import EncounterStatusHistoryTestHelper
 from .encounter_class import EncounterClassTestHelper
 from .encounter_type import EncounterTypeTestHelper
 from .encounter_priority_coding import EncounterPriorityCodingTestHelper
+from .encounter_episode_of_care import EncounterEpisodeOfCareTestHelper
