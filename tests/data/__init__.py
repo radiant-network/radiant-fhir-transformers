@@ -21,6 +21,7 @@ from tests.data.observation import (
     ObservationValueCodeableConceptCodingTestHelper,
 )
 from tests.data.patient import PatientTestHelper
+
 from tests.data.medication import (
     MedicationTestHelper,
     MedicationIdentifierTestHelper,
@@ -73,6 +74,16 @@ from tests.data.location import (
     LocationHourseOfOperationTestHelper,
     LocationEndpointTestHelper,
 )
+from tests.data.organization import (
+    OrganizationTestHelper,
+    OrganizationIdentifierTestHelper,
+    OrganizationTypeTestHelper,
+    OrganizationAliasTestHelper,
+    OrganizationTelecomTestHelper,
+    OrganizationAddressTestHelper,
+    OrganizationContactTestHelper,
+    OrganizationEndpointTestHelper,
+)
 from tests.data.procedure import (
     ProcedureTestHelper,
     ProcedureIdentifierTestHelper,
@@ -98,6 +109,30 @@ from tests.data.procedure import (
     ProcedureUsedCodeTestHelper,
 )
 
+from tests.data.service_request import (
+    ServiceRequestTestHelper,
+    ServiceRequestBasedOnTestHelper,
+    ServiceRequestBodySiteTestHelper,
+    ServiceRequestCategoryTestHelper,
+    ServiceRequestCodeCodingTestHelper,
+    ServiceRequestContainedTestHelper,
+    ServiceRequestIdentifierTestHelper,
+    ServiceRequestInstantiatesUriTestHelper,
+    ServiceRequestInsuranceTestHelper,
+    ServiceRequestLocationCodeTestHelper,
+    ServiceRequestLocationReferenceTestHelper,
+    ServiceRequestNoteTestHelper,
+    ServiceRequestOrderDetailTestHelper,
+    ServiceRequestPerformerTestHelper,
+    ServiceRequestReasonCodeTestHelper,
+    ServiceRequestReasonReferenceTestHelper,
+    ServiceRequestRelevantHistoryTestHelper,
+    ServiceRequestReplacesTestHelper,
+    ServiceRequestSpecimenTestHelper,
+    ServiceRequestSupportingInfoTestHelper,
+    ServiceRequestPerformerTypeCodingTestHelper,
+)
+
 test_helpers = [
     PatientTestHelper,
     ObservationTestHelper,
@@ -114,6 +149,27 @@ test_helpers = [
     DocumentReferenceTypeCodingTestHelper,
     DocumentReferenceIdentifierTestHelper,
     DocumentReferenceAuthorTestHelper,
+    ServiceRequestTestHelper,
+    ServiceRequestBasedOnTestHelper,
+    ServiceRequestBodySiteTestHelper,
+    ServiceRequestCategoryTestHelper,
+    ServiceRequestCodeCodingTestHelper,
+    ServiceRequestContainedTestHelper,
+    ServiceRequestIdentifierTestHelper,
+    ServiceRequestInstantiatesUriTestHelper,
+    ServiceRequestInsuranceTestHelper,
+    ServiceRequestLocationCodeTestHelper,
+    ServiceRequestLocationReferenceTestHelper,
+    ServiceRequestNoteTestHelper,
+    ServiceRequestOrderDetailTestHelper,
+    ServiceRequestPerformerTestHelper,
+    ServiceRequestReasonCodeTestHelper,
+    ServiceRequestReasonReferenceTestHelper,
+    ServiceRequestRelevantHistoryTestHelper,
+    ServiceRequestReplacesTestHelper,
+    ServiceRequestSpecimenTestHelper,
+    ServiceRequestSupportingInfoTestHelper,
+    ServiceRequestPerformerTypeCodingTestHelper,
     MedicationTestHelper,
     MedicationIdentifierTestHelper,
     MedicationCodeCodingTestHelper,
@@ -158,6 +214,14 @@ test_helpers = [
     LocationPhysicalTypeCodingTestHelper,
     LocationHourseOfOperationTestHelper,
     LocationEndpointTestHelper,
+    OrganizationTestHelper,
+    OrganizationIdentifierTestHelper,
+    OrganizationTypeTestHelper,
+    OrganizationAliasTestHelper,
+    OrganizationTelecomTestHelper,
+    OrganizationAddressTestHelper,
+    OrganizationContactTestHelper,
+    OrganizationEndpointTestHelper,
     ProcedureTestHelper,
     ProcedureIdentifierTestHelper,
     ProcedureInstantiatesCanonicalTestHelper,

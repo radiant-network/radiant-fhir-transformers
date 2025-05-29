@@ -25,6 +25,31 @@ from radiant_fhir_transform_cli.transform.classes.observation.observation_code_c
 from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
 )
+
+from radiant_fhir_transform_cli.transform.classes.service_request import (
+    ServiceRequestTransformer,
+    ServiceRequestCodeCodingTransformer,
+    ServiceRequestReasonCodeTransformer,
+    ServiceRequestContainedTransformer,
+    ServiceRequestIdentifierTransformer,
+    ServiceRequestPerformerTransformer,
+    ServiceRequestSupportingInfoTransformer,
+    ServiceRequestSpecimenTransformer,
+    ServiceRequestNoteTransformer,
+    ServiceRequestInstantiatesUriTransformer,
+    ServiceRequestBasedOnTransformer,
+    ServiceRequestReplacesTransformer,
+    ServiceRequestCategoryTransformer,
+    ServiceRequestOrderDetailTransformer,
+    ServiceRequestLocationCodeTransformer,
+    ServiceRequestLocationReferenceTransformer,
+    ServiceRequestReasonReferenceTransformer,
+    ServiceRequestInsuranceTransformer,
+    ServiceRequestBodySiteTransformer,
+    ServiceRequestRelevantHistoryTransformer,
+    ServiceRequestPerformerTypeCodingTransformer,
+)
+
 from radiant_fhir_transform_cli.transform.classes.medication import (
     MedicationTransformer,
     MedicationIdentifierTransformer,
@@ -101,6 +126,16 @@ from radiant_fhir_transform_cli.transform.classes.location import (
     LocationHoursOfOperationTransformer,
     LocationEndpointTransformer,
 )
+from radiant_fhir_transform_cli.transform.classes.organization import (
+    OrganizationTransformer,
+    OrganizationIdentifierTransformer,
+    OrganizationTypeTransformer,
+    OrganizationAliasTransformer,
+    OrganizationTelecomTransformer,
+    OrganizationAddressTransformer,
+    OrganizationContactTransformer,
+    OrganizationEndpointTransformer,
+)
 
 # Map FHIR resource type to its transformer class
 transformers = {
@@ -129,6 +164,29 @@ transformers = {
         MedicationCodeCodingTransformer,
         MedicationFormCodingTransformer,
         MedicationIngredientTransformer,
+    ],
+    "ServiceRequest": [
+        ServiceRequestTransformer,
+        ServiceRequestCodeCodingTransformer,
+        ServiceRequestReasonCodeTransformer,
+        ServiceRequestContainedTransformer,
+        ServiceRequestIdentifierTransformer,
+        ServiceRequestPerformerTransformer,
+        ServiceRequestSupportingInfoTransformer,
+        ServiceRequestSpecimenTransformer,
+        ServiceRequestNoteTransformer,
+        ServiceRequestInstantiatesUriTransformer,
+        ServiceRequestBasedOnTransformer,
+        ServiceRequestReplacesTransformer,
+        ServiceRequestCategoryTransformer,
+        ServiceRequestOrderDetailTransformer,
+        ServiceRequestLocationCodeTransformer,
+        ServiceRequestLocationReferenceTransformer,
+        ServiceRequestReasonReferenceTransformer,
+        ServiceRequestInsuranceTransformer,
+        ServiceRequestBodySiteTransformer,
+        ServiceRequestRelevantHistoryTransformer,
+        ServiceRequestPerformerTypeCodingTransformer,
     ],
     "Specimen": [
         SpecimenTransformer,
@@ -174,6 +232,16 @@ transformers = {
         LocationPhysicalTypeCodingTransformer,
         LocationHoursOfOperationTransformer,
         LocationEndpointTransformer,
+    ],
+    "Organization": [
+        OrganizationTransformer,
+        OrganizationIdentifierTransformer,
+        OrganizationTypeTransformer,
+        OrganizationAliasTransformer,
+        OrganizationTelecomTransformer,
+        OrganizationAddressTransformer,
+        OrganizationContactTransformer,
+        OrganizationEndpointTransformer,
     ],
     "Procedure": [
         ProcedureTransformer,
