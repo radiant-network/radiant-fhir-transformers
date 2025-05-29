@@ -11,3 +11,6 @@ from .allergy_intolerance_code_coding import (
 )
 from .allergy_intolerance_note import AllergyIntoleranceNoteTransformer
 from .allergy_intolerance_reaction import AllergyIntoleranceReactionTransformer
+from .allergy_intolerance_identifier import (
+    AllergyIntoleranceIdentifierTransformer,
+)
