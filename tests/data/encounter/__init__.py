@@ -2,3 +2,4 @@ from .encounter import EncounterTestHelper
 from .encounter_identifier import EncounterIdentifierTestHelper
 from .encounter_status_history import EncounterStatusHistoryTestHelper
 from .encounter_class import EncounterClassTestHelper
+from .encounter_type import EncounterTypeTestHelper

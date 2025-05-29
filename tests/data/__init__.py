@@ -128,6 +128,7 @@ from tests.data.encounter import (
     EncounterIdentifierTestHelper,
     EncounterStatusHistoryTestHelper,
     EncounterClassTestHelper,
+    EncounterTypeTestHelper,
 )
 
 test_helpers = [
@@ -237,4 +238,5 @@ test_helpers = [
     EncounterIdentifierTestHelper,
     EncounterStatusHistoryTestHelper,
     EncounterClassTestHelper,
+    EncounterTypeTestHelper,
 ]
