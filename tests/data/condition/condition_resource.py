@@ -88,17 +88,17 @@ RESOURCE = {
         }
     ],
     "stage": [
-    {
-      "summary": {
-        "coding": [
-          {
-            "system": "http://snomed.info/sct",
-            "code": "14803004",
-            "display": "Temporary"
-          }
-        ]
-      }
-    }
-  ],
-  "note": [{"text": "This is a test note for the condition."}],
+        {
+            "summary": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "14803004",
+                        "display": "Temporary",
+                    }
+                ]
+            }
+        }
+    ],
+    "note": [{"text": "This is a test note for the condition."}],
 }
