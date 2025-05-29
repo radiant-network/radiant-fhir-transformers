@@ -11,8 +11,12 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "condition_id": None,
-        "stage_summary_coding": None,
+        "condition_id": "f201",
+        "stage_summary_coding": [{
+            "system": "http://snomed.info/sct",
+            "code": "14803004",
+            "display": "Temporary"
+        }],
         "stage_summary_text": None,
         "stage_assessment": None,
         "stage_type_coding": None,

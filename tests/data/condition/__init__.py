@@ -12,3 +12,4 @@ from .condition_category import ConditionCategoryTestHelper
 from .condition_body_site import ConditionBodySiteTestHelper
 from .condition_evidence import ConditionEvidenceTestHelper
 from .condition_stage import ConditionStageTestHelper
+from .condition_note import ConditionNoteTestHelper

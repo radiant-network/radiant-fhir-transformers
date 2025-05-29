@@ -134,6 +134,7 @@ from tests.data.condition import (
     ConditionCategoryTestHelper,
     ConditionEvidenceTestHelper,
     ConditionStageTestHelper,
+    ConditionNoteTestHelper,
 )
 
 test_helpers = [
@@ -188,6 +189,7 @@ test_helpers = [
     ConditionCategoryTestHelper,
     ConditionEvidenceTestHelper,
     ConditionStageTestHelper,
+    ConditionNoteTestHelper,
     SpecimenTestHelper,
     SpecimenCollectionBodySiteCodingTestHelper,
     SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper,

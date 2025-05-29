@@ -12,3 +12,4 @@ from .condition_body_site import ConditionBodySiteTransformer
 from .condition_category import ConditionCategoryTransformer
 from .condition_evidence import ConditionEvidenceTransformer
 from .condition_stage import ConditionStageTransformer
+from .condition_note import ConditionNoteTransformer

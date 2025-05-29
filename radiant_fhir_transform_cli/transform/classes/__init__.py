@@ -138,6 +138,7 @@ from radiant_fhir_transform_cli.transform.classes.condition import (
     ConditionBodySiteTransformer,
     ConditionEvidenceTransformer,
     ConditionStageTransformer,
+    ConditionNoteTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -202,6 +203,7 @@ transformers = {
         ConditionCategoryTransformer,
         ConditionEvidenceTransformer,
         ConditionStageTransformer,
+        ConditionNoteTransformer,
     ],
     "Specimen": [
         SpecimenTransformer,
