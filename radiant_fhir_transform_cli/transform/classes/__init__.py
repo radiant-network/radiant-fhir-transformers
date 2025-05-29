@@ -116,6 +116,16 @@ from radiant_fhir_transform_cli.transform.classes.specimen import (
     SpecimenRequestTransformer,
     SpecimenNoteTransformer,
 )
+from radiant_fhir_transform_cli.transform.classes.location import (
+    LocationTransformer,
+    LocationIdentifierTransformer,
+    LocationAliasTransformer,
+    LocationTypeTransformer,
+    LocationTelecomTransformer,
+    LocationPhysicalTypeCodingTransformer,
+    LocationHoursOfOperationTransformer,
+    LocationEndpointTransformer,
+)
 from radiant_fhir_transform_cli.transform.classes.organization import (
     OrganizationTransformer,
     OrganizationIdentifierTransformer,
@@ -212,6 +222,16 @@ transformers = {
         MedicationRequestSubstitutionReasonCodingTransformer,
         MedicationRequestDetectedIssueTransformer,
         MedicationRequestEventHistoryTransformer,
+    ],
+    "Location": [
+        LocationTransformer,
+        LocationIdentifierTransformer,
+        LocationAliasTransformer,
+        LocationTypeTransformer,
+        LocationTelecomTransformer,
+        LocationPhysicalTypeCodingTransformer,
+        LocationHoursOfOperationTransformer,
+        LocationEndpointTransformer,
     ],
     "Organization": [
         OrganizationTransformer,

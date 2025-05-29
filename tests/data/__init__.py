@@ -64,6 +64,16 @@ from tests.data.medication_request import (
     MedicationRequestDetectedIssueTestHelper,
     MedicationRequestEventHistoryTestHelper,
 )
+from tests.data.location import (
+    LocationTestHelper,
+    LocationIdentifierTestHelper,
+    LocationAliasTestHelper,
+    LocationTypeTestHelper,
+    LocationTelecomTestHelper,
+    LocationPhysicalTypeCodingTestHelper,
+    LocationHourseOfOperationTestHelper,
+    LocationEndpointTestHelper,
+)
 from tests.data.organization import (
     OrganizationTestHelper,
     OrganizationIdentifierTestHelper,
@@ -196,6 +206,14 @@ test_helpers = [
     MedicationRequestSubstitutionReasonCodingTestHelper,
     MedicationRequestDetectedIssueTestHelper,
     MedicationRequestEventHistoryTestHelper,
+    LocationTestHelper,
+    LocationIdentifierTestHelper,
+    LocationAliasTestHelper,
+    LocationTypeTestHelper,
+    LocationTelecomTestHelper,
+    LocationPhysicalTypeCodingTestHelper,
+    LocationHourseOfOperationTestHelper,
+    LocationEndpointTestHelper,
     OrganizationTestHelper,
     OrganizationIdentifierTestHelper,
     OrganizationTypeTestHelper,
