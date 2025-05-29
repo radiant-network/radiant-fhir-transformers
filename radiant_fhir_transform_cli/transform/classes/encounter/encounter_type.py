@@ -23,6 +23,7 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "type",
         "columns": {
             "type_coding": {"fhir_key": "coding", "type": "str"},
+            # TODO: Add support for nested coding fields
             "type_text": {"fhir_key": "text", "type": "str"},
         },
     },

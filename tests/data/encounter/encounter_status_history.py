@@ -13,8 +13,9 @@ EXPECTED_OUTPUT = [
     {
         "encounter_id": "f203",
         "status_history_status": "arrived",
-        "status_history_period_start": "2013-03-08",
-        "status_history_period_end": None,
+        "status_history_period": {
+            "start": "2013-03-08"
+        },
     },
 ]
 
