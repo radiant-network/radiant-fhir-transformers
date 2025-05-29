@@ -154,6 +154,17 @@ from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
     DiagnosticReportSpecimenTransformer,
 )
 
+from radiant_fhir_transform_cli.transform.classes.allergy_intolerance import (
+    AllergyIntoleranceTransformer,
+    AllergyIntoleranceClinicalStatusCodingTransformer,
+    AllergyIntoleranceVerificationStatusCodingTransformer,
+    AllergyIntoleranceCategoryTransformer,
+    AllergyIntoleranceCodeCodingTransformer,
+    AllergyIntoleranceNoteTransformer,
+    AllergyIntoleranceReactionTransformer,
+    AllergyIntoleranceIdentifierTransformer,
+)
+
 # Map FHIR resource type to its transformer class
 transformers = {
     "Patient": [PatientTransformer],
@@ -299,5 +310,15 @@ transformers = {
         ProcedureFocalDeviceTransformer,
         ProcedureUsedReferenceTransformer,
         ProcedureUsedCodeTransformer,
+    ],
+    "AllergyIntolerance": [
+        AllergyIntoleranceTransformer,
+        AllergyIntoleranceClinicalStatusCodingTransformer,
+        AllergyIntoleranceVerificationStatusCodingTransformer,
+        AllergyIntoleranceCategoryTransformer,
+        AllergyIntoleranceCodeCodingTransformer,
+        AllergyIntoleranceNoteTransformer,
+        AllergyIntoleranceReactionTransformer,
+        AllergyIntoleranceIdentifierTransformer,
     ],
 }
