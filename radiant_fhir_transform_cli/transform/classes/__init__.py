@@ -115,6 +115,7 @@ from radiant_fhir_transform_cli.transform.classes.specimen import (
     SpecimenProcessingTransformer,
     SpecimenRequestTransformer,
     SpecimenNoteTransformer,
+    SpecimenIdentifierTransformer,
 )
 from radiant_fhir_transform_cli.transform.classes.location import (
     LocationTransformer,
@@ -216,6 +217,7 @@ transformers = {
         SpecimenProcessingTransformer,
         SpecimenRequestTransformer,
         SpecimenNoteTransformer,
+        SpecimenIdentifierTransformer,
     ],
     "MedicationRequest": [
         MedicationRequestTransformer,

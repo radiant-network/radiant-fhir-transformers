@@ -15,3 +15,4 @@ from .specimen_parent import SpecimenParentTestHelper
 from .specimen_request import SpecimenRequestTestHelper
 from .specimen_processing import SpecimenProcessingTestHelper
 from .specimen_type_coding import SpecimenTypeCodingTestHelper
+from .specimen_identifier import SpecimenIdentifierTestHelper
