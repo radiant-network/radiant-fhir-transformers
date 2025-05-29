@@ -6,3 +6,4 @@ from .encounter_type import EncounterTypeTransformer
 from .encounter_priority_coding import EncounterPriorityCodingTransformer
 from .encounter_episode_of_care import EncounterEpisodeOfCareTransformer
 from .encounter_based_on import EncounterBasedOnTransformer
+from .encounter_service_type_coding import EncounterServiceTypeCodingTransformer

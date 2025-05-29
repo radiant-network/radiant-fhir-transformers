@@ -33,6 +33,10 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
+        "fhir_path": "serviceType.text",
+        "columns": {"service_type_text": {"fhir_key": "text", "type": "str"}},
+    },
+    {
         "fhir_path": "priority.text",
         "columns": {"priority_text": {"fhir_key": "text", "type": "str"}},
     },

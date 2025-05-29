@@ -20,6 +20,14 @@ RESOURCE = {
             ]
         }
     ],
+    "serviceType": {
+        "coding": [
+            {
+                "display": "test",
+            }
+        ],
+        "text": "test",
+    },
     "priority": {
         "coding": [
             {
