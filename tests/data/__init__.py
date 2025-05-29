@@ -149,6 +149,10 @@ from tests.data.service_request import (
     ServiceRequestPerformerTypeCodingTestHelper,
 )
 
+from tests.data.allergy_intolerance import (
+    AllergyIntoleranceTestHelper,
+)
+
 test_helpers = [
     PatientTestHelper,
     ObservationTestHelper,
@@ -274,4 +278,5 @@ test_helpers = [
     ProcedureFocalDeviceTestHelper,
     ProcedureUsedReferenceTestHelper,
     ProcedureUsedCodeTestHelper,
+    AllergyIntoleranceTestHelper,
 ]
