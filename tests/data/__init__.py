@@ -152,6 +152,7 @@ from tests.data.service_request import (
 from tests.data.allergy_intolerance import (
     AllergyIntoleranceTestHelper,
     AllergyIntoleranceClinicalStatusCodingTestHelper,
+    AllergyIntoleranceVerificationStatusCodingTestHelper,
 )
 
 test_helpers = [
@@ -281,4 +282,5 @@ test_helpers = [
     ProcedureUsedCodeTestHelper,
     AllergyIntoleranceTestHelper,
     AllergyIntoleranceClinicalStatusCodingTestHelper,
+    AllergyIntoleranceVerificationStatusCodingTestHelper,
 ]
