@@ -5,3 +5,4 @@ from .encounter_class import EncounterClassTestHelper
 from .encounter_type import EncounterTypeTestHelper
 from .encounter_priority_coding import EncounterPriorityCodingTestHelper
 from .encounter_episode_of_care import EncounterEpisodeOfCareTestHelper
+from .encounter_based_on import EncounterBasedOnTestHelper
