@@ -115,6 +115,17 @@ from radiant_fhir_transform_cli.transform.classes.specimen import (
     SpecimenProcessingTransformer,
     SpecimenRequestTransformer,
     SpecimenNoteTransformer,
+    SpecimenIdentifierTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.location import (
+    LocationTransformer,
+    LocationIdentifierTransformer,
+    LocationAliasTransformer,
+    LocationTypeTransformer,
+    LocationTelecomTransformer,
+    LocationPhysicalTypeCodingTransformer,
+    LocationHoursOfOperationTransformer,
+    LocationEndpointTransformer,
 )
 from radiant_fhir_transform_cli.transform.classes.organization import (
     OrganizationTransformer,
@@ -125,6 +136,36 @@ from radiant_fhir_transform_cli.transform.classes.organization import (
     OrganizationAddressTransformer,
     OrganizationContactTransformer,
     OrganizationEndpointTransformer,
+)
+
+from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
+    DiagnosticReportIdentifierTransformer,
+    DiagnosticReportTransformer,
+    DiagnosticReportBasedOnTransformer,
+    DiagnosticReportCategoryTransformer,
+    DiagnosticReportCodeCodingTransformer,
+    DiagnosticReportPerformerTransformer,
+    DiagnosticReportResultTransformer,
+    DiagnosticReportPresentedFormTransformer,
+    DiagnosticReportConclusionCodeTransformer,
+    DiagnosticReportMediaTransformer,
+    DiagnosticReportImagingStudyTransformer,
+    DiagnosticReportResultsInterpreterTransformer,
+    DiagnosticReportSpecimenTransformer,
+)
+
+from radiant_fhir_transform_cli.transform.classes.condition import (
+    ConditionTransformer,
+    ConditionCodeCodingTransformer,
+    ConditionIdentifierTransformer,
+    ConditionSeverityCodingTransformer,
+    ConditionClinicalStatusCodingTransformer,
+    ConditionVerificationStatusCodingTransformer,
+    ConditionCategoryTransformer,
+    ConditionBodySiteTransformer,
+    ConditionEvidenceTransformer,
+    ConditionStageTransformer,
+    ConditionNoteTransformer,
 )
 
 from radiant_fhir_transform_cli.transform.classes.encounter import (
@@ -192,6 +233,19 @@ transformers = {
         ServiceRequestRelevantHistoryTransformer,
         ServiceRequestPerformerTypeCodingTransformer,
     ],
+    "Condition": [
+        ConditionTransformer,
+        ConditionCodeCodingTransformer,
+        ConditionIdentifierTransformer,
+        ConditionSeverityCodingTransformer,
+        ConditionClinicalStatusCodingTransformer,
+        ConditionVerificationStatusCodingTransformer,
+        ConditionBodySiteTransformer,
+        ConditionCategoryTransformer,
+        ConditionEvidenceTransformer,
+        ConditionStageTransformer,
+        ConditionNoteTransformer,
+    ],
     "Specimen": [
         SpecimenTransformer,
         SpecimenCollectionBodySiteCodingTransformer,
@@ -204,6 +258,7 @@ transformers = {
         SpecimenProcessingTransformer,
         SpecimenRequestTransformer,
         SpecimenNoteTransformer,
+        SpecimenIdentifierTransformer,
     ],
     "MedicationRequest": [
         MedicationRequestTransformer,
@@ -226,6 +281,31 @@ transformers = {
         MedicationRequestSubstitutionReasonCodingTransformer,
         MedicationRequestDetectedIssueTransformer,
         MedicationRequestEventHistoryTransformer,
+    ],
+    "DiagnosticReport": [
+        DiagnosticReportIdentifierTransformer,
+        DiagnosticReportTransformer,
+        DiagnosticReportBasedOnTransformer,
+        DiagnosticReportCategoryTransformer,
+        DiagnosticReportCodeCodingTransformer,
+        DiagnosticReportPerformerTransformer,
+        DiagnosticReportResultTransformer,
+        DiagnosticReportPresentedFormTransformer,
+        DiagnosticReportConclusionCodeTransformer,
+        DiagnosticReportMediaTransformer,
+        DiagnosticReportImagingStudyTransformer,
+        DiagnosticReportResultsInterpreterTransformer,
+        DiagnosticReportSpecimenTransformer,
+    ],
+    "Location": [
+        LocationTransformer,
+        LocationIdentifierTransformer,
+        LocationAliasTransformer,
+        LocationTypeTransformer,
+        LocationTelecomTransformer,
+        LocationPhysicalTypeCodingTransformer,
+        LocationHoursOfOperationTransformer,
+        LocationEndpointTransformer,
     ],
     "Organization": [
         OrganizationTransformer,
