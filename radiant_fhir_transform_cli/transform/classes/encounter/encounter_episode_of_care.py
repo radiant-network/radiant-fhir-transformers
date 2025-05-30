@@ -2,7 +2,9 @@
 Fhir Encounter Episode of Care Class
 """
 
-from radiant_fhir_transform_cli.transform.classes.base import FhirResourceTransformer
+from radiant_fhir_transform_cli.transform.classes.base import (
+    FhirResourceTransformer,
+)
 
 TRANSFORM_SCHEMA = [
     {
@@ -22,12 +24,17 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "episodeOfCare",
         "columns": {
-            "episode_of_care_reference": {"fhir_key": "reference", "type": "str"},
+            "episode_of_care_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
             "episode_of_care_type": {"fhir_key": "type", "type": "str"},
             "episode_of_care_display": {"fhir_key": "display", "type": "str"},
         },
     },
 ]
+
+
 class EncounterEpisodeOfCareTransformer(FhirResourceTransformer):
     """
     A transformer class for the 'Encounter' resource in FHIR, focusing on the 'episodeOfCare' element.

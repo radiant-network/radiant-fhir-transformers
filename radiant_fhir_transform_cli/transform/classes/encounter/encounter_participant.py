@@ -2,7 +2,9 @@
 Fhir Encounter Participant Transformer Class
 """
 
-from radiant_fhir_transform_cli.transform.classes.base import FhirResourceTransformer
+from radiant_fhir_transform_cli.transform.classes.base import (
+    FhirResourceTransformer,
+)
 
 TRANSFORM_SCHEMA = [
     # Primary Key
@@ -24,12 +26,31 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "participant",
         "columns": {
             "participant_type": {"fhir_key": "type", "type": "str"},
-            "participant_period": {"fhir_key": "period", "type": "str"},
-            "participant_individual": {"fhir_key": "individual", "type": "str"},
-            # TODO: Add support for nested fields 
+            "participant_period_start": {
+                "fhir_key": "period.start",
+                "type": "datetime",
+            },
+            "participant_period_end": {
+                "fhir_key": "period.end",
+                "type": "datetime",
+            },
+            "participant_individual_reference": {
+                "fhir_key": "individual.reference",
+                "type": "str",
+            },
+            "participant_individual_type": {
+                "fhir_key": "individual.type",
+                "type": "str",
+            },
+            "participant_individual_display": {
+                "fhir_key": "individual.display",
+                "type": "str",
+            },
+            # TODO: Add support for nested type fields
         },
     },
 ]
+
 
 class EncounterParticipantTransformer(FhirResourceTransformer):
     """
@@ -46,6 +67,6 @@ class EncounterParticipantTransformer(FhirResourceTransformer):
             Initializes the EncounterParticipantTransformer instance with the resource type 'Encounter',
             subtype 'participant', and the specified transformation dictionary.
     """
-    
+
     def __init__(self):
         super().__init__("Encounter", "participant", TRANSFORM_SCHEMA)

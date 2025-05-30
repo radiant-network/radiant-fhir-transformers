@@ -2,7 +2,9 @@
 Fhir Encounter basedOn Class
 """
 
-from radiant_fhir_transform_cli.transform.classes.base import FhirResourceTransformer
+from radiant_fhir_transform_cli.transform.classes.base import (
+    FhirResourceTransformer,
+)
 
 TRANSFORM_SCHEMA = [
     {
@@ -28,6 +30,8 @@ TRANSFORM_SCHEMA = [
         },
     },
 ]
+
+
 class EncounterBasedOnTransformer(FhirResourceTransformer):
     """
     A transformer class for the 'Encounter' resource in FHIR, focusing on the 'basedOn' element.

@@ -7,6 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.encounter import (
 )
 from tests.data.base import FhirResourceTestHelper
 from .encounter_resource import RESOURCE
+
 EXPECTED_OUTPUT = [
     {
         "encounter_id": "f203",
@@ -15,6 +16,8 @@ EXPECTED_OUTPUT = [
         "service_type_coding_display": "test",
     }
 ]
+
+
 class EncounterServiceTypeCodingTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Encounter' resource subtype Service Type Coding.

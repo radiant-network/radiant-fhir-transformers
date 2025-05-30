@@ -7,6 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.encounter import (
 )
 from tests.data.base import FhirResourceTestHelper
 from .encounter_resource import RESOURCE
+
 EXPECTED_OUTPUT = [
     {
         "encounter_id": "f203",
@@ -17,10 +18,12 @@ EXPECTED_OUTPUT = [
         },
         "class_history_period": {
             "start": "2013-03-08T00:00:00Z",
-            "end": "2013-03-08T00:00:00Z"
+            "end": "2013-03-08T00:00:00Z",
         },
     },
 ]
+
+
 class EncounterClassHistoryTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Encounter' resource.

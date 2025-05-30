@@ -7,23 +7,28 @@ from radiant_fhir_transform_cli.transform.classes.encounter.encounter_participan
 )
 from tests.data.base import FhirResourceTestHelper
 from .encounter_resource import RESOURCE
+
 EXPECTED_OUTPUT = [
     {
         "encounter_id": "f203",
         "participant_type": [
-                {
-                    "coding": [
-                        {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                            "code": "PART",
-                        }
-                    ]
-                }
-            ],
-        "participant_period": None,
-        "participant_individual": {"reference": "Practitioner/f201"},
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                        "code": "PART",
+                    }
+                ]
+            }
+        ],
+        "participant_period_start": None,
+        "participant_period_end": None,
+        "participant_individual_reference": "Practitioner/f201",
+        "participant_individual_type": None,
+        "participant_individual_display": None,
     }
 ]
+
 
 class EncounterParticipantTestHelper(FhirResourceTestHelper):
     """

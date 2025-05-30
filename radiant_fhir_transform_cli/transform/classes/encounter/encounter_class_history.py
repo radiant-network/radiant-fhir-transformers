@@ -2,7 +2,9 @@
 Fhir Encounter Class History Transformer
 """
 
-from radiant_fhir_transform_cli.transform.classes.base import FhirResourceTransformer
+from radiant_fhir_transform_cli.transform.classes.base import (
+    FhirResourceTransformer,
+)
 
 TRANSFORM_SCHEMA = [
     {
@@ -28,6 +30,8 @@ TRANSFORM_SCHEMA = [
         # TODO: Add support for nested class and period fields
     },
 ]
+
+
 class EncounterClassHistoryTransformer(FhirResourceTransformer):
     """
     A transformer class for the 'Encounter' resource in FHIR, focusing on the 'classHistory' element.
@@ -42,5 +46,6 @@ class EncounterClassHistoryTransformer(FhirResourceTransformer):
     Methods:
         __init__: Initializes the transformer with the resource type, subtype, and transformation schema.
     """
+
     def __init__(self):
         super().__init__("Encounter", "class_history", TRANSFORM_SCHEMA)

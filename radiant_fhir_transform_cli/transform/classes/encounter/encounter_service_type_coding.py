@@ -2,7 +2,9 @@
 Fhir Encounter Service Type Coding Class
 """
 
-from radiant_fhir_transform_cli.transform.classes.base import FhirResourceTransformer
+from radiant_fhir_transform_cli.transform.classes.base import (
+    FhirResourceTransformer,
+)
 
 TRANSFORM_SCHEMA = [
     {
@@ -24,10 +26,14 @@ TRANSFORM_SCHEMA = [
         "columns": {
             "service_type_coding_system": {"fhir_key": "system", "type": "str"},
             "service_type_coding_code": {"fhir_key": "code", "type": "str"},
-            "service_type_coding_display": {"fhir_key": "display", "type": "str"},
+            "service_type_coding_display": {
+                "fhir_key": "display",
+                "type": "str",
+            },
         },
     },
 ]
+
 
 class EncounterServiceTypeCodingTransformer(FhirResourceTransformer):
     """

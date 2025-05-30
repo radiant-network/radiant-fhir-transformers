@@ -7,19 +7,22 @@ from radiant_fhir_transform_cli.transform.classes.encounter import (
 )
 from tests.data.base import FhirResourceTestHelper
 from .encounter_resource import RESOURCE
+
 EXPECTED_OUTPUT = [
     {
         "encounter_id": "f203",
         "type_coding": [
-                {
-                    "system": "http://snomed.info/sct",
-                    "code": "183807002",
-                    "display": "Inpatient stay for nine days",
-                }
-            ],
+            {
+                "system": "http://snomed.info/sct",
+                "code": "183807002",
+                "display": "Inpatient stay for nine days",
+            }
+        ],
         "type_text": None,
     }
 ]
+
+
 class EncounterTypeTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Encounter' resource subtype Type.

@@ -7,6 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.encounter.encounter_episode_of
 )
 from tests.data.base import FhirResourceTestHelper
 from .encounter_resource import RESOURCE
+
 EXPECTED_OUTPUT = [
     {
         "encounter_id": "f203",
@@ -15,6 +16,8 @@ EXPECTED_OUTPUT = [
         "episode_of_care_display": None,
     }
 ]
+
+
 class EncounterEpisodeOfCareTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Encounter' resource.

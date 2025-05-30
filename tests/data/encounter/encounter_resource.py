@@ -16,7 +16,10 @@ RESOURCE = {
                 "code": "IMP",
                 "display": "inpatient encounter",
             },
-            "period": {"start": "2013-03-08T00:00:00Z", "end": "2013-03-08T00:00:00Z"},
+            "period": {
+                "start": "2013-03-08T00:00:00Z",
+                "end": "2013-03-08T00:00:00Z",
+            },
         }
     ],
     "type": [
