@@ -168,6 +168,23 @@ from radiant_fhir_transform_cli.transform.classes.condition import (
     ConditionNoteTransformer,
 )
 
+from radiant_fhir_transform_cli.transform.classes.encounter import (
+    EncounterTransformer,
+    EncounterIdentifierTransformer,
+    EncounterStatusHistoryTransformer,
+    EncounterClassTransformer,
+    EncounterTypeTransformer,
+    EncounterPriorityCodingTransformer,
+    EncounterEpisodeOfCareTransformer,
+    EncounterBasedOnTransformer,
+    EncounterServiceTypeCodingTransformer,
+    EncounterClassHistoryTransformer,
+    EncounterParticipantTransformer,
+    EncounterAppointmentTransformer,
+    EncounterReasonCodeTransformer,
+    EncounterReasonReferenceTransformer,
+)
+
 # Map FHIR resource type to its transformer class
 transformers = {
     "Patient": [PatientTransformer],
@@ -326,5 +343,21 @@ transformers = {
         ProcedureFocalDeviceTransformer,
         ProcedureUsedReferenceTransformer,
         ProcedureUsedCodeTransformer,
+    ],
+    "Encounter": [
+        EncounterTransformer,
+        EncounterIdentifierTransformer,
+        EncounterStatusHistoryTransformer,
+        EncounterClassTransformer,
+        EncounterTypeTransformer,
+        EncounterPriorityCodingTransformer,
+        EncounterEpisodeOfCareTransformer,
+        EncounterBasedOnTransformer,
+        EncounterServiceTypeCodingTransformer,
+        EncounterClassHistoryTransformer,
+        EncounterParticipantTransformer,
+        EncounterAppointmentTransformer,
+        EncounterReasonCodeTransformer,
+        EncounterReasonReferenceTransformer,
     ],
 }

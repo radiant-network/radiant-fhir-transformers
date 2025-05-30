@@ -163,6 +163,23 @@ from tests.data.condition import (
     ConditionNoteTestHelper,
 )
 
+from tests.data.encounter import (
+    EncounterTestHelper,
+    EncounterIdentifierTestHelper,
+    EncounterStatusHistoryTestHelper,
+    EncounterClassTestHelper,
+    EncounterTypeTestHelper,
+    EncounterPriorityCodingTestHelper,
+    EncounterEpisodeOfCareTestHelper,
+    EncounterBasedOnTestHelper,
+    EncounterServiceTypeCodingTestHelper,
+    EncounterClassHistoryTestHelper,
+    EncounterParticipantTestHelper,
+    EncounterAppointmentTestHelper,
+    EncounterReasonCodeTestHelper,
+    EncounterReasonReferenceTestHelper,
+)
+
 test_helpers = [
     PatientTestHelper,
     ObservationTestHelper,
@@ -299,4 +316,18 @@ test_helpers = [
     ProcedureFocalDeviceTestHelper,
     ProcedureUsedReferenceTestHelper,
     ProcedureUsedCodeTestHelper,
+    EncounterTestHelper,
+    EncounterIdentifierTestHelper,
+    EncounterStatusHistoryTestHelper,
+    EncounterClassTestHelper,
+    EncounterTypeTestHelper,
+    EncounterPriorityCodingTestHelper,
+    EncounterEpisodeOfCareTestHelper,
+    EncounterBasedOnTestHelper,
+    EncounterServiceTypeCodingTestHelper,
+    EncounterClassHistoryTestHelper,
+    EncounterParticipantTestHelper,
+    EncounterAppointmentTestHelper,
+    EncounterReasonCodeTestHelper,
+    EncounterReasonReferenceTestHelper,
 ]
