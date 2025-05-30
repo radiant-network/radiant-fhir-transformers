@@ -9,3 +9,4 @@ from .encounter_based_on import EncounterBasedOnTransformer
 from .encounter_service_type_coding import EncounterServiceTypeCodingTransformer
 from .encounter_class_history import EncounterClassHistoryTransformer
 from .encounter_participant import EncounterParticipantTransformer
+from .encounter_appointment import EncounterAppointmentTransformer
