@@ -8,3 +8,4 @@ from .encounter_episode_of_care import EncounterEpisodeOfCareTestHelper
 from .encounter_based_on import EncounterBasedOnTestHelper
 from .encounter_service_type_coding import EncounterServiceTypeCodingTestHelper
 from .encounter_class_history import EncounterClassHistoryTestHelper
+from .encounter_participant import EncounterParticipantTestHelper
