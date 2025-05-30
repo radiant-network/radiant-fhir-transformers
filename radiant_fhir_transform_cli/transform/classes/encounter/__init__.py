@@ -10,3 +10,5 @@ from .encounter_service_type_coding import EncounterServiceTypeCodingTransformer
 from .encounter_class_history import EncounterClassHistoryTransformer
 from .encounter_participant import EncounterParticipantTransformer
 from .encounter_appointment import EncounterAppointmentTransformer
+from .encounter_reason_code import EncounterReasonCodeTransformer
+from .encounter_reason_reference import EncounterReasonReferenceTransformer

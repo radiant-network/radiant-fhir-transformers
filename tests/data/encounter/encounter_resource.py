@@ -75,6 +75,7 @@ RESOURCE = {
             "text": "The patient seems to suffer from bilateral pneumonia and renal insufficiency, most likely due to chemotherapy."
         }
     ],
+    "reasonReference": [{"reference": "Condition/example"}],
     "diagnosis": [
         {
             "condition": {"reference": "Condition/stroke"},

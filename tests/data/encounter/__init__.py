@@ -10,3 +10,5 @@ from .encounter_service_type_coding import EncounterServiceTypeCodingTestHelper
 from .encounter_class_history import EncounterClassHistoryTestHelper
 from .encounter_participant import EncounterParticipantTestHelper
 from .encounter_appointment import EncounterAppointmentTestHelper
+from .encounter_reason_code import EncounterReasonCodeTestHelper
+from .encounter_reason_reference import EncounterReasonReferenceTestHelper
