@@ -189,3 +189,5 @@ pyvenv.cfg
 # PyPI configuration file
 .pypirc
 
+*.csv
+*.json
