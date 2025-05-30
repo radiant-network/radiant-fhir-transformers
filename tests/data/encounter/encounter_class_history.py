@@ -11,15 +11,11 @@ from .encounter_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "encounter_id": "f203",
-        "class_history_class": {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-            "code": "IMP",
-            "display": "inpatient encounter",
-        },
-        "class_history_period": {
-            "start": "2013-03-08T00:00:00Z",
-            "end": "2013-03-08T00:00:00Z",
-        },
+        "class_history_class_system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+        "class_history_class_code": "IMP",
+        "class_history_class_display": "inpatient encounter",
+        "class_history_period_start": "2013-03-08T00:00:00Z",
+        "class_history_period_end": "2013-03-08T00:00:00Z",
     },
 ]
 

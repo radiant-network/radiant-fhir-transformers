@@ -24,10 +24,27 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "classHistory",
         "columns": {
-            "class_history_class": {"fhir_key": "class", "type": "str"},
-            "class_history_period": {"fhir_key": "period", "type": "str"},
+            "class_history_class_system": {
+                "fhir_key": "class.system",
+                "type": "str",
+            },
+            "class_history_class_code": {
+                "fhir_key": "class.code",
+                "type": "str",
+            },
+            "class_history_class_display": {
+                "fhir_key": "class.display",
+                "type": "str",
+            },
+            "class_history_period_start": {
+                "fhir_key": "period.start",
+                "type": "datetime",
+            },
+            "class_history_period_end": {
+                "fhir_key": "period.end",
+                "type": "datetime",
+            },
         },
-        # TODO: Add support for nested class and period fields
     },
 ]
 
