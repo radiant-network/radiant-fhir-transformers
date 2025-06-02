@@ -184,7 +184,7 @@ from radiant_fhir_transform_cli.transform.classes.encounter import (
     EncounterReasonCodeTransformer,
     EncounterReasonReferenceTransformer,
     EncounterDiagnosisTransformer,
-    # EncounterAccountTransformer,
+    EncounterAccountTransformer,
     # EncounterHospitalizationTransformer,
     # EncounterLocationTransformer,
 )
@@ -364,7 +364,7 @@ transformers = {
         EncounterReasonCodeTransformer,
         EncounterReasonReferenceTransformer,
         EncounterDiagnosisTransformer,
-        # EncounterAccountTransformer,
+        EncounterAccountTransformer,
         # EncounterHospitalizationTransformer,
         # EncounterLocationTransformer,
     ],
