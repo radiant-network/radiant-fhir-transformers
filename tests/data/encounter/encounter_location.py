@@ -20,9 +20,10 @@ EXPECTED_OUTPUT = [
         "location_physical_type_coding_display": None,
         "location_physical_type_text": None,
         "location_period_start": "2017-02-01T07:15:00+10:00",
-        "location_period_end": "2017-02-01T08:45:00+10:00"
+        "location_period_end": "2017-02-01T08:45:00+10:00",
     }
 ]
+
 
 class EncounterLocationTestHelper(FhirResourceTestHelper):
     """
@@ -40,7 +41,7 @@ class EncounterLocationTestHelper(FhirResourceTestHelper):
         transformer (type): The class responsible for transforming the FHIR resource.
         expected_table_name (str): The name of the table expected after transformation.
 
-"""
+    """
 
     resource_type = "Encounter"
     resource_subtype = "location"

@@ -5,8 +5,8 @@ FHIR Encounter Hospitalization Transformer
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
-TRANSFORM_SCHEMA = [
 
+TRANSFORM_SCHEMA = [
     {
         "fhir_path": None,
         "columns": {
@@ -126,6 +126,8 @@ TRANSFORM_SCHEMA = [
         },
     },
 ]
+
+
 class EncounterHospitalizationTransformer(FhirResourceTransformer):
     """
     A transformer class for the 'Encounter' FHIR resource, specifically for the 'hospitalization' field.

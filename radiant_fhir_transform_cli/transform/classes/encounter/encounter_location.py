@@ -1,9 +1,11 @@
 """
 FHIR Encounter Location Transformer Class
 """
+
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
+
 TRANSFORM_SCHEMA = [
     {
         "fhir_path": None,
@@ -22,19 +24,48 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "location",
         "columns": {
-            "location_location_reference": {"fhir_key": "location.reference", "type": "str"},
-            "location_location_type": {"fhir_key": "location.type", "type": "str"},
-            "location_location_display": {"fhir_key": "location.display", "type": "str"},
+            "location_location_reference": {
+                "fhir_key": "location.reference",
+                "type": "str",
+            },
+            "location_location_type": {
+                "fhir_key": "location.type",
+                "type": "str",
+            },
+            "location_location_display": {
+                "fhir_key": "location.display",
+                "type": "str",
+            },
             "location_status": {"fhir_key": "status", "type": "str"},
-            "location_physical_type_coding_code": {"fhir_key": "physicalType.coding.code", "type": "str"},
-            "location_physical_type_coding_system": {"fhir_key": "physicalType.coding.system", "type": "str"},
-            "location_physical_type_coding_display": {"fhir_key": "physicalType.coding.display", "type": "str"},
-            "location_physical_type_text": {"fhir_key": "physicalType.text", "type": "str"},
-            "location_period_start": {"fhir_key": "period.start", "type": "datetime"},
-            "location_period_end": {"fhir_key": "period.end", "type": "datetime"},
+            "location_physical_type_coding_code": {
+                "fhir_key": "physicalType.coding.code",
+                "type": "str",
+            },
+            "location_physical_type_coding_system": {
+                "fhir_key": "physicalType.coding.system",
+                "type": "str",
+            },
+            "location_physical_type_coding_display": {
+                "fhir_key": "physicalType.coding.display",
+                "type": "str",
+            },
+            "location_physical_type_text": {
+                "fhir_key": "physicalType.text",
+                "type": "str",
+            },
+            "location_period_start": {
+                "fhir_key": "period.start",
+                "type": "datetime",
+            },
+            "location_period_end": {
+                "fhir_key": "period.end",
+                "type": "datetime",
+            },
         },
     },
 ]
+
+
 class EncounterLocationTransformer(FhirResourceTransformer):
     """
     A transformer class for the 'Encounter' FHIR resource, specifically for the 'location' field.
