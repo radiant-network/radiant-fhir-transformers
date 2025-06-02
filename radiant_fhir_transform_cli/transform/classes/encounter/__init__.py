@@ -16,5 +16,5 @@ from .encounter_diagnosis import EncounterDiagnosisTransformer
 
 from .encounter_account import EncounterAccountTransformer
 
-# from .encounter_hospitalization import EncounterHospitalizationTransformer
+from .encounter_hospitalization import EncounterHospitalizationTransformer
 # from .encounter_location import EncounterLocationTransformer
