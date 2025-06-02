@@ -151,6 +151,18 @@ RESOURCE = {
         ],
         "destination": {"reference": "Location/2"},
     },
+    "location": [
+        {
+            "location": {
+                "display": "Example"
+            },
+            "status": "active",
+            "period": {
+                "start": "2017-02-01T07:15:00+10:00",
+                "end": "2017-02-01T08:45:00+10:00"
+            }
+        }
+    ],
     "serviceProvider": {"reference": "Organization/2"},
     "partOf": {"reference": "Encounter/f203"},
 }
