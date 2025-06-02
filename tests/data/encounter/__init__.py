@@ -16,5 +16,5 @@ from .encounter_diagnosis import EncounterDiagnosisTestHelper
 
 from .encounter_account import EncounterAccountTestHelper
 
-# from .encounter_hospitalization import EncounterHospitalizationTestHelper
+from .encounter_hospitalization import EncounterHospitalizationTestHelper
 # from .encounter_location import EncounterLocationTestHelper

@@ -181,7 +181,7 @@ from tests.data.encounter import (
     EncounterDiagnosisTestHelper,
     EncounterAccountTestHelper,
     # EncounterLocationTestHelper,
-    # EncounterHospitalizationTestHelper,
+    EncounterHospitalizationTestHelper,
 )
 
 test_helpers = [
@@ -337,5 +337,5 @@ test_helpers = [
     EncounterDiagnosisTestHelper,
     EncounterAccountTestHelper,
     # EncounterLocationTestHelper,
-    # EncounterHospitalizationTestHelper,
+    EncounterHospitalizationTestHelper,
 ]
