@@ -21,7 +21,6 @@ from tests.data.observation import (
     ObservationValueCodeableConceptCodingTestHelper,
 )
 from tests.data.patient import PatientTestHelper
-
 from tests.data.medication import (
     MedicationTestHelper,
     MedicationIdentifierTestHelper,
@@ -124,7 +123,6 @@ from tests.data.procedure import (
     ProcedureUsedReferenceTestHelper,
     ProcedureUsedCodeTestHelper,
 )
-
 from tests.data.service_request import (
     ServiceRequestTestHelper,
     ServiceRequestBasedOnTestHelper,
@@ -148,7 +146,6 @@ from tests.data.service_request import (
     ServiceRequestSupportingInfoTestHelper,
     ServiceRequestPerformerTypeCodingTestHelper,
 )
-
 from tests.data.condition import (
     ConditionTestHelper,
     ConditionIdentifierTestHelper,
@@ -161,6 +158,16 @@ from tests.data.condition import (
     ConditionEvidenceTestHelper,
     ConditionStageTestHelper,
     ConditionNoteTestHelper,
+)
+from tests.data.provenance import (
+    ProvenanceTestHelper,
+    ProvenanceTargetTestHelper,
+    ProvenancePolicyTestHelper,
+    ProvenanceReasonTestHelper,
+    ProvenanceActivityCodingTestHelper,
+    ProvenanceAgentTestHelper,
+    ProvenanceEntityTestHelper,
+    ProvenanceSignatureTestHelper,
 )
 
 test_helpers = [
@@ -299,4 +306,12 @@ test_helpers = [
     ProcedureFocalDeviceTestHelper,
     ProcedureUsedReferenceTestHelper,
     ProcedureUsedCodeTestHelper,
+    ProvenanceTestHelper,
+    ProvenanceTargetTestHelper,
+    ProvenancePolicyTestHelper,
+    ProvenanceReasonTestHelper,
+    ProvenanceActivityCodingTestHelper,
+    ProvenanceAgentTestHelper,
+    ProvenanceEntityTestHelper,
+    ProvenanceSignatureTestHelper,
 ]
