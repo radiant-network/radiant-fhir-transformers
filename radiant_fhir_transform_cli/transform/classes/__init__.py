@@ -25,7 +25,6 @@ from radiant_fhir_transform_cli.transform.classes.observation.observation_code_c
 from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.service_request import (
     ServiceRequestTransformer,
     ServiceRequestCodeCodingTransformer,
@@ -49,7 +48,6 @@ from radiant_fhir_transform_cli.transform.classes.service_request import (
     ServiceRequestRelevantHistoryTransformer,
     ServiceRequestPerformerTypeCodingTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.medication import (
     MedicationTransformer,
     MedicationIdentifierTransformer,
@@ -137,7 +135,6 @@ from radiant_fhir_transform_cli.transform.classes.organization import (
     OrganizationContactTransformer,
     OrganizationEndpointTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
     DiagnosticReportIdentifierTransformer,
     DiagnosticReportTransformer,
@@ -153,6 +150,7 @@ from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
     DiagnosticReportResultsInterpreterTransformer,
     DiagnosticReportSpecimenTransformer,
 )
+
 from radiant_fhir_transform_cli.transform.classes.allergy_intolerance import (
     AllergyIntoleranceTransformer,
     AllergyIntoleranceClinicalStatusCodingTransformer,
@@ -175,6 +173,16 @@ from radiant_fhir_transform_cli.transform.classes.condition import (
     ConditionEvidenceTransformer,
     ConditionStageTransformer,
     ConditionNoteTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.provenance import (
+    ProvenanceTransformer,
+    ProvenanceTargetTransformer,
+    ProvenancePolicyTransformer,
+    ProvenanceReasonTransformer,
+    ProvenanceActivityCodingTransformer,
+    ProvenanceAgentTransformer,
+    ProvenanceEntityTransformer,
+    ProvenanceSignatureTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -336,6 +344,7 @@ transformers = {
         ProcedureUsedReferenceTransformer,
         ProcedureUsedCodeTransformer,
     ],
+
     "AllergyIntolerance": [
         AllergyIntoleranceTransformer,
         AllergyIntoleranceClinicalStatusCodingTransformer,
@@ -345,5 +354,15 @@ transformers = {
         AllergyIntoleranceNoteTransformer,
         AllergyIntoleranceReactionTransformer,
         AllergyIntoleranceIdentifierTransformer,
+    ],
+    "Provenance": [
+        ProvenanceTransformer,
+        ProvenanceTargetTransformer,
+        ProvenancePolicyTransformer,
+        ProvenanceReasonTransformer,
+        ProvenanceActivityCodingTransformer,
+        ProvenanceAgentTransformer,
+        ProvenanceEntityTransformer,
+        ProvenanceSignatureTransformer,
     ],
 }
