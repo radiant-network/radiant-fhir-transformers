@@ -159,6 +159,19 @@ from tests.data.allergy_intolerance import (
     AllergyIntoleranceReactionTestHelper,
     AllergyIntoleranceIdentifierTestHelper,
 )
+from tests.data.condition import (
+    ConditionTestHelper,
+    ConditionIdentifierTestHelper,
+    ConditionSeverityCodingTestHelper,
+    ConditionClinicalStatusCodingTestHelper,
+    ConditionVerificationStatusCodingTestHelper,
+    ConditionCodeCodingTestHelper,
+    ConditionBodySiteTestHelper,
+    ConditionCategoryTestHelper,
+    ConditionEvidenceTestHelper,
+    ConditionStageTestHelper,
+    ConditionNoteTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -202,6 +215,17 @@ test_helpers = [
     MedicationCodeCodingTestHelper,
     MedicationFormCodingTestHelper,
     MedicationIngredientTestHelper,
+    ConditionTestHelper,
+    ConditionIdentifierTestHelper,
+    ConditionSeverityCodingTestHelper,
+    ConditionClinicalStatusCodingTestHelper,
+    ConditionVerificationStatusCodingTestHelper,
+    ConditionCodeCodingTestHelper,
+    ConditionBodySiteTestHelper,
+    ConditionCategoryTestHelper,
+    ConditionEvidenceTestHelper,
+    ConditionStageTestHelper,
+    ConditionNoteTestHelper,
     SpecimenTestHelper,
     SpecimenCollectionBodySiteCodingTestHelper,
     SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper,
