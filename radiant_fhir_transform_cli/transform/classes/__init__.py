@@ -344,7 +344,6 @@ transformers = {
         ProcedureUsedReferenceTransformer,
         ProcedureUsedCodeTransformer,
     ],
-
     "AllergyIntolerance": [
         AllergyIntoleranceTransformer,
         AllergyIntoleranceClinicalStatusCodingTransformer,
