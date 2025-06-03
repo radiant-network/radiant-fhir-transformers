@@ -146,6 +146,18 @@ from tests.data.service_request import (
     ServiceRequestSupportingInfoTestHelper,
     ServiceRequestPerformerTypeCodingTestHelper,
 )
+
+from tests.data.allergy_intolerance import (
+    AllergyIntoleranceTestHelper,
+    AllergyIntoleranceClinicalStatusCodingTestHelper,
+    AllergyIntoleranceVerificationStatusCodingTestHelper,
+    AllergyIntoleranceCategoryTestHelper,
+    AllergyIntoleranceCodeCodingTestHelper,
+    AllergyIntoleranceNoteTestHelper,
+    AllergyIntoleranceReactionTestHelper,
+    AllergyIntoleranceIdentifierTestHelper,
+)
+
 from tests.data.condition import (
     ConditionTestHelper,
     ConditionIdentifierTestHelper,
@@ -306,6 +318,14 @@ test_helpers = [
     ProcedureFocalDeviceTestHelper,
     ProcedureUsedReferenceTestHelper,
     ProcedureUsedCodeTestHelper,
+    AllergyIntoleranceTestHelper,
+    AllergyIntoleranceClinicalStatusCodingTestHelper,
+    AllergyIntoleranceVerificationStatusCodingTestHelper,
+    AllergyIntoleranceCategoryTestHelper,
+    AllergyIntoleranceCodeCodingTestHelper,
+    AllergyIntoleranceNoteTestHelper,
+    AllergyIntoleranceReactionTestHelper,
+    AllergyIntoleranceIdentifierTestHelper,
     ProvenanceTestHelper,
     ProvenanceTargetTestHelper,
     ProvenancePolicyTestHelper,

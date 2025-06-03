@@ -150,6 +150,17 @@ from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
     DiagnosticReportResultsInterpreterTransformer,
     DiagnosticReportSpecimenTransformer,
 )
+
+from radiant_fhir_transform_cli.transform.classes.allergy_intolerance import (
+    AllergyIntoleranceTransformer,
+    AllergyIntoleranceClinicalStatusCodingTransformer,
+    AllergyIntoleranceVerificationStatusCodingTransformer,
+    AllergyIntoleranceCategoryTransformer,
+    AllergyIntoleranceCodeCodingTransformer,
+    AllergyIntoleranceNoteTransformer,
+    AllergyIntoleranceReactionTransformer,
+    AllergyIntoleranceIdentifierTransformer,
+)
 from radiant_fhir_transform_cli.transform.classes.condition import (
     ConditionTransformer,
     ConditionCodeCodingTransformer,
@@ -332,6 +343,16 @@ transformers = {
         ProcedureFocalDeviceTransformer,
         ProcedureUsedReferenceTransformer,
         ProcedureUsedCodeTransformer,
+    ],
+    "AllergyIntolerance": [
+        AllergyIntoleranceTransformer,
+        AllergyIntoleranceClinicalStatusCodingTransformer,
+        AllergyIntoleranceVerificationStatusCodingTransformer,
+        AllergyIntoleranceCategoryTransformer,
+        AllergyIntoleranceCodeCodingTransformer,
+        AllergyIntoleranceNoteTransformer,
+        AllergyIntoleranceReactionTransformer,
+        AllergyIntoleranceIdentifierTransformer,
     ],
     "Provenance": [
         ProvenanceTransformer,
