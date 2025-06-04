@@ -93,6 +93,13 @@ RESOURCE = {
     ],
     "status": "active",
     "intent": "plan",
+    "identifier": [
+        {
+            "use": "official",
+            "system": "http://www.bmc.nl/zorgportal/identifiers/careplans",
+            "value": "CP2903",
+        }
+    ],
     "subject": {"reference": "Patient/1", "display": "Eve Everywoman"},
     "period": {"start": "2013-01-01", "end": "2013-10-01"},
     "careTeam": [{"reference": "#careteam"}],
