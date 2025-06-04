@@ -194,6 +194,7 @@ from radiant_fhir_transform_cli.transform.classes.care_plan import (
     CarePlanReplacesTransformer,
     CarePlanPartOfTransformer,
     CarePlanCategoryTransformer,
+    CarePlanContributorTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -384,5 +385,6 @@ transformers = {
         CarePlanReplacesTransformer,
         CarePlanPartOfTransformer,
         CarePlanCategoryTransformer,
+        CarePlanContributorTransformer,
     ],
 }

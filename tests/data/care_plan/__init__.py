@@ -8,3 +8,4 @@ from .care_plan_based_on import CarePlanBasedOnTestHelper
 from .care_plan_replaces import CarePlanReplacesTestHelper
 from .care_plan_part_of import CarePlanPartOfTestHelper
 from .care_plan_category import CarePlanCategoryTestHelper
+from .care_plan_contributor import CarePlanContributorTestHelper
