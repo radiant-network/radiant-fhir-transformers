@@ -181,6 +181,9 @@ from tests.data.provenance import (
     ProvenanceEntityTestHelper,
     ProvenanceSignatureTestHelper,
 )
+from tests.data.care_plan import (
+    CarePlanTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -334,4 +337,5 @@ test_helpers = [
     ProvenanceAgentTestHelper,
     ProvenanceEntityTestHelper,
     ProvenanceSignatureTestHelper,
+    CarePlanTestHelper,
 ]
