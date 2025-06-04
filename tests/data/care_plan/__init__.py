@@ -5,3 +5,4 @@ from .care_plan_instantiates_canonical import (
 )
 from .care_plan_instantiates_uri import CarePlanInstantiatesUriTestHelper
 from .care_plan_based_on import CarePlanBasedOnTestHelper
+from .care_plan_replaces import CarePlanReplacesTestHelper

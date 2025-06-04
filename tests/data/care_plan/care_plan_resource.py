@@ -98,6 +98,8 @@ RESOURCE = {
         "http://example.org/fhir/CarePlanDefinition/KDN5"
     ],
     "basedOn": [{"display": "Management of Type 2 Diabetes"}],
+    "replaces": [{"display": "Plan from urgent care clinic"}],
+    "partOf": [{"display": "Overall wellness plan"}],
     "identifier": [
         {
             "use": "official",
