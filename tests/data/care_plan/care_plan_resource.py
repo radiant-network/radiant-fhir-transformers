@@ -93,6 +93,10 @@ RESOURCE = {
     ],
     "status": "active",
     "intent": "plan",
+    "instantiatesUri": ["http://example.org/protocol-for-obesity"],
+    "instantiatesCanonical": [
+        "http://example.org/fhir/CarePlanDefinition/KDN5"
+    ],
     "identifier": [
         {
             "use": "official",
