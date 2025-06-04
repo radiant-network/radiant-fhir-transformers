@@ -146,7 +146,6 @@ from tests.data.service_request import (
     ServiceRequestSupportingInfoTestHelper,
     ServiceRequestPerformerTypeCodingTestHelper,
 )
-
 from tests.data.allergy_intolerance import (
     AllergyIntoleranceTestHelper,
     AllergyIntoleranceClinicalStatusCodingTestHelper,
@@ -157,7 +156,6 @@ from tests.data.allergy_intolerance import (
     AllergyIntoleranceReactionTestHelper,
     AllergyIntoleranceIdentifierTestHelper,
 )
-
 from tests.data.condition import (
     ConditionTestHelper,
     ConditionIdentifierTestHelper,
@@ -180,6 +178,24 @@ from tests.data.provenance import (
     ProvenanceAgentTestHelper,
     ProvenanceEntityTestHelper,
     ProvenanceSignatureTestHelper,
+)
+from tests.data.consent import (
+    ConsentTestHelper,
+    ConsentIdentifierTestHelper,
+    ConsentScopeCodingTestHelper,
+    ConsentCategoryTestHelper,
+    ConsentPerformerTestHelper,
+    ConsentOrganizationTestHelper,
+    ConsentPolicyTestHelper,
+    ConsentPolicyRuleCodingTestHelper,
+    ConsentVerificationTestHelper,
+    ConsentProvisionActorTestHelper,
+    ConsentProvisionActionTestHelper,
+    ConsentProvisionSecurityLabelTestHelper,
+    ConsentProvisionPurposeTestHelper,
+    ConsentProvisionClassTestHelper,
+    ConsentProvisionCodeTestHelper,
+    ConsentProvisionDataTestHelper,
 )
 
 test_helpers = [
@@ -334,4 +350,20 @@ test_helpers = [
     ProvenanceAgentTestHelper,
     ProvenanceEntityTestHelper,
     ProvenanceSignatureTestHelper,
+    ConsentTestHelper,
+    ConsentIdentifierTestHelper,
+    ConsentScopeCodingTestHelper,
+    ConsentCategoryTestHelper,
+    ConsentPerformerTestHelper,
+    ConsentOrganizationTestHelper,
+    ConsentPolicyTestHelper,
+    ConsentPolicyRuleCodingTestHelper,
+    ConsentVerificationTestHelper,
+    ConsentProvisionActorTestHelper,
+    ConsentProvisionActionTestHelper,
+    ConsentProvisionSecurityLabelTestHelper,
+    ConsentProvisionPurposeTestHelper,
+    ConsentProvisionClassTestHelper,
+    ConsentProvisionCodeTestHelper,
+    ConsentProvisionDataTestHelper,
 ]
