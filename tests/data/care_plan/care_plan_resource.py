@@ -97,6 +97,7 @@ RESOURCE = {
     "instantiatesCanonical": [
         "http://example.org/fhir/CarePlanDefinition/KDN5"
     ],
+    "basedOn": [{"display": "Management of Type 2 Diabetes"}],
     "identifier": [
         {
             "use": "official",
