@@ -100,6 +100,11 @@ RESOURCE = {
     "basedOn": [{"display": "Management of Type 2 Diabetes"}],
     "replaces": [{"display": "Plan from urgent care clinic"}],
     "partOf": [{"display": "Overall wellness plan"}],
+      "category": [
+    {
+      "text": "Weight management plan"
+    }
+  ],
     "identifier": [
         {
             "use": "official",

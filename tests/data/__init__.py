@@ -189,6 +189,7 @@ from tests.data.care_plan import (
     CarePlanBasedOnTestHelper,
     CarePlanReplacesTestHelper,
     CarePlanPartOfTestHelper,
+    CarePlanCategoryTestHelper,
 )
 
 test_helpers = [
@@ -350,4 +351,5 @@ test_helpers = [
     CarePlanBasedOnTestHelper,
     CarePlanReplacesTestHelper,
     CarePlanPartOfTestHelper,
+    CarePlanCategoryTestHelper,
 ]

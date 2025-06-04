@@ -7,3 +7,4 @@ from .care_plan_instantiates_uri import CarePlanInstantiatesUriTransformer
 from .care_plan_based_on import CarePlanBasedOnTransformer
 from .care_plan_replaces import CarePlanReplacesTransformer
 from .care_plan_part_of import CarePlanPartOfTransformer
+from .care_plan_category import CarePlanCategoryTransformer
