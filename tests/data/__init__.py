@@ -146,7 +146,6 @@ from tests.data.service_request import (
     ServiceRequestSupportingInfoTestHelper,
     ServiceRequestPerformerTypeCodingTestHelper,
 )
-
 from tests.data.allergy_intolerance import (
     AllergyIntoleranceTestHelper,
     AllergyIntoleranceClinicalStatusCodingTestHelper,
@@ -157,7 +156,6 @@ from tests.data.allergy_intolerance import (
     AllergyIntoleranceReactionTestHelper,
     AllergyIntoleranceIdentifierTestHelper,
 )
-
 from tests.data.condition import (
     ConditionTestHelper,
     ConditionIdentifierTestHelper,
@@ -197,6 +195,35 @@ from tests.data.care_plan import (
     CarePlanGoalTestHelper,
     CarePlanNoteTestHelper,
     CarePlanActivityTestHelper,
+)
+from tests.data.consent import (
+    ConsentTestHelper,
+    ConsentIdentifierTestHelper,
+    ConsentScopeCodingTestHelper,
+    ConsentCategoryTestHelper,
+    ConsentPerformerTestHelper,
+    ConsentOrganizationTestHelper,
+    ConsentPolicyTestHelper,
+    ConsentPolicyRuleCodingTestHelper,
+    ConsentVerificationTestHelper,
+    ConsentProvisionActorTestHelper,
+    ConsentProvisionActionTestHelper,
+    ConsentProvisionSecurityLabelTestHelper,
+    ConsentProvisionPurposeTestHelper,
+    ConsentProvisionClassTestHelper,
+    ConsentProvisionCodeTestHelper,
+    ConsentProvisionDataTestHelper,
+)
+from tests.data.care_team import (
+    CareTeamTestHelper,
+    CareTeamIdentifierTestHelper,
+    CareTeamCategoryTestHelper,
+    CareTeamParticipantTestHelper,
+    CareTeamReasonCodeTestHelper,
+    CareTeamReasonReferenceTestHelper,
+    CareTeamManagingOrganizationTestHelper,
+    CareTeamTelecomTestHelper,
+    CareTeamNoteTestHelper,
 )
 
 test_helpers = [
@@ -366,4 +393,29 @@ test_helpers = [
     CarePlanGoalTestHelper,
     CarePlanNoteTestHelper,
     CarePlanActivityTestHelper,
+    ConsentTestHelper,
+    ConsentIdentifierTestHelper,
+    ConsentScopeCodingTestHelper,
+    ConsentCategoryTestHelper,
+    ConsentPerformerTestHelper,
+    ConsentOrganizationTestHelper,
+    ConsentPolicyTestHelper,
+    ConsentPolicyRuleCodingTestHelper,
+    ConsentVerificationTestHelper,
+    ConsentProvisionActorTestHelper,
+    ConsentProvisionActionTestHelper,
+    ConsentProvisionSecurityLabelTestHelper,
+    ConsentProvisionPurposeTestHelper,
+    ConsentProvisionClassTestHelper,
+    ConsentProvisionCodeTestHelper,
+    ConsentProvisionDataTestHelper,
+    CareTeamTestHelper,
+    CareTeamIdentifierTestHelper,
+    CareTeamCategoryTestHelper,
+    CareTeamParticipantTestHelper,
+    CareTeamReasonCodeTestHelper,
+    CareTeamReasonReferenceTestHelper,
+    CareTeamManagingOrganizationTestHelper,
+    CareTeamTelecomTestHelper,
+    CareTeamNoteTestHelper,
 ]
