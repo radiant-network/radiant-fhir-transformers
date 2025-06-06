@@ -11,3 +11,5 @@ from .care_plan_category import CarePlanCategoryTransformer
 from .care_plan_contributor import CarePlanContributorTransformer
 from .care_plan_care_team import CarePlanCareTeamTransformer
 from .care_plan_addresses import CarePlanAddressesTransformer
+from .care_plan_supporting_info import CarePlanSupportingInfoTransformer
+from .care_plan_goal import CarePlanGoalTransformer

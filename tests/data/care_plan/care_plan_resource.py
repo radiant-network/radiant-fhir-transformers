@@ -116,6 +116,7 @@ RESOURCE = {
     "period": {"start": "2013-01-01", "end": "2013-10-01"},
     "careTeam": [{"reference": "#careteam"}],
     "addresses": [{"reference": "#p1", "display": "pregnancy"}],
+    "supportingInfo": [{"reference": "#support", "display": "support"}],
     "goal": [{"reference": "#goal"}],
     "activity": [
         {"reference": {"display": "Prenatal vitamin MedicationRequest"}},
