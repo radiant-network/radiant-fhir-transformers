@@ -10,3 +10,4 @@ from .care_plan_part_of import CarePlanPartOfTransformer
 from .care_plan_category import CarePlanCategoryTransformer
 from .care_plan_contributor import CarePlanContributorTransformer
 from .care_plan_care_team import CarePlanCareTeamTransformer
+from .care_plan_addresses import CarePlanAddressesTransformer
