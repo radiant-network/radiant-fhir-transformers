@@ -150,7 +150,6 @@ from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
     DiagnosticReportResultsInterpreterTransformer,
     DiagnosticReportSpecimenTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.allergy_intolerance import (
     AllergyIntoleranceTransformer,
     AllergyIntoleranceClinicalStatusCodingTransformer,
@@ -183,6 +182,24 @@ from radiant_fhir_transform_cli.transform.classes.provenance import (
     ProvenanceAgentTransformer,
     ProvenanceEntityTransformer,
     ProvenanceSignatureTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.consent import (
+    ConsentTransformer,
+    ConsentIdentifierTransformer,
+    ConsentScopeCodingTransformer,
+    ConsentCategoryTransformer,
+    ConsentPerformerTransformer,
+    ConsentOrganizationTransformer,
+    ConsentPolicyTransformer,
+    ConsentPolicyRuleCodingTransformer,
+    ConsentVerificationTransformer,
+    ConsentProvisionActorTransformer,
+    ConsentProvisionActionTransformer,
+    ConsentProvisionSecurityLabelTransformer,
+    ConsentProvisionPurposeTransformer,
+    ConsentProvisionClassTransformer,
+    ConsentProvisionCodeTransformer,
+    ConsentProvisionDataTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -363,5 +380,23 @@ transformers = {
         ProvenanceAgentTransformer,
         ProvenanceEntityTransformer,
         ProvenanceSignatureTransformer,
+    ],
+    "Consent": [
+        ConsentTransformer,
+        ConsentIdentifierTransformer,
+        ConsentScopeCodingTransformer,
+        ConsentCategoryTransformer,
+        ConsentPerformerTransformer,
+        ConsentOrganizationTransformer,
+        ConsentPolicyTransformer,
+        ConsentPolicyRuleCodingTransformer,
+        ConsentVerificationTransformer,
+        ConsentProvisionActorTransformer,
+        ConsentProvisionActionTransformer,
+        ConsentProvisionSecurityLabelTransformer,
+        ConsentProvisionPurposeTransformer,
+        ConsentProvisionClassTransformer,
+        ConsentProvisionCodeTransformer,
+        ConsentProvisionDataTransformer,
     ],
 }
