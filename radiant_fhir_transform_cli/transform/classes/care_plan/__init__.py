@@ -14,3 +14,4 @@ from .care_plan_addresses import CarePlanAddressesTransformer
 from .care_plan_supporting_info import CarePlanSupportingInfoTransformer
 from .care_plan_goal import CarePlanGoalTransformer
 from .care_plan_note import CarePlanNoteTransformer
+from .care_plan_activity import CarePlanActivityTransformer

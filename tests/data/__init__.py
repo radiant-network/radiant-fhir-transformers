@@ -196,6 +196,7 @@ from tests.data.care_plan import (
     CarePlanSupportingInfoTestHelper,
     CarePlanGoalTestHelper,
     CarePlanNoteTestHelper,
+    CarePlanActivityTestHelper,
 )
 
 test_helpers = [
@@ -364,4 +365,5 @@ test_helpers = [
     CarePlanSupportingInfoTestHelper,
     CarePlanGoalTestHelper,
     CarePlanNoteTestHelper,
+    CarePlanActivityTestHelper,
 ]
