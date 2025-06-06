@@ -202,4 +202,10 @@ RESOURCE = {
             }
         },
     ],
+    "note": [
+        {
+            "text": "Patient family is not ready to commit to goal setting at this time.  Goal setting will be addressed in the future",
+            "time": "2014-02-14",
+        }
+    ],
 }

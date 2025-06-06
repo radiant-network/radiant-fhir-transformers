@@ -13,3 +13,4 @@ from .care_plan_care_team import CarePlanCareTeamTestHelper
 from .care_plan_addresses import CarePlanAddressesTestHelper
 from .care_plan_supporting_info import CarePlanSupportingInfoTestHelper
 from .care_plan_goal import CarePlanGoalTestHelper
+from .care_plan_note import CarePlanNoteTestHelper
