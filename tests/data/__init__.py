@@ -197,6 +197,17 @@ from tests.data.consent import (
     ConsentProvisionCodeTestHelper,
     ConsentProvisionDataTestHelper,
 )
+from tests.data.care_team import (
+    CareTeamTestHelper,
+    CareTeamIdentifierTestHelper,
+    CareTeamCategoryTestHelper,
+    CareTeamParticipantTestHelper,
+    CareTeamReasonCodeTestHelper,
+    CareTeamReasonReferenceTestHelper,
+    CareTeamManagingOrganizationTestHelper,
+    CareTeamTelecomTestHelper,
+    CareTeamNoteTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -366,4 +377,13 @@ test_helpers = [
     ConsentProvisionClassTestHelper,
     ConsentProvisionCodeTestHelper,
     ConsentProvisionDataTestHelper,
+    CareTeamTestHelper,
+    CareTeamIdentifierTestHelper,
+    CareTeamCategoryTestHelper,
+    CareTeamParticipantTestHelper,
+    CareTeamReasonCodeTestHelper,
+    CareTeamReasonReferenceTestHelper,
+    CareTeamManagingOrganizationTestHelper,
+    CareTeamTelecomTestHelper,
+    CareTeamNoteTestHelper,
 ]

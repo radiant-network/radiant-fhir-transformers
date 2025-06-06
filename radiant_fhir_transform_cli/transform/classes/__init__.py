@@ -201,6 +201,17 @@ from radiant_fhir_transform_cli.transform.classes.consent import (
     ConsentProvisionCodeTransformer,
     ConsentProvisionDataTransformer,
 )
+from radiant_fhir_transform_cli.transform.classes.care_team import (
+    CareTeamTransformer,
+    CareTeamIdentifierTransformer,
+    CareTeamCategoryTransformer,
+    CareTeamParticipantTransformer,
+    CareTeamReasonCodeTransformer,
+    CareTeamReasonReferenceTransformer,
+    CareTeamManagingOrganizationTransformer,
+    CareTeamTelecomTransformer,
+    CareTeamNoteTransformer,
+)
 
 # Map FHIR resource type to its transformer class
 transformers = {
@@ -398,5 +409,16 @@ transformers = {
         ConsentProvisionClassTransformer,
         ConsentProvisionCodeTransformer,
         ConsentProvisionDataTransformer,
+    ],
+    "CareTeam": [
+        CareTeamTransformer,
+        CareTeamIdentifierTransformer,
+        CareTeamCategoryTransformer,
+        CareTeamParticipantTransformer,
+        CareTeamReasonCodeTransformer,
+        CareTeamReasonReferenceTransformer,
+        CareTeamManagingOrganizationTransformer,
+        CareTeamTelecomTransformer,
+        CareTeamNoteTransformer,
     ],
 }
