@@ -43,6 +43,11 @@ class EncounterAccountTransformer(FhirResourceTransformer):
         resource_type (str): The type of FHIR resource being transformed, which is set to 'Encounter'.
         resource_subtype (str): The subtype of the FHIR resource being transformed, set to 'account'.
         transform_schema (list): A list of dictionaries defining how to transform the FHIR data.
+
+    Methods:
+    __init__():
+        Initializes the EncounterAccountTransformer instance with the resource type 'Encounter',
+        subtype 'account', and the specified transformation dictionary.
     """
 
     def __init__(self):
