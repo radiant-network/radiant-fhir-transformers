@@ -13,8 +13,6 @@ from .encounter_appointment import EncounterAppointmentTransformer
 from .encounter_reason_code import EncounterReasonCodeTransformer
 from .encounter_reason_reference import EncounterReasonReferenceTransformer
 from .encounter_diagnosis import EncounterDiagnosisTransformer
-
 from .encounter_account import EncounterAccountTransformer
-
 from .encounter_hospitalization import EncounterHospitalizationTransformer
 from .encounter_location import EncounterLocationTransformer
