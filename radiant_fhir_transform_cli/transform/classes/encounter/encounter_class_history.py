@@ -61,7 +61,9 @@ class EncounterClassHistoryTransformer(FhirResourceTransformer):
         subtype (str): Specifies the sub-element of the resource to focus on ('class_history').
 
     Methods:
-        __init__: Initializes the transformer with the resource type, subtype, and transformation schema.
+    __init__():
+        Initializes the EncounterClassHistoryTransformer instance with the resource type 'Encounter',
+        subtype 'class_history', and the specified transformation dictionary.
     """
 
     def __init__(self):

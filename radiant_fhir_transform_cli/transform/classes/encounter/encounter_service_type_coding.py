@@ -46,6 +46,11 @@ class EncounterServiceTypeCodingTransformer(FhirResourceTransformer):
         resource_type (str): The type of FHIR resource being transformed ('Encounter').
         subtype (str): Specifies the sub-element of the resource to focus on ('service_type_coding').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
+
+    Methods:
+    __init__():
+        Initializes the EncounterServiceTypeCodingTransformer instance with the resource type 'Encounter',
+        subtype 'service_type_coding', and the specified transformation dictionary.
     """
 
     def __init__(self):

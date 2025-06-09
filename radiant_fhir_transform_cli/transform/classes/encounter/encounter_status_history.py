@@ -49,6 +49,11 @@ class EncounterStatusHistoryTransformer(FhirResourceTransformer):
         resource_type (str): The type of FHIR resource being transformed ('Encounter').
         subtype (str): Specifies the sub-element of the resource to focus on ('status_history').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
+
+    Methods:
+    __init__():
+        Initializes the EncounterStatusHistoryTransformer instance with the resource type 'Encounter',
+        subtype 'status_history', and the specified transformation dictionary.
     """
 
     def __init__(self):
