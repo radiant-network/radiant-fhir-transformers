@@ -1,5 +1,27 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.8.0
+
+### Summary
+
+- Emojis: ✨ x6, ? x5
+- Categories: Additions x6, Other Changes x5
+
+### New features and changes
+
+- [#56](https://github.com/radiant-network/radiant-fhir-transformers/pull/56) - ✨ [D3B-1428] Add CareTeam Transformer Classes - [ff756631](https://github.com/radiant-network/radiant-fhir-transformers/commit/ff756631749c26e5cc056407872c56c8cf2f3269) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#55](https://github.com/radiant-network/radiant-fhir-transformers/pull/55) - ✨ [D3B-1423] Add Consent Transformer Classes - [a2283586](https://github.com/radiant-network/radiant-fhir-transformers/commit/a228358654441e5fc9d93fb51abadb6c866c4de9) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#52](https://github.com/radiant-network/radiant-fhir-transformers/pull/52) -  [D3B 1416] develop AllergyIntolerance transformer - [72e26e7c](https://github.com/radiant-network/radiant-fhir-transformers/commit/72e26e7c1041b302d3a58fcc79e68886e4fdeea4) by [calkinsh](https://github.com/calkinsh)
+- [#54](https://github.com/radiant-network/radiant-fhir-transformers/pull/54) - ✨ [D3B-1418] Add Provenance Transformer Classes - [66fa579d](https://github.com/radiant-network/radiant-fhir-transformers/commit/66fa579d8963f5389bbcfafde58f6adea8540c3d) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#39](https://github.com/radiant-network/radiant-fhir-transformers/pull/39) -  [D3B-1414] Add Condition Transformers - [a8e95155](https://github.com/radiant-network/radiant-fhir-transformers/commit/a8e9515571e2ad61a03bdf116691730c5a8bc829) by [awarkow](https://github.com/awarkow)
+- [#44](https://github.com/radiant-network/radiant-fhir-transformers/pull/44) -  [D3B-1413] add Specimen Identifier transformer and test - [45982a1e](https://github.com/radiant-network/radiant-fhir-transformers/commit/45982a1e2988fba4db74b8b9a1a23c69ad702e35) by [calkinsh](https://github.com/calkinsh)
+- [#49](https://github.com/radiant-network/radiant-fhir-transformers/pull/49) -  [D3B-1415] add diagnostic report transformers - [afd01ca6](https://github.com/radiant-network/radiant-fhir-transformers/commit/afd01ca61a05bb43f6f67f20e0cac111c05bb295) by [calkinsh](https://github.com/calkinsh)
+- [#48](https://github.com/radiant-network/radiant-fhir-transformers/pull/48) - ✨ [D3B-1419] Add Location Transformer Classes - [6cb53639](https://github.com/radiant-network/radiant-fhir-transformers/commit/6cb536390f3cf4d5ca886a4b0f309bed93fef3be) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#38](https://github.com/radiant-network/radiant-fhir-transformers/pull/38) -  D3b-1425 servicerequest transformer - [1f90bf2f](https://github.com/radiant-network/radiant-fhir-transformers/commit/1f90bf2f5ddc225865b7d1b68f17cf6b8a238b0a) by [calkinsh](https://github.com/calkinsh)
+- [#47](https://github.com/radiant-network/radiant-fhir-transformers/pull/47) - ✨ [D3B-1427] Add Organization Transformer Classes - [d5fd87db](https://github.com/radiant-network/radiant-fhir-transformers/commit/d5fd87db4a16db471bb2d97d3a2c54c8072091b1) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#46](https://github.com/radiant-network/radiant-fhir-transformers/pull/46) - ✨ [D3B-1424] Add Procedure Transformer Classes - [8f81036e](https://github.com/radiant-network/radiant-fhir-transformers/commit/8f81036e9629944ba42fb4c605e6a015f023eff5) by [liberaliscomputing](https://github.com/liberaliscomputing)
+
+
 ## Release 0.7.0
 
 ### Summary
