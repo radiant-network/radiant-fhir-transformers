@@ -25,7 +25,6 @@ from radiant_fhir_transform_cli.transform.classes.observation.observation_code_c
 from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.service_request import (
     ServiceRequestTransformer,
     ServiceRequestCodeCodingTransformer,
@@ -49,7 +48,6 @@ from radiant_fhir_transform_cli.transform.classes.service_request import (
     ServiceRequestRelevantHistoryTransformer,
     ServiceRequestPerformerTypeCodingTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.medication import (
     MedicationTransformer,
     MedicationIdentifierTransformer,
@@ -137,7 +135,6 @@ from radiant_fhir_transform_cli.transform.classes.organization import (
     OrganizationContactTransformer,
     OrganizationEndpointTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
     DiagnosticReportIdentifierTransformer,
     DiagnosticReportTransformer,
@@ -153,7 +150,16 @@ from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
     DiagnosticReportResultsInterpreterTransformer,
     DiagnosticReportSpecimenTransformer,
 )
-
+from radiant_fhir_transform_cli.transform.classes.allergy_intolerance import (
+    AllergyIntoleranceTransformer,
+    AllergyIntoleranceClinicalStatusCodingTransformer,
+    AllergyIntoleranceVerificationStatusCodingTransformer,
+    AllergyIntoleranceCategoryTransformer,
+    AllergyIntoleranceCodeCodingTransformer,
+    AllergyIntoleranceNoteTransformer,
+    AllergyIntoleranceReactionTransformer,
+    AllergyIntoleranceIdentifierTransformer,
+)
 from radiant_fhir_transform_cli.transform.classes.condition import (
     ConditionTransformer,
     ConditionCodeCodingTransformer,
@@ -166,6 +172,45 @@ from radiant_fhir_transform_cli.transform.classes.condition import (
     ConditionEvidenceTransformer,
     ConditionStageTransformer,
     ConditionNoteTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.provenance import (
+    ProvenanceTransformer,
+    ProvenanceTargetTransformer,
+    ProvenancePolicyTransformer,
+    ProvenanceReasonTransformer,
+    ProvenanceActivityCodingTransformer,
+    ProvenanceAgentTransformer,
+    ProvenanceEntityTransformer,
+    ProvenanceSignatureTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.consent import (
+    ConsentTransformer,
+    ConsentIdentifierTransformer,
+    ConsentScopeCodingTransformer,
+    ConsentCategoryTransformer,
+    ConsentPerformerTransformer,
+    ConsentOrganizationTransformer,
+    ConsentPolicyTransformer,
+    ConsentPolicyRuleCodingTransformer,
+    ConsentVerificationTransformer,
+    ConsentProvisionActorTransformer,
+    ConsentProvisionActionTransformer,
+    ConsentProvisionSecurityLabelTransformer,
+    ConsentProvisionPurposeTransformer,
+    ConsentProvisionClassTransformer,
+    ConsentProvisionCodeTransformer,
+    ConsentProvisionDataTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.care_team import (
+    CareTeamTransformer,
+    CareTeamIdentifierTransformer,
+    CareTeamCategoryTransformer,
+    CareTeamParticipantTransformer,
+    CareTeamReasonCodeTransformer,
+    CareTeamReasonReferenceTransformer,
+    CareTeamManagingOrganizationTransformer,
+    CareTeamTelecomTransformer,
+    CareTeamNoteTransformer,
 )
 
 from radiant_fhir_transform_cli.transform.classes.encounter import (
@@ -347,6 +392,55 @@ transformers = {
         ProcedureFocalDeviceTransformer,
         ProcedureUsedReferenceTransformer,
         ProcedureUsedCodeTransformer,
+    ],
+    "AllergyIntolerance": [
+        AllergyIntoleranceTransformer,
+        AllergyIntoleranceClinicalStatusCodingTransformer,
+        AllergyIntoleranceVerificationStatusCodingTransformer,
+        AllergyIntoleranceCategoryTransformer,
+        AllergyIntoleranceCodeCodingTransformer,
+        AllergyIntoleranceNoteTransformer,
+        AllergyIntoleranceReactionTransformer,
+        AllergyIntoleranceIdentifierTransformer,
+    ],
+    "Provenance": [
+        ProvenanceTransformer,
+        ProvenanceTargetTransformer,
+        ProvenancePolicyTransformer,
+        ProvenanceReasonTransformer,
+        ProvenanceActivityCodingTransformer,
+        ProvenanceAgentTransformer,
+        ProvenanceEntityTransformer,
+        ProvenanceSignatureTransformer,
+    ],
+    "Consent": [
+        ConsentTransformer,
+        ConsentIdentifierTransformer,
+        ConsentScopeCodingTransformer,
+        ConsentCategoryTransformer,
+        ConsentPerformerTransformer,
+        ConsentOrganizationTransformer,
+        ConsentPolicyTransformer,
+        ConsentPolicyRuleCodingTransformer,
+        ConsentVerificationTransformer,
+        ConsentProvisionActorTransformer,
+        ConsentProvisionActionTransformer,
+        ConsentProvisionSecurityLabelTransformer,
+        ConsentProvisionPurposeTransformer,
+        ConsentProvisionClassTransformer,
+        ConsentProvisionCodeTransformer,
+        ConsentProvisionDataTransformer,
+    ],
+    "CareTeam": [
+        CareTeamTransformer,
+        CareTeamIdentifierTransformer,
+        CareTeamCategoryTransformer,
+        CareTeamParticipantTransformer,
+        CareTeamReasonCodeTransformer,
+        CareTeamReasonReferenceTransformer,
+        CareTeamManagingOrganizationTransformer,
+        CareTeamTelecomTransformer,
+        CareTeamNoteTransformer,
     ],
     "Encounter": [
         EncounterTransformer,

@@ -21,7 +21,6 @@ from tests.data.observation import (
     ObservationValueCodeableConceptCodingTestHelper,
 )
 from tests.data.patient import PatientTestHelper
-
 from tests.data.medication import (
     MedicationTestHelper,
     MedicationIdentifierTestHelper,
@@ -124,7 +123,6 @@ from tests.data.procedure import (
     ProcedureUsedReferenceTestHelper,
     ProcedureUsedCodeTestHelper,
 )
-
 from tests.data.service_request import (
     ServiceRequestTestHelper,
     ServiceRequestBasedOnTestHelper,
@@ -148,7 +146,16 @@ from tests.data.service_request import (
     ServiceRequestSupportingInfoTestHelper,
     ServiceRequestPerformerTypeCodingTestHelper,
 )
-
+from tests.data.allergy_intolerance import (
+    AllergyIntoleranceTestHelper,
+    AllergyIntoleranceClinicalStatusCodingTestHelper,
+    AllergyIntoleranceVerificationStatusCodingTestHelper,
+    AllergyIntoleranceCategoryTestHelper,
+    AllergyIntoleranceCodeCodingTestHelper,
+    AllergyIntoleranceNoteTestHelper,
+    AllergyIntoleranceReactionTestHelper,
+    AllergyIntoleranceIdentifierTestHelper,
+)
 from tests.data.condition import (
     ConditionTestHelper,
     ConditionIdentifierTestHelper,
@@ -161,6 +168,45 @@ from tests.data.condition import (
     ConditionEvidenceTestHelper,
     ConditionStageTestHelper,
     ConditionNoteTestHelper,
+)
+from tests.data.provenance import (
+    ProvenanceTestHelper,
+    ProvenanceTargetTestHelper,
+    ProvenancePolicyTestHelper,
+    ProvenanceReasonTestHelper,
+    ProvenanceActivityCodingTestHelper,
+    ProvenanceAgentTestHelper,
+    ProvenanceEntityTestHelper,
+    ProvenanceSignatureTestHelper,
+)
+from tests.data.consent import (
+    ConsentTestHelper,
+    ConsentIdentifierTestHelper,
+    ConsentScopeCodingTestHelper,
+    ConsentCategoryTestHelper,
+    ConsentPerformerTestHelper,
+    ConsentOrganizationTestHelper,
+    ConsentPolicyTestHelper,
+    ConsentPolicyRuleCodingTestHelper,
+    ConsentVerificationTestHelper,
+    ConsentProvisionActorTestHelper,
+    ConsentProvisionActionTestHelper,
+    ConsentProvisionSecurityLabelTestHelper,
+    ConsentProvisionPurposeTestHelper,
+    ConsentProvisionClassTestHelper,
+    ConsentProvisionCodeTestHelper,
+    ConsentProvisionDataTestHelper,
+)
+from tests.data.care_team import (
+    CareTeamTestHelper,
+    CareTeamIdentifierTestHelper,
+    CareTeamCategoryTestHelper,
+    CareTeamParticipantTestHelper,
+    CareTeamReasonCodeTestHelper,
+    CareTeamReasonReferenceTestHelper,
+    CareTeamManagingOrganizationTestHelper,
+    CareTeamTelecomTestHelper,
+    CareTeamNoteTestHelper,
 )
 
 from tests.data.encounter import (
@@ -320,6 +366,47 @@ test_helpers = [
     ProcedureFocalDeviceTestHelper,
     ProcedureUsedReferenceTestHelper,
     ProcedureUsedCodeTestHelper,
+    AllergyIntoleranceTestHelper,
+    AllergyIntoleranceClinicalStatusCodingTestHelper,
+    AllergyIntoleranceVerificationStatusCodingTestHelper,
+    AllergyIntoleranceCategoryTestHelper,
+    AllergyIntoleranceCodeCodingTestHelper,
+    AllergyIntoleranceNoteTestHelper,
+    AllergyIntoleranceReactionTestHelper,
+    AllergyIntoleranceIdentifierTestHelper,
+    ProvenanceTestHelper,
+    ProvenanceTargetTestHelper,
+    ProvenancePolicyTestHelper,
+    ProvenanceReasonTestHelper,
+    ProvenanceActivityCodingTestHelper,
+    ProvenanceAgentTestHelper,
+    ProvenanceEntityTestHelper,
+    ProvenanceSignatureTestHelper,
+    ConsentTestHelper,
+    ConsentIdentifierTestHelper,
+    ConsentScopeCodingTestHelper,
+    ConsentCategoryTestHelper,
+    ConsentPerformerTestHelper,
+    ConsentOrganizationTestHelper,
+    ConsentPolicyTestHelper,
+    ConsentPolicyRuleCodingTestHelper,
+    ConsentVerificationTestHelper,
+    ConsentProvisionActorTestHelper,
+    ConsentProvisionActionTestHelper,
+    ConsentProvisionSecurityLabelTestHelper,
+    ConsentProvisionPurposeTestHelper,
+    ConsentProvisionClassTestHelper,
+    ConsentProvisionCodeTestHelper,
+    ConsentProvisionDataTestHelper,
+    CareTeamTestHelper,
+    CareTeamIdentifierTestHelper,
+    CareTeamCategoryTestHelper,
+    CareTeamParticipantTestHelper,
+    CareTeamReasonCodeTestHelper,
+    CareTeamReasonReferenceTestHelper,
+    CareTeamManagingOrganizationTestHelper,
+    CareTeamTelecomTestHelper,
+    CareTeamNoteTestHelper,
     EncounterTestHelper,
     EncounterIdentifierTestHelper,
     EncounterStatusHistoryTestHelper,
