@@ -213,6 +213,24 @@ from radiant_fhir_transform_cli.transform.classes.care_team import (
     CareTeamNoteTransformer,
 )
 
+from radiant_fhir_transform_cli.transform.classes.care_plan import (
+    CarePlanTransformer,
+    CarePlanIdentifierTransformer,
+    CarePlanInstantiatesCanonicalTransformer,
+    CarePlanInstantiatesUriTransformer,
+    CarePlanBasedOnTransformer,
+    CarePlanReplacesTransformer,
+    CarePlanPartOfTransformer,
+    CarePlanCategoryTransformer,
+    CarePlanContributorTransformer,
+    CarePlanCareTeamTransformer,
+    CarePlanAddressesTransformer,
+    CarePlanSupportingInfoTransformer,
+    CarePlanGoalTransformer,
+    CarePlanNoteTransformer,
+    CarePlanActivityTransformer,
+)
+
 from radiant_fhir_transform_cli.transform.classes.encounter import (
     EncounterTransformer,
     EncounterIdentifierTransformer,
@@ -412,6 +430,23 @@ transformers = {
         ProvenanceAgentTransformer,
         ProvenanceEntityTransformer,
         ProvenanceSignatureTransformer,
+    ],
+    "CarePlan": [
+        CarePlanTransformer,
+        CarePlanIdentifierTransformer,
+        CarePlanInstantiatesCanonicalTransformer,
+        CarePlanInstantiatesUriTransformer,
+        CarePlanBasedOnTransformer,
+        CarePlanReplacesTransformer,
+        CarePlanPartOfTransformer,
+        CarePlanCategoryTransformer,
+        CarePlanContributorTransformer,
+        CarePlanCareTeamTransformer,
+        CarePlanAddressesTransformer,
+        CarePlanSupportingInfoTransformer,
+        CarePlanGoalTransformer,
+        CarePlanNoteTransformer,
+        CarePlanActivityTransformer,
     ],
     "Consent": [
         ConsentTransformer,
