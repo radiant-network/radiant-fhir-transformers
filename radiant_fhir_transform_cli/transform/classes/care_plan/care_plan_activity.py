@@ -33,7 +33,7 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "outcomeReference",
                 "type": "str",
             },
-            "activity_outcome_progress": {
+            "activity_progress": {
                 "fhir_key": "progress",
                 "type": "str",
             },
@@ -41,11 +41,11 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "reference.reference",
                 "type": "str",
             },
-            "activity_reference.display": {
+            "activity_reference_display": {
                 "fhir_key": "reference.display",
                 "type": "str",
             },
-            "activity_reference.type": {
+            "activity_reference_type": {
                 "fhir_key": "reference.type",
                 "type": "str",
             },
@@ -79,7 +79,11 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "detail.status",
                 "type": "str",
             },
-            "activity_detail_status_reason": {
+            "activity_detail_status_reason_coding": {
+                "fhir_key": "detail.statusReason",
+                "type": "str",
+            },
+            "activity_detail_status_reason_text": {
                 "fhir_key": "detail.statusReason",
                 "type": "str",
             },
@@ -215,7 +219,7 @@ TRANSFORM_SCHEMA = [
             },
             "activity_detail_scheduled_timing_repeat_offset": {
                 "fhir_key": "detail.scheduledTiming.repeat.offset",
-                "type": "str",
+                "type": "int",
             },
             # scheduledPeriod
             "activity_detail_scheduled_period_start": {
