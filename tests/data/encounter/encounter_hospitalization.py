@@ -39,7 +39,7 @@ EXPECTED_OUTPUT = [
                 }
             ]
         ],
-        "hospitalization_diet_preference_text": None,
+        "hospitalization_diet_preference_text": [None],
         "hospitalization_special_courtesy_coding": [
             [
                 {
@@ -49,7 +49,7 @@ EXPECTED_OUTPUT = [
                 }
             ]
         ],
-        "hospitalization_special_courtesy_text": None,
+        "hospitalization_special_courtesy_text": [None],
         "hospitalization_special_arrangement_coding": [
             [
                 {
@@ -59,7 +59,7 @@ EXPECTED_OUTPUT = [
                 }
             ]
         ],
-        "hospitalization_special_arrangement_text": None,
+        "hospitalization_special_arrangement_text": [None],
         "hospitalization_destination_reference": "Location/2",
         "hospitalization_destination_type": None,
         "hospitalization_destination_display": None,
