@@ -80,11 +80,11 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "activity_detail_status_reason_coding": {
-                "fhir_key": "detail.statusReason",
+                "fhir_key": "detail.statusReason.coding",
                 "type": "str",
             },
             "activity_detail_status_reason_text": {
-                "fhir_key": "detail.statusReason",
+                "fhir_key": "detail.statusReason.text",
                 "type": "str",
             },
             "activity_detail_do_not_perform": {
