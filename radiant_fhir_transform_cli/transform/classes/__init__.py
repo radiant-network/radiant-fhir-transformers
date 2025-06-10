@@ -150,7 +150,6 @@ from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
     DiagnosticReportResultsInterpreterTransformer,
     DiagnosticReportSpecimenTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.allergy_intolerance import (
     AllergyIntoleranceTransformer,
     AllergyIntoleranceClinicalStatusCodingTransformer,
@@ -183,6 +182,35 @@ from radiant_fhir_transform_cli.transform.classes.provenance import (
     ProvenanceAgentTransformer,
     ProvenanceEntityTransformer,
     ProvenanceSignatureTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.consent import (
+    ConsentTransformer,
+    ConsentIdentifierTransformer,
+    ConsentScopeCodingTransformer,
+    ConsentCategoryTransformer,
+    ConsentPerformerTransformer,
+    ConsentOrganizationTransformer,
+    ConsentPolicyTransformer,
+    ConsentPolicyRuleCodingTransformer,
+    ConsentVerificationTransformer,
+    ConsentProvisionActorTransformer,
+    ConsentProvisionActionTransformer,
+    ConsentProvisionSecurityLabelTransformer,
+    ConsentProvisionPurposeTransformer,
+    ConsentProvisionClassTransformer,
+    ConsentProvisionCodeTransformer,
+    ConsentProvisionDataTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.care_team import (
+    CareTeamTransformer,
+    CareTeamIdentifierTransformer,
+    CareTeamCategoryTransformer,
+    CareTeamParticipantTransformer,
+    CareTeamReasonCodeTransformer,
+    CareTeamReasonReferenceTransformer,
+    CareTeamManagingOrganizationTransformer,
+    CareTeamTelecomTransformer,
+    CareTeamNoteTransformer,
 )
 
 from radiant_fhir_transform_cli.transform.classes.care_plan import (
@@ -398,5 +426,34 @@ transformers = {
         CarePlanGoalTransformer,
         CarePlanNoteTransformer,
         CarePlanActivityTransformer,
+    ],
+    "Consent": [
+        ConsentTransformer,
+        ConsentIdentifierTransformer,
+        ConsentScopeCodingTransformer,
+        ConsentCategoryTransformer,
+        ConsentPerformerTransformer,
+        ConsentOrganizationTransformer,
+        ConsentPolicyTransformer,
+        ConsentPolicyRuleCodingTransformer,
+        ConsentVerificationTransformer,
+        ConsentProvisionActorTransformer,
+        ConsentProvisionActionTransformer,
+        ConsentProvisionSecurityLabelTransformer,
+        ConsentProvisionPurposeTransformer,
+        ConsentProvisionClassTransformer,
+        ConsentProvisionCodeTransformer,
+        ConsentProvisionDataTransformer,
+    ],
+    "CareTeam": [
+        CareTeamTransformer,
+        CareTeamIdentifierTransformer,
+        CareTeamCategoryTransformer,
+        CareTeamParticipantTransformer,
+        CareTeamReasonCodeTransformer,
+        CareTeamReasonReferenceTransformer,
+        CareTeamManagingOrganizationTransformer,
+        CareTeamTelecomTransformer,
+        CareTeamNoteTransformer,
     ],
 }
