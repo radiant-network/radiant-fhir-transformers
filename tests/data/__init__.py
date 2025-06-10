@@ -208,7 +208,6 @@ from tests.data.care_team import (
     CareTeamTelecomTestHelper,
     CareTeamNoteTestHelper,
 )
-
 from tests.data.encounter import (
     EncounterTestHelper,
     EncounterIdentifierTestHelper,

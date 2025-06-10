@@ -13,8 +13,6 @@ from .encounter_appointment import EncounterAppointmentTestHelper
 from .encounter_reason_code import EncounterReasonCodeTestHelper
 from .encounter_reason_reference import EncounterReasonReferenceTestHelper
 from .encounter_diagnosis import EncounterDiagnosisTestHelper
-
 from .encounter_account import EncounterAccountTestHelper
-
 from .encounter_hospitalization import EncounterHospitalizationTestHelper
 from .encounter_location import EncounterLocationTestHelper
