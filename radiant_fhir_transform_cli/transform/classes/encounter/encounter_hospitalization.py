@@ -25,6 +25,10 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "hospitalization",
         "columns": {
             # preAdmissionIdentifier
+            "hospitalization_pre_admission_identifier_type_text": {
+                "fhir_key": "preAdmissionIdentifier.type.text",
+                "type": "str",
+            },
             "hospitalization_pre_admission_identifier_use": {
                 "fhir_key": "preAdmissionIdentifier.use",
                 "type": "str",
@@ -36,6 +40,14 @@ TRANSFORM_SCHEMA = [
             "hospitalization_pre_admission_identifier_value": {
                 "fhir_key": "preAdmissionIdentifier.value",
                 "type": "str",
+            },
+            "hospitalization_pre_admission_identifier_period_start": {
+                "fhir_key": "preAdmissionIdentifier.period.start",
+                "type": "datetime",
+            },
+            "hospitalization_pre_admission_identifier_period_end": {
+                "fhir_key": "preAdmissionIdentifier.period.end",
+                "type": "datetime",
             },
             # origin
             "hospitalization_origin_reference": {

@@ -11,9 +11,12 @@ from .encounter_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "encounter_id": "f203",
+        "hospitalization_pre_admission_identifier_type_text": None,
         "hospitalization_pre_admission_identifier_use": None,
         "hospitalization_pre_admission_identifier_system": None,
         "hospitalization_pre_admission_identifier_value": None,
+        "hospitalization_pre_admission_identifier_period_start": None,
+        "hospitalization_pre_admission_identifier_period_end": None,
         "hospitalization_origin_reference": "Location/2",
         "hospitalization_origin_type": None,
         "hospitalization_origin_display": None,

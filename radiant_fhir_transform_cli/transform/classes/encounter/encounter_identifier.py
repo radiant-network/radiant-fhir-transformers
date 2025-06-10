@@ -25,9 +25,12 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "identifier",
         "columns": {
+            "identifier_type_text": {"fhir_key": "type.text", "type": "str"},
             "identifier_use": {"fhir_key": "use", "type": "str"},
             "identifier_system": {"fhir_key": "system", "type": "str"},
             "identifier_value": {"fhir_key": "value", "type": "str"},
+            "identifier_period_start": {"fhir_key": "period.start", "type": "datetime"},
+            "identifier_period_end": {"fhir_key": "period.end", "type": "datetime"},
         },
     },
 ]
