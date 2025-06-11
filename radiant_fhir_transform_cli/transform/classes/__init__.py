@@ -212,7 +212,6 @@ from radiant_fhir_transform_cli.transform.classes.care_team import (
     CareTeamTelecomTransformer,
     CareTeamNoteTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.care_plan import (
     CarePlanTransformer,
     CarePlanIdentifierTransformer,
@@ -230,7 +229,6 @@ from radiant_fhir_transform_cli.transform.classes.care_plan import (
     CarePlanNoteTransformer,
     CarePlanActivityTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.encounter import (
     EncounterTransformer,
     EncounterIdentifierTransformer,
@@ -250,6 +248,15 @@ from radiant_fhir_transform_cli.transform.classes.encounter import (
     EncounterAccountTransformer,
     EncounterHospitalizationTransformer,
     EncounterLocationTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.list import (
+    ListTransformer,
+    ListIdentifierTransformer,
+    ListCodeCodingTransformer,
+    ListOrderedByCodingTransformer,
+    ListNoteTransformer,
+    ListEntryTransformer,
+    ListEmptyReasonCodingTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -496,5 +503,14 @@ transformers = {
         EncounterAccountTransformer,
         EncounterHospitalizationTransformer,
         EncounterLocationTransformer,
+    ],
+    "List": [
+        ListTransformer,
+        ListIdentifierTransformer,
+        ListCodeCodingTransformer,
+        ListOrderedByCodingTransformer,
+        ListNoteTransformer,
+        ListEntryTransformer,
+        ListEmptyReasonCodingTransformer,
     ],
 }

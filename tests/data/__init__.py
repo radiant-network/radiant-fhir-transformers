@@ -245,6 +245,15 @@ from tests.data.encounter import (
     EncounterLocationTestHelper,
     EncounterHospitalizationTestHelper,
 )
+from tests.data.list import (
+    ListTestHelper,
+    ListIdentifierTestHelper,
+    ListCodeCodingTestHelper,
+    ListOrderedByCodingTestHelper,
+    ListNoteTestHelper,
+    ListEntryTestHelper,
+    ListEmptyReasonCodingTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -456,4 +465,11 @@ test_helpers = [
     EncounterAccountTestHelper,
     EncounterLocationTestHelper,
     EncounterHospitalizationTestHelper,
+    ListTestHelper,
+    ListIdentifierTestHelper,
+    ListCodeCodingTestHelper,
+    ListOrderedByCodingTestHelper,
+    ListNoteTestHelper,
+    ListEntryTestHelper,
+    ListEmptyReasonCodingTestHelper,
 ]
