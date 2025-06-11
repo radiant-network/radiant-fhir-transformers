@@ -262,6 +262,16 @@ from tests.data.body_structure import (
     BodyStructureLocationQualifierTestHelper,
     BodyStructureImageTestHelper,
 )
+from tests.data.related_person import (
+    RelatedPersonTestHelper,
+    RelatedPersonIdentifierTestHelper,
+    RelatedPersonRelationshipTestHelper,
+    RelatedPersonNameTestHelper,
+    RelatedPersonTelecomTestHelper,
+    RelatedPersonAddressTestHelper,
+    RelatedPersonPhotoTestHelper,
+    RelatedPersonCommunicationTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -486,4 +496,12 @@ test_helpers = [
     BodyStructureLocationCodingTestHelper,
     BodyStructureLocationQualifierTestHelper,
     BodyStructureImageTestHelper,
+    RelatedPersonTestHelper,
+    RelatedPersonIdentifierTestHelper,
+    RelatedPersonRelationshipTestHelper,
+    RelatedPersonNameTestHelper,
+    RelatedPersonTelecomTestHelper,
+    RelatedPersonAddressTestHelper,
+    RelatedPersonPhotoTestHelper,
+    RelatedPersonCommunicationTestHelper,
 ]
