@@ -231,6 +231,27 @@ from radiant_fhir_transform_cli.transform.classes.care_plan import (
     CarePlanActivityTransformer,
 )
 
+from radiant_fhir_transform_cli.transform.classes.encounter import (
+    EncounterTransformer,
+    EncounterIdentifierTransformer,
+    EncounterStatusHistoryTransformer,
+    EncounterClassTransformer,
+    EncounterTypeTransformer,
+    EncounterPriorityCodingTransformer,
+    EncounterEpisodeOfCareTransformer,
+    EncounterBasedOnTransformer,
+    EncounterServiceTypeCodingTransformer,
+    EncounterClassHistoryTransformer,
+    EncounterParticipantTransformer,
+    EncounterAppointmentTransformer,
+    EncounterReasonCodeTransformer,
+    EncounterReasonReferenceTransformer,
+    EncounterDiagnosisTransformer,
+    EncounterAccountTransformer,
+    EncounterHospitalizationTransformer,
+    EncounterLocationTransformer,
+)
+
 # Map FHIR resource type to its transformer class
 transformers = {
     "Patient": [PatientTransformer],
@@ -455,5 +476,25 @@ transformers = {
         CareTeamManagingOrganizationTransformer,
         CareTeamTelecomTransformer,
         CareTeamNoteTransformer,
+    ],
+    "Encounter": [
+        EncounterTransformer,
+        EncounterIdentifierTransformer,
+        EncounterStatusHistoryTransformer,
+        EncounterClassTransformer,
+        EncounterTypeTransformer,
+        EncounterPriorityCodingTransformer,
+        EncounterEpisodeOfCareTransformer,
+        EncounterBasedOnTransformer,
+        EncounterServiceTypeCodingTransformer,
+        EncounterClassHistoryTransformer,
+        EncounterParticipantTransformer,
+        EncounterAppointmentTransformer,
+        EncounterReasonCodeTransformer,
+        EncounterReasonReferenceTransformer,
+        EncounterDiagnosisTransformer,
+        EncounterAccountTransformer,
+        EncounterHospitalizationTransformer,
+        EncounterLocationTransformer,
     ],
 }
