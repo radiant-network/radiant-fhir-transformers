@@ -254,6 +254,14 @@ from tests.data.list import (
     ListEntryTestHelper,
     ListEmptyReasonCodingTestHelper,
 )
+from tests.data.body_structure import (
+    BodyStructureTestHelper,
+    BodyStructureIdentifierTestHelper,
+    BodyStructureMorphologyCodingTestHelper,
+    BodyStructureLocationCodingTestHelper,
+    BodyStructureLocationQualifierTestHelper,
+    BodyStructureImageTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -472,4 +480,10 @@ test_helpers = [
     ListNoteTestHelper,
     ListEntryTestHelper,
     ListEmptyReasonCodingTestHelper,
+    BodyStructureTestHelper,
+    BodyStructureIdentifierTestHelper,
+    BodyStructureMorphologyCodingTestHelper,
+    BodyStructureLocationCodingTestHelper,
+    BodyStructureLocationQualifierTestHelper,
+    BodyStructureImageTestHelper,
 ]

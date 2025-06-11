@@ -258,6 +258,14 @@ from radiant_fhir_transform_cli.transform.classes.list import (
     ListEntryTransformer,
     ListEmptyReasonCodingTransformer,
 )
+from radiant_fhir_transform_cli.transform.classes.body_structure import (
+    BodyStructureTransformer,
+    BodyStructureIdentifierTransformer,
+    BodyStructureMorphologyCodingTransformer,
+    BodyStructureLocationCodingTransformer,
+    BodyStructureLocationQualifierTransformer,
+    BodyStructureImageTransformer,
+)
 
 # Map FHIR resource type to its transformer class
 transformers = {
@@ -512,5 +520,13 @@ transformers = {
         ListNoteTransformer,
         ListEntryTransformer,
         ListEmptyReasonCodingTransformer,
+    ],
+    "BodyStructure": [
+        BodyStructureTransformer,
+        BodyStructureIdentifierTransformer,
+        BodyStructureMorphologyCodingTransformer,
+        BodyStructureLocationCodingTransformer,
+        BodyStructureLocationQualifierTransformer,
+        BodyStructureImageTransformer,
     ],
 }
