@@ -52,15 +52,15 @@ RESOURCE = {
         ]
     },
     "reasonCode": [
-    {
-      "coding": [
         {
-          "system": "http://snomed.info/sct",
-          "code": "413095006"
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "413095006"
+                    }
+            ],
+        "text": "Clinical Review"
         }
-      ],
-      "text": "Clinical Review"
-    }
     ],
     "reasonReference": [
         {"reference": "Condition/example", "display": "Severe burn of left ear"}
