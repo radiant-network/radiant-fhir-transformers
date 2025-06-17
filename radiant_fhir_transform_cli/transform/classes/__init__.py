@@ -276,6 +276,20 @@ from radiant_fhir_transform_cli.transform.classes.related_person import (
     RelatedPersonPhotoTransformer,
     RelatedPersonCommunicationTransformer,
 )
+from radiant_fhir_transform_cli.transform.classes.goal import (
+    GoalTransformer,
+    GoalIdentifierTransformer,
+    GoalAchievementStatusCodingTransformer,
+    GoalCategoryTransformer,
+    GoalPriorityCodingTransformer,
+    GoalDescriptionCodingTransformer,
+    GoalStartCodeableConceptCodingTransformer,
+    GoalTargetTransformer,
+    GoalAddressesTransformer,
+    GoalNoteTransformer,
+    GoalOutcomeCodeTransformer,
+    GoalOutcomeReferenceTransformer,
+)
 
 # Map FHIR resource type to its transformer class
 transformers = {
@@ -548,5 +562,19 @@ transformers = {
         RelatedPersonAddressTransformer,
         RelatedPersonPhotoTransformer,
         RelatedPersonCommunicationTransformer,
+    ],
+    "Goal": [
+        GoalTransformer,
+        GoalIdentifierTransformer,
+        GoalAchievementStatusCodingTransformer,
+        GoalCategoryTransformer,
+        GoalPriorityCodingTransformer,
+        GoalDescriptionCodingTransformer,
+        GoalStartCodeableConceptCodingTransformer,
+        GoalTargetTransformer,
+        GoalAddressesTransformer,
+        GoalNoteTransformer,
+        GoalOutcomeCodeTransformer,
+        GoalOutcomeReferenceTransformer,
     ],
 }
