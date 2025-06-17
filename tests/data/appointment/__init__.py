@@ -16,6 +16,5 @@ from .appointment_supporting_information import (
 )
 from .appointment_slot import AppointmentSlotTestHelper
 from .appointment_based_on import AppointmentBasedOnTestHelper
-
-# from .appointment_participant import AppointmentParticipantTestHelper
+from .appointment_participant import AppointmentParticipantTestHelper
 from .appointment_requested_period import AppointmentRequestedPeriodTestHelper
