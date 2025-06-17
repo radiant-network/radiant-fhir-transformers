@@ -272,6 +272,20 @@ from tests.data.related_person import (
     RelatedPersonPhotoTestHelper,
     RelatedPersonCommunicationTestHelper,
 )
+from tests.data.goal import (
+    GoalTestHelper,
+    GoalIdentifierTestHelper,
+    GoalAchievementStatusCodingTestHelper,
+    GoalCategoryTestHelper,
+    GoalPriorityCodingTestHelper,
+    GoalDescriptionCodingTestHelper,
+    GoalStartCodeableConceptCodingTestHelper,
+    GoalTargetTestHelper,
+    GoalAddressesTestHelper,
+    GoalNoteCodeTestHelper,
+    GoalOutcomeCodeTestHelper,
+    GoalOutcomeReferenceTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -504,4 +518,16 @@ test_helpers = [
     RelatedPersonAddressTestHelper,
     RelatedPersonPhotoTestHelper,
     RelatedPersonCommunicationTestHelper,
+    GoalTestHelper,
+    GoalIdentifierTestHelper,
+    GoalAchievementStatusCodingTestHelper,
+    GoalCategoryTestHelper,
+    GoalPriorityCodingTestHelper,
+    GoalDescriptionCodingTestHelper,
+    GoalStartCodeableConceptCodingTestHelper,
+    GoalTargetTestHelper,
+    GoalAddressesTestHelper,
+    GoalNoteCodeTestHelper,
+    GoalOutcomeCodeTestHelper,
+    GoalOutcomeReferenceTestHelper,
 ]
