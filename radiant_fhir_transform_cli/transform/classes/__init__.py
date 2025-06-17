@@ -290,7 +290,7 @@ from radiant_fhir_transform_cli.transform.classes.appointment import (
     AppointmentSupportingInformationTransformer,
     AppointmentSlotTransformer,
     AppointmentBasedOnTransformer,
-    # AppointmentParticipantTransformer,
+    AppointmentParticipantTransformer,
     AppointmentRequestedPeriodTransformer,
 )
 
@@ -579,7 +579,7 @@ transformers = {
         AppointmentSupportingInformationTransformer,
         AppointmentSlotTransformer,
         AppointmentBasedOnTransformer,
-        # AppointmentParticipantTransformer,
+        AppointmentParticipantTransformer,
         AppointmentRequestedPeriodTransformer,
     ],
 }

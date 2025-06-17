@@ -286,7 +286,7 @@ from tests.data.appointment import (
     AppointmentSupportingInformationTestHelper,
     AppointmentSlotTestHelper,
     AppointmentBasedOnTestHelper,
-    # AppointmentParticipantTestHelper,
+    AppointmentParticipantTestHelper,
     AppointmentRequestedPeriodTestHelper,
 )
 
@@ -533,6 +533,6 @@ test_helpers = [
     AppointmentSupportingInformationTestHelper,
     AppointmentSlotTestHelper,
     AppointmentBasedOnTestHelper,
-    # AppointmentParticipantTestHelper,
+    AppointmentParticipantTestHelper,
     AppointmentRequestedPeriodTestHelper,
 ]
