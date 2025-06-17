@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type Appointment subtype Reason Code
+Test helper class for FHIR resource type Appointment subtype Supporting Information
 """
 
-from radiant_fhir_transform_cli.transform.classes.appointment.appointment_reason_code import (
-    AppointmentReasonCodeTransformer,
+from radiant_fhir_transform_cli.transform.classes.appointment.appointment_supporting_information import (
+    AppointmentSupportingInformationTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -12,15 +12,14 @@ from .appointment_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "appointment_id": "example",
-        "reason_code_coding": [
-            {"system": "http://snomed.info/sct", "code": "413095006"}
-        ],
-        "reason_code_text": "Clinical Review",
+        "supporting_information_reference": "DiagnosticReport/ultrasound",
+        "supporting_information_type": None,
+        "supporting_information_display": None,
     }
 ]
 
 
-class AppointmentReasonCodeTestHelper(FhirResourceTestHelper):
+class AppointmentSupportingInformationTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Appointment' resource.
 
@@ -42,9 +41,9 @@ class AppointmentReasonCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Appointment"
-    resource_subtype = "reason_code"
-    transformer = AppointmentReasonCodeTransformer
-    expected_table_name = "appointment_reason_code"
+    resource_subtype = "supporting_information"
+    transformer = AppointmentSupportingInformationTransformer
+    expected_table_name = "appointment_supporting_information"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)
