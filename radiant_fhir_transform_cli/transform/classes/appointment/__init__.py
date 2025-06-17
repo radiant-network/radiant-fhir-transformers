@@ -9,8 +9,7 @@ from .appointment_specialty import AppointmentSpecialtyTransformer
 from .appointment_appointment_type_coding import (
     AppointmentAppointmentTypeCodingTransformer,
 )
-
-# from .appointment_reason_code import AppointmentReasonCodeTransformer
+from .appointment_reason_code import AppointmentReasonCodeTransformer
 # from .appointment_reason_reference import AppointmentReasonReferenceTransformer
 # from .appointment_supporting_information import AppointmentSupportingInformationTransformer
 # from .appointment_slot import AppointmentSlotTransformer
