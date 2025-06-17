@@ -18,4 +18,4 @@ from .appointment_slot import AppointmentSlotTransformer
 from .appointment_based_on import AppointmentBasedOnTransformer
 
 # from .appointment_participant import AppointmentParticipantTransformer
-# from .appointment_requested_period import AppointmentRequestedPeriodTransformer
+from .appointment_requested_period import AppointmentRequestedPeriodTransformer
