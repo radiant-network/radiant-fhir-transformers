@@ -285,6 +285,7 @@ from radiant_fhir_transform_cli.transform.classes.appointment import (
     AppointmentServiceTypeTransformer,
     AppointmentSpecialtyTransformer,
     AppointmentAppointmentTypeCodingTransformer,
+    AppointmentReasonCodeTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -567,5 +568,6 @@ transformers = {
         AppointmentServiceTypeTransformer,
         AppointmentSpecialtyTransformer,
         AppointmentAppointmentTypeCodingTransformer,
+        AppointmentReasonCodeTransformer,
     ],
 }
