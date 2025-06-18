@@ -290,6 +290,16 @@ from radiant_fhir_transform_cli.transform.classes.goal import (
     GoalOutcomeCodeTransformer,
     GoalOutcomeReferenceTransformer,
 )
+from radiant_fhir_transform_cli.transform.classes.coverage import (
+    CoverageTransformer,
+    CoverageIdentifierTransformer,
+    CoverageTypeCodingTransformer,
+    CoverageRelationshipCodingTransformer,
+    CoveragePayorTransformer,
+    CoverageClassTransformer,
+    CoverageCostToBeneficiaryTransformer,
+    CoverageContractTransformer,
+)
 
 # Map FHIR resource type to its transformer class
 transformers = {
@@ -576,5 +586,15 @@ transformers = {
         GoalNoteTransformer,
         GoalOutcomeCodeTransformer,
         GoalOutcomeReferenceTransformer,
+    ],
+    "Coverage": [
+        CoverageTransformer,
+        CoverageIdentifierTransformer,
+        CoverageTypeCodingTransformer,
+        CoverageRelationshipCodingTransformer,
+        CoveragePayorTransformer,
+        CoverageClassTransformer,
+        CoverageCostToBeneficiaryTransformer,
+        CoverageContractTransformer,
     ],
 }

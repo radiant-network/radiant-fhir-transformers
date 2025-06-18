@@ -286,6 +286,16 @@ from tests.data.goal import (
     GoalOutcomeCodeTestHelper,
     GoalOutcomeReferenceTestHelper,
 )
+from tests.data.coverage import (
+    CoverageTestHelper,
+    CoverageIdentifierTestHelper,
+    CoverageTypeCodingTestHelper,
+    CoverageRelationshipCodingTestHelper,
+    CoveragePayorTestHelper,
+    CoverageClassTestHelper,
+    CoverageCostToBeneficiaryTestHelper,
+    CoverageContractTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -530,4 +540,12 @@ test_helpers = [
     GoalNoteCodeTestHelper,
     GoalOutcomeCodeTestHelper,
     GoalOutcomeReferenceTestHelper,
+    CoverageTestHelper,
+    CoverageIdentifierTestHelper,
+    CoverageTypeCodingTestHelper,
+    CoverageRelationshipCodingTestHelper,
+    CoveragePayorTestHelper,
+    CoverageClassTestHelper,
+    CoverageCostToBeneficiaryTestHelper,
+    CoverageContractTestHelper,
 ]
