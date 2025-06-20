@@ -296,6 +296,19 @@ from tests.data.coverage import (
     CoverageCostToBeneficiaryTestHelper,
     CoverageContractTestHelper,
 )
+from tests.data.request_group import (
+    RequestGroupTestHelper,
+    RequestGroupIdentifierTestHelper,
+    RequestGroupInstantiatesCanonicalTestHelper,
+    RequestGroupInstantiatesUriTestHelper,
+    RequestGroupBasedOnTestHelper,
+    RequestGroupReplacesTestHelper,
+    RequestGroupCodeCodingTestHelper,
+    RequestGroupReasonCodeTestHelper,
+    RequestGroupReasonReferenceTestHelper,
+    RequestGroupNoteTestHelper,
+    RequestGroupActionTestHelper,
+)
 
 test_helpers = [
     PatientTestHelper,
@@ -548,4 +561,15 @@ test_helpers = [
     CoverageClassTestHelper,
     CoverageCostToBeneficiaryTestHelper,
     CoverageContractTestHelper,
+    RequestGroupTestHelper,
+    RequestGroupIdentifierTestHelper,
+    RequestGroupInstantiatesCanonicalTestHelper,
+    RequestGroupInstantiatesUriTestHelper,
+    RequestGroupBasedOnTestHelper,
+    RequestGroupReplacesTestHelper,
+    RequestGroupCodeCodingTestHelper,
+    RequestGroupReasonCodeTestHelper,
+    RequestGroupReasonReferenceTestHelper,
+    RequestGroupNoteTestHelper,
+    RequestGroupActionTestHelper,
 ]
