@@ -300,6 +300,20 @@ from radiant_fhir_transform_cli.transform.classes.coverage import (
     CoverageCostToBeneficiaryTransformer,
     CoverageContractTransformer,
 )
+from radiant_fhir_transform_cli.transform.classes.request_group import (
+    RequestGroupTransformer,
+    RequestGroupIdentifierTransformer,
+    RequestGroupInstantiatesCanonicalTransformer,
+    RequestGroupInstantiatesUriTransformer,
+    RequestGroupBasedOnTransformer,
+    RequestGroupReplacesTransformer,
+    RequestGroupCodeCodingTransformer,
+    RequestGroupReasonCodeTransformer,
+    RequestGroupReasonReferenceTransformer,
+    RequestGroupNoteTransformer,
+    RequestGroupActionTransformer,
+)
+
 
 # Map FHIR resource type to its transformer class
 transformers = {
@@ -596,5 +610,18 @@ transformers = {
         CoverageClassTransformer,
         CoverageCostToBeneficiaryTransformer,
         CoverageContractTransformer,
+    ],
+    "RequestGroup": [
+        RequestGroupTransformer,
+        RequestGroupIdentifierTransformer,
+        RequestGroupInstantiatesCanonicalTransformer,
+        RequestGroupInstantiatesUriTransformer,
+        RequestGroupBasedOnTransformer,
+        RequestGroupReplacesTransformer,
+        RequestGroupCodeCodingTransformer,
+        RequestGroupReasonCodeTransformer,
+        RequestGroupReasonReferenceTransformer,
+        RequestGroupNoteTransformer,
+        RequestGroupActionTransformer,
     ],
 }
