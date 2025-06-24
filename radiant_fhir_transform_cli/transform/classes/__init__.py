@@ -313,7 +313,25 @@ from radiant_fhir_transform_cli.transform.classes.request_group import (
     RequestGroupNoteTransformer,
     RequestGroupActionTransformer,
 )
-
+from radiant_fhir_transform_cli.transform.classes.immunization import (
+    ImmunizationTransformer,
+    ImmunizationIdentifierTransformer,
+    ImmunizationStatusReasonCodingTransformer,
+    ImmunizationVaccineCodeCodingTransformer,
+    ImmunizationReportOriginCodingTransformer,
+    ImmunizationSiteCodingTransformer,
+    ImmunizationRouteCodingTransformer,
+    ImmunizationPerformerTransformer,
+    ImmunizationNoteTransformer,
+    ImmunizationReasonCodeTransformer,
+    ImmunizationReasonReferenceTransformer,
+    ImmunizationSubpotentReasonTransformer,
+    ImmunizationEducationTransformer,
+    ImmunizationProgramEligibilityTransformer,
+    ImmunizationFundingSourceCodingTransformer,
+    ImmunizationReactionTransformer,
+    ImmunizationProtocolAppliedTransformer,
+)
 
 # Map FHIR resource type to its transformer class
 transformers = {
@@ -623,5 +641,24 @@ transformers = {
         RequestGroupReasonReferenceTransformer,
         RequestGroupNoteTransformer,
         RequestGroupActionTransformer,
+    ],
+    "Immunizationformer": [
+        ImmunizationTransformer,
+        ImmunizationIdentifierTransformer,
+        ImmunizationStatusReasonCodingTransformer,
+        ImmunizationVaccineCodeCodingTransformer,
+        ImmunizationReportOriginCodingTransformer,
+        ImmunizationSiteCodingTransformer,
+        ImmunizationRouteCodingTransformer,
+        ImmunizationPerformerTransformer,
+        ImmunizationNoteTransformer,
+        ImmunizationReasonCodeTransformer,
+        ImmunizationReasonReferenceTransformer,
+        ImmunizationSubpotentReasonTransformer,
+        ImmunizationEducationTransformer,
+        ImmunizationProgramEligibilityTransformer,
+        ImmunizationFundingSourceCodingTransformer,
+        ImmunizationReactionTransformer,
+        ImmunizationProtocolAppliedTransformer,
     ],
 }
