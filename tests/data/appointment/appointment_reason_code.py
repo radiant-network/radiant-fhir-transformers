@@ -13,10 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "appointment_id": "example",
         "reason_code_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "413095006"
-            }
+            {"system": "http://snomed.info/sct", "code": "413095006"}
         ],
         "reason_code_text": "Clinical Review",
     }

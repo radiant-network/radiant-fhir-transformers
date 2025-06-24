@@ -23,7 +23,7 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "reason_code",
+        "fhir_path": "reasonCode",
         "columns": {
             "reason_code_coding": {"fhir_key": "coding", "type": "str"},
             "reason_code_text": {"fhir_key": "text", "type": "str"},
@@ -46,7 +46,7 @@ class AppointmentReasonCodeTransformer(FhirResourceTransformer):
 
     Methods:
         __init__():
-            Initializes the Appointmentreason_codeTransformer instance with the resource type 'Appointment',
+            Initializes the AppointmentReasonCodeTransformer instance with the resource type 'Appointment',
             subtype 'reason_code', and the specified transformation dictionary.
     """
 
