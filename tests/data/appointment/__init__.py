@@ -10,9 +10,12 @@ from .appointment_appointment_type_coding import (
     AppointmentAppointmentTypeCodingTestHelper,
 )
 from .appointment_reason_code import AppointmentReasonCodeTestHelper
-# from .appointment_reason_reference import AppointmentReasonReferenceTestHelper
-# from .appointment_supporting_information import AppointmentSupportingInformationTestHelper
-# from .appointment_slot import AppointmentSlotTestHelper
-# from .appointment_based_on import AppointmentBasedOnTestHelper
+from .appointment_reason_reference import AppointmentReasonReferenceTestHelper
+from .appointment_supporting_information import (
+    AppointmentSupportingInformationTestHelper,
+)
+from .appointment_slot import AppointmentSlotTestHelper
+from .appointment_based_on import AppointmentBasedOnTestHelper
+
 # from .appointment_participant import AppointmentParticipantTestHelper
 # from .appointment_requested_period import AppointmentRequestedPeriodTestHelper

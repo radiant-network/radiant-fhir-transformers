@@ -52,23 +52,22 @@ RESOURCE = {
         ]
     },
     "reasonCode": [
-    {
-      "coding": [
         {
-          "system": "http://snomed.info/sct",
-          "code": "413095006"
+            "coding": [
+                {"system": "http://snomed.info/sct", "code": "413095006"}
+            ],
+            "text": "Clinical Review",
         }
-      ],
-      "text": "Clinical Review"
-    }
     ],
     "reasonReference": [
         {"reference": "Condition/example", "display": "Severe burn of left ear"}
     ],
     "priority": 5,
     "description": "Discussion on the results of your recent MRI",
+    "supportingInformation": [{"reference": "DiagnosticReport/ultrasound"}],
     "start": "2013-12-10T09:00:00Z",
     "end": "2013-12-10T11:00:00Z",
+    "slot": [{"reference": "Slot/example"}],
     "created": "2013-10-10",
     "comment": "Further expand on the results of the MRI and determine the next actions that may be appropriate.",
     "basedOn": [{"reference": "ServiceRequest/myringotomy"}],
@@ -108,4 +107,5 @@ RESOURCE = {
             "status": "accepted",
         },
     ],
+    "requestedPeriod": [{"start": "2016-06-02", "end": "2016-06-09"}],
 }

@@ -282,6 +282,12 @@ from tests.data.appointment import (
     AppointmentSpecialtyTestHelper,
     AppointmentAppointmentTypeCodingTestHelper,
     AppointmentReasonCodeTestHelper,
+    AppointmentReasonReferenceTestHelper,
+    AppointmentSupportingInformationTestHelper,
+    AppointmentSlotTestHelper,
+    AppointmentBasedOnTestHelper,
+    # AppointmentParticipantTestHelper,
+    # AppointmentRequestedPeriodTestHelper,
 )
 
 test_helpers = [
@@ -523,4 +529,10 @@ test_helpers = [
     AppointmentSpecialtyTestHelper,
     AppointmentAppointmentTypeCodingTestHelper,
     AppointmentReasonCodeTestHelper,
+    AppointmentReasonReferenceTestHelper,
+    AppointmentSupportingInformationTestHelper,
+    AppointmentSlotTestHelper,
+    AppointmentBasedOnTestHelper,
+    # AppointmentParticipantTestHelper,
+    # AppointmentRequestedPeriodTestHelper,
 ]
