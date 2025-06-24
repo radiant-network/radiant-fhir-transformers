@@ -1,5 +1,25 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.9.0
+
+### Summary
+
+- Emojis: ✨ x7, ? x2
+- Categories: Additions x7, Other Changes x2
+
+### New features and changes
+
+- [#68](https://github.com/radiant-network/radiant-fhir-transformers/pull/68) - ✨ [D3B-1580] Add Immunization Transformer Classes - [13eeecea](https://github.com/radiant-network/radiant-fhir-transformers/commit/13eeecea6e9e6cd76d7afcc35ead957f4a70d97e) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#67](https://github.com/radiant-network/radiant-fhir-transformers/pull/67) - ✨ [D3B-1585] Add RequestGroup Transformer Classes - [79e8ceb3](https://github.com/radiant-network/radiant-fhir-transformers/commit/79e8ceb3d0d2d43b5016113f93651941b5c67e3d) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#65](https://github.com/radiant-network/radiant-fhir-transformers/pull/65) - ✨ [D3B-1582] Add Coverage Transformer Classes - [88b9a940](https://github.com/radiant-network/radiant-fhir-transformers/commit/88b9a94055c248e89e1d04f54984558c3d4f0574) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#64](https://github.com/radiant-network/radiant-fhir-transformers/pull/64) - ✨ [D3B-1583] Add Goal Transformer Classes - [cc01c384](https://github.com/radiant-network/radiant-fhir-transformers/commit/cc01c384f9d0db6c367c48da538cdd0cbb89ddf8) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#61](https://github.com/radiant-network/radiant-fhir-transformers/pull/61) - ✨ [D3B-1584] Add RelatedPerson Transformer Classes - [f2839a41](https://github.com/radiant-network/radiant-fhir-transformers/commit/f2839a41390421d4b75972e5693227e133baab06) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#60](https://github.com/radiant-network/radiant-fhir-transformers/pull/60) - ✨ [D3B-1581] Add BodyStructure Transformer Classes - [6fce1fa9](https://github.com/radiant-network/radiant-fhir-transformers/commit/6fce1fa94fd7795f3a7759f89ec91980d20c9511) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#59](https://github.com/radiant-network/radiant-fhir-transformers/pull/59) - ✨ [D3B-1420] Add List Transformer Classes - [408bbf51](https://github.com/radiant-network/radiant-fhir-transformers/commit/408bbf51b460a6b91b19562b32f2cf79eb50cb4a) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#51](https://github.com/radiant-network/radiant-fhir-transformers/pull/51) -  [D3B-1417] Add Encounter Transformers - [f6acbd72](https://github.com/radiant-network/radiant-fhir-transformers/commit/f6acbd72666f8328140b304c267bf7bac88eb917) by [awarkow](https://github.com/awarkow)
+- [#57](https://github.com/radiant-network/radiant-fhir-transformers/pull/57) -  D3b 1422 care plan transformer - [a091bbac](https://github.com/radiant-network/radiant-fhir-transformers/commit/a091bbac9b5dffb0de173c684cf604abb0e214b8) by [calkinsh](https://github.com/calkinsh)
+
+
 ## Release 0.8.0
 
 ### Summary
