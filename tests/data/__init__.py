@@ -273,6 +273,16 @@ from tests.data.related_person import (
     RelatedPersonCommunicationTestHelper,
 )
 
+from tests.data.appointment import (
+    AppointmentTestHelper,
+    AppointmentIdentifierTestHelper,
+    AppointmentCancelationReasonCodingTestHelper,
+    AppointmentServiceCategoryTestHelper,
+    AppointmentServiceTypeTestHelper,
+    AppointmentSpecialtyTestHelper,
+    AppointmentAppointmentTypeCodingTestHelper,
+)
+
 test_helpers = [
     PatientTestHelper,
     ObservationTestHelper,
@@ -504,4 +514,11 @@ test_helpers = [
     RelatedPersonAddressTestHelper,
     RelatedPersonPhotoTestHelper,
     RelatedPersonCommunicationTestHelper,
+    AppointmentTestHelper,
+    AppointmentIdentifierTestHelper,
+    AppointmentCancelationReasonCodingTestHelper,
+    AppointmentServiceCategoryTestHelper,
+    AppointmentServiceTypeTestHelper,
+    AppointmentSpecialtyTestHelper,
+    AppointmentAppointmentTypeCodingTestHelper,
 ]

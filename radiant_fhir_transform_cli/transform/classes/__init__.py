@@ -277,6 +277,16 @@ from radiant_fhir_transform_cli.transform.classes.related_person import (
     RelatedPersonCommunicationTransformer,
 )
 
+from radiant_fhir_transform_cli.transform.classes.appointment import (
+    AppointmentTransformer,
+    AppointmentIdentifierTransformer,
+    AppointmentCancelationReasonCodingTransformer,
+    AppointmentServiceCategoryTransformer,
+    AppointmentServiceTypeTransformer,
+    AppointmentSpecialtyTransformer,
+    AppointmentAppointmentTypeCodingTransformer,
+)
+
 # Map FHIR resource type to its transformer class
 transformers = {
     "Patient": [PatientTransformer],
@@ -548,5 +558,14 @@ transformers = {
         RelatedPersonAddressTransformer,
         RelatedPersonPhotoTransformer,
         RelatedPersonCommunicationTransformer,
+    ],
+    "Appointment": [
+        AppointmentTransformer,
+        AppointmentIdentifierTransformer,
+        AppointmentCancelationReasonCodingTransformer,
+        AppointmentServiceCategoryTransformer,
+        AppointmentServiceTypeTransformer,
+        AppointmentSpecialtyTransformer,
+        AppointmentAppointmentTypeCodingTransformer,
     ],
 }
