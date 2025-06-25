@@ -3,11 +3,19 @@ List of FHIR ndjson to dict transformers
 """
 
 from radiant_fhir_transform_cli.transform.classes.document_reference import (
-    DocumentReferenceAuthorTransformer,
-    DocumentReferenceContentTransformer,
-    DocumentReferenceIdentifierTransformer,
     DocumentReferenceTransformer,
+    DocumentReferenceIdentifierTransformer,
     DocumentReferenceTypeCodingTransformer,
+    DocumentReferenceCategoryTransformer,
+    DocumentReferenceAuthorTransformer,
+    DocumentReferenceRelatesToTransformer,
+    DocumentReferenceSecurityLabelTransformer,
+    DocumentReferenceContentTransformer,
+    DocumentReferenceContextEncounterTransformer,
+    DocumentReferenceContextEventTransformer,
+    DocumentReferenceContextFacilityTypeCodingTransformer,
+    DocumentReferenceContextPracticeSettingCodingTransformer,
+    DocumentReferenceContextRelatedTransformer,
 )
 from radiant_fhir_transform_cli.transform.classes.observation import (
     ObservationBasedOnTransformer,
@@ -349,10 +357,18 @@ transformers = {
     ],
     "DocumentReference": [
         DocumentReferenceTransformer,
-        DocumentReferenceContentTransformer,
-        DocumentReferenceTypeCodingTransformer,
         DocumentReferenceIdentifierTransformer,
+        DocumentReferenceTypeCodingTransformer,
+        DocumentReferenceCategoryTransformer,
         DocumentReferenceAuthorTransformer,
+        DocumentReferenceRelatesToTransformer,
+        DocumentReferenceSecurityLabelTransformer,
+        DocumentReferenceContentTransformer,
+        DocumentReferenceContextEncounterTransformer,
+        DocumentReferenceContextEventTransformer,
+        DocumentReferenceContextFacilityTypeCodingTransformer,
+        DocumentReferenceContextPracticeSettingCodingTransformer,
+        DocumentReferenceContextRelatedTransformer,
     ],
     "Medication": [
         MedicationTransformer,
