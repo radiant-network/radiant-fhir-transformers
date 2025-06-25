@@ -1,5 +1,5 @@
 """
-Test helper class for FHIR resource type DocumentReference subtype Code Coding
+Test helper class for FHIR resource type DocumentReference subtype Type Coding
 """
 
 from radiant_fhir_transform_cli.transform.classes.document_reference import (
@@ -15,28 +15,24 @@ EXPECTED_OUTPUT = [
         "type_coding_system": "urn:oid:1.2.840.114350.1.13.5325.1.7.4.737880.5010",
         "type_coding_code": "1",
         "type_coding_display": "Progress Notes",
-        "type_text": "Progress Notes",
     },
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "type_coding_system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
         "type_coding_code": "1",
         "type_coding_display": "Progress Notes",
-        "type_text": "Progress Notes",
     },
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "type_coding_system": "http://loinc.org",
         "type_coding_code": "11506-3",
         "type_coding_display": "Progress note",
-        "type_text": "Progress Notes",
     },
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "type_coding_system": "http://loinc.org",
         "type_coding_code": "75492-9",
         "type_coding_display": "Risk assessment and screening note",
-        "type_text": "Progress Notes",
     },
 ]
 
@@ -55,9 +51,7 @@ class DocumentReferenceTypeCodingTestHelper(FhirResourceTestHelper):
     Attributes:
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'DocumentReference'.
-
         resource (dict): The raw FHIR 'DocumentReference' resource payload to be tested.
-
         expected_output (dict): The expected transformation result of the
           'DocumentReference' resource payload.
     """

@@ -7,6 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 )
 
 TRANSFORM_SCHEMA = [
+    # Primary Key
     {
         "fhir_path": None,
         "columns": {
@@ -29,12 +30,6 @@ TRANSFORM_SCHEMA = [
             "type_coding_display": {"fhir_key": "display", "type": "str"},
         },
     },
-    {
-        "fhir_path": "type.text",
-        "columns": {
-            "type_text": {"type": "str"},
-        },
-    },
 ]
 
 
@@ -47,13 +42,13 @@ class DocumentReferenceTypeCodingTransformer(FhirResourceTransformer):
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('DocumentReference').
-        subtype (str): Specifies the sub-element of the resource to focus on ('type.coding').
+        subtype (str): Specifies the sub-element of the resource to focus on ('type_coding').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
         __init__():
-            Initializes the DocumentReferenceCategoryCodingTransformer instance with the resource type 'Observation',
-            subtype 'type.coding', and the specified transformation dictionary.
+            Initializes the DocumentReferenceTypeCodingTransformer instance with the resource type 'DocumentReference',
+            subtype 'type_coding', and the specified transformation dictionary.
     """
 
     def __init__(self):
