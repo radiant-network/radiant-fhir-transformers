@@ -1,5 +1,5 @@
 """
-Test helper class for FHIR resource type DocumentReference subtype Code Coding
+Test helper class for FHIR resource type DocumentReference subtype Identifier
 """
 
 from radiant_fhir_transform_cli.transform.classes.document_reference import (
@@ -12,13 +12,21 @@ from .document_reference_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
+        "identifier_use": None,
+        "identifier_type_text": None,
         "identifier_system": "urn:oid:1.2.840.114350.1.13.5325.1.7.2.727879",
         "identifier_value": "1010618052",
+        "identifier_period_start": None,
+        "identifier_period_end": None,
     },
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
+        "identifier_use": None,
+        "identifier_type_text": None,
         "identifier_system": "urn:oid:1.2.840.114350.1.72.3.15",
         "identifier_value": "1.2.840.114350.1.13.5325.1.7.2.727879_1010618052",
+        "identifier_period_start": None,
+        "identifier_period_end": None,
     },
 ]
 
@@ -37,9 +45,7 @@ class DocumentReferenceIdentifierTestHelper(FhirResourceTestHelper):
     Attributes:
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'DocumentReference'.
-
         resource (dict): The raw FHIR 'DocumentReference' resource payload to be tested.
-
         expected_output (dict): The expected transformation result of the
           'DocumentReference' resource payload.
     """
