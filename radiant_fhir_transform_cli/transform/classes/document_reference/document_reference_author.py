@@ -7,6 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 )
 
 TRANSFORM_SCHEMA = [
+    # Primary Key
     {
         "fhir_path": None,
         "columns": {
@@ -35,7 +36,7 @@ TRANSFORM_SCHEMA = [
 
 class DocumentReferenceAuthorTransformer(FhirResourceTransformer):
     """
-    Transformer class for the 'DocumentReference' resource in FHIR, focusing on the 'author' element.
+    A transformer class for the 'DocumentReference' resource in FHIR, focusing on the 'author' element.
 
     This class transforms FHIR DocumentReference JSON objects into flat dictionaries suitable for CSV output,
     extracting and processing information from the 'author' field.
@@ -47,7 +48,7 @@ class DocumentReferenceAuthorTransformer(FhirResourceTransformer):
 
     Methods:
         __init__():
-            Initializes the DocumentReferenceCategoryCodingTransformer instance with the resource type 'Observation',
+            Initializes the DocumentReferenceAuthorTransformer instance with the resource type 'DocumentReference',
             subtype 'author', and the specified transformation dictionary.
     """
 
