@@ -337,6 +337,23 @@ from tests.data.immunization import (
     ImmunizationProtocolAppliedTestHelper,
 )
 
+from tests.data.appointment import (
+    AppointmentTestHelper,
+    AppointmentIdentifierTestHelper,
+    AppointmentCancelationReasonCodingTestHelper,
+    AppointmentServiceCategoryTestHelper,
+    AppointmentServiceTypeTestHelper,
+    AppointmentSpecialtyTestHelper,
+    AppointmentAppointmentTypeCodingTestHelper,
+    AppointmentReasonCodeTestHelper,
+    AppointmentReasonReferenceTestHelper,
+    AppointmentSupportingInformationTestHelper,
+    AppointmentSlotTestHelper,
+    AppointmentBasedOnTestHelper,
+    AppointmentParticipantTestHelper,
+    AppointmentRequestedPeriodTestHelper,
+)
+
 test_helpers = [
     PatientTestHelper,
     ObservationTestHelper,
@@ -624,4 +641,18 @@ test_helpers = [
     ImmunizationFundingSourceCodingTestHelper,
     ImmunizationReactionTestHelper,
     ImmunizationProtocolAppliedTestHelper,
+    AppointmentTestHelper,
+    AppointmentIdentifierTestHelper,
+    AppointmentCancelationReasonCodingTestHelper,
+    AppointmentServiceCategoryTestHelper,
+    AppointmentServiceTypeTestHelper,
+    AppointmentSpecialtyTestHelper,
+    AppointmentAppointmentTypeCodingTestHelper,
+    AppointmentReasonCodeTestHelper,
+    AppointmentReasonReferenceTestHelper,
+    AppointmentSupportingInformationTestHelper,
+    AppointmentSlotTestHelper,
+    AppointmentBasedOnTestHelper,
+    AppointmentParticipantTestHelper,
+    AppointmentRequestedPeriodTestHelper,
 ]

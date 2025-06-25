@@ -341,6 +341,23 @@ from radiant_fhir_transform_cli.transform.classes.immunization import (
     ImmunizationProtocolAppliedTransformer,
 )
 
+from radiant_fhir_transform_cli.transform.classes.appointment import (
+    AppointmentTransformer,
+    AppointmentIdentifierTransformer,
+    AppointmentCancelationReasonCodingTransformer,
+    AppointmentServiceCategoryTransformer,
+    AppointmentServiceTypeTransformer,
+    AppointmentSpecialtyTransformer,
+    AppointmentAppointmentTypeCodingTransformer,
+    AppointmentReasonCodeTransformer,
+    AppointmentReasonReferenceTransformer,
+    AppointmentSupportingInformationTransformer,
+    AppointmentSlotTransformer,
+    AppointmentBasedOnTransformer,
+    AppointmentParticipantTransformer,
+    AppointmentRequestedPeriodTransformer,
+)
+
 # Map FHIR resource type to its transformer class
 transformers = {
     "Patient": [PatientTransformer],
@@ -676,5 +693,21 @@ transformers = {
         ImmunizationFundingSourceCodingTransformer,
         ImmunizationReactionTransformer,
         ImmunizationProtocolAppliedTransformer,
+    ],
+    "Appointment": [
+        AppointmentTransformer,
+        AppointmentIdentifierTransformer,
+        AppointmentCancelationReasonCodingTransformer,
+        AppointmentServiceCategoryTransformer,
+        AppointmentServiceTypeTransformer,
+        AppointmentSpecialtyTransformer,
+        AppointmentAppointmentTypeCodingTransformer,
+        AppointmentReasonCodeTransformer,
+        AppointmentReasonReferenceTransformer,
+        AppointmentSupportingInformationTransformer,
+        AppointmentSlotTransformer,
+        AppointmentBasedOnTransformer,
+        AppointmentParticipantTransformer,
+        AppointmentRequestedPeriodTransformer,
     ],
 }

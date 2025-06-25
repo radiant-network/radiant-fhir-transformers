@@ -1,0 +1,20 @@
+from .appointment import AppointmentTransformer
+from .appointment_identifier import AppointmentIdentifierTransformer
+from .appointment_cancelation_reason_coding import (
+    AppointmentCancelationReasonCodingTransformer,
+)
+from .appointment_service_category import AppointmentServiceCategoryTransformer
+from .appointment_service_type import AppointmentServiceTypeTransformer
+from .appointment_specialty import AppointmentSpecialtyTransformer
+from .appointment_appointment_type_coding import (
+    AppointmentAppointmentTypeCodingTransformer,
+)
+from .appointment_reason_code import AppointmentReasonCodeTransformer
+from .appointment_reason_reference import AppointmentReasonReferenceTransformer
+from .appointment_supporting_information import (
+    AppointmentSupportingInformationTransformer,
+)
+from .appointment_slot import AppointmentSlotTransformer
+from .appointment_based_on import AppointmentBasedOnTransformer
+from .appointment_participant import AppointmentParticipantTransformer
+from .appointment_requested_period import AppointmentRequestedPeriodTransformer
