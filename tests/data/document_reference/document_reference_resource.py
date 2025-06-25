@@ -1,6 +1,10 @@
 RESOURCE = {
     "resourceType": "DocumentReference",
     "id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
+    "masterIdentifier": {
+        "system": "urn:ietf:rfc:3986",
+        "value": "urn:oid:129.6.58.92.88336",
+    },
     "identifier": [
         {
             "system": "urn:oid:1.2.840.114350.1.13.5325.1.7.2.727879",
@@ -53,41 +57,84 @@ RESOURCE = {
     ],
     "subject": {
         "reference": "Patient/eiCbDCEzFk6wR6UNlcWziySVQrlN47NTRvxPwgT4P3883",
-        "display": "JEK, Danger",
     },
-    "date": "2021-10-27T19:02:27Z",
-    "author": [
+    "date": "2004-12-23",
+    "author": [{"reference": "Practitioner/emnkokS3ex3pMjlzS7Qtl7A3"}],
+    "authenticator": {"reference": "Organization/f001"},
+    "custodian": {"reference": "Organization/custodian"},
+    "relatesTo": [
         {
-            "reference": "Practitioner/emnkokS3ex3pMjlzS7Qtl7A3",
-            "type": "Practitioner",
-            "display": "Doctor Kay Jr.",
+            "code": "appends",
+            "target": {
+                "reference": "DocumentReference/example",
+            },
         }
     ],
-    "custodian": {
-        "identifier": {
-            "system": "urn:ietf:rfc:3986",
-            "value": "urn:epic:cec.idecur",
+    "securityLabel": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+                    "code": "N",
+                    "display": "normal",
+                }
+            ]
         }
-    },
+    ],
     "content": [
         {
             "attachment": {
-                "contentType": "application/pdf",
-                "url": "Binary/eNVo36G0dNhtI70LrZFsf725wDrfmnjA-ZAnqJA3AEv8V1lh.HzYSZ-maN9StcdvL3",
-            }
+                "contentType": "application/hl7-v3+xml",
+                "language": "en-US",
+                "url": "http://example.org/xds/mhd/Binary/07a6483f-732b-461e-86b6-edb665c45510",
+                "size": 3654,
+                "hash": "2jmj7l5rSw0yVb/vlWAYkK/YBwk=",
+                "title": "Physical",
+                "creation": "2004-12-23",
+            },
+            "format": {
+                "system": "urn:oid:1.3.6.1.4.1.19376.1.2.3",
+                "code": "urn:ihe:pcc:handp:2008",
+                "display": "History and Physical Specification",
+            },
         }
     ],
     "context": {
-        "encounter": [
+        "encounter": [{"reference": "Encounter/xcda"}],
+        "event": [
             {
-                "identifier": {
-                    "use": "usual",
-                    "system": "urn:oid:1.2.840.114350.1.13.5325.1.7.3.698084.8",
-                    "value": "10002444658",
-                },
-                "display": "Letter (Out)",
+                "coding": [
+                    {
+                        "system": "http://ihe.net/xds/connectathon/eventCodes",
+                        "code": "T-D8200",
+                        "display": "Arm",
+                    }
+                ]
             }
         ],
-        "period": {"start": "2021-04-03T17:25:00Z"},
+        "period": {
+            "start": "2004-12-23",
+            "end": "2004-12-23",
+        },
+        "facilityType": {
+            "coding": [
+                {
+                    "system": "http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes",
+                    "code": "Outpatient",
+                    "display": "Outpatient",
+                }
+            ]
+        },
+        "practiceSetting": {
+            "coding": [
+                {
+                    "system": "http://www.ihe.net/xds/connectathon/practiceSettingCodes",
+                    "code": "General Medicine",
+                    "display": "General Medicine",
+                }
+            ]
+        },
+        "sourcePatientInfo": {"reference": "Patient/xcda"},
+        "related": [{"reference": "Patient/xcda"}],
     },
 }
