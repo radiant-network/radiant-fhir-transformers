@@ -12,11 +12,15 @@ from .document_reference_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
-        "content_attachment_content_type": "application/pdf",
-        "content_attachment_url": "Binary/eNVo36G0dNhtI70LrZFsf725wDrfmnjA-ZAnqJA3AEv8V1lh.HzYSZ-maN9StcdvL3",
-        "content_format_system": None,
-        "content_format_code": None,
-        "content_format_display": None,
+        "content_attachment_content_type": "application/hl7-v3+xml",
+        "content_attachment_language": "en-US",
+        "content_attachment_url": "http://example.org/xds/mhd/Binary/07a6483f-732b-461e-86b6-edb665c45510",
+        "content_attachment_size": 3654,
+        "content_attachment_title": "Physical",
+        "content_attachment_creation": "2004-12-23",
+        "content_format_system": "urn:oid:1.3.6.1.4.1.19376.1.2.3",
+        "content_format_code": "urn:ihe:pcc:handp:2008",
+        "content_format_display": "History and Physical Specification",
     }
 ]
 
@@ -35,9 +39,7 @@ class DocumentReferenceContentTestHelper(FhirResourceTestHelper):
     Attributes:
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'DocumentReference'.
-
         resource (dict): The raw FHIR 'DocumentReference' resource payload to be tested.
-
         expected_output (dict): The expected transformation result of the
           'DocumentReference' resource payload.
     """

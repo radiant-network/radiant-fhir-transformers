@@ -1,5 +1,5 @@
 """
-Test helper class for FHIR resource type DocumentReference subtype Code Coding
+Test helper class for FHIR resource type DocumentReference subtype Author
 """
 
 from radiant_fhir_transform_cli.transform.classes.document_reference import (
@@ -13,8 +13,8 @@ EXPECTED_OUTPUT = [
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "author_reference": "emnkokS3ex3pMjlzS7Qtl7A3",
-        "author_type": "Practitioner",
-        "author_display": "Doctor Kay Jr.",
+        "author_type": None,
+        "author_display": None,
     },
 ]
 
@@ -33,9 +33,7 @@ class DocumentReferenceAuthorTestHelper(FhirResourceTestHelper):
     Attributes:
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'DocumentReference'.
-
         resource (dict): The raw FHIR 'DocumentReference' resource payload to be tested.
-
         expected_output (dict): The expected transformation result of the
           'DocumentReference' resource payload.
     """

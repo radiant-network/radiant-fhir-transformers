@@ -7,6 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 )
 
 TRANSFORM_SCHEMA = [
+    # Primary Key
     {
         "fhir_path": None,
         "columns": {
@@ -24,8 +25,18 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "identifier",
         "columns": {
+            "identifier_use": {"fhir_key": "use", "type": "str"},
+            "identifier_type_text": {"fhir_key": "type.text", "type": "str"},
             "identifier_system": {"fhir_key": "system", "type": "str"},
             "identifier_value": {"fhir_key": "value", "type": "str"},
+            "identifier_period_start": {
+                "fhir_key": "period.start",
+                "type": "datetime",
+            },
+            "identifier_period_end": {
+                "fhir_key": "period.end",
+                "type": "datetime",
+            },
         },
     },
 ]
@@ -33,7 +44,7 @@ TRANSFORM_SCHEMA = [
 
 class DocumentReferenceIdentifierTransformer(FhirResourceTransformer):
     """
-    Transformer class for the 'DocumentReference' resource in FHIR, focusing on the 'identifier' element.
+    A transformer class for the 'DocumentReference' resource in FHIR, focusing on the 'identifier' element.
 
     This class transforms FHIR DocumentReference JSON objects into flat dictionaries suitable for CSV output,
     extracting and processing information from the 'identifier' field.
@@ -45,7 +56,7 @@ class DocumentReferenceIdentifierTransformer(FhirResourceTransformer):
 
     Methods:
         __init__():
-            Initializes the DocumentReferenceCategoryCodingTransformer instance with the resource type 'Observation',
+            Initializes the DocumentReferenceIdentifierTransformer instance with the resource type 'DocumentReference',
             subtype 'identifier', and the specified transformation dictionary.
     """
 

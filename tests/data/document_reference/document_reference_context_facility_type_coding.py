@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type DocumentReference subtype Identifier
+Test helper class for FHIR resource type DocumentReference subtype Context FacilityType Coding
 """
 
 from radiant_fhir_transform_cli.transform.classes.document_reference import (
-    DocumentReferenceIdentifierTransformer,
+    DocumentReferenceContextFacilityTypeCodingTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -12,26 +12,16 @@ from .document_reference_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
-        "identifier_use": None,
-        "identifier_type_text": None,
-        "identifier_system": "urn:oid:1.2.840.114350.1.13.5325.1.7.2.727879",
-        "identifier_value": "1010618052",
-        "identifier_period_start": None,
-        "identifier_period_end": None,
-    },
-    {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
-        "identifier_use": None,
-        "identifier_type_text": None,
-        "identifier_system": "urn:oid:1.2.840.114350.1.72.3.15",
-        "identifier_value": "1.2.840.114350.1.13.5325.1.7.2.727879_1010618052",
-        "identifier_period_start": None,
-        "identifier_period_end": None,
+        "context_facility_type_coding_system": "http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes",
+        "context_facility_type_coding_code": "Outpatient",
+        "context_facility_type_coding_display": "Outpatient",
     },
 ]
 
 
-class DocumentReferenceIdentifierTestHelper(FhirResourceTestHelper):
+class DocumentReferenceContextFacilityTypeCodingTestHelper(
+    FhirResourceTestHelper
+):
     """
     A helper class for testing transformations of the FHIR 'DocumentReference' resource.
 
@@ -51,9 +41,9 @@ class DocumentReferenceIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "identifier"
-    transformer = DocumentReferenceIdentifierTransformer
-    expected_table_name = "document_reference_identifier"
+    resource_subtype = "context_facility_type_coding"
+    transformer = DocumentReferenceContextFacilityTypeCodingTransformer
+    expected_table_name = "document_reference_context_facility_type_coding"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

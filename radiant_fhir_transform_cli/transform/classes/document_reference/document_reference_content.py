@@ -7,6 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 )
 
 TRANSFORM_SCHEMA = [
+    # Primary Key
     {
         "fhir_path": None,
         "columns": {
@@ -28,18 +29,35 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "attachment.contentType",
                 "type": "str",
             },
+            "content_attachment_language": {
+                "fhir_key": "attachment.language",
+                "type": "str",
+            },
+            # TODO: Handling base64Binary Data Types in Transformers (See https://github.com/radiant-network/radiant-fhir-transformers/issues/53)
+            # "content_attachment_data": {"fhir_key": "attachment.data", "type": "str"},
             "content_attachment_url": {
                 "fhir_key": "attachment.url",
                 "type": "str",
+            },
+            "content_attachment_size": {
+                "fhir_key": "attachment.size",
+                "type": "int",
+            },
+            # TODO: Handling base64Binary Data Types in Transformers (See https://github.com/radiant-network/radiant-fhir-transformers/issues/53)
+            # "content_attachment_hash": {"fhir_key": "attachment.hash", "type": "str"},
+            "content_attachment_title": {
+                "fhir_key": "attachment.title",
+                "type": "str",
+            },
+            "content_attachment_creation": {
+                "fhir_key": "attachment.creation",
+                "type": "datetime",
             },
             "content_format_system": {
                 "fhir_key": "format.system",
                 "type": "str",
             },
-            "content_format_code": {
-                "fhir_key": "format.code",
-                "type": "str",
-            },
+            "content_format_code": {"fhir_key": "format.code", "type": "str"},
             "content_format_display": {
                 "fhir_key": "format.display",
                 "type": "str",
