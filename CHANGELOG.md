@@ -1,5 +1,18 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.10.0
+
+### Summary
+
+- Emojis: ✨ x2
+- Categories: Additions x2
+
+### New features and changes
+
+- [#63](https://github.com/radiant-network/radiant-fhir-transformers/pull/63) - ✨ [D3B-1426] Add Appointment Transformer Classes - [e2e0c054](https://github.com/radiant-network/radiant-fhir-transformers/commit/e2e0c05419212548676d901e3b1184ec07785b0a) by [awarkow](https://github.com/awarkow)
+- [#69](https://github.com/radiant-network/radiant-fhir-transformers/pull/69) - ✨ Add Missing Elements and Subelements to DocumentReference Transformer Classes - [688c5824](https://github.com/radiant-network/radiant-fhir-transformers/commit/688c5824d3ef3d1138a395cf4039b970b2a8834e) by [liberaliscomputing](https://github.com/liberaliscomputing)
+
+
 ## Release 0.9.0
 
 ### Summary
