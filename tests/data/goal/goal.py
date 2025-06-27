@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Goal
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.goal import (
     GoalTransformer,
 )
@@ -27,6 +29,7 @@ EXPECTED_OUTPUT = [
         "expressed_by_reference": "example",
         "expressed_by_type": None,
         "expressed_by_display": "Peter James Chalmers",
+        "goal_raw_json": json.dumps(RESOURCE),
     }
 ]
 

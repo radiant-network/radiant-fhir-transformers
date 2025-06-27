@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type ServiceRequest
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.service_request.service_request import (
     ServiceRequestTransformer,
 )
@@ -64,6 +66,7 @@ EXPECTED_OUTPUT = [
         "requester_type": None,
         "performer_type_text": "Ear Nose and Throat",
         "patient_instruction": "Start with 30kg 10-15 repetitions for three sets and increase in increments of 5kg when you feel ready",
+        "service_request_raw_json": json.dumps(RESOURCE),
     }
 ]
 

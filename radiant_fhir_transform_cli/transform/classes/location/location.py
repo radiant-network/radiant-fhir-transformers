@@ -112,6 +112,14 @@ TRANSFORM_SCHEMA = [
             }
         },
     },
+    {
+        "fhir_path": "Location",
+        "columns": {
+            "location_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

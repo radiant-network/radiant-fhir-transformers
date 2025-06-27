@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Specimen
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.specimen.specimen import (
     SpecimenTransformer,
 )
@@ -50,6 +52,7 @@ EXPECTED_OUTPUT = [
         "collection_fasting_status_duration_system": "ucum.org",
         "collection_fasting_status_duration_code": "3d",
         "collection_fasting_status_codeable_concept_text": "fasting since midnight",
+        "specimen_raw_json": json.dumps(RESOURCE),
     }
 ]
 

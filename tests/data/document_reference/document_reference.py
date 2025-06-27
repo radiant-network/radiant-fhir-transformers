@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type DocumentReference
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.document_reference import (
     DocumentReferenceTransformer,
 )
@@ -40,6 +42,7 @@ EXPECTED_OUTPUT = [
         "context_source_patient_info_reference": "Patient/xcda",
         "context_source_patient_info_type": None,
         "context_source_patient_info_display": None,
+        "document_reference_raw_json": json.dumps(RESOURCE),
     }
 ]
 

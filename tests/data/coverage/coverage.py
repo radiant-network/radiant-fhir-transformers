@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Coverage
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.coverage import (
     CoverageTransformer,
 )
@@ -32,6 +34,7 @@ EXPECTED_OUTPUT = [
         "order": 2,
         "network": "5",
         "subrogation": True,
+        "coverage_raw_json": json.dumps(RESOURCE, default=str),
     }
 ]
 

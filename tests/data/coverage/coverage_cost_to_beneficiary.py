@@ -23,7 +23,7 @@ EXPECTED_OUTPUT = [
         "cost_to_beneficiary_value_quantity_unit": None,
         "cost_to_beneficiary_value_quantity_system": None,
         "cost_to_beneficiary_value_quantity_code": None,
-        "cost_to_beneficiary_value_money_value": 20.0,
+        "cost_to_beneficiary_value_money_value": "20.0",
         "cost_to_beneficiary_value_money_currency": "USD",
         "cost_to_beneficiary_exception": [
             {

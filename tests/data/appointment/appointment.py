@@ -2,10 +2,13 @@
 Test helper class for FHIR resource type Appointment
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.appointment import (
     AppointmentTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
+
 from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
@@ -23,6 +26,7 @@ EXPECTED_OUTPUT = [
         "created": "2013-10-10",
         "comment": "Further expand on the results of the MRI and determine the next actions that may be appropriate.",
         "patient_instruction": None,
+        "appointment_raw_json": json.dumps(RESOURCE),
     }
 ]
 

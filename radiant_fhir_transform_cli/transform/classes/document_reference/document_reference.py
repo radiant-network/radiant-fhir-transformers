@@ -130,6 +130,14 @@ TRANSFORM_SCHEMA = [
             },
         },
     },
+    {
+        "fhir_path": "DocumentReference",
+        "columns": {
+            "document_reference_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

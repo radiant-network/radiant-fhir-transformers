@@ -143,6 +143,14 @@ TRANSFORM_SCHEMA = [
             }
         },
     },
+    {
+        "fhir_path": "Patient",
+        "columns": {
+            "patient_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

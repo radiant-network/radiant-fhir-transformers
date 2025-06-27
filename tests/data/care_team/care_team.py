@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type CareTeam
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.care_team import (
     CareTeamTransformer,
 )
@@ -23,6 +25,7 @@ EXPECTED_OUTPUT = [
         "encounter_display": None,
         "period_start": None,
         "period_end": "2013-01-01",
+        "care_team_raw_json": json.dumps(RESOURCE),
     }
 ]
 

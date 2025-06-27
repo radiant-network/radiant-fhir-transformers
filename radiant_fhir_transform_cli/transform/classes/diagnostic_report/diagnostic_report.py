@@ -6,7 +6,6 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-
 TRANSFORM_SCHEMA = [
     # Id
     {
@@ -74,6 +73,14 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "conclusion",
         "columns": {"conclusion": {"type": "datetime"}},
+    },
+    {
+        "fhir_path": "DiagnosticReport",
+        "columns": {
+            "diagnostic_report_raw_json": {
+                "type": "str",
+            }
+        },
     },
 ]
 

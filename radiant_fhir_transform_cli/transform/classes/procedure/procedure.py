@@ -145,6 +145,14 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "outcome.text",
         "columns": {"outcome_text": {"fhir_key": "text", "type": "str"}},
     },
+    {
+        "fhir_path": "Procedure",
+        "columns": {
+            "procedure_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

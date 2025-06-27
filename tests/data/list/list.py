@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type List
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.list import (
     ListTransformer,
 )
@@ -29,6 +31,7 @@ EXPECTED_OUTPUT = [
         "source_display": None,
         "ordered_by_text": None,
         "empty_reason_text": None,
+        "list_raw_json": json.dumps(RESOURCE),
     }
 ]
 

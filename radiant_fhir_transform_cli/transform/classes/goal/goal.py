@@ -86,6 +86,14 @@ TRANSFORM_SCHEMA = [
             "expressed_by_display": {"fhir_key": "display", "type": "str"},
         },
     },
+    {
+        "fhir_path": "Goal",
+        "columns": {
+            "goal_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

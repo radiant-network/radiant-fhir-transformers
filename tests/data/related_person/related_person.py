@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type RelatedPerson
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.related_person import (
     RelatedPersonTransformer,
 )
@@ -21,6 +23,7 @@ EXPECTED_OUTPUT = [
         "birth_date": "2012-03-11",
         "period_start": "2012-03-11",
         "period_end": None,
+        "related_person_raw_json": json.dumps(RESOURCE),
     }
 ]
 

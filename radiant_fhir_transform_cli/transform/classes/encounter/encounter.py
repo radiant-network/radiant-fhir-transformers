@@ -87,6 +87,14 @@ TRANSFORM_SCHEMA = [
             "part_of_display": {"fhir_key": "display", "type": "str"},
         },
     },
+    {
+        "fhir_path": "Encounter",
+        "columns": {
+            "encounter_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

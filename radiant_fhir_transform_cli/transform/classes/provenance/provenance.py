@@ -57,6 +57,14 @@ TRANSFORM_SCHEMA = [
             "activity_text": {"fhir_key": "text", "type": "str"},
         },
     },
+    {
+        "fhir_path": "Provenance",
+        "columns": {
+            "provenance_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Consent
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.consent import (
     ConsentTransformer,
 )
@@ -70,7 +72,8 @@ EXPECTED_OUTPUT = [
                 ],
             }
         ],
-    }
+        "consent_raw_json": json.dumps(RESOURCE),
+    },
 ]
 
 

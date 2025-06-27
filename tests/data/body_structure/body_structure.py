@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type BodyStructure
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.body_structure import (
     BodyStructureTransformer,
 )
@@ -20,6 +22,7 @@ EXPECTED_OUTPUT = [
         "patient_reference": "example",
         "patient_type": None,
         "patient_display": None,
+        "body_structure_raw_json": json.dumps(RESOURCE),
     }
 ]
 

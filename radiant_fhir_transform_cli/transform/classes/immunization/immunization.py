@@ -158,6 +158,14 @@ TRANSFORM_SCHEMA = [
             "funding_source_text": {"fhir_key": "text", "type": "str"},
         },
     },
+    {
+        "fhir_path": "Immunization",
+        "columns": {
+            "immunization_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

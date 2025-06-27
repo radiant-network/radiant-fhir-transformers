@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Location
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.location import (
     LocationTransformer,
 )
@@ -42,6 +44,7 @@ EXPECTED_OUTPUT = [
         "part_of_type": None,
         "part_of_display": "Location",
         "availability_exceptions": None,
+        "location_raw_json": json.dumps(RESOURCE),
     }
 ]
 

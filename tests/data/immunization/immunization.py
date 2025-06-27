@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Immunization
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.immunization import (
     ImmunizationTransformer,
 )
@@ -43,6 +45,7 @@ EXPECTED_OUTPUT = [
         "dose_quantity_code": "mg",
         "is_subpotent": True,
         "funding_source_text": None,
+        "immunization_raw_json": json.dumps(RESOURCE),
     }
 ]
 

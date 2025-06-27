@@ -79,7 +79,7 @@ RESOURCE = {
                     }
                 ]
             },
-            "valueMoney": {"value": 20.0, "currency": "USD"},
+            "valueMoney": {"value": "20.0", "currency": "USD"},
             "exception": [
                 {
                     "type": {

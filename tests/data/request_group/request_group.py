@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type RequestGroup
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.request_group import (
     RequestGroupTransformer,
 )
@@ -32,6 +34,7 @@ EXPECTED_OUTPUT = [
         "author_reference": "1",
         "author_type": None,
         "author_display": None,
+        "request_group_raw_json": json.dumps(RESOURCE),
     }
 ]
 

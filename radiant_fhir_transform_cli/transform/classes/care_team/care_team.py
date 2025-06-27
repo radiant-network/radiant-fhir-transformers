@@ -57,6 +57,14 @@ TRANSFORM_SCHEMA = [
             "period_end": {"fhir_key": "end", "type": "datetime"},
         },
     },
+    {
+        "fhir_path": "CareTeam",
+        "columns": {
+            "care_team_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

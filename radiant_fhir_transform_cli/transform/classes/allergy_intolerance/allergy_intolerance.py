@@ -6,7 +6,6 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-
 TRANSFORM_SCHEMA = [
     # Id
     {
@@ -138,6 +137,14 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "lastOccurrence",
         "columns": {"last_occurrence": {"type": "datetime"}},
+    },
+    {
+        "fhir_path": "AllergyIntolerance",
+        "columns": {
+            "allergy_intolerance_raw_json": {
+                "type": "str",
+            }
+        },
     },
 ]
 

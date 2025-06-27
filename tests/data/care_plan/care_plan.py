@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type CarePlan
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.care_plan.care_plan import (
     CarePlanTransformer,
 )
@@ -29,6 +31,7 @@ EXPECTED_OUTPUT = [
         "author_reference": None,
         "author_display": None,
         "author_type": None,
+        "care_plan_raw_json": json.dumps(RESOURCE),
     },
 ]
 

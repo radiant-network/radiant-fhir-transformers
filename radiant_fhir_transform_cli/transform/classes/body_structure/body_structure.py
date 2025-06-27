@@ -45,6 +45,14 @@ TRANSFORM_SCHEMA = [
             "patient_display": {"fhir_key": "display", "type": "str"},
         },
     },
+    {
+        "fhir_path": "BodyStructure",
+        "columns": {
+            "body_structure_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

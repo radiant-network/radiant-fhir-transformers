@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Observation
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.observation.observation import (
     ObservationTransformer,
 )
@@ -46,6 +48,7 @@ EXPECTED_OUTPUT = [
         "effective_period_end": None,
         "specimen_reference": "eofvi8EpxgTC9958OEt3Xuw3",
         "specimen_display": "Specimen 24U-ID-0290004",
+        "observation_raw_json": json.dumps(RESOURCE),
     }
 ]
 

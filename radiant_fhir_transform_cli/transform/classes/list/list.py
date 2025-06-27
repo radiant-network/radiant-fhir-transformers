@@ -89,6 +89,14 @@ TRANSFORM_SCHEMA = [
             "empty_reason_text": {"fhir_key": "text", "type": "str"},
         },
     },
+    {
+        "fhir_path": "List",
+        "columns": {
+            "list_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

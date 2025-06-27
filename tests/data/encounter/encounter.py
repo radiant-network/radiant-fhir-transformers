@@ -2,10 +2,13 @@
 Test helper class for FHIR resource type Encounter
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.encounter import (
     EncounterTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
+
 from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
@@ -34,6 +37,7 @@ EXPECTED_OUTPUT = [
         "part_of_reference": "f203",
         "part_of_type": None,
         "part_of_display": None,
+        "encounter_raw_json": json.dumps(RESOURCE),
     }
 ]
 
