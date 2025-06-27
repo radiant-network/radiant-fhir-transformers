@@ -54,6 +54,14 @@ TRANSFORM_SCHEMA = [
             "period_end": {"fhir_key": "end", "type": "datetime"},
         },
     },
+    {
+        "fhir_path": "RelatedPerson",
+        "columns": {
+            "related_person_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

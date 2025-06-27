@@ -1,3 +1,4 @@
+import json
 import logging
 import uuid
 from abc import ABC, abstractmethod
@@ -11,6 +12,10 @@ logger = logging.getLogger(__name__)
 def walk_dict_path(data: dict, path: str):
     """Walk down a FHIR-style path like 'low.value' in a nested dict."""
     current = data
+
+    if not path:
+        return json.dumps(current, default=str)
+
     for part in path.split("."):
         if isinstance(current, list):
             current = [

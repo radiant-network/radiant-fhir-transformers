@@ -56,6 +56,14 @@ TRANSFORM_SCHEMA = [
             },
         },
     },
+    {
+        "fhir_path": "Medication",
+        "columns": {
+            "medication_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

@@ -228,6 +228,14 @@ TRANSFORM_SCHEMA = [
             "patient_instruction": {"type": "str"},
         },
     },
+    {
+        "fhir_path": "ServiceRequest",
+        "columns": {
+            "service_request_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

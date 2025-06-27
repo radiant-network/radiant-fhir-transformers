@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type MedicationRequest
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.medication_request import (
     MedicationRequestTransformer,
 )
@@ -79,6 +81,7 @@ EXPECTED_OUTPUT = [
         "prior_prescription_reference": None,
         "prior_prescription_type": None,
         "prior_prescription_display": None,
+        "medication_request_raw_json": json.dumps(RESOURCE),
     }
 ]
 

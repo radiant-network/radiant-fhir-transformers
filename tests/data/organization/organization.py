@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Organization
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.organization import (
     OrganizationTransformer,
 )
@@ -18,6 +20,7 @@ EXPECTED_OUTPUT = [
         "part_of_reference": "eJeQyznJlo20Edf4V.q.Jwg3",
         "part_of_type": None,
         "part_of_display": "CHILDREN'S HOSPITAL OF PHILADELPHIA RL",
+        "organization_raw_json": json.dumps(RESOURCE),
     }
 ]
 

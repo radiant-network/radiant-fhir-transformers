@@ -6,7 +6,6 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-
 TRANSFORM_SCHEMA = [
     {
         "fhir_path": "id",
@@ -192,6 +191,14 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "severity.text",
         "columns": {
             "severity_text": {"type": "str"},
+        },
+    },
+    {
+        "fhir_path": "Condition",
+        "columns": {
+            "condition_raw_json": {
+                "type": "str",
+            }
         },
     },
 ]

@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Provenance
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.provenance import (
     ProvenanceTransformer,
 )
@@ -21,6 +23,7 @@ EXPECTED_OUTPUT = [
         "location_type": None,
         "location_display": None,
         "activity_text": None,
+        "provenance_raw_json": json.dumps(RESOURCE),
     }
 ]
 

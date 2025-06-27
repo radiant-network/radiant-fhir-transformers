@@ -96,6 +96,14 @@ TRANSFORM_SCHEMA = [
             "author_display": {"fhir_key": "display", "type": "str"},
         },
     },
+    {
+        "fhir_path": "RequestGroup",
+        "columns": {
+            "request_group_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

@@ -75,6 +75,14 @@ TRANSFORM_SCHEMA = [
             }
         },
     },
+    {
+        "fhir_path": "Appointment",
+        "columns": {
+            "appointment_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

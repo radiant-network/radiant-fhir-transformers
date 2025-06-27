@@ -6,7 +6,6 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-
 TRANSFORM_SCHEMA = [
     # Id
     {
@@ -197,6 +196,14 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "collection.fastingStatusCodeableConcept.text",
         "columns": {
             "collection_fasting_status_codeable_concept_text": {"type": "str"},
+        },
+    },
+    {
+        "fhir_path": "Specimen",
+        "columns": {
+            "specimen_raw_json": {
+                "type": "str",
+            }
         },
     },
 ]

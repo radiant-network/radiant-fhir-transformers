@@ -113,6 +113,14 @@ TRANSFORM_SCHEMA = [
             "provision_provision": {"fhir_key": "provision", "type": "str"},
         },
     },
+    {
+        "fhir_path": "Consent",
+        "columns": {
+            "consent_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

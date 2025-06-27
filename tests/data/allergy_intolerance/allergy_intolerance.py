@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type AllergyIntolerance
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.allergy_intolerance import (
     AllergyIntoleranceTransformer,
 )
@@ -48,6 +50,7 @@ EXPECTED_OUTPUT = [
         "asserter_type": None,
         "asserter_display": None,
         "last_occurrence": "2012-06",
+        "allergy_intolerance_raw_json": json.dumps(RESOURCE),
     }
 ]
 

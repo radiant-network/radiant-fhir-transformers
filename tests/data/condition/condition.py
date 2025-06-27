@@ -1,6 +1,8 @@
 """
-Test helper class for FHIR resource type Condition 
+Test helper class for FHIR resource type Condition
 """
+
+import json
 
 from radiant_fhir_transform_cli.transform.classes.condition.condition import (
     ConditionTransformer,
@@ -62,6 +64,7 @@ EXPECTED_OUTPUT = [
         "clinical_status_text": None,
         "verification_status_text": None,
         "severity_text": None,
+        "condition_raw_json": json.dumps(RESOURCE),
     }
 ]
 

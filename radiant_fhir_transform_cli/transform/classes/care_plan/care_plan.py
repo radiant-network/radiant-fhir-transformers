@@ -75,6 +75,14 @@ TRANSFORM_SCHEMA = [
             "author_display": {"fhir_key": "display", "type": "str"},
         },
     },
+    {
+        "fhir_path": "CarePlan",
+        "columns": {
+            "care_plan_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

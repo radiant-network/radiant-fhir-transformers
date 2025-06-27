@@ -300,6 +300,14 @@ TRANSFORM_SCHEMA = [
             },
         },
     },
+    {
+        "fhir_path": "MedicationRequest",
+        "columns": {
+            "medication_request_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Patient
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
 )
@@ -280,6 +282,7 @@ EXPECTED_OUTPUT = [
         "address_postal_code": "18966",
         "address_country": "US",
         "communication_language": "English",
+        "patient_raw_json": json.dumps(RESOURCE),
     }
 ]
 

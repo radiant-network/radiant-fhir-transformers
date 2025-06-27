@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type DiagnosticReport
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.diagnostic_report import (
     DiagnosticReportTransformer,
 )
@@ -26,6 +28,7 @@ EXPECTED_OUTPUT = [
         "effective_period_stop": None,
         "issued": "2011-03-04T11:45:33+11:00",
         "conclusion": "Core lab",
+        "diagnostic_report_raw_json": json.dumps(RESOURCE),
     }
 ]
 

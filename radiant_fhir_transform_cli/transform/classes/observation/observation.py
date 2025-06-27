@@ -172,6 +172,14 @@ TRANSFORM_SCHEMA = [
             "specimen_display": {"fhir_key": "display", "type": "str"},
         },
     },
+    {
+        "fhir_path": "Observation",
+        "columns": {
+            "observation_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

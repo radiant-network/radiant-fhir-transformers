@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Procedure
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.procedure import (
     ProcedureTransformer,
 )
@@ -49,6 +51,7 @@ EXPECTED_OUTPUT = [
         "location_type": None,
         "location_display": None,
         "outcome_text": None,
+        "procedure_raw_json": json.dumps(RESOURCE),
     }
 ]
 

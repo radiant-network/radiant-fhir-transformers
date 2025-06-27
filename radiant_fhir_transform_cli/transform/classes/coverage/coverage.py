@@ -102,6 +102,14 @@ TRANSFORM_SCHEMA = [
             "subrogation": {"fhir_key": "subrogation", "type": "bool"},
         },
     },
+    {
+        "fhir_path": "Coverage",
+        "columns": {
+            "coverage_raw_json": {
+                "type": "str",
+            }
+        },
+    },
 ]
 
 

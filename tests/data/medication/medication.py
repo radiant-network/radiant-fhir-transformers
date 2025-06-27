@@ -2,6 +2,8 @@
 Test helper class for FHIR resource type Medication
 """
 
+import json
+
 from radiant_fhir_transform_cli.transform.classes.medication import (
     MedicationTransformer,
 )
@@ -21,6 +23,7 @@ EXPECTED_OUTPUT = [
         "form_text": "Solution for injection",
         "batch_lot_number": "9494788",
         "batch_expiration_date": "2017-05-22",
+        "medication_raw_json": json.dumps(RESOURCE),
     }
 ]
 
