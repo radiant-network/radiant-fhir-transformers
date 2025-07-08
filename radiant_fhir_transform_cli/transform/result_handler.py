@@ -87,6 +87,10 @@ class SingleResultHandler(ResultHandler):
             values[config.fhir_reference] = self._extract_reference_id(
                 values[config.fhir_reference]
             )
+        if config.reference_type:
+            values[config.reference_type] = self._extract_reference_type(
+                values[config.reference_type]
+            )
         return values
 
     def _extract_reference_id(self, reference: Any) -> str:
@@ -97,6 +101,15 @@ class SingleResultHandler(ResultHandler):
             )
             return reference
         return reference.rsplit("/", 1)[-1]
+    
+    def _extract_reference_type(self, reference: Any) -> str:
+        """Extract type from FHIR reference string."""
+        if not isinstance(reference, str):
+            logger.warning(
+                "FHIR reference must be a string, got %s", type(reference)
+            )
+            return reference
+        return reference.rsplit("/", 1)[0]
 
     def _create_null_row(self, config: TransformConfig) -> dict[str, Any]:
         """Create a row with null values for all columns."""

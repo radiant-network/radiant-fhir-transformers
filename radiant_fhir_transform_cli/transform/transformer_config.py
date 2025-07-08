@@ -30,6 +30,7 @@ class TransformConfig:
     columns: dict[str, ColumnConfig]
     is_foreign_key: bool
     fhir_reference: Optional[str] = None
+    reference_type: Optional[str] = None
 
 
 def extract_raw_transform_schema(
@@ -39,6 +40,7 @@ def extract_raw_transform_schema(
     for entry in transform_schema:
         fhir_path = entry.get("fhir_path")
         fhir_reference = entry.get("fhir_reference")
+        reference_type = entry.get("reference_type")
         raw_columns = entry.get("columns", {})
         is_foreign_key = entry.get("is_foreign_key", False)
         columns = {
@@ -51,6 +53,7 @@ def extract_raw_transform_schema(
             fhir_path=fhir_path,
             columns=columns,
             fhir_reference=fhir_reference,
+            reference_type=reference_type,
             is_foreign_key=is_foreign_key,
         )
         configs.append(config)
