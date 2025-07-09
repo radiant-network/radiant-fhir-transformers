@@ -84,12 +84,11 @@ class SingleResultHandler(ResultHandler):
             return self._create_null_row(config)
         values = strategy(item, config)
         if config.fhir_reference:
-            values[config.fhir_reference] = self._extract_reference_id(
+            values[config.reference_type] = self._extract_reference_type(
                 values[config.fhir_reference]
             )
-        if config.reference_type:
-            values[config.reference_type] = self._extract_reference_type(
-                values[config.reference_type]
+            values[config.fhir_reference] = self._extract_reference_id(
+                values[config.fhir_reference]
             )
         return values
 
