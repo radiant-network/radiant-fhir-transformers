@@ -63,7 +63,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "subject_reference",
         "columns": {
             "subject_reference": {"fhir_key": "reference", "type": "str"},
-            "subject_type": {"fhir_key": "type", "type": "str"},
             "subject_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -78,7 +77,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "authenticator_reference",
         "columns": {
             "authenticator_reference": {"fhir_key": "reference", "type": "str"},
-            "authenticator_type": {"fhir_key": "type", "type": "str"},
             "authenticator_display": {"fhir_key": "display", "type": "str"},
         },
     },

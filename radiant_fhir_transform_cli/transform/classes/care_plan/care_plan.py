@@ -40,7 +40,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "subject_display": {"fhir_key": "display", "type": "str"},
-            "subject_type": {"fhir_key": "type", "type": "str"},
         },
     },
     {
