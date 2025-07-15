@@ -85,7 +85,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "custodian_reference",
         "columns": {
             "custodian_reference": {"fhir_key": "reference", "type": "str"},
-            "custodian_type": {"fhir_key": "type", "type": "str"},
             "custodian_display": {"fhir_key": "display", "type": "str"},
         },
     },
