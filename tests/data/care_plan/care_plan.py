@@ -22,7 +22,7 @@ EXPECTED_OUTPUT = [
         "subject_reference_type": None,
         "encounter_reference": None,
         "encounter_display": None,
-        "encounter_type": None,
+        "encounter_reference_type": None,
         "period_start": "2013-01-01",
         "period_end": "2013-10-01",
         "created": None,

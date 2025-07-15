@@ -21,7 +21,7 @@ EXPECTED_OUTPUT = [
         "subject_reference_type": None,
         "subject_display": "Roel",
         "encounter_reference": "f202",
-        "encounter_type": None,
+        "encounter_reference_type": None,
         "encounter_display": "Roel's encounter on January 28th, 2013",
         "performed_date_time": None,
         "performed_period_start": "2013-01-28T13:31:00+01:00",

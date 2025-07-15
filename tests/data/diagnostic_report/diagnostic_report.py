@@ -19,7 +19,7 @@ EXPECTED_OUTPUT = [
         "subject_reference_type": None,
         "subject_display": "Patient Two",
         "encounter_reference": "example",
-        "encounter_type": None,
+        "encounter_reference_type": None,
         "encounter_display": None,
         "effective_date_time": "2011-03-04T08:30:00+11:00",
         "effective_period_start": None,

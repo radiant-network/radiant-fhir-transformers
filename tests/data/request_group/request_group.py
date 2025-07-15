@@ -26,7 +26,7 @@ EXPECTED_OUTPUT = [
         "subject_reference_type": None,
         "subject_display": None,
         "encounter_reference": "example",
-        "encounter_type": None,
+        "encounter_reference_type": None,
         "encounter_display": None,
         "authored_on": "2017-03-06T17:31:00Z",
         "author_reference": "1",

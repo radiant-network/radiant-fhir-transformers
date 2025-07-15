@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "context_encounter_reference": "xcda",
-        "context_encounter_type": None,
+        "context_encounter_reference_type": None,
         "context_encounter_display": None,
     },
 ]

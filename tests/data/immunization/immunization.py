@@ -20,7 +20,7 @@ EXPECTED_OUTPUT = [
         "patient_type": None,
         "patient_display": None,
         "encounter_reference": "example",
-        "encounter_type": None,
+        "encounter_reference_type": None,
         "encounter_display": None,
         "occurrence_date_time": "2013-01-10",
         "occurrence_string": None,

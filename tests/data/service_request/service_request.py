@@ -47,7 +47,7 @@ EXPECTED_OUTPUT = [
         "subject_reference_type": None,
         "encounter_reference": "example",
         "encounter_display": "1234encounter",
-        "encounter_type": None,
+        "encounter_reference_type": None,
         "occurrence_date_time": "2013-05-08T09:33:27+07:00",
         "occurrence_period_start": "2013-05-08",
         "occurrence_period_end": "2013-05-09",

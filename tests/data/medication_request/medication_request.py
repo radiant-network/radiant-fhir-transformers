@@ -30,7 +30,7 @@ EXPECTED_OUTPUT = [
         "subject_reference_type": "Patient",
         "subject_display": "Donald Duck",
         "encounter_reference": "f201",
-        "encounter_type": None,
+        "encounter_reference_type": None,
         "encounter_display": "encounter who leads to this prescription",
         "authored_on": "2015-01-15",
         "requester_reference": "f007",

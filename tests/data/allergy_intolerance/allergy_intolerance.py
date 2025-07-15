@@ -22,7 +22,7 @@ EXPECTED_OUTPUT = [
         "patient_type": None,
         "patient_display": None,
         "encounter_reference": None,
-        "encounter_type": None,
+        "encounter_reference_type": None,
         "encounter_display": None,
         "onset_date_time": "2004",
         "onset_age_value": None,

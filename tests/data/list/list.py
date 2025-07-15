@@ -21,7 +21,7 @@ EXPECTED_OUTPUT = [
         "subject_reference_type": 'Patient',
         "subject_display": None,
         "encounter_reference": "example",
-        "encounter_type": 'Encounter',
+        "encounter_reference_type": 'Encounter',
         "encounter_display": None,
         "date": "2013-11-20T23:10:23+11:00",
         "source_reference": "example",
