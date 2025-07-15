@@ -27,7 +27,6 @@ TRANSFORM_SCHEMA = [
         "columns": {
             "performer_reference": {"fhir_key": "reference", "type": "str"},
             "performer_display": {"fhir_key": "display", "type": "str"},
-            "performer_type": {"fhir_key": "type", "type": "str"},
         },
     },
 ]
