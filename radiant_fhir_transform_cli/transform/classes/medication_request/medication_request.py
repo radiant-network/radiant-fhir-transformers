@@ -137,7 +137,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "recorder_reference",
         "columns": {
             "recorder_reference": {"fhir_key": "reference", "type": "str"},
-            "recorder_type": {"fhir_key": "type", "type": "str"},
             "recorder_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -289,7 +288,6 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "reference",
                 "type": "str",
             },
-            "prior_prescription_type": {"fhir_key": "type", "type": "str"},
             "prior_prescription_display": {
                 "fhir_key": "display",
                 "type": "str",

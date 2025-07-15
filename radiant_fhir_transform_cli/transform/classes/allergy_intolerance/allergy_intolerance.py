@@ -120,7 +120,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "recorder_display": {"fhir_key": "display", "type": "str"},
-            "recorder_type": {"fhir_key": "type", "type": "str"},
         },
     },
     {
