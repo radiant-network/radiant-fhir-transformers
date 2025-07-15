@@ -51,7 +51,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "encounter_display": {"fhir_key": "display", "type": "str"},
-            "encounter_type": {"fhir_key": "type", "type": "str"},
         },
     },
     {

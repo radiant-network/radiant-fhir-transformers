@@ -76,7 +76,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "encounter_reference",
         "columns": {
             "encounter_reference": {"fhir_key": "reference", "type": "str"},
-            "encounter_type": {"fhir_key": "type", "type": "str"},
             "encounter_display": {"fhir_key": "display", "type": "str"},
         },
     },
