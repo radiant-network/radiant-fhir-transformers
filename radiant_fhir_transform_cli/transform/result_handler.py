@@ -84,31 +84,20 @@ class SingleResultHandler(ResultHandler):
             return self._create_null_row(config)
         values = strategy(item, config)
         if config.fhir_reference:
-            values[config.reference_type] = self._extract_reference_type(
-                values[config.fhir_reference]
-            )
-            values[config.fhir_reference] = self._extract_reference_id(
-                values[config.fhir_reference]
-            )
+            ref_values = self._extract_reference(values[config.fhir_reference])
+            values[config.fhir_reference] = ref_values[-1]
+            values[config.fhir_reference_type] = ref_values[0]
         return values
 
-    def _extract_reference_id(self, reference: Any) -> str:
+    def _extract_reference(self, reference: Any) -> str:
         """Extract ID from FHIR reference string."""
         if not isinstance(reference, str):
             logger.warning(
                 "FHIR reference must be a string, got %s", type(reference)
             )
             return reference
-        return reference.rsplit("/", 1)[-1]
+        return reference.rsplit("/", 1)
     
-    def _extract_reference_type(self, reference: Any) -> str:
-        """Extract type from FHIR reference string."""
-        if not isinstance(reference, str):
-            logger.warning(
-                "FHIR reference must be a string, got %s", type(reference)
-            )
-            return reference
-        return reference.rsplit("/", 1)[0]
 
     def _create_null_row(self, config: TransformConfig) -> dict[str, Any]:
         """Create a row with null values for all columns."""
