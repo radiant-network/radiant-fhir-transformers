@@ -26,7 +26,6 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "basedOn",
         "columns": {
             "based_on_reference": {"fhir_key": "reference", "type": "str"},
-            "based_on_type": {"fhir_key": "type", "type": "str"},
             "based_on_display": {"fhir_key": "display", "type": "str"},
         },
     },
