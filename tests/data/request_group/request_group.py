@@ -23,7 +23,7 @@ EXPECTED_OUTPUT = [
         "priority": "routine",
         "code_text": None,
         "subject_reference": "example",
-        "subject_type": None,
+        "subject_reference_type": None,
         "subject_display": None,
         "encounter_reference": "example",
         "encounter_type": None,

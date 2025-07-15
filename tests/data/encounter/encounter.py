@@ -19,7 +19,7 @@ EXPECTED_OUTPUT = [
         "service_type_text": "test",
         "priority_text": None,
         "subject_reference": "f201",
-        "subject_type": None,
+        "subject_reference_type": None,
         "subject_display": "Roel",
         "period_start": "2013-03-11",
         "period_end": "2013-03-20",

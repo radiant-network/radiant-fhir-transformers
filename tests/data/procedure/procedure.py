@@ -18,7 +18,7 @@ EXPECTED_OUTPUT = [
         "category_text": "Ordered Procedures",
         "code_text": None,
         "subject_reference": "f201",
-        "subject_type": None,
+        "subject_reference_type": None,
         "subject_display": "Roel",
         "encounter_reference": "f202",
         "encounter_type": None,

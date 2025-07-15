@@ -18,7 +18,7 @@ EXPECTED_OUTPUT = [
         "title": "Current Medication List",
         "code_text": "Medication Review",
         "subject_reference": "example",
-        "subject_type": 'Patient',
+        "subject_reference_type": 'Patient',
         "subject_display": None,
         "encounter_reference": "example",
         "encounter_type": 'Encounter',

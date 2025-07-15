@@ -44,7 +44,7 @@ EXPECTED_OUTPUT = [
         "quantity_range_high_code": None,
         "subject_reference": "dicom.example.pt",
         "subject_display": "Judy Test",
-        "subject_type": None,
+        "subject_reference_type": None,
         "encounter_reference": "example",
         "encounter_display": "1234encounter",
         "encounter_type": None,

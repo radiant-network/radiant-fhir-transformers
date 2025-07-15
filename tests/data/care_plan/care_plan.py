@@ -19,7 +19,7 @@ EXPECTED_OUTPUT = [
         "description": None,
         "subject_reference": "1",
         "subject_display": "Eve Everywoman",
-        "subject_type": None,
+        "subject_reference_type": None,
         "encounter_reference": None,
         "encounter_display": None,
         "encounter_type": None,

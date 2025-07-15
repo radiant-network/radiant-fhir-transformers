@@ -16,7 +16,7 @@ EXPECTED_OUTPUT = [
         "code_text": "Complete Blood Count",
         "status": "final",
         "subject_reference": "pat2",
-        "subject_type": None,
+        "subject_reference_type": None,
         "subject_display": "Patient Two",
         "encounter_reference": "example",
         "encounter_type": None,

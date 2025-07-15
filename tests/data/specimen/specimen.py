@@ -25,7 +25,7 @@ EXPECTED_OUTPUT = [
         "type_text": "venous blood",
         "subject_reference": "example",
         "subject_display": "Peter Patient",
-        "subject_type": "Patient",
+        "subject_reference_type": "Patient",
         "received_time": "2011-03-04T07:03:00Z",
         "collection_collector_reference": "example",
         "collection_collector_display": None,

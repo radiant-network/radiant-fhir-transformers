@@ -18,7 +18,7 @@ EXPECTED_OUTPUT = [
         "priority_text": "high",
         "description_text": "Target weight is 160 to 180 lbs.",
         "subject_reference": "example",
-        "subject_type": None,
+        "subject_reference_type": None,
         "subject_display": "Peter James Chalmers",
         "start_date": "2015-04-05",
         "start_codeable_concept_text": None,

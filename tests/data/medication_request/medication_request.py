@@ -27,7 +27,7 @@ EXPECTED_OUTPUT = [
         "medication_reference_type": None,
         "medication_reference_display": None,
         "subject_reference": "pat1",
-        "subject_type": "Patient",
+        "subject_reference_type": "Patient",
         "subject_display": "Donald Duck",
         "encounter_reference": "f201",
         "encounter_type": None,

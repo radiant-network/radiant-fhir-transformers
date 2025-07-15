@@ -23,7 +23,7 @@ EXPECTED_OUTPUT = [
         "doc_status": "preliminary",
         "type_text": "Progress Notes",
         "subject_reference": "eiCbDCEzFk6wR6UNlcWziySVQrlN47NTRvxPwgT4P3883",
-        "subject_type": None,
+        "subject_reference_type": None,
         "subject_display": None,
         "date": "2004-12-23",
         "authenticator_reference": "f001",

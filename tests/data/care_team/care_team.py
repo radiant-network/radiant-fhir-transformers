@@ -16,7 +16,7 @@ EXPECTED_OUTPUT = [
         "status": "active",
         "name": "Peter James Charlmers Care Plan for Inpatient Encounter",
         "subject_reference": "example",
-        "subject_type": None,
+        "subject_reference_type": None,
         "subject_display": "Peter James Chalmers",
         "encounter_reference": "example",
         "encounter_type": None,
