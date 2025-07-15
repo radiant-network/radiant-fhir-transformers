@@ -89,7 +89,7 @@ class SingleResultHandler(ResultHandler):
             values[config.fhir_reference_type] = ref_type
         return values
 
-    def _extract_reference(self, reference: Any) -> str:
+    def _extract_reference(self, reference: Any) -> tuple[str]:
         """Extract ID from FHIR reference string."""
         if not isinstance(reference, str):
             logger.warning(
