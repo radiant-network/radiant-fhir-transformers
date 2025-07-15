@@ -115,7 +115,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "requester_reference",
         "columns": {
             "requester_reference": {"fhir_key": "reference", "type": "str"},
-            "requester_type": {"fhir_key": "type", "type": "str"},
             "requester_display": {"fhir_key": "display", "type": "str"},
         },
     },

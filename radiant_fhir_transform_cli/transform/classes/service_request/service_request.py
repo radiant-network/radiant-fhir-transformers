@@ -213,7 +213,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "requester_display": {"fhir_key": "display", "type": "str"},
-            "requester_type": {"fhir_key": "type", "type": "str"},
         },
     },
     {
