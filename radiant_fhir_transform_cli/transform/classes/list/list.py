@@ -47,7 +47,6 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "subject",
         "fhir_reference": "subject_reference",
-        "reference_type": "subject_type",
         "columns": {
             "subject_reference": {"fhir_key": "reference", "type": "str"},
             "subject_display": {"fhir_key": "display", "type": "str"},
