@@ -18,14 +18,14 @@ EXPECTED_OUTPUT = [
         "priority_text": "high",
         "description_text": "Target weight is 160 to 180 lbs.",
         "subject_reference": "example",
-        "subject_reference_type": None,
+        "subject_reference_type": "Patient",
         "subject_display": "Peter James Chalmers",
         "start_date": "2015-04-05",
         "start_codeable_concept_text": None,
         "status_date": "2016-02-14",
         "status_reason": "Patient wants to defer weight loss until after honeymoon.",
         "expressed_by_reference": "example",
-        "expressed_by_type": None,
+        "expressed_by_reference_type": "Patient",
         "expressed_by_display": "Peter James Chalmers",
     }
 ]

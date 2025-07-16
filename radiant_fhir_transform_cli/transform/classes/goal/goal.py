@@ -81,7 +81,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "expressed_by_reference",
         "columns": {
             "expressed_by_reference": {"fhir_key": "reference", "type": "str"},
-            "expressed_by_type": {"fhir_key": "type", "type": "str"},
             "expressed_by_display": {"fhir_key": "display", "type": "str"},
         },
     },

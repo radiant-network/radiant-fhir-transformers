@@ -16,7 +16,7 @@ EXPECTED_OUTPUT = [
         "active": True,
         "name": "Endoscopy Suite",
         "part_of_reference": "eJeQyznJlo20Edf4V.q.Jwg3",
-        "part_of_type": None,
+        "part_of_reference_type": "Organization",
         "part_of_display": "CHILDREN'S HOSPITAL OF PHILADELPHIA RL",
     }
 ]

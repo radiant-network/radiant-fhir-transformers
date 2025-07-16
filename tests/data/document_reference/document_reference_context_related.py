@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "context_related_reference": "xcda",
-        "context_related_type": None,
+        "context_related_reference_type": "Patient",
         "context_related_display": None,
     },
 ]

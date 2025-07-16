@@ -13,11 +13,13 @@ EXPECTED_OUTPUT = [
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "based_on_reference": "eKSdPx93PPg7jLqFtgAKjJbL1RWvYEkyba5u.yiQaXZE3",
+        "based_on_reference_type": "ServiceRequest",
         "based_on_display": "Rapid SARS-CoV-2 PCR",
     },
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "based_on_reference": "elkj;lskdjf;ljl;ghghhhddddddjj.yiQaXZE3",
+        "based_on_reference_type": "ServiceRequest",
         "based_on_display": "Rapid TESTER",
     },
 ]

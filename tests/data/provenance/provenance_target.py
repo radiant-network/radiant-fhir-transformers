@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "provenance_id": "provenance",
         "target_reference": "target",
-        "target_type": None,
+        "target_reference_type": "Procedure",
         "target_display": None,
     }
 ]

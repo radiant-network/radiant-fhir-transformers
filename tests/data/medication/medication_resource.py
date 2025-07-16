@@ -20,8 +20,7 @@ RESOURCE = {
     },
     "status": "active",
     "manufacturer": {
-        "reference": "#org4",
-        "type": "Organization",
+        "reference": "Organization/#org4",
         "display": "Organization 4",
     },
     "form": {

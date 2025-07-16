@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "diagnostic_report_id": "101",
         "results_interpreter_reference": "Drdrjr",
-        "results_interpreter_type": None,
+        "results_interpreter_reference_type": "Practitioner",
         "results_interpreter_display": "Dr. Doctor Jr.",
     }
 ]

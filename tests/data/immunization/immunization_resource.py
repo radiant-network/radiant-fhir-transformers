@@ -103,7 +103,7 @@ RESOURCE = {
             ]
         }
     ],
-    "reasonReference": [{"reference": "Condiiton/reason"}],
+    "reasonReference": [{"reference": "Condition/reason"}],
     "isSubpotent": True,
     "subpotentReason": [
         {

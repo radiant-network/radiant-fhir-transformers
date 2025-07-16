@@ -57,7 +57,6 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "reference",
                 "type": "str",
             },
-            "reported_reference_type": {"fhir_key": "type", "type": "str"},
             "reported_reference_display": {
                 "fhir_key": "display",
                 "type": "str",
@@ -81,7 +80,6 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "reference",
                 "type": "str",
             },
-            "medication_reference_type": {"fhir_key": "type", "type": "str"},
             "medication_reference_display": {
                 "fhir_key": "display",
                 "type": "str",
@@ -156,6 +154,7 @@ TRANSFORM_SCHEMA = [
     },
     {
         "fhir_path": "dispenseRequest",
+        "fhir_reference": "dispense_request_performer_reference",
         "columns": {
             "dispense_request_initial_fill_quantity_value": {
                 "fhir_key": "initialFill.quantity.value",
@@ -251,10 +250,6 @@ TRANSFORM_SCHEMA = [
             },
             "dispense_request_performer_reference": {
                 "fhir_key": "performer.reference",
-                "type": "str",
-            },
-            "dispense_request_performer_type": {
-                "fhir_key": "performer.type",
                 "type": "str",
             },
             "dispense_request_performer_display": {

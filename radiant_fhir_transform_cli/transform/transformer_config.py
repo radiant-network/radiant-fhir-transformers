@@ -40,7 +40,9 @@ def extract_raw_transform_schema(
     for entry in transform_schema:
         fhir_path = entry.get("fhir_path")
         fhir_reference = entry.get("fhir_reference")
-        fhir_reference_type = entry.get("fhir_reference") + "_type" if fhir_reference else None
+        fhir_reference_type = (
+            entry.get("fhir_reference") + "_type" if fhir_reference else None
+        )
         raw_columns = entry.get("columns", {})
         is_foreign_key = entry.get("is_foreign_key", False)
         columns = {

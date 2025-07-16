@@ -13,13 +13,13 @@ EXPECTED_OUTPUT = [
     {
         "medication_request_id": "medrx0301",
         "based_on_reference": "fM4L7yx-lQwmJcrS7MAT3m1zkSuH8v8LVdM1dkvXzDPc4",
-        "based_on_type": "CarePlan",
+        "based_on_reference_type": "CarePlan",
         "based_on_display": "BMT Supportive Care Plan",
     },
     {
         "medication_request_id": "medrx0301",
         "based_on_reference": "ee02A2FZtICYRsDjH4.zr1tqyCMSVk0A6Uqb--g8q7eQ3",
-        "based_on_type": None,
+        "based_on_reference_type": "MedicationRequest",
         "based_on_display": "acetaminophen susp 140.8 mg",
     },
 ]

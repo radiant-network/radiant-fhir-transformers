@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "procedure_id": "f201",
         "complication_detail_reference": "complication",
-        "complication_detail_type": None,
+        "complication_detail_reference_type": "Condition",
         "complication_detail_display": None,
     }
 ]

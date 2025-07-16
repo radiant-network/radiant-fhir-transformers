@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
         "endpoint_reference": "endpoint",
-        "endpoint_type": None,
+        "endpoint_reference_type": "Endpoint",
         "endpoint_display": None,
     }
 ]

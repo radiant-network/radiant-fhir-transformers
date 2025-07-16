@@ -84,7 +84,9 @@ class SingleResultHandler(ResultHandler):
             return self._create_null_row(config)
         values = strategy(item, config)
         if config.fhir_reference:
-            ref_value, ref_type = self._extract_reference(values[config.fhir_reference])
+            ref_value, ref_type = self._extract_reference(
+                values[config.fhir_reference]
+            )
             values[config.fhir_reference] = ref_value
             values[config.fhir_reference_type] = ref_type
         return values
@@ -95,10 +97,9 @@ class SingleResultHandler(ResultHandler):
             logger.warning(
                 "FHIR reference must be a string, got %s", type(reference)
             )
-            return reference
+            return None, None
         ref_split = reference.rsplit("/", 1)
         return ref_split[-1], ref_split[0]
-    
 
     def _create_null_row(self, config: TransformConfig) -> dict[str, Any]:
         """Create a row with null values for all columns."""

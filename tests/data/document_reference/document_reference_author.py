@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "author_reference": "emnkokS3ex3pMjlzS7Qtl7A3",
-        "author_type": None,
+        "author_reference_type": "Practitioner",
         "author_display": None,
     },
 ]

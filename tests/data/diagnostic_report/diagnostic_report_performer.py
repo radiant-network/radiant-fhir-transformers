@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "diagnostic_report_id": "101",
         "performer_reference": "1832473e-2fe0-452d-abe9-3cdb9879522f",
-        "performer_type": None,
+        "performer_reference_type": "Organization",
         "performer_display": "Acme Laboratory, Inc",
     }
 ]

@@ -18,7 +18,7 @@ EXPECTED_OUTPUT = [
         "occurred_date_time": None,
         "recorded": "2015-06-27T08:39:24+10:00",
         "location_reference": "location",
-        "location_type": None,
+        "location_reference_type": "Location",
         "location_display": None,
         "activity_text": None,
     }

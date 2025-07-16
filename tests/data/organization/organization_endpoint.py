@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "organization_id": "2.16.840.1.113883.19.5",
         "endpoint_reference": "endpoint",
-        "endpoint_type": None,
+        "endpoint_reference_type": "Endpoint",
         "endpoint_display": None,
     },
 ]

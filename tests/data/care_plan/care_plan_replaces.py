@@ -14,7 +14,7 @@ EXPECTED_OUTPUT = [
         "care_plan_id": "preg",
         "replaces_reference": None,
         "replaces_display": "Plan from urgent care clinic",
-        "replaces_type": None,
+        "replaces_reference_type": None,
     },
 ]
 

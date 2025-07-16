@@ -29,7 +29,7 @@ EXPECTED_OUTPUT = [
         "received_time": "2011-03-04T07:03:00Z",
         "collection_collector_reference": "example",
         "collection_collector_display": None,
-        "collection_collector_type": None,
+        "collection_collector_reference_type": "Practitioner",
         "collection_collected_date_time": "2011-05-30T06:15:00Z",
         "collection_collected_period_start": None,
         "collection_collected_period_end": None,

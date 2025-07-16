@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "request_group_id": "kdn5-example",
         "reason_reference_reference": "condition",
-        "reason_reference_type": None,
+        "reason_reference_reference_type": "Condition",
         "reason_reference_display": None,
     },
 ]

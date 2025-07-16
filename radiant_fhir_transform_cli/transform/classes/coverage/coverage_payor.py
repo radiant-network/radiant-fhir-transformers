@@ -27,7 +27,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "payor_reference",
         "columns": {
             "payor_reference": {"fhir_key": "reference", "type": "str"},
-            "payor_type": {"fhir_key": "type", "type": "str"},
             "payor_display": {"fhir_key": "display", "type": "str"},
         },
     },

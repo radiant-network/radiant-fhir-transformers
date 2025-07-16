@@ -16,7 +16,7 @@ EXPECTED_OUTPUT = [
         "code_text": "Vancomycin HCL",
         "status": "active",
         "manufacturer_reference": "#org4",
-        "manufacturer_type": "Organization",
+        "manufacturer_reference_type": "Organization",
         "manufacturer_display": "Organization 4",
         "form_text": "Solution for injection",
         "batch_lot_number": "9494788",

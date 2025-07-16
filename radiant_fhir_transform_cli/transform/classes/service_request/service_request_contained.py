@@ -24,6 +24,7 @@ TRANSFORM_SCHEMA = [
     },
     {
         "fhir_path": "contained",
+        "fhir_reference": "contained_subject_reference",
         "columns": {
             "contained_resource_type": {
                 "fhir_key": "resourceType",
@@ -38,10 +39,6 @@ TRANSFORM_SCHEMA = [
             },
             "contained_subject_display": {
                 "fhir_key": "subject.display",
-                "type": "str",
-            },
-            "contained_subject_type": {
-                "fhir_key": "subject.type",
                 "type": "str",
             },
             "contained_collection_collected_date_time": {

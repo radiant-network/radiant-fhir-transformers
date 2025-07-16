@@ -90,7 +90,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "author_reference",
         "columns": {
             "author_reference": {"fhir_key": "reference", "type": "str"},
-            "author_type": {"fhir_key": "type", "type": "str"},
             "author_display": {"fhir_key": "display", "type": "str"},
         },
     },

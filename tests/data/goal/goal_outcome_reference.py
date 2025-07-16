@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "goal_id": "example",
         "outcome_reference_reference": "example",
-        "outcome_reference_type": None,
+        "outcome_reference_reference_type": "Observation",
         "outcome_reference_display": "Body Weight Measured",
     },
 ]

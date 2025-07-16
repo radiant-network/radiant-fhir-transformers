@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "medication_request_id": "medrx0301",
         "event_history_reference": "#signature",
-        "event_history_type": None,
+        "event_history_reference_type": "Signature",
         "event_history_display": "Author's Signature",
     }
 ]

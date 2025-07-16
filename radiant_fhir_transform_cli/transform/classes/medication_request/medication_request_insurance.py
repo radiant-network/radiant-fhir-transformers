@@ -27,7 +27,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "insurance_reference",
         "columns": {
             "insurance_reference": {"fhir_key": "reference", "type": "str"},
-            "insurance_type": {"fhir_key": "type", "type": "str"},
             "insurance_display": {"fhir_key": "display", "type": "str"},
         },
     },

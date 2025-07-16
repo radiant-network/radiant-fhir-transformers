@@ -14,7 +14,7 @@ EXPECTED_OUTPUT = [
         "diagnostic_report_id": "101",
         "media_comment": "some comment",
         "media_link_reference": "123",
-        "media_link_type": None,
+        "media_link_reference_type": "Media",
         "media_link_display": "a slide image",
     }
 ]

@@ -37,7 +37,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "policy_holder_reference",
         "columns": {
             "policy_holder_reference": {"fhir_key": "reference", "type": "str"},
-            "policy_holder_type": {"fhir_key": "type", "type": "str"},
             "policy_holder_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -46,7 +45,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "subscriber_reference",
         "columns": {
             "subscriber_reference": {"fhir_key": "reference", "type": "str"},
-            "subscriber_type": {"fhir_key": "type", "type": "str"},
             "subscriber_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -61,7 +59,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "beneficiary_reference",
         "columns": {
             "beneficiary_reference": {"fhir_key": "reference", "type": "str"},
-            "beneficiary_type": {"fhir_key": "type", "type": "str"},
             "beneficiary_display": {"fhir_key": "display", "type": "str"},
         },
     },

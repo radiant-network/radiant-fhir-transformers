@@ -13,19 +13,19 @@ EXPECTED_OUTPUT = [
     {
         "diagnostic_report_id": "101",
         "specimen_reference": "rtt",
-        "specimen_type": None,
+        "specimen_reference_type": "Specimen",
         "specimen_display": "Red Top Tube",
     },
     {
         "diagnostic_report_id": "101",
         "specimen_reference": "ltt",
-        "specimen_type": None,
+        "specimen_reference_type": "Specimen",
         "specimen_display": "Lavender Top Tube",
     },
     {
         "diagnostic_report_id": "101",
         "specimen_reference": "urine",
-        "specimen_type": None,
+        "specimen_reference_type": "Specimen",
         "specimen_display": "Urine Sample",
     },
 ]

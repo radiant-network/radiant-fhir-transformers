@@ -23,14 +23,14 @@ EXPECTED_OUTPUT = [
         "priority": "routine",
         "code_text": None,
         "subject_reference": "example",
-        "subject_reference_type": None,
+        "subject_reference_type": "Patient",
         "subject_display": None,
         "encounter_reference": "example",
-        "encounter_reference_type": None,
+        "encounter_reference_type": "Encounter",
         "encounter_display": None,
         "authored_on": "2017-03-06T17:31:00Z",
         "author_reference": "1",
-        "author_type": None,
+        "author_reference_type": "Practitioner",
         "author_display": None,
     }
 ]

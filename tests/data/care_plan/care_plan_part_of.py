@@ -14,7 +14,7 @@ EXPECTED_OUTPUT = [
         "care_plan_id": "preg",
         "part_of_reference": None,
         "part_of_display": "Overall wellness plan",
-        "part_of_type": None,
+        "part_of_reference_type": None,
     },
 ]
 

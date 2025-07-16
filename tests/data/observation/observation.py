@@ -16,8 +16,10 @@ EXPECTED_OUTPUT = [
         "status": "final",
         "code_text": "Rapid Sars-CoV-2",
         "subject_reference": "evrlLhFNe5BfHZQD39Kr9nfIA0e.TcZOdE0gOPoRXlGs3",
+        "subject_reference_type": "Patient",
         "subject_display": "CareEverywhere,Sammy",
         "encounter_reference": "e.mnIF2M9LQgwkDzhr2PCKA3",
+        "encounter_reference_type": "Encounter",
         "encounter_identifier_use": "usual",
         "encounter_identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.3.698084.8",
         "encounter_identifier_value": "8200106334",
@@ -45,6 +47,7 @@ EXPECTED_OUTPUT = [
         "effective_period_start": None,
         "effective_period_end": None,
         "specimen_reference": "eofvi8EpxgTC9958OEt3Xuw3",
+        "specimen_reference_type": "Specimen",
         "specimen_display": "Specimen 24U-ID-0290004",
     }
 ]

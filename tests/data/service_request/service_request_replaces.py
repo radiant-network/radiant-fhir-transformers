@@ -14,7 +14,7 @@ EXPECTED_OUTPUT = [
         "service_request_id": "di_abcd_efg",
         "replaces_reference": "banana",
         "replaces_display": "Previous allergy test",
-        "replaces_type": None,
+        "replaces_reference_type": "serviceRequest",
     },
 ]
 

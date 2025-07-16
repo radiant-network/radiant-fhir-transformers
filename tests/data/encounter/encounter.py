@@ -19,7 +19,7 @@ EXPECTED_OUTPUT = [
         "service_type_text": "test",
         "priority_text": None,
         "subject_reference": "f201",
-        "subject_reference_type": None,
+        "subject_reference_type": "Patient",
         "subject_display": "Roel",
         "period_start": "2013-03-11",
         "period_end": "2013-03-20",
@@ -29,10 +29,10 @@ EXPECTED_OUTPUT = [
         "length_system": None,
         "length_code": None,
         "service_provider_reference": "2",
-        "service_provider_type": None,
+        "service_provider_reference_type": "Organization",
         "service_provider_display": None,
         "part_of_reference": "f203",
-        "part_of_type": None,
+        "part_of_reference_type": "Encounter",
         "part_of_display": None,
     }
 ]

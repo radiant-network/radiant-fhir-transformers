@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "coverage_id": "9876B1",
         "contract_reference": "INS-101",
-        "contract_type": None,
+        "contract_reference_type": "Contract",
         "contract_display": None,
     },
 ]

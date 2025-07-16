@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "goal_id": "example",
         "addresses_reference": None,
-        "addresses_type": None,
+        "addresses_reference_type": None,
         "addresses_display": "obesity condition",
     },
 ]

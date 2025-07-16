@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "medication_request_id": "medrx0301",
         "reason_reference_reference": "condition",
-        "reason_reference_type": "Condition",
+        "reason_reference_reference_type": "Condition",
         "reason_reference_display": None,
     }
 ]

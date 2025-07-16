@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "care_team_id": "example",
         "managing_organization_reference": "f001",
-        "managing_organization_type": None,
+        "managing_organization_reference_type": "Organization",
         "managing_organization_display": None,
     },
 ]

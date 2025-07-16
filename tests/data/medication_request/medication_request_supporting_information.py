@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "medication_request_id": "medrx0301",
         "supporting_information_reference": "biopsy",
-        "supporting_information_type": "Procedure",
+        "supporting_information_reference_type": "Procedure",
         "supporting_information_display": None,
     }
 ]

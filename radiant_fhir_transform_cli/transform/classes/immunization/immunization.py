@@ -43,7 +43,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "patient_reference",
         "columns": {
             "patient_reference": {"fhir_key": "reference", "type": "str"},
-            "patient_type": {"fhir_key": "type", "type": "str"},
             "patient_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -96,7 +95,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "location_reference",
         "columns": {
             "location_reference": {"fhir_key": "reference", "type": "str"},
-            "location_type": {"fhir_key": "type", "type": "str"},
             "location_display": {"fhir_key": "display", "type": "str"},
         },
     },

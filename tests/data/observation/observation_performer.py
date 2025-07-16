@@ -13,11 +13,13 @@ EXPECTED_OUTPUT = [
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "performer_reference": "erZ.j;lkj;lskdjfjffd",
+        "performer_reference_type": "Practitioner",
         "performer_display": "Sammy, Test",
     },
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "performer_reference": "erZ.abcdefg",
+        "performer_reference_type": "Practitioner",
         "performer_display": "Charlie, Tester",
     },
 ]

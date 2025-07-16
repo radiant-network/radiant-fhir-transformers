@@ -46,10 +46,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "patient_display": {"fhir_key": "display", "type": "str"},
-            "patient_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
         },
     },
     {
@@ -61,10 +57,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "encounter_display": {"fhir_key": "display", "type": "str"},
-            "encounter_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
         },
     },
     {
@@ -131,7 +123,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "asserter_display": {"fhir_key": "display", "type": "str"},
-            "asserter_type": {"fhir_key": "type", "type": "str"},
         },
     },
     {

@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "procedure_id": "f201",
         "based_on_reference": "eD4Zh1drvNSQaox4sq5nvWDnOp6jrCft8Pdwty3sU8a83",
-        "based_on_type": None,
+        "based_on_reference_type": "ServiceRequest",
         "based_on_display": "Determination of Refractive State",
     },
 ]
