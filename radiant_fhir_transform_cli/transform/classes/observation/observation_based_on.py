@@ -1,5 +1,5 @@
 """
-FHIR Observation Based On transformer
+FHIR Observation BasedOn transformer
 """
 
 from radiant_fhir_transform_cli.transform.classes.base import (
@@ -7,6 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 )
 
 TRANSFORM_SCHEMA = [
+    # Primary Key
     {
         "fhir_path": None,
         "columns": {
@@ -25,14 +26,9 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "basedOn",
         "fhir_reference": "based_on_reference",
         "columns": {
-            "based_on_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "based_on_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
+            "based_on_reference": {"fhir_key": "reference", "type": "str"},
+            "based_on_type": {"fhir_key": "type", "type": "str"},
+            "based_on_display": {"fhir_key": "display", "type": "str"},
         },
     },
 ]
@@ -47,13 +43,13 @@ class ObservationBasedOnTransformer(FhirResourceTransformer):
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Observation').
-        subtype (str): Specifies the sub-element of the resource to focus on ('basedOn').
+        subtype (str): Specifies the sub-element of the resource to focus on ('based_on').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
         __init__():
-            Initializes the ObservationCategoryCodingTransformer instance with the resource type 'Observation',
-            subtype 'basedOn', and the specified transformation dictionary.
+            Initializes the ObservationBasedOnTransformer instance with the resource type 'Observation',
+            subtype 'based_on', and the specified transformation dictionary.
     """
 
     def __init__(self):
