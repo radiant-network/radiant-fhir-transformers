@@ -1,5 +1,5 @@
 """
-FHIR Observation Code Coding transformer
+FHIR Observation ValueCodeableConcept Coding transformer
 """
 
 from radiant_fhir_transform_cli.transform.classes.base import (
@@ -20,15 +20,6 @@ TRANSFORM_SCHEMA = [
         "is_foreign_key": True,
         "columns": {
             "observation_id": {"fhir_key": "id", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "valueCodeableConcept.text",
-        "columns": {
-            "value_codeable_concept_text": {
-                "fhir_key": "valueCodeableConcept.text",
-                "type": "str",
-            }
         },
     },
     {
@@ -60,13 +51,13 @@ class ObservationValueCodeableConceptCodingTransformer(FhirResourceTransformer):
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Observation').
-        subtype (str): Specifies the sub-element of the resource to focus on ('valueCodeableConcept.coding').
+        subtype (str): Specifies the sub-element of the resource to focus on ('value_codeable_concept_coding').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
         __init__():
-            Initializes the ObservationCodeCodingTransformer instance with the resource type 'Observation',
-            subtype 'code_coding', and the specified transformation dictionary.
+            Initializes the ObservationValueCodeableConceptCodingTransformer instance with the resource type 'Observation',
+            subtype 'value_codeable_concept_coding', and the specified transformation dictionary.
     """
 
     def __init__(self):
