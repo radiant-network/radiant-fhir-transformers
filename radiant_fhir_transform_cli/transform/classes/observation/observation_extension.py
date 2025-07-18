@@ -7,6 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 )
 
 TRANSFORM_SCHEMA = [
+    # Primary Key
     {
         "fhir_path": None,
         "columns": {
@@ -55,8 +56,8 @@ class ObservationExtensionTransformer(FhirResourceTransformer):
 
     Methods:
         __init__():
-            Initializes the ObservationCategoryCodingTransformer instance with the resource type 'Observation',
-            subtype 'category.coding', and the specified transformation dictionary.
+            Initializes the ObservationExtensionTransformer instance with the resource type 'Observation',
+            subtype 'extension', and the specified transformation dictionary.
     """
 
     def __init__(self):

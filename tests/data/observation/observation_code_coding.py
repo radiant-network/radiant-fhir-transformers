@@ -2,7 +2,7 @@
 Test helper class for FHIR resource type Observation subtype Code Coding
 """
 
-from radiant_fhir_transform_cli.transform.classes.observation.observation_code_coding import (
+from radiant_fhir_transform_cli.transform.classes.observation import (
     ObservationCodeCodingTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
@@ -45,9 +45,7 @@ class ObservationCodeCodingTestHelper(FhirResourceTestHelper):
     Attributes:
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'Observation'.
-
         resource (dict): The raw FHIR 'Observation' resource payload to be tested.
-
         expected_output (dict): The expected transformation result of the
           'Observation' resource payload.
     """
