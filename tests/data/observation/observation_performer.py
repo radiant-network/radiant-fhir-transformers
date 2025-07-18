@@ -1,5 +1,5 @@
 """
-Test helper class for FHIR resource type Observation subtype performer
+Test helper class for FHIR resource type Observation subtype Performer
 """
 
 from radiant_fhir_transform_cli.transform.classes.observation import (
@@ -13,11 +13,13 @@ EXPECTED_OUTPUT = [
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "performer_reference": "erZ.j;lkj;lskdjfjffd",
+        "performer_type": None,
         "performer_display": "Sammy, Test",
     },
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "performer_reference": "erZ.abcdefg",
+        "performer_type": None,
         "performer_display": "Charlie, Tester",
     },
 ]
@@ -37,9 +39,7 @@ class ObservationPerformerTestHelper(FhirResourceTestHelper):
     Attributes:
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'Observation'.
-
         resource (dict): The raw FHIR 'Observation' resource payload to be tested.
-
         expected_output (dict): The expected transformation result of the
           'Observation' resource payload.
     """

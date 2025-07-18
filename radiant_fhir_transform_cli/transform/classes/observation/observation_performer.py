@@ -25,14 +25,9 @@ TRANSFORM_SCHEMA = [
         "fhir_path": "performer",
         "fhir_reference": "performer_reference",
         "columns": {
-            "performer_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "performer_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
+            "performer_reference": {"fhir_key": "reference", "type": "str"},
+            "performer_type": {"fhir_key": "type", "type": "str"},
+            "performer_display": {"fhir_key": "display", "type": "str"},
         },
     },
 ]
@@ -43,7 +38,7 @@ class ObservationPerformerTransformer(FhirResourceTransformer):
     Transformer class for the 'Observation' resource in FHIR, focusing on the 'performer' element.
 
     This class transforms FHIR Observation JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'extension' field.
+    extracting and processing information from the 'performer' field.
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Observation').
@@ -52,7 +47,7 @@ class ObservationPerformerTransformer(FhirResourceTransformer):
 
     Methods:
         __init__():
-            Initializes the ObservationCategoryCodingTransformer instance with the resource type 'Observation',
+            Initializes the ObservationPerformerTransformer instance with the resource type 'Observation',
             subtype 'performer', and the specified transformation dictionary.
     """
 
