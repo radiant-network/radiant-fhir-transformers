@@ -1,11 +1,38 @@
 from .observation import ObservationTransformer
-from .observation_based_on import ObservationBasedOnTransformer
-from .observation_category_coding import ObservationCategoryCodingTransformer
-from .observation_code_coding import ObservationCodeCodingTransformer
-from .observation_component import ObservationComponentTransformer
+from .observation_identifier import ObservationIdentifierTransformer
 from .observation_extension import ObservationExtensionTransformer
-from .observation_note import ObservationNoteTransformer
+from .observation_based_on import ObservationBasedOnTransformer
+from .observation_part_of import ObservationPartOfTransformer
+from .observation_category import ObservationCategoryTransformer
+from .observation_code_coding import ObservationCodeCodingTransformer
+from .observation_focus import ObservationFocusTransformer
+from .observation_effective_timing_event import (
+    ObservationEffectiveTimingEventTransformer,
+)
+from .observation_effective_timing_repeat_day_of_week import (
+    ObservationEffectiveTimingRepeatDayOfWeekTransformer,
+)
+from .observation_effective_timing_repeat_time_of_day import (
+    ObservationEffectiveTimingRepeatTimeOfDayTransformer,
+)
+from .observation_effective_timing_repeat_when import (
+    ObservationEffectiveTimingRepeatWhenTransformer,
+)
+from .observation_effective_timing_code_coding import (
+    ObservationEffectiveTimingCodeCodingTransformer,
+)
 from .observation_performer import ObservationPerformerTransformer
 from .observation_value_codeable_concept_coding import (
     ObservationValueCodeableConceptCodingTransformer,
 )
+from .observation_data_absent_reason_coding import (
+    ObservationDataAbsentReasonCodingTransformer,
+)
+from .observation_interpretation import ObservationInterpretationTransformer
+from .observation_note import ObservationNoteTransformer
+from .observation_body_site_coding import ObservationBodySiteCodingTransformer
+from .observation_method_coding import ObservationMethodCodingTransformer
+from .observation_reference_range import ObservationReferenceRangeTransformer
+from .observation_has_member import ObservationHasMemberTransformer
+from .observation_derived_from import ObservationDerivedFromTransformer
+from .observation_component import ObservationComponentTransformer

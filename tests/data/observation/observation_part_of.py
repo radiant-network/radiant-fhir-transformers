@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type Observation subtype Performer
+Test helper class for FHIR resource type Observation subtype PartOf
 """
 
-from radiant_fhir_transform_cli.transform.classes.observation import (
-    ObservationPerformerTransformer,
+from radiant_fhir_transform_cli.transform.classes import (
+    ObservationPartOfTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -12,20 +12,14 @@ from .observation_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "performer_reference": "erZ.j;lkj;lskdjfjffd",
-        "performer_type": None,
-        "performer_display": "Sammy, Test",
-    },
-    {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "performer_reference": "erZ.abcdefg",
-        "performer_type": None,
-        "performer_display": "Charlie, Tester",
+        "part_of_reference": "procedure",
+        "part_of_type": None,
+        "part_of_display": None,
     },
 ]
 
 
-class ObservationPerformerTestHelper(FhirResourceTestHelper):
+class ObservationPartOfTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Observation' resource.
 
@@ -45,9 +39,9 @@ class ObservationPerformerTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "performer"
-    transformer = ObservationPerformerTransformer
-    expected_table_name = "observation_performer"
+    resource_subtype = "part_of"
+    transformer = ObservationPartOfTransformer
+    expected_table_name = "observation_part_of"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)
