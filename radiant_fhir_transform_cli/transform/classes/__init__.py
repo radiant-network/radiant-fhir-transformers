@@ -43,9 +43,6 @@ from radiant_fhir_transform_cli.transform.classes.observation import (
     ObservationDerivedFromTransformer,
     ObservationComponentTransformer,
 )
-from radiant_fhir_transform_cli.transform.classes.observation.observation_code_coding import (
-    ObservationCodeCodingTransformer,
-)
 from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
 )
@@ -356,7 +353,6 @@ from radiant_fhir_transform_cli.transform.classes.immunization import (
     ImmunizationReactionTransformer,
     ImmunizationProtocolAppliedTransformer,
 )
-
 from radiant_fhir_transform_cli.transform.classes.appointment import (
     AppointmentTransformer,
     AppointmentIdentifierTransformer,
@@ -372,6 +368,9 @@ from radiant_fhir_transform_cli.transform.classes.appointment import (
     AppointmentBasedOnTransformer,
     AppointmentParticipantTransformer,
     AppointmentRequestedPeriodTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.binary import (
+    BinaryTransformer,
 )
 
 # Map FHIR resource type to its transformer class
@@ -741,4 +740,5 @@ transformers = {
         AppointmentParticipantTransformer,
         AppointmentRequestedPeriodTransformer,
     ],
+    "Binary": [BinaryTransformer],
 }
