@@ -351,7 +351,6 @@ from tests.data.immunization import (
     ImmunizationReactionTestHelper,
     ImmunizationProtocolAppliedTestHelper,
 )
-
 from tests.data.appointment import (
     AppointmentTestHelper,
     AppointmentIdentifierTestHelper,
@@ -368,9 +367,10 @@ from tests.data.appointment import (
     AppointmentParticipantTestHelper,
     AppointmentRequestedPeriodTestHelper,
 )
+from tests.data.binary import BinaryTestHelper
 
 test_helpers = [
-    # PatientTestHelper,
+    PatientTestHelper,
     ObservationTestHelper,
     ObservationExtensionTestHelper,
     ObservationIdentifierTestHelper,
@@ -685,4 +685,5 @@ test_helpers = [
     AppointmentBasedOnTestHelper,
     AppointmentParticipantTestHelper,
     AppointmentRequestedPeriodTestHelper,
+    BinaryTestHelper,
 ]
