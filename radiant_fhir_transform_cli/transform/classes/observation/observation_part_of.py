@@ -1,5 +1,5 @@
 """
-FHIR Observation BasedOn transformer
+FHIR Observation PartOf transformer
 """
 
 from radiant_fhir_transform_cli.transform.classes.base import (
@@ -23,34 +23,34 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "basedOn",
-        "fhir_reference": "based_on_reference",
+        "fhir_path": "partOf",
+        "fhir_reference": "part_of_reference",
         "columns": {
-            "based_on_reference": {"fhir_key": "reference", "type": "str"},
-            "based_on_type": {"fhir_key": "type", "type": "str"},
-            "based_on_display": {"fhir_key": "display", "type": "str"},
+            "part_of_reference": {"fhir_key": "reference", "type": "str"},
+            "part_of_type": {"fhir_key": "type", "type": "str"},
+            "part_of_display": {"fhir_key": "display", "type": "str"},
         },
     },
 ]
 
 
-class ObservationBasedOnTransformer(FhirResourceTransformer):
+class ObservationPartOfTransformer(FhirResourceTransformer):
     """
-    Transformer class for the 'Observation' resource in FHIR, focusing on the 'basedOn' element.
+    Transformer class for the 'Observation' resource in FHIR, focusing on the 'partOf' element.
 
     This class transforms FHIR Observation JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'basedOn' field.
+    extracting and processing information from the 'partOf' field.
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Observation').
-        subtype (str): Specifies the sub-element of the resource to focus on ('based_on').
+        subtype (str): Specifies the sub-element of the resource to focus on ('part_of').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
         __init__():
-            Initializes the ObservationBasedOnTransformer instance with the resource type 'Observation',
-            subtype 'based_on', and the specified transformation dictionary.
+            Initializes the ObservationPartOfTransformer instance with the resource type 'Observation',
+            subtype 'part_of', and the specified transformation dictionary.
     """
 
     def __init__(self):
-        super().__init__("Observation", "based_on", TRANSFORM_SCHEMA)
+        super().__init__("Observation", "part_of", TRANSFORM_SCHEMA)

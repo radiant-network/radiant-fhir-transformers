@@ -1,5 +1,5 @@
 """
-FHIR Observation ValueCodeableConcept Coding transformer
+FHIR Observation DataAbsentReason Coding transformer
 """
 
 from radiant_fhir_transform_cli.transform.classes.base import (
@@ -23,17 +23,17 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "valueCodeableConcept.coding",
+        "fhir_path": "dataAbsentReason.coding",
         "columns": {
-            "value_codeable_concept_coding_system": {
+            "data_absent_reason_coding_system": {
                 "fhir_key": "system",
                 "type": "str",
             },
-            "value_codeable_concept_coding_code": {
+            "data_absent_reason_coding_code": {
                 "fhir_key": "code",
                 "type": "str",
             },
-            "value_codeable_concept_coding_display": {
+            "data_absent_reason_coding_display": {
                 "fhir_key": "display",
                 "type": "str",
             },
@@ -42,25 +42,25 @@ TRANSFORM_SCHEMA = [
 ]
 
 
-class ObservationValueCodeableConceptCodingTransformer(FhirResourceTransformer):
+class ObservationDataAbsentReasonCodingTransformer(FhirResourceTransformer):
     """
-    Transformer class for the 'Observation' resource in FHIR, focusing on the 'valueCodeableConcept.coding' element.
+    Transformer class for the 'Observation' resource in FHIR, focusing on the 'dataAbsentReason.coding' element.
 
     This class transforms FHIR Observation JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'valueCodeableConcept.coding' field.
+    extracting and processing information from the 'dataAbsentReason.coding' field.
 
     Attributes:
         resource_type (str): The type of FHIR resource being transformed ('Observation').
-        subtype (str): Specifies the sub-element of the resource to focus on ('value_codeable_concept_coding').
+        subtype (str): Specifies the sub-element of the resource to focus on ('data_absent_reason_coding').
         transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
 
     Methods:
         __init__():
-            Initializes the ObservationValueCodeableConceptCodingTransformer instance with the resource type 'Observation',
-            subtype 'value_codeable_concept_coding', and the specified transformation dictionary.
+            Initializes the ObservationDataAbsentReasonCodingTransformer instance with the resource type 'Observation',
+            subtype 'data_absent_reason_coding', and the specified transformation dictionary.
     """
 
     def __init__(self):
         super().__init__(
-            "Observation", "value_codeable_concept_coding", TRANSFORM_SCHEMA
+            "Observation", "data_absent_reason_coding", TRANSFORM_SCHEMA
         )

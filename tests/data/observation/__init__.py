@@ -1,11 +1,38 @@
 from .observation import ObservationTestHelper
-from .observation_based_on import ObservationBasedOnTestHelper
-from .observation_category_coding import ObservationCategoryCodingTestHelper
-from .observation_code_coding import ObservationCodeCodingTestHelper
-from .observation_component import ObservationComponentTestHelper
 from .observation_extension import ObservationExtensionTestHelper
-from .observation_note import ObservationNoteTestHelper
+from .observation_identifier import ObservationIdentifierTestHelper
+from .observation_based_on import ObservationBasedOnTestHelper
+from .observation_part_of import ObservationPartOfTestHelper
+from .observation_category import ObservationCategoryTestHelper
+from .observation_code_coding import ObservationCodeCodingTestHelper
+from .observation_focus import ObservationFocusTestHelper
+from .observation_effective_timing_event import (
+    ObservationEffectiveTimingEventTestHelper,
+)
+from .observation_effective_timing_repeat_day_of_week import (
+    ObservationEffectiveTimingRepeatDayOfWeekTestHelper,
+)
+from .observation_effective_timing_repeat_time_of_day import (
+    ObservationEffectiveTimingRepeatTimeOfDayTestHelper,
+)
+from .observation_effective_timing_repeat_when import (
+    ObservationEffectiveTimingRepeatWhenTestHelper,
+)
+from .observation_effective_timing_code_coding import (
+    ObservationEffectiveTimingCodeCodingTestHelper,
+)
 from .observation_performer import ObservationPerformerTestHelper
 from .observation_value_codeable_concept_coding import (
     ObservationValueCodeableConceptCodingTestHelper,
 )
+from .observation_data_absent_reason_coding import (
+    ObservationDataAbsentReasonCodingTestHelper,
+)
+from .observation_interpretation import ObservationInterpretationTestHelper
+from .observation_note import ObservationNoteTestHelper
+from .observation_body_site_coding import ObservationBodySiteCodingTestHelper
+from .observation_method_coding import ObservationMethodCodingTestHelper
+from .observation_reference_range import ObservationReferenceRangeTestHelper
+from .observation_has_member import ObservationHasMemberTestHelper
+from .observation_derived_from import ObservationDerivedFromTestHelper
+from .observation_component import ObservationComponentTestHelper
