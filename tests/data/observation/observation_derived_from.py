@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "derived_from_reference": "document-reference",
-        "derived_from_type": None,
+        "derived_from_reference_type": "DocumentReference",
         "derived_from_display": None,
     },
 ]

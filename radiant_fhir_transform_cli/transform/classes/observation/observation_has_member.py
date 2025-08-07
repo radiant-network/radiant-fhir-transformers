@@ -27,7 +27,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "has_member_reference",
         "columns": {
             "has_member_reference": {"fhir_key": "reference", "type": "str"},
-            "has_member_type": {"fhir_key": "type", "type": "str"},
             "has_member_display": {"fhir_key": "display", "type": "str"},
         },
     },

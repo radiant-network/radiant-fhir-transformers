@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "focus_reference": "condition",
-        "focus_type": None,
+        "focus_reference_type": "Condition",
         "focus_display": None,
     },
 ]

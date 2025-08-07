@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "has_member_reference": "questionnaire-response",
-        "has_member_type": None,
+        "has_member_reference_type": "QuestionnaireResponse",
         "has_member_display": None,
     },
 ]

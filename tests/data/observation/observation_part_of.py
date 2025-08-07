@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "part_of_reference": "procedure",
-        "part_of_type": None,
+        "part_of_reference_type": "Procedure",
         "part_of_display": None,
     },
 ]
