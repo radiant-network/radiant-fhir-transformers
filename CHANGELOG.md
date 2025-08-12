@@ -1,5 +1,19 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.11.0
+
+### Summary
+
+- Emojis: 🐛 x1, ✨ x2
+- Categories: Additions x2, Fixes x1
+
+### New features and changes
+
+- [#79](https://github.com/radiant-network/radiant-fhir-transformers/pull/79) - 🐛 [PLAT-349] Fix Typo in Immunization Mapping - [b1510d5b](https://github.com/radiant-network/radiant-fhir-transformers/commit/b1510d5b523e0e27d9bef422de4abd17efbf2094) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#77](https://github.com/radiant-network/radiant-fhir-transformers/pull/77) - ✨ [PLAT-324] Add Binary Transformer Class - [0d3f5d4c](https://github.com/radiant-network/radiant-fhir-transformers/commit/0d3f5d4ccf3c01bc00959d182798e3c462fa01cc) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#75](https://github.com/radiant-network/radiant-fhir-transformers/pull/75) - ✨ Add Missing Elements and Subelements to Observation Transformer Classes - [1240a692](https://github.com/radiant-network/radiant-fhir-transformers/commit/1240a69232aa0af02e5c7ce2eb1091af77b5c93e) by [liberaliscomputing](https://github.com/liberaliscomputing)
+
+
 ## Release 0.10.0
 
 ### Summary
