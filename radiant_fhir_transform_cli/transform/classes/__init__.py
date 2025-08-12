@@ -705,7 +705,7 @@ transformers = {
         RequestGroupNoteTransformer,
         RequestGroupActionTransformer,
     ],
-    "Immunizationformer": [
+    "Immunization": [
         ImmunizationTransformer,
         ImmunizationIdentifierTransformer,
         ImmunizationStatusReasonCodingTransformer,
