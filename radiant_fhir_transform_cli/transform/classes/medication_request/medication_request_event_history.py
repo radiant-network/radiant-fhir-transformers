@@ -27,7 +27,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "event_history_reference",
         "columns": {
             "event_history_reference": {"fhir_key": "reference", "type": "str"},
-            "event_history_type": {"fhir_key": "type", "type": "str"},
             "event_history_display": {"fhir_key": "display", "type": "str"},
         },
     },

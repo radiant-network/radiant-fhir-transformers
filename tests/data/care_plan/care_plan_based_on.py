@@ -14,7 +14,7 @@ EXPECTED_OUTPUT = [
         "care_plan_id": "preg",
         "based_on_reference": None,
         "based_on_display": "Management of Type 2 Diabetes",
-        "based_on_type": None,
+        "based_on_reference_type": None,
     },
 ]
 

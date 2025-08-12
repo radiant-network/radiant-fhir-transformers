@@ -27,7 +27,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "addresses_reference",
         "columns": {
             "addresses_reference": {"fhir_key": "reference", "type": "str"},
-            "addresses_type": {"fhir_key": "type", "type": "str"},
             "addresses_display": {"fhir_key": "display", "type": "str"},
         },
     },

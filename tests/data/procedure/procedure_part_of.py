@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "procedure_id": "f201",
         "part_of_reference": "part-of-referenced-event",
-        "part_of_type": None,
+        "part_of_reference_type": "Procedure",
         "part_of_display": "Part of referenced event",
     },
 ]

@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "request_group_id": "kdn5-example",
         "replaces_reference": "request-group",
-        "replaces_type": None,
+        "replaces_reference_type": "RequestGroup",
         "replaces_display": None,
     },
 ]

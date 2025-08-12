@@ -27,7 +27,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "contract_reference",
         "columns": {
             "contract_reference": {"fhir_key": "reference", "type": "str"},
-            "contract_type": {"fhir_key": "type", "type": "str"},
             "contract_display": {"fhir_key": "display", "type": "str"},
         },
     },

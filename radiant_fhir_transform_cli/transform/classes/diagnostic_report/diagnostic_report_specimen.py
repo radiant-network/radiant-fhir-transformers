@@ -34,10 +34,6 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "display",
                 "type": "str",
             },
-            "specimen_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
         },
     },
 ]

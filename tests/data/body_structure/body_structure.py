@@ -18,7 +18,7 @@ EXPECTED_OUTPUT = [
         "location_text": "Spleen",
         "description": "7 cm maximum diameter",
         "patient_reference": "example",
-        "patient_type": None,
+        "patient_reference_type": "Patient",
         "patient_display": None,
     }
 ]

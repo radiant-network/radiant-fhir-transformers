@@ -27,7 +27,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "endpoint_reference",
         "columns": {
             "endpoint_reference": {"fhir_key": "reference", "type": "str"},
-            "endpoint_type": {"fhir_key": "type", "type": "str"},
             "endpoint_display": {"fhir_key": "display", "type": "str"},
         },
     },

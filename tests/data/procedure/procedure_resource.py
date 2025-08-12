@@ -179,7 +179,12 @@ RESOURCE = {
             "manipulated": {"reference": "Device/manipulated"},
         }
     ],
-    "usedReference": [{"display": "Colonoscope device"}],
+    "usedReference": [
+        {
+            "reference": "DiagnosticReport/chemotherapy",
+            "display": "Colonoscope device",
+        }
+    ],
     "usedCode": [
         {
             "coding": [

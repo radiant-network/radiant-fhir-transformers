@@ -12,8 +12,8 @@ from .procedure_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "procedure_id": "f201",
-        "used_reference_reference": None,
-        "used_reference_type": None,
+        "used_reference_reference": "chemotherapy",
+        "used_reference_reference_type": "DiagnosticReport",
         "used_reference_display": "Colonoscope device",
     }
 ]

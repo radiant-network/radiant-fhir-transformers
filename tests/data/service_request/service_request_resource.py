@@ -80,7 +80,7 @@ RESOURCE = {
     "basedOn": [
         {
             "display": "ServiceRequest for Myringotomy and insertion of tympanic ventilation tube",
-            "reference": "somereferencestring",
+            "reference": "ServiceRequest/somereferencestring",
         }
     ],
     "code": {
@@ -205,7 +205,7 @@ RESOURCE = {
     "relevantHistory": [
         {"reference": "#signature", "display": "Author's Signature"}
     ],
-    "specimen": [{"reference": "#serum", "display": "Serum specimen"}],
+    "specimen": [{"reference": "Specimen/#serum", "display": "Serum specimen"}],
     "supportingInfo": [{"reference": "#fasting", "display": "Fasting status"}],
     "patientInstruction": "Start with 30kg 10-15 repetitions for three sets and increase in increments of 5kg when you feel ready",
     "note": [

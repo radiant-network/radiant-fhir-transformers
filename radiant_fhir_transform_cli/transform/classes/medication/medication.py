@@ -36,7 +36,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "manufacturer_reference",
         "columns": {
             "manufacturer_reference": {"fhir_key": "reference", "type": "str"},
-            "manufacturer_type": {"fhir_key": "type", "type": "str"},
             "manufacturer_display": {"fhir_key": "display", "type": "str"},
         },
     },

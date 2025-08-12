@@ -49,7 +49,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "subject_reference",
         "columns": {
             "subject_reference": {"fhir_key": "reference", "type": "str"},
-            "subject_type": {"fhir_key": "type", "type": "str"},
             "subject_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -82,7 +81,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "expressed_by_reference",
         "columns": {
             "expressed_by_reference": {"fhir_key": "reference", "type": "str"},
-            "expressed_by_type": {"fhir_key": "type", "type": "str"},
             "expressed_by_display": {"fhir_key": "display", "type": "str"},
         },
     },

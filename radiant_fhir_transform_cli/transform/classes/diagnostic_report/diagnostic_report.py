@@ -34,10 +34,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "subject_display": {"fhir_key": "display", "type": "str"},
-            "subject_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
         },
     },
     {
@@ -49,10 +45,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "encounter_display": {"fhir_key": "display", "type": "str"},
-            "encounter_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
         },
     },
     {

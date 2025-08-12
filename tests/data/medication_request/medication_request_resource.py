@@ -97,10 +97,9 @@ RESOURCE = {
     "priority": "routine",
     "doNotPerform": False,
     "reportedBoolean": True,
-    "medicationReference": {"reference": "med0310"},
+    "medicationReference": {"reference": "Medication/med0310"},
     "subject": {
         "reference": "Patient/pat1",
-        "type": "Patient",
         "display": "Donald Duck",
     },
     "encounter": {
@@ -217,8 +216,7 @@ RESOURCE = {
     ],
     "reasonReference": [
         {
-            "reference": "condition",
-            "type": "Condition",
+            "reference": "Condition/condition",
         }
     ],
     "instantiatesCanonical": ["canonical"],
@@ -357,6 +355,6 @@ RESOURCE = {
     },
     "detectedIssue": [{"reference": "DetectedIssue/allergy"}],
     "eventHistory": [
-        {"reference": "#signature", "display": "Author's Signature"}
+        {"reference": "Signature/#signature", "display": "Author's Signature"}
     ],
 }

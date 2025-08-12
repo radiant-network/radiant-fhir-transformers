@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "request_group_id": "kdn5-example",
         "based_on_reference": "medication-request",
-        "based_on_type": None,
+        "based_on_reference_type": "MedicationRequest",
         "based_on_display": None,
     },
 ]

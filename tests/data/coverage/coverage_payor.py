@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "coverage_id": "9876B1",
         "payor_reference": "2",
-        "payor_type": None,
+        "payor_reference_type": "Organization",
         "payor_display": None,
     },
 ]

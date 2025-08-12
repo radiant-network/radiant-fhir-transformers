@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "procedure_id": "f201",
         "report_reference": "chemotherapy",
-        "report_type": None,
+        "report_reference_type": "DiagnosticReport",
         "report_display": None,
     }
 ]

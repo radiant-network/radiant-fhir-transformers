@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "procedure_id": "f201",
         "reason_reference_reference": "reason",
-        "reason_reference_type": "Condition",
+        "reason_reference_reference_type": "Condition",
         "reason_reference_display": "The justification that the procedure was performed",
     }
 ]

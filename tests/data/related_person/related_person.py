@@ -15,7 +15,7 @@ EXPECTED_OUTPUT = [
         "resource_type": "RelatedPerson",
         "active": True,
         "patient_reference": "example",
-        "patient_type": None,
+        "patient_reference_type": "Patient",
         "patient_display": None,
         "gender": "female",
         "birth_date": "2012-03-11",
