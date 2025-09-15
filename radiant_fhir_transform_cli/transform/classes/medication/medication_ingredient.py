@@ -51,6 +51,14 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "ingredient",
         "columns": {
+            "ingredient_item_codeable_concept": {
+                "fhir_key": "itemCodeableConcept",
+                "type": "str",
+            },
+            "ingredient_item_reference": {
+                "fhir_key": "itemReference",
+                "type": "str",
+            },
             "ingredient_is_active": {"fhir_key": "isActive", "type": "bool"},
             "ingredient_strength_numerator_value": {
                 "fhir_key": "strength.numerator.value",

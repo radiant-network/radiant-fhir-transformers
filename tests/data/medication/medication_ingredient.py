@@ -16,6 +16,19 @@ from .medication_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "medication_id": "med0301",
+        "ingredient_item_codeable_concept": {
+            "coding": [
+                {
+                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                    "code": "66955",
+                    "display": "Vancomycin Hydrochloride",
+                }
+            ]
+        },
+        "ingredient_item_reference": {
+            "reference": "Medication/abcd",
+            "display": "potassium phosphate",
+        },
         "ingredient_is_active": True,
         "ingredient_strength_numerator_value": 500,
         "ingredient_strength_numerator_unit": None,

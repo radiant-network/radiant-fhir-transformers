@@ -45,6 +45,10 @@ RESOURCE = {
                     }
                 ]
             },
+            "itemReference": {
+                "reference": "Medication/abcd",
+                "display": "potassium phosphate",
+            },
             "isActive": True,
             "strength": {
                 "numerator": {
