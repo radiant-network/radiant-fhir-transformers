@@ -194,11 +194,14 @@ class FhirResourceTransformer:
         )
         for config in transformation_schema.configs:
             fhir_path_expression = config.fhir_path
-            raw_items = (
-                evaluate(resource_dict, fhir_path_expression)
-                if fhir_path_expression
-                else None
-            )
+            if fhir_path_expression == "*":
+                raw_items = resource_dict
+            else:
+                raw_items = (
+                    evaluate(resource_dict, fhir_path_expression)
+                    if fhir_path_expression
+                    else None
+                )
 
             fhir_path_output_handler = ResultHandlerFactory.get_handler(
                 raw_items, config, is_subtype=self.resource_subtype is not None
