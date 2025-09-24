@@ -1,5 +1,18 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.12.0
+
+### Summary
+
+- Emojis: ? x2
+- Categories: Other Changes x2
+
+### New features and changes
+
+- [#82](https://github.com/radiant-network/radiant-fhir-transformers/pull/82) -  Create raw fhir table - [601e6107](https://github.com/radiant-network/radiant-fhir-transformers/commit/601e610776e42c45b93722ebd6671ba68a9ad733) by [haynescd](https://github.com/haynescd)
+- [#81](https://github.com/radiant-network/radiant-fhir-transformers/pull/81) -  update medication ingredient transformer to include reference and cod… - [7b758a5c](https://github.com/radiant-network/radiant-fhir-transformers/commit/7b758a5cd9224738820c306b985b0c1303a42a9f) by [calkinsh](https://github.com/calkinsh)
+
+
 ## Release 0.11.0
 
 ### Summary
