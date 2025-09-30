@@ -3,3 +3,4 @@ from .patient_identifier import PatientIdentifierTransformer
 from .patient_name import PatientNameTransformer
 from .patient_telecom import PatientTelecomTransformer
 from .patient_address import PatientAddressTransformer
+from .patient_photo import PatientPhotoTransformer

@@ -191,6 +191,12 @@ RESOURCE = {
         },
     ],
     "maritalStatus": {"text": "Single"},
+    "photo": [
+        {
+            "contentType": "image/gif",
+            "url": "http://someimage.com",
+        }
+    ],
     "contact": [
         {
             "relationship": [
