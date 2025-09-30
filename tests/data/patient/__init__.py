@@ -5,3 +5,5 @@ from .patient_telecom import PatientTelecomTestHelper
 from .patient_address import PatientAddressTestHelper
 from .patient_photo import PatientPhotoTestHelper
 from .patient_contact import PatientContactTestHelper
+from .patient_communication import PatientCommunicationTestHelper
+from .patient_general_practitioner import PatientGeneralPractitionerTestHelper

@@ -5,3 +5,5 @@ from .patient_telecom import PatientTelecomTransformer
 from .patient_address import PatientAddressTransformer
 from .patient_photo import PatientPhotoTransformer
 from .patient_contact import PatientContactTransformer
+from .patient_communication import PatientCommunicationTransformer
+from .patient_general_practitioner import PatientGeneralPractitionerTransformer
