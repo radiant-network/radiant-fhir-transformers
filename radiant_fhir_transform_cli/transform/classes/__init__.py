@@ -45,6 +45,9 @@ from radiant_fhir_transform_cli.transform.classes.observation import (
 )
 from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientTransformer,
+    PatientIdentifierTransformer,
+    PatientNameTransformer,
+    PatientTelecomTransformer,
 )
 from radiant_fhir_transform_cli.transform.classes.service_request import (
     ServiceRequestTransformer,
@@ -375,7 +378,11 @@ from radiant_fhir_transform_cli.transform.classes.binary import (
 
 # Map FHIR resource type to its transformer class
 transformers = {
-    "Patient": [PatientTransformer],
+    "Patient": [
+        PatientTransformer,
+        PatientIdentifierTransformer,
+        PatientNameTransformer,
+        PatientTelecomTransformer],
     "Observation": [
         ObservationTransformer,
         ObservationIdentifierTransformer,

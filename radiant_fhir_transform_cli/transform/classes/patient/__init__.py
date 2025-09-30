@@ -1,0 +1,4 @@
+from .patient import PatientTransformer
+from .patient_identifier import PatientIdentifierTransformer
+from .patient_name import PatientNameTransformer
+from .patient_telecom import PatientTelecomTransformer
