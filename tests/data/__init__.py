@@ -280,6 +280,7 @@ from tests.data.patient import (
     PatientTelecomTestHelper,
     PatientAddressTestHelper,
     PatientPhotoTestHelper,
+    PatientContactTestHelper,
 )
 from tests.data.procedure import (
     ProcedureBasedOnTestHelper,
@@ -384,6 +385,7 @@ test_helpers = [
     PatientTelecomTestHelper,
     PatientAddressTestHelper,
     PatientPhotoTestHelper,
+    PatientContactTestHelper,
 
     ObservationTestHelper,
     ObservationExtensionTestHelper,

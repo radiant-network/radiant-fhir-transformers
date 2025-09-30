@@ -4,3 +4,4 @@ from .patient_name import PatientNameTestHelper
 from .patient_telecom import PatientTelecomTestHelper
 from .patient_address import PatientAddressTestHelper
 from .patient_photo import PatientPhotoTestHelper
+from .patient_contact import PatientContactTestHelper
