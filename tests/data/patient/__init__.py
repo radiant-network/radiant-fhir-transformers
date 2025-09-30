@@ -2,3 +2,4 @@ from .patient import PatientTestHelper
 from .patient_identifier import PatientIdentifierTestHelper
 from .patient_name import PatientNameTestHelper
 from .patient_telecom import PatientTelecomTestHelper
+from .patient_address import PatientAddressTestHelper
