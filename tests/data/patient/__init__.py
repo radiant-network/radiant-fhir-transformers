@@ -7,3 +7,4 @@ from .patient_photo import PatientPhotoTestHelper
 from .patient_contact import PatientContactTestHelper
 from .patient_communication import PatientCommunicationTestHelper
 from .patient_general_practitioner import PatientGeneralPractitionerTestHelper
+from .patient_link import PatientLinkTestHelper

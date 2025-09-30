@@ -256,4 +256,12 @@ RESOURCE = {
         "reference": "Organization/e-ivxFMnjqfWfW4GruG953g3",
         "display": "Children's Hospital of Philadelphia",
     },
+  "link": [
+    {
+      "other": {
+        "reference": "Patient/pat2"
+      },
+      "type": "seealso"
+    }
+  ]
 }
