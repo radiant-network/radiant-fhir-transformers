@@ -14,7 +14,7 @@ def walk_dict_path(data: dict, path: str):
     current = data
 
     if path is None:
-        return json.dumps(current)
+        return json.dumps(current, default=str)
 
     for part in path.split("."):
         if isinstance(current, list):
