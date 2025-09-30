@@ -11,19 +11,21 @@ from .patient import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
-        "contact_relationship": [{
-                    "coding": [
-                        {
-                            "system": "urn:oid:1.2.840.114350.1.13.20.3.7.4.827665.1000",
-                            "code": "3",
-                            "display": "Father",
-                        }
-                    ],
-                    "text": "Father",
-                }],
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "contact_relationship": [
+            {
+                "coding": [
+                    {
+                        "system": "urn:oid:1.2.840.114350.1.13.20.3.7.4.827665.1000",
+                        "code": "3",
+                        "display": "Father",
+                    }
+                ],
+                "text": "Father",
+            }
+        ],
         "contact_name_use": "usual",
-        "contact_name_text":"Dad1stName LastName",
+        "contact_name_text": "Dad1stName LastName",
         "contact_name_family": None,
         "contact_name_given": None,
         "contact_name_prefix": None,
@@ -31,11 +33,11 @@ EXPECTED_OUTPUT = [
         "contact_name_period_start": None,
         "contact_name_period_end": None,
         "contact_telecom": [
-                {"system": "phone", "value": "215-777-7777", "use": "home"},
-                {"system": "phone", "value": "215-888-8888", "use": "work"},
-                {"system": "phone", "value": "215-444-4444", "use": "mobile"},
-                {"system": "email", "value": "mychart@yahoo.com"},
-            ],
+            {"system": "phone", "value": "215-777-7777", "use": "home"},
+            {"system": "phone", "value": "215-888-8888", "use": "work"},
+            {"system": "phone", "value": "215-444-4444", "use": "mobile"},
+            {"system": "email", "value": "mychart@yahoo.com"},
+        ],
         "contact_address_use": "home",
         "contact_address_type": None,
         "contact_address_text": None,
@@ -54,7 +56,7 @@ EXPECTED_OUTPUT = [
         "contact_organization_display": None,
         "contact_period_start": "2022-03-09",
         "contact_period_end": None,
-        },
+    },
 ]
 
 

@@ -25,12 +25,18 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "telecom",
         "columns": {
-            "telecom_system": {"fhir_key": "system","type": "str"},
-            "telecom_value": {"fhir_key": "value","type": "str"},
-            "telecom_use": {"fhir_key": "use","type": "str"},
-            "telecom_rank": {"fhir_key": "rank","type": "int"},
-            "telecom_period_start": {"fhir_key": "period.start","type": "datetime"},
-            "telecom_period_end": {"fhir_key": "period.end","type": "datetime"},
+            "telecom_system": {"fhir_key": "system", "type": "str"},
+            "telecom_value": {"fhir_key": "value", "type": "str"},
+            "telecom_use": {"fhir_key": "use", "type": "str"},
+            "telecom_rank": {"fhir_key": "rank", "type": "int"},
+            "telecom_period_start": {
+                "fhir_key": "period.start",
+                "type": "datetime",
+            },
+            "telecom_period_end": {
+                "fhir_key": "period.end",
+                "type": "datetime",
+            },
         },
     },
 ]

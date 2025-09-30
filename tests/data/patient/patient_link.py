@@ -11,14 +11,13 @@ from .patient import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "link_other_reference": "pat2",
         "link_other_type": None,
         "link_other_identifier": None,
         "link_other_display": None,
         "link_type": "seealso",
     },
-
 ]
 
 

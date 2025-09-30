@@ -1,4 +1,3 @@
-
 """
 FHIR Patient Photo transformer
 """
@@ -58,4 +57,3 @@ class PatientPhotoTransformer(FhirResourceTransformer):
 
     def __init__(self):
         super().__init__("Patient", "photo", TRANSFORM_SCHEMA)
-

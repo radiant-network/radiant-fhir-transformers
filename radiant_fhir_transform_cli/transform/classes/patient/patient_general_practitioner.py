@@ -31,8 +31,14 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "general_practitioner_type": {"fhir_key": "type", "type": "str"},
-            "general_practitioner_identifier": {"fhir_key": "identifier", "type": "str"},
-            "general_practitioner_display": {"fhir_key": "display", "type": "str"},
+            "general_practitioner_identifier": {
+                "fhir_key": "identifier",
+                "type": "str",
+            },
+            "general_practitioner_display": {
+                "fhir_key": "display",
+                "type": "str",
+            },
         },
     },
 ]

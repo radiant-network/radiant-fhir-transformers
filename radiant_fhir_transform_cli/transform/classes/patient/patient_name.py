@@ -25,14 +25,17 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "name",
         "columns": {
-            "name_use": {"fhir_key": "use","type": "str"},
-            "name_text": {"fhir_key": "text","type": "str"},
-            "name_family": {"fhir_key": "family","type": "str"},
-            "name_given": {"fhir_key": "given","type": "str"},
-            "name_prefix": {"fhir_key": "prefix","type": "str"},
-            "name_suffix": {"fhir_key": "suffix","type": "str"},
-            "name_period_start": {"fhir_key": "period.start","type": "datetime"},
-            "name_period_end": {"fhir_key": "period.end","type": "datetime"},
+            "name_use": {"fhir_key": "use", "type": "str"},
+            "name_text": {"fhir_key": "text", "type": "str"},
+            "name_family": {"fhir_key": "family", "type": "str"},
+            "name_given": {"fhir_key": "given", "type": "str"},
+            "name_prefix": {"fhir_key": "prefix", "type": "str"},
+            "name_suffix": {"fhir_key": "suffix", "type": "str"},
+            "name_period_start": {
+                "fhir_key": "period.start",
+                "type": "datetime",
+            },
+            "name_period_end": {"fhir_key": "period.end", "type": "datetime"},
         },
     },
 ]

@@ -1,4 +1,3 @@
-
 """
 FHIR Patient Communication transformer
 """
@@ -26,10 +25,18 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "communication",
         "columns": {
-            "communication_language_coding": {"fhir_key": "language.coding", "type": "str"},
-            "communication_language_text": {"fhir_key": "language.text", "type": "str"},
-            "communication_preferred": {"fhir_key": "preferred", "type": "bool"},
-
+            "communication_language_coding": {
+                "fhir_key": "language.coding",
+                "type": "str",
+            },
+            "communication_language_text": {
+                "fhir_key": "language.text",
+                "type": "str",
+            },
+            "communication_preferred": {
+                "fhir_key": "preferred",
+                "type": "bool",
+            },
         },
     },
 ]
@@ -55,4 +62,3 @@ class PatientCommunicationTransformer(FhirResourceTransformer):
 
     def __init__(self):
         super().__init__("Patient", "communication", TRANSFORM_SCHEMA)
-

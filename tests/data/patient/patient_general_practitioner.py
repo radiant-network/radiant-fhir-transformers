@@ -11,13 +11,12 @@ from .patient import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "general_practitioner_reference": "eGHJaqroQFAsUO8lEm-zIFw3",
         "general_practitioner_type": "Practitioner",
         "general_practitioner_identifier": None,
         "general_practitioner_display": "Kathleen O Crocker, MD",
     },
-
 ]
 
 

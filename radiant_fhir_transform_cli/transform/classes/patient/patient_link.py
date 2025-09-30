@@ -38,7 +38,7 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "link.type",
         "columns": {
-            "link_type":{"type":"str"},
+            "link_type": {"type": "str"},
         },
     },
 ]

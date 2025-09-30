@@ -39,8 +39,8 @@ TRANSFORM_SCHEMA = [
             },
             "identifier_value_extension": {
                 "fhir_key": "_value.extension",
-                "type": "str"
-            }
+                "type": "str",
+            },
         },
     },
 ]

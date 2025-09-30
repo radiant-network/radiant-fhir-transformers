@@ -1,4 +1,3 @@
-
 """
 FHIR Patient Contact transformer
 """
@@ -33,18 +32,36 @@ TRANSFORM_SCHEMA = [
             "contact_name_given": {"fhir_key": "name.given", "type": "str"},
             "contact_name_prefix": {"fhir_key": "name.prefix", "type": "str"},
             "contact_name_suffix": {"fhir_key": "name.suffix", "type": "str"},
-            "contact_name_period_start": {"fhir_key": "name.period.start", "type": "datetime"},
-            "contact_name_period_end": {"fhir_key": "name.period.end", "type": "datetime"},
+            "contact_name_period_start": {
+                "fhir_key": "name.period.start",
+                "type": "datetime",
+            },
+            "contact_name_period_end": {
+                "fhir_key": "name.period.end",
+                "type": "datetime",
+            },
             "contact_telecom": {"fhir_key": "telecom", "type": "str"},
             "contact_address_use": {"fhir_key": "address.use", "type": "str"},
             "contact_address_type": {"fhir_key": "address.type", "type": "str"},
             "contact_address_text": {"fhir_key": "address.text", "type": "str"},
             "contact_address_line": {"fhir_key": "address.line", "type": "str"},
             "contact_address_city": {"fhir_key": "address.city", "type": "str"},
-            "contact_address_district": {"fhir_key": "address.district", "type": "str"},
-            "contact_address_state": {"fhir_key": "address.state", "type": "str"},
-            "contact_address_postal_code": {"fhir_key": "address.postalCode", "type": "str"},
-            "contact_address_country": {"fhir_key": "address.country", "type": "str"},
+            "contact_address_district": {
+                "fhir_key": "address.district",
+                "type": "str",
+            },
+            "contact_address_state": {
+                "fhir_key": "address.state",
+                "type": "str",
+            },
+            "contact_address_postal_code": {
+                "fhir_key": "address.postalCode",
+                "type": "str",
+            },
+            "contact_address_country": {
+                "fhir_key": "address.country",
+                "type": "str",
+            },
             "contact_address_period_start": {
                 "fhir_key": "address.period.start",
                 "type": "datetime",
@@ -54,12 +71,30 @@ TRANSFORM_SCHEMA = [
                 "type": "datetime",
             },
             "contact_gender": {"fhir_key": "gender", "type": "str"},
-            "contact_organization_reference": {"fhir_key": "organization.reference", "type": "str"},
-            "contact_organization_type": {"fhir_key": "organization.type", "type": "str"},
-            "contact_organization_identifier": {"fhir_key": "organization.identifier", "type": "str"},
-            "contact_organization_display": {"fhir_key": "organization.display", "type": "str"},
-            "contact_period_start": {"fhir_key": "period.start", "type": "datetime"},
-            "contact_period_end": {"fhir_key": "period.end", "type": "datetime"},
+            "contact_organization_reference": {
+                "fhir_key": "organization.reference",
+                "type": "str",
+            },
+            "contact_organization_type": {
+                "fhir_key": "organization.type",
+                "type": "str",
+            },
+            "contact_organization_identifier": {
+                "fhir_key": "organization.identifier",
+                "type": "str",
+            },
+            "contact_organization_display": {
+                "fhir_key": "organization.display",
+                "type": "str",
+            },
+            "contact_period_start": {
+                "fhir_key": "period.start",
+                "type": "datetime",
+            },
+            "contact_period_end": {
+                "fhir_key": "period.end",
+                "type": "datetime",
+            },
         },
     },
 ]
@@ -85,4 +120,3 @@ class PatientContactTransformer(FhirResourceTransformer):
 
     def __init__(self):
         super().__init__("Patient", "contact", TRANSFORM_SCHEMA)
-

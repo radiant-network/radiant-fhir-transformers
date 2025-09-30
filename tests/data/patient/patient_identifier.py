@@ -11,7 +11,7 @@ from .patient import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "identifier_use": "usual",
         "identifier_type_text": "CEID",
         "identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.3.688884.100",
@@ -21,7 +21,7 @@ EXPECTED_OUTPUT = [
         "identifier_value_extension": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "identifier_use": "usual",
         "identifier_type_text": "EPI",
         "identifier_system": "urn:oid:2.16.840.7.740741.2",
@@ -31,7 +31,7 @@ EXPECTED_OUTPUT = [
         "identifier_value_extension": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "identifier_use": "usual",
         "identifier_type_text": "EXTERNAL",
         "identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.2.698084",
@@ -41,7 +41,7 @@ EXPECTED_OUTPUT = [
         "identifier_value_extension": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "identifier_use": "usual",
         "identifier_type_text": "FHIR",
         "identifier_system": "http://open.epic.com/FHIR/StructureDefinition/patient-dstu2-fhir-id",
@@ -51,7 +51,7 @@ EXPECTED_OUTPUT = [
         "identifier_value_extension": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "identifier_use": "usual",
         "identifier_type_text": "FHIR STU3",
         "identifier_system": "http://open.epic.com/FHIR/StructureDefinition/patient-fhir-id",
@@ -61,7 +61,7 @@ EXPECTED_OUTPUT = [
         "identifier_value_extension": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "identifier_use": "usual",
         "identifier_type_text": "INTERNAL",
         "identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.2.698084",
@@ -71,7 +71,7 @@ EXPECTED_OUTPUT = [
         "identifier_value_extension": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "identifier_use": "usual",
         "identifier_type_text": "MYCHARTLOGIN",
         "identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.3.878082.110",
@@ -81,7 +81,7 @@ EXPECTED_OUTPUT = [
         "identifier_value_extension": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "identifier_use": "usual",
         "identifier_type_text": "WPRINTERNAL",
         "identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.2.878082",
@@ -91,7 +91,7 @@ EXPECTED_OUTPUT = [
         "identifier_value_extension": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "identifier_use": "usual",
         "identifier_type_text": None,
         "identifier_system": "https://open.epic.com/FHIR/StructureDefinition/PayerMemberId",
@@ -101,20 +101,20 @@ EXPECTED_OUTPUT = [
         "identifier_value_extension": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "identifier_use": "usual",
         "identifier_type_text": None,
         "identifier_system": "urn:oid:2.16.840.1.113883.4.1",
         "identifier_value": None,
         "identifier_period_start": None,
         "identifier_period_end": None,
-        "identifier_value_extension":  [
-                    {
-                        "valueString": "xxx-xx-xxxx",
-                        "url": "http://hl7.org/fhir/StructureDefinition/rendered-value",
-                    }
-                ],
-        },
+        "identifier_value_extension": [
+            {
+                "valueString": "xxx-xx-xxxx",
+                "url": "http://hl7.org/fhir/StructureDefinition/rendered-value",
+            }
+        ],
+    },
 ]
 
 

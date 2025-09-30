@@ -11,7 +11,7 @@ from .patient import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "name_use": "official",
         "name_text": "Betty MyChart",
         "name_family": "MyChart",
@@ -22,7 +22,7 @@ EXPECTED_OUTPUT = [
         "name_period_end": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "name_use": "usual",
         "name_text": "Betty MyChart",
         "name_family": "MyChart",
@@ -33,7 +33,7 @@ EXPECTED_OUTPUT = [
         "name_period_end": None,
     },
     {
-        "patient_id":"e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "name_use": "old",
         "name_text": "MYCHARTADMIN,BETTY",
         "name_family": "Mychartadmin",

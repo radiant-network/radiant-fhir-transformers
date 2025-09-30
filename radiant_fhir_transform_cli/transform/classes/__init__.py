@@ -53,7 +53,7 @@ from radiant_fhir_transform_cli.transform.classes.patient import (
     PatientContactTransformer,
     PatientCommunicationTransformer,
     PatientGeneralPractitionerTransformer,
-    PatientLinkTransformer
+    PatientLinkTransformer,
 )
 from radiant_fhir_transform_cli.transform.classes.service_request import (
     ServiceRequestTransformer,
@@ -394,7 +394,8 @@ transformers = {
         PatientContactTransformer,
         PatientCommunicationTransformer,
         PatientGeneralPractitionerTransformer,
-        PatientLinkTransformer],
+        PatientLinkTransformer,
+    ],
     "Observation": [
         ObservationTransformer,
         ObservationIdentifierTransformer,
