@@ -57,7 +57,6 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "reference",
                 "type": "str",
             },
-            "reported_reference_type": {"fhir_key": "type", "type": "str"},
             "reported_reference_display": {
                 "fhir_key": "display",
                 "type": "str",
@@ -81,7 +80,6 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "reference",
                 "type": "str",
             },
-            "medication_reference_type": {"fhir_key": "type", "type": "str"},
             "medication_reference_display": {
                 "fhir_key": "display",
                 "type": "str",
@@ -93,7 +91,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "subject_reference",
         "columns": {
             "subject_reference": {"fhir_key": "reference", "type": "str"},
-            "subject_type": {"fhir_key": "type", "type": "str"},
             "subject_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -102,7 +99,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "encounter_reference",
         "columns": {
             "encounter_reference": {"fhir_key": "reference", "type": "str"},
-            "encounter_type": {"fhir_key": "type", "type": "str"},
             "encounter_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -117,7 +113,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "requester_reference",
         "columns": {
             "requester_reference": {"fhir_key": "reference", "type": "str"},
-            "requester_type": {"fhir_key": "type", "type": "str"},
             "requester_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -126,7 +121,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "performer_reference",
         "columns": {
             "performer_reference": {"fhir_key": "reference", "type": "str"},
-            "performer_type": {"fhir_key": "type", "type": "str"},
             "performer_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -141,7 +135,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "recorder_reference",
         "columns": {
             "recorder_reference": {"fhir_key": "reference", "type": "str"},
-            "recorder_type": {"fhir_key": "type", "type": "str"},
             "recorder_display": {"fhir_key": "display", "type": "str"},
         },
     },
@@ -161,6 +154,7 @@ TRANSFORM_SCHEMA = [
     },
     {
         "fhir_path": "dispenseRequest",
+        "fhir_reference": "dispense_request_performer_reference",
         "columns": {
             "dispense_request_initial_fill_quantity_value": {
                 "fhir_key": "initialFill.quantity.value",
@@ -258,10 +252,6 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "performer.reference",
                 "type": "str",
             },
-            "dispense_request_performer_type": {
-                "fhir_key": "performer.type",
-                "type": "str",
-            },
             "dispense_request_performer_display": {
                 "fhir_key": "performer.display",
                 "type": "str",
@@ -293,7 +283,6 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "reference",
                 "type": "str",
             },
-            "prior_prescription_type": {"fhir_key": "type", "type": "str"},
             "prior_prescription_display": {
                 "fhir_key": "display",
                 "type": "str",

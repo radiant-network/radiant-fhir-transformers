@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "diagnostic_report_id": "101",
         "imaging_study_reference": "myimage",
-        "imaging_study_type": None,
+        "imaging_study_reference_type": "ImagingStudy",
         "imaging_study_display": "some Mri image",
     }
 ]

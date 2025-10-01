@@ -14,7 +14,7 @@ EXPECTED_OUTPUT = [
         "specimen_id": "101",
         "request_reference": "example",
         "request_display": None,
-        "request_type": None,
+        "request_reference_type": "ServiceRequest",
     },
 ]
 

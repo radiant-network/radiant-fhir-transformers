@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "medication_request_id": "medrx0301",
         "insurance_reference": "9876B1",
-        "insurance_type": None,
+        "insurance_reference_type": "Coverage",
         "insurance_display": None,
     }
 ]

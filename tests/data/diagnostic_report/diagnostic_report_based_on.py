@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "diagnostic_report_id": "101",
         "based_on_reference": "req",
-        "based_on_type": None,
+        "based_on_reference_type": "ServiceRequest",
         "based_on_display": None,
     }
 ]

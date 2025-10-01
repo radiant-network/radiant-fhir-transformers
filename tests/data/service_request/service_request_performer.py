@@ -12,9 +12,9 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "service_request_id": "di_abcd_efg",
-        "performer_reference": "Practitioner/f202",
+        "performer_reference": "f202",
         "performer_display": None,
-        "performer_type": None,
+        "performer_reference_type": "Practitioner",
     },
 ]
 

@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "medication_request_id": "medrx0301",
         "detected_issue_reference": "allergy",
-        "detected_issue_type": None,
+        "detected_issue_reference_type": "DetectedIssue",
         "detected_issue_display": None,
     }
 ]

@@ -14,7 +14,7 @@ EXPECTED_OUTPUT = [
         "consent_id": "consent-example-basic",
         "performer_reference": "72",
         "performer_display": None,
-        "performer_type": None,
+        "performer_reference_type": "Patient",
     },
 ]
 

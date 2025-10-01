@@ -12,8 +12,8 @@ from .appointment_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "appointment_id": "example",
-        "based_on_reference": "ServiceRequest/myringotomy",
-        "based_on_type": None,
+        "based_on_reference": "myringotomy",
+        "based_on_reference_type": "ServiceRequest",
         "based_on_display": None,
     }
 ]

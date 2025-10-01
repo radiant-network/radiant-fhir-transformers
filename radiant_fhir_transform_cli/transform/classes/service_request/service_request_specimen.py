@@ -24,10 +24,10 @@ TRANSFORM_SCHEMA = [
     },
     {
         "fhir_path": "specimen",
+        "fhir_reference": "specimen_reference",
         "columns": {
             "specimen_reference": {"fhir_key": "reference", "type": "str"},
             "specimen_display": {"fhir_key": "display", "type": "str"},
-            "specimen_type": {"fhir_key": "type", "type": "str"},
         },
     },
 ]

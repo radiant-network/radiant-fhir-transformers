@@ -37,10 +37,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "media_link_display": {"fhir_key": "display", "type": "str"},
-            "media_link_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
         },
     },
 ]

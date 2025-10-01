@@ -14,7 +14,7 @@ EXPECTED_OUTPUT = [
         "consent_id": "consent-example-basic",
         "organization_reference": "f001",
         "organization_display": None,
-        "organization_type": None,
+        "organization_reference_type": "Organization",
     },
 ]
 

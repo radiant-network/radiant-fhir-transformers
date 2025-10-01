@@ -47,7 +47,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "location_reference",
         "columns": {
             "location_reference": {"fhir_key": "reference", "type": "str"},
-            "location_type": {"fhir_key": "type", "type": "str"},
             "location_display": {"fhir_key": "display", "type": "str"},
         },
     },

@@ -33,10 +33,6 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "display",
                 "type": "str",
             },
-            "parent_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
         },
     },
 ]

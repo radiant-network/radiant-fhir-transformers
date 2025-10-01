@@ -27,7 +27,6 @@ TRANSFORM_SCHEMA = [
         "fhir_reference": "target_reference",
         "columns": {
             "target_reference": {"fhir_key": "reference", "type": "str"},
-            "target_type": {"fhir_key": "type", "type": "str"},
             "target_display": {"fhir_key": "display", "type": "str"},
         },
     },

@@ -31,10 +31,6 @@ TRANSFORM_SCHEMA = [
                 "type": "str",
             },
             "imaging_study_display": {"fhir_key": "display", "type": "str"},
-            "imaging_study_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
         },
     },
 ]

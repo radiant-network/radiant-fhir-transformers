@@ -36,10 +36,10 @@ EXPECTED_OUTPUT = [
         "position_latitude": None,
         "position_altitude": None,
         "managing_organization_reference": "organization",
-        "managing_organization_type": None,
+        "managing_organization_reference_type": "Organization",
         "managing_organization_display": "Organization",
         "part_of_reference": "location",
-        "part_of_type": None,
+        "part_of_reference_type": "Location",
         "part_of_display": "Location",
         "availability_exceptions": None,
     }

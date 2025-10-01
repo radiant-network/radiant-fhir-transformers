@@ -13,7 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "immunization_id": "example",
         "reason_reference_reference": "reason",
-        "reason_reference_type": None,
+        "reason_reference_reference_type": "Condition",
         "reason_reference_display": None,
     },
 ]
