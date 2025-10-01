@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.13.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#85](https://github.com/radiant-network/radiant-fhir-transformers/pull/85) -  :bug: Update json encode to default to str - [8d48a08a](https://github.com/radiant-network/radiant-fhir-transformers/commit/8d48a08ac7fdd34c29c0bce06a486b992e8b3a0d) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 0.12.0
 
 ### Summary
