@@ -273,7 +273,18 @@ from tests.data.organization import (
     OrganizationTestHelper,
     OrganizationTypeTestHelper,
 )
-from tests.data.patient import PatientTestHelper
+from tests.data.patient import (
+    PatientTestHelper,
+    PatientIdentifierTestHelper,
+    PatientNameTestHelper,
+    PatientTelecomTestHelper,
+    PatientAddressTestHelper,
+    PatientPhotoTestHelper,
+    PatientContactTestHelper,
+    PatientCommunicationTestHelper,
+    PatientGeneralPractitionerTestHelper,
+    PatientLinkTestHelper,
+)
 from tests.data.procedure import (
     ProcedureBasedOnTestHelper,
     ProcedureBodySiteTestHelper,
@@ -372,6 +383,15 @@ from tests.data.specimen import (
 
 test_helpers = [
     PatientTestHelper,
+    PatientIdentifierTestHelper,
+    PatientNameTestHelper,
+    PatientTelecomTestHelper,
+    PatientAddressTestHelper,
+    PatientPhotoTestHelper,
+    PatientContactTestHelper,
+    PatientCommunicationTestHelper,
+    PatientGeneralPractitionerTestHelper,
+    PatientLinkTestHelper,
     ObservationTestHelper,
     ObservationExtensionTestHelper,
     ObservationIdentifierTestHelper,
