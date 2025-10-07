@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.13.1
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#84](https://github.com/radiant-network/radiant-fhir-transformers/pull/84) -  Refactor patient transformer - [34f23916](https://github.com/radiant-network/radiant-fhir-transformers/commit/34f23916ae8a5bfffbacf7534ee06a50174d5176) by [calkinsh](https://github.com/calkinsh)
+
+
 ## Release 0.13.0
 
 ### Summary
