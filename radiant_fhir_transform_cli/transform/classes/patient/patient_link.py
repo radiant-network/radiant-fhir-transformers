@@ -23,22 +23,20 @@ TRANSFORM_SCHEMA = [
         },
     },
     {
-        "fhir_path": "link.other",
+        "fhir_path": "link",
         "fhir_reference": "link_other_reference",
         "columns": {
             "link_other_reference": {
-                "fhir_key": "reference",
+                "fhir_key": "other.reference",
                 "type": "str",
             },
-            "link_other_type": {"fhir_key": "type", "type": "str"},
-            "link_other_identifier": {"fhir_key": "identifier", "type": "str"},
-            "link_other_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "link.type",
-        "columns": {
-            "link_type": {"type": "str"},
+            "link_other_type": {"fhir_key": "other.type", "type": "str"},
+            "link_other_identifier": {
+                "fhir_key": "other.identifier",
+                "type": "str",
+            },
+            "link_other_display": {"fhir_key": "other.display", "type": "str"},
+            "link_type": {"fhir_key": "type", "type": "str"},
         },
     },
 ]

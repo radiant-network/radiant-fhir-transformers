@@ -18,6 +18,14 @@ EXPECTED_OUTPUT = [
         "link_other_display": None,
         "link_type": "seealso",
     },
+    {
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "link_other_reference": "pat3",
+        "link_other_type": None,
+        "link_other_identifier": None,
+        "link_other_display": None,
+        "link_type": "seealso1",
+    },
 ]
 
 

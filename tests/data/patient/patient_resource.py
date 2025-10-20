@@ -256,5 +256,8 @@ RESOURCE = {
         "reference": "Organization/e-ivxFMnjqfWfW4GruG953g3",
         "display": "Children's Hospital of Philadelphia",
     },
-    "link": [{"other": {"reference": "Patient/pat2"}, "type": "seealso"}],
+    "link": [
+        {"other": {"reference": "Patient/pat2"}, "type": "seealso"},
+        {"other": {"reference": "Patient/pat3"}, "type": "seealso1"},
+    ],
 }
