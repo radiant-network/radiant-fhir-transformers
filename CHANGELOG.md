@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 0.14.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#88](https://github.com/radiant-network/radiant-fhir-transformers/pull/88) -  fix schema to include type in list of patient_links - [60c21446](https://github.com/radiant-network/radiant-fhir-transformers/commit/60c21446d7be86355c82a30c80b24c7884566d8a) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 0.13.1
 
 ### Summary
