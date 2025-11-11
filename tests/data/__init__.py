@@ -237,6 +237,11 @@ from tests.data.medication_request import (
     MedicationRequestSupportingInformationTestHelper,
     MedicationRequestTestHelper,
 )
+
+from tests.data.medication_dispense import (
+    MedicationDispenseTestHelper,
+)
+
 from tests.data.observation import (
     ObservationBasedOnTestHelper,
     ObservationBodySiteCodingTestHelper,
@@ -498,6 +503,7 @@ test_helpers = [
     MedicationRequestSubstitutionReasonCodingTestHelper,
     MedicationRequestDetectedIssueTestHelper,
     MedicationRequestEventHistoryTestHelper,
+    MedicationDispenseTestHelper,
     DiagnosticReportIdentifierTestHelper,
     DiagnosticReportTestHelper,
     DiagnosticReportBasedOnTestHelper,

@@ -107,6 +107,12 @@ from radiant_fhir_transform_cli.transform.classes.medication_request import (
     MedicationRequestDetectedIssueTransformer,
     MedicationRequestEventHistoryTransformer,
 )
+
+from radiant_fhir_transform_cli.transform.classes.medication_dispense import (
+    MedicationDispenseTransformer,
+    # MedicationDispenseIdentifierTransformer,
+)
+
 from radiant_fhir_transform_cli.transform.classes.procedure import (
     ProcedureTransformer,
     ProcedureIdentifierTransformer,
@@ -515,6 +521,10 @@ transformers = {
         MedicationRequestSubstitutionReasonCodingTransformer,
         MedicationRequestDetectedIssueTransformer,
         MedicationRequestEventHistoryTransformer,
+    ],
+    "MedicationDispense": [
+        MedicationDispenseTransformer,
+        # MedicationDispenseIdentifierTransformer,
     ],
     "DiagnosticReport": [
         DiagnosticReportIdentifierTransformer,
