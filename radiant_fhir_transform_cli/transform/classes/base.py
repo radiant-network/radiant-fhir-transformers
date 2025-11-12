@@ -36,95 +36,20 @@ accommodate resource-specific fields and transformation logic.
 
 import json
 import logging
-from dataclasses import dataclass, field
+from collections.abc import Generator, Iterable
 from pprint import pformat
-from typing import Any, Generator, Iterable, Optional
+from typing import Any
 
 import pandas
-from fhirpathpy import evaluate
+from sqlonfhir import evaluate
 
 from radiant_fhir_transform_cli.utils.misc import camel_to_snake
-
-from ..exceptions import FhirTransformError
-from ..result_handler import ResultHandlerFactory
-from ..transformer_config import TransformationSchema
 
 logger = logging.getLogger(__name__)
 
 
-class DataType:
-    INTEGER = "int"
-    STRING = "str"
-    BOOLEAN = "bool"
-    DATETIME = "datetime"
-
-
-def _validate_transform_dict(cls_name, transform_dict):
-    """
-    Check that column map has correct types and is not empty
-    """
-    msg = (
-        f"❌ Invalid column map in {cls_name}. "
-        "Keys must be must be strings representing column names in the "
-        "output csv and values must be valid FHIR path expressions"
-    )
-
-    if not transform_dict:
-        raise ValueError(msg)
-
-    for transform_config in transform_dict:
-        fhir_path = transform_config.get("fhir_path")
-        columns = transform_config.get("columns")
-
-        if not isinstance(columns, dict):
-            raise ValueError(msg)
-
-
-@dataclass
-class FhirTransformationResultBuilder:
-    foreign_key_col: Optional[str]
-    base_attributes: dict[str, Any] = field(default_factory=dict)
-    list_member_rows: list[dict[str, Any]] = field(default_factory=list)
-
-    def __init__(self, foreign_key_col: Optional[str]) -> None:
-        self.base_attributes = {}
-        self.list_member_rows = []
-        self.foreign_key_col = foreign_key_col
-
-    def add_base_attributes(self, values: dict[str, Any]) -> None:
-        self.base_attributes.update(values)
-
-    def add_list_member_rows(self, rows: list[dict[str, Any]]) -> None:
-        if self.list_member_rows:
-            raise FhirTransformError(
-                "Cannot add multiple list member expansions"
-            )
-        self.list_member_rows = rows
-
-    def __id_cols(self) -> list[str]:
-        return ["id", self.foreign_key_col] if self.foreign_key_col else ["id"]
-
-    def build_result(self) -> list[dict[str, Any]]:
-        data = (
-            [{**self.base_attributes, **row} for row in self.list_member_rows]
-            if self.list_member_rows
-            else [self.base_attributes]
-        )
-        # for every row check if cols have data except for id and foreign_key
-        data = [
-            row
-            for row in data
-            if any(
-                v not in (None, "")
-                for k, v in row.items()
-                if k not in self.__id_cols()
-            )
-        ]
-        return data
-
-
 def generate_table_name(
-    resource_type: str, resource_subtype: Optional[str]
+    resource_type: str, resource_subtype: str | None
 ) -> str:
     table_name = camel_to_snake(resource_type)
     if resource_subtype:
@@ -155,8 +80,8 @@ class FhirResourceTransformer:
     def __init__(
         self,
         resource_type: str,
-        resource_subtype: Optional[str],
-        transform_schema: list[dict[str, str | dict]],
+        resource_subtype: str | None,
+        view_definition: dict,
     ):
         """
         Initializes the transformer with the resource type and column map.
@@ -165,17 +90,16 @@ class FhirResourceTransformer:
             resource_type (str): The type of the FHIR resource.
             transform_dict (dict): FHIRPath-to-column name mapping.
         """
-        self.resource_type = resource_type
-        self.resource_subtype = resource_subtype
-        self.table_name = generate_table_name(resource_type, resource_subtype)
-
-        # Validate transforms
-        _validate_transform_dict(type(self).__name__, transform_schema)
-        self.transform_dict = transform_schema
+        self.resource_type: str = resource_type
+        self.resource_subtype: str | None = resource_subtype
+        self.table_name: str = generate_table_name(
+            resource_type, resource_subtype
+        )
+        self.view_definition: dict = view_definition
 
     def transform_resource(
         self, resource_idx: int, resource_dict: dict
-    ) -> list[dict]:
+    ) -> list[dict[str, str]]:
         """
         Transforms the given FHIR resource dictionary based on the column map.
 
@@ -188,40 +112,18 @@ class FhirResourceTransformer:
         Returns:
             dict: A dictionary with column names and evaluated FHIRPath values.
         """
-        transformation_schema = TransformationSchema(self.transform_dict)
-        transform_result_builder = FhirTransformationResultBuilder(
-            transformation_schema.foreign_key
+        results = evaluate(
+            resources=[resource_dict], view_definition=self.view_definition
         )
-        for config in transformation_schema.configs:
-            fhir_path_expression = config.fhir_path
-            if fhir_path_expression == "*":
-                raw_items = resource_dict
-            else:
-                raw_items = (
-                    evaluate(resource_dict, fhir_path_expression)
-                    if fhir_path_expression
-                    else None
-                )
 
-            fhir_path_output_handler = ResultHandlerFactory.get_handler(
-                raw_items, config, is_subtype=self.resource_subtype is not None
-            )
-
-            result = fhir_path_output_handler.handle(raw_items, config)
-            if len(result) == 1:
-                transform_result_builder.add_base_attributes(result[0])
-            else:
-                transform_result_builder.add_list_member_rows(result)
-
-        final_results = transform_result_builder.build_result()
         logger.debug(
             "Transformed %s %s into %s",
             self.resource_type,
             resource_idx,
-            pformat(final_results),
+            pformat(results),
         )
 
-        return final_results
+        return results
 
     def transform_from_ndjson(
         self, ndjson_filepath: str

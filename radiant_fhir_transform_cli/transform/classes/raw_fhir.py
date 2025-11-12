@@ -1,28 +1,20 @@
 from .base import FhirResourceTransformer
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {
-            "id": {"fhir_key": "id", "type": "str"},
+VIEW_DEFINITION = {
+    "resourceType": "ViewDefinition",
+    "resource": "Observation",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id"},
+                {"name": "resource_type", "path": "resourceType"},
+                {"name": "json", "path": "$this"},
+            ]
         },
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {
-            "resource_type": {"fhir_key": "resourceType", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "*",
-        "columns": {
-            "json": {"type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class RawFhirResourceTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__("fhir_resource", None, TRANSFORM_SCHEMA)
+        super().__init__("fhir_resource", None, VIEW_DEFINITION)

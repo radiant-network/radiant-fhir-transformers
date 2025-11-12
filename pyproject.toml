@@ -15,7 +15,7 @@ classifiers = [
 ]
 dependencies = [
   "click==8.1.7",
-  "fhirpathpy==2.1.0",
+  "sqlonfhir==0.0.2",
   "pandas==2.2.3",
 ]
 
