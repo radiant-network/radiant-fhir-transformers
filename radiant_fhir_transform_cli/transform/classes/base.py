@@ -1,37 +1,22 @@
 """
-FHIR transformers
+FHIR Resource Transformer Module
+================================
 
-This transformation dictionary defines how to extract and map fields from FHIR
-resource JSON objects into a flat dictionary format suitable for CSV output
-or other tabular representations.
+This module defines a base class for transforming FHIR resources into tabular
+representations (e.g., CSV, DataFrame) using **SQL-on-FHIR** evaluation logic.
 
-Transform Dictionary
---------------------
-Structure:
-- Each item in the list corresponds to a specific field in the FHIR Observation
-resource.
-- 'fhir_path': A string representing the path to the desired field within the
-FHIR resource.
-- 'columns': A dictionary mapping output CSV column names to their corresponding
-extraction details:
-    - 'fhir_key': The key used to extract the value from the FHIR resource.
-    - 'type': The expected data type of the extracted value (e.g., 'str', 'int').
+Overview
+--------
+Instead of manually evaluating FHIRPath expressions, this implementation
+leverages the `sqlonfhir` library to evaluate FHIR `ViewDefinition` resources.
+Each `ViewDefinition` specifies which fields to extract and how to structure
+the flattened output from nested FHIR resources.
 
-Example Entry:
-{
-    "fhir_path": "id",
-    "columns": {
-        "id": {
-            "fhir_key": "id",
-            "type": "str"
-        }
-    }
-}
-Usage:
-This dictionary is utilized by the `FhirResourceTransformer` base class and its
-subclasses to systematically extract and transform data from FHIR resources into
-a flat structure. Subclasses must create their own dictionary to
-accommodate resource-specific fields and transformation logic.
+The transformer is designed to:
+- Read FHIR resource JSON or NDJSON files.
+- Evaluate them using a SQL-on-FHIR `ViewDefinition`.
+- Convert the results into a list of dictionaries suitable for CSV export
+  or further analysis.
 """
 
 import json
@@ -61,20 +46,16 @@ class FhirResourceTransformer:
     """
     Abstract base class to transform FHIR resources into a column dictionary
 
-    Extracts values from FHIR resources using FHIRPath expressions defined
-    in the transform_dict.
-
-    Transform schema
-    --------------
-    Keys are output columns in a csv file. Values are FHIR path expressions to
-    the field value to be extracted from the FHIR JSON object
-
-    See https://hl7.org/fhir/R4/fhirpath.html for FHIRPath spec
+        This class provides functionality for evaluating FHIR resources using
+    `sqlonfhir.evaluate()` based on a provided `ViewDefinition`. The evaluated
+    output is then transformed into a flat list of dictionaries suitable for
+    writing to CSV or other tabular formats.
 
     Attributes:
-        resource_type (str): The type of the FHIR resource (e.g., 'Patient').
-        transform_schema (list[dict]): A mapping of output columns to FHIRPath
-          expressions
+        resource_type (str): The FHIR resource type (e.g., 'Patient', 'Observation').
+        resource_subtype (str | None): Optional subtype (e.g., 'Component').
+        table_name (str): Generated name for the output table or CSV.
+        view_definition (dict): The SQL-on-FHIR `ViewDefinition` used for transformation.
     """
 
     def __init__(
@@ -84,11 +65,12 @@ class FhirResourceTransformer:
         view_definition: dict,
     ):
         """
-        Initializes the transformer with the resource type and column map.
+        Initialize a FHIR resource transformer.
 
         Args:
-            resource_type (str): The type of the FHIR resource.
-            transform_dict (dict): FHIRPath-to-column name mapping.
+            resource_type (str): The FHIR resource type to transform.
+            resource_subtype (str | None): Optional subtype for more granular naming.
+            view_definition (dict): SQL-on-FHIR ViewDefinition used to define extraction logic.
         """
         self.resource_type: str = resource_type
         self.resource_subtype: str | None = resource_subtype
@@ -101,16 +83,14 @@ class FhirResourceTransformer:
         self, resource_idx: int, resource_dict: dict
     ) -> list[dict[str, str]]:
         """
-        Transforms the given FHIR resource dictionary based on the column map.
-
-        Evaluates each FHIRPath expression and returns a dictionary with the
-        corresponding column names as keys and evaluated values as values.
+        Apply the ViewDefinition to a single FHIR resource.
 
         Args:
-            resource_dict (dict): A dictionary representing a FHIR resource.
+            resource_idx (int): Index of the resource (used for logging).
+            resource_dict (dict): A FHIR resource JSON object.
 
         Returns:
-            dict: A dictionary with column names and evaluated FHIRPath values.
+            list[dict[str, str]]: Flattened tabular results produced by `sqlonfhir.evaluate()`.
         """
         results = evaluate(
             resources=[resource_dict], view_definition=self.view_definition
