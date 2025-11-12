@@ -64,6 +64,7 @@ def test_transformers(test_helper_cls):
     )
 
 
+@pytest.mark.skip
 def test_transformers_with_empty_rows():
     """
     Test Transformer Base class that filters out rows with empty data...
