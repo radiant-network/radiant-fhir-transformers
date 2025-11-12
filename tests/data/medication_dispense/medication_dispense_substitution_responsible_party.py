@@ -1,6 +1,7 @@
 """
 Test helper class for FHIR resource type MedicationDispense subType Substitution Responsible Party
 """
+
 from radiant_fhir_transform_cli.transform.classes.medication_dispense import (
     MedicationDispenseSubstitutionResponsiblePartyTransformer,
 )
@@ -15,8 +16,11 @@ EXPECTED_OUTPUT = [
         "substitution_responsible_party_display": None,
     }
 ]
-    
-class MedicationDispenseSubstitutionResponsiblePartyTestHelper(FhirResourceTestHelper):
+
+
+class MedicationDispenseSubstitutionResponsiblePartyTestHelper(
+    FhirResourceTestHelper
+):
     """
     A helper class for testing transformations of the FHIR 'MedicationDispense' resource.
 

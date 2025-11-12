@@ -1,6 +1,7 @@
 """
 Test helper class for FHIR resource type MedicationDispense authorizingPrescription
 """
+
 from radiant_fhir_transform_cli.transform.classes.medication_dispense import (
     MedicationDispenseAuthorizingPrescriptionTransformer,
 )
@@ -15,8 +16,11 @@ EXPECTED_OUTPUT = [
         "authorizing_prescription_display": None,
     }
 ]
-    
-class MedicationDispenseAuthorizingPrescriptionTestHelper(FhirResourceTestHelper):
+
+
+class MedicationDispenseAuthorizingPrescriptionTestHelper(
+    FhirResourceTestHelper
+):
     """
     A helper class for testing transformations of the FHIR 'MedicationDispense' resource.
 

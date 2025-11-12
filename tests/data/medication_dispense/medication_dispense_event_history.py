@@ -1,6 +1,7 @@
 """
 Test helper class for FHIR resource type MedicationDispense eventHistory
 """
+
 from radiant_fhir_transform_cli.transform.classes.medication_dispense import (
     MedicationDispenseEventHistoryTransformer,
 )
@@ -15,7 +16,8 @@ EXPECTED_OUTPUT = [
         "event_history_display": "Author's Signature",
     }
 ]
-    
+
+
 class MedicationDispenseEventHistoryTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'MedicationDispense' resource.

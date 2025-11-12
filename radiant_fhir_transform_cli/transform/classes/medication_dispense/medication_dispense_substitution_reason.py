@@ -32,6 +32,7 @@ TRANSFORM_SCHEMA = [
     },
 ]
 
+
 class MedicationDispenseSubstitutionReasonTransformer(FhirResourceTransformer):
     """
     A transformer class for the 'MedicationDispense' resource in FHIR, focusing on the 'substitution.reason' element.
@@ -51,4 +52,6 @@ class MedicationDispenseSubstitutionReasonTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("MedicationDispense", "substitution_reason", TRANSFORM_SCHEMA)
+        super().__init__(
+            "MedicationDispense", "substitution_reason", TRANSFORM_SCHEMA
+        )

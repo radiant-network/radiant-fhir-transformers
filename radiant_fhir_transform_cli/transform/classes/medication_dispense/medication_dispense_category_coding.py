@@ -42,7 +42,7 @@ TRANSFORM_SCHEMA = [
 class MedicationDispenseCategoryCodingTransformer(FhirResourceTransformer):
     """
     A transformer class for the 'MedicationDispense' resource in FHIR, focusing on the 'category.coding' element.
-    
+
     This class transforms FHIR MedicationDispense JSON objects into flat dictionaries suitable for CSV output,
     extracting and processing information from the 'category.coding' field.
 

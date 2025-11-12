@@ -1,6 +1,7 @@
 """
 Test helper class for FHIR resource type MedicationDispense dosageInstruction
 """
+
 from radiant_fhir_transform_cli.transform.classes.medication_dispense import (
     MedicationDispenseDosageInstructionTransformer,
 )
@@ -62,7 +63,8 @@ EXPECTED_OUTPUT = [
         "dosage_instruction_max_dose_per_lifetime_code": None,
     }
 ]
-    
+
+
 class MedicationDispenseDosageInstructionTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'MedicationDispense' resource.

@@ -29,7 +29,10 @@ TRANSFORM_SCHEMA = [
                 "fhir_key": "system",
                 "type": "str",
             },
-            "substitution_type_coding_code": {"fhir_key": "code", "type": "str"},
+            "substitution_type_coding_code": {
+                "fhir_key": "code",
+                "type": "str",
+            },
             "substitution_type_coding_display": {
                 "fhir_key": "display",
                 "type": "str",
@@ -39,10 +42,12 @@ TRANSFORM_SCHEMA = [
 ]
 
 
-class MedicationDispenseSubstitutionTypeCodingTransformer(FhirResourceTransformer):
+class MedicationDispenseSubstitutionTypeCodingTransformer(
+    FhirResourceTransformer
+):
     """
     A transformer class for the 'MedicationDispense' resource in FHIR, focusing on the 'substitution.type.coding' element.
-    
+
     This class transforms FHIR MedicationDispense JSON objects into flat dictionaries suitable for CSV output,
     extracting and processing information from the 'substitution.type.coding' field.
 

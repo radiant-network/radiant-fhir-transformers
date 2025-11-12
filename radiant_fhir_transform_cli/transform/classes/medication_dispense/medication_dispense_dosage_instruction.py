@@ -2,7 +2,6 @@
 FHIR MedicationDispense DosageInstruction transformer
 """
 
-
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
@@ -438,4 +437,6 @@ class MedicationDispenseDosageInstructionTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("MedicationDispense", "dosage_instruction", TRANSFORM_SCHEMA)
+        super().__init__(
+            "MedicationDispense", "dosage_instruction", TRANSFORM_SCHEMA
+        )

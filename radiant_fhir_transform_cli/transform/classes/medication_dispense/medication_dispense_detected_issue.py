@@ -2,7 +2,6 @@
 FHIR MedicationDispense DetectedIssue transformer
 """
 
-
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
@@ -26,12 +25,16 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "detectedIssue",
         "columns": {
-            "detected_issue_reference": {"fhir_key": "reference", "type": "str"},
+            "detected_issue_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
             "detected_issue_type": {"fhir_key": "type", "type": "str"},
             "detected_issue_display": {"fhir_key": "display", "type": "str"},
         },
     },
 ]
+
 
 class MedicationDispenseDetectedIssueTransformer(FhirResourceTransformer):
     """
@@ -52,4 +55,6 @@ class MedicationDispenseDetectedIssueTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("MedicationDispense", "detected_issue", TRANSFORM_SCHEMA)
+        super().__init__(
+            "MedicationDispense", "detected_issue", TRANSFORM_SCHEMA
+        )

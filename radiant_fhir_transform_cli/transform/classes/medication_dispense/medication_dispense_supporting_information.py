@@ -25,14 +25,23 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "supportingInformation",
         "columns": {
-            "supporting_information_reference": {"fhir_key": "reference", "type": "str"},
+            "supporting_information_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
             "supporting_information_type": {"fhir_key": "type", "type": "str"},
-            "supporting_information_display": {"fhir_key": "display", "type": "str"},
+            "supporting_information_display": {
+                "fhir_key": "display",
+                "type": "str",
+            },
         },
     },
 ]
 
-class MedicationDispenseSupportingInformationTransformer(FhirResourceTransformer):
+
+class MedicationDispenseSupportingInformationTransformer(
+    FhirResourceTransformer
+):
     """
     A transformer class for the 'MedicationDispense' resource in FHIR, focusing on the 'supportingInformation' element.
 
@@ -51,4 +60,6 @@ class MedicationDispenseSupportingInformationTransformer(FhirResourceTransformer
     """
 
     def __init__(self):
-        super().__init__("MedicationDispense", "supporting_information", TRANSFORM_SCHEMA)
+        super().__init__(
+            "MedicationDispense", "supporting_information", TRANSFORM_SCHEMA
+        )

@@ -25,15 +25,25 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "performer",
         "columns": {
-            "performer_actor_reference": {"fhir_key": "actor.reference", "type": "str"},
+            "performer_actor_reference": {
+                "fhir_key": "actor.reference",
+                "type": "str",
+            },
             "performer_actor_type": {"fhir_key": "actor.type", "type": "str"},
-            "performer_actor_display": {"fhir_key": "actor.display", "type": "str"},
-            "performer_function_text": {"fhir_key": "function.text", "type": "str"},
+            "performer_actor_display": {
+                "fhir_key": "actor.display",
+                "type": "str",
+            },
+            "performer_function_text": {
+                "fhir_key": "function.text",
+                "type": "str",
+            },
             # TODO: Support for Nested Lists (See https://github.com/radiant-network/radiant-fhir-transformers/issues/34)
             # "performer_function_coding": {"fhir_key": "function.coding", "type": "str"},
         },
     },
 ]
+
 
 class MedicationDispensePerformerTransformer(FhirResourceTransformer):
     """

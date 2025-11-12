@@ -18,8 +18,10 @@ EXPECTED_OUTPUT = [
     }
 ]
 
-    
-class MedicationDispenseSubstitutionTypeCodingTestHelper(FhirResourceTestHelper):
+
+class MedicationDispenseSubstitutionTypeCodingTestHelper(
+    FhirResourceTestHelper
+):
     """
     A helper class for testing transformations of the FHIR 'MedicationDispense' resource.
 

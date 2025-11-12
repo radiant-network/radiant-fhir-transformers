@@ -42,7 +42,7 @@ TRANSFORM_SCHEMA = [
 class MedicationDispenseTypeCodingTransformer(FhirResourceTransformer):
     """
     A transformer class for the 'MedicationDispense' resource in FHIR, focusing on the 'type.coding' element.
-    
+
     This class transforms FHIR MedicationDispense JSON objects into flat dictionaries suitable for CSV output,
     extracting and processing information from the 'type.coding' field.
 
@@ -58,6 +58,4 @@ class MedicationDispenseTypeCodingTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__(
-            "MedicationDispense", "type_coding", TRANSFORM_SCHEMA
-        )
+        super().__init__("MedicationDispense", "type_coding", TRANSFORM_SCHEMA)

@@ -25,14 +25,26 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "authorizingPrescription",
         "columns": {
-            "authorizing_prescription_reference": {"fhir_key": "reference", "type": "str"},
-            "authorizing_prescription_type": {"fhir_key": "type", "type": "str"},
-            "authorizing_prescription_display": {"fhir_key": "display", "type": "str"},
+            "authorizing_prescription_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
+            "authorizing_prescription_type": {
+                "fhir_key": "type",
+                "type": "str",
+            },
+            "authorizing_prescription_display": {
+                "fhir_key": "display",
+                "type": "str",
+            },
         },
     },
 ]
 
-class MedicationDispenseAuthorizingPrescriptionTransformer(FhirResourceTransformer):
+
+class MedicationDispenseAuthorizingPrescriptionTransformer(
+    FhirResourceTransformer
+):
     """
     A transformer class for the 'MedicationDispense' resource in FHIR, focusing on the 'authorizingPrescription' element.
 
@@ -49,6 +61,8 @@ class MedicationDispenseAuthorizingPrescriptionTransformer(FhirResourceTransform
             Initializes the MedicationDispenseAuthorizingPrescriptionTransformer instance with the resource type 'MedicationDispense',
             subtype 'authorizing_prescription', and the specified transformation dictionary.
     """
-    
+
     def __init__(self):
-        super().__init__("MedicationDispense", "authorizing_prescription", TRANSFORM_SCHEMA)
+        super().__init__(
+            "MedicationDispense", "authorizing_prescription", TRANSFORM_SCHEMA
+        )

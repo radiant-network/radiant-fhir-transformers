@@ -52,7 +52,6 @@ EXPECTED_OUTPUT = [
         "substitution_was_substituted": None,
         "substitution_type_text": None,
     }
-
 ]
 
 

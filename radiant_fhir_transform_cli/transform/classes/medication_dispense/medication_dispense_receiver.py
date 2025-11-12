@@ -32,6 +32,7 @@ TRANSFORM_SCHEMA = [
     },
 ]
 
+
 class MedicationDispenseReceiverTransformer(FhirResourceTransformer):
     """
     A transformer class for the 'MedicationDispense' resource in FHIR, focusing on the 'receiver' element.
