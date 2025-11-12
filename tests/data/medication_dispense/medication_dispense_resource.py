@@ -1,7 +1,49 @@
 RESOURCE = {
     "resourceType": "MedicationDispense",
     "id": "meddisp001",
+    "identifier": [
+        {
+            "use": "official",
+            "system": "http://www.bmc.nl/portal/prescriptions",
+            "value": "12345689",
+        }
+    ],
+     "partOf": [
+        {
+        "reference": "Procedure/f001"
+        }
+    ],
     "status": "in-progress",
+    "statusReasonCodeableConcept": {
+        "coding": [
+        {
+            "system": "http://terminology.hl7.org/CodeSystem/medicationdispense-status-reason",
+            "code": "refused",
+            "display": "Refused"
+        }
+        ]
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/medicationdispense-category",
+                    "code": "inpatient",
+                    "display": "Inpatient",
+                }
+            ],
+            "text": "Requests for medications in inpatient or acute care settings",
+        }
+    ],
+    "medicationCodeableConcept": {
+        "coding": [
+        {
+            "system": "http://hl7.org/fhir/sid/ndc",
+            "code": "76388-713-25",
+            "display": "Myleran 2mg tablet, film coated"
+        }
+        ]
+    },
     "medicationReference": {
         "reference": "#med0301",
         "display": "Vancomycin Hydrochloride"
@@ -62,6 +104,7 @@ RESOURCE = {
         "display": "Donald Duck"
         }
     ],
+    "note": [{"text": "Patient told to take with food"}],
     "dosageInstruction": [
         {
         "sequence": 1,
@@ -111,5 +154,37 @@ RESOURCE = {
             }
         ]
         }
-    ]
+    ],
+    "substitution": {
+        "type": {
+            "coding": [
+                {
+                "system": "http://terminology.hl7.org/CodeSystem/medicationdispense-category",
+                "code": "inpatient",
+                "display": "Inpatient"
+                }
+            ]
+        },
+        "reason": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "394802001",
+                    "display": "Patient allergic to penicillin"
+                }
+            ],
+            "text": "Patient allergic to penicillin"
+        }
+        ],
+        "responsibleParty": [
+        {
+            "reference": "Practitioner/f007"
+        }
+        ]
+    },
+    "detectedIssue": [{"reference": "DetectedIssue/allergy"}],
+    "eventHistory": [
+        {"reference": "#signature", "display": "Author's Signature"}
+    ],
 }

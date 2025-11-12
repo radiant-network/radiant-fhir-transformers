@@ -18,7 +18,7 @@ EXPECTED_OUTPUT = [
         "status_reason_reference": None,
         "status_reason_reference_type": None,
         "status_reason_reference_display": None,
-        "category_text": None,
+        "category_text": "Requests for medications in inpatient or acute care settings",
         "medication_codeable_concept_text": None,
         "medication_reference_reference": "#med0301",
         "medication_reference_type": None,
