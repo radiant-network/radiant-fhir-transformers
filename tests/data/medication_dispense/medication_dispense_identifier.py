@@ -18,6 +18,7 @@ EXPECTED_OUTPUT = [
     }
 ]
 
+
 class MedicationDispenseIdentifierTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'MedicationDispense' resource.

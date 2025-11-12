@@ -25,14 +25,26 @@ TRANSFORM_SCHEMA = [
     {
         "fhir_path": "substitution.responsibleParty",
         "columns": {
-            "substitution_responsible_party_reference": {"fhir_key": "reference", "type": "str"},
-            "substitution_responsible_party_type": {"fhir_key": "type", "type": "str"},
-            "substitution_responsible_party_display": {"fhir_key": "display", "type": "str"},
+            "substitution_responsible_party_reference": {
+                "fhir_key": "reference",
+                "type": "str",
+            },
+            "substitution_responsible_party_type": {
+                "fhir_key": "type",
+                "type": "str",
+            },
+            "substitution_responsible_party_display": {
+                "fhir_key": "display",
+                "type": "str",
+            },
         },
     },
 ]
 
-class MedicationDispenseSubstitutionResponsiblePartyTransformer(FhirResourceTransformer):
+
+class MedicationDispenseSubstitutionResponsiblePartyTransformer(
+    FhirResourceTransformer
+):
     """
     A transformer class for the 'MedicationDispense' resource in FHIR, focusing on the 'substitution.responsibleParty' element.
 
@@ -51,4 +63,8 @@ class MedicationDispenseSubstitutionResponsiblePartyTransformer(FhirResourceTran
     """
 
     def __init__(self):
-        super().__init__("MedicationDispense", "substitution_responsible_party", TRANSFORM_SCHEMA)
+        super().__init__(
+            "MedicationDispense",
+            "substitution_responsible_party",
+            TRANSFORM_SCHEMA,
+        )

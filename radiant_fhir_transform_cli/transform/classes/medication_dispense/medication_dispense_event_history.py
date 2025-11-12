@@ -53,4 +53,6 @@ class MedicationDispenseEventHistoryTransformer(FhirResourceTransformer):
     """
 
     def __init__(self):
-        super().__init__("MedicationDispense", "event_history", TRANSFORM_SCHEMA)
+        super().__init__(
+            "MedicationDispense", "event_history", TRANSFORM_SCHEMA
+        )

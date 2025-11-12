@@ -27,7 +27,12 @@ TRANSFORM_SCHEMA = [
     },
     {
         "fhir_path": "statusReasonCodeableConcept.text",
-        "columns": {"status_reason_codeable_concept_text": {"fhir_key": "text", "type": "str"}},
+        "columns": {
+            "status_reason_codeable_concept_text": {
+                "fhir_key": "text",
+                "type": "str",
+            }
+        },
     },
     {
         "fhir_path": "statusReasonReference",
@@ -50,7 +55,12 @@ TRANSFORM_SCHEMA = [
     },
     {
         "fhir_path": "medicationCodeableConcept.text",
-        "columns": {"medication_codeable_concept_text": {"fhir_key": "text", "type": "str"}},
+        "columns": {
+            "medication_codeable_concept_text": {
+                "fhir_key": "text",
+                "type": "str",
+            }
+        },
     },
     {
         "fhir_path": "medicationReference",

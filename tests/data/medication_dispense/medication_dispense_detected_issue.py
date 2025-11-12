@@ -1,6 +1,7 @@
 """
 Test helper class for FHIR resource type MedicationDispense detectedIssue
 """
+
 from radiant_fhir_transform_cli.transform.classes.medication_dispense import (
     MedicationDispenseDetectedIssueTransformer,
 )
@@ -15,7 +16,8 @@ EXPECTED_OUTPUT = [
         "detected_issue_display": None,
     }
 ]
-    
+
+
 class MedicationDispenseDetectedIssueTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'MedicationDispense' resource.
