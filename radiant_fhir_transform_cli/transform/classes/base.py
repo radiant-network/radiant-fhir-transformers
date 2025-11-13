@@ -19,13 +19,14 @@ The transformer is designed to:
   or further analysis.
 """
 
+import csv
 import json
 import logging
+import uuid
 from collections.abc import Generator, Iterable
 from pprint import pformat
 from typing import Any
 
-import pandas
 from sqlonfhir import evaluate
 
 from radiant_fhir_transform_cli.utils.misc import camel_to_snake
@@ -79,6 +80,16 @@ class FhirResourceTransformer:
         )
         self.view_definition: dict = view_definition
 
+    def _resolve_uuid(self, row_dicts: list[dict]) -> list[dict]:
+        """
+        TODO
+        """
+        for row in row_dicts:
+            for k, v in row.items():
+                if v == "uuid()" or v is None:
+                    row[k] = str(uuid.uuid4())
+        return row_dicts
+
     def transform_resource(
         self, resource_idx: int, resource_dict: dict
     ) -> list[dict[str, str]]:
@@ -95,8 +106,9 @@ class FhirResourceTransformer:
         results = evaluate(
             resources=[resource_dict], view_definition=self.view_definition
         )
+        results = self._resolve_uuid(results)
 
-        logger.debug(
+        logger.info(
             "Transformed %s %s into %s",
             self.resource_type,
             resource_idx,
@@ -126,54 +138,65 @@ class FhirResourceTransformer:
             for i, line in enumerate(f):
                 yield self.transform_resource(i, json.loads(line.strip()))
 
-    def transform_from_json(
-        self, json_filepath
-    ) -> Generator[list[dict[str, Any]], None, None]:
+    def transform_from_json(self, json_filepath: str) -> list[dict[str, str]]:
         """
-        Transforms data from a JSON file into a list of dictionaries.
+        Transforms data from a JSON file into a CSV file, yielding each
+        transformed row as it's written.
 
         Args:
-            json_filepath (str): The path to the JSON file to transform.
-
-        Yields:
-            dict: A dictionary representing each record in the JSON file.
+            json_filepath: Path to the JSON file containing FHIR resources.
+            csv_filepath: Path to the CSV file to append results to.
 
         Returns:
-            Generator[dict, None, list[dict]]: A generator that yields
-              dictionaries for each record and returns a list of all
-              dictionaries at the end.
+            list: List of each transformed row as a dictionary.
         """
+        logger.info("Starting %s", type(self).__name__)
+        logger.info(pformat(self.view_definition))
+
         with open(json_filepath, "r") as f:
             data = json.load(f)
+            # Normalize to list
             if isinstance(data, dict):
                 objs = [data]
             else:
                 objs = data
 
-            for i, resource in enumerate(objs):
-                yield self.transform_resource(i, resource)
+        results = []
+        for i, resource in enumerate(objs):
+            row_dicts = self.transform_resource(i, resource)
+            results.extend(row_dicts)
+
+        return results
 
     def write_to_csv(
-        self, row_dicts: Iterable[dict[str, Any]], csv_filepath: str
-    ):
+        self,
+        rows: Iterable[dict[str, Any]],
+        csv_filepath: str,
+    ) -> None:
         """
-        Writes a list of dictionaries to a CSV file.
+        Stream-write rows from a generator (or any iterable of dicts)
+        to a CSV file.
+
+        This method writes incrementally as each row is yielded, keeping
+        memory usage low for large datasets.
 
         Args:
-            row_dicts (Iterable[dict]): An iterable of dictionaries to write
-              to the CSV file.
-            csv_filepath (str): The path where the CSV file will be written.
+            rows: An iterable or generator yielding dictionaries, where each
+              dict represents one CSV row.
+            csv_filepath: Path to the CSV file to write to.
 
         Returns:
             None
         """
-        first_batch = True
-        for row_dict in row_dicts:
-            df = pandas.DataFrame(row_dict)
-            df.to_csv(
-                csv_filepath,
-                mode="w" if first_batch else "a",
-                header=first_batch,
-                index=False,
-            )
-            first_batch = False
+        writer = None
+        with open(csv_filepath, "w", newline="") as csvfile:
+            for row in rows:
+                if row is None:
+                    continue  # skip None values
+                if writer is None:
+                    # Initialize writer with columns from first row
+                    fieldnames = list(row.keys())
+                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                    writer.writeheader()
+
+                writer.writerow(row)
