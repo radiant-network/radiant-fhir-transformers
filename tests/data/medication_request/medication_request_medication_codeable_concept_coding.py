@@ -7,19 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.medication_request import (
 )
 from tests.data.base import FhirResourceTestHelper
 
-RESOURCE = {
-    "resourceType": "MedicationRequest",
-    "id": "medrx0301",
-    "medicationCodeableConcept": {
-        "coding": [
-            {
-                "system": "http://hl7.org/fhir/sid/ndc",
-                "code": "0069-2587-10",
-                "display": "Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE)",
-            }
-        ]
-    },
-}
+from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
