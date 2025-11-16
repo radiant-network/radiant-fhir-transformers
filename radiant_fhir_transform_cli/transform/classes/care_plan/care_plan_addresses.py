@@ -1,55 +1,42 @@
-"""
-FHIR CarePlan addresses transformer
-"""
+"""FHIR CarePlan addresses transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "CarePlan",
+    "name": "care_plan_addresses",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "care_plan_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "care_plan_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "addresses",
+            "column": [
+                {
+                    "name": "addresses_reference",
+                    "path": "reference",
+                    "type": "string",
+                },
+                {
+                    "name": "addresses_display",
+                    "path": "display",
+                    "type": "string",
+                },
+                {"name": "addresses_type", "path": "type", "type": "string"},
+            ],
         },
-    },
-    {
-        "fhir_path": "addresses",
-        "columns": {
-            "addresses_reference": {"fhir_key": "reference", "type": "str"},
-            "addresses_display": {"fhir_key": "display", "type": "str"},
-            "addresses_type": {"fhir_key": "type", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class CarePlanAddressesTransformer(FhirResourceTransformer):
-    """
-    Transformer class for the 'CarePlan' resource in FHIR, focusing on the 'addresses' element.
-
-    This class transforms FHIR CarePlan JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'addresses' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('CarePlan').
-        subtype (str): Specifies the sub-element of the resource to focus on ('addresses').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the CarePlanAddressesTransformer instance with the resource type 'CarePlan',
-            subtype 'addresses', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("CarePlan", "addresses", TRANSFORM_SCHEMA)
+        super().__init__("CarePlan", "addresses", VIEW_DEFINITION)

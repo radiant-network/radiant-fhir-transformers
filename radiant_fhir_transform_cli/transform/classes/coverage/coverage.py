@@ -1,128 +1,104 @@
-"""
-FHIR Coverage transformer
-"""
+"""FHIR Coverage transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {
-            "id": {"fhir_key": "id", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {
-            "resource_type": {"fhir_key": "resourceType", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "status",
-        "columns": {
-            "status": {"fhir_key": "status", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "type.text",
-        "columns": {
-            "type_text": {"type": "str"},
-        },
-    },
-    {
-        "fhir_path": "policyHolder",
-        "fhir_reference": "policy_holder_reference",
-        "columns": {
-            "policy_holder_reference": {"fhir_key": "reference", "type": "str"},
-            "policy_holder_type": {"fhir_key": "type", "type": "str"},
-            "policy_holder_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "subscriber",
-        "fhir_reference": "subscriber_reference",
-        "columns": {
-            "subscriber_reference": {"fhir_key": "reference", "type": "str"},
-            "subscriber_type": {"fhir_key": "type", "type": "str"},
-            "subscriber_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "subscriberId",
-        "columns": {
-            "subscriber_id": {"fhir_key": "subscriberId", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "beneficiary",
-        "fhir_reference": "beneficiary_reference",
-        "columns": {
-            "beneficiary_reference": {"fhir_key": "reference", "type": "str"},
-            "beneficiary_type": {"fhir_key": "type", "type": "str"},
-            "beneficiary_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "dependent",
-        "columns": {
-            "dependent": {"fhir_key": "dependent", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "relationship.text",
-        "columns": {
-            "relationship_text": {"type": "str"},
-        },
-    },
-    {
-        "fhir_path": "period",
-        "columns": {
-            "period_start": {"fhir_key": "start", "type": "datetime"},
-            "period_end": {"fhir_key": "end", "type": "datetime"},
-        },
-    },
-    {
-        "fhir_path": "order",
-        "columns": {
-            "order": {"fhir_key": "order", "type": "int"},
-        },
-    },
-    {
-        "fhir_path": "network",
-        "columns": {
-            "network": {"fhir_key": "network", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "subrogation",
-        "columns": {
-            "subrogation": {"fhir_key": "subrogation", "type": "bool"},
-        },
-    },
-]
+
+VIEW_DEFINITION = {
+    "resource": "Coverage",
+    "name": "coverage",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                    "type": "string",
+                },
+                {"name": "status", "path": "status", "type": "string"},
+                {"name": "type_text", "path": "type.text", "type": "string"},
+                {
+                    "name": "policy_holder_reference",
+                    "path": "policyHolder.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "policy_holder_type",
+                    "path": "policyHolder.type",
+                    "type": "string",
+                },
+                {
+                    "name": "policy_holder_display",
+                    "path": "policyHolder.display",
+                    "type": "string",
+                },
+                {
+                    "name": "subscriber_reference",
+                    "path": "subscriber.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "subscriber_type",
+                    "path": "subscriber.type",
+                    "type": "string",
+                },
+                {
+                    "name": "subscriber_display",
+                    "path": "subscriber.display",
+                    "type": "string",
+                },
+                {
+                    "name": "subscriber_id",
+                    "path": "subscriberId",
+                    "type": "string",
+                },
+                {
+                    "name": "beneficiary_reference",
+                    "path": "beneficiary.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "beneficiary_type",
+                    "path": "beneficiary.type",
+                    "type": "string",
+                },
+                {
+                    "name": "beneficiary_display",
+                    "path": "beneficiary.display",
+                    "type": "string",
+                },
+                {"name": "dependent", "path": "dependent", "type": "string"},
+                {
+                    "name": "relationship_text",
+                    "path": "relationship.text",
+                    "type": "string",
+                },
+                {
+                    "name": "period_start",
+                    "path": "period.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "period_end",
+                    "path": "period.end",
+                    "type": "dateTime",
+                },
+                {"name": "order", "path": "order", "type": "integer"},
+                {"name": "network", "path": "network", "type": "string"},
+                {
+                    "name": "subrogation",
+                    "path": "subrogation",
+                    "type": "string",
+                },
+            ]
+        }
+    ],
+}
 
 
 class CoverageTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Coverage' resource in FHIR.
-
-    Transform Coverage JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_schema (list[dict]): The transformation dictionary used to map
-          and transform the resource data
-
-    Methods:
-        __init__(self):
-            Initializes the CoverageTransformer instance with the resource
-            type 'Coverage' and a transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Coverage", None, TRANSFORM_SCHEMA)
+        super().__init__("Coverage", None, VIEW_DEFINITION)

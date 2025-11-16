@@ -1,32 +1,46 @@
 """
-FHIR Resource Transformer Module
-================================
+FHIR transformers
 
-This module defines a base class for transforming FHIR resources into tabular
-representations (e.g., CSV, DataFrame) using **SQL-on-FHIR** evaluation logic.
+This transformation dictionary defines how to extract and map fields from FHIR
+resource JSON objects into a flat dictionary format suitable for CSV output
+or other tabular representations.
 
-Overview
---------
-Instead of manually evaluating FHIRPath expressions, this implementation
-leverages the `sqlonfhir` library to evaluate FHIR `ViewDefinition` resources.
-Each `ViewDefinition` specifies which fields to extract and how to structure
-the flattened output from nested FHIR resources.
+Transform Dictionary
+--------------------
+Structure:
+- Each item in the list corresponds to a specific field in the FHIR Observation
+resource.
+- 'fhir_path': A string representing the path to the desired field within the
+FHIR resource.
+- 'columns': A dictionary mapping output CSV column names to their corresponding
+extraction details:
+    - 'fhir_key': The key used to extract the value from the FHIR resource.
+    - 'type': The expected data type of the extracted value (e.g., 'str', 'int').
 
-The transformer is designed to:
-- Read FHIR resource JSON or NDJSON files.
-- Evaluate them using a SQL-on-FHIR `ViewDefinition`.
-- Convert the results into a list of dictionaries suitable for CSV export
-  or further analysis.
+Example Entry:
+{
+    "fhir_path": "id",
+    "columns": {
+        "id": {
+            "fhir_key": "id",
+            "type": "str"
+        }
+    }
+}
+Usage:
+This dictionary is utilized by the `FhirResourceTransformer` base class and its
+subclasses to systematically extract and transform data from FHIR resources into
+a flat structure. Subclasses must create their own dictionary to
+accommodate resource-specific fields and transformation logic.
 """
 
-import csv
 import json
 import logging
-import uuid
 from collections.abc import Generator, Iterable
 from pprint import pformat
 from typing import Any
 
+import pandas
 from sqlonfhir import evaluate
 
 from radiant_fhir_transform_cli.utils.misc import camel_to_snake
@@ -47,16 +61,20 @@ class FhirResourceTransformer:
     """
     Abstract base class to transform FHIR resources into a column dictionary
 
-        This class provides functionality for evaluating FHIR resources using
-    `sqlonfhir.evaluate()` based on a provided `ViewDefinition`. The evaluated
-    output is then transformed into a flat list of dictionaries suitable for
-    writing to CSV or other tabular formats.
+    Extracts values from FHIR resources using FHIRPath expressions defined
+    in the transform_dict.
+
+    Transform schema
+    --------------
+    Keys are output columns in a csv file. Values are FHIR path expressions to
+    the field value to be extracted from the FHIR JSON object
+
+    See https://hl7.org/fhir/R4/fhirpath.html for FHIRPath spec
 
     Attributes:
-        resource_type (str): The FHIR resource type (e.g., 'Patient', 'Observation').
-        resource_subtype (str | None): Optional subtype (e.g., 'Component').
-        table_name (str): Generated name for the output table or CSV.
-        view_definition (dict): The SQL-on-FHIR `ViewDefinition` used for transformation.
+        resource_type (str): The type of the FHIR resource (e.g., 'Patient').
+        transform_schema (list[dict]): A mapping of output columns to FHIRPath
+          expressions
     """
 
     def __init__(
@@ -66,12 +84,11 @@ class FhirResourceTransformer:
         view_definition: dict,
     ):
         """
-        Initialize a FHIR resource transformer.
+        Initializes the transformer with the resource type and column map.
 
         Args:
-            resource_type (str): The FHIR resource type to transform.
-            resource_subtype (str | None): Optional subtype for more granular naming.
-            view_definition (dict): SQL-on-FHIR ViewDefinition used to define extraction logic.
+            resource_type (str): The type of the FHIR resource.
+            transform_dict (dict): FHIRPath-to-column name mapping.
         """
         self.resource_type: str = resource_type
         self.resource_subtype: str | None = resource_subtype
@@ -80,35 +97,26 @@ class FhirResourceTransformer:
         )
         self.view_definition: dict = view_definition
 
-    def _resolve_uuid(self, row_dicts: list[dict]) -> list[dict]:
-        """
-        TODO
-        """
-        for row in row_dicts:
-            for k, v in row.items():
-                if v == "uuid()" or v is None:
-                    row[k] = str(uuid.uuid4())
-        return row_dicts
-
     def transform_resource(
         self, resource_idx: int, resource_dict: dict
     ) -> list[dict[str, str]]:
         """
-        Apply the ViewDefinition to a single FHIR resource.
+        Transforms the given FHIR resource dictionary based on the column map.
+
+        Evaluates each FHIRPath expression and returns a dictionary with the
+        corresponding column names as keys and evaluated values as values.
 
         Args:
-            resource_idx (int): Index of the resource (used for logging).
-            resource_dict (dict): A FHIR resource JSON object.
+            resource_dict (dict): A dictionary representing a FHIR resource.
 
         Returns:
-            list[dict[str, str]]: Flattened tabular results produced by `sqlonfhir.evaluate()`.
+            dict: A dictionary with column names and evaluated FHIRPath values.
         """
         results = evaluate(
             resources=[resource_dict], view_definition=self.view_definition
         )
-        results = self._resolve_uuid(results)
 
-        logger.info(
+        logger.debug(
             "Transformed %s %s into %s",
             self.resource_type,
             resource_idx,
@@ -138,65 +146,54 @@ class FhirResourceTransformer:
             for i, line in enumerate(f):
                 yield self.transform_resource(i, json.loads(line.strip()))
 
-    def transform_from_json(self, json_filepath: str) -> list[dict[str, str]]:
+    def transform_from_json(
+        self, json_filepath
+    ) -> Generator[list[dict[str, Any]], None, None]:
         """
-        Transforms data from a JSON file into a CSV file, yielding each
-        transformed row as it's written.
+        Transforms data from a JSON file into a list of dictionaries.
 
         Args:
-            json_filepath: Path to the JSON file containing FHIR resources.
-            csv_filepath: Path to the CSV file to append results to.
+            json_filepath (str): The path to the JSON file to transform.
+
+        Yields:
+            dict: A dictionary representing each record in the JSON file.
 
         Returns:
-            list: List of each transformed row as a dictionary.
+            Generator[dict, None, list[dict]]: A generator that yields
+              dictionaries for each record and returns a list of all
+              dictionaries at the end.
         """
-        logger.info("Starting %s", type(self).__name__)
-        logger.info(pformat(self.view_definition))
-
         with open(json_filepath, "r") as f:
             data = json.load(f)
-            # Normalize to list
             if isinstance(data, dict):
                 objs = [data]
             else:
                 objs = data
 
-        results = []
-        for i, resource in enumerate(objs):
-            row_dicts = self.transform_resource(i, resource)
-            results.extend(row_dicts)
-
-        return results
+            for i, resource in enumerate(objs):
+                yield self.transform_resource(i, resource)
 
     def write_to_csv(
-        self,
-        rows: Iterable[dict[str, Any]],
-        csv_filepath: str,
-    ) -> None:
+        self, row_dicts: Iterable[dict[str, Any]], csv_filepath: str
+    ):
         """
-        Stream-write rows from a generator (or any iterable of dicts)
-        to a CSV file.
-
-        This method writes incrementally as each row is yielded, keeping
-        memory usage low for large datasets.
+        Writes a list of dictionaries to a CSV file.
 
         Args:
-            rows: An iterable or generator yielding dictionaries, where each
-              dict represents one CSV row.
-            csv_filepath: Path to the CSV file to write to.
+            row_dicts (Iterable[dict]): An iterable of dictionaries to write
+              to the CSV file.
+            csv_filepath (str): The path where the CSV file will be written.
 
         Returns:
             None
         """
-        writer = None
-        with open(csv_filepath, "w", newline="") as csvfile:
-            for row in rows:
-                if row is None:
-                    continue  # skip None values
-                if writer is None:
-                    # Initialize writer with columns from first row
-                    fieldnames = list(row.keys())
-                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-                    writer.writeheader()
-
-                writer.writerow(row)
+        first_batch = True
+        for row_dict in row_dicts:
+            df = pandas.DataFrame(row_dict)
+            df.to_csv(
+                csv_filepath,
+                mode="w" if first_batch else "a",
+                header=first_batch,
+                index=False,
+            )
+            first_batch = False

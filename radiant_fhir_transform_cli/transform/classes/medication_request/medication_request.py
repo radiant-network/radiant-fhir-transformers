@@ -1,326 +1,347 @@
-"""
-FHIR MedicationRequest transformer
-"""
+"""FHIR MedicationRequest transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {"id": {"fhir_key": "id", "type": "str"}},
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {
-            "resource_type": {
-                "fhir_key": "resourceType",
-                "type": "str",
-            }
-        },
-    },
-    {
-        "fhir_path": "status",
-        "columns": {"status": {"fhir_key": "status", "type": "str"}},
-    },
-    {
-        "fhir_path": "statusReason.text",
-        "columns": {"status_reason_text": {"fhir_key": "text", "type": "str"}},
-    },
-    {
-        "fhir_path": "intent",
-        "columns": {"intent": {"fhir_key": "intent", "type": "str"}},
-    },
-    {
-        "fhir_path": "priority",
-        "columns": {"priority": {"fhir_key": "priority", "type": "str"}},
-    },
-    {
-        "fhir_path": "doNotPerform",
-        "columns": {
-            "do_not_perform": {"fhir_key": "doNotPerform", "type": "bool"}
-        },
-    },
-    {
-        "fhir_path": "reportedBoolean",
-        "columns": {
-            "reported_boolean": {"fhir_key": "reportedBoolean", "type": "bool"}
-        },
-    },
-    {
-        "fhir_path": "reportedReference",
-        "fhir_reference": "reported_reference_reference",
-        "columns": {
-            "reported_reference_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "reported_reference_type": {"fhir_key": "type", "type": "str"},
-            "reported_reference_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "medicationCodeableConcept.text",
-        "columns": {
-            "medication_codeable_concept_text": {
-                "fhir_key": "text",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "medicationReference",
-        "fhir_reference": "medication_reference_reference",
-        "columns": {
-            "medication_reference_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "medication_reference_type": {"fhir_key": "type", "type": "str"},
-            "medication_reference_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "subject",
-        "fhir_reference": "subject_reference",
-        "columns": {
-            "subject_reference": {"fhir_key": "reference", "type": "str"},
-            "subject_type": {"fhir_key": "type", "type": "str"},
-            "subject_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "encounter",
-        "fhir_reference": "encounter_reference",
-        "columns": {
-            "encounter_reference": {"fhir_key": "reference", "type": "str"},
-            "encounter_type": {"fhir_key": "type", "type": "str"},
-            "encounter_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "authoredOn",
-        "columns": {
-            "authored_on": {"fhir_key": "authoredOn", "type": "datetime"},
-        },
-    },
-    {
-        "fhir_path": "requester",
-        "fhir_reference": "requester_reference",
-        "columns": {
-            "requester_reference": {"fhir_key": "reference", "type": "str"},
-            "requester_type": {"fhir_key": "type", "type": "str"},
-            "requester_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "performer",
-        "fhir_reference": "performer_reference",
-        "columns": {
-            "performer_reference": {"fhir_key": "reference", "type": "str"},
-            "performer_type": {"fhir_key": "type", "type": "str"},
-            "performer_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "performerType.text",
-        "columns": {
-            "performer_type_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "recorder",
-        "fhir_reference": "recorder_reference",
-        "columns": {
-            "recorder_reference": {"fhir_key": "reference", "type": "str"},
-            "recorder_type": {"fhir_key": "type", "type": "str"},
-            "recorder_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "groupIdentifier",
-        "columns": {
-            "group_identifier_use": {"fhir_key": "use", "type": "str"},
-            "group_identifier_system": {"fhir_key": "system", "type": "str"},
-            "group_identifier_value": {"fhir_key": "value", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "courseOfTherapyType.text",
-        "columns": {
-            "course_of_therapy_type_text": {"fhir_key": "text", "type": "str"}
-        },
-    },
-    {
-        "fhir_path": "dispenseRequest",
-        "columns": {
-            "dispense_request_initial_fill_quantity_value": {
-                "fhir_key": "initialFill.quantity.value",
-                "type": "str",
-            },
-            "dispense_request_initial_fill_quantity_unit": {
-                "fhir_key": "initialFill.quantity.unit",
-                "type": "str",
-            },
-            "dispense_request_initial_fill_quantity_system": {
-                "fhir_key": "initialFill.quantity.system",
-                "type": "str",
-            },
-            "dispense_request_initial_fill_quantity_code": {
-                "fhir_key": "initialFill.quantity.code",
-                "type": "str",
-            },
-            "dispense_request_initial_fill_duration_value": {
-                "fhir_key": "initialFill.duration.value",
-                "type": "str",
-            },
-            "dispense_request_initial_fill_duration_unit": {
-                "fhir_key": "initialFill.duration.unit",
-                "type": "str",
-            },
-            "dispense_request_initial_fill_duration_system": {
-                "fhir_key": "initialFill.duration.system",
-                "type": "str",
-            },
-            "dispense_request_initial_fill_duration_code": {
-                "fhir_key": "initialFill.duration.code",
-                "type": "str",
-            },
-            "dispense_request_dispense_interval_value": {
-                "fhir_key": "dispenseInterval.value",
-                "type": "str",
-            },
-            "dispense_request_dispense_interval_unit": {
-                "fhir_key": "dispenseInterval.unit",
-                "type": "str",
-            },
-            "dispense_request_dispense_interval_system": {
-                "fhir_key": "dispenseInterval.system",
-                "type": "str",
-            },
-            "dispense_request_dispense_interval_code": {
-                "fhir_key": "dispenseInterval.code",
-                "type": "str",
-            },
-            "dispense_request_validity_period_start": {
-                "fhir_key": "validityPeriod.start",
-                "type": "datetime",
-            },
-            "dispense_request_validity_period_end": {
-                "fhir_key": "validityPeriod.end",
-                "type": "datetime",
-            },
-            "dispense_request_number_of_repeats_allowed": {
-                "fhir_key": "numberOfRepeatsAllowed",
-                "type": "int",
-            },
-            "dispense_request_quantity_value": {
-                "fhir_key": "quantity.value",
-                "type": "str",
-            },
-            "dispense_request_quantity_unit": {
-                "fhir_key": "quantity.unit",
-                "type": "str",
-            },
-            "dispense_request_quantity_system": {
-                "fhir_key": "quantity.system",
-                "type": "str",
-            },
-            "dispense_request_quantity_code": {
-                "fhir_key": "quantity.code",
-                "type": "str",
-            },
-            "dispense_request_expected_supply_duration_value": {
-                "fhir_key": "expectedSupplyDuration.value",
-                "type": "str",
-            },
-            "dispense_request_expected_supply_duration_unit": {
-                "fhir_key": "expectedSupplyDuration.unit",
-                "type": "str",
-            },
-            "dispense_request_expected_supply_duration_system": {
-                "fhir_key": "expectedSupplyDuration.system",
-                "type": "str",
-            },
-            "dispense_request_expected_supply_duration_code": {
-                "fhir_key": "expectedSupplyDuration.code",
-                "type": "str",
-            },
-            "dispense_request_performer_reference": {
-                "fhir_key": "performer.reference",
-                "type": "str",
-            },
-            "dispense_request_performer_type": {
-                "fhir_key": "performer.type",
-                "type": "str",
-            },
-            "dispense_request_performer_display": {
-                "fhir_key": "performer.display",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "substitution",
-        "columns": {
-            "substitution_allowed_boolean": {
-                "fhir_key": "allowedBoolean",
-                "type": "bool",
-            },
-            "substitution_allowed_codeable_concept_text": {
-                "fhir_key": "allowedCodeableConcept.text",
-                "type": "str",
-            },
-            "substitution_reason_text": {
-                "fhir_key": "reason.text",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "priorPrescription",
-        "fhir_reference": "prior_prescription_reference",
-        "columns": {
-            "prior_prescription_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "prior_prescription_type": {"fhir_key": "type", "type": "str"},
-            "prior_prescription_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
-        },
-    },
-]
+
+VIEW_DEFINITION = {
+    "resource": "MedicationRequest",
+    "name": "medication_request",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                    "type": "string",
+                },
+                {"name": "status", "path": "status", "type": "string"},
+                {
+                    "name": "status_reason_text",
+                    "path": "statusReason.text",
+                    "type": "string",
+                },
+                {"name": "intent", "path": "intent", "type": "string"},
+                {"name": "priority", "path": "priority", "type": "string"},
+                {
+                    "name": "do_not_perform",
+                    "path": "doNotPerform",
+                    "type": "string",
+                },
+                {
+                    "name": "reported_boolean",
+                    "path": "reportedBoolean",
+                    "type": "string",
+                },
+                {
+                    "name": "reported_reference_reference",
+                    "path": "reportedReference.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "reported_reference_type",
+                    "path": "reportedReference.type",
+                    "type": "string",
+                },
+                {
+                    "name": "reported_reference_display",
+                    "path": "reportedReference.display",
+                    "type": "string",
+                },
+                {
+                    "name": "medication_codeable_concept_text",
+                    "path": "medicationCodeableConcept.text",
+                    "type": "string",
+                },
+                {
+                    "name": "medication_reference_reference",
+                    "path": "medicationReference.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "medication_reference_type",
+                    "path": "medicationReference.type",
+                    "type": "string",
+                },
+                {
+                    "name": "medication_reference_display",
+                    "path": "medicationReference.display",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_reference",
+                    "path": "subject.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_type",
+                    "path": "subject.type",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_display",
+                    "path": "subject.display",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_reference",
+                    "path": "encounter.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_type",
+                    "path": "encounter.type",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_display",
+                    "path": "encounter.display",
+                    "type": "string",
+                },
+                {
+                    "name": "authored_on",
+                    "path": "authoredOn",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "requester_reference",
+                    "path": "requester.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "requester_type",
+                    "path": "requester.type",
+                    "type": "string",
+                },
+                {
+                    "name": "requester_display",
+                    "path": "requester.display",
+                    "type": "string",
+                },
+                {
+                    "name": "performer_reference",
+                    "path": "performer.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "performer_type",
+                    "path": "performer.type",
+                    "type": "string",
+                },
+                {
+                    "name": "performer_display",
+                    "path": "performer.display",
+                    "type": "string",
+                },
+                {
+                    "name": "performer_type_text",
+                    "path": "performerType.text",
+                    "type": "string",
+                },
+                {
+                    "name": "recorder_reference",
+                    "path": "recorder.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "recorder_type",
+                    "path": "recorder.type",
+                    "type": "string",
+                },
+                {
+                    "name": "recorder_display",
+                    "path": "recorder.display",
+                    "type": "string",
+                },
+                {
+                    "name": "group_identifier_use",
+                    "path": "groupIdentifier.use",
+                    "type": "string",
+                },
+                {
+                    "name": "group_identifier_system",
+                    "path": "groupIdentifier.system",
+                    "type": "string",
+                },
+                {
+                    "name": "group_identifier_value",
+                    "path": "groupIdentifier.value",
+                    "type": "string",
+                },
+                {
+                    "name": "course_of_therapy_type_text",
+                    "path": "courseOfTherapyType.text",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_initial_fill_quantity_value",
+                    "path": "dispenseRequest.initialFill.quantity.value",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_initial_fill_quantity_unit",
+                    "path": "dispenseRequest.initialFill.quantity.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_initial_fill_quantity_system",
+                    "path": "dispenseRequest.initialFill.quantity.system",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_initial_fill_quantity_code",
+                    "path": "dispenseRequest.initialFill.quantity.code",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_initial_fill_duration_value",
+                    "path": "dispenseRequest.initialFill.duration.value",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_initial_fill_duration_unit",
+                    "path": "dispenseRequest.initialFill.duration.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_initial_fill_duration_system",
+                    "path": "dispenseRequest.initialFill.duration.system",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_initial_fill_duration_code",
+                    "path": "dispenseRequest.initialFill.duration.code",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_dispense_interval_value",
+                    "path": "dispenseRequest.dispenseInterval.value",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_dispense_interval_unit",
+                    "path": "dispenseRequest.dispenseInterval.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_dispense_interval_system",
+                    "path": "dispenseRequest.dispenseInterval.system",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_dispense_interval_code",
+                    "path": "dispenseRequest.dispenseInterval.code",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_validity_period_start",
+                    "path": "dispenseRequest.validityPeriod.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "dispense_request_validity_period_end",
+                    "path": "dispenseRequest.validityPeriod.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "dispense_request_number_of_repeats_allowed",
+                    "path": "dispenseRequest.numberOfRepeatsAllowed",
+                    "type": "integer",
+                },
+                {
+                    "name": "dispense_request_quantity_value",
+                    "path": "dispenseRequest.quantity.value",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_quantity_unit",
+                    "path": "dispenseRequest.quantity.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_quantity_system",
+                    "path": "dispenseRequest.quantity.system",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_quantity_code",
+                    "path": "dispenseRequest.quantity.code",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_expected_supply_duration_value",
+                    "path": "dispenseRequest.expectedSupplyDuration.value",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_expected_supply_duration_unit",
+                    "path": "dispenseRequest.expectedSupplyDuration.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_expected_supply_duration_system",
+                    "path": "dispenseRequest.expectedSupplyDuration.system",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_expected_supply_duration_code",
+                    "path": "dispenseRequest.expectedSupplyDuration.code",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_performer_reference",
+                    "path": "dispenseRequest.performer.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_performer_type",
+                    "path": "dispenseRequest.performer.type",
+                    "type": "string",
+                },
+                {
+                    "name": "dispense_request_performer_display",
+                    "path": "dispenseRequest.performer.display",
+                    "type": "string",
+                },
+                {
+                    "name": "substitution_allowed_boolean",
+                    "path": "substitution.allowedBoolean",
+                    "type": "string",
+                },
+                {
+                    "name": "substitution_allowed_codeable_concept_text",
+                    "path": "substitution.allowedCodeableConcept.text",
+                    "type": "string",
+                },
+                {
+                    "name": "substitution_reason_text",
+                    "path": "substitution.reason.text",
+                    "type": "string",
+                },
+                {
+                    "name": "prior_prescription_reference",
+                    "path": "priorPrescription.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "prior_prescription_type",
+                    "path": "priorPrescription.type",
+                    "type": "string",
+                },
+                {
+                    "name": "prior_prescription_display",
+                    "path": "priorPrescription.display",
+                    "type": "string",
+                },
+            ]
+        }
+    ],
+}
 
 
 class MedicationRequestTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'MedicationRequest' resource in FHIR.
-
-    Transform MedicationRequest JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_schema (list[dict]): The transformation dictionary used to map
-          and transform the resource data
-
-    Methods:
-        __init__(self):
-            Initializes the MedicationRequestTransformer instance with the resource
-            type 'MedicationRequest' and a transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("MedicationRequest", None, TRANSFORM_SCHEMA)
+        super().__init__("MedicationRequest", None, VIEW_DEFINITION)

@@ -1,65 +1,48 @@
-"""
-FHIR Specimen Collection Method Coding transformer
-"""
+"""FHIR Specimen collection_method_coding transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Specimen",
+    "name": "specimen_collection_method_coding",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "specimen_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "specimen_id": {"type": "str"},
+        {
+            "forEach": "collection.method.coding",
+            "column": [
+                {
+                    "name": "collection_method_coding_system",
+                    "path": "system",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_method_coding_code",
+                    "path": "code",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_method_coding_display",
+                    "path": "display",
+                    "type": "string",
+                },
+            ],
         },
-    },
-    {
-        "fhir_path": "collection.method.coding",
-        "columns": {
-            "collection_method_coding_system": {
-                "fhir_key": "system",
-                "type": "str",
-            },
-            "collection_method_coding_code": {
-                "fhir_key": "code",
-                "type": "str",
-            },
-            "collection_method_coding_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
-        },
-    },
-]
+    ],
+}
 
 
 class SpecimenCollectionMethodCodingTransformer(FhirResourceTransformer):
-    """
-    Transformer class for the 'Specimen' resource in FHIR, focusing on the 'collection.method.coding' element.
-
-    This class transforms FHIR Specimen JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'collection.method.coding' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Specimen').
-        subtype (str): Specifies the sub-element of the resource to focus on ('collection.method.coding').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the SpecimenCollectionMethodCodingTransformer instance with the resource type 'Specimen',
-            subtype 'collection.method.coding', and the specified transformation dictionary.
-    """
-
     def __init__(self):
         super().__init__(
-            "Specimen", "collection_method_coding", TRANSFORM_SCHEMA
+            "Specimen", "collection_method_coding", VIEW_DEFINITION
         )

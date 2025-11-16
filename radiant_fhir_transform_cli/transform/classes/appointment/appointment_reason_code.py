@@ -1,54 +1,38 @@
-"""
-FHIR Appointment Reason Code transformer
-"""
+"""FHIR Appointment reason_code transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Appointment",
+    "name": "appointment_reason_code",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "appointment_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "appointment_id": {"type": "str"},
+        {
+            "forEach": "reasonCode",
+            "column": [
+                {
+                    "name": "reason_code_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {"name": "reason_code_text", "path": "text", "type": "string"},
+            ],
         },
-    },
-    {
-        "fhir_path": "reasonCode",
-        "columns": {
-            "reason_code_coding": {"fhir_key": "coding", "type": "str"},
-            "reason_code_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class AppointmentReasonCodeTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Appointment' resource in FHIR, focusing on the 'reasonCode' element.
-
-    This class transforms FHIR Appointment JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'reasonCode' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Appointment').
-        subtype (str): Specifies the sub-element of the resource to focus on ('reason_code').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the AppointmentReasonCodeTransformer instance with the resource type 'Appointment',
-            subtype 'reason_code', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Appointment", "reason_code", TRANSFORM_SCHEMA)
+        super().__init__("Appointment", "reason_code", VIEW_DEFINITION)

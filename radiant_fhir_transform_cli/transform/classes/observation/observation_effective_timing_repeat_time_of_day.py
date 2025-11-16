@@ -1,62 +1,42 @@
-"""
-FHIR Observation EffectiveTiming Repeat TimeOfDay transformer
-"""
+"""FHIR Observation effective_timing_repeat_time_of_day transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Observation",
+    "name": "observation_effective_timing_repeat_time_of_day",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "observation_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "observation_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "effectiveTiming.repeat.timeOfDay",
+            "column": [
+                {
+                    "name": "effective_timing_repeat_time_of_day",
+                    "path": "$this",
+                    "type": "string",
+                }
+            ],
         },
-    },
-    {
-        "fhir_path": "effectiveTiming.repeat.timeOfDay",
-        "columns": {
-            "effective_timing_repeat_time_of_day": {
-                "fhir_key": "timeOfDay",
-                "type": "str",
-            },
-        },
-    },
-]
+    ],
+}
 
 
 class ObservationEffectiveTimingRepeatTimeOfDayTransformer(
     FhirResourceTransformer
 ):
-    """
-    Transformer class for the 'Observation' resource in FHIR, focusing on the 'effectiveTiming.repeat.timeOfDay' element.
-
-    This class transforms FHIR Observation JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'effectiveTiming.repeat.timeOfDay' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Observation').
-        subtype (str): Specifies the sub-element of the resource to focus on ('effective_timing_repeat_time_of_day').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the ObservationEffectiveTimingRepeatTimeOfDayTransformer instance with the resource type 'Observation',
-            subtype 'effective_timing_repeat_time_of_day', and the specified transformation dictionary.
-    """
-
     def __init__(self):
         super().__init__(
             "Observation",
             "effective_timing_repeat_time_of_day",
-            TRANSFORM_SCHEMA,
+            VIEW_DEFINITION,
         )

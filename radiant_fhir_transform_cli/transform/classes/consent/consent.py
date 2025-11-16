@@ -1,139 +1,128 @@
-"""
-FHIR Consent transformer
-"""
+"""FHIR Consent transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {
-            "id": {"fhir_key": "id", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {
-            "resource_type": {"fhir_key": "resourceType", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "status",
-        "columns": {
-            "status": {"fhir_key": "status", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "scope",
-        "columns": {
-            "scope_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "patient",
-        "fhir_reference": "patient_reference",
-        "columns": {
-            "patient_reference": {"fhir_key": "reference", "type": "str"},
-            "patient_type": {"fhir_key": "type", "type": "str"},
-            "patient_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "dateTime",
-        "columns": {
-            "date_time": {"fhir_key": "dateTime", "type": "datetime"},
-        },
-    },
-    {
-        "fhir_path": " sourceAttachment",
-        "columns": {
-            "source_attachment_content_type": {
-                "fhir_key": "contentType",
-                "type": "str",
-            },
-            "source_attachment_language": {
-                "fhir_key": "language",
-                "type": "str",
-            },
-            # TODO: Handling base64Binary Data Types in Transformers (See https://github.com/radiant-network/radiant-fhir-transformers/issues/53)
-            # "source_attachment_data": {"fhir_key": "data", "type": "str"},
-            "source_attachment_url": {"fhir_key": "url", "type": "str"},
-            "source_attachment_size": {"fhir_key": "size", "type": "int"},
-            # TODO: Handling base64Binary Data Types in Transformers (See https://github.com/radiant-network/radiant-fhir-transformers/issues/53)
-            # "source_attachment_hash": {"fhir_key": "hash", "type": "str"},
-            "source_attachment_title": {"fhir_key": "title", "type": "str"},
-            "source_attachment_creation": {
-                "fhir_key": "creation",
-                "type": "datetime",
-            },
-        },
-    },
-    {
-        "fhir_path": "sourceReference",
-        "fhir_reference": "source_reference_reference",
-        "columns": {
-            "source_reference_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "source_reference_type": {"fhir_key": "type", "type": "str"},
-            "source_reference_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "policyRule",
-        "columns": {
-            "policy_rule_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "provision",
-        "columns": {
-            "provision_type": {"fhir_key": "type", "type": "str"},
-            "provision_period_start": {
-                "fhir_key": "period.start",
-                "type": "datetime",
-            },
-            "provision_period_end": {
-                "fhir_key": "period.end",
-                "type": "datetime",
-            },
-            "provision_data_period_start": {
-                "fhir_key": "dataPeriod.start",
-                "type": "datetime",
-            },
-            "provision_data_period_end": {
-                "fhir_key": "dataPeriod.end",
-                "type": "datetime",
-            },
-            # TODO: Support for Nested Lists (See https://github.com/radiant-network/radiant-fhir-transformers/issues/34)
-            "provision_provision": {"fhir_key": "provision", "type": "str"},
-        },
-    },
-]
+
+VIEW_DEFINITION = {
+    "resource": "Consent",
+    "name": "consent",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                    "type": "string",
+                },
+                {"name": "status", "path": "status", "type": "string"},
+                {"name": "scope_text", "path": "scope.text", "type": "string"},
+                {
+                    "name": "patient_reference",
+                    "path": "patient.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_type",
+                    "path": "patient.type",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_display",
+                    "path": "patient.display",
+                    "type": "string",
+                },
+                {"name": "date_time", "path": "dateTime", "type": "dateTime"},
+                {
+                    "name": "source_attachment_content_type",
+                    "path": "sourceAttachment.contentType",
+                    "type": "string",
+                },
+                {
+                    "name": "source_attachment_language",
+                    "path": "sourceAttachment.language",
+                    "type": "string",
+                },
+                {
+                    "name": "source_attachment_url",
+                    "path": "sourceAttachment.url",
+                    "type": "string",
+                },
+                {
+                    "name": "source_attachment_size",
+                    "path": "sourceAttachment.size",
+                    "type": "integer",
+                },
+                {
+                    "name": "source_attachment_title",
+                    "path": "sourceAttachment.title",
+                    "type": "string",
+                },
+                {
+                    "name": "source_attachment_creation",
+                    "path": "sourceAttachment.creation",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "source_reference_reference",
+                    "path": "sourceReference.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "source_reference_type",
+                    "path": "sourceReference.type",
+                    "type": "string",
+                },
+                {
+                    "name": "source_reference_display",
+                    "path": "sourceReference.display",
+                    "type": "string",
+                },
+                {
+                    "name": "policy_rule_text",
+                    "path": "policyRule.text",
+                    "type": "string",
+                },
+                {
+                    "name": "provision_type",
+                    "path": "provision.type",
+                    "type": "string",
+                },
+                {
+                    "name": "provision_period_start",
+                    "path": "provision.period.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "provision_period_end",
+                    "path": "provision.period.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "provision_data_period_start",
+                    "path": "provision.dataPeriod.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "provision_data_period_end",
+                    "path": "provision.dataPeriod.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "provision_provision",
+                    "path": "provision.provision",
+                    "type": "string",
+                    "collection": True,
+                },
+            ]
+        }
+    ],
+}
 
 
 class ConsentTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Consent' resource in FHIR.
-
-    Transform Consent JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_schema (list[dict]): The transformation dictionary used to map
-          and transform the resource data
-
-    Methods:
-        __init__(self):
-            Initializes the ConsentTransformer instance with the resource
-            type 'Consent' and a transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Consent", None, TRANSFORM_SCHEMA)
+        super().__init__("Consent", None, VIEW_DEFINITION)
