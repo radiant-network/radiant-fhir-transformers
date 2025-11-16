@@ -88,10 +88,8 @@ class FhirResourceTransformer:
         )
         self.view_definition: dict = view_definition
 
-    def _filter_out_empty_rows(
-        self, row_dicts: list[dict[str, Any]]
-    ) -> list[dict[str, Any]]:
-        """Remove rows where all non-ID columns are empty or None.
+    def _filter_out_empty_row(self, row_dict: dict[str, Any]) -> dict[str, Any]:
+        """Remove row where all non-ID columns are empty or None.
 
         Args:
             row_dicts: List of row dictionaries produced by evaluation.
@@ -102,19 +100,16 @@ class FhirResourceTransformer:
         id_col = "id"
         foreign_key_col = f"{camel_to_snake(self.resource_type)}_id"
 
-        return [
-            row
-            for row in row_dicts
-            if not all(
-                str(row.get(c)) in {"", "None"}
-                for c in row
-                if c not in {id_col, foreign_key_col}
-            )
-        ]
+        if not all(
+            str(row_dict.get(c)) in {"", "None"}
+            for c in row_dict
+            if c not in {id_col, foreign_key_col}
+        ):
+            return row_dict
+        else:
+            return None
 
-    def _resolve_uuid(
-        self, row_dicts: list[dict[str, Any]]
-    ) -> list[dict[str, Any]]:
+    def _resolve_uuid(self, row: dict[str, Any]) -> dict[str, Any]:
         """Replace placeholder or missing UUIDs with generated UUID4 strings.
 
         Args:
@@ -123,11 +118,32 @@ class FhirResourceTransformer:
         Returns:
             The same list with UUIDs populated for missing or placeholder values.
         """
-        for row in row_dicts:
-            for k, v in row.items():
-                if v == "uuid()" or v is None:
-                    row[k] = str(uuid.uuid4())
-        return row_dicts
+        for k, v in row.items():
+            if v == "uuid()":
+                row[k] = str(uuid.uuid4())
+        return row
+
+    def _normalize_value(self, row: dict[str, Any]) -> dict[str, Any]:
+        """
+        TODO
+        """
+        for k, v in row.items():
+            if isinstance(v, list) and len(v) == 0:
+                row[k] = None
+        return row
+
+    def _extract_foreign_key_value(self, row: dict[str, Any]) -> dict[str, Any]:
+        """
+        Extract foreign key value from foreign key column
+
+        Example: Patient/pt-1234 becomes pt-1234
+        """
+        fk_column = camel_to_snake(self.resource_type) + "_id"
+        fk_value = row.get(fk_column)
+        if fk_value:
+            row[fk_column] = fk_value.split("/")[-1]
+
+        return row
 
     def transform_resource(
         self, resource_idx: int, resource_dict: dict[str, Any]
@@ -144,16 +160,26 @@ class FhirResourceTransformer:
         results = evaluate(
             resources=[resource_dict], view_definition=self.view_definition
         )
-        results = self._filter_out_empty_rows(results)
-        results = self._resolve_uuid(results)
+        output = []
+
+        # Post-process
+        for row in results:
+            row = self._filter_out_empty_row(row)
+            if not row:
+                continue
+            self._resolve_uuid(row)
+            self._extract_foreign_key_value(row)
+            self._normalize_value(row)
+
+            output.append(row)
 
         logger.info(
             "Transformed %s %s into %s",
             self.resource_type,
             resource_idx,
-            pformat(results),
+            pformat(output),
         )
-        return results
+        return output
 
     def transform_from_ndjson(
         self, ndjson_filepath: str
