@@ -36,10 +36,10 @@ logger = logging.getLogger(__name__)
 def generate_table_name(
     resource_type: str, resource_subtype: str | None
 ) -> str:
-    """Generate a normalized table name for the FHIR resource.
+    """Generate a normalized table name for a FHIR resource.
 
     Converts the resource type and optional subtype from CamelCase to
-    snake_case and concatenates them with an underscore.
+    snake_case, concatenating them with an underscore if a subtype is present.
 
     Args:
         resource_type: The FHIR resource type, e.g., "Patient" or "Observation".
@@ -58,8 +58,8 @@ class FhirResourceTransformer:
     """Base class for transforming FHIR resources into tabular data.
 
     Provides methods to evaluate FHIR resources using `sqlonfhir.evaluate`
-    based on a `ViewDefinition`. Results are flattened into a list of
-    dictionaries suitable for CSV or DataFrame export.
+    based on a provided `ViewDefinition`. Results are flattened into a list
+    of dictionaries suitable for CSV or DataFrame export.
 
     Attributes:
         resource_type: The FHIR resource type (e.g., "Patient").
@@ -88,14 +88,20 @@ class FhirResourceTransformer:
         )
         self.view_definition: dict = view_definition
 
-    def _filter_out_empty_row(self, row_dict: dict[str, Any]) -> dict[str, Any]:
-        """Remove row where all non-ID columns are empty or None.
+    def _filter_out_empty_row(
+        self, row_dict: dict[str, Any]
+    ) -> dict[str, Any] | None:
+        """Filter out a row where all non-ID columns are empty or None.
+
+        Rows that contain only ID or foreign key values and have no populated
+        data fields are excluded from the output.
 
         Args:
-            row_dicts: List of row dictionaries produced by evaluation.
+            row_dict: A single row dictionary produced by SQL-on-FHIR evaluation.
 
         Returns:
-            Filtered list of dictionaries with at least one non-empty column.
+            The same row dictionary if it contains at least one non-empty column;
+            otherwise, returns ``None``.
         """
         id_col = "id"
         foreign_key_col = f"{camel_to_snake(self.resource_type)}_id"
@@ -106,17 +112,19 @@ class FhirResourceTransformer:
             if c not in {id_col, foreign_key_col}
         ):
             return row_dict
-        else:
-            return None
+        return None
 
     def _resolve_uuid(self, row: dict[str, Any]) -> dict[str, Any]:
-        """Replace placeholder or missing UUIDs with generated UUID4 strings.
+        """Replace placeholder UUID strings with generated UUID4 values.
+
+        Fields that contain the literal value ``"uuid()"`` are replaced with
+        a newly generated UUID4 string.
 
         Args:
-            row_dicts: List of row dictionaries with possible placeholders.
+            row: A single row dictionary with possible UUID placeholders.
 
         Returns:
-            The same list with UUIDs populated for missing or placeholder values.
+            The same row dictionary with all placeholder UUIDs replaced.
         """
         for k, v in row.items():
             if v == "uuid()":
@@ -124,8 +132,16 @@ class FhirResourceTransformer:
         return row
 
     def _normalize_value(self, row: dict[str, Any]) -> dict[str, Any]:
-        """
-        TODO
+        """Normalize values in a row to ensure consistent representation.
+
+        Converts empty lists to ``None`` to avoid JSON serialization issues
+        and maintain a consistent null representation.
+
+        Args:
+            row: A row dictionary representing transformed values.
+
+        Returns:
+            The same row dictionary with normalized values.
         """
         for k, v in row.items():
             if isinstance(v, list) and len(v) == 0:
@@ -133,16 +149,21 @@ class FhirResourceTransformer:
         return row
 
     def _extract_foreign_key_value(self, row: dict[str, Any]) -> dict[str, Any]:
-        """
-        Extract foreign key value from foreign key column
+        """Extract the ID portion from a FHIR reference string.
 
-        Example: Patient/pt-1234 becomes pt-1234
+        For foreign key columns like ``Patient/pt-1234``, this method extracts
+        and replaces the value with only the ID segment (e.g., ``pt-1234``).
+
+        Args:
+            row: A row dictionary containing a foreign key column.
+
+        Returns:
+            The same row dictionary with the foreign key value normalized.
         """
         fk_column = camel_to_snake(self.resource_type) + "_id"
         fk_value = row.get(fk_column)
         if fk_value:
             row[fk_column] = fk_value.split("/")[-1]
-
         return row
 
     def transform_resource(
@@ -150,19 +171,22 @@ class FhirResourceTransformer:
     ) -> list[dict[str, Any]]:
         """Apply the ViewDefinition to a single FHIR resource.
 
+        Evaluates the given resource using SQL-on-FHIR, filters out empty
+        rows, normalizes values, extracts foreign keys, and replaces any
+        UUID placeholders.
+
         Args:
-            resource_idx: Zero-based index of the resource being transformed.
-            resource_dict: JSON dict representing a single FHIR resource.
+            resource_idx: Index of the resource being transformed (for logging).
+            resource_dict: JSON dictionary representing a single FHIR resource.
 
         Returns:
-            A list of flattened row dictionaries from sqlonfhir evaluation.
+            A list of flattened and post-processed row dictionaries.
         """
         results = evaluate(
             resources=[resource_dict], view_definition=self.view_definition
         )
-        output = []
+        output: list[dict[str, Any]] = []
 
-        # Post-process
         for row in results:
             row = self._filter_out_empty_row(row)
             if not row:
@@ -170,7 +194,6 @@ class FhirResourceTransformer:
             self._resolve_uuid(row)
             self._extract_foreign_key_value(row)
             self._normalize_value(row)
-
             output.append(row)
 
         logger.info(
@@ -186,30 +209,30 @@ class FhirResourceTransformer:
     ) -> Generator[list[dict[str, Any]], None, None]:
         """Transform an NDJSON file into row dictionaries per FHIR resource.
 
-        Each line in the NDJSON file is parsed and evaluated through
-        `transform_resource`, yielding the resulting row dictionaries.
+        Each line of the NDJSON file is parsed and evaluated using
+        ``transform_resource``, yielding the transformed rows for each resource.
 
         Args:
-            ndjson_filepath: Path to the NDJSON file to transform.
+            ndjson_filepath: Path to the NDJSON file containing FHIR resources.
 
         Yields:
-            Lists of dictionaries representing the flattened resource rows.
+            Lists of row dictionaries representing each transformed resource.
         """
         with open(ndjson_filepath, "r") as f:
             for i, line in enumerate(f):
                 yield self.transform_resource(i, json.loads(line.strip()))
 
     def transform_from_json(self, json_filepath: str) -> list[dict[str, Any]]:
-        """Transform a JSON file of FHIR resources into a tabular structure.
+        """Transform a JSON file of FHIR resources into tabular structures.
 
-        Loads a single JSON object or array of FHIR resources and applies
-        the ViewDefinition transformation to each resource.
+        Reads a JSON file containing one or more FHIR resources and applies
+        the configured ViewDefinition transformation to each.
 
         Args:
             json_filepath: Path to the JSON file containing FHIR resources.
 
         Returns:
-            A list of row dictionaries representing transformed resources.
+            A list of flattened dictionaries representing transformed rows.
 
         Raises:
             ValueError: If the transformation yields zero non-empty rows.
@@ -243,7 +266,7 @@ class FhirResourceTransformer:
 
         Args:
             rows: Iterable of dictionaries, each representing one CSV row.
-            csv_filepath: Path to the CSV file to write output to.
+            csv_filepath: Path to the CSV file where output will be written.
 
         Returns:
             None
