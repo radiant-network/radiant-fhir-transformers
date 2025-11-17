@@ -37,7 +37,7 @@ EXPECTED_OUTPUT = [
                 "display": "Fluid balance regulation",
             }
         ],
-        "hospitalization_diet_preference_text": [None],
+        "hospitalization_diet_preference_text": None,
         "hospitalization_special_courtesy_coding": [
             {
                 "system": "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
@@ -45,7 +45,7 @@ EXPECTED_OUTPUT = [
                 "display": "normal courtesy",
             }
         ],
-        "hospitalization_special_courtesy_text": [None],
+        "hospitalization_special_courtesy_text": None,
         "hospitalization_special_arrangement_coding": [
             {
                 "system": "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements",
@@ -53,7 +53,7 @@ EXPECTED_OUTPUT = [
                 "display": "Wheelchair",
             }
         ],
-        "hospitalization_special_arrangement_text": [None],
+        "hospitalization_special_arrangement_text": None,
         "hospitalization_destination_reference": "Location/2",
         "hospitalization_destination_type": None,
         "hospitalization_destination_display": None,
