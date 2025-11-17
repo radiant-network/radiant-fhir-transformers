@@ -51,6 +51,6 @@ class MedicationRequestSubstitutionAllowedCodeableConceptCodingTransformer(
     def __init__(self):
         super().__init__(
             "MedicationRequest",
-            "substitution_allowed_codeable_concept_conding",
+            "substitution_allowed_codeable_concept_coding",
             VIEW_DEFINITION,
         )
