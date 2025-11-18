@@ -1,56 +1,42 @@
-"""
-FHIR Consent Performer transformer
-"""
+"""FHIR Consent performer transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Consent",
+    "name": "consent_performer",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "consent_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "consent_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "performer",
+            "column": [
+                {
+                    "name": "performer_reference",
+                    "path": "reference",
+                    "type": "string",
+                },
+                {"name": "performer_type", "path": "type", "type": "string"},
+                {
+                    "name": "performer_display",
+                    "path": "display",
+                    "type": "string",
+                },
+            ],
         },
-    },
-    {
-        "fhir_path": "performer",
-        "fhir_reference": "performer_reference",
-        "columns": {
-            "performer_reference": {"fhir_key": "reference", "type": "str"},
-            "performer_type": {"fhir_key": "type", "type": "str"},
-            "performer_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class ConsentPerformerTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Consent' resource in FHIR, focusing on the 'performer' element.
-
-    This class transforms FHIR Consent JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'performer' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Consent').
-        subtype (str): Specifies the sub-element of the resource to focus on ('performer').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the ConsentPerformerTransformer instance with the resource type 'Consent',
-            subtype 'performer', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Consent", "performer", TRANSFORM_SCHEMA)
+        super().__init__("Consent", "performer", VIEW_DEFINITION)

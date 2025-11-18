@@ -1,411 +1,463 @@
-"""
-FHIR Observation transformer
-"""
+"""FHIR Observation transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {
-            "id": {"fhir_key": "id", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {
-            "resource_type": {"fhir_key": "resourceType", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "status",
-        "columns": {
-            "status": {"fhir_key": "status", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "code.text",
-        "columns": {
-            "code_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "subject",
-        "fhir_reference": "subject_reference",
-        "columns": {
-            "subject_reference": {"fhir_key": "reference", "type": "str"},
-            "subject_type": {"fhir_key": "type", "type": "str"},
-            "subject_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "encounter",
-        "fhir_reference": "encounter_reference",
-        "columns": {
-            "encounter_reference": {"fhir_key": "reference", "type": "str"},
-            "encounter_type": {"fhir_key": "type", "type": "str"},
-            "encounter_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "effectiveDateTime",
-        "columns": {
-            "effective_date_time": {
-                "fhir_key": "effectiveDateTime",
-                "type": "datetime",
-            }
-        },
-    },
-    {
-        "fhir_path": "effectivePeriod",
-        "columns": {
-            "effective_period_start": {"fhir_key": "start", "type": "datetime"},
-            "effective_period_end": {"fhir_key": "end", "type": "datetime"},
-        },
-    },
-    {
-        "fhir_path": "effectiveTiming",
-        "columns": {
-            "effective_timing_repeat_bounds_duration_value": {
-                "fhir_key": "repeat.boundsDuration.value",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_duration_comparator": {
-                "fhir_key": "repeat.boundsDuration.comparator",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_duration_unit": {
-                "fhir_key": "repeat.boundsDuration.unit",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_duration_system": {
-                "fhir_key": "repeat.boundsDuration.system",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_duration_code": {
-                "fhir_key": "repeat.boundsDuration.code",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_range_low_value": {
-                "fhir_key": "repeat.boundsRange.low.value",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_range_low_unit": {
-                "fhir_key": "repeat.boundsRange.low.unit",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_range_low_system": {
-                "fhir_key": "repeat.boundsRange.low.system",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_range_low_code": {
-                "fhir_key": "repeat.boundsRange.low.code",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_range_high_value": {
-                "fhir_key": "repeat.boundsRange.high.value",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_range_high_unit": {
-                "fhir_key": "repeat.boundsRange.high.unit",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_range_high_system": {
-                "fhir_key": "repeat.boundsRange.high.system",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_range_high_code": {
-                "fhir_key": "repeat.boundsRange.high.code",
-                "type": "str",
-            },
-            "effective_timing_repeat_bounds_period_start": {
-                "fhir_key": "repeat.boundsPeriod.start",
-                "type": "datetime",
-            },
-            "effective_timing_repeat_bounds_period_end": {
-                "fhir_key": "repeat.boundsPeriod.end",
-                "type": "datetime",
-            },
-            "effective_timing_repeat_count": {
-                "fhir_key": "repeat.count",
-                "type": "int",
-            },
-            "effective_timing_repeat_count_max": {
-                "fhir_key": "repeat.countMax",
-                "type": "int",
-            },
-            "effective_timing_repeat_duration": {
-                "fhir_key": "repeat.duration",
-                "type": "str",
-            },
-            "effective_timing_repeat_duration_max": {
-                "fhir_key": "repeat.durationMax",
-                "type": "str",
-            },
-            "effective_timing_repeat_duration_unit": {
-                "fhir_key": "repeat.durationUnit",
-                "type": "str",
-            },
-            "effective_timing_repeat_frequency": {
-                "fhir_key": "repeat.frequency",
-                "type": "int",
-            },
-            "effective_timing_repeat_frequency_max": {
-                "fhir_key": "repeat.frequencyMax",
-                "type": "int",
-            },
-            "effective_timing_repeat_period": {
-                "fhir_key": "repeat.period",
-                "type": "str",
-            },
-            "effective_timing_repeat_period_max": {
-                "fhir_key": "repeat.periodMax",
-                "type": "str",
-            },
-            "effective_timing_repeat_period_unit": {
-                "fhir_key": "repeat.periodUnit",
-                "type": "str",
-            },
-            "effective_timing_repeat_offset": {
-                "fhir_key": "repeat.offset",
-                "type": "int",
-            },
-            "effective_timing_code_text": {
-                "fhir_key": "code.text",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "effectiveInstant",
-        "columns": {
-            "effective_instant": {
-                "fhir_key": "effectiveInstant",
-                "type": "datetime",
-            }
-        },
-    },
-    {
-        "fhir_path": "issued",
-        "columns": {
-            "issued": {"fhir_key": "issued", "type": "datetime"},
-        },
-    },
-    {
-        "fhir_path": "valueQuantity",
-        "columns": {
-            "value_quantity_value": {"fhir_key": "value", "type": "str"},
-            "value_quantity_comparator": {
-                "fhir_key": "comparator",
-                "type": "str",
-            },
-            "value_quantity_unit": {"fhir_key": "unit", "type": "str"},
-            "value_quantity_system": {"fhir_key": "system", "type": "str"},
-            "value_quantity_code": {"fhir_key": "code", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "valueCodeableConcept.text",
-        "columns": {
-            "value_codeable_concept_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "valueString",
-        "columns": {
-            "value_string": {"fhir_key": "valueString", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "valueBoolean",
-        "columns": {
-            "value_boolean": {"fhir_key": "valueBoolean", "type": "bool"},
-        },
-    },
-    {
-        "fhir_path": "valueInteger",
-        "columns": {
-            "value_integer": {"fhir_key": "valueInteger", "type": "int"},
-        },
-    },
-    {
-        "fhir_path": "valueRange",
-        "columns": {
-            "value_range_low_value": {"fhir_key": "low.value", "type": "str"},
-            "value_range_low_unit": {"fhir_key": "low.unit", "type": "str"},
-            "value_range_low_system": {"fhir_key": "low.system", "type": "str"},
-            "value_range_low_code": {"fhir_key": "low.code", "type": "str"},
-            "value_range_high_value": {"fhir_key": "high.value", "type": "str"},
-            "value_range_high_unit": {"fhir_key": "high.unit", "type": "str"},
-            "value_range_high_system": {
-                "fhir_key": "high.system",
-                "type": "str",
-            },
-            "value_range_high_code": {"fhir_key": "high.code", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "valueRatio",
-        "columns": {
-            "value_ratio_numerator_value": {
-                "fhir_key": "numerator.value",
-                "type": "str",
-            },
-            "value_ratio_numerator_comparator": {
-                "fhir_key": "numerator.comparator",
-                "type": "str",
-            },
-            "value_ratio_numerator_unit": {
-                "fhir_key": "numerator.unit",
-                "type": "str",
-            },
-            "value_ratio_numerator_system": {
-                "fhir_key": "numerator.system",
-                "type": "str",
-            },
-            "value_ratio_numerator_code": {
-                "fhir_key": "numerator.code",
-                "type": "str",
-            },
-            "value_ratio_denominator_value": {
-                "fhir_key": "denominator.value",
-                "type": "str",
-            },
-            "value_ratio_denominator_comparator": {
-                "fhir_key": "denominator.comparator",
-                "type": "str",
-            },
-            "value_ratio_denominator_unit": {
-                "fhir_key": "denominator.unit",
-                "type": "str",
-            },
-            "value_ratio_denominator_system": {
-                "fhir_key": "denominator.system",
-                "type": "str",
-            },
-            "value_ratio_denominator_code": {
-                "fhir_key": "denominator.code",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "valueSampledData",
-        "columns": {
-            "value_sampled_data_origin_value": {
-                "fhir_key": "origin.value",
-                "type": "str",
-            },
-            "value_sampled_data_origin_unit": {
-                "fhir_key": "origin.unit",
-                "type": "str",
-            },
-            "value_sampled_data_origin_system": {
-                "fhir_key": "origin.system",
-                "type": "str",
-            },
-            "value_sampled_data_origin_code": {
-                "fhir_key": "origin.code",
-                "type": "str",
-            },
-            "value_sampled_data_period": {"fhir_key": "period", "type": "str"},
-            "value_sampled_data_factor": {"fhir_key": "factor", "type": "str"},
-            "value_sampled_data_lower_limit": {
-                "fhir_key": "lowerLimit",
-                "type": "str",
-            },
-            "value_sampled_data_upper_limit": {
-                "fhir_key": "upperLimit",
-                "type": "str",
-            },
-            "value_sampled_data_dimensions": {
-                "fhir_key": "dimensions",
-                "type": "int",
-            },
-            "value_sampled_data_data": {"fhir_key": "data", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "valueTime",
-        "columns": {
-            "value_time": {"fhir_key": "valueTime", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "valueDateTime",
-        "columns": {
-            "value_date_time": {
-                "fhir_key": "valueDateTime",
-                "type": "datetime",
-            },
-        },
-    },
-    {
-        "fhir_path": "valuePeriod",
-        "columns": {
-            "value_period_start": {"fhir_key": "start", "type": "datetime"},
-            "value_period_end": {"fhir_key": "end", "type": "datetime"},
-        },
-    },
-    {
-        "fhir_path": "dataAbsentReason.text",
-        "columns": {
-            "data_absent_reason_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "bodySite.text",
-        "columns": {
-            "body_site_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "method.text",
-        "columns": {
-            "method_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "specimen",
-        "fhir_reference": "specimen_reference",
-        "columns": {
-            "specimen_reference": {"fhir_key": "reference", "type": "str"},
-            "specimen_type": {"fhir_key": "type", "type": "str"},
-            "specimen_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "device",
-        "fhir_reference": "device_reference",
-        "columns": {
-            "device_reference": {"fhir_key": "reference", "type": "str"},
-            "device_type": {"fhir_key": "type", "type": "str"},
-            "device_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-]
+
+VIEW_DEFINITION = {
+    "resource": "Observation",
+    "name": "observation",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                    "type": "string",
+                },
+                {"name": "status", "path": "status", "type": "string"},
+                {"name": "code_text", "path": "code.text", "type": "string"},
+                {
+                    "name": "subject_reference",
+                    "path": "subject.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_type",
+                    "path": "subject.type",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_display",
+                    "path": "subject.display",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_reference",
+                    "path": "encounter.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_type",
+                    "path": "encounter.type",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_display",
+                    "path": "encounter.display",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_date_time",
+                    "path": "effectiveDateTime",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "effective_period_start",
+                    "path": "effectivePeriod.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "effective_period_end",
+                    "path": "effectivePeriod.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_duration_value",
+                    "path": "effectiveTiming.repeat.boundsDuration.value",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_duration_comparator",
+                    "path": "effectiveTiming.repeat.boundsDuration.comparator",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_duration_unit",
+                    "path": "effectiveTiming.repeat.boundsDuration.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_duration_system",
+                    "path": "effectiveTiming.repeat.boundsDuration.system",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_duration_code",
+                    "path": "effectiveTiming.repeat.boundsDuration.code",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_range_low_value",
+                    "path": "effectiveTiming.repeat.boundsRange.low.value",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_range_low_unit",
+                    "path": "effectiveTiming.repeat.boundsRange.low.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_range_low_system",
+                    "path": "effectiveTiming.repeat.boundsRange.low.system",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_range_low_code",
+                    "path": "effectiveTiming.repeat.boundsRange.low.code",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_range_high_value",
+                    "path": "effectiveTiming.repeat.boundsRange.high.value",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_range_high_unit",
+                    "path": "effectiveTiming.repeat.boundsRange.high.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_range_high_system",
+                    "path": "effectiveTiming.repeat.boundsRange.high.system",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_range_high_code",
+                    "path": "effectiveTiming.repeat.boundsRange.high.code",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_period_start",
+                    "path": "effectiveTiming.repeat.boundsPeriod.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "effective_timing_repeat_bounds_period_end",
+                    "path": "effectiveTiming.repeat.boundsPeriod.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "effective_timing_repeat_count",
+                    "path": "effectiveTiming.repeat.count",
+                    "type": "integer",
+                },
+                {
+                    "name": "effective_timing_repeat_count_max",
+                    "path": "effectiveTiming.repeat.countMax",
+                    "type": "integer",
+                },
+                {
+                    "name": "effective_timing_repeat_duration",
+                    "path": "effectiveTiming.repeat.duration",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_duration_max",
+                    "path": "effectiveTiming.repeat.durationMax",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_duration_unit",
+                    "path": "effectiveTiming.repeat.durationUnit",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_frequency",
+                    "path": "effectiveTiming.repeat.frequency",
+                    "type": "integer",
+                },
+                {
+                    "name": "effective_timing_repeat_frequency_max",
+                    "path": "effectiveTiming.repeat.frequencyMax",
+                    "type": "integer",
+                },
+                {
+                    "name": "effective_timing_repeat_period",
+                    "path": "effectiveTiming.repeat.period",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_period_max",
+                    "path": "effectiveTiming.repeat.periodMax",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_period_unit",
+                    "path": "effectiveTiming.repeat.periodUnit",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_timing_repeat_offset",
+                    "path": "effectiveTiming.repeat.offset",
+                    "type": "integer",
+                },
+                {
+                    "name": "effective_timing_code_text",
+                    "path": "effectiveTiming.code.text",
+                    "type": "string",
+                },
+                {
+                    "name": "effective_instant",
+                    "path": "effectiveInstant",
+                    "type": "dateTime",
+                },
+                {"name": "issued", "path": "issued", "type": "dateTime"},
+                {
+                    "name": "value_quantity_value",
+                    "path": "valueQuantity.value",
+                    "type": "string",
+                },
+                {
+                    "name": "value_quantity_comparator",
+                    "path": "valueQuantity.comparator",
+                    "type": "string",
+                },
+                {
+                    "name": "value_quantity_unit",
+                    "path": "valueQuantity.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "value_quantity_system",
+                    "path": "valueQuantity.system",
+                    "type": "string",
+                },
+                {
+                    "name": "value_quantity_code",
+                    "path": "valueQuantity.code",
+                    "type": "string",
+                },
+                {
+                    "name": "value_codeable_concept_text",
+                    "path": "valueCodeableConcept.text",
+                    "type": "string",
+                },
+                {
+                    "name": "value_string",
+                    "path": "valueString",
+                    "type": "string",
+                },
+                {
+                    "name": "value_boolean",
+                    "path": "valueBoolean",
+                    "type": "string",
+                },
+                {
+                    "name": "value_integer",
+                    "path": "valueInteger",
+                    "type": "integer",
+                },
+                {
+                    "name": "value_range_low_value",
+                    "path": "valueRange.low.value",
+                    "type": "string",
+                },
+                {
+                    "name": "value_range_low_unit",
+                    "path": "valueRange.low.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "value_range_low_system",
+                    "path": "valueRange.low.system",
+                    "type": "string",
+                },
+                {
+                    "name": "value_range_low_code",
+                    "path": "valueRange.low.code",
+                    "type": "string",
+                },
+                {
+                    "name": "value_range_high_value",
+                    "path": "valueRange.high.value",
+                    "type": "string",
+                },
+                {
+                    "name": "value_range_high_unit",
+                    "path": "valueRange.high.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "value_range_high_system",
+                    "path": "valueRange.high.system",
+                    "type": "string",
+                },
+                {
+                    "name": "value_range_high_code",
+                    "path": "valueRange.high.code",
+                    "type": "string",
+                },
+                {
+                    "name": "value_ratio_numerator_value",
+                    "path": "valueRatio.numerator.value",
+                    "type": "string",
+                },
+                {
+                    "name": "value_ratio_numerator_comparator",
+                    "path": "valueRatio.numerator.comparator",
+                    "type": "string",
+                },
+                {
+                    "name": "value_ratio_numerator_unit",
+                    "path": "valueRatio.numerator.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "value_ratio_numerator_system",
+                    "path": "valueRatio.numerator.system",
+                    "type": "string",
+                },
+                {
+                    "name": "value_ratio_numerator_code",
+                    "path": "valueRatio.numerator.code",
+                    "type": "string",
+                },
+                {
+                    "name": "value_ratio_denominator_value",
+                    "path": "valueRatio.denominator.value",
+                    "type": "string",
+                },
+                {
+                    "name": "value_ratio_denominator_comparator",
+                    "path": "valueRatio.denominator.comparator",
+                    "type": "string",
+                },
+                {
+                    "name": "value_ratio_denominator_unit",
+                    "path": "valueRatio.denominator.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "value_ratio_denominator_system",
+                    "path": "valueRatio.denominator.system",
+                    "type": "string",
+                },
+                {
+                    "name": "value_ratio_denominator_code",
+                    "path": "valueRatio.denominator.code",
+                    "type": "string",
+                },
+                {
+                    "name": "value_sampled_data_origin_value",
+                    "path": "valueSampledData.origin.value",
+                    "type": "string",
+                },
+                {
+                    "name": "value_sampled_data_origin_unit",
+                    "path": "valueSampledData.origin.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "value_sampled_data_origin_system",
+                    "path": "valueSampledData.origin.system",
+                    "type": "string",
+                },
+                {
+                    "name": "value_sampled_data_origin_code",
+                    "path": "valueSampledData.origin.code",
+                    "type": "string",
+                },
+                {
+                    "name": "value_sampled_data_period",
+                    "path": "valueSampledData.period",
+                    "type": "string",
+                },
+                {
+                    "name": "value_sampled_data_factor",
+                    "path": "valueSampledData.factor",
+                    "type": "string",
+                },
+                {
+                    "name": "value_sampled_data_lower_limit",
+                    "path": "valueSampledData.lowerLimit",
+                    "type": "string",
+                },
+                {
+                    "name": "value_sampled_data_upper_limit",
+                    "path": "valueSampledData.upperLimit",
+                    "type": "string",
+                },
+                {
+                    "name": "value_sampled_data_dimensions",
+                    "path": "valueSampledData.dimensions",
+                    "type": "integer",
+                },
+                {
+                    "name": "value_sampled_data_data",
+                    "path": "valueSampledData.data",
+                    "type": "string",
+                },
+                {"name": "value_time", "path": "valueTime", "type": "string"},
+                {
+                    "name": "value_date_time",
+                    "path": "valueDateTime",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "value_period_start",
+                    "path": "valuePeriod.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "value_period_end",
+                    "path": "valuePeriod.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "data_absent_reason_text",
+                    "path": "dataAbsentReason.text",
+                    "type": "string",
+                },
+                {
+                    "name": "body_site_text",
+                    "path": "bodySite.text",
+                    "type": "string",
+                },
+                {
+                    "name": "method_text",
+                    "path": "method.text",
+                    "type": "string",
+                },
+                {
+                    "name": "specimen_reference",
+                    "path": "specimen.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "specimen_type",
+                    "path": "specimen.type",
+                    "type": "string",
+                },
+                {
+                    "name": "specimen_display",
+                    "path": "specimen.display",
+                    "type": "string",
+                },
+                {
+                    "name": "device_reference",
+                    "path": "device.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "device_type",
+                    "path": "device.type",
+                    "type": "string",
+                },
+                {
+                    "name": "device_display",
+                    "path": "device.display",
+                    "type": "string",
+                },
+            ]
+        }
+    ],
+}
 
 
 class ObservationTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Observation' resource in FHIR.
-
-    Transform Patient JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_dict (dict): The transformation dictionary used to map
-          and transform the resource data
-
-    Methods:
-        __init__(self):
-            Initializes the ObservationTransformer instance with the resource
-            type 'Observation' and a transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Observation", None, TRANSFORM_SCHEMA)
+        super().__init__("Observation", None, VIEW_DEFINITION)

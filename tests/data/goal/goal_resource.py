@@ -88,6 +88,15 @@ RESOURCE = {
     },
     "addresses": [{"display": "obesity condition"}],
     "note": [{"text": "Weight loss"}],
+    "startCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "414260005",
+                "display": "First outpatient appointment date (finding)",
+            }
+        ],
+    },
     "outcomeCode": [
         {
             "coding": [

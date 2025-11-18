@@ -1,76 +1,72 @@
-"""
-FHIR Appointment Participant transformer
-"""
+"""FHIR Appointment participant transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Appointment",
+    "name": "appointment_participant",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "appointment_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "appointment_id": {"type": "str"},
+        {
+            "forEach": "participant",
+            "column": [
+                {
+                    "name": "participant_type",
+                    "path": "type",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "participant_actor_reference",
+                    "path": "actor.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "participant_actor_type",
+                    "path": "actor.type",
+                    "type": "string",
+                },
+                {
+                    "name": "participant_actor_display",
+                    "path": "actor.display",
+                    "type": "string",
+                },
+                {
+                    "name": "participant_required",
+                    "path": "required",
+                    "type": "string",
+                },
+                {
+                    "name": "participant_status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "participant_period_start",
+                    "path": "period.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "participant_period_end",
+                    "path": "period.end",
+                    "type": "dateTime",
+                },
+            ],
         },
-    },
-    {
-        "fhir_path": "participant",
-        "columns": {
-            # TODO: Add support for nested type fields
-            "participant_type": {"fhir_key": "type", "type": "str"},
-            "participant_actor_reference": {
-                "fhir_key": "actor.reference",
-                "type": "str",
-            },
-            "participant_actor_type": {
-                "fhir_key": "actor.type",
-                "type": "str",
-            },
-            "participant_actor_display": {
-                "fhir_key": "actor.display",
-                "type": "str",
-            },
-            "participant_required": {"fhir_key": "required", "type": "str"},
-            "participant_status": {"fhir_key": "status", "type": "str"},
-            "participant_period_start": {
-                "fhir_key": "period.start",
-                "type": "datetime",
-            },
-            "participant_period_end": {
-                "fhir_key": "period.end",
-                "type": "datetime",
-            },
-        },
-    },
-]
+    ],
+}
 
 
 class AppointmentParticipantTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Appointment' resource in FHIR, focusing on the 'participant' element.
-
-    This class transforms FHIR Appointment JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'participant' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Appointment').
-        subtype (str): Specifies the sub-element of the resource to focus on ('participant').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the AppointmentParticipantTransformer instance with the resource type 'Appointment',
-            subtype 'participant', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Appointment", "participant", TRANSFORM_SCHEMA)
+        super().__init__("Appointment", "participant", VIEW_DEFINITION)

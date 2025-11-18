@@ -1,184 +1,159 @@
-"""
-FHIR Immunization transformer
-"""
+"""FHIR Immunization transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {
-            "id": {"fhir_key": "id", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {
-            "resource_type": {"fhir_key": "resourceType", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "status",
-        "columns": {
-            "status": {"fhir_key": "status", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "statusReason.text",
-        "columns": {
-            "status_reason_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "vaccineCode.text",
-        "columns": {
-            "vaccine_code_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "patient",
-        "fhir_reference": "patient_reference",
-        "columns": {
-            "patient_reference": {"fhir_key": "reference", "type": "str"},
-            "patient_type": {"fhir_key": "type", "type": "str"},
-            "patient_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "encounter",
-        "fhir_reference": "encounter_reference",
-        "columns": {
-            "encounter_reference": {"fhir_key": "reference", "type": "str"},
-            "encounter_type": {"fhir_key": "type", "type": "str"},
-            "encounter_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "occurrenceDateTime",
-        "columns": {
-            "occurrence_date_time": {
-                "fhir_key": "occurrenceDateTime",
-                "type": "datetime",
-            },
-        },
-    },
-    {
-        "fhir_path": "occurrenceString",
-        "columns": {
-            "occurrence_string": {
-                "fhir_key": "occurrenceString",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "recorded",
-        "columns": {
-            "recorded": {"fhir_key": "recorded", "type": "datetime"},
-        },
-    },
-    {
-        "fhir_path": "primarySource",
-        "columns": {
-            "primary_source": {"fhir_key": "primarySource", "type": "bool"},
-        },
-    },
-    {
-        "fhir_path": "reportOrigin.text",
-        "columns": {
-            "report_origin_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "location",
-        "fhir_reference": "location_reference",
-        "columns": {
-            "location_reference": {"fhir_key": "reference", "type": "str"},
-            "location_type": {"fhir_key": "type", "type": "str"},
-            "location_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "manufacturer",
-        "fhir_reference": "manufacturer_reference",
-        "columns": {
-            "manufacturer_reference": {"fhir_key": "reference", "type": "str"},
-            "manufacturer_type": {"fhir_key": "type", "type": "str"},
-            "manufacturer_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "lotNumber",
-        "columns": {
-            "lot_number": {"fhir_key": "lotNumber", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "expirationDate",
-        "columns": {
-            "expiration_date": {
-                "fhir_key": "expirationDate",
-                "type": "datetime",
-            },
-        },
-    },
-    {
-        "fhir_path": "site.text",
-        "columns": {
-            "site_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "route.text",
-        "columns": {
-            "route_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "doseQuantity",
-        "columns": {
-            "dose_quantity_value": {"fhir_key": "value", "type": "str"},
-            "dose_quantity_unit": {"fhir_key": "unit", "type": "str"},
-            "dose_quantity_system": {"fhir_key": "system", "type": "str"},
-            "dose_quantity_code": {"fhir_key": "code", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "isSubpotent",
-        "columns": {
-            "is_subpotent": {"fhir_key": "isSubpotent", "type": "bool"},
-        },
-    },
-    {
-        "fhir_path": "fundingSource.text",
-        "columns": {
-            "funding_source_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-]
+
+VIEW_DEFINITION = {
+    "resource": "Immunization",
+    "name": "immunization",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                    "type": "string",
+                },
+                {"name": "status", "path": "status", "type": "string"},
+                {
+                    "name": "status_reason_text",
+                    "path": "statusReason.text",
+                    "type": "string",
+                },
+                {
+                    "name": "vaccine_code_text",
+                    "path": "vaccineCode.text",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_reference",
+                    "path": "patient.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_type",
+                    "path": "patient.type",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_display",
+                    "path": "patient.display",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_reference",
+                    "path": "encounter.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_type",
+                    "path": "encounter.type",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_display",
+                    "path": "encounter.display",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_date_time",
+                    "path": "occurrenceDateTime",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "occurrence_string",
+                    "path": "occurrenceString",
+                    "type": "string",
+                },
+                {"name": "recorded", "path": "recorded", "type": "dateTime"},
+                {
+                    "name": "primary_source",
+                    "path": "primarySource",
+                    "type": "string",
+                },
+                {
+                    "name": "report_origin_text",
+                    "path": "reportOrigin.text",
+                    "type": "string",
+                },
+                {
+                    "name": "location_reference",
+                    "path": "location.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "location_type",
+                    "path": "location.type",
+                    "type": "string",
+                },
+                {
+                    "name": "location_display",
+                    "path": "location.display",
+                    "type": "string",
+                },
+                {
+                    "name": "manufacturer_reference",
+                    "path": "manufacturer.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "manufacturer_type",
+                    "path": "manufacturer.type",
+                    "type": "string",
+                },
+                {
+                    "name": "manufacturer_display",
+                    "path": "manufacturer.display",
+                    "type": "string",
+                },
+                {"name": "lot_number", "path": "lotNumber", "type": "string"},
+                {
+                    "name": "expiration_date",
+                    "path": "expirationDate",
+                    "type": "dateTime",
+                },
+                {"name": "site_text", "path": "site.text", "type": "string"},
+                {"name": "route_text", "path": "route.text", "type": "string"},
+                {
+                    "name": "dose_quantity_value",
+                    "path": "doseQuantity.value",
+                    "type": "string",
+                },
+                {
+                    "name": "dose_quantity_unit",
+                    "path": "doseQuantity.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "dose_quantity_system",
+                    "path": "doseQuantity.system",
+                    "type": "string",
+                },
+                {
+                    "name": "dose_quantity_code",
+                    "path": "doseQuantity.code",
+                    "type": "string",
+                },
+                {
+                    "name": "is_subpotent",
+                    "path": "isSubpotent",
+                    "type": "string",
+                },
+                {
+                    "name": "funding_source_text",
+                    "path": "fundingSource.text",
+                    "type": "string",
+                },
+            ]
+        }
+    ],
+}
 
 
 class ImmunizationTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Immunization' resource in FHIR.
-
-    Transform Immunization JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_schema (list[dict]): The transformation dictionary used to map
-          and transform the resource data
-
-    Methods:
-        __init__(self):
-            Initializes the Immunizationformer instance with the resource
-            type 'Immunization' and a transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Immunization", None, TRANSFORM_SCHEMA)
+        super().__init__("Immunization", None, VIEW_DEFINITION)

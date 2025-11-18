@@ -1,225 +1,206 @@
-"""
-FHIR Specimen transformer
-"""
+"""FHIR Specimen transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {"id": {"type": "str"}},
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {"resource_type": {"type": "str"}},
-    },
-    {
-        "fhir_path": "accessionIdentifier",
-        "columns": {
-            "accession_identifier_use": {"fhir_key": "use", "type": "str"},
-            "accession_identifier_system": {
-                "fhir_key": "system",
-                "type": "str",
-            },
-            "accession_identifier_value": {"fhir_key": "value", "type": "str"},
-            "accession_identifier_period_start": {
-                "fhir_key": "period.start",
-                "type": "str",
-            },
-            "accession_identifier_period_end": {
-                "fhir_key": "period.end",
-                "type": "str",
-            },
-            "accession_identifier_assigner_reference": {
-                "fhir_key": "assigner.reference",
-                "type": "str",
-            },
-            "accession_identifier_assigner_display": {
-                "fhir_key": "assigner.display",
-                "type": "str",
-            },
-            "accession_identifier_assigner_type": {
-                "fhir_key": "assigner.type",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "status",
-        "columns": {"status": {"type": "str"}},
-    },
-    {
-        "fhir_path": "type.text",
-        "columns": {"type_text": {"type": "str"}},
-    },
-    {
-        "fhir_path": "subject",
-        "fhir_reference": "subject_reference",
-        "columns": {
-            "subject_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "subject_display": {"fhir_key": "display", "type": "str"},
-            "subject_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "receivedTime",
-        "columns": {"received_time": {"type": "datetime"}},
-    },
-    {
-        "fhir_path": "collection.collector",
-        "fhir_reference": "collection_collector_reference",
-        "columns": {
-            "collection_collector_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "collection_collector_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
-            "collection_collector_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "collection.collectedDateTime",
-        "columns": {"collection_collected_date_time": {"type": "datetime"}},
-    },
-    {
-        "fhir_path": "collection.collectedPeriod",
-        "columns": {
-            "collection_collected_period_start": {
-                "fhir_key": "start",
-                "type": "datetime",
-            },
-            "collection_collected_period_end": {
-                "fhir_key": "end",
-                "type": "datetime",
-            },
-        },
-    },
-    {
-        "fhir_path": "collection.duration",
-        "columns": {
-            "collection_duration_value": {
-                "fhir_key": "value",
-                "type": "str",
-            },
-            "collection_duration_comparator": {
-                "fhir_key": "comparator",
-                "type": "str",
-            },
-            "collection_duration_unit": {
-                "fhir_key": "unit",
-                "type": "str",
-            },
-            "collection_duration_system": {
-                "fhir_key": "system",
-                "type": "str",
-            },
-            "collection_duration_code": {
-                "fhir_key": "code",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "collection.quantity",
-        "columns": {
-            "collection_quantity_value": {
-                "fhir_key": "value",
-                "type": "str",
-            },
-            "collection_quantity_unit": {
-                "fhir_key": "unit",
-                "type": "str",
-            },
-            "collection_quantity_system": {
-                "fhir_key": "system",
-                "type": "str",
-            },
-            "collection_quantity_code": {
-                "fhir_key": "code",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "collection.method.text",
-        "columns": {
-            "collection_method_text": {"type": "str"},
-        },
-    },
-    {
-        "fhir_path": "collection.bodySite.text",
-        "columns": {
-            "collection_body_site_text": {"type": "str"},
-        },
-    },
-    {
-        "fhir_path": "collection.fastingStatusDuration",
-        "columns": {
-            "collection_fasting_status_duration_value": {
-                "fhir_key": "value",
-                "type": "str",
-            },
-            "collection_fasting_status_duration_comparator": {
-                "fhir_key": "comparator",
-                "type": "str",
-            },
-            "collection_fasting_status_duration_unit": {
-                "fhir_key": "unit",
-                "type": "str",
-            },
-            "collection_fasting_status_duration_system": {
-                "fhir_key": "system",
-                "type": "str",
-            },
-            "collection_fasting_status_duration_code": {
-                "fhir_key": "code",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "collection.fastingStatusCodeableConcept.text",
-        "columns": {
-            "collection_fasting_status_codeable_concept_text": {"type": "str"},
-        },
-    },
-]
+VIEW_DEFINITION = {
+    "resource": "Specimen",
+    "name": "specimen",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                    "type": "string",
+                },
+                {
+                    "name": "accession_identifier_use",
+                    "path": "accessionIdentifier.use",
+                    "type": "string",
+                },
+                {
+                    "name": "accession_identifier_system",
+                    "path": "accessionIdentifier.system",
+                    "type": "string",
+                },
+                {
+                    "name": "accession_identifier_value",
+                    "path": "accessionIdentifier.value",
+                    "type": "string",
+                },
+                {
+                    "name": "accession_identifier_period_start",
+                    "path": "accessionIdentifier.period.start",
+                    "type": "string",
+                },
+                {
+                    "name": "accession_identifier_period_end",
+                    "path": "accessionIdentifier.period.end",
+                    "type": "string",
+                },
+                {
+                    "name": "accession_identifier_assigner_reference",
+                    "path": "accessionIdentifier.assigner.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "accession_identifier_assigner_display",
+                    "path": "accessionIdentifier.assigner.display",
+                    "type": "string",
+                },
+                {
+                    "name": "accession_identifier_assigner_type",
+                    "path": "accessionIdentifier.assigner.type",
+                    "type": "string",
+                },
+                {"name": "status", "path": "status", "type": "string"},
+                {"name": "type_text", "path": "type.text", "type": "string"},
+                {
+                    "name": "subject_reference",
+                    "path": "subject.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_display",
+                    "path": "subject.display",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_type",
+                    "path": "subject.type",
+                    "type": "string",
+                },
+                {
+                    "name": "received_time",
+                    "path": "receivedTime",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "collection_collector_reference",
+                    "path": "collection.collector.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_collector_display",
+                    "path": "collection.collector.display",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_collector_type",
+                    "path": "collection.collector.type",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_collected_date_time",
+                    "path": "collection.collectedDateTime",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "collection_collected_period_start",
+                    "path": "collection.collectedPeriod.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "collection_collected_period_end",
+                    "path": "collection.collectedPeriod.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "collection_duration_value",
+                    "path": "collection.duration.value",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_duration_comparator",
+                    "path": "collection.duration.comparator",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_duration_unit",
+                    "path": "collection.duration.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_duration_system",
+                    "path": "collection.duration.system",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_duration_code",
+                    "path": "collection.duration.code",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_quantity_value",
+                    "path": "collection.quantity.value",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_quantity_unit",
+                    "path": "collection.quantity.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_quantity_system",
+                    "path": "collection.quantity.system",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_quantity_code",
+                    "path": "collection.quantity.code",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_method_text",
+                    "path": "collection.method.text",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_body_site_text",
+                    "path": "collection.bodySite.text",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_fasting_status_duration_value",
+                    "path": "collection.fastingStatusDuration.value",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_fasting_status_duration_comparator",
+                    "path": "collection.fastingStatusDuration.comparator",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_fasting_status_duration_unit",
+                    "path": "collection.fastingStatusDuration.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_fasting_status_duration_system",
+                    "path": "collection.fastingStatusDuration.system",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_fasting_status_duration_code",
+                    "path": "collection.fastingStatusDuration.code",
+                    "type": "string",
+                },
+                {
+                    "name": "collection_fasting_status_codeable_concept_text",
+                    "path": "collection.fastingStatusCodeableConcept.text",
+                    "type": "string",
+                },
+            ]
+        }
+    ],
+}
 
 
 class SpecimenTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Specimen' resource in FHIR.
-
-    Transform Patient JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_dict (dict): The transformation dictionary used to map
-          and transform the resource data
-
-    Methods:
-        __init__(self):
-            Initializes the SpecimenTransformer instance with the resource
-            type 'Specimen' and a transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Specimen", None, TRANSFORM_SCHEMA)
+        super().__init__("Specimen", None, VIEW_DEFINITION)

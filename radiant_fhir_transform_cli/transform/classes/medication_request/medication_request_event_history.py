@@ -1,56 +1,50 @@
-"""
-FHIR MedicationRequest EventHistory transformer
-"""
+"""FHIR MedicationRequest event_history transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "MedicationRequest",
+    "name": "medication_request_event_history",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "medication_request_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "medication_request_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "eventHistory",
+            "column": [
+                {
+                    "name": "event_history_reference",
+                    "path": "reference",
+                    "type": "string",
+                },
+                {
+                    "name": "event_history_type",
+                    "path": "type",
+                    "type": "string",
+                },
+                {
+                    "name": "event_history_display",
+                    "path": "display",
+                    "type": "string",
+                },
+            ],
         },
-    },
-    {
-        "fhir_path": "eventHistory",
-        "fhir_reference": "event_history_reference",
-        "columns": {
-            "event_history_reference": {"fhir_key": "reference", "type": "str"},
-            "event_history_type": {"fhir_key": "type", "type": "str"},
-            "event_history_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class MedicationRequestEventHistoryTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'MedicationRequest' resource in FHIR, focusing on the 'eventHistory' element.
-
-    This class transforms FHIR MedicationRequest JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'eventHistory' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('MedicationRequest').
-        subtype (str): Specifies the sub-element of the resource to focus on ('event_history').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the MedicationRequestEventHistoryTransformer instance with the resource type 'MedicationRequest',
-            subtype 'event_history', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("MedicationRequest", "event_history", TRANSFORM_SCHEMA)
+        super().__init__("MedicationRequest", "event_history", VIEW_DEFINITION)

@@ -1,254 +1,268 @@
-"""
-FHIR ServiceRequest transformer
-"""
+"""FHIR ServiceRequest transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {"id": {"type": "str"}},
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {"resource_type": {"type": "str"}},
-    },
-    {
-        "fhir_path": "text.status",
-        "columns": {"text_status": {"type": "str"}},
-    },
-    {
-        "fhir_path": "status",
-        "columns": {"status": {"type": "str"}},
-    },
-    {
-        "fhir_path": "intent",
-        "columns": {"intent": {"type": "str"}},
-    },
-    {
-        "fhir_path": "priority",
-        "columns": {"priority": {"type": "str"}},
-    },
-    {
-        "fhir_path": "doNotPerform",
-        "columns": {"do_not_perform": {"type": "bool"}},
-    },
-    {
-        "fhir_path": "code.text",
-        "columns": {
-            "code_text": {"type": "str"},
-        },
-    },
-    {
-        "fhir_path": "quantityQuantity",
-        "columns": {
-            "quantity_quantity_value": {"fhir_key": "value", "type": "str"},
-            "quantity_quantity_comparator": {
-                "fhir_key": "comparator",
-                "type": "str",
-            },
-            "quantity_quantity_unit": {"fhir_key": "unit", "type": "str"},
-            "quantity_quantity_system": {"fhir_key": "system", "type": "str"},
-            "quantity_quantity_code": {"fhir_key": "code", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "quantityRatio",
-        "columns": {
-            "quantity_ratio_numerator_value": {
-                "fhir_key": "numerator.value",
-                "type": "str",
-            },
-            "quantity_ratio_numerator_comparator": {
-                "fhir_key": "numerator.comparator",
-                "type": "str",
-            },
-            "quantity_ratio_numerator_unit": {
-                "fhir_key": "numerator.unit",
-                "type": "str",
-            },
-            "quantity_ratio_numerator_system": {
-                "fhir_key": "numerator.system",
-                "type": "str",
-            },
-            "quantity_ratio_numerator_code": {
-                "fhir_key": "numerator.code",
-                "type": "str",
-            },
-            "quantity_ratio_denominator_value": {
-                "fhir_key": "denominator.value",
-                "type": "str",
-            },
-            "quantity_ratio_denominator_comparator": {
-                "fhir_key": "denominator.comparator",
-                "type": "str",
-            },
-            "quantity_ratio_denominator_unit": {
-                "fhir_key": "denominator.unit",
-                "type": "str",
-            },
-            "quantity_ratio_denominator_system": {
-                "fhir_key": "denominator.system",
-                "type": "str",
-            },
-            "quantity_ratio_denominator_code": {
-                "fhir_key": "denominator.code",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "quantityRange",
-        "columns": {
-            "quantity_range_low_value": {
-                "fhir_key": "low.value",
-                "type": "str",
-            },
-            "quantity_range_low_unit": {"fhir_key": "low.unit", "type": "str"},
-            "quantity_range_low_system": {
-                "fhir_key": "low.system",
-                "type": "str",
-            },
-            "quantity_range_low_code": {"fhir_key": "low.code", "type": "str"},
-            "quantity_range_high_value": {
-                "fhir_key": "high.value",
-                "type": "str",
-            },
-            "quantity_range_high_unit": {
-                "fhir_key": "high.unit",
-                "type": "str",
-            },
-            "quantity_range_high_system": {
-                "fhir_key": "high.system",
-                "type": "str",
-            },
-            "quantity_range_high_code": {
-                "fhir_key": "high.code",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "subject",
-        "fhir_reference": "subject_reference",
-        "columns": {
-            "subject_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "subject_display": {"fhir_key": "display", "type": "str"},
-            "subject_type": {"fhir_key": "type", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "encounter",
-        "fhir_reference": "encounter_reference",
-        "columns": {
-            "encounter_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "encounter_display": {"fhir_key": "display", "type": "str"},
-            "encounter_type": {"fhir_key": "type", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "occurrenceDateTime",
-        "columns": {"occurrence_date_time": {"type": "datetime"}},
-    },
-    {
-        "fhir_path": "occurrencePeriod",
-        "columns": {
-            "occurrence_period_start": {
-                "fhir_key": "start",
-                "type": "datetime",
-            },
-            "occurrence_period_end": {"fhir_key": "end", "type": "datetime"},
-        },
-    },
-    {
-        "fhir_path": "occurrenceTiming.repeat",
-        "columns": {
-            "occurrence_timing_repeat_count": {
-                "fhir_key": "count",
-                "type": "str",
-            },
-            "occurrence_timing_repeat_count_max": {
-                "fhir_key": "countMax",
-                "type": "str",
-            },
-            "occurrence_timing_repeat_frequency": {
-                "fhir_key": "frequency",
-                "type": "str",
-            },
-            "occurrence_timing_repeat_period": {
-                "fhir_key": "period",
-                "type": "str",
-            },
-            "occurrence_timing_repeat_period_unit": {
-                "fhir_key": "periodUnit",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "asNeededBoolean",
-        "columns": {"as_needed_boolean": {"type": "bool"}},
-    },
-    {
-        "fhir_path": "asNeededCodeableConcept.text",
-        "columns": {"as_needed_codeable_concept_text": {"type": "str"}},
-    },
-    {
-        "fhir_path": "authoredOn",
-        "columns": {"authored_on": {"type": "datetime"}},
-    },
-    {
-        "fhir_path": "requester",
-        "fhir_reference": "requester_reference",
-        "columns": {
-            "requester_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "requester_display": {"fhir_key": "display", "type": "str"},
-            "requester_type": {"fhir_key": "type", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "performerType.text",
-        "columns": {"performer_type_text": {"type": "str"}},
-    },
-    {
-        "fhir_path": "patientInstruction",
-        "columns": {
-            "patient_instruction": {"type": "str"},
-        },
-    },
-]
+
+VIEW_DEFINITION = {
+    "resource": "ServiceRequest",
+    "name": "service_request",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                    "type": "string",
+                },
+                {
+                    "name": "text_status",
+                    "path": "text.status",
+                    "type": "string",
+                },
+                {"name": "status", "path": "status", "type": "string"},
+                {"name": "intent", "path": "intent", "type": "string"},
+                {"name": "priority", "path": "priority", "type": "string"},
+                {
+                    "name": "do_not_perform",
+                    "path": "doNotPerform",
+                    "type": "string",
+                },
+                {"name": "code_text", "path": "code.text", "type": "string"},
+                {
+                    "name": "quantity_quantity_value",
+                    "path": "quantityQuantity.value",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_quantity_comparator",
+                    "path": "quantityQuantity.comparator",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_quantity_unit",
+                    "path": "quantityQuantity.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_quantity_system",
+                    "path": "quantityQuantity.system",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_quantity_code",
+                    "path": "quantityQuantity.code",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_ratio_numerator_value",
+                    "path": "quantityRatio.numerator.value",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_ratio_numerator_comparator",
+                    "path": "quantityRatio.numerator.comparator",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_ratio_numerator_unit",
+                    "path": "quantityRatio.numerator.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_ratio_numerator_system",
+                    "path": "quantityRatio.numerator.system",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_ratio_numerator_code",
+                    "path": "quantityRatio.numerator.code",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_ratio_denominator_value",
+                    "path": "quantityRatio.denominator.value",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_ratio_denominator_comparator",
+                    "path": "quantityRatio.denominator.comparator",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_ratio_denominator_unit",
+                    "path": "quantityRatio.denominator.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_ratio_denominator_system",
+                    "path": "quantityRatio.denominator.system",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_ratio_denominator_code",
+                    "path": "quantityRatio.denominator.code",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_range_low_value",
+                    "path": "quantityRange.low.value",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_range_low_unit",
+                    "path": "quantityRange.low.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_range_low_system",
+                    "path": "quantityRange.low.system",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_range_low_code",
+                    "path": "quantityRange.low.code",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_range_high_value",
+                    "path": "quantityRange.high.value",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_range_high_unit",
+                    "path": "quantityRange.high.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_range_high_system",
+                    "path": "quantityRange.high.system",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_range_high_code",
+                    "path": "quantityRange.high.code",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_reference",
+                    "path": "subject.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_display",
+                    "path": "subject.display",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_type",
+                    "path": "subject.type",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_reference",
+                    "path": "encounter.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_display",
+                    "path": "encounter.display",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_type",
+                    "path": "encounter.type",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_date_time",
+                    "path": "occurrenceDateTime",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "occurrence_period_start",
+                    "path": "occurrencePeriod.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "occurrence_period_end",
+                    "path": "occurrencePeriod.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "occurrence_timing_repeat_count",
+                    "path": "occurrenceTiming.repeat.count",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_count_max",
+                    "path": "occurrenceTiming.repeat.countMax",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_frequency",
+                    "path": "occurrenceTiming.repeat.frequency",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_period",
+                    "path": "occurrenceTiming.repeat.period",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_period_unit",
+                    "path": "occurrenceTiming.repeat.periodUnit",
+                    "type": "string",
+                },
+                {
+                    "name": "as_needed_boolean",
+                    "path": "asNeededBoolean",
+                    "type": "string",
+                },
+                {
+                    "name": "as_needed_codeable_concept_text",
+                    "path": "asNeededCodeableConcept.text",
+                    "type": "string",
+                },
+                {
+                    "name": "authored_on",
+                    "path": "authoredOn",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "requester_reference",
+                    "path": "requester.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "requester_display",
+                    "path": "requester.display",
+                    "type": "string",
+                },
+                {
+                    "name": "requester_type",
+                    "path": "requester.type",
+                    "type": "string",
+                },
+                {
+                    "name": "performer_type_text",
+                    "path": "performerType.text",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_instruction",
+                    "path": "patientInstruction",
+                    "type": "string",
+                },
+            ]
+        }
+    ],
+}
 
 
 class ServiceRequestTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'ServiceRequest' resource in FHIR.
-
-    Transform ServiceRequest JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_dict (dict): The transformation dictionary used to map
-          and transform the resource data
-
-    Methods:
-        __init__(self):
-            Initializes the ServiceRequestTransformer instance with the resource
-            type 'ServiceRequest' and a transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("ServiceRequest", None, TRANSFORM_SCHEMA)
+        super().__init__("ServiceRequest", None, VIEW_DEFINITION)

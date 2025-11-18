@@ -28,7 +28,7 @@ EXPECTED_OUTPUT = [
         "source_type": None,
         "source_display": None,
         "ordered_by_text": None,
-        "empty_reason_text": None,
+        "empty_reason_text": "The patient is not on any medications",
     }
 ]
 
