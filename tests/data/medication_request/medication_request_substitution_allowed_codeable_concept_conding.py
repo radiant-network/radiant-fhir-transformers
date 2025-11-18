@@ -7,21 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.medication_request import (
 )
 from tests.data.base import FhirResourceTestHelper
 
-RESOURCE = {
-    "resourceType": "MedicationRequest",
-    "id": "medrx0301",
-    "substitution": {
-        "allowedCodeableConcept": {
-            "coding": [
-                {
-                    "system": "system",
-                    "code": "code",
-                    "display": "display",
-                }
-            ]
-        }
-    },
-}
+from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {

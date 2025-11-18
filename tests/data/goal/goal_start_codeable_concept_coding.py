@@ -7,7 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.goal import (
 )
 from tests.data.base import FhirResourceTestHelper
 
-from .goal_resource import RESOURCE_START_CODEABLE_CONCEPT_CODING as RESOURCE
+from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {

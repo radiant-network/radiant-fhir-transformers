@@ -17,6 +17,7 @@ Tests include:
 
 """
 
+from pprint import pprint
 import pandas as pd
 import pytest
 
@@ -24,6 +25,55 @@ from radiant_fhir_transform_cli.transform.classes.observation import (
     ObservationExtensionTransformer,
 )
 from tests.data import test_helpers
+
+pd.set_option("display.max_rows", None)
+pd.set_option("display.max_columns", None)
+pd.set_option("display.width", 0)
+
+
+def normalize_reference_values(value):
+    """
+    Recursively normalize reference values by removing resource type prefixes.
+
+    Handles:
+    - None: returns None
+    - str: applies split("/")[-1] if "/" is in the string
+    - dict: recursively processes values for keys ending in "_reference"
+    - list: recursively processes each element
+
+    Args:
+        value: The value to normalize (can be None, str, dict, or list)
+
+    Returns:
+        Normalized value with reference prefixes removed
+    """
+    if value is None:
+        return None
+
+    if isinstance(value, str):
+        # If string contains "/", split and return the last part
+        if "/" in value:
+            return value.split("/")[-1]
+        return value
+
+    if isinstance(value, dict):
+        # Create a new dict and process each key-value pair
+        result = {}
+        for key, val in value.items():
+            if key.endswith("_reference"):
+                # This is a reference field - normalize the value
+                result[key] = normalize_reference_values(val)
+            else:
+                # Recursively process the value (might be a nested dict/list)
+                result[key] = normalize_reference_values(val)
+        return result
+
+    if isinstance(value, list):
+        # Recursively process each element in the list
+        return [normalize_reference_values(item) for item in value]
+
+    # For other types (int, float, bool, etc.), return as-is
+    return value
 
 
 @pytest.mark.parametrize("test_helper_cls", list(test_helpers))
@@ -45,10 +95,15 @@ def test_transformers(test_helper_cls):
     assert test_helper.expected_table_name == transformer.table_name
 
     # Transform
-    outs = transformer.transform_resource(0, test_helper.resource)
+    actual = transformer.transform_resource(0, test_helper.resource)
+
+    # Normalize reference values
+    actual = normalize_reference_values(actual)
+    expected_output = normalize_reference_values(test_helper.expected_output)
+
     # Convert to DataFrames
-    df_actual = pd.DataFrame(outs)
-    df_expected = pd.DataFrame(test_helper.expected_output)
+    df_actual = pd.DataFrame(actual)
+    df_expected = pd.DataFrame(expected_output)
 
     # Sort columns to ensure consistent comparison
     df_actual = df_actual[sorted(df_actual.columns)]
@@ -57,6 +112,11 @@ def test_transformers(test_helper_cls):
     # Remove id from subtype can't compare to uuid
     if resource_subtype:
         df_actual = df_actual.drop(columns=["id"])
+
+    print("********* Actual")
+    pprint(df_actual.to_dict(orient="records"))
+    print("********* Expected")
+    pprint(df_expected.to_dict(orient="records"))
 
     # Compare
     pd.testing.assert_frame_equal(

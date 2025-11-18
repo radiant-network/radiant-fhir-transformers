@@ -1,61 +1,53 @@
-"""
-FHIR Condition Identifier transformer
-"""
+"""FHIR Condition identifier transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Condition",
+    "name": "condition_identifier",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "condition_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "condition_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "identifier",
+            "column": [
+                {"name": "identifier_use", "path": "use", "type": "string"},
+                {
+                    "name": "identifier_system",
+                    "path": "system",
+                    "type": "string",
+                },
+                {"name": "identifier_value", "path": "value", "type": "string"},
+                {
+                    "name": "identifier_type_text",
+                    "path": "type.text",
+                    "type": "string",
+                },
+                {
+                    "name": "identifier_period_start",
+                    "path": "period.start",
+                    "type": "string",
+                },
+                {
+                    "name": "identifier_period_end",
+                    "path": "period.end",
+                    "type": "string",
+                },
+            ],
         },
-    },
-    {
-        "fhir_path": "identifier",
-        "columns": {
-            "identifier_use": {"fhir_key": "use", "type": "str"},
-            "identifier_system": {"fhir_key": "system", "type": "str"},
-            "identifier_value": {"fhir_key": "value", "type": "str"},
-            "identifier_type_text": {"fhir_key": "type.text", "type": "str"},
-            "identifier_period_start": {
-                "fhir_key": "period.start",
-                "type": "str",
-            },
-            "identifier_period_end": {"fhir_key": "period.end", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class ConditionIdentifierTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Condition' resource in FHIR, focusing on the 'identifier' element.
-
-    This class transforms FHIR Condition JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'identifier' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Condition').
-        subtype (str): Specifies the sub-element of the resource to focus on ('identifier').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the ConditionIdentifierTransformer instance with the resource type 'Condition',
-            subtype 'identifier', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Condition", "identifier", TRANSFORM_SCHEMA)
+        super().__init__("Condition", "identifier", VIEW_DEFINITION)

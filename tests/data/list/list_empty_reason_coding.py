@@ -7,11 +7,11 @@ from radiant_fhir_transform_cli.transform.classes.list import (
 )
 from tests.data.base import FhirResourceTestHelper
 
-from .list_resource import RESOURCE_EMPTY_REASON as RESOURCE
+from .list_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "list_id": "example-empty",
+        "list_id": "med-list",
         "empty_reason_coding_system": "http://terminology.hl7.org/CodeSystem/list-empty-reason",
         "empty_reason_coding_code": "nilknown",
         "empty_reason_coding_display": "Nil Known",

@@ -2,6 +2,8 @@
 Test data helper classes
 """
 
+from tests.data.raw_fhir.raw_fhir import RawFhirResourceTestHelper
+
 from tests.data.allergy_intolerance import (
     AllergyIntoleranceCategoryTestHelper,
     AllergyIntoleranceClinicalStatusCodingTestHelper,

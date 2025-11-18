@@ -1,55 +1,38 @@
-"""
-FHIR Procedure Complication transformer
-"""
+"""FHIR Procedure complication transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Procedure",
+    "name": "procedure_complication",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "procedure_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "procedure_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "complication",
+            "column": [
+                {
+                    "name": "complication_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {"name": "complication_text", "path": "text", "type": "string"},
+            ],
         },
-    },
-    {
-        "fhir_path": "complication",
-        "columns": {
-            # TODO: Support for Nested Lists (See https://github.com/radiant-network/radiant-fhir-transformers/issues/34)
-            "complication_coding": {"fhir_key": "coding", "type": "str"},
-            "complication_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class ProcedureComplicationTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Procedure' resource in FHIR, focusing on the 'complication' element.
-
-    This class transforms FHIR Procedure JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'complication' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Procedure').
-        subtype (str): Specifies the sub-element of the resource to focus on ('complication').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the ProcedureComplicationTransformer instance with the resource type 'Procedure',
-            subtype 'complication', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Procedure", "complication", TRANSFORM_SCHEMA)
+        super().__init__("Procedure", "complication", VIEW_DEFINITION)

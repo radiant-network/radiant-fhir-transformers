@@ -1,54 +1,38 @@
-"""
-FHIR Condition Category transformer
-"""
+"""FHIR Condition category transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Condition",
+    "name": "condition_category",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "condition_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "condition_id": {"type": "str"},
+        {
+            "forEach": "category",
+            "column": [
+                {
+                    "name": "category_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {"name": "category_text", "path": "text", "type": "string"},
+            ],
         },
-    },
-    {
-        "fhir_path": "category",
-        "columns": {
-            "category_coding": {"fhir_key": "coding", "type": "str"},
-            "category_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class ConditionCategoryTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Condition' resource in FHIR, focusing on the 'category' element.
-
-    This class transforms FHIR Condition JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'category' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Condition').
-        subtype (str): Specifies the sub-element of the resource to focus on ('category').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the ConditionCategoryTransformer instance with the resource type 'Condition',
-            subtype 'category', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Condition", "category", TRANSFORM_SCHEMA)
+        super().__init__("Condition", "category", VIEW_DEFINITION)
