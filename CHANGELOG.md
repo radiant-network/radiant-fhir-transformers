@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.0.0
+
+### Summary
+
+- Emojis: 💥 x1
+- Categories: Additions x1
+
+### New features and changes
+
+- [#93](https://github.com/radiant-network/radiant-fhir-transformers/pull/93) - 💥 Migrate to using SQL-on-FHIR standard - [065cdd04](https://github.com/radiant-network/radiant-fhir-transformers/commit/065cdd040acd9484930da81c2539de368f961ef5) by [znatty22](https://github.com/znatty22)
+
+
 ## Release 0.14.0
 
 ### Summary
