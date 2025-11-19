@@ -24,13 +24,25 @@ import json
 import logging
 import uuid
 from collections.abc import Generator, Iterable
+from dataclasses import dataclass
 from pprint import pformat
 from typing import Any
 
 from sqlonfhir import evaluate
+
 from radiant_fhir_transform_cli.utils.misc import camel_to_snake
 
 logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class ColMetaData:
+    """
+    Represents a single column definition extracted from a ViewDefinition node.
+    """
+
+    name: str
+    type: str | None
 
 
 def generate_table_name(
@@ -203,6 +215,30 @@ class FhirResourceTransformer:
             pformat(output),
         )
         return output
+
+    def cols(self) -> list[ColMetaData]:
+        """
+        Recursively extract column metadata from a ViewDefinition-like dictionary.
+        """
+
+        def extract_cols(vd: dict[str, Any]) -> list[ColMetaData]:
+            cols: list[ColMetaData] = []
+
+            # Extract columns at this level
+            for col in vd.get("column", []):
+                cols.append(
+                    ColMetaData(
+                        name=col["name"],
+                        type=col.get("type"),
+                    )
+                )
+
+            # Recurse into nested select blocks
+            for child in vd.get("select", []):
+                cols.extend(extract_cols(child))
+            return cols
+
+        return extract_cols(self.view_definition)
 
     def transform_from_ndjson(
         self, ndjson_filepath: str
