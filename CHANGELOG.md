@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.1.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#95](https://github.com/radiant-network/radiant-fhir-transformers/pull/95) -  Add helper method to extract cols from viewDef - [1ec2e34c](https://github.com/radiant-network/radiant-fhir-transformers/commit/1ec2e34c514a14f8798b2df3dde28591733a7f3c) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 1.0.0
 
 ### Summary
