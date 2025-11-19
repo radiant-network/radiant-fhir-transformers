@@ -18,11 +18,15 @@ Tests include:
 """
 
 from pprint import pprint
+
 import pandas as pd
 import pytest
 
 from radiant_fhir_transform_cli.transform.classes.observation import (
     ObservationExtensionTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.patient.patient_address import (
+    PatientAddressTransformer,
 )
 from tests.data import test_helpers
 
@@ -175,3 +179,32 @@ def test_transformers_with_empty_rows():
     test_resource["extension"] = extensions
     out = transformer.transform_resource(0, test_resource)
     assert len(out) == 1
+
+
+def test_transformers_cols():
+    """
+    Test cols function to verify correct cols are return'd
+    """
+
+    transformer = PatientAddressTransformer()
+
+    expected_cols = [
+        "id",
+        "patient_id",
+        "address_use",
+        "address_type",
+        "address_text",
+        "address_line",
+        "address_city",
+        "address_district",
+        "address_state",
+        "address_postal_code",
+        "address_country",
+        "address_period_start",
+        "address_period_end",
+    ]
+
+    assert len(expected_cols) == len(transformer.column_metadata())
+    assert expected_cols == [
+        meta.name for meta in transformer.column_metadata()
+    ]
