@@ -204,5 +204,7 @@ def test_transformers_cols():
         "address_period_end",
     ]
 
-    assert len(expected_cols) == len(transformer.cols())
-    assert expected_cols == [meta.name for meta in transformer.cols()]
+    assert len(expected_cols) == len(transformer.column_metadata())
+    assert expected_cols == [
+        meta.name for meta in transformer.column_metadata()
+    ]

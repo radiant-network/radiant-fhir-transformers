@@ -36,7 +36,7 @@ logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
-class ColMetaData:
+class ColumnMetaData:
     """
     Represents a single column definition extracted from a ViewDefinition node.
     """
@@ -216,18 +216,18 @@ class FhirResourceTransformer:
         )
         return output
 
-    def cols(self) -> list[ColMetaData]:
+    def column_metadata(self) -> list[ColumnMetaData]:
         """
         Recursively extract column metadata from a ViewDefinition-like dictionary.
         """
 
-        def extract_cols(vd: dict[str, Any]) -> list[ColMetaData]:
-            cols: list[ColMetaData] = []
+        def extract_cols(vd: dict[str, Any]) -> list[ColumnMetaData]:
+            cols: list[ColumnMetaData] = []
 
             # Extract columns at this level
             for col in vd.get("column", []):
                 cols.append(
-                    ColMetaData(
+                    ColumnMetaData(
                         name=col["name"],
                         type=col.get("type"),
                     )
