@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "RequestGroup",
     "name": "request_group_instantiates_canonical",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "request_group_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "request_group_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "instantiatesCanonical",
@@ -24,7 +37,7 @@ VIEW_DEFINITION = {
                     "name": "instantiates_canonical",
                     "path": "$this",
                     "type": "string",
-                }
+                },
             ],
         },
     ],

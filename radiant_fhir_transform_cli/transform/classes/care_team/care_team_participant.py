@@ -9,29 +9,30 @@ VIEW_DEFINITION = {
     "resource": "CareTeam",
     "name": "care_team_participant",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "care_team_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "care_team_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "participant",
             "column": [
-                {
-                    "name": "participant_role_coding",
-                    "path": "role.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
-                    "name": "participant_role_text",
-                    "path": "role.text",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "participant_member_reference",
                     "path": "member.reference",
@@ -71,6 +72,38 @@ VIEW_DEFINITION = {
                     "name": "participant_period_end",
                     "path": "period.end",
                     "type": "dateTime",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "role.coding",
+                    "column": [
+                        {
+                            "name": "participant_role_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "participant_role_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "participant_role_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEach": "role.text",
+                    "column": [
+                        {
+                            "name": "participant_role_text",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

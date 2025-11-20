@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Immunization",
     "name": "immunization_performer",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "immunization_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "immunization_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "performer",
             "column": [
-                {
-                    "name": "performer_function_coding",
-                    "path": "function.coding",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "performer_function_text",
                     "path": "function.text",
@@ -45,6 +52,23 @@ VIEW_DEFINITION = {
                     "name": "performer_actor_display",
                     "path": "actor.display",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "function.coding",
+                    "column": [
+                        {
+                            "name": "performer_function_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "performer_function_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

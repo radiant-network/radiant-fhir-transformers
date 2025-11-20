@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "BodyStructure",
     "name": "body_structure_image",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "body_structure_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "body_structure_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "image",
@@ -30,9 +43,21 @@ VIEW_DEFINITION = {
                     "path": "language",
                     "type": "string",
                 },
-                {"name": "image_url", "path": "url", "type": "string"},
-                {"name": "image_size", "path": "size", "type": "integer"},
-                {"name": "image_title", "path": "title", "type": "string"},
+                {
+                    "name": "image_url",
+                    "path": "url",
+                    "type": "string",
+                },
+                {
+                    "name": "image_size",
+                    "path": "size",
+                    "type": "integer",
+                },
+                {
+                    "name": "image_title",
+                    "path": "title",
+                    "type": "string",
+                },
                 {
                     "name": "image_creation",
                     "path": "creation",

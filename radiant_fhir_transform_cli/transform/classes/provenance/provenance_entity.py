@@ -9,18 +9,35 @@ VIEW_DEFINITION = {
     "resource": "Provenance",
     "name": "provenance_entity",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "provenance_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "provenance_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "entity",
             "column": [
-                {"name": "entity_role", "path": "role", "type": "string"},
+                {
+                    "name": "entity_role",
+                    "path": "role",
+                    "type": "string",
+                },
                 {
                     "name": "entity_what_reference",
                     "path": "what.reference",
@@ -36,7 +53,11 @@ VIEW_DEFINITION = {
                     "path": "what.display",
                     "type": "string",
                 },
-                {"name": "entity_agent", "path": "agent", "type": "string"},
+                {
+                    "name": "entity_agent",
+                    "path": "agent",
+                    "type": "string",
+                },
             ],
         },
     ],

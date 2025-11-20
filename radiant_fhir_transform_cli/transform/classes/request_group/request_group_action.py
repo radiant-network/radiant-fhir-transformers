@@ -9,19 +9,40 @@ VIEW_DEFINITION = {
     "resource": "RequestGroup",
     "name": "request_group_action",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "request_group_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "request_group_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "action",
             "column": [
-                {"name": "action_prefix", "path": "prefix", "type": "string"},
-                {"name": "action_title", "path": "title", "type": "string"},
+                {
+                    "name": "action_prefix",
+                    "path": "prefix",
+                    "type": "string",
+                },
+                {
+                    "name": "action_title",
+                    "path": "title",
+                    "type": "string",
+                },
                 {
                     "name": "action_description",
                     "path": "description",
@@ -37,7 +58,11 @@ VIEW_DEFINITION = {
                     "path": "priority",
                     "type": "string",
                 },
-                {"name": "action_code", "path": "code", "type": "string"},
+                {
+                    "name": "action_code",
+                    "path": "code",
+                    "type": "string",
+                },
                 {
                     "name": "action_documentation",
                     "path": "documentation",
@@ -314,12 +339,6 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "action_participant",
-                    "path": "participant",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "action_type_coding",
                     "path": "type.coding",
                     "type": "string",
@@ -369,11 +388,27 @@ VIEW_DEFINITION = {
                     "path": "resource.display",
                     "type": "string",
                 },
+            ],
+            "select": [
                 {
-                    "name": "action_action",
-                    "path": "action",
-                    "type": "string",
-                    "collection": True,
+                    "forEach": "participant",
+                    "column": [
+                        {
+                            "name": "action_participant",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEach": "action",
+                    "column": [
+                        {
+                            "name": "action_action",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

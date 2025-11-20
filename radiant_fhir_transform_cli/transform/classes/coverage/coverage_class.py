@@ -9,30 +9,62 @@ VIEW_DEFINITION = {
     "resource": "Coverage",
     "name": "coverage_class",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "coverage_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "coverage_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "class",
             "column": [
                 {
-                    "name": "class_type_coding",
-                    "path": "type.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "class_type_text",
                     "path": "type.text",
                     "type": "string",
                 },
-                {"name": "class_value", "path": "value", "type": "string"},
-                {"name": "class_name", "path": "name", "type": "string"},
+                {
+                    "name": "class_value",
+                    "path": "value",
+                    "type": "string",
+                },
+                {
+                    "name": "class_name",
+                    "path": "name",
+                    "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "type.coding",
+                    "column": [
+                        {
+                            "name": "class_type_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "class_type_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

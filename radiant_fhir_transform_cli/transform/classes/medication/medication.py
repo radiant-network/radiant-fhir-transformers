@@ -12,14 +12,26 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "code_text", "path": "code.text", "type": "string"},
-                {"name": "status", "path": "status", "type": "string"},
+                {
+                    "name": "code_text",
+                    "path": "code.text",
+                    "type": "string",
+                },
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
                 {
                     "name": "manufacturer_reference",
                     "path": "manufacturer.reference",
@@ -35,7 +47,11 @@ VIEW_DEFINITION = {
                     "path": "manufacturer.display",
                     "type": "string",
                 },
-                {"name": "form_text", "path": "form.text", "type": "string"},
+                {
+                    "name": "form_text",
+                    "path": "form.text",
+                    "type": "string",
+                },
                 {
                     "name": "batch_lot_number",
                     "path": "batch.lotNumber",
@@ -46,8 +62,8 @@ VIEW_DEFINITION = {
                     "path": "batch.expirationDate",
                     "type": "dateTime",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

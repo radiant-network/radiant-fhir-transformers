@@ -9,31 +9,46 @@ VIEW_DEFINITION = {
     "resource": "DiagnosticReport",
     "name": "diagnostic_report_conclusion_code",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "diagnostic_report_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
             "forEach": "conclusionCode",
             "column": [
                 {
-                    "name": "conclusion_code_coding",
-                    "path": "coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "conclusion_code_text",
                     "path": "text",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "coding",
+                    "column": [
+                        {
+                            "name": "conclusion_code_coding",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

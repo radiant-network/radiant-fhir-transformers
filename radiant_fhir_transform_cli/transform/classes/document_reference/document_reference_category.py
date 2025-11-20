@@ -9,28 +9,47 @@ VIEW_DEFINITION = {
     "resource": "DocumentReference",
     "name": "document_reference_category",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "document_reference_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
             "forEach": "category",
             "column": [
                 {
-                    "name": "category_coding",
-                    "path": "coding",
+                    "name": "category_text",
+                    "path": "text",
                     "type": "string",
-                    "collection": True,
                 },
-                {"name": "category_text", "path": "text", "type": "string"},
+            ],
+            "select": [
+                {
+                    "forEach": "coding",
+                    "column": [
+                        {
+                            "name": "category_coding",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

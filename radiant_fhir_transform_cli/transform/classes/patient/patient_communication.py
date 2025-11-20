@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Patient",
     "name": "patient_communication",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "patient_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "communication",
             "column": [
-                {
-                    "name": "communication_language_coding",
-                    "path": "language.coding",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "communication_language_text",
                     "path": "language.text",
@@ -35,6 +42,28 @@ VIEW_DEFINITION = {
                     "name": "communication_preferred",
                     "path": "preferred",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "language.coding",
+                    "column": [
+                        {
+                            "name": "communication_language_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "communication_language_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "communication_language_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

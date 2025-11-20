@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "Encounter",
     "name": "encounter_diagnosis",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "encounter_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "diagnosis",
@@ -36,17 +49,37 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "diagnosis_use_coding",
-                    "path": "use.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "diagnosis_use_text",
                     "path": "use.text",
                     "type": "string",
                 },
-                {"name": "diagnosis_rank", "path": "rank", "type": "integer"},
+                {
+                    "name": "diagnosis_rank",
+                    "path": "rank",
+                    "type": "integer",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "use.coding",
+                    "column": [
+                        {
+                            "name": "diagnosis_use_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "diagnosis_use_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "diagnosis_use_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

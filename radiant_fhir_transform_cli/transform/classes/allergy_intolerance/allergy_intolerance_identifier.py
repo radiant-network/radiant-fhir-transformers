@@ -9,17 +9,26 @@ VIEW_DEFINITION = {
     "resource": "AllergyIntolerance",
     "name": "allergy_intolerance_identifier",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "allergy_intolerance_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
             "forEach": "identifier",
@@ -34,8 +43,16 @@ VIEW_DEFINITION = {
                     "path": "system",
                     "type": "string",
                 },
-                {"name": "identifier_value", "path": "value", "type": "string"},
-                {"name": "identifier_use", "path": "use", "type": "string"},
+                {
+                    "name": "identifier_value",
+                    "path": "value",
+                    "type": "string",
+                },
+                {
+                    "name": "identifier_use",
+                    "path": "use",
+                    "type": "string",
+                },
                 {
                     "name": "identifier_period_start",
                     "path": "period.start",
