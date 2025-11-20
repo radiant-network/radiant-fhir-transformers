@@ -9,13 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Encounter",
     "name": "encounter_class",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "encounter_id", "path": "id", "type": "string"},
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "class_code", "path": "class.code", "type": "string"},
+                {
+                    "name": "encounter_id",
+                    "path": "id",
+                    "type": "string",
+                },
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "class_code",
+                    "path": "class.code",
+                    "type": "string",
+                },
                 {
                     "name": "class_display",
                     "path": "class.display",
@@ -26,8 +43,8 @@ VIEW_DEFINITION = {
                     "path": "class.system",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

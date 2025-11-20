@@ -12,7 +12,11 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
@@ -58,8 +62,16 @@ VIEW_DEFINITION = {
                     "path": "accessionIdentifier.assigner.type",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
-                {"name": "type_text", "path": "type.text", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "type_text",
+                    "path": "type.text",
+                    "type": "string",
+                },
                 {
                     "name": "subject_reference",
                     "path": "subject.reference",
@@ -195,8 +207,8 @@ VIEW_DEFINITION = {
                     "path": "collection.fastingStatusCodeableConcept.text",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

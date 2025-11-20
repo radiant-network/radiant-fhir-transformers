@@ -9,21 +9,50 @@ VIEW_DEFINITION = {
     "resource": "CareTeam",
     "name": "care_team_telecom",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "care_team_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "care_team_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "telecom",
             "column": [
-                {"name": "telecom_system", "path": "system", "type": "string"},
-                {"name": "telecom_value", "path": "value", "type": "string"},
-                {"name": "telecom_use", "path": "use", "type": "string"},
-                {"name": "telecom_rank", "path": "rank", "type": "integer"},
+                {
+                    "name": "telecom_system",
+                    "path": "system",
+                    "type": "string",
+                },
+                {
+                    "name": "telecom_value",
+                    "path": "value",
+                    "type": "string",
+                },
+                {
+                    "name": "telecom_use",
+                    "path": "use",
+                    "type": "string",
+                },
+                {
+                    "name": "telecom_rank",
+                    "path": "rank",
+                    "type": "integer",
+                },
                 {
                     "name": "telecom_period_start",
                     "path": "period.start",

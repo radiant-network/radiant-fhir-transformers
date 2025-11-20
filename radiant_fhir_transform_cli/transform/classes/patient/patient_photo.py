@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "Patient",
     "name": "patient_photo",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "patient_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "photo",
@@ -30,11 +43,31 @@ VIEW_DEFINITION = {
                     "path": "language",
                     "type": "string",
                 },
-                {"name": "photo_url", "path": "url", "type": "string"},
-                {"name": "photo_size", "path": "size", "type": "integer"},
-                {"name": "photo_hash", "path": "hash", "type": "string"},
-                {"name": "photo_title", "path": "title", "type": "string"},
-                {"name": "photo_creation", "path": "id", "type": "dateTime"},
+                {
+                    "name": "photo_url",
+                    "path": "url",
+                    "type": "string",
+                },
+                {
+                    "name": "photo_size",
+                    "path": "size",
+                    "type": "integer",
+                },
+                {
+                    "name": "photo_hash",
+                    "path": "hash",
+                    "type": "string",
+                },
+                {
+                    "name": "photo_title",
+                    "path": "title",
+                    "type": "string",
+                },
+                {
+                    "name": "photo_creation",
+                    "path": "id",
+                    "type": "dateTime",
+                },
             ],
         },
     ],

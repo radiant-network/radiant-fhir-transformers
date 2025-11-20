@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Patient",
     "name": "patient_contact",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "patient_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "contact",
             "column": [
-                {
-                    "name": "contact_relationship",
-                    "path": "relationship",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "contact_name_use",
                     "path": "name.use",
@@ -67,12 +74,6 @@ VIEW_DEFINITION = {
                     "type": "dateTime",
                 },
                 {
-                    "name": "contact_telecom",
-                    "path": "telecom",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "contact_address_use",
                     "path": "address.use",
                     "type": "string",
@@ -86,12 +87,6 @@ VIEW_DEFINITION = {
                     "name": "contact_address_text",
                     "path": "address.text",
                     "type": "string",
-                },
-                {
-                    "name": "contact_address_line",
-                    "path": "address.line",
-                    "type": "string",
-                    "collection": True,
                 },
                 {
                     "name": "contact_address_city",
@@ -128,7 +123,11 @@ VIEW_DEFINITION = {
                     "path": "address.period.end",
                     "type": "dateTime",
                 },
-                {"name": "contact_gender", "path": "gender", "type": "string"},
+                {
+                    "name": "contact_gender",
+                    "path": "gender",
+                    "type": "string",
+                },
                 {
                     "name": "contact_organization_reference",
                     "path": "organization.reference",
@@ -158,6 +157,53 @@ VIEW_DEFINITION = {
                     "name": "contact_period_end",
                     "path": "period.end",
                     "type": "dateTime",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "relationship",
+                    "column": [
+                        {
+                            "name": "contact_relationship_coding",
+                            "path": "coding",
+                            "type": "string",
+                        },
+                        {
+                            "name": "contact_relationship_text",
+                            "path": "text",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEach": "telecom",
+                    "column": [
+                        {
+                            "name": "contact_telecom_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "contact_telecom_value",
+                            "path": "value",
+                            "type": "string",
+                        },
+                        {
+                            "name": "contact_telecom_use",
+                            "path": "use",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEach": "address.line",
+                    "column": [
+                        {
+                            "name": "contact_address_line",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

@@ -9,33 +9,60 @@ VIEW_DEFINITION = {
     "resource": "RelatedPerson",
     "name": "related_person_address",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "related_person_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "related_person_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "address",
             "column": [
-                {"name": "address_use", "path": "use", "type": "string"},
-                {"name": "address_type", "path": "type", "type": "string"},
-                {"name": "address_text", "path": "text", "type": "string"},
                 {
-                    "name": "address_line",
-                    "path": "line",
+                    "name": "address_use",
+                    "path": "use",
                     "type": "string",
-                    "collection": True,
                 },
-                {"name": "address_city", "path": "city", "type": "string"},
+                {
+                    "name": "address_type",
+                    "path": "type",
+                    "type": "string",
+                },
+                {
+                    "name": "address_text",
+                    "path": "text",
+                    "type": "string",
+                },
+                {
+                    "name": "address_city",
+                    "path": "city",
+                    "type": "string",
+                },
                 {
                     "name": "address_district",
                     "path": "district",
                     "type": "string",
                 },
-                {"name": "address_state", "path": "state", "type": "string"},
+                {
+                    "name": "address_state",
+                    "path": "state",
+                    "type": "string",
+                },
                 {
                     "name": "address_postal_code",
                     "path": "postalCode",
@@ -55,6 +82,18 @@ VIEW_DEFINITION = {
                     "name": "address_period_end",
                     "path": "period.end",
                     "type": "dateTime",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "line",
+                    "column": [
+                        {
+                            "name": "address_line",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

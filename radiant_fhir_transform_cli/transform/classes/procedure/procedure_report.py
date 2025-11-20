@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "Procedure",
     "name": "procedure_report",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "procedure_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "procedure_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "report",
@@ -25,8 +38,16 @@ VIEW_DEFINITION = {
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "report_type", "path": "type", "type": "string"},
-                {"name": "report_display", "path": "display", "type": "string"},
+                {
+                    "name": "report_type",
+                    "path": "type",
+                    "type": "string",
+                },
+                {
+                    "name": "report_display",
+                    "path": "display",
+                    "type": "string",
+                },
             ],
         },
     ],

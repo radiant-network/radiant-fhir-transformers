@@ -9,27 +9,56 @@ VIEW_DEFINITION = {
     "resource": "Consent",
     "name": "consent_provision_code",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "consent_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "consent_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "provision.code",
             "column": [
                 {
-                    "name": "provision_code_coding",
-                    "path": "coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "provision_code_text",
                     "path": "text",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "coding",
+                    "column": [
+                        {
+                            "name": "provision_code_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "provision_code_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "provision_code_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

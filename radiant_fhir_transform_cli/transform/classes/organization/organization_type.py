@@ -9,24 +9,57 @@ VIEW_DEFINITION = {
     "resource": "Organization",
     "name": "organization_type",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "organization_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "organization_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "type",
             "column": [
                 {
-                    "name": "type_coding",
-                    "path": "coding",
+                    "name": "type_text",
+                    "path": "text",
                     "type": "string",
-                    "collection": True,
                 },
-                {"name": "type_text", "path": "text", "type": "string"},
+            ],
+            "select": [
+                {
+                    "forEach": "coding",
+                    "column": [
+                        {
+                            "name": "type_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "type_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "type_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

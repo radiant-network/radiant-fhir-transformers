@@ -12,13 +12,21 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
                 {
                     "name": "operational_status_system",
                     "path": "operationalStatus.system",
@@ -34,13 +42,21 @@ VIEW_DEFINITION = {
                     "path": "operationalStatus.display",
                     "type": "string",
                 },
-                {"name": "name", "path": "name", "type": "string"},
+                {
+                    "name": "name",
+                    "path": "name",
+                    "type": "string",
+                },
                 {
                     "name": "description",
                     "path": "description",
                     "type": "string",
                 },
-                {"name": "mode", "path": "mode", "type": "string"},
+                {
+                    "name": "mode",
+                    "path": "mode",
+                    "type": "string",
+                },
                 {
                     "name": "address_use",
                     "path": "address.use",
@@ -55,12 +71,6 @@ VIEW_DEFINITION = {
                     "name": "address_text",
                     "path": "address.text",
                     "type": "string",
-                },
-                {
-                    "name": "address_line",
-                    "path": "address.line",
-                    "type": "string",
-                    "collection": True,
                 },
                 {
                     "name": "address_city",
@@ -152,8 +162,20 @@ VIEW_DEFINITION = {
                     "path": "availabilityExceptions",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+            "select": [
+                {
+                    "forEach": "address.line",
+                    "column": [
+                        {
+                            "name": "address_line",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
+            ],
+        },
     ],
 }
 

@@ -12,14 +12,26 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
-                {"name": "class_code", "path": "class.code", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "class_code",
+                    "path": "class.code",
+                    "type": "string",
+                },
                 {
                     "name": "class_system",
                     "path": "class.system",
@@ -120,8 +132,8 @@ VIEW_DEFINITION = {
                     "path": "partOf.display",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "Specimen",
     "name": "specimen_request",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "specimen_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "specimen_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "request",
@@ -30,7 +43,11 @@ VIEW_DEFINITION = {
                     "path": "display",
                     "type": "string",
                 },
-                {"name": "request_type", "path": "type", "type": "string"},
+                {
+                    "name": "request_type",
+                    "path": "type",
+                    "type": "string",
+                },
             ],
         },
     ],
