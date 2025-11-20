@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Procedure",
     "name": "procedure_performer",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "procedure_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "procedure_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "performer",
             "column": [
-                {
-                    "name": "performer_function_coding",
-                    "path": "function.coding",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "performer_function_text",
                     "path": "function.text",
@@ -60,6 +67,28 @@ VIEW_DEFINITION = {
                     "name": "performer_on_behalf_of_display",
                     "path": "onBehalfOf.display",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "function.coding",
+                    "column": [
+                        {
+                            "name": "performer_function_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "performer_function_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "performer_function_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

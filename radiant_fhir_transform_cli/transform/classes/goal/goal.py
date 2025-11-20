@@ -12,7 +12,11 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
@@ -53,7 +57,11 @@ VIEW_DEFINITION = {
                     "path": "subject.display",
                     "type": "string",
                 },
-                {"name": "start_date", "path": "startDate", "type": "dateTime"},
+                {
+                    "name": "start_date",
+                    "path": "startDate",
+                    "type": "dateTime",
+                },
                 {
                     "name": "start_codeable_concept_text",
                     "path": "startCodeableConcept.text",
@@ -84,8 +92,8 @@ VIEW_DEFINITION = {
                     "path": "expressedBy.display",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "Coverage",
     "name": "coverage_contract",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "coverage_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "coverage_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "contract",
@@ -25,7 +38,11 @@ VIEW_DEFINITION = {
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "contract_type", "path": "type", "type": "string"},
+                {
+                    "name": "contract_type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "contract_display",
                     "path": "display",

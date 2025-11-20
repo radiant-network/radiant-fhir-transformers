@@ -9,17 +9,26 @@ VIEW_DEFINITION = {
     "resource": "AllergyIntolerance",
     "name": "allergy_intolerance_clinical_status_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "allergy_intolerance_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
             "forEach": "clinicalStatus.coding",

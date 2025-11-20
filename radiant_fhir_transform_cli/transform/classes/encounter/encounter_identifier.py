@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "Encounter",
     "name": "encounter_identifier",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "encounter_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "identifier",
@@ -25,13 +38,21 @@ VIEW_DEFINITION = {
                     "path": "type.text",
                     "type": "string",
                 },
-                {"name": "identifier_use", "path": "use", "type": "string"},
+                {
+                    "name": "identifier_use",
+                    "path": "use",
+                    "type": "string",
+                },
                 {
                     "name": "identifier_system",
                     "path": "system",
                     "type": "string",
                 },
-                {"name": "identifier_value", "path": "value", "type": "string"},
+                {
+                    "name": "identifier_value",
+                    "path": "value",
+                    "type": "string",
+                },
                 {
                     "name": "identifier_period_start",
                     "path": "period.start",

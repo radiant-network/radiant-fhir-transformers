@@ -9,18 +9,35 @@ VIEW_DEFINITION = {
     "resource": "Immunization",
     "name": "immunization_identifier",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "immunization_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "immunization_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "identifier",
             "column": [
-                {"name": "identifier_use", "path": "use", "type": "string"},
+                {
+                    "name": "identifier_use",
+                    "path": "use",
+                    "type": "string",
+                },
                 {
                     "name": "identifier_type_text",
                     "path": "type.text",
@@ -31,7 +48,11 @@ VIEW_DEFINITION = {
                     "path": "system",
                     "type": "string",
                 },
-                {"name": "identifier_value", "path": "value", "type": "string"},
+                {
+                    "name": "identifier_value",
+                    "path": "value",
+                    "type": "string",
+                },
                 {
                     "name": "identifier_period_start",
                     "path": "period.start",

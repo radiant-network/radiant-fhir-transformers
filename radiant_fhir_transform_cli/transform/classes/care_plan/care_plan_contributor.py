@@ -9,7 +9,12 @@ VIEW_DEFINITION = {
     "resource": "CarePlan",
     "name": "care_plan_contributor",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [

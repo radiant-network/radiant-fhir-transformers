@@ -9,17 +9,26 @@ VIEW_DEFINITION = {
     "resource": "MedicationRequest",
     "name": "medication_request_insurance",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "medication_request_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
             "forEach": "insurance",
@@ -29,7 +38,11 @@ VIEW_DEFINITION = {
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "insurance_type", "path": "type", "type": "string"},
+                {
+                    "name": "insurance_type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "insurance_display",
                     "path": "display",

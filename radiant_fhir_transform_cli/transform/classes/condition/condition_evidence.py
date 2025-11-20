@@ -9,28 +9,55 @@ VIEW_DEFINITION = {
     "resource": "Condition",
     "name": "condition_evidence",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "condition_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "condition_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "evidence",
-            "column": [
+            "column": [],
+            "select": [
                 {
-                    "name": "evidence_code",
-                    "path": "code",
-                    "type": "string",
-                    "collection": True,
+                    "forEach": "code",
+                    "column": [
+                        {
+                            "name": "evidence_code_coding",
+                            "path": "coding",
+                            "type": "string",
+                        },
+                    ],
                 },
                 {
-                    "name": "evidence_detail",
-                    "path": "detail",
-                    "type": "string",
-                    "collection": True,
+                    "forEach": "detail",
+                    "column": [
+                        {
+                            "name": "evidence_detail_reference",
+                            "path": "reference",
+                            "type": "string",
+                        },
+                        {
+                            "name": "evidence_detail_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

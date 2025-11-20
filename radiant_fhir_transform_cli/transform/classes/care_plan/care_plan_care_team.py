@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "CarePlan",
     "name": "care_plan_care_team",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "care_plan_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "care_plan_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "careTeam",
@@ -30,7 +43,11 @@ VIEW_DEFINITION = {
                     "path": "display",
                     "type": "string",
                 },
-                {"name": "care_team_type", "path": "type", "type": "string"},
+                {
+                    "name": "care_team_type",
+                    "path": "type",
+                    "type": "string",
+                },
             ],
         },
     ],

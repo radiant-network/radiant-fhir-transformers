@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "ServiceRequest",
     "name": "service_request_contained",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "service_request_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "service_request_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "contained",
@@ -25,7 +38,11 @@ VIEW_DEFINITION = {
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "contained_id", "path": "id", "type": "string"},
+                {
+                    "name": "contained_id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "contained_status",
                     "path": "status",

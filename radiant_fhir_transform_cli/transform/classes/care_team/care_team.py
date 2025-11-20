@@ -12,14 +12,26 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
-                {"name": "name", "path": "name", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "name",
+                    "path": "name",
+                    "type": "string",
+                },
                 {
                     "name": "subject_reference",
                     "path": "subject.reference",
@@ -60,8 +72,8 @@ VIEW_DEFINITION = {
                     "path": "period.end",
                     "type": "dateTime",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

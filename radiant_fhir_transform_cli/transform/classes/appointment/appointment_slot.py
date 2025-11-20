@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "Appointment",
     "name": "appointment_slot",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "appointment_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "appointment_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "slot",
@@ -25,8 +38,16 @@ VIEW_DEFINITION = {
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "slot_type", "path": "type", "type": "string"},
-                {"name": "slot_display", "path": "display", "type": "string"},
+                {
+                    "name": "slot_type",
+                    "path": "type",
+                    "type": "string",
+                },
+                {
+                    "name": "slot_display",
+                    "path": "display",
+                    "type": "string",
+                },
             ],
         },
     ],

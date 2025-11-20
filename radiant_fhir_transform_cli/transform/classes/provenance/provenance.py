@@ -12,7 +12,11 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
@@ -33,7 +37,11 @@ VIEW_DEFINITION = {
                     "path": "occurredDateTime",
                     "type": "dateTime",
                 },
-                {"name": "recorded", "path": "recorded", "type": "dateTime"},
+                {
+                    "name": "recorded",
+                    "path": "recorded",
+                    "type": "dateTime",
+                },
                 {
                     "name": "location_reference",
                     "path": "location.reference",
@@ -54,8 +62,8 @@ VIEW_DEFINITION = {
                     "path": "activity.text",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

@@ -12,7 +12,11 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
@@ -23,15 +27,31 @@ VIEW_DEFINITION = {
                     "path": "text.status",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
-                {"name": "intent", "path": "intent", "type": "string"},
-                {"name": "priority", "path": "priority", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "intent",
+                    "path": "intent",
+                    "type": "string",
+                },
+                {
+                    "name": "priority",
+                    "path": "priority",
+                    "type": "string",
+                },
                 {
                     "name": "do_not_perform",
                     "path": "doNotPerform",
                     "type": "string",
                 },
-                {"name": "code_text", "path": "code.text", "type": "string"},
+                {
+                    "name": "code_text",
+                    "path": "code.text",
+                    "type": "string",
+                },
                 {
                     "name": "quantity_quantity_value",
                     "path": "quantityQuantity.value",
@@ -257,8 +277,8 @@ VIEW_DEFINITION = {
                     "path": "patientInstruction",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

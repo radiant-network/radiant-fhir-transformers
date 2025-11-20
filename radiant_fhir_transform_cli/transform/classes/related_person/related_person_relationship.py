@@ -9,24 +9,47 @@ VIEW_DEFINITION = {
     "resource": "RelatedPerson",
     "name": "related_person_relationship",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "related_person_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "related_person_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "relationship",
             "column": [
                 {
-                    "name": "relationship_coding",
-                    "path": "coding",
+                    "name": "relationship_text",
+                    "path": "text",
                     "type": "string",
-                    "collection": True,
                 },
-                {"name": "relationship_text", "path": "text", "type": "string"},
+            ],
+            "select": [
+                {
+                    "forEach": "coding",
+                    "column": [
+                        {
+                            "name": "relationship_coding",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

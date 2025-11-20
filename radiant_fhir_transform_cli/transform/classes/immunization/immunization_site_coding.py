@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "Immunization",
     "name": "immunization_site_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "immunization_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "immunization_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "site.coding",
@@ -25,7 +38,11 @@ VIEW_DEFINITION = {
                     "path": "system",
                     "type": "string",
                 },
-                {"name": "site_coding_code", "path": "code", "type": "string"},
+                {
+                    "name": "site_coding_code",
+                    "path": "code",
+                    "type": "string",
+                },
                 {
                     "name": "site_coding_display",
                     "path": "display",

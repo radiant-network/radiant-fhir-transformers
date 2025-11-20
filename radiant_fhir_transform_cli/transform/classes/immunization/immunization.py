@@ -12,13 +12,21 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
                 {
                     "name": "status_reason_text",
                     "path": "statusReason.text",
@@ -69,7 +77,11 @@ VIEW_DEFINITION = {
                     "path": "occurrenceString",
                     "type": "string",
                 },
-                {"name": "recorded", "path": "recorded", "type": "dateTime"},
+                {
+                    "name": "recorded",
+                    "path": "recorded",
+                    "type": "dateTime",
+                },
                 {
                     "name": "primary_source",
                     "path": "primarySource",
@@ -110,14 +122,26 @@ VIEW_DEFINITION = {
                     "path": "manufacturer.display",
                     "type": "string",
                 },
-                {"name": "lot_number", "path": "lotNumber", "type": "string"},
+                {
+                    "name": "lot_number",
+                    "path": "lotNumber",
+                    "type": "string",
+                },
                 {
                     "name": "expiration_date",
                     "path": "expirationDate",
                     "type": "dateTime",
                 },
-                {"name": "site_text", "path": "site.text", "type": "string"},
-                {"name": "route_text", "path": "route.text", "type": "string"},
+                {
+                    "name": "site_text",
+                    "path": "site.text",
+                    "type": "string",
+                },
+                {
+                    "name": "route_text",
+                    "path": "route.text",
+                    "type": "string",
+                },
                 {
                     "name": "dose_quantity_value",
                     "path": "doseQuantity.value",
@@ -148,8 +172,8 @@ VIEW_DEFINITION = {
                     "path": "fundingSource.text",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

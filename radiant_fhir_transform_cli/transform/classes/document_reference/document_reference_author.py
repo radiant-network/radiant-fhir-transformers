@@ -9,17 +9,26 @@ VIEW_DEFINITION = {
     "resource": "DocumentReference",
     "name": "document_reference_author",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "document_reference_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
             "forEach": "author",
@@ -29,8 +38,16 @@ VIEW_DEFINITION = {
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "author_type", "path": "type", "type": "string"},
-                {"name": "author_display", "path": "display", "type": "string"},
+                {
+                    "name": "author_type",
+                    "path": "type",
+                    "type": "string",
+                },
+                {
+                    "name": "author_display",
+                    "path": "display",
+                    "type": "string",
+                },
             ],
         },
     ],

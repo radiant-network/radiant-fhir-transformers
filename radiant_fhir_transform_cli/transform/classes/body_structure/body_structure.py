@@ -12,13 +12,21 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "active", "path": "active", "type": "string"},
+                {
+                    "name": "active",
+                    "path": "active",
+                    "type": "string",
+                },
                 {
                     "name": "morphology_text",
                     "path": "morphology.text",
@@ -49,8 +57,8 @@ VIEW_DEFINITION = {
                     "path": "patient.display",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

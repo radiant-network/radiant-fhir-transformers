@@ -9,29 +9,40 @@ VIEW_DEFINITION = {
     "resource": "Provenance",
     "name": "provenance_agent",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "provenance_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "provenance_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "agent",
             "column": [
                 {
-                    "name": "agent_type_coding",
-                    "path": "type.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "agent_type_text",
                     "path": "type.text",
                     "type": "string",
                 },
-                {"name": "agent_role", "path": "role", "type": "string"},
+                {
+                    "name": "agent_role",
+                    "path": "role",
+                    "type": "string",
+                },
                 {
                     "name": "agent_who_reference",
                     "path": "who.reference",
@@ -61,6 +72,23 @@ VIEW_DEFINITION = {
                     "name": "agent_on_behalf_of_display",
                     "path": "onBehalfOf.display",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "type.coding",
+                    "column": [
+                        {
+                            "name": "agent_type_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "agent_type_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

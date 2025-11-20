@@ -12,7 +12,11 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
@@ -48,9 +52,21 @@ VIEW_DEFINITION = {
                     "path": "masterIdentifier.period.end",
                     "type": "dateTime",
                 },
-                {"name": "status", "path": "status", "type": "string"},
-                {"name": "doc_status", "path": "docStatus", "type": "string"},
-                {"name": "type_text", "path": "type.text", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "doc_status",
+                    "path": "docStatus",
+                    "type": "string",
+                },
+                {
+                    "name": "type_text",
+                    "path": "type.text",
+                    "type": "string",
+                },
                 {
                     "name": "subject_reference",
                     "path": "subject.reference",
@@ -66,7 +82,11 @@ VIEW_DEFINITION = {
                     "path": "subject.display",
                     "type": "string",
                 },
-                {"name": "date", "path": "date", "type": "dateTime"},
+                {
+                    "name": "date",
+                    "path": "date",
+                    "type": "dateTime",
+                },
                 {
                     "name": "authenticator_reference",
                     "path": "authenticator.reference",
@@ -137,8 +157,8 @@ VIEW_DEFINITION = {
                     "path": "context.sourcePatientInfo.display",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

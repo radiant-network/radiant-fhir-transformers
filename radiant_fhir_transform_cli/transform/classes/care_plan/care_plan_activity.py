@@ -9,13 +9,26 @@ VIEW_DEFINITION = {
     "resource": "CarePlan",
     "name": "care_plan_activity",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "care_plan_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "care_plan_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
             "forEach": "activity",
@@ -64,12 +77,6 @@ VIEW_DEFINITION = {
                     "name": "activity_detail_instantiates_uri",
                     "path": "detail.instantiatesUri",
                     "type": "string",
-                },
-                {
-                    "name": "activity_detail_code_coding",
-                    "path": "detail.code.coding",
-                    "type": "string",
-                    "collection": True,
                 },
                 {
                     "name": "activity_detail_code_text",
@@ -297,12 +304,6 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "activity_detail_performer",
-                    "path": "detail.performer",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "activity_detail_product_codeable_concept_text",
                     "path": "detail.productCodeableConcept.text",
                     "type": "string",
@@ -371,6 +372,38 @@ VIEW_DEFINITION = {
                     "name": "activity_detail_description",
                     "path": "detail.description",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEach": "detail.code.coding",
+                    "column": [
+                        {
+                            "name": "activity_detail_code_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "activity_detail_code_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "activity_detail_code_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEach": "detail.performer",
+                    "column": [
+                        {
+                            "name": "activity_detail_performer",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

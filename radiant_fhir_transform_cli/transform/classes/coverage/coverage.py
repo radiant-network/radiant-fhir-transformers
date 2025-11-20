@@ -12,14 +12,26 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
-                {"name": "type_text", "path": "type.text", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "type_text",
+                    "path": "type.text",
+                    "type": "string",
+                },
                 {
                     "name": "policy_holder_reference",
                     "path": "policyHolder.reference",
@@ -70,7 +82,11 @@ VIEW_DEFINITION = {
                     "path": "beneficiary.display",
                     "type": "string",
                 },
-                {"name": "dependent", "path": "dependent", "type": "string"},
+                {
+                    "name": "dependent",
+                    "path": "dependent",
+                    "type": "string",
+                },
                 {
                     "name": "relationship_text",
                     "path": "relationship.text",
@@ -86,15 +102,23 @@ VIEW_DEFINITION = {
                     "path": "period.end",
                     "type": "dateTime",
                 },
-                {"name": "order", "path": "order", "type": "integer"},
-                {"name": "network", "path": "network", "type": "string"},
+                {
+                    "name": "order",
+                    "path": "order",
+                    "type": "integer",
+                },
+                {
+                    "name": "network",
+                    "path": "network",
+                    "type": "string",
+                },
                 {
                     "name": "subrogation",
                     "path": "subrogation",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

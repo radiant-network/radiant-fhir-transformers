@@ -12,7 +12,11 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
@@ -28,13 +32,21 @@ VIEW_DEFINITION = {
                     "path": "verificationStatus.text",
                     "type": "string",
                 },
-                {"name": "type", "path": "type", "type": "string"},
+                {
+                    "name": "type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "criticality",
                     "path": "criticality",
                     "type": "string",
                 },
-                {"name": "code_text", "path": "code.text", "type": "string"},
+                {
+                    "name": "code_text",
+                    "path": "code.text",
+                    "type": "string",
+                },
                 {
                     "name": "patient_reference",
                     "path": "patient.reference",
@@ -185,8 +197,8 @@ VIEW_DEFINITION = {
                     "path": "lastOccurrence",
                     "type": "dateTime",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 
