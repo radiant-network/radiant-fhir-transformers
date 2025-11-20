@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.2.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#97](https://github.com/radiant-network/radiant-fhir-transformers/pull/97) -  :bug: Fix Raw Transformer to allow multiple resourceTypes - [2b530168](https://github.com/radiant-network/radiant-fhir-transformers/commit/2b530168566f412660798f5b43da01e463baecff) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 1.1.0
 
 ### Summary
