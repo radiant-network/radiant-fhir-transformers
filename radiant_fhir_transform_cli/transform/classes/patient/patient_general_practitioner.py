@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "generalPractitioner",
+            "forEachOrNull": "generalPractitioner",
             "column": [
                 {
                     "name": "general_practitioner_reference",

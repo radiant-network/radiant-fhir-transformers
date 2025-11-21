@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "collection.fastingStatusCodeableConcept.coding",
+            "forEachOrNull": "collection.fastingStatusCodeableConcept.coding",
             "column": [
                 {
                     "name": "collection_fasting_status_codeable_concept_coding_system",

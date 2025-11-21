@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "telecom",
+            "forEachOrNull": "telecom",
             "column": [
                 {
                     "name": "telecom_system",

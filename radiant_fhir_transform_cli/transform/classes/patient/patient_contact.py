@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "contact",
+            "forEachOrNull": "contact",
             "column": [
                 {
                     "name": "contact_name_use",
@@ -161,7 +161,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "relationship",
+                    "forEachOrNull": "relationship",
                     "column": [
                         {
                             "name": "contact_relationship_coding",
@@ -176,7 +176,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "telecom",
+                    "forEachOrNull": "telecom",
                     "column": [
                         {
                             "name": "contact_telecom_system",
@@ -196,7 +196,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "address.line",
+                    "forEachOrNull": "address.line",
                     "column": [
                         {
                             "name": "contact_address_line",

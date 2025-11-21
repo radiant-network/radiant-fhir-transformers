@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "reaction",
+            "forEachOrNull": "reaction",
             "column": [
                 {
                     "name": "reaction_date",

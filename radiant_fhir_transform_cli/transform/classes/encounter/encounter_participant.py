@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "participant",
+            "forEachOrNull": "participant",
             "column": [
                 {
                     "name": "participant_period_start",
@@ -61,7 +61,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "type",
+                    "forEachOrNull": "type",
                     "column": [
                         {
                             "name": "participant_type_coding",

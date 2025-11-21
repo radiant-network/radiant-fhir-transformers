@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "orderedBy.coding",
+            "forEachOrNull": "orderedBy.coding",
             "column": [
                 {
                     "name": "ordered_by_coding_system",

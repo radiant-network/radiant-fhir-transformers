@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "provision.purpose",
+            "forEachOrNull": "provision.purpose",
             "column": [
                 {
                     "name": "provision_purpose_system",

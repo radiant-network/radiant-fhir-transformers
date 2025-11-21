@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "effectiveTiming.repeat.timeOfDay",
+            "forEachOrNull": "effectiveTiming.repeat.timeOfDay",
             "column": [
                 {
                     "name": "effective_timing_repeat_time_of_day",

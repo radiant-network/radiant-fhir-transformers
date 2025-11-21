@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "specimen",
+            "forEachOrNull": "specimen",
             "column": [
                 {
                     "name": "specimen_reference",

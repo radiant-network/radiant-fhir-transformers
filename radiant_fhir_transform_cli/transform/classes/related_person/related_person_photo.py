@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "photo",
+            "forEachOrNull": "photo",
             "column": [
                 {
                     "name": "photo_content_type",

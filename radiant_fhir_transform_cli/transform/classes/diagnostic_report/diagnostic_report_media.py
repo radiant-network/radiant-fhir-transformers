@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "media",
+            "forEachOrNull": "media",
             "column": [
                 {
                     "name": "media_comment",

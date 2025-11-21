@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "verification",
+            "forEachOrNull": "verification",
             "column": [
                 {
                     "name": "verification_verified",

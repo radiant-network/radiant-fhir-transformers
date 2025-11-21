@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "target",
+            "forEachOrNull": "target",
             "column": [
                 {
                     "name": "target_measure_text",
@@ -206,7 +206,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "measure.coding",
+                    "forEachOrNull": "measure.coding",
                     "column": [
                         {
                             "name": "target_measure_coding_system",

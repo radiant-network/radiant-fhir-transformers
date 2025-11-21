@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "collection.method.coding",
+            "forEachOrNull": "collection.method.coding",
             "column": [
                 {
                     "name": "collection_method_coding_system",

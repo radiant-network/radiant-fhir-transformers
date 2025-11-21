@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "imagingStudy",
+            "forEachOrNull": "imagingStudy",
             "column": [
                 {
                     "name": "imaging_study_reference",

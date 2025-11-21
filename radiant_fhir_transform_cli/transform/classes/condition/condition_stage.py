@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "stage",
+            "forEachOrNull": "stage",
             "column": [
                 {
                     "name": "stage_summary_text",
@@ -56,7 +56,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "summary.coding",
+                    "forEachOrNull": "summary.coding",
                     "column": [
                         {
                             "name": "stage_summary_coding_system",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "reasonReference",
+            "forEachOrNull": "reasonReference",
             "column": [
                 {
                     "name": "reason_reference_reference",

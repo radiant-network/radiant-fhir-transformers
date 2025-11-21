@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "focalDevice",
+            "forEachOrNull": "focalDevice",
             "column": [
                 {
                     "name": "focal_device_action_text",
@@ -56,7 +56,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "action.coding",
+                    "forEachOrNull": "action.coding",
                     "column": [
                         {
                             "name": "focal_device_action_coding_system",

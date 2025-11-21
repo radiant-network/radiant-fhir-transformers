@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "endpoint",
+            "forEachOrNull": "endpoint",
             "column": [
                 {
                     "name": "endpoint_reference",

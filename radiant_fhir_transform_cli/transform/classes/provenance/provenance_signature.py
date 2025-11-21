@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "signature",
+            "forEachOrNull": "signature",
             "column": [
                 {
                     "name": "signature_when",
@@ -81,7 +81,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "type",
+                    "forEachOrNull": "type",
                     "column": [
                         {
                             "name": "signature_type_system",

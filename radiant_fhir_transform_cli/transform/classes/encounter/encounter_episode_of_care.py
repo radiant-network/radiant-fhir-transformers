@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "episodeOfCare",
+            "forEachOrNull": "episodeOfCare",
             "column": [
                 {
                     "name": "episode_of_care_reference",

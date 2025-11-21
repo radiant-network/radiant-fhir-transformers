@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "locationReference",
+            "forEachOrNull": "locationReference",
             "column": [
                 {
                     "name": "location_reference_reference",

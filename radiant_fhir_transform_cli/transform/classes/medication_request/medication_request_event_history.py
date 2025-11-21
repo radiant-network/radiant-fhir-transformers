@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "eventHistory",
+            "forEachOrNull": "eventHistory",
             "column": [
                 {
                     "name": "event_history_reference",

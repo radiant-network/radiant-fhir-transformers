@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "costToBeneficiary",
+            "forEachOrNull": "costToBeneficiary",
             "column": [
                 {
                     "name": "cost_to_beneficiary_type_text",
@@ -71,7 +71,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "type.coding",
+                    "forEachOrNull": "type.coding",
                     "column": [
                         {
                             "name": "cost_to_beneficiary_type_coding_system",
@@ -86,7 +86,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "exception",
+                    "forEachOrNull": "exception",
                     "column": [
                         {
                             "name": "cost_to_beneficiary_exception_type",

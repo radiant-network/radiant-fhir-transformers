@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "diagnosis",
+            "forEachOrNull": "diagnosis",
             "column": [
                 {
                     "name": "diagnosis_condition_reference",
@@ -61,7 +61,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "use.coding",
+                    "forEachOrNull": "use.coding",
                     "column": [
                         {
                             "name": "diagnosis_use_coding_system",
