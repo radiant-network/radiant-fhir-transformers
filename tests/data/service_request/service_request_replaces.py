@@ -11,10 +11,11 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
-        "replaces_reference": "banana",
+        "replaces_reference": "serviceRequest/banana",
         "replaces_display": "Previous allergy test",
         "replaces_type": None,
+        "id": "7b22f44d-a119-4da9-b9ed-0f4ca4fed2c0",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

@@ -11,15 +11,14 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
-        "security_label_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
-                "code": "N",
-                "display": "normal",
-            }
-        ],
+        "security_label_coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+            "code": "N",
+            "display": "normal",
+        },
         "security_label_text": None,
+        "id": "7f588a6d-bc93-4a22-bae3-345557e7b235",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
 ]
 

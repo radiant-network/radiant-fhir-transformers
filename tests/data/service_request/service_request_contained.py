@@ -11,7 +11,6 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
         "contained_resource_type": "Observation",
         "contained_id": "fasting",
         "contained_status": "final",
@@ -20,9 +19,10 @@ EXPECTED_OUTPUT = [
         "contained_subject_display": None,
         "contained_subject_type": None,
         "contained_collection_collected_date_time": None,
+        "id": "390b8ddc-cd05-4b7e-9fbd-3f82cd116d89",
+        "service_request_id": "di_abcd_efg",
     },
     {
-        "service_request_id": "di_abcd_efg",
         "contained_resource_type": "Specimen",
         "contained_id": "serum",
         "contained_status": None,
@@ -31,6 +31,8 @@ EXPECTED_OUTPUT = [
         "contained_subject_display": None,
         "contained_subject_type": None,
         "contained_collection_collected_date_time": "2015-08-16T06:40:17Z",
+        "id": "23155e43-3b76-490f-bd1c-01306f7c6a96",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

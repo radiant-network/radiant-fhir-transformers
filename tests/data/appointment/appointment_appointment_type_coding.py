@@ -11,10 +11,11 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
         "appointment_type_coding_system": "http://terminology.hl7.org/CodeSystem/v2-0276",
         "appointment_type_coding_code": "FOLLOWUP",
         "appointment_type_coding_display": "A follow up visit from a previous appointment",
+        "id": "0a357ee0-4d08-4ec5-aa8b-33572f3e91c1",
+        "appointment_id": "example",
     },
 ]
 

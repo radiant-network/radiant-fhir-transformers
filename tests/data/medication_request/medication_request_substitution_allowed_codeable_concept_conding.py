@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "substitution_allowed_codeable_concept_coding_system": "system",
         "substitution_allowed_codeable_concept_coding_code": "code",
         "substitution_allowed_codeable_concept_coding_display": "display",
-    }
+        "id": "544ae06e-ffd4-49d4-a7d5-a8cb17137b4f",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

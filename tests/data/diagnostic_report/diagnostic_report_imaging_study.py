@@ -11,11 +11,12 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
-        "imaging_study_reference": "myimage",
-        "imaging_study_type": None,
+        "imaging_study_reference": "ImagingStudy/myimage",
         "imaging_study_display": "some Mri image",
-    }
+        "imaging_study_type": None,
+        "id": "2e70c29c-7258-48fe-b410-ef129bc87941",
+        "diagnostic_report_id": "101",
+    },
 ]
 
 

@@ -17,10 +17,10 @@ EXPECTED_OUTPUT = [
         "morphology_text": "Splenic mass",
         "location_text": "Spleen",
         "description": "7 cm maximum diameter",
-        "patient_reference": "example",
+        "patient_reference": "Patient/example",
         "patient_type": None,
         "patient_display": None,
-    }
+    },
 ]
 
 

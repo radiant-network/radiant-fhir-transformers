@@ -11,10 +11,11 @@ from .care_plan import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_plan_id": "preg",
         "replaces_reference": None,
         "replaces_display": "Plan from urgent care clinic",
         "replaces_type": None,
+        "id": "abc18aaf-6533-45e9-9a28-1e4a889a7b85",
+        "care_plan_id": "preg",
     },
 ]
 

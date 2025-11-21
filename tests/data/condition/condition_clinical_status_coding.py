@@ -11,10 +11,11 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "condition_id": "f201",
         "clinical_status_coding_system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
         "clinical_status_coding_code": "resolved",
         "clinical_status_coding_display": None,
+        "id": "027ef19d-ef9b-4dd7-b145-84ee7a0fcecd",
+        "condition_id": "f201",
     },
 ]
 

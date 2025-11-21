@@ -10,14 +10,15 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "condition_id": "f201",
         "note_text": "This is a test note for the condition.",
         "note_time": None,
         "note_author_reference_reference": None,
         "note_author_reference_display": None,
         "note_author_reference_type": None,
         "note_author_string": None,
-    }
+        "id": "9dbd5112-f621-4d0b-90bd-a990409cbc24",
+        "condition_id": "f201",
+    },
 ]
 
 

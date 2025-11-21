@@ -11,13 +11,14 @@ from .care_team_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_team_id": "example",
         "identifier_use": None,
         "identifier_type_text": None,
         "identifier_system": None,
         "identifier_value": "12345",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "c55d9737-0d5c-4f78-bf4f-f334d625624e",
+        "care_team_id": "example",
     },
 ]
 

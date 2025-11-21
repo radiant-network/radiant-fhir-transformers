@@ -12,11 +12,12 @@ from .location_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
+        "id": "760a916e-3095-4c7e-83e5-92fb8ad309d2",
         "hours_of_operation_days_of_week": None,
         "hours_of_operation_all_day": True,
         "hours_of_operation_opening_time": None,
         "hours_of_operation_closing_time": None,
-    }
+    },
 ]
 
 

@@ -11,14 +11,15 @@ from .patient import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "photo_content_type": "image/gif",
         "photo_language": None,
         "photo_url": "http://someimage.com",
-        "photo_hash": None,
         "photo_size": None,
+        "photo_hash": None,
         "photo_title": None,
         "photo_creation": None,
+        "id": "5edee6ad-0c24-4d0c-8807-912d5afa9438",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
 ]
 

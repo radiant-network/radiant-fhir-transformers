@@ -11,10 +11,11 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "goal_id": "example",
         "priority_coding_system": "http://terminology.hl7.org/CodeSystem/goal-priority",
         "priority_coding_code": "high-priority",
         "priority_coding_display": "High Priority",
+        "id": "802b7dca-7ec4-40d0-bff7-844cd78c2eb5",
+        "goal_id": "example",
     },
 ]
 

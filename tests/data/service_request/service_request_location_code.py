@@ -11,10 +11,11 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
         "location_code_coding": None,
         "location_code_text": "Pediatrics",
         "location_code_type": None,
+        "id": "e349cfbd-36c1-466e-ba4a-1ba85d7d24e9",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

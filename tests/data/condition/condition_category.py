@@ -11,20 +11,21 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "condition_id": "f201",
-        "category_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "55607006",
-                "display": "Problem",
-            },
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
-                "code": "problem-list-item",
-            },
-        ],
+        "category_coding_system": "http://snomed.info/sct",
+        "category_coding_code": "55607006",
+        "category_coding_display": "Problem",
         "category_text": None,
-    }
+        "id": "bef767f6-519d-4fc5-b6d2-a89dd2ae1521",
+        "condition_id": "f201",
+    },
+    {
+        "category_coding_system": "http://terminology.hl7.org/CodeSystem/condition-category",
+        "category_coding_code": "problem-list-item",
+        "category_coding_display": None,
+        "category_text": None,
+        "id": "223b0c21-553c-4566-b9ec-ac348125df06",
+        "condition_id": "f201",
+    },
 ]
 
 

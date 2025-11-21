@@ -11,15 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
-        "complication_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "134006",
-                "display": "Decreased hair growth",
-            }
-        ],
+        "complication_coding_system": "http://snomed.info/sct",
+        "complication_coding_code": "134006",
+        "complication_coding_display": "Decreased hair growth",
         "complication_text": None,
+        "id": "26864a9c-ca88-4569-9ec1-9ffced16b95b",
+        "procedure_id": "f201",
     },
 ]
 

@@ -11,14 +11,15 @@ from .list_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "list_id": "med-list",
         "note_author_reference_reference": None,
         "note_author_reference_type": None,
         "note_author_reference_display": None,
         "note_author_string": None,
         "note_time": None,
         "note_text": "Both parents, both brothers and both children (twin) are still alive.",
-    }
+        "id": "7f99de97-7b3c-443f-928c-0224c06f7ba6",
+        "list_id": "med-list",
+    },
 ]
 
 

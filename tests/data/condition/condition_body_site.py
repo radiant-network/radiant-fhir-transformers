@@ -11,15 +11,12 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "condition_id": "f201",
-        "body_site_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "38266002",
-                "display": "Entire body as a whole",
-            }
-        ],
+        "body_site_coding_system": "http://snomed.info/sct",
+        "body_site_coding_code": "38266002",
+        "body_site_coding_display": "Entire body as a whole",
         "body_site_text": None,
+        "id": "c1127e20-75e9-4c76-99e7-dd46ee400f31",
+        "condition_id": "f201",
     },
 ]
 

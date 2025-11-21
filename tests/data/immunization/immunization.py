@@ -16,10 +16,10 @@ EXPECTED_OUTPUT = [
         "status": "completed",
         "status_reason_text": None,
         "vaccine_code_text": "Fluvax (Influenza)",
-        "patient_reference": "example",
+        "patient_reference": "Patient/example",
         "patient_type": None,
         "patient_display": None,
-        "encounter_reference": "example",
+        "encounter_reference": "Encounter/example",
         "encounter_type": None,
         "encounter_display": None,
         "occurrence_date_time": "2013-01-10",
@@ -27,10 +27,10 @@ EXPECTED_OUTPUT = [
         "recorded": "2013-01-10",
         "primary_source": True,
         "report_origin_text": "Written Record",
-        "location_reference": "1",
+        "location_reference": "Location/1",
         "location_type": None,
         "location_display": None,
-        "manufacturer_reference": "hl7",
+        "manufacturer_reference": "Organization/hl7",
         "manufacturer_type": None,
         "manufacturer_display": None,
         "lot_number": "AAJN11K",
@@ -43,7 +43,7 @@ EXPECTED_OUTPUT = [
         "dose_quantity_code": "mg",
         "is_subpotent": True,
         "funding_source_text": None,
-    }
+    },
 ]
 
 

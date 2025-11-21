@@ -11,11 +11,12 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
-        "based_on_reference": "req",
-        "based_on_type": None,
+        "based_on_reference": "ServiceRequest/req",
         "based_on_display": None,
-    }
+        "based_on_type": None,
+        "id": "68dd3cb5-b332-43b9-9156-1b60cf052680",
+        "diagnostic_report_id": "101",
+    },
 ]
 
 

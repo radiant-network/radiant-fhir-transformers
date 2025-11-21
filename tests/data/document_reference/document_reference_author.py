@@ -11,10 +11,11 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
-        "author_reference": "emnkokS3ex3pMjlzS7Qtl7A3",
+        "author_reference": "Practitioner/emnkokS3ex3pMjlzS7Qtl7A3",
         "author_type": None,
         "author_display": None,
+        "id": "f3ce6d9e-dd31-4a32-88d2-d12899114c64",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
 ]
 

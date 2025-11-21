@@ -11,11 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
         "used_reference_reference": None,
         "used_reference_type": None,
         "used_reference_display": "Colonoscope device",
-    }
+        "id": "b8815934-f571-4a7a-83c8-e23a571933c6",
+        "procedure_id": "f201",
+    },
 ]
 
 

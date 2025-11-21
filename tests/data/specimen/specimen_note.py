@@ -11,13 +11,14 @@ from .specimen import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "specimen_id": "101",
         "note_text": "Specimen is grossly lipemic",
         "note_author_string": "Doctor Judy",
         "note_author_reference_reference": None,
         "note_author_reference_display": None,
         "note_author_reference_type": None,
         "note_time": "2011-03-01T07:03:00Z",
+        "id": "b61067d1-63b9-44d6-b036-5197993f542c",
+        "specimen_id": "101",
     },
 ]
 

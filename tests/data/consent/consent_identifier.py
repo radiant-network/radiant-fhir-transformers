@@ -11,13 +11,14 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
         "identifier_use": None,
         "identifier_type_text": None,
         "identifier_system": "urn:oid:2.16.840.1.113883.3.72.5.9.1",
         "identifier_value": "494e0c7a-a69e-4fb4-9d02-6aae747790d7",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "077721c4-0ca9-46c7-8ca6-484a9a88ee9b",
+        "consent_id": "consent-example-basic",
     },
 ]
 

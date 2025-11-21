@@ -11,10 +11,11 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "body_site_coding_system": "http://snomed.info/sct",
         "body_site_coding_code": "20139000",
         "body_site_coding_display": "Structure of respiratory system (body structure)",
+        "id": "53c217ce-19b2-42d2-a3a7-0239805aed71",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

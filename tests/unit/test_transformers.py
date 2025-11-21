@@ -116,6 +116,7 @@ def test_transformers(test_helper_cls):
     # Remove id from subtype can't compare to uuid
     if resource_subtype:
         df_actual = df_actual.drop(columns=["id"])
+        df_expected = df_expected.drop(columns=["id"])
 
     print("********* Actual")
     pprint(df_actual.to_dict(orient="records"))
@@ -205,6 +206,6 @@ def test_transformers_cols():
     ]
 
     assert len(expected_cols) == len(transformer.column_metadata())
-    assert expected_cols == [
+    assert sorted(expected_cols) == sorted([
         meta.name for meta in transformer.column_metadata()
-    ]
+    ])

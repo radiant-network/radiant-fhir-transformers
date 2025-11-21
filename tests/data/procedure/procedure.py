@@ -11,16 +11,16 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "resource_type": "Procedure",
         "id": "f201",
+        "resource_type": "Procedure",
         "status": "completed",
         "status_reason_text": "Treatment completed",
         "category_text": "Ordered Procedures",
         "code_text": None,
-        "subject_reference": "f201",
+        "subject_reference": "Patient/f201",
         "subject_type": None,
         "subject_display": "Roel",
-        "encounter_reference": "f202",
+        "encounter_reference": "Encounter/f202",
         "encounter_type": None,
         "encounter_display": "Roel's encounter on January 28th, 2013",
         "performed_date_time": None,
@@ -42,14 +42,14 @@ EXPECTED_OUTPUT = [
         "recorder_reference": None,
         "recorder_type": None,
         "recorder_display": None,
-        "asserter_reference": "eOJIO17tsdF3l7OssxPihIg3",
+        "asserter_reference": "Practitioner/eOJIO17tsdF3l7OssxPihIg3",
         "asserter_type": "Practitioner",
         "asserter_display": None,
         "location_reference": None,
         "location_type": None,
         "location_display": None,
         "outcome_text": None,
-    }
+    },
 ]
 
 

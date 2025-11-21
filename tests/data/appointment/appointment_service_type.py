@@ -11,12 +11,12 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
-        "service_type_coding": [
-            {"code": "52", "display": "General Discussion"}
-        ],
+        "service_type_coding_code": "52",
+        "service_type_coding_display": "General Discussion",
         "service_type_text": None,
-    }
+        "id": "d0d7acdd-dd94-448e-b916-2542ea0f5fd9",
+        "appointment_id": "example",
+    },
 ]
 
 

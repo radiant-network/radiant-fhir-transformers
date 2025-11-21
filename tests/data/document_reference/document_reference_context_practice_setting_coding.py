@@ -11,10 +11,11 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "context_practice_setting_coding_system": "http://www.ihe.net/xds/connectathon/practiceSettingCodes",
         "context_practice_setting_coding_code": "General Medicine",
         "context_practice_setting_coding_display": "General Medicine",
+        "id": "d3425d53-6263-4075-a199-676453082c8d",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
 ]
 

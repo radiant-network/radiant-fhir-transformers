@@ -11,9 +11,10 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "instantiates_canonical": "canonical",
-    }
+        "id": "b4bfffe8-405a-40d3-b6fb-f10559f3b81b",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

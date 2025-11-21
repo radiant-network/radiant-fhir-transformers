@@ -11,19 +11,16 @@ from .specimen import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "specimen_id": "101",
+        "processing_additive_display": "6 N HCl",
+        "processing_procedure_coding_system": "http://terminology.hl7.org/CodeSystem/v2-0373",
+        "processing_procedure_coding_code": "ACID",
         "processing_description": "Acidify to pH < 3.0 with 6 N HCl.",
-        "processing_procedure_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0373",
-                "code": "ACID",
-            }
-        ],
         "processing_procedure_text": None,
-        "processing_additive": [{"display": "6 N HCl"}],
         "processing_time_date_time": "2015-08-18T08:10:00Z",
         "processing_time_period_start": None,
         "processing_time_period_end": None,
+        "id": "55b2ec16-aac6-4b0b-9b16-e923d249ce67",
+        "specimen_id": "101",
     },
 ]
 
