@@ -206,6 +206,6 @@ def test_transformers_cols():
     ]
 
     assert len(expected_cols) == len(transformer.column_metadata())
-    assert sorted(expected_cols) == sorted([
-        meta.name for meta in transformer.column_metadata()
-    ])
+    assert sorted(expected_cols) == sorted(
+        [meta.name for meta in transformer.column_metadata()]
+    )
