@@ -14,14 +14,14 @@ EXPECTED_OUTPUT = [
         "id": "benedicte",
         "resource_type": "RelatedPerson",
         "active": True,
-        "patient_reference": "example",
+        "patient_reference": "Patient/example",
         "patient_type": None,
         "patient_display": None,
         "gender": "female",
         "birth_date": "2012-03-11",
         "period_start": "2012-03-11",
         "period_end": None,
-    }
+    },
 ]
 
 

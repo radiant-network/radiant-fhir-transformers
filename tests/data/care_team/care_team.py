@@ -15,15 +15,15 @@ EXPECTED_OUTPUT = [
         "resource_type": "CareTeam",
         "status": "active",
         "name": "Peter James Charlmers Care Plan for Inpatient Encounter",
-        "subject_reference": "example",
+        "subject_reference": "Patient/example",
         "subject_type": None,
         "subject_display": "Peter James Chalmers",
-        "encounter_reference": "example",
+        "encounter_reference": "Encounter/example",
         "encounter_type": None,
         "encounter_display": None,
         "period_start": None,
         "period_end": "2013-01-01",
-    }
+    },
 ]
 
 

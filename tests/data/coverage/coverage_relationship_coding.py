@@ -11,10 +11,11 @@ from .coverage_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "coverage_id": "9876B1",
         "relationship_coding_system": None,
         "relationship_coding_code": "self",
         "relationship_coding_display": None,
+        "id": "b23698de-f032-4ac0-a9c0-0e2228dfb80a",
+        "coverage_id": "9876B1",
     },
 ]
 

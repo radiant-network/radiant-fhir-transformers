@@ -11,10 +11,11 @@ from .care_plan import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_plan_id": "preg",
         "goal_reference": "#goal",
         "goal_display": None,
         "goal_type": None,
+        "id": "961c9e3c-db57-4b02-bbac-6dcc5210ebc2",
+        "care_plan_id": "preg",
     },
 ]
 

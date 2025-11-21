@@ -11,15 +11,14 @@ from .care_team_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_team_id": "example",
-        "category_coding": [
-            {
-                "system": "http://loinc.org",
-                "code": "LA27976-2",
-                "display": "Encounter-focused care team",
-            }
-        ],
+        "category_coding": {
+            "system": "http://loinc.org",
+            "code": "LA27976-2",
+            "display": "Encounter-focused care team",
+        },
         "category_text": None,
+        "id": "476e84a9-5dec-464f-af0e-7889d4b0f99a",
+        "care_team_id": "example",
     },
 ]
 

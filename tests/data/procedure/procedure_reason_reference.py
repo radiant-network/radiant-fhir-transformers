@@ -11,11 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
-        "reason_reference_reference": "reason",
+        "reason_reference_reference": "Condition/reason",
         "reason_reference_type": "Condition",
         "reason_reference_display": "The justification that the procedure was performed",
-    }
+        "id": "e92077f3-dfc6-4cf8-a512-cb48874a7d67",
+        "procedure_id": "f201",
+    },
 ]
 
 

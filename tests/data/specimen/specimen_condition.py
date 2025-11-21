@@ -11,26 +11,20 @@ from .specimen import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "specimen_id": "101",
+        "condition_coding_system": "http://snomed.info/sct",
+        "condition_coding_code": "abc1",
+        "condition_coding_display": "bad heart",
         "condition_text": "example_condition",
-        "condition_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "abc1",
-                "display": "bad heart",
-            }
-        ],
+        "id": "16a76114-4361-4c56-956b-cea8037fabcc",
+        "specimen_id": "101",
     },
     {
-        "specimen_id": "101",
+        "condition_coding_system": "http://snomed.info/sct",
+        "condition_coding_code": "abc3",
+        "condition_coding_display": "worse heart",
         "condition_text": "example_condition_2",
-        "condition_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "abc3",
-                "display": "worse heart",
-            }
-        ],
+        "id": "9c5e037f-ad30-4666-b74c-9f92f6c89103",
+        "specimen_id": "101",
     },
 ]
 

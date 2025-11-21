@@ -141,19 +141,19 @@ VIEW_DEFINITION = {
                             "name": "provision_provision_actor",
                             "path": "actor",
                             "type": "string",
-                            "collection": True
+                            "collection": True,
                         },
                         {
                             "name": "provision_provision_class",
                             "path": "class",
                             "type": "string",
-                            "collection": True
+                            "collection": True,
                         },
                         {
                             "name": "provision_provision_code",
                             "path": "code",
                             "type": "string",
-                            "collection": True
+                            "collection": True,
                         },
                     ],
                 },

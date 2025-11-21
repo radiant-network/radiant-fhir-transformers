@@ -11,14 +11,15 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
         "note_author_reference_reference": None,
         "note_author_reference_type": None,
         "note_author_reference_display": None,
         "note_author_string": None,
         "note_time": None,
         "note_text": "Eerste neo-adjuvante TPF-kuur bij groot proces in sphenoid met intracraniale uitbreiding.",
-    }
+        "id": "94af36db-3f20-4e0a-8d53-a7476208626c",
+        "procedure_id": "f201",
+    },
 ]
 
 

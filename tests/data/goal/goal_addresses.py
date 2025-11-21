@@ -11,10 +11,11 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "goal_id": "example",
         "addresses_reference": None,
         "addresses_type": None,
         "addresses_display": "obesity condition",
+        "id": "d68c4e87-7934-40e9-a3f9-86788abac05f",
+        "goal_id": "example",
     },
 ]
 

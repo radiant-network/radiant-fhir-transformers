@@ -11,16 +11,18 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
-        "based_on_reference": "fM4L7yx-lQwmJcrS7MAT3m1zkSuH8v8LVdM1dkvXzDPc4",
+        "based_on_reference": "CarePlan/fM4L7yx-lQwmJcrS7MAT3m1zkSuH8v8LVdM1dkvXzDPc4",
         "based_on_type": "CarePlan",
         "based_on_display": "BMT Supportive Care Plan",
+        "id": "489f0904-05e8-4bbb-a962-0d654680df9e",
+        "medication_request_id": "medrx0301",
     },
     {
-        "medication_request_id": "medrx0301",
-        "based_on_reference": "ee02A2FZtICYRsDjH4.zr1tqyCMSVk0A6Uqb--g8q7eQ3",
+        "based_on_reference": "MedicationRequest/ee02A2FZtICYRsDjH4.zr1tqyCMSVk0A6Uqb--g8q7eQ3",
         "based_on_type": None,
         "based_on_display": "acetaminophen susp 140.8 mg",
+        "id": "d6d72b51-7fd3-46ab-a936-14094f87b795",
+        "medication_request_id": "medrx0301",
     },
 ]
 

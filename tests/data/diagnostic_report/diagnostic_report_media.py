@@ -11,12 +11,13 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
         "media_comment": "some comment",
-        "media_link_reference": "123",
-        "media_link_type": None,
+        "media_link_reference": "Media/123",
         "media_link_display": "a slide image",
-    }
+        "media_link_type": None,
+        "id": "979b2d9e-7bd1-4fd7-ab05-53fcf6b5b0f7",
+        "diagnostic_report_id": "101",
+    },
 ]
 
 

@@ -11,11 +11,12 @@ from .medication_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_id": "med0301",
         "form_coding_system": "http://snomed.info/sct",
         "form_coding_code": "385219001",
         "form_coding_display": "Conventional release solution for injection (dose form)",
-    }
+        "id": "60edd93f-91e8-4af5-a654-fd500eeeb336",
+        "medication_id": "med0301",
+    },
 ]
 
 

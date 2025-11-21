@@ -11,9 +11,10 @@ from .care_plan_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_plan_id": "preg",
         "instantiates_canonical": "http://example.org/fhir/CarePlanDefinition/KDN5",
-    }
+        "id": "03f779ea-5cc6-46a9-8d98-a132bfdac686",
+        "care_plan_id": "preg",
+    },
 ]
 
 

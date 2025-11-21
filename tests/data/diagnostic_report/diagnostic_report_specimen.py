@@ -11,22 +11,25 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
-        "specimen_reference": "rtt",
-        "specimen_type": None,
+        "specimen_reference": "Specimen/rtt",
         "specimen_display": "Red Top Tube",
+        "specimen_type": None,
+        "id": "4c1649c2-88ac-4380-9157-2f257f820fdb",
+        "diagnostic_report_id": "101",
     },
     {
-        "diagnostic_report_id": "101",
-        "specimen_reference": "ltt",
-        "specimen_type": None,
+        "specimen_reference": "Specimen/ltt",
         "specimen_display": "Lavender Top Tube",
+        "specimen_type": None,
+        "id": "39862b66-045d-4280-8c31-a33073397f9e",
+        "diagnostic_report_id": "101",
     },
     {
-        "diagnostic_report_id": "101",
-        "specimen_reference": "urine",
-        "specimen_type": None,
+        "specimen_reference": "Specimen/urine",
         "specimen_display": "Urine Sample",
+        "specimen_type": None,
+        "id": "d4862c6b-5011-459a-a8a3-6012b474fca9",
+        "diagnostic_report_id": "101",
     },
 ]
 

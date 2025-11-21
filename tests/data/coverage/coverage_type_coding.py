@@ -11,10 +11,11 @@ from .coverage_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "coverage_id": "9876B1",
         "type_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
         "type_coding_code": "EHCPOL",
         "type_coding_display": "extended healthcare",
+        "id": "0f9d0da1-21f6-447f-bf4a-932ef1a96ec0",
+        "coverage_id": "9876B1",
     },
 ]
 

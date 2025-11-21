@@ -11,13 +11,14 @@ from .care_plan import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_plan_id": "preg",
         "identifier_type_text": None,
         "identifier_system": "http://www.bmc.nl/zorgportal/identifiers/careplans",
         "identifier_value": "CP2903",
+        "identifier_use": "official",
         "identifier_period_start": None,
         "identifier_period_end": None,
-        "identifier_use": "official",
+        "id": "7cb9e121-de10-4ca7-ba74-2c99bb2700cf",
+        "care_plan_id": "preg",
     },
 ]
 

@@ -11,10 +11,11 @@ from .coverage_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "coverage_id": "9876B1",
-        "payor_reference": "2",
+        "payor_reference": "Organization/2",
         "payor_type": None,
         "payor_display": None,
+        "id": "1f0f6f5a-7c06-4c3f-8f86-5701a3072768",
+        "coverage_id": "9876B1",
     },
 ]
 

@@ -10,12 +10,13 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
         "class_history_class_system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
         "class_history_class_code": "IMP",
         "class_history_class_display": "inpatient encounter",
         "class_history_period_start": "2013-03-08T00:00:00Z",
         "class_history_period_end": "2013-03-08T00:00:00Z",
+        "id": "7a07aee6-cb50-49b8-885a-6fac9e6e3f50",
+        "encounter_id": "f203",
     },
 ]
 

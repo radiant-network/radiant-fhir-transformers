@@ -11,13 +11,14 @@ from .allergy_intolerance import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "allergy_intolerance_id": "example_ai",
         "identifier_type_text": None,
         "identifier_system": "http://acme.com/ids/patients/risks",
         "identifier_value": "49476534",
+        "identifier_use": None,
         "identifier_period_start": None,
         "identifier_period_end": None,
-        "identifier_use": None,
+        "id": "b2f8faa7-734e-4436-9494-e02cd28b8a60",
+        "allergy_intolerance_id": "example_ai",
     },
 ]
 

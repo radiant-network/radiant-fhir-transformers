@@ -11,9 +11,10 @@ from .care_plan_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_plan_id": "preg",
         "instantiates_uri": "http://example.org/protocol-for-obesity",
-    }
+        "id": "a62bfe2d-a646-40ef-992f-565eb54cece1",
+        "care_plan_id": "preg",
+    },
 ]
 
 

@@ -11,11 +11,10 @@ from .related_person_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "related_person_id": "benedicte",
+        "address_line": "43, Place du Marché Sainte Catherine",
         "address_use": None,
         "address_type": None,
         "address_text": None,
-        "address_line": ["43, Place du Marché Sainte Catherine"],
         "address_city": "Paris",
         "address_district": None,
         "address_state": None,
@@ -23,6 +22,8 @@ EXPECTED_OUTPUT = [
         "address_country": "FRA",
         "address_period_start": None,
         "address_period_end": None,
+        "id": "289b88a7-e98a-4fb1-b90b-b454ec716771",
+        "related_person_id": "benedicte",
     },
 ]
 

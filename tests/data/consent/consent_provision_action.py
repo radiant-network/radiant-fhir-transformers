@@ -11,14 +11,11 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
-        "provision_action_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/consentaction",
-                "code": "access",
-            }
-        ],
+        "provision_action_coding_system": "http://terminology.hl7.org/CodeSystem/consentaction",
+        "provision_action_coding_code": "access",
         "provision_action_text": None,
+        "id": "4396313e-51ed-43b1-8f01-71cd816a4b07",
+        "consent_id": "consent-example-basic",
     },
 ]
 

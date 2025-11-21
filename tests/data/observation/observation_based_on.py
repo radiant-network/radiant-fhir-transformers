@@ -11,16 +11,18 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "based_on_reference": "eKSdPx93PPg7jLqFtgAKjJbL1RWvYEkyba5u.yiQaXZE3",
+        "based_on_reference": "ServiceRequest/eKSdPx93PPg7jLqFtgAKjJbL1RWvYEkyba5u.yiQaXZE3",
         "based_on_type": None,
         "based_on_display": "Rapid SARS-CoV-2 PCR",
+        "id": "c93891e6-e8bc-4915-8caf-1993c2fda74d",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "based_on_reference": "elkj;lskdjf;ljl;ghghhhddddddjj.yiQaXZE3",
+        "based_on_reference": "ServiceRequest/elkj;lskdjf;ljl;ghghhhddddddjj.yiQaXZE3",
         "based_on_type": None,
         "based_on_display": "Rapid TESTER",
+        "id": "edc00acf-11fb-4019-9106-9c64c54f412a",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

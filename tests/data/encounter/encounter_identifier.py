@@ -11,14 +11,15 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
         "identifier_type_text": None,
         "identifier_use": "temp",
         "identifier_system": None,
         "identifier_value": "Encounter_Roel_20130311",
         "identifier_period_start": None,
         "identifier_period_end": None,
-    }
+        "id": "d6083bc2-2bb6-43c3-8edf-32f89c2b3cf3",
+        "encounter_id": "f203",
+    },
 ]
 
 

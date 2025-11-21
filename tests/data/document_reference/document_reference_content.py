@@ -11,7 +11,6 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "content_attachment_content_type": "application/hl7-v3+xml",
         "content_attachment_language": "en-US",
         "content_attachment_url": "http://example.org/xds/mhd/Binary/07a6483f-732b-461e-86b6-edb665c45510",
@@ -21,7 +20,9 @@ EXPECTED_OUTPUT = [
         "content_format_system": "urn:oid:1.3.6.1.4.1.19376.1.2.3",
         "content_format_code": "urn:ihe:pcc:handp:2008",
         "content_format_display": "History and Physical Specification",
-    }
+        "id": "d8dbca12-b023-4735-9948-3d4de54f2fa4",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
+    },
 ]
 
 

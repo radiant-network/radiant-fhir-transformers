@@ -11,19 +11,16 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
-        "focal_device_action_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "231361000",
-                "display": " Attention to catheter (procedure)",
-            }
-        ],
+        "focal_device_action_coding_system": "http://snomed.info/sct",
+        "focal_device_action_coding_code": "231361000",
+        "focal_device_action_coding_display": " Attention to catheter (procedure)",
         "focal_device_action_text": None,
         "focal_device_manipulated_reference": "Device/manipulated",
         "focal_device_manipulated_type": None,
         "focal_device_manipulated_display": None,
-    }
+        "id": "06470103-0b2a-4834-8b50-28937d04eed3",
+        "procedure_id": "f201",
+    },
 ]
 
 

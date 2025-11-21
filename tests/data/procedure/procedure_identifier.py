@@ -11,22 +11,24 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
         "identifier_use": "usual",
         "identifier_type_text": "ORD",
         "identifier_system": "urn:oid:1.2.840.114350.1.13.861.1.7.2.798268",
         "identifier_value": "3287774",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "3a62cbdb-df70-4663-a3a2-02692652efc5",
+        "procedure_id": "f201",
     },
     {
-        "procedure_id": "f201",
         "identifier_use": "usual",
         "identifier_type_text": "EAP",
         "identifier_system": "urn:oid:1.2.840.114350.1.13.861.1.7.2.696580",
         "identifier_value": "307",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "916f7c47-027c-454c-b1aa-7ac25467e4f8",
+        "procedure_id": "f201",
     },
 ]
 

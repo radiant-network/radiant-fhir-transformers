@@ -11,22 +11,24 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "identifier_use": None,
         "identifier_type_text": None,
         "identifier_system": "urn:oid:1.2.840.114350.1.13.5325.1.7.2.727879",
         "identifier_value": "1010618052",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "2610d5af-d894-4e1d-9cfa-322572bb8e1c",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "identifier_use": None,
         "identifier_type_text": None,
         "identifier_system": "urn:oid:1.2.840.114350.1.72.3.15",
         "identifier_value": "1.2.840.114350.1.13.5325.1.7.2.727879_1010618052",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "56aa4b27-3259-4696-8f7b-b35fc4c6b0c3",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
 ]
 

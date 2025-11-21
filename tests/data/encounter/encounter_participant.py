@@ -10,23 +10,18 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
-        "participant_type": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                        "code": "PART",
-                    }
-                ]
-            }
-        ],
+        "participant_type_coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+            "code": "PART",
+        },
         "participant_period_start": None,
         "participant_period_end": None,
         "participant_individual_reference": "Practitioner/f201",
         "participant_individual_type": None,
         "participant_individual_display": None,
-    }
+        "id": "e3053b79-2996-4761-ad45-f6d8f133b6a2",
+        "encounter_id": "f203",
+    },
 ]
 
 

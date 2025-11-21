@@ -11,14 +11,11 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
-        "reason_code_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "429060002",
-            }
-        ],
+        "reason_code_coding_system": "http://snomed.info/sct",
+        "reason_code_coding_code": "429060002",
         "reason_code_text": None,
+        "id": "6961dfe9-39a0-470c-af08-52f43aaf9cdb",
+        "immunization_id": "example",
     },
 ]
 

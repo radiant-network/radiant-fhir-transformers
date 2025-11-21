@@ -11,46 +11,47 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
         "participant_type": None,
-        "participant_actor_type": None,
         "participant_actor_reference": "Patient/example",
+        "participant_actor_type": None,
         "participant_actor_display": "Peter James Chalmers",
         "participant_required": "required",
         "participant_status": "accepted",
         "participant_period_start": None,
         "participant_period_end": None,
+        "id": "60f7336c-3dfd-4029-a627-553bde1cceac",
+        "appointment_id": "example",
     },
     {
-        "appointment_id": "example",
-        "participant_type": [
-            {
-                "coding": [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                        "code": "ATND",
-                    }
-                ]
-            }
-        ],
-        "participant_actor_type": None,
+        "participant_type": {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                    "code": "ATND",
+                },
+            ],
+        },
         "participant_actor_reference": "Practitioner/example",
+        "participant_actor_type": None,
         "participant_actor_display": "Dr Adam Careful",
         "participant_required": "required",
         "participant_status": "accepted",
         "participant_period_start": None,
         "participant_period_end": None,
+        "id": "85ae196d-4eb6-4af8-8215-f6e891c83118",
+        "appointment_id": "example",
     },
     {
-        "appointment_id": "example",
         "participant_type": None,
-        "participant_actor_type": None,
         "participant_actor_reference": "Location/1",
+        "participant_actor_type": None,
         "participant_actor_display": "South Wing, second floor",
         "participant_required": "required",
         "participant_status": "accepted",
         "participant_period_start": None,
         "participant_period_end": None,
+        "id": "9b3d0fdb-f0de-4d43-a0ab-2218d2f11f2b",
+        "appointment_id": "example",
     },
 ]
 

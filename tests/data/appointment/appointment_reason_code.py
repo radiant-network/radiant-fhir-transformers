@@ -11,12 +11,12 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
-        "reason_code_coding": [
-            {"system": "http://snomed.info/sct", "code": "413095006"}
-        ],
+        "reason_code_coding_system": "http://snomed.info/sct",
+        "reason_code_coding_code": "413095006",
         "reason_code_text": "Clinical Review",
-    }
+        "id": "67b111d3-8da4-46be-b0fa-5a8f9e78539a",
+        "appointment_id": "example",
+    },
 ]
 
 

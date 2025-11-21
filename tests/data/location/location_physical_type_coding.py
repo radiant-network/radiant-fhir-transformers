@@ -11,11 +11,12 @@ from .location_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
         "physical_type_coding_system": "http://terminology.hl7.org/CodeSystem/location-physical-type",
         "physical_type_coding_code": "wi",
         "physical_type_coding_display": "Wing",
-    }
+        "id": "b7a5b6ca-620d-4742-bfde-ec9d2abbd754",
+        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
+    },
 ]
 
 

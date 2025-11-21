@@ -15,10 +15,10 @@ EXPECTED_OUTPUT = [
         "resource_type": "Observation",
         "status": "final",
         "code_text": "Rapid Sars-CoV-2",
-        "subject_reference": "evrlLhFNe5BfHZQD39Kr9nfIA0e.TcZOdE0gOPoRXlGs3",
+        "subject_reference": "Patient/evrlLhFNe5BfHZQD39Kr9nfIA0e.TcZOdE0gOPoRXlGs3",
         "subject_type": None,
         "subject_display": "CareEverywhere,Sammy",
-        "encounter_reference": "e.mnIF2M9LQgwkDzhr2PCKA3",
+        "encounter_reference": "Encounter/e.mnIF2M9LQgwkDzhr2PCKA3",
         "encounter_type": None,
         "encounter_display": "Hospital Encounter",
         "effective_date_time": "2024-01-29T16:46:00Z",
@@ -97,13 +97,13 @@ EXPECTED_OUTPUT = [
         "data_absent_reason_text": None,
         "body_site_text": None,
         "method_text": None,
-        "specimen_reference": "eofvi8EpxgTC9958OEt3Xuw3",
+        "specimen_reference": "Specimen/eofvi8EpxgTC9958OEt3Xuw3",
         "specimen_type": None,
         "specimen_display": "Specimen 24U-ID-0290004",
-        "device_reference": "device",
+        "device_reference": "Device/device",
         "device_type": None,
         "device_display": None,
-    }
+    },
 ]
 
 

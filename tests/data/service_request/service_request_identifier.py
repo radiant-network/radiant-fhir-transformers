@@ -11,13 +11,14 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
         "identifier_type_text": "Placer",
         "identifier_system": "urn:oid:1.3.4.5.6.7",
         "identifier_value": "2345234234234",
+        "identifier_use": None,
         "identifier_period_start": None,
         "identifier_period_end": None,
-        "identifier_use": None,
+        "id": "37ea6dc6-a09f-478e-af1b-dadc3bc1d38e",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

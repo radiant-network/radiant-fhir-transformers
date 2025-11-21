@@ -11,11 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
-        "complication_detail_reference": "complication",
+        "complication_detail_reference": "Condition/complication",
         "complication_detail_type": None,
         "complication_detail_display": None,
-    }
+        "id": "138a8262-6f65-478b-95cb-3b34e8e7e305",
+        "procedure_id": "f201",
+    },
 ]
 
 

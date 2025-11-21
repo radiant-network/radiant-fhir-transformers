@@ -10,10 +10,11 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
         "reason_code_coding": None,
         "reason_code_text": "The patient seems to suffer from bilateral pneumonia and renal insufficiency, most likely due to chemotherapy.",
-    }
+        "id": "8c7cc68b-00c0-4434-bc47-9f5b94c76479",
+        "encounter_id": "f203",
+    },
 ]
 
 

@@ -10,11 +10,12 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
         "service_type_coding_system": None,
         "service_type_coding_code": None,
         "service_type_coding_display": "test",
-    }
+        "id": "8e4456e4-a54a-41d4-be58-d9c1f9c0ab09",
+        "encounter_id": "f203",
+    },
 ]
 
 

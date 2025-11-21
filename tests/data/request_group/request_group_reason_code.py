@@ -11,15 +11,14 @@ from .request_group_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "request_group_id": "kdn5-example",
-        "reason_code_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "363443007",
-                "display": "Malignant neoplasm of ovary (disorder)",
-            }
-        ],
+        "reason_code_coding": {
+            "system": "http://snomed.info/sct",
+            "code": "363443007",
+            "display": "Malignant neoplasm of ovary (disorder)",
+        },
         "reason_code_text": None,
+        "id": "29679ea4-4c81-4751-9669-868d88a26cc4",
+        "request_group_id": "kdn5-example",
     },
 ]
 
