@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "locationCode",
+            "forEachOrNull": "locationCode",
             "column": [
                 {
                     "name": "location_code_coding",

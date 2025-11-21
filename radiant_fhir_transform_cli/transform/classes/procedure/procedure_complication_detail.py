@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "complicationDetail",
+            "forEachOrNull": "complicationDetail",
             "column": [
                 {
                     "name": "complication_detail_reference",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "presentedForm",
+            "forEachOrNull": "presentedForm",
             "column": [
                 {
                     "name": "presented_form_content_type",

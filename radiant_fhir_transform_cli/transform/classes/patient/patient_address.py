@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "address",
+            "forEachOrNull": "address",
             "column": [
                 {
                     "name": "address_use",
@@ -86,7 +86,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "line",
+                    "forEachOrNull": "line",
                     "column": [
                         {
                             "name": "address_line",

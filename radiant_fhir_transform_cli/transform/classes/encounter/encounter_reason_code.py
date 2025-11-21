@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "reasonCode",
+            "forEachOrNull": "reasonCode",
             "column": [
                 {
                     "name": "reason_code_coding",

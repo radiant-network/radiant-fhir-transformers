@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "payor",
+            "forEachOrNull": "payor",
             "column": [
                 {
                     "name": "payor_reference",

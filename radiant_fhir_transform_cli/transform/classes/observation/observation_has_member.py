@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "hasMember",
+            "forEachOrNull": "hasMember",
             "column": [
                 {
                     "name": "has_member_reference",

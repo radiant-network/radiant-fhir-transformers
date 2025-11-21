@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "collection.bodySite.coding",
+            "forEachOrNull": "collection.bodySite.coding",
             "column": [
                 {
                     "name": "collection_body_site_coding_system",

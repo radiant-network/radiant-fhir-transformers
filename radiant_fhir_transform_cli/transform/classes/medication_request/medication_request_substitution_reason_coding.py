@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "substitution.reason.coding",
+            "forEachOrNull": "substitution.reason.coding",
             "column": [
                 {
                     "name": "substitution_reason_coding_system",

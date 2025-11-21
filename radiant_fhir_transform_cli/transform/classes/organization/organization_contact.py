@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "contact",
+            "forEachOrNull": "contact",
             "column": [
                 {
                     "name": "contact_purpose_text",
@@ -136,7 +136,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "purpose.coding",
+                    "forEachOrNull": "purpose.coding",
                     "column": [
                         {
                             "name": "contact_purpose_coding_system",
@@ -151,7 +151,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "telecom",
+                    "forEachOrNull": "telecom",
                     "column": [
                         {
                             "name": "contact_telecom_system",

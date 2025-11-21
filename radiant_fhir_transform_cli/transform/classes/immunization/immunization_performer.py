@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "performer",
+            "forEachOrNull": "performer",
             "column": [
                 {
                     "name": "performer_function_text",
@@ -56,7 +56,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "function.coding",
+                    "forEachOrNull": "function.coding",
                     "column": [
                         {
                             "name": "performer_function_coding_system",

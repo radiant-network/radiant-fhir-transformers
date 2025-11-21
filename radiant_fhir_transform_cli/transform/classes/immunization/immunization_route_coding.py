@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "route.coding",
+            "forEachOrNull": "route.coding",
             "column": [
                 {
                     "name": "route_coding_system",

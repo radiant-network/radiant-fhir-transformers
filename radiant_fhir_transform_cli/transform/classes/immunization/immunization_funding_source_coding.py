@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "fundingSource.coding",
+            "forEachOrNull": "fundingSource.coding",
             "column": [
                 {
                     "name": "funding_source_coding_system",

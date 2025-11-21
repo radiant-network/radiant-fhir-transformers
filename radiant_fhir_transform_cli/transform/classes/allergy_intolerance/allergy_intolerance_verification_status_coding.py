@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "verificationStatus.coding",
+            "forEachOrNull": "verificationStatus.coding",
             "column": [
                 {
                     "name": "verification_status_coding_system",

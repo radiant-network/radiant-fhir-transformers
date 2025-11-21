@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "instantiatesCanonical",
+            "forEachOrNull": "instantiatesCanonical",
             "column": [
                 {
                     "name": "instantiates_canonical",

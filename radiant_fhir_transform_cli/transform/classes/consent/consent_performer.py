@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "performer",
+            "forEachOrNull": "performer",
             "column": [
                 {
                     "name": "performer_reference",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "ingredient",
+            "forEachOrNull": "ingredient",
             "column": [
                 {
                     "name": "ingredient_item_codeable_concept",

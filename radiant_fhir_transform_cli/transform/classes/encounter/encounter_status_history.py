@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "statusHistory",
+            "forEachOrNull": "statusHistory",
             "column": [
                 {
                     "name": "status_history_status",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "focus",
+            "forEachOrNull": "focus",
             "column": [
                 {
                     "name": "focus_reference",

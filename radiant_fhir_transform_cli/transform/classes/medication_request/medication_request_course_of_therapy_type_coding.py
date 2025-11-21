@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "courseOfTherapyType.coding",
+            "forEachOrNull": "courseOfTherapyType.coding",
             "column": [
                 {
                     "name": "course_of_therapy_type_coding_system",

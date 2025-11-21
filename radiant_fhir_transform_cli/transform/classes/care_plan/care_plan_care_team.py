@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "careTeam",
+            "forEachOrNull": "careTeam",
             "column": [
                 {
                     "name": "care_team_reference",

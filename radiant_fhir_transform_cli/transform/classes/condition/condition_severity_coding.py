@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "severity.coding",
+            "forEachOrNull": "severity.coding",
             "column": [
                 {
                     "name": "severity_coding_system",

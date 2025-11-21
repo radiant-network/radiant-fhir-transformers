@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "substitution.allowedCodeableConcept.coding",
+            "forEachOrNull": "substitution.allowedCodeableConcept.coding",
             "column": [
                 {
                     "name": "substitution_allowed_codeable_concept_coding_system",

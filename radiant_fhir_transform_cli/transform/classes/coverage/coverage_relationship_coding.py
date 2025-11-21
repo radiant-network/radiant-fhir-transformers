@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "relationship.coding",
+            "forEachOrNull": "relationship.coding",
             "column": [
                 {
                     "name": "relationship_coding_system",

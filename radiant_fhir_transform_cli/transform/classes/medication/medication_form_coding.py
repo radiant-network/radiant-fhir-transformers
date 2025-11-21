@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "form.coding",
+            "forEachOrNull": "form.coding",
             "column": [
                 {
                     "name": "form_coding_system",

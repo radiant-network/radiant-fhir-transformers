@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "context.related",
+            "forEachOrNull": "context.related",
             "column": [
                 {
                     "name": "context_related_reference",

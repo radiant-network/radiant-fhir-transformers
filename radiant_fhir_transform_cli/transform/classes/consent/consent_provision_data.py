@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "provision.data",
+            "forEachOrNull": "provision.data",
             "column": [
                 {
                     "name": "provision_data_meaning",

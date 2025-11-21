@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "entity",
+            "forEachOrNull": "entity",
             "column": [
                 {
                     "name": "entity_role",

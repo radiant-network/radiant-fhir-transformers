@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "protocolApplied",
+            "forEachOrNull": "protocolApplied",
             "column": [
                 {
                     "name": "protocol_applied_series",
@@ -76,7 +76,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "targetDisease",
+                    "forEachOrNull": "targetDisease",
                     "column": [
                         {
                             "name": "protocol_applied_target_disease_coding",

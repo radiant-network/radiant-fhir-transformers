@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "morphology.coding",
+            "forEachOrNull": "morphology.coding",
             "column": [
                 {
                     "name": "morphology_coding_system",

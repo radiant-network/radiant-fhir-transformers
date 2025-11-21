@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "alias",
+            "forEachOrNull": "alias",
             "column": [
                 {
                     "name": "alias",

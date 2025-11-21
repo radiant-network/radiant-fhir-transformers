@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "valueCodeableConcept.coding",
+            "forEachOrNull": "valueCodeableConcept.coding",
             "column": [
                 {
                     "name": "value_codeable_concept_coding_system",

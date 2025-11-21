@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "activity.coding",
+            "forEachOrNull": "activity.coding",
             "column": [
                 {
                     "name": "activity_coding_system",

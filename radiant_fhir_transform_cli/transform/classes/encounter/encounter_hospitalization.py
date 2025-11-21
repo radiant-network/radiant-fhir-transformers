@@ -111,7 +111,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "hospitalization.admitSource.coding",
+                    "forEachOrNull": "hospitalization.admitSource.coding",
                     "column": [
                         {
                             "name": "hospitalization_admit_source_coding_system",
@@ -131,7 +131,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "hospitalization.reAdmission.coding",
+                    "forEachOrNull": "hospitalization.reAdmission.coding",
                     "column": [
                         {
                             "name": "hospitalization_readmission_coding_display",
@@ -141,7 +141,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "hospitalization.dietPreference.coding",
+                    "forEachOrNull": "hospitalization.dietPreference.coding",
                     "column": [
                         {
                             "name": "hospitalization_diet_preference_coding_system",
@@ -161,7 +161,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "hospitalization.dietPreference.text",
+                    "forEachOrNull": "hospitalization.dietPreference.text",
                     "column": [
                         {
                             "name": "hospitalization_diet_preference_text",
@@ -171,7 +171,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "hospitalization.specialCourtesy.coding",
+                    "forEachOrNull": "hospitalization.specialCourtesy.coding",
                     "column": [
                         {
                             "name": "hospitalization_special_courtesy_coding_system",
@@ -191,7 +191,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "hospitalization.specialCourtesy.text",
+                    "forEachOrNull": "hospitalization.specialCourtesy.text",
                     "column": [
                         {
                             "name": "hospitalization_special_courtesy_text",
@@ -201,7 +201,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "hospitalization.specialArrangement.coding",
+                    "forEachOrNull": "hospitalization.specialArrangement.coding",
                     "column": [
                         {
                             "name": "hospitalization_special_arrangement_coding_system",
@@ -221,7 +221,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "hospitalization.specialArrangement.text",
+                    "forEachOrNull": "hospitalization.specialArrangement.text",
                     "column": [
                         {
                             "name": "hospitalization_special_arrangement_text",

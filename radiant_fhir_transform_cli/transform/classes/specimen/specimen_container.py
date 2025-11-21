@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "container",
+            "forEachOrNull": "container",
             "column": [
                 {
                     "name": "container_description",
@@ -116,7 +116,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "identifier",
+                    "forEachOrNull": "identifier",
                     "column": [
                         {
                             "name": "container_identifier_value",

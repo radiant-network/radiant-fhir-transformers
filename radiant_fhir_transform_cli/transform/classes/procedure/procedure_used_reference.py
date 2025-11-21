@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "usedReference",
+            "forEachOrNull": "usedReference",
             "column": [
                 {
                     "name": "used_reference_reference",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "result",
+            "forEachOrNull": "result",
             "column": [
                 {
                     "name": "result_reference",

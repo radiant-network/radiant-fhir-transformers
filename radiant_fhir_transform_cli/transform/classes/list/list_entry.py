@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "entry",
+            "forEachOrNull": "entry",
             "column": [
                 {
                     "name": "entry_flag_text",
@@ -66,7 +66,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "flag.coding",
+                    "forEachOrNull": "flag.coding",
                     "column": [
                         {
                             "name": "entry_flag_coding_system",

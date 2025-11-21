@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "identifier",
+            "forEachOrNull": "identifier",
             "column": [
                 {
                     "name": "identifier_use",
@@ -66,7 +66,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "value.extension",
+                    "forEachOrNull": "value.extension",
                     "column": [
                         {
                             "name": "identifier_value_extension",

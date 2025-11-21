@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "processing",
+            "forEachOrNull": "processing",
             "column": [
                 {
                     "name": "processing_description",
@@ -61,7 +61,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "procedure.coding",
+                    "forEachOrNull": "procedure.coding",
                     "column": [
                         {
                             "name": "processing_procedure_coding_system",
@@ -76,7 +76,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "additive",
+                    "forEachOrNull": "additive",
                     "column": [
                         {
                             "name": "processing_additive_display",

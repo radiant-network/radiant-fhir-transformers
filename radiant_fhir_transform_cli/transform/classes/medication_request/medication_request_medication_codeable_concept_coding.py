@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "medicationCodeableConcept.coding",
+            "forEachOrNull": "medicationCodeableConcept.coding",
             "column": [
                 {
                     "name": "medication_codeable_concept_coding_system",

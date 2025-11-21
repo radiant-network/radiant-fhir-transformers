@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "link",
+            "forEachOrNull": "link",
             "column": [
                 {
                     "name": "link_other_reference",

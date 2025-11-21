@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "referenceRange",
+            "forEachOrNull": "referenceRange",
             "column": [
                 {
                     "name": "reference_range_low_value",

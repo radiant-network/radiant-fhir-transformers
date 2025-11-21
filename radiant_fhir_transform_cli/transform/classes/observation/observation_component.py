@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "component",
+            "forEachOrNull": "component",
             "column": [
                 {
                     "name": "component_code_text",
@@ -271,7 +271,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "code.coding",
+                    "forEachOrNull": "code.coding",
                     "column": [
                         {
                             "name": "component_code_coding_system",

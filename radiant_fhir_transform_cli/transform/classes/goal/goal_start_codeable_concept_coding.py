@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "startCodeableConcept.coding",
+            "forEachOrNull": "startCodeableConcept.coding",
             "column": [
                 {
                     "name": "start_codeable_concept_coding_system",

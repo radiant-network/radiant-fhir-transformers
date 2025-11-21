@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "instantiatesUri",
+            "forEachOrNull": "instantiatesUri",
             "column": [
                 {
                     "name": "instantiates_uri_value",

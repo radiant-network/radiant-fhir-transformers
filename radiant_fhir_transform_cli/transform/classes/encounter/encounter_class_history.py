@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "classHistory",
+            "forEachOrNull": "classHistory",
             "column": [
                 {
                     "name": "class_history_class_system",

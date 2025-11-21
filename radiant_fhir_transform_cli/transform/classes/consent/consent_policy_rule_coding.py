@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "policyRule.coding",
+            "forEachOrNull": "policyRule.coding",
             "column": [
                 {
                     "name": "policy_rule_coding_system",

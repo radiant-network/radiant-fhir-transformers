@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "achievementStatus.coding",
+            "forEachOrNull": "achievementStatus.coding",
             "column": [
                 {
                     "name": "achievement_status_coding_system",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "name",
+            "forEachOrNull": "name",
             "column": [
                 {
                     "name": "name_use",
@@ -71,7 +71,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "given",
+                    "forEachOrNull": "given",
                     "column": [
                         {
                             "name": "name_given",

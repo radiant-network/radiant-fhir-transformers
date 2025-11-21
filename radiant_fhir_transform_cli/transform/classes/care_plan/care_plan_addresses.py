@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "addresses",
+            "forEachOrNull": "addresses",
             "column": [
                 {
                     "name": "addresses_reference",

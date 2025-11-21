@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "type.coding",
+            "forEachOrNull": "type.coding",
             "column": [
                 {
                     "name": "type_coding_system",

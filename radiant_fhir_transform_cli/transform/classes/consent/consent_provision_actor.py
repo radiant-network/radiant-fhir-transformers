@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "provision.actor",
+            "forEachOrNull": "provision.actor",
             "column": [
                 {
                     "name": "provision_actor_role_text",
@@ -56,7 +56,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "role.coding",
+                    "forEachOrNull": "role.coding",
                     "column": [
                         {
                             "name": "provision_actor_role_coding_system",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "extension",
+            "forEachOrNull": "extension",
             "column": [
                 {
                     "name": "extension_url",

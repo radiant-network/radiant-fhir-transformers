@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "site.coding",
+            "forEachOrNull": "site.coding",
             "column": [
                 {
                     "name": "site_coding_system",

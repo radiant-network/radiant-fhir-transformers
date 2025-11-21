@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "education",
+            "forEachOrNull": "education",
             "column": [
                 {
                     "name": "education_document_type",

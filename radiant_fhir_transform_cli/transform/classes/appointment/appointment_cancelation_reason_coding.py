@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "cancelationReason.coding",
+            "forEachOrNull": "cancelationReason.coding",
             "column": [
                 {
                     "name": "cancelation_reason_coding_system",

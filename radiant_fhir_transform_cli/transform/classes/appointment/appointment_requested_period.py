@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "requestedPeriod",
+            "forEachOrNull": "requestedPeriod",
             "column": [
                 {
                     "name": "requested_period_start",

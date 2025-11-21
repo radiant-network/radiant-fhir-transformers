@@ -130,7 +130,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "provision.provision",
+                    "forEachOrNull": "provision.provision",
                     "column": [
                         {
                             "name": "provision_provision_type",
@@ -141,16 +141,19 @@ VIEW_DEFINITION = {
                             "name": "provision_provision_actor",
                             "path": "actor",
                             "type": "string",
+                            "collection": True
                         },
                         {
                             "name": "provision_provision_class",
                             "path": "class",
                             "type": "string",
+                            "collection": True
                         },
                         {
                             "name": "provision_provision_code",
                             "path": "code",
                             "type": "string",
+                            "collection": True
                         },
                     ],
                 },

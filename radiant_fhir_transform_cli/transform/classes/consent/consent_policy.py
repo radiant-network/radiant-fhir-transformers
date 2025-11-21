@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "policy",
+            "forEachOrNull": "policy",
             "column": [
                 {
                     "name": "policy_authority",

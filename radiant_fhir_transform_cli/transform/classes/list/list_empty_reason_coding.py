@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "emptyReason.coding",
+            "forEachOrNull": "emptyReason.coding",
             "column": [
                 {
                     "name": "empty_reason_coding_system",

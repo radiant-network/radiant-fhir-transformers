@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "relevantHistory",
+            "forEachOrNull": "relevantHistory",
             "column": [
                 {
                     "name": "relevant_history_reference",

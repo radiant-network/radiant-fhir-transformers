@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "reaction",
+            "forEachOrNull": "reaction",
             "column": [
                 {
                     "name": "reaction_substance_text",
@@ -61,7 +61,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "substance.coding",
+                    "forEachOrNull": "substance.coding",
                     "column": [
                         {
                             "name": "reaction_substance_coding_system",
@@ -81,17 +81,27 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "manifestation",
+                    "forEachOrNull": "manifestation",
                     "column": [
                         {
-                            "name": "reaction_manifestation",
-                            "path": "$this",
+                            "name": "reaction_manifestation_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_manifestation_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_manifestation_coding_display",
+                            "path": "display",
                             "type": "string",
                         },
                     ],
                 },
                 {
-                    "forEach": "exposureRoute.coding",
+                    "forEachOrNull": "exposureRoute.coding",
                     "column": [
                         {
                             "name": "reaction_exposure_route_coding_system",
@@ -111,11 +121,21 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "note",
+                    "forEachOrNull": "note",
                     "column": [
                         {
-                            "name": "reaction_note",
-                            "path": "$this",
+                            "name": "reaction_note_text",
+                            "path": "text",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_note_author_string",
+                            "path": "authorString",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_note_time",
+                            "path": "time",
                             "type": "string",
                         },
                     ],

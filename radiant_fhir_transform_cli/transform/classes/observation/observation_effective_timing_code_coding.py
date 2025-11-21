@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "effectiveTiming.code.coding",
+            "forEachOrNull": "effectiveTiming.code.coding",
             "column": [
                 {
                     "name": "effective_timing_code_coding_system",

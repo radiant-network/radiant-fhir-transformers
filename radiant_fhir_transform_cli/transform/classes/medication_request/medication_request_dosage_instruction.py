@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "dosageInstruction",
+            "forEachOrNull": "dosageInstruction",
             "column": [
                 {
                     "name": "dosage_instruction_sequence",

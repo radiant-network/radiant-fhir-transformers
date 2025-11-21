@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "dataAbsentReason.coding",
+            "forEachOrNull": "dataAbsentReason.coding",
             "column": [
                 {
                     "name": "data_absent_reason_coding_system",

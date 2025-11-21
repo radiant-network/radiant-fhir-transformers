@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "vaccineCode.coding",
+            "forEachOrNull": "vaccineCode.coding",
             "column": [
                 {
                     "name": "vaccine_code_coding_system",

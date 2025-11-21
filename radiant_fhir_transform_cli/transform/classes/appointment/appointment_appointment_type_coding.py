@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "appointmentType.coding",
+            "forEachOrNull": "appointmentType.coding",
             "column": [
                 {
                     "name": "appointment_type_coding_system",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "agent",
+            "forEachOrNull": "agent",
             "column": [
                 {
                     "name": "agent_type_text",
@@ -76,7 +76,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "type.coding",
+                    "forEachOrNull": "type.coding",
                     "column": [
                         {
                             "name": "agent_type_coding_system",

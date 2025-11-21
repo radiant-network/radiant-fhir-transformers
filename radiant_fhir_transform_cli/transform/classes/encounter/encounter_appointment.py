@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "appointment",
+            "forEachOrNull": "appointment",
             "column": [
                 {
                     "name": "appointment_reference",
