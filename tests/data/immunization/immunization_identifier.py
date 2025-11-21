@@ -11,13 +11,14 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
         "identifier_use": None,
         "identifier_type_text": None,
         "identifier_system": "urn:ietf:rfc:3986",
         "identifier_value": "urn:oid:1.3.6.1.4.1.21367.2005.3.7.1234",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "f6a29d44-bbea-4f7f-83b5-cfae651a3a2f",
+        "immunization_id": "example",
     },
 ]
 

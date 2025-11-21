@@ -15,14 +15,14 @@ EXPECTED_OUTPUT = [
         "resource_type": "Coverage",
         "status": "active",
         "type_text": None,
-        "policy_holder_reference": "CBI35",
+        "policy_holder_reference": "Organization/CBI35",
         "policy_holder_type": None,
         "policy_holder_display": None,
-        "subscriber_reference": "4",
+        "subscriber_reference": "Patient/4",
         "subscriber_type": None,
         "subscriber_display": None,
         "subscriber_id": "CHOP12345678",
-        "beneficiary_reference": "4",
+        "beneficiary_reference": "Patient/4",
         "beneficiary_type": None,
         "beneficiary_display": None,
         "dependent": "0",
@@ -32,7 +32,7 @@ EXPECTED_OUTPUT = [
         "order": 2,
         "network": "5",
         "subrogation": True,
-    }
+    },
 ]
 
 

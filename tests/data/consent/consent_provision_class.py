@@ -11,10 +11,11 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
         "provision_class_system": "http://hl7.org/fhir/ValueSet/consent-content-class",
         "provision_class_code": "urn:ihe:pcc:xphr:2007",
         "provision_class_display": "Personal Health Records. Also known as HL7 CCD and HITSP C32",
+        "id": "2447b99d-4ee3-46ae-a7ce-5b91cf6fb866",
+        "consent_id": "consent-example-basic",
     },
 ]
 

@@ -11,6 +11,7 @@ from .location_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "address_line": "550 South Goddard Blvd",
         "id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
         "resource_type": "Location",
         "status": "active",
@@ -23,7 +24,6 @@ EXPECTED_OUTPUT = [
         "address_use": None,
         "address_type": None,
         "address_text": None,
-        "address_line": ["550 South Goddard Blvd"],
         "address_city": "King of Prussia",
         "address_district": None,
         "address_state": "Pennsylvania",
@@ -35,14 +35,14 @@ EXPECTED_OUTPUT = [
         "position_longitude": None,
         "position_latitude": None,
         "position_altitude": None,
-        "managing_organization_reference": "organization",
+        "managing_organization_reference": "Organization/organization",
         "managing_organization_type": None,
         "managing_organization_display": "Organization",
-        "part_of_reference": "location",
+        "part_of_reference": "Location/location",
         "part_of_type": None,
         "part_of_display": "Location",
         "availability_exceptions": None,
-    }
+    },
 ]
 
 

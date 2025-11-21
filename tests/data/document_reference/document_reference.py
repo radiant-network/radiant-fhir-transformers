@@ -22,14 +22,14 @@ EXPECTED_OUTPUT = [
         "status": "current",
         "doc_status": "preliminary",
         "type_text": "Progress Notes",
-        "subject_reference": "eiCbDCEzFk6wR6UNlcWziySVQrlN47NTRvxPwgT4P3883",
+        "subject_reference": "Patient/eiCbDCEzFk6wR6UNlcWziySVQrlN47NTRvxPwgT4P3883",
         "subject_type": None,
         "subject_display": None,
         "date": "2004-12-23",
-        "authenticator_reference": "f001",
+        "authenticator_reference": "Organization/f001",
         "authenticator_type": None,
         "authenticator_display": None,
-        "custodian_reference": "custodian",
+        "custodian_reference": "Organization/custodian",
         "custodian_type": None,
         "custodian_display": None,
         "description": None,
@@ -40,7 +40,7 @@ EXPECTED_OUTPUT = [
         "context_source_patient_info_reference": "Patient/xcda",
         "context_source_patient_info_type": None,
         "context_source_patient_info_display": None,
-    }
+    },
 ]
 
 

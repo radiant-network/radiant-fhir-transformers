@@ -12,13 +12,21 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "code_text", "path": "code.text", "type": "string"},
+                {
+                    "name": "code_text",
+                    "path": "code.text",
+                    "type": "string",
+                },
                 {
                     "name": "subject_reference",
                     "path": "subject.reference",
@@ -259,8 +267,8 @@ VIEW_DEFINITION = {
                     "path": "severity.text",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

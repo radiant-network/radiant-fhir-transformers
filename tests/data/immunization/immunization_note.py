@@ -11,13 +11,14 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
         "note_author_reference_reference": None,
         "note_author_reference_type": None,
         "note_author_reference_display": None,
         "note_author_string": None,
         "note_time": None,
         "note_text": "Notes on adminstration of vaccine",
+        "id": "dff44584-3a85-4e20-b79e-3cddfc27c143",
+        "immunization_id": "example",
     },
 ]
 

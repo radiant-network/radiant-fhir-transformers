@@ -11,22 +11,25 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "value_codeable_concept_coding_system": "http://snomed.info/sct_1",
         "value_codeable_concept_coding_code": "260415000",
         "value_codeable_concept_coding_display": None,
+        "id": "6267e691-3b38-4506-b9b5-ad473ca7a212",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "value_codeable_concept_coding_system": "http://snomed.info/sct_2",
         "value_codeable_concept_coding_code": "9999999",
         "value_codeable_concept_coding_display": None,
+        "id": "d9511f97-173d-411e-8f80-2cff7ed4bece",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "value_codeable_concept_coding_system": "http://snomed.info/sct_3",
         "value_codeable_concept_coding_code": "8888888",
         "value_codeable_concept_coding_display": None,
+        "id": "64462a08-2853-48e3-9c83-f67d7c703564",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

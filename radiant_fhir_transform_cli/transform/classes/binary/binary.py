@@ -12,7 +12,11 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
@@ -38,9 +42,13 @@ VIEW_DEFINITION = {
                     "path": "securityContext.display",
                     "type": "string",
                 },
-                {"name": "data", "path": "data", "type": "string"},
-            ]
-        }
+                {
+                    "name": "data",
+                    "path": "data",
+                    "type": "string",
+                },
+            ],
+        },
     ],
 }
 

@@ -9,23 +9,40 @@ VIEW_DEFINITION = {
     "resource": "RequestGroup",
     "name": "request_group_replaces",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "request_group_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "request_group_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "replaces",
+            "forEachOrNull": "replaces",
             "column": [
                 {
                     "name": "replaces_reference",
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "replaces_type", "path": "type", "type": "string"},
+                {
+                    "name": "replaces_type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "replaces_display",
                     "path": "display",

@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "List",
     "name": "list_ordered_by_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "list_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "list_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "orderedBy.coding",
+            "forEachOrNull": "orderedBy.coding",
             "column": [
                 {
                     "name": "ordered_by_coding_system",

@@ -11,10 +11,11 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
-        "performer_reference": "72",
-        "performer_display": None,
+        "performer_reference": "Patient/72",
         "performer_type": None,
+        "performer_display": None,
+        "id": "42ec48d0-421e-4d8b-8077-49ce6f926950",
+        "consent_id": "consent-example-basic",
     },
 ]
 

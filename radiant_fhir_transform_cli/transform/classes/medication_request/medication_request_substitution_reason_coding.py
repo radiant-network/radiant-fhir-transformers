@@ -9,20 +9,29 @@ VIEW_DEFINITION = {
     "resource": "MedicationRequest",
     "name": "medication_request_substitution_reason_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "medication_request_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
-            "forEach": "substitution.reason.coding",
+            "forEachOrNull": "substitution.reason.coding",
             "column": [
                 {
                     "name": "substitution_reason_coding_system",

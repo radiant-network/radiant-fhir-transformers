@@ -9,12 +9,25 @@ VIEW_DEFINITION = {
     "resource": "Location",
     "name": "location_hours_of_operation",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "location_id", "path": "id", "type": "string"},
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "location_id",
+                    "path": "id",
+                    "type": "string",
+                },
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "hours_of_operation_days_of_week",
                     "path": "hoursOfOperation.daysOfWeek",
@@ -35,8 +48,8 @@ VIEW_DEFINITION = {
                     "path": "hoursOfOperation.closingTime",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

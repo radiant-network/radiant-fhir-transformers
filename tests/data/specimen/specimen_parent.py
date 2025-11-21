@@ -11,10 +11,11 @@ from .specimen import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "specimen_id": "101",
-        "parent_reference": "example1",
+        "parent_reference": "Specimen/example1",
         "parent_display": "Whole Blood",
         "parent_type": None,
+        "id": "60d34794-f9db-48a2-bd78-3a5e6de589e5",
+        "specimen_id": "101",
     },
 ]
 

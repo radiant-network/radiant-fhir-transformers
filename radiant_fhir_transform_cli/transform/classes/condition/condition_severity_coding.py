@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Condition",
     "name": "condition_severity_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "condition_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "condition_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "severity.coding",
+            "forEachOrNull": "severity.coding",
             "column": [
                 {
                     "name": "severity_coding_system",

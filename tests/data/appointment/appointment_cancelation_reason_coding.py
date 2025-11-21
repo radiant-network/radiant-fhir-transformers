@@ -11,10 +11,11 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
         "cancelation_reason_coding_system": "http://hl7.org/fhir/ValueSet/appointment-cancellation-reason",
         "cancelation_reason_coding_code": "oth-err",
         "cancelation_reason_coding_display": "Other: Error",
+        "id": "2647720b-08cf-4eb6-ac56-5a4773c20402",
+        "appointment_id": "example",
     },
 ]
 

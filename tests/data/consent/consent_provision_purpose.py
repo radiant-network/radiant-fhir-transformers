@@ -11,10 +11,11 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
         "provision_purpose_system": "http://terminology.hl7.org/ValueSet/v3-PurposeOfUse",
         "provision_purpose_code": "PurposeOfUse",
         "provision_purpose_display": "purpose of use",
+        "id": "1cd13208-dd1d-4a44-812e-6f330a052732",
+        "consent_id": "consent-example-basic",
     },
 ]
 

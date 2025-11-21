@@ -10,7 +10,24 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "hospitalization_special_arrangement_text": None,
+        "hospitalization_special_arrangement_coding_system": "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements",
+        "hospitalization_special_arrangement_coding_code": "wheel",
+        "hospitalization_special_arrangement_coding_display": "Wheelchair",
+        "hospitalization_special_courtesy_text": None,
+        "hospitalization_special_courtesy_coding_system": "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
+        "hospitalization_special_courtesy_coding_code": "NRM",
+        "hospitalization_special_courtesy_coding_display": "normal courtesy",
+        "hospitalization_diet_preference_text": None,
+        "hospitalization_diet_preference_coding_system": "http://snomed.info/sct",
+        "hospitalization_diet_preference_coding_code": "276026009",
+        "hospitalization_diet_preference_coding_display": "Fluid balance regulation",
+        "hospitalization_readmission_coding_display": "readmitted",
+        "hospitalization_admit_source_coding_system": "http://snomed.info/sct",
+        "hospitalization_admit_source_coding_code": "309902002",
+        "hospitalization_admit_source_coding_display": "Clinical Oncology Department",
         "encounter_id": "f203",
+        "id": "4c082a10-9117-4276-a9fe-a6b462b31579",
         "hospitalization_pre_admission_identifier_type_text": None,
         "hospitalization_pre_admission_identifier_use": None,
         "hospitalization_pre_admission_identifier_system": None,
@@ -20,46 +37,14 @@ EXPECTED_OUTPUT = [
         "hospitalization_origin_reference": "Location/2",
         "hospitalization_origin_type": None,
         "hospitalization_origin_display": None,
-        "hospitalization_admit_source_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "309902002",
-                "display": "Clinical Oncology Department",
-            }
-        ],
         "hospitalization_admit_source_text": None,
-        "hospitalization_readmission_coding": [{"display": "readmitted"}],
         "hospitalization_readmission_text": None,
-        "hospitalization_diet_preference_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "276026009",
-                "display": "Fluid balance regulation",
-            }
-        ],
-        "hospitalization_diet_preference_text": None,
-        "hospitalization_special_courtesy_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy",
-                "code": "NRM",
-                "display": "normal courtesy",
-            }
-        ],
-        "hospitalization_special_courtesy_text": None,
-        "hospitalization_special_arrangement_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements",
-                "code": "wheel",
-                "display": "Wheelchair",
-            }
-        ],
-        "hospitalization_special_arrangement_text": None,
         "hospitalization_destination_reference": "Location/2",
         "hospitalization_destination_type": None,
         "hospitalization_destination_display": None,
         "hospitalization_discharge_disposition_coding": None,
         "hospitalization_discharge_disposition_text": None,
-    }
+    },
 ]
 
 

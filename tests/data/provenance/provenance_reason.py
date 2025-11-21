@@ -11,16 +11,13 @@ from .provenance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "provenance_id": "provenance",
-        "reason_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "3457005",
-                "display": "Referral",
-            }
-        ],
+        "reason_coding_system": "http://snomed.info/sct",
+        "reason_coding_code": "3457005",
+        "reason_coding_display": "Referral",
         "reason_text": None,
-    }
+        "id": "41daedb3-5d53-47b0-ab38-f7add4bc5c70",
+        "provenance_id": "provenance",
+    },
 ]
 
 

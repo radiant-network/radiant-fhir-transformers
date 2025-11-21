@@ -12,9 +12,9 @@ EXPECTED_OUTPUT = [
     {
         "id": "example",
         "resource_type": "Appointment",
+        "status": "booked",
         "cancelation_reason_text": None,
         "appointment_type_text": None,
-        "status": "booked",
         "priority": 5,
         "description": "Discussion on the results of your recent MRI",
         "start": "2013-12-10T09:00:00Z",
@@ -23,7 +23,7 @@ EXPECTED_OUTPUT = [
         "created": "2013-10-10",
         "comment": "Further expand on the results of the MRI and determine the next actions that may be appropriate.",
         "patient_instruction": None,
-    }
+    },
 ]
 
 

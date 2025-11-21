@@ -11,13 +11,14 @@ from .related_person_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "related_person_id": "benedicte",
         "photo_content_type": "image/jpeg",
         "photo_language": None,
         "photo_url": "Binary/f016",
         "photo_size": None,
         "photo_title": None,
         "photo_creation": None,
+        "id": "fa601a49-8972-46bf-82d1-895996a4b8d5",
+        "related_person_id": "benedicte",
     },
 ]
 

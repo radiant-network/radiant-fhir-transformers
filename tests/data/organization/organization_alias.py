@@ -10,7 +10,11 @@ from tests.data.base import FhirResourceTestHelper
 from .organization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
-    {"organization_id": "2.16.840.1.113883.19.5", "alias": "ENS"},
+    {
+        "alias": "ENS",
+        "id": "1b2c5451-80f4-456a-ade9-69b03955ff11",
+        "organization_id": "2.16.840.1.113883.19.5",
+    },
 ]
 
 

@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Immunization",
     "name": "immunization_protocol_applied",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "immunization_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "immunization_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "protocolApplied",
+            "forEachOrNull": "protocolApplied",
             "column": [
                 {
                     "name": "protocol_applied_series",
@@ -41,12 +54,6 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "protocol_applied_target_disease",
-                    "path": "targetDisease",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "protocol_applied_dose_number_positive_int",
                     "path": "doseNumberPositiveInt",
                     "type": "integer",
@@ -65,6 +72,18 @@ VIEW_DEFINITION = {
                     "name": "protocol_applied_series_doses_string",
                     "path": "seriesDosesString",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "targetDisease",
+                    "column": [
+                        {
+                            "name": "protocol_applied_target_disease_coding",
+                            "path": "coding",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

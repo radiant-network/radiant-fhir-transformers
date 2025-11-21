@@ -9,23 +9,40 @@ VIEW_DEFINITION = {
     "resource": "Encounter",
     "name": "encounter_based_on",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "encounter_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "basedOn",
+            "forEachOrNull": "basedOn",
             "column": [
                 {
                     "name": "based_on_reference",
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "based_on_type", "path": "type", "type": "string"},
+                {
+                    "name": "based_on_type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "based_on_display",
                     "path": "display",

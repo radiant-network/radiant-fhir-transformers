@@ -11,15 +11,15 @@ from .patient_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "given_name": "Betty",
-        "family_name": "MyChart",
-        "birth_date": "2010-02-03",
-        "active": True,
-        "gender": "Female",
-        "identifier_mrn": "82001496",
         "id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "identifier_mrn": "82001496",
         "race": "Unknown",
         "ethnicity": "Unknown",
+        "given_name": "Betty",
+        "family_name": "MyChart",
+        "active": True,
+        "birth_date": "2010-02-03",
+        "gender": "Female",
         "deceased_boolean": False,
         "deceased_date_time": None,
         "address_line": "1234 Administration Blvd",
@@ -28,7 +28,7 @@ EXPECTED_OUTPUT = [
         "address_postal_code": "18966",
         "address_country": "US",
         "communication_language": "English",
-    }
+    },
 ]
 
 

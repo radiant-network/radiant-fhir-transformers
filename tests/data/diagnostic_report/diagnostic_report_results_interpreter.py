@@ -11,11 +11,12 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
-        "results_interpreter_reference": "Drdrjr",
-        "results_interpreter_type": None,
+        "results_interpreter_reference": "Practitioner/Drdrjr",
         "results_interpreter_display": "Dr. Doctor Jr.",
-    }
+        "results_interpreter_type": None,
+        "id": "00481cfe-0fac-48b5-b0fb-ce8f2106fd36",
+        "diagnostic_report_id": "101",
+    },
 ]
 
 

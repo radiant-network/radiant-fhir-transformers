@@ -11,10 +11,11 @@ from .specimen import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "specimen_id": "101",
         "collection_method_coding_system": "http://terminology.hl7.org/CodeSystem/v2-0488",
         "collection_method_coding_code": "LNV",
         "collection_method_coding_display": None,
+        "id": "6d377e56-404d-46d6-8822-405ce769e152",
+        "specimen_id": "101",
     },
 ]
 

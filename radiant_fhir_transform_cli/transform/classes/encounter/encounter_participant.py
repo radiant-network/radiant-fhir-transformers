@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Encounter",
     "name": "encounter_participant",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "encounter_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "participant",
+            "forEachOrNull": "participant",
             "column": [
-                {
-                    "name": "participant_type",
-                    "path": "type",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "participant_period_start",
                     "path": "period.start",
@@ -50,6 +57,18 @@ VIEW_DEFINITION = {
                     "name": "participant_individual_display",
                     "path": "individual.display",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "type",
+                    "column": [
+                        {
+                            "name": "participant_type_coding",
+                            "path": "coding",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

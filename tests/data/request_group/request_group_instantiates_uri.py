@@ -11,8 +11,9 @@ from .request_group_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "request_group_id": "kdn5-example",
         "instantiates_uri": "PlanDefinition/KDN5",
+        "id": "fb24ccde-1a4a-49d2-bbf2-0069b603d6db",
+        "request_group_id": "kdn5-example",
     },
 ]
 

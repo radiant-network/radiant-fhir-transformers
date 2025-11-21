@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Organization",
     "name": "organization_contact",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "organization_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "organization_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "contact",
+            "forEachOrNull": "contact",
             "column": [
-                {
-                    "name": "contact_purpose_coding",
-                    "path": "purpose.coding",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "contact_purpose_text",
                     "path": "purpose.text",
@@ -70,12 +77,6 @@ VIEW_DEFINITION = {
                     "name": "contact_name_period_end",
                     "path": "name.period.end",
                     "type": "dateTime",
-                },
-                {
-                    "name": "contact_telecom",
-                    "path": "telecom",
-                    "type": "string",
-                    "collection": True,
                 },
                 {
                     "name": "contact_address_use",
@@ -131,6 +132,38 @@ VIEW_DEFINITION = {
                     "name": "contact_address_period_end",
                     "path": "address.period.end",
                     "type": "dateTime",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "purpose.coding",
+                    "column": [
+                        {
+                            "name": "contact_purpose_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "contact_purpose_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "telecom",
+                    "column": [
+                        {
+                            "name": "contact_telecom_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "contact_telecom_value",
+                            "path": "value",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

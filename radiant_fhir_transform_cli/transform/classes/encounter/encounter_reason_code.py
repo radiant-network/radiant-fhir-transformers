@@ -9,23 +9,40 @@ VIEW_DEFINITION = {
     "resource": "Encounter",
     "name": "encounter_reason_code",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "encounter_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "reasonCode",
+            "forEachOrNull": "reasonCode",
             "column": [
                 {
                     "name": "reason_code_coding",
                     "path": "coding",
                     "type": "string",
                 },
-                {"name": "reason_code_text", "path": "text", "type": "string"},
+                {
+                    "name": "reason_code_text",
+                    "path": "text",
+                    "type": "string",
+                },
             ],
         },
     ],

@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Consent",
     "name": "consent_policy_rule_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "consent_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "consent_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "policyRule.coding",
+            "forEachOrNull": "policyRule.coding",
             "column": [
                 {
                     "name": "policy_rule_coding_system",

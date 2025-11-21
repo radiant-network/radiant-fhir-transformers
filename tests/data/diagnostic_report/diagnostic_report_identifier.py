@@ -11,14 +11,15 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
         "identifier_use": None,
         "identifier_system": "http://acme.com/lab/reports",
         "identifier_value": "5234342",
         "identifier_type_text": None,
         "identifier_period_start": None,
         "identifier_period_end": None,
-    }
+        "id": "bfcb29ed-33c3-41fd-bf1e-5bb4a1afa951",
+        "diagnostic_report_id": "101",
+    },
 ]
 
 

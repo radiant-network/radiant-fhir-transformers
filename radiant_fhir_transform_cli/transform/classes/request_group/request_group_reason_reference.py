@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "RequestGroup",
     "name": "request_group_reason_reference",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "request_group_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "request_group_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "reasonReference",
+            "forEachOrNull": "reasonReference",
             "column": [
                 {
                     "name": "reason_reference_reference",

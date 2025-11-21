@@ -11,10 +11,11 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
         "code_coding_system": "http://loinc.org",
         "code_coding_code": "24627-2",
         "code_coding_display": None,
+        "id": "a36cb934-243e-4931-b2d7-e6f26e1e72e0",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

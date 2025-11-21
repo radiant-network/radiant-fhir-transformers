@@ -11,13 +11,14 @@ from .care_plan import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_plan_id": "preg",
         "note_text": "Patient family is not ready to commit to goal setting at this time.  Goal setting will be addressed in the future",
         "note_author_string": None,
         "note_author_reference_reference": None,
         "note_author_reference_display": None,
         "note_author_reference_type": None,
         "note_time": "2014-02-14",
+        "id": "bfb88e5c-887c-47f5-950f-73639f6dba39",
+        "care_plan_id": "preg",
     },
 ]
 

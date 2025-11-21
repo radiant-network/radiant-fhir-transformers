@@ -11,15 +11,16 @@ from .related_person_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "related_person_id": "benedicte",
+        "name_given": "Bénédicte",
         "name_use": None,
         "name_text": None,
         "name_family": "du Marché",
-        "name_given": ["Bénédicte"],
         "name_prefix": None,
         "name_suffix": None,
         "name_period_start": None,
         "name_period_end": None,
+        "id": "f936100a-cf11-48fb-bdf1-7158cdc2d0f0",
+        "related_person_id": "benedicte",
     },
 ]
 

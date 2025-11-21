@@ -11,10 +11,11 @@ from .allergy_intolerance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "allergy_intolerance_id": "example_ai",
         "clinical_status_coding_system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
         "clinical_status_coding_code": "active",
         "clinical_status_coding_display": "Active",
+        "id": "789a8826-4de5-4217-93ad-4ca4229cb31b",
+        "allergy_intolerance_id": "example_ai",
     },
 ]
 

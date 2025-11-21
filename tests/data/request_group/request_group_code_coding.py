@@ -11,10 +11,11 @@ from .request_group_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "request_group_id": "kdn5-example",
         "code_coding_system": "http://snomed.info/sct",
         "code_coding_code": "18629005",
         "code_coding_display": "Administration of drug or medicament (procedure)",
+        "id": "60374ed3-120e-4776-b8f4-da186e0d1005",
+        "request_group_id": "kdn5-example",
     },
 ]
 

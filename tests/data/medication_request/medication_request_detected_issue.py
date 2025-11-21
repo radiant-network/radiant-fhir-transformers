@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
-        "detected_issue_reference": "allergy",
+        "detected_issue_reference": "DetectedIssue/allergy",
         "detected_issue_type": None,
         "detected_issue_display": None,
-    }
+        "id": "8fadd195-44ad-4e3e-b260-55770692ce5d",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

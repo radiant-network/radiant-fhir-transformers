@@ -9,24 +9,35 @@ VIEW_DEFINITION = {
     "resource": "Provenance",
     "name": "provenance_signature",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "provenance_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "provenance_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "signature",
+            "forEachOrNull": "signature",
             "column": [
                 {
-                    "name": "signature_type",
-                    "path": "type",
-                    "type": "string",
-                    "collection": True,
+                    "name": "signature_when",
+                    "path": "when",
+                    "type": "dateTime",
                 },
-                {"name": "signature_when", "path": "when", "type": "dateTime"},
                 {
                     "name": "signature_who_reference",
                     "path": "who.reference",
@@ -66,6 +77,28 @@ VIEW_DEFINITION = {
                     "name": "signature_sig_format",
                     "path": "sigFormat",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "type",
+                    "column": [
+                        {
+                            "name": "signature_type_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "signature_type_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "signature_type_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

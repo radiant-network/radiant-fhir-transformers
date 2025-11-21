@@ -11,8 +11,9 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "effective_timing_repeat_when": "HS",
+        "id": "df2b520f-bfac-47cc-adbc-fe0707c0d6b9",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

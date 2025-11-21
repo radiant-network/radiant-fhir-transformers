@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Appointment",
     "name": "appointment_cancelation_reason_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "appointment_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "appointment_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "cancelationReason.coding",
+            "forEachOrNull": "cancelationReason.coding",
             "column": [
                 {
                     "name": "cancelation_reason_coding_system",

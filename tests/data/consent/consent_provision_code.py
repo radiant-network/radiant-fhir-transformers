@@ -11,15 +11,12 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
-        "provision_code_coding": [
-            {
-                "system": "http://hl7.org/fhir/ValueSet/consent-content-code",
-                "code": "1-8",
-                "display": "Acyclovir [Susceptibility]",
-            }
-        ],
+        "provision_code_coding_system": "http://hl7.org/fhir/ValueSet/consent-content-code",
+        "provision_code_coding_code": "1-8",
+        "provision_code_coding_display": "Acyclovir [Susceptibility]",
         "provision_code_text": None,
+        "id": "279867ca-3130-4782-8ec8-0425b873a4c3",
+        "consent_id": "consent-example-basic",
     },
 ]
 

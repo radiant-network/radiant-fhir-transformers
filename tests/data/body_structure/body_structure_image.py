@@ -11,13 +11,14 @@ from .body_structure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "body_structure_id": "tumor",
         "image_content_type": "application/dicom",
         "image_language": None,
         "image_url": "http://imaging.acme.com/wado/server?requestType=WADO&amp;wado_details",
         "image_size": None,
         "image_title": None,
         "image_creation": None,
+        "id": "932827b8-8078-492d-8540-02d2981cda8d",
+        "body_structure_id": "tumor",
     },
 ]
 

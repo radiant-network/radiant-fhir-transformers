@@ -11,11 +11,12 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "relates_to_target_code": "appends",
         "relates_to_target_reference": "DocumentReference/example",
         "relates_to_target_type": None,
         "relates_to_target_display": None,
+        "id": "8ffafee2-3f4d-4c40-b665-9fcd1c144c80",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
 ]
 
