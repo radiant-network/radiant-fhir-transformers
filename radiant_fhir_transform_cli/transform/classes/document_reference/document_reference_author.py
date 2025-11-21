@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "author",
+            "forEachOrNull": "author",
             "column": [
                 {
                     "name": "author_reference",

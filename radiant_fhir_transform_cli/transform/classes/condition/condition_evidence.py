@@ -31,11 +31,11 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "evidence",
+            "forEachOrNull": "evidence",
             "column": [],
             "select": [
                 {
-                    "forEach": "code",
+                    "forEachOrNull": "code",
                     "column": [
                         {
                             "name": "evidence_code_coding",
@@ -45,7 +45,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "detail",
+                    "forEachOrNull": "detail",
                     "column": [
                         {
                             "name": "evidence_detail_reference",

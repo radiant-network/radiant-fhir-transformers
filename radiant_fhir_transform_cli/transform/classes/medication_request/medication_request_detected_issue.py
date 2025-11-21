@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "detectedIssue",
+            "forEachOrNull": "detectedIssue",
             "column": [
                 {
                     "name": "detected_issue_reference",

@@ -165,7 +165,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "address.line",
+                    "forEachOrNull": "address.line",
                     "column": [
                         {
                             "name": "address_line",

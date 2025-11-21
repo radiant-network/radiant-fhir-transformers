@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "serviceType.coding",
+            "forEachOrNull": "serviceType.coding",
             "column": [
                 {
                     "name": "service_type_coding_system",

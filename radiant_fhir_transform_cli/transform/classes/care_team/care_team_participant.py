@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "participant",
+            "forEachOrNull": "participant",
             "column": [
                 {
                     "name": "participant_member_reference",
@@ -76,7 +76,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "role.coding",
+                    "forEachOrNull": "role.coding",
                     "column": [
                         {
                             "name": "participant_role_coding_system",
@@ -96,7 +96,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "role.text",
+                    "forEachOrNull": "role.text",
                     "column": [
                         {
                             "name": "participant_role_text",

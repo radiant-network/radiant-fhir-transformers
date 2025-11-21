@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "account",
+            "forEachOrNull": "account",
             "column": [
                 {
                     "name": "account_reference",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "action",
+            "forEachOrNull": "action",
             "column": [
                 {
                     "name": "action_prefix",
@@ -391,7 +391,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "participant",
+                    "forEachOrNull": "participant",
                     "column": [
                         {
                             "name": "action_participant",
@@ -401,7 +401,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "action",
+                    "forEachOrNull": "action",
                     "column": [
                         {
                             "name": "action_action",

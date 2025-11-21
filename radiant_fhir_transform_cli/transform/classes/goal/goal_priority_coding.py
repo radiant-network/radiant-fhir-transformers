@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "priority.coding",
+            "forEachOrNull": "priority.coding",
             "column": [
                 {
                     "name": "priority_coding_system",

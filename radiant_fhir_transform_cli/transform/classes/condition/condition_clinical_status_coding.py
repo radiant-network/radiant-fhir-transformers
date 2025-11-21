@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "clinicalStatus.coding",
+            "forEachOrNull": "clinicalStatus.coding",
             "column": [
                 {
                     "name": "clinical_status_coding_system",

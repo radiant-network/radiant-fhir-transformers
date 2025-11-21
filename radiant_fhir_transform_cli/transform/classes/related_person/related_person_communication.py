@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "communication",
+            "forEachOrNull": "communication",
             "column": [
                 {
                     "name": "communication_language_text",
@@ -46,7 +46,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "language.coding",
+                    "forEachOrNull": "language.coding",
                     "column": [
                         {
                             "name": "communication_language_coding_system",

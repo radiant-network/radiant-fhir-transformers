@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "securityLabel",
+            "forEachOrNull": "securityLabel",
             "column": [
                 {
                     "name": "security_label_text",
@@ -41,7 +41,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "coding",
+                    "forEachOrNull": "coding",
                     "column": [
                         {
                             "name": "security_label_coding",

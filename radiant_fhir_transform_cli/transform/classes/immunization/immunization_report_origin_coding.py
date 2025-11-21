@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "reportOrigin.coding",
+            "forEachOrNull": "reportOrigin.coding",
             "column": [
                 {
                     "name": "report_origin_coding_system",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "performerType.coding",
+            "forEachOrNull": "performerType.coding",
             "column": [
                 {
                     "name": "performer_type_coding_system",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "category",
+            "forEachOrNull": "category",
             "column": [
                 {
                     "name": "category_text",
@@ -41,7 +41,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "coding",
+                    "forEachOrNull": "coding",
                     "column": [
                         {
                             "name": "category_coding_system",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "context.practiceSetting.coding",
+            "forEachOrNull": "context.practiceSetting.coding",
             "column": [
                 {
                     "name": "context_practice_setting_coding_system",

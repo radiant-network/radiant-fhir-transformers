@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "scope.coding",
+            "forEachOrNull": "scope.coding",
             "column": [
                 {
                     "name": "scope_coding_system",

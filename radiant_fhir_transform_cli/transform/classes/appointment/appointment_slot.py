@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "slot",
+            "forEachOrNull": "slot",
             "column": [
                 {
                     "name": "slot_reference",

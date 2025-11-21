@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "managingOrganization",
+            "forEachOrNull": "managingOrganization",
             "column": [
                 {
                     "name": "managing_organization_reference",

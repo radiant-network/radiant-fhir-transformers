@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "effectiveTiming.event",
+            "forEachOrNull": "effectiveTiming.event",
             "column": [
                 {
                     "name": "effective_timing_event",

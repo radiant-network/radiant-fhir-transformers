@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "activity",
+            "forEachOrNull": "activity",
             "column": [
                 {
                     "name": "activity_outcome_codeable_concept",
@@ -376,7 +376,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "detail.code.coding",
+                    "forEachOrNull": "detail.code.coding",
                     "column": [
                         {
                             "name": "activity_detail_code_coding_system",
@@ -396,7 +396,7 @@ VIEW_DEFINITION = {
                     ],
                 },
                 {
-                    "forEach": "detail.performer",
+                    "forEachOrNull": "detail.performer",
                     "column": [
                         {
                             "name": "activity_detail_performer",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "statusReason.coding",
+            "forEachOrNull": "statusReason.coding",
             "column": [
                 {
                     "name": "status_reason_coding_system",

@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "interpretation",
+            "forEachOrNull": "interpretation",
             "column": [
                 {
                     "name": "interpretation_text",
@@ -41,7 +41,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "coding",
+                    "forEachOrNull": "coding",
                     "column": [
                         {
                             "name": "interpretation_coding_system",

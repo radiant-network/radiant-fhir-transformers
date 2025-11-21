@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "basedOn",
+            "forEachOrNull": "basedOn",
             "column": [
                 {
                     "name": "based_on_reference",

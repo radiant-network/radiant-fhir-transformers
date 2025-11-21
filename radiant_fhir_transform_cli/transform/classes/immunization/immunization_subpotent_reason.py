@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "subpotentReason",
+            "forEachOrNull": "subpotentReason",
             "column": [
                 {
                     "name": "subpotent_reason_text",
@@ -41,7 +41,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "coding",
+                    "forEachOrNull": "coding",
                     "column": [
                         {
                             "name": "subpotent_reason_coding_system",

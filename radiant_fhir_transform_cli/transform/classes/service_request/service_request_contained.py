@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "contained",
+            "forEachOrNull": "contained",
             "column": [
                 {
                     "name": "contained_resource_type",

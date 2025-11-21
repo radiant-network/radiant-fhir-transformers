@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "effectiveTiming.repeat.when",
+            "forEachOrNull": "effectiveTiming.repeat.when",
             "column": [
                 {
                     "name": "effective_timing_repeat_when",

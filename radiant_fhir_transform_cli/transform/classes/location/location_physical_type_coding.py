@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "physicalType.coding",
+            "forEachOrNull": "physicalType.coding",
             "column": [
                 {
                     "name": "physical_type_coding_system",

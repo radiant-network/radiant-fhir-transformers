@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "derivedFrom",
+            "forEachOrNull": "derivedFrom",
             "column": [
                 {
                     "name": "derived_from_reference",

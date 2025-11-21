@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "provision.securityLabel",
+            "forEachOrNull": "provision.securityLabel",
             "column": [
                 {
                     "name": "provision_security_label_system",

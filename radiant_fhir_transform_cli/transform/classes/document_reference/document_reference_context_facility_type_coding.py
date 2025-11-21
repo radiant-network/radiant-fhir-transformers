@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "context.facilityType.coding",
+            "forEachOrNull": "context.facilityType.coding",
             "column": [
                 {
                     "name": "context_facility_type_coding_system",

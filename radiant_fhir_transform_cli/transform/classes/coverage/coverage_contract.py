@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "contract",
+            "forEachOrNull": "contract",
             "column": [
                 {
                     "name": "contract_reference",

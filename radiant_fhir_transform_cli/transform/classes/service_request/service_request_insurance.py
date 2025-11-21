@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "insurance",
+            "forEachOrNull": "insurance",
             "column": [
                 {
                     "name": "insurance_reference",

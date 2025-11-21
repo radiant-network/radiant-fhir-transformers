@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "relatesTo",
+            "forEachOrNull": "relatesTo",
             "column": [
                 {
                     "name": "relates_to_target_code",

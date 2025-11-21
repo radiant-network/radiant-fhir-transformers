@@ -31,7 +31,7 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEach": "condition",
+            "forEachOrNull": "condition",
             "column": [
                 {
                     "name": "condition_text",
@@ -41,7 +41,7 @@ VIEW_DEFINITION = {
             ],
             "select": [
                 {
-                    "forEach": "coding",
+                    "forEachOrNull": "coding",
                     "column": [
                         {
                             "name": "condition_coding_system",
