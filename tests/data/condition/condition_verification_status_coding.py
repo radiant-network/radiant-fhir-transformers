@@ -11,10 +11,11 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "condition_id": "f201",
         "verification_status_coding_system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
         "verification_status_coding_code": "confirmed",
         "verification_status_coding_display": None,
+        "id": "4a104090-0daf-4f01-91a7-fa748bfec2c9",
+        "condition_id": "f201",
     },
 ]
 

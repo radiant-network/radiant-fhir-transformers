@@ -11,14 +11,15 @@ from .care_team_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_team_id": "example",
         "note_author_reference_reference": None,
         "note_author_reference_type": None,
         "note_author_reference_display": None,
         "note_author_string": None,
         "note_time": None,
         "note_text": "Eerste neo-adjuvante TPF-kuur bij groot proces in sphenoid met intracraniale uitbreiding.",
-    }
+        "id": "674a407c-7965-461c-b913-d177a720ad63",
+        "care_team_id": "example",
+    },
 ]
 
 

@@ -11,11 +11,12 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
         "provision_data_meaning": "authoredby",
         "provision_data_reference_reference": "DocumentReference/documentreference",
         "provision_data_reference_type": None,
         "provision_data_reference_display": None,
+        "id": "b666b378-c920-4dd1-9f86-edc8cd17d535",
+        "consent_id": "consent-example-basic",
     },
 ]
 

@@ -11,13 +11,14 @@ from .related_person_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "related_person_id": "benedicte",
         "telecom_system": "phone",
         "telecom_value": "+33 (237) 998327",
         "telecom_use": None,
         "telecom_rank": None,
         "telecom_period_start": None,
         "telecom_period_end": None,
+        "id": "1d5ae2ce-8662-44c4-a507-a2c3860e9f24",
+        "related_person_id": "benedicte",
     },
 ]
 

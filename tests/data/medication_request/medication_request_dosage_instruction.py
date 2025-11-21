@@ -11,7 +11,6 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "dosage_instruction_sequence": 1,
         "dosage_instruction_text": "one to two tablets every 4-6 hours as needed for rib pain",
         "dosage_instruction_patient_instruction": "Take one to two tablets every four to six hours as needed for rib pain",
@@ -62,7 +61,9 @@ EXPECTED_OUTPUT = [
         "dosage_instruction_max_dose_per_lifetime_unit": None,
         "dosage_instruction_max_dose_per_lifetime_system": None,
         "dosage_instruction_max_dose_per_lifetime_code": None,
-    }
+        "id": "9a834676-02b3-441b-b601-02d72925d8e8",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

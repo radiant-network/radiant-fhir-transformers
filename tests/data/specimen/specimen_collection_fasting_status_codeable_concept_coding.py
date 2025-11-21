@@ -11,10 +11,11 @@ from .specimen import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "specimen_id": "101",
         "collection_fasting_status_codeable_concept_coding_system": "http://snomed.info/sct",
         "collection_fasting_status_codeable_concept_coding_code": "123",
         "collection_fasting_status_codeable_concept_coding_display": "yes",
+        "id": "13fb0dfe-29c6-4505-9938-435295fed54b",
+        "specimen_id": "101",
     },
 ]
 

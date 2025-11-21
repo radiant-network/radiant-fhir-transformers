@@ -11,15 +11,12 @@ from .location_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
-        "type_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-                "code": "RNEU",
-                "display": "Neuroradiology unit",
-            }
-        ],
+        "type_coding_system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+        "type_coding_code": "RNEU",
+        "type_coding_display": "Neuroradiology unit",
         "type_text": None,
+        "id": "699a1e09-6e91-4958-854b-6864cc12d7ee",
+        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
     },
 ]
 

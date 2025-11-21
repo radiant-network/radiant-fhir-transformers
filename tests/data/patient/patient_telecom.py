@@ -11,22 +11,24 @@ from .patient import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "telecom_system": "phone",
         "telecom_value": "610-357-7956",
         "telecom_use": "mobile",
         "telecom_rank": 1,
         "telecom_period_start": None,
         "telecom_period_end": None,
+        "id": "b2972b46-eed2-488e-957b-032edf451bf5",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
     {
-        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
         "telecom_system": "email",
         "telecom_value": "hakp@email.chop.edu",
         "telecom_use": None,
         "telecom_rank": 1,
         "telecom_period_start": None,
         "telecom_period_end": None,
+        "id": "7772f89b-845e-4b88-90a7-4df2e607a280",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
 ]
 

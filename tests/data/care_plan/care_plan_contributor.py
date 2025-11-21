@@ -12,6 +12,7 @@ from .care_plan import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "care_plan_id": "preg",
+        "id": "51d90d7c-e50f-4618-9d1d-d07aa9cd8bda",
         "contributor_reference": "Practitioner/example",
         "contributor_display": "Peter Example",
         "contributor_type": None,

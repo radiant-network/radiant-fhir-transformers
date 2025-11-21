@@ -11,14 +11,11 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "goal_id": "example",
-        "category_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/goal-category",
-                "code": "dietary",
-            }
-        ],
+        "category_coding_system": "http://terminology.hl7.org/CodeSystem/goal-category",
+        "category_coding_code": "dietary",
         "category_text": None,
+        "id": "16514808-1b1c-42d1-bfc2-e9c79212a830",
+        "goal_id": "example",
     },
 ]
 

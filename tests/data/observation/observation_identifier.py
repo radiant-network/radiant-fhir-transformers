@@ -11,13 +11,14 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "identifier_use": "official",
         "identifier_type_text": None,
         "identifier_system": "http://www.bmc.nl/zorgportal/identifiers/observations",
         "identifier_value": "6326",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "d165a023-c6f6-4079-bbef-52c843e9e7b6",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

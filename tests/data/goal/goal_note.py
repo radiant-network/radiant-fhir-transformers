@@ -11,13 +11,14 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "goal_id": "example",
         "note_author_reference_reference": None,
         "note_author_reference_type": None,
         "note_author_reference_display": None,
         "note_author_string": None,
         "note_time": None,
         "note_text": "Weight loss",
+        "id": "7e211d5b-28f4-4a63-9534-5cfbbfddd4d8",
+        "goal_id": "example",
     },
 ]
 

@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "substitution_reason_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
         "substitution_reason_coding_code": "FP",
         "substitution_reason_coding_display": "formulary policy",
-    }
+        "id": "e466f628-1c91-4328-ab9b-db69f7029ba7",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

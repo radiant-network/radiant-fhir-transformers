@@ -11,7 +11,10 @@ from .care_plan import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_plan_id": "preg",
+        "activity_detail_performer": None,
+        "activity_detail_code_coding_system": None,
+        "activity_detail_code_coding_code": None,
+        "activity_detail_code_coding_display": None,
         "activity_outcome_codeable_concept": None,
         "activity_outcome_reference": None,
         "activity_progress": None,
@@ -21,7 +24,6 @@ EXPECTED_OUTPUT = [
         "activity_detail_kind": None,
         "activity_detail_instantiates_canonical": None,
         "activity_detail_instantiates_uri": None,
-        "activity_detail_code_coding": None,
         "activity_detail_code_text": None,
         "activity_detail_reason_code": None,
         "activity_detail_reason_reference": None,
@@ -30,16 +32,13 @@ EXPECTED_OUTPUT = [
         "activity_detail_status_reason_coding": None,
         "activity_detail_status_reason_text": None,
         "activity_detail_do_not_perform": None,
-        # start Scheduled element
-        # scheduledTiming
         "activity_detail_scheduled_timing_event": None,
-        # scheduledTiming.repeat.boundsDuration
+        "activity_detail_scheduled_timing_code": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_value": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_comparator": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_system": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_code": None,
-        # scheduledTiming.repeat.boundsRange
         "activity_detail_scheduled_timing_repeat_bounds_range_low_value": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_low_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_low_system": None,
@@ -48,10 +47,8 @@ EXPECTED_OUTPUT = [
         "activity_detail_scheduled_timing_repeat_bounds_range_high_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_high_system": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_high_code": None,
-        # scheduledTiming.repeat.boundsPeriod
         "activity_detail_scheduled_timing_repeat_bounds_period_start": None,
         "activity_detail_scheduled_timing_repeat_bounds_period_end": None,
-        # scheduledTiming.repeat
         "activity_detail_scheduled_timing_repeat_count": None,
         "activity_detail_scheduled_timing_repeat_count_max": None,
         "activity_detail_scheduled_timing_repeat_duration": None,
@@ -66,17 +63,12 @@ EXPECTED_OUTPUT = [
         "activity_detail_scheduled_timing_repeat_time_of_day": None,
         "activity_detail_scheduled_timing_repeat_when": None,
         "activity_detail_scheduled_timing_repeat_offset": None,
-        "activity_detail_scheduled_timing_code": None,
-        # scheduledPeriod
         "activity_detail_scheduled_period_start": None,
         "activity_detail_scheduled_period_end": None,
-        # scheduledString
         "activity_detail_scheduled_string": None,
-        # end Scheduled element
         "activity_detail_location_reference": None,
         "activity_detail_location_type": None,
         "activity_detail_location_display": None,
-        "activity_detail_performer": None,
         "activity_detail_product_codeable_concept_text": None,
         "activity_detail_product_codeable_concept_coding": None,
         "activity_detail_product_reference_reference": None,
@@ -91,9 +83,17 @@ EXPECTED_OUTPUT = [
         "activity_detail_quantity_system": None,
         "activity_detail_quantity_code": None,
         "activity_detail_description": None,
+        "id": "e31db9a1-f183-419f-86d2-1124a4fbcad7",
+        "care_plan_id": "preg",
     },
     {
-        "care_plan_id": "preg",
+        "activity_detail_performer": {
+            "reference": "#pr1",
+            "display": "Mavis Midwife",
+        },
+        "activity_detail_code_coding_system": "http://example.org/mySystem",
+        "activity_detail_code_coding_code": "1an",
+        "activity_detail_code_coding_display": None,
         "activity_outcome_codeable_concept": None,
         "activity_outcome_reference": None,
         "activity_progress": None,
@@ -103,9 +103,6 @@ EXPECTED_OUTPUT = [
         "activity_detail_kind": "Appointment",
         "activity_detail_instantiates_canonical": None,
         "activity_detail_instantiates_uri": None,
-        "activity_detail_code_coding": [
-            {"system": "http://example.org/mySystem", "code": "1an"}
-        ],
         "activity_detail_code_text": "First Antenatal encounter",
         "activity_detail_reason_code": None,
         "activity_detail_reason_reference": None,
@@ -114,16 +111,13 @@ EXPECTED_OUTPUT = [
         "activity_detail_status_reason_coding": None,
         "activity_detail_status_reason_text": None,
         "activity_detail_do_not_perform": False,
-        # start Scheduled element
-        # scheduledTiming
         "activity_detail_scheduled_timing_event": None,
-        # scheduledTiming.repeat.boundsDuration
+        "activity_detail_scheduled_timing_code": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_value": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_comparator": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_system": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_code": None,
-        # scheduledTiming.repeat.boundsRange
         "activity_detail_scheduled_timing_repeat_bounds_range_low_value": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_low_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_low_system": None,
@@ -132,10 +126,8 @@ EXPECTED_OUTPUT = [
         "activity_detail_scheduled_timing_repeat_bounds_range_high_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_high_system": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_high_code": None,
-        # scheduledTiming.repeat.boundsPeriod
         "activity_detail_scheduled_timing_repeat_bounds_period_start": "2013-02-14",
         "activity_detail_scheduled_timing_repeat_bounds_period_end": "2013-02-28",
-        # scheduledTiming.repeat
         "activity_detail_scheduled_timing_repeat_count": None,
         "activity_detail_scheduled_timing_repeat_count_max": None,
         "activity_detail_scheduled_timing_repeat_duration": None,
@@ -150,19 +142,12 @@ EXPECTED_OUTPUT = [
         "activity_detail_scheduled_timing_repeat_time_of_day": None,
         "activity_detail_scheduled_timing_repeat_when": None,
         "activity_detail_scheduled_timing_repeat_offset": None,
-        "activity_detail_scheduled_timing_code": None,
-        # scheduledPeriod
         "activity_detail_scheduled_period_start": None,
         "activity_detail_scheduled_period_end": None,
-        # scheduledString
         "activity_detail_scheduled_string": None,
-        # end Scheduled element
         "activity_detail_location_reference": None,
         "activity_detail_location_type": None,
         "activity_detail_location_display": None,
-        "activity_detail_performer": [
-            {"reference": "#pr1", "display": "Mavis Midwife"}
-        ],
         "activity_detail_product_codeable_concept_text": None,
         "activity_detail_product_codeable_concept_coding": None,
         "activity_detail_product_reference_reference": None,
@@ -177,9 +162,17 @@ EXPECTED_OUTPUT = [
         "activity_detail_quantity_system": None,
         "activity_detail_quantity_code": None,
         "activity_detail_description": "The first antenatal encounter. This is where a detailed physical examination is performed.             and the pregnanacy discussed with the mother-to-be.",
+        "id": "06d06877-2653-4ef7-aabf-f5c11f5181f5",
+        "care_plan_id": "preg",
     },
     {
-        "care_plan_id": "preg",
+        "activity_detail_performer": {
+            "reference": "#pr1",
+            "display": "Mavis Midwife",
+        },
+        "activity_detail_code_coding_system": "http://example.org/mySystem",
+        "activity_detail_code_coding_code": "an",
+        "activity_detail_code_coding_display": None,
         "activity_outcome_codeable_concept": None,
         "activity_outcome_reference": None,
         "activity_progress": None,
@@ -189,9 +182,6 @@ EXPECTED_OUTPUT = [
         "activity_detail_kind": "Appointment",
         "activity_detail_instantiates_canonical": None,
         "activity_detail_instantiates_uri": None,
-        "activity_detail_code_coding": [
-            {"system": "http://example.org/mySystem", "code": "an"}
-        ],
         "activity_detail_code_text": "Follow-up Antenatal encounter",
         "activity_detail_reason_code": None,
         "activity_detail_reason_reference": None,
@@ -200,16 +190,13 @@ EXPECTED_OUTPUT = [
         "activity_detail_status_reason_coding": None,
         "activity_detail_status_reason_text": None,
         "activity_detail_do_not_perform": False,
-        # start Scheduled element
-        # scheduledTiming
         "activity_detail_scheduled_timing_event": None,
-        # scheduledTiming.repeat.boundsDuration
+        "activity_detail_scheduled_timing_code": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_value": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_comparator": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_system": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_code": None,
-        # scheduledTiming.repeat.boundsRange
         "activity_detail_scheduled_timing_repeat_bounds_range_low_value": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_low_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_low_system": None,
@@ -218,10 +205,8 @@ EXPECTED_OUTPUT = [
         "activity_detail_scheduled_timing_repeat_bounds_range_high_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_high_system": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_high_code": None,
-        # scheduledTiming.repeat.boundsPeriod
         "activity_detail_scheduled_timing_repeat_bounds_period_start": "2013-03-01",
         "activity_detail_scheduled_timing_repeat_bounds_period_end": "2013-03-14",
-        # scheduledTiming.repeat
         "activity_detail_scheduled_timing_repeat_count": None,
         "activity_detail_scheduled_timing_repeat_count_max": None,
         "activity_detail_scheduled_timing_repeat_duration": None,
@@ -236,19 +221,12 @@ EXPECTED_OUTPUT = [
         "activity_detail_scheduled_timing_repeat_time_of_day": None,
         "activity_detail_scheduled_timing_repeat_when": None,
         "activity_detail_scheduled_timing_repeat_offset": None,
-        "activity_detail_scheduled_timing_code": None,
-        # scheduledPeriod
         "activity_detail_scheduled_period_start": None,
         "activity_detail_scheduled_period_end": None,
-        # scheduledString
         "activity_detail_scheduled_string": None,
-        # end Scheduled element
         "activity_detail_location_reference": None,
         "activity_detail_location_type": None,
         "activity_detail_location_display": None,
-        "activity_detail_performer": [
-            {"reference": "#pr1", "display": "Mavis Midwife"}
-        ],
         "activity_detail_product_codeable_concept_text": None,
         "activity_detail_product_codeable_concept_coding": None,
         "activity_detail_product_reference_reference": None,
@@ -263,9 +241,17 @@ EXPECTED_OUTPUT = [
         "activity_detail_quantity_system": None,
         "activity_detail_quantity_code": None,
         "activity_detail_description": "The second antenatal encounter. Discuss any issues that arose from the first antenatal encounter",
+        "id": "1ee65612-cc1b-491c-ad6b-778b0286e931",
+        "care_plan_id": "preg",
     },
     {
-        "care_plan_id": "preg",
+        "activity_detail_performer": {
+            "reference": "#pr1",
+            "display": "Mavis Midwife",
+        },
+        "activity_detail_code_coding_system": "http://example.org/mySystem",
+        "activity_detail_code_coding_code": "del",
+        "activity_detail_code_coding_display": None,
         "activity_outcome_codeable_concept": None,
         "activity_outcome_reference": None,
         "activity_progress": None,
@@ -275,9 +261,6 @@ EXPECTED_OUTPUT = [
         "activity_detail_kind": "Appointment",
         "activity_detail_instantiates_canonical": None,
         "activity_detail_instantiates_uri": None,
-        "activity_detail_code_coding": [
-            {"system": "http://example.org/mySystem", "code": "del"}
-        ],
         "activity_detail_code_text": "Delivery",
         "activity_detail_reason_code": None,
         "activity_detail_reason_reference": None,
@@ -286,16 +269,13 @@ EXPECTED_OUTPUT = [
         "activity_detail_status_reason_coding": None,
         "activity_detail_status_reason_text": None,
         "activity_detail_do_not_perform": False,
-        # start Scheduled element
-        # scheduledTiming
         "activity_detail_scheduled_timing_event": None,
-        # scheduledTiming.repeat.boundsDuration
+        "activity_detail_scheduled_timing_code": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_value": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_comparator": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_system": None,
         "activity_detail_scheduled_timing_repeat_bounds_duration_code": None,
-        # scheduledTiming.repeat.boundsRange
         "activity_detail_scheduled_timing_repeat_bounds_range_low_value": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_low_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_low_system": None,
@@ -304,10 +284,8 @@ EXPECTED_OUTPUT = [
         "activity_detail_scheduled_timing_repeat_bounds_range_high_unit": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_high_system": None,
         "activity_detail_scheduled_timing_repeat_bounds_range_high_code": None,
-        # scheduledTiming.repeat.boundsPeriod
         "activity_detail_scheduled_timing_repeat_bounds_period_start": "2013-09-01",
         "activity_detail_scheduled_timing_repeat_bounds_period_end": "2013-09-14",
-        # scheduledTiming.repeat
         "activity_detail_scheduled_timing_repeat_count": None,
         "activity_detail_scheduled_timing_repeat_count_max": None,
         "activity_detail_scheduled_timing_repeat_duration": None,
@@ -322,19 +300,12 @@ EXPECTED_OUTPUT = [
         "activity_detail_scheduled_timing_repeat_time_of_day": None,
         "activity_detail_scheduled_timing_repeat_when": None,
         "activity_detail_scheduled_timing_repeat_offset": None,
-        "activity_detail_scheduled_timing_code": None,
-        # scheduledPeriod
         "activity_detail_scheduled_period_start": None,
         "activity_detail_scheduled_period_end": None,
-        # scheduledString
         "activity_detail_scheduled_string": None,
-        # end Scheduled element
         "activity_detail_location_reference": None,
         "activity_detail_location_type": None,
         "activity_detail_location_display": None,
-        "activity_detail_performer": [
-            {"reference": "#pr1", "display": "Mavis Midwife"}
-        ],
         "activity_detail_product_codeable_concept_text": None,
         "activity_detail_product_codeable_concept_coding": None,
         "activity_detail_product_reference_reference": None,
@@ -349,6 +320,8 @@ EXPECTED_OUTPUT = [
         "activity_detail_quantity_system": None,
         "activity_detail_quantity_code": None,
         "activity_detail_description": "The delivery.",
+        "id": "2f086c87-64b9-4b8c-b6c0-e00ca037c7f0",
+        "care_plan_id": "preg",
     },
 ]
 

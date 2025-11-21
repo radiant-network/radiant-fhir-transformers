@@ -11,17 +11,16 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
         "presented_form_content_type": "application/pdf",
         "presented_form_language": "en-AU",
-        # note: per natasha, the presentedForm.data field is an actual binary attachment and we need to handle it differently
-        # "presented_form_data":"",
         "presented_form_url": None,
         "presented_form_size": None,
         "presented_form_hash": "L9ThxnotKPzthJ7hu3bnORuT6xI=",
         "presented_form_title": "HTML Report",
         "presented_form_creation": None,
-    }
+        "id": "30734c3e-ed3d-49ee-b4b8-818d28165c01",
+        "diagnostic_report_id": "101",
+    },
 ]
 
 

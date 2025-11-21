@@ -14,10 +14,10 @@ EXPECTED_OUTPUT = [
         "id": "f201",
         "resource_type": "Condition",
         "code_text": None,
-        "subject_reference": "f201",
+        "subject_reference": "Patient/f201",
         "subject_display": "Roel",
         "subject_type": None,
-        "encounter_reference": "f201",
+        "encounter_reference": "Encounter/f201",
         "encounter_display": None,
         "encounter_type": None,
         "onset_date_time": "2013-04-02",
@@ -53,16 +53,16 @@ EXPECTED_OUTPUT = [
         "abatement_range_high_code": None,
         "abatement_string": "around April 9, 2013",
         "recorded_date": "2013-04-04",
-        "recorder_reference": "f201",
+        "recorder_reference": "Practitioner/f201",
         "recorder_display": None,
         "recorder_type": None,
-        "asserter_reference": "f201",
+        "asserter_reference": "Practitioner/f201",
         "asserter_display": None,
         "asserter_type": None,
         "clinical_status_text": None,
         "verification_status_text": None,
         "severity_text": None,
-    }
+    },
 ]
 
 

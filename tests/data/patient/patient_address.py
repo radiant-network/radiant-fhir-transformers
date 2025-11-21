@@ -11,11 +11,10 @@ from .patient_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "address_line": "1234 Administration Blvd",
         "address_use": "home",
         "address_type": None,
         "address_text": None,
-        "address_line": ["1234 Administration Blvd"],
         "address_city": "SOUTHAMPTON",
         "address_district": "Bucks",
         "address_state": "PA",
@@ -23,13 +22,14 @@ EXPECTED_OUTPUT = [
         "address_country": "US",
         "address_period_start": None,
         "address_period_end": None,
+        "id": "082f17d3-d7a8-4e0c-abde-bfa9fa628d8f",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
     {
-        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "address_line": "1234 Adminsutration Blvd",
         "address_use": "old",
         "address_type": None,
         "address_text": None,
-        "address_line": ["1234 Adminsutration Blvd"],
         "address_city": "SOUTHAMPTON",
         "address_district": "Bucks",
         "address_state": "PA",
@@ -37,13 +37,14 @@ EXPECTED_OUTPUT = [
         "address_country": "US",
         "address_period_start": None,
         "address_period_end": None,
+        "id": "b84a1962-7057-4dcf-8fed-914b7f81b998",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
     {
-        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
+        "address_line": "1234 Administration Blvd",
         "address_use": "old",
         "address_type": None,
         "address_text": None,
-        "address_line": ["1234 Administration Blvd"],
         "address_city": "SOUTHAMPTON",
         "address_district": "Bucks",
         "address_state": "PA",
@@ -51,6 +52,8 @@ EXPECTED_OUTPUT = [
         "address_country": "US",
         "address_period_start": None,
         "address_period_end": None,
+        "id": "5f7da6be-5f4f-4e02-aee7-8c26501be2b4",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
 ]
 

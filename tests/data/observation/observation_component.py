@@ -11,14 +11,9 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "component_code_coding": [
-            {
-                "system": "http://loinc.org",
-                "code": "8480-6",
-                "display": "Systolic blood pressure",
-            }
-        ],
+        "component_code_coding_system": "http://loinc.org",
+        "component_code_coding_code": "8480-6",
+        "component_code_coding_display": "Systolic blood pressure",
         "component_code_text": "Systolic blood pressure",
         "component_value_quantity_value": None,
         "component_value_quantity_comparator": None,
@@ -66,16 +61,13 @@ EXPECTED_OUTPUT = [
         "component_data_absent_reason_text": None,
         "component_interpretation": None,
         "component_reference_range": None,
+        "id": "b81a8794-e92c-4dfc-83c0-b244df91b3f8",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "component_code_coding": [
-            {
-                "system": "http://loinc.org",
-                "code": "8462-4",
-                "display": "Diastolic blood pressure",
-            }
-        ],
+        "component_code_coding_system": "http://loinc.org",
+        "component_code_coding_code": "8462-4",
+        "component_code_coding_display": "Diastolic blood pressure",
         "component_code_text": "Diastolic blood pressure",
         "component_value_quantity_value": None,
         "component_value_quantity_comparator": None,
@@ -123,6 +115,8 @@ EXPECTED_OUTPUT = [
         "component_data_absent_reason_text": None,
         "component_interpretation": None,
         "component_reference_range": None,
+        "id": "47947a19-445f-4827-9448-667324edf32a",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

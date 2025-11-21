@@ -11,10 +11,11 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "data_absent_reason_coding_system": "http://terminology.hl7.org/CodeSystem/data-absent-reason",
         "data_absent_reason_coding_code": "unknown",
         "data_absent_reason_coding_display": "Unknown",
+        "id": "7800f5e1-1255-42fe-92dc-18ce0b286c79",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

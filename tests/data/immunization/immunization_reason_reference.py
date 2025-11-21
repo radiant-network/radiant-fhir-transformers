@@ -11,10 +11,11 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
-        "reason_reference_reference": "reason",
+        "reason_reference_reference": "Condiiton/reason",
         "reason_reference_type": None,
         "reason_reference_display": None,
+        "id": "484322c0-a7e1-480e-ad5f-6a9464319520",
+        "immunization_id": "example",
     },
 ]
 

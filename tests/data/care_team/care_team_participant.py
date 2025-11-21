@@ -11,9 +11,10 @@ from .care_team_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_team_id": "example",
-        "participant_role_coding": None,
-        "participant_role_text": ["responsiblePerson"],
+        "participant_role_text": "responsiblePerson",
+        "participant_role_coding_system": None,
+        "participant_role_coding_code": None,
+        "participant_role_coding_display": None,
         "participant_member_reference": "Patient/example",
         "participant_member_type": None,
         "participant_member_display": "Peter James Chalmers",
@@ -22,11 +23,14 @@ EXPECTED_OUTPUT = [
         "participant_on_behalf_of_display": None,
         "participant_period_start": None,
         "participant_period_end": None,
+        "id": "81c257b3-8bd3-4964-acee-a37109acd890",
+        "care_team_id": "example",
     },
     {
-        "care_team_id": "example",
-        "participant_role_coding": None,
-        "participant_role_text": ["adviser"],
+        "participant_role_text": "adviser",
+        "participant_role_coding_system": None,
+        "participant_role_coding_code": None,
+        "participant_role_coding_display": None,
         "participant_member_reference": "Practitioner/pr1",
         "participant_member_type": None,
         "participant_member_display": "Dorothy Dietition",
@@ -35,6 +39,8 @@ EXPECTED_OUTPUT = [
         "participant_on_behalf_of_display": None,
         "participant_period_start": None,
         "participant_period_end": "2013-01-01",
+        "id": "d49930c5-b6e1-41de-ae61-306235a1a12e",
+        "care_team_id": "example",
     },
 ]
 

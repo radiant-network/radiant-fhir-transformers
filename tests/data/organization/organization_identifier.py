@@ -11,31 +11,34 @@ from .organization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "organization_id": "2.16.840.1.113883.19.5",
         "identifier_use": "usual",
         "identifier_type_text": None,
         "identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.5.737384.8553241",
         "identifier_value": "7968",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "e4123376-05a0-45cc-a135-279c673a0a7a",
+        "organization_id": "2.16.840.1.113883.19.5",
     },
     {
-        "organization_id": "2.16.840.1.113883.19.5",
         "identifier_use": "usual",
         "identifier_type_text": None,
         "identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.5.737384.8553242",
         "identifier_value": "PH0453",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "cd41ee47-2f10-4530-bc9d-082f26a66def",
+        "organization_id": "2.16.840.1.113883.19.5",
     },
     {
-        "organization_id": "2.16.840.1.113883.19.5",
         "identifier_use": "usual",
         "identifier_type_text": "NPI",
         "identifier_system": "http://hl7.org/fhir/sid/us-npi",
         "identifier_value": "1215921457",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "e1445c66-5ea5-4393-bb93-39de13435424",
+        "organization_id": "2.16.840.1.113883.19.5",
     },
 ]
 

@@ -11,16 +11,13 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
-        "specialty_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "394814009",
-                "display": "General practice",
-            }
-        ],
+        "specialty_coding_system": "http://snomed.info/sct",
+        "specialty_coding_code": "394814009",
+        "specialty_coding_display": "General practice",
         "specialty_text": None,
-    }
+        "id": "db4d85b2-f37a-41db-8164-ec9131c044e8",
+        "appointment_id": "example",
+    },
 ]
 
 

@@ -11,15 +11,14 @@ from .care_team_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_team_id": "example",
-        "reason_code_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "400097005",
-                "display": "Ingrowing nail",
-            }
-        ],
+        "reason_code_coding": {
+            "system": "http://snomed.info/sct",
+            "code": "400097005",
+            "display": "Ingrowing nail",
+        },
         "reason_code_text": "Ingrowing nail",
+        "id": "8af0ab58-3f31-4b44-a030-1268aa04dfe8",
+        "care_team_id": "example",
     },
 ]
 

@@ -11,10 +11,11 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
         "provision_security_label_system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
         "provision_security_label_code": "N",
         "provision_security_label_display": None,
+        "id": "8675fc37-1674-4bf2-b79b-3d0ff5bc5f4b",
+        "consent_id": "consent-example-basic",
     },
 ]
 

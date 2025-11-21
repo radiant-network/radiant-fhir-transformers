@@ -11,17 +11,17 @@ from .provenance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "resource_type": "Provenance",
         "id": "provenance",
+        "resource_type": "Provenance",
         "occurred_period_start": "2015-06-27",
         "occurred_period_end": "2015-06-28",
         "occurred_date_time": None,
         "recorded": "2015-06-27T08:39:24+10:00",
-        "location_reference": "location",
+        "location_reference": "Location/location",
         "location_type": None,
         "location_display": None,
         "activity_text": None,
-    }
+    },
 ]
 
 

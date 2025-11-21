@@ -11,10 +11,11 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
         "scope_coding_system": "http://terminology.hl7.org/CodeSystem/consentscope",
         "scope_coding_code": "patient-privacy",
         "scope_coding_display": None,
+        "id": "9c0fad49-0a10-4c18-8fa7-e0620499d922",
+        "consent_id": "consent-example-basic",
     },
 ]
 

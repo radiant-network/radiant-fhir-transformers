@@ -11,13 +11,14 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
         "note_text": "patient is afraid of needles",
         "note_author_string": "Serena Shrink",
         "note_author_reference_reference": None,
         "note_author_reference_display": None,
         "note_author_reference_type": None,
         "note_time": "2014-02-14",
+        "id": "eb5842a4-7fb1-4111-9738-0f2ae6b8d7fd",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

@@ -11,13 +11,14 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "condition_id": "f201",
-        "identifier_value": "12345",
         "identifier_use": None,
         "identifier_system": None,
+        "identifier_value": "12345",
+        "identifier_type_text": None,
         "identifier_period_start": None,
         "identifier_period_end": None,
-        "identifier_type_text": None,
+        "id": "eff3aae7-d24e-4e26-8fa3-c073bfa39c6f",
+        "condition_id": "f201",
     },
 ]
 

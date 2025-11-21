@@ -13,7 +13,6 @@ EXPECTED_OUTPUT = [
     {
         "id": "101",
         "resource_type": "Specimen",
-        "status": "available",
         "accession_identifier_use": None,
         "accession_identifier_system": "http://lab.acme.org/specimens/2011",
         "accession_identifier_value": "X352356",
@@ -22,12 +21,13 @@ EXPECTED_OUTPUT = [
         "accession_identifier_assigner_reference": None,
         "accession_identifier_assigner_display": None,
         "accession_identifier_assigner_type": None,
+        "status": "available",
         "type_text": "venous blood",
-        "subject_reference": "example",
+        "subject_reference": "Patient/example",
         "subject_display": "Peter Patient",
         "subject_type": "Patient",
         "received_time": "2011-03-04T07:03:00Z",
-        "collection_collector_reference": "example",
+        "collection_collector_reference": "Practitioner/example",
         "collection_collector_display": None,
         "collection_collector_type": None,
         "collection_collected_date_time": "2011-05-30T06:15:00Z",
@@ -50,7 +50,7 @@ EXPECTED_OUTPUT = [
         "collection_fasting_status_duration_system": "ucum.org",
         "collection_fasting_status_duration_code": "3d",
         "collection_fasting_status_codeable_concept_text": "fasting since midnight",
-    }
+    },
 ]
 
 

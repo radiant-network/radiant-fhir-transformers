@@ -11,12 +11,13 @@ from .provenance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "provenance_id": "provenance",
         "entity_role": "source",
         "entity_what_reference": "DocumentReference/entity",
         "entity_what_type": None,
         "entity_what_display": "CDA Document in XDS repository",
         "entity_agent": None,
+        "id": "8d9b783a-25ed-469e-b4fe-4be9e7931c7b",
+        "provenance_id": "provenance",
     },
 ]
 

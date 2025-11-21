@@ -11,9 +11,11 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
-        "category_coding": [{"system": "http://loinc.org", "code": "59284-0"}],
+        "category_coding_system": "http://loinc.org",
+        "category_coding_code": "59284-0",
         "category_text": None,
+        "id": "a86251d5-6b15-4f06-a37e-b2e4b4d56265",
+        "consent_id": "consent-example-basic",
     },
 ]
 

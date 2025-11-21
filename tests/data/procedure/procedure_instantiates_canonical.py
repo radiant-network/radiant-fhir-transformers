@@ -11,9 +11,10 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
         "instantiates_canonical": "http://example.org/fhir/PlanDefinition/KDN5",
-    }
+        "id": "9c991bea-e235-4142-864a-a9adcfd84b00",
+        "procedure_id": "f201",
+    },
 ]
 
 

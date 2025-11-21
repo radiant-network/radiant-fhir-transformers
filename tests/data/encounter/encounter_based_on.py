@@ -10,11 +10,12 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
         "based_on_reference": "ServiceRequest/myringotomy",
         "based_on_type": None,
         "based_on_display": None,
-    }
+        "id": "178f9ab4-998b-41f8-8843-ec25e26e581c",
+        "encounter_id": "f203",
+    },
 ]
 
 

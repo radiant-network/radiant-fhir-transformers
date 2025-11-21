@@ -42,10 +42,10 @@ EXPECTED_OUTPUT = [
         "quantity_range_high_unit": "part",
         "quantity_range_high_system": None,
         "quantity_range_high_code": None,
-        "subject_reference": "dicom.example.pt",
+        "subject_reference": "Patient/dicom.example.pt",
         "subject_display": "Judy Test",
         "subject_type": None,
-        "encounter_reference": "example",
+        "encounter_reference": "Encounter/example",
         "encounter_display": "1234encounter",
         "encounter_type": None,
         "occurrence_date_time": "2013-05-08T09:33:27+07:00",
@@ -59,12 +59,12 @@ EXPECTED_OUTPUT = [
         "as_needed_boolean": False,
         "as_needed_codeable_concept_text": "as needed text example",
         "authored_on": "2014-02-14",
-        "requester_reference": "example.doc",
+        "requester_reference": "Practitioner/example.doc",
         "requester_display": "Dr. Adam Careful",
         "requester_type": None,
         "performer_type_text": "Ear Nose and Throat",
         "patient_instruction": "Start with 30kg 10-15 repetitions for three sets and increase in increments of 5kg when you feel ready",
-    }
+    },
 ]
 
 

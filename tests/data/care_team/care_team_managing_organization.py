@@ -11,10 +11,11 @@ from .care_team_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_team_id": "example",
-        "managing_organization_reference": "f001",
+        "managing_organization_reference": "Organization/f001",
         "managing_organization_type": None,
         "managing_organization_display": None,
+        "id": "358d4257-df84-4348-815a-d8f7511e7ed4",
+        "care_team_id": "example",
     },
 ]
 

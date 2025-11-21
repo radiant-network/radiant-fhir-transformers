@@ -11,11 +11,12 @@ from .location_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
-        "endpoint_reference": "endpoint",
+        "endpoint_reference": "Endpoint/endpoint",
         "endpoint_type": None,
         "endpoint_display": None,
-    }
+        "id": "5a60a3e6-2910-404a-816f-fe298db4beb7",
+        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
+    },
 ]
 
 

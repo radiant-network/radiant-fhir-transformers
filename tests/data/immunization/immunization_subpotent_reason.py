@@ -11,15 +11,12 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
-        "subpotent_reason_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/immunization-subpotent-reason",
-                "code": "partial",
-                "display": "Partial Dose",
-            }
-        ],
+        "subpotent_reason_coding_system": "http://terminology.hl7.org/CodeSystem/immunization-subpotent-reason",
+        "subpotent_reason_coding_code": "partial",
+        "subpotent_reason_coding_display": "Partial Dose",
         "subpotent_reason_text": None,
+        "id": "2244cac2-af7f-4a74-ad27-f28f1dba7936",
+        "immunization_id": "example",
     },
 ]
 

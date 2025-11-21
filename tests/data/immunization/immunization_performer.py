@@ -11,30 +11,24 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
-        "performer_function_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
-                "code": "OP",
-            }
-        ],
+        "performer_function_coding_system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+        "performer_function_coding_code": "OP",
         "performer_function_text": None,
         "performer_actor_reference": "Practitioner/example",
         "performer_actor_type": None,
         "performer_actor_display": None,
+        "id": "24506069-1446-4e45-b887-c38a4ede7122",
+        "immunization_id": "example",
     },
     {
-        "immunization_id": "example",
-        "performer_function_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
-                "code": "AP",
-            }
-        ],
+        "performer_function_coding_system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+        "performer_function_coding_code": "AP",
         "performer_function_text": None,
         "performer_actor_reference": "Practitioner/example",
         "performer_actor_type": None,
         "performer_actor_display": None,
+        "id": "edf18b03-5487-45b6-8150-08ce1e9c46b2",
+        "immunization_id": "example",
     },
 ]
 

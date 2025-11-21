@@ -11,10 +11,11 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
         "requested_period_start": "2016-06-02",
         "requested_period_end": "2016-06-09",
-    }
+        "id": "c68e6b84-80fb-4f58-b43a-b097ea028ccc",
+        "appointment_id": "example",
+    },
 ]
 
 

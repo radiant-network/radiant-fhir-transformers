@@ -11,11 +11,12 @@ from .provenance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "provenance_id": "provenance",
-        "target_reference": "target",
+        "target_reference": "Procedure/target",
         "target_type": None,
         "target_display": None,
-    }
+        "id": "2ef58310-8837-4db3-b65a-d26487280b84",
+        "provenance_id": "provenance",
+    },
 ]
 
 

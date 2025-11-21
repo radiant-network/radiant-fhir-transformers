@@ -11,7 +11,6 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "condition_id": "f201",
         "stage_assessment": [
             {"display": "MEDULLOBLASTOMA DIAGNOSIS", "reference": "foo"}
         ],
@@ -23,7 +22,9 @@ EXPECTED_OUTPUT = [
             {"code": "14803004", "display": "Temporary", "system": "sct"}
         ],
         "stage_type_text": None,
-    }
+        "id": "c38a8a62-315f-4957-83b8-d70604ec1c9b",
+        "condition_id": "f201",
+    },
 ]
 
 

@@ -10,16 +10,13 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
-        "type_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "183807002",
-                "display": "Inpatient stay for nine days",
-            }
-        ],
+        "type_coding_system": "http://snomed.info/sct",
+        "type_coding_code": "183807002",
+        "type_coding_display": "Inpatient stay for nine days",
         "type_text": None,
-    }
+        "id": "fa81e0ab-90a7-4e12-b959-391661ce93c7",
+        "encounter_id": "f203",
+    },
 ]
 
 

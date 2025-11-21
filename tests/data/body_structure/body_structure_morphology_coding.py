@@ -11,10 +11,11 @@ from .body_structure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "body_structure_id": "tumor",
         "morphology_coding_system": "http://snomed.info/sct",
         "morphology_coding_code": "4147007",
         "morphology_coding_display": "Mass (morphologic abnormality)",
+        "id": "e253bcbc-5606-4c1c-9f4e-50fafa726e35",
+        "body_structure_id": "tumor",
     },
 ]
 

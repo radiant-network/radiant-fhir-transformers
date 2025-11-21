@@ -11,10 +11,11 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
         "policy_rule_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
         "policy_rule_coding_code": "OPTIN",
         "policy_rule_coding_display": None,
+        "id": "cc295ba7-4405-42d7-8dc3-e17033bf5cf0",
+        "consent_id": "consent-example-basic",
     },
 ]
 

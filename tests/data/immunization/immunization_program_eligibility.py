@@ -11,14 +11,11 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
-        "program_eligibility_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/immunization-program-eligibility",
-                "code": "ineligible",
-            }
-        ],
+        "program_eligibility_coding_system": "http://terminology.hl7.org/CodeSystem/immunization-program-eligibility",
+        "program_eligibility_coding_code": "ineligible",
         "program_eligibility_text": None,
+        "id": "195a9976-246a-4f6c-a57e-65a1bce39145",
+        "immunization_id": "example",
     },
 ]
 

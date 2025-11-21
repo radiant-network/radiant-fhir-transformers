@@ -22,17 +22,17 @@ EXPECTED_OUTPUT = [
         "intent": "plan",
         "priority": "routine",
         "code_text": None,
-        "subject_reference": "example",
+        "subject_reference": "Patient/example",
         "subject_type": None,
         "subject_display": None,
-        "encounter_reference": "example",
+        "encounter_reference": "Encounter/example",
         "encounter_type": None,
         "encounter_display": None,
         "authored_on": "2017-03-06T17:31:00Z",
-        "author_reference": "1",
+        "author_reference": "Practitioner/1",
         "author_type": None,
         "author_display": None,
-    }
+    },
 ]
 
 

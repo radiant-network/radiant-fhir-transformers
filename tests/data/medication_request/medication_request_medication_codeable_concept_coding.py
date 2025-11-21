@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "medication_codeable_concept_coding_system": "http://hl7.org/fhir/sid/ndc",
         "medication_codeable_concept_coding_code": "0069-2587-10",
         "medication_codeable_concept_coding_display": "Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE)",
-    }
+        "id": "0df08ab8-374b-497a-8c88-0c3b310f80eb",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

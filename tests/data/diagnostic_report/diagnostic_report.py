@@ -13,20 +13,20 @@ EXPECTED_OUTPUT = [
     {
         "id": "101",
         "resource_type": "DiagnosticReport",
-        "code_text": "Complete Blood Count",
         "status": "final",
-        "subject_reference": "pat2",
-        "subject_type": None,
+        "code_text": "Complete Blood Count",
+        "subject_reference": "Patient/pat2",
         "subject_display": "Patient Two",
-        "encounter_reference": "example",
-        "encounter_type": None,
+        "subject_type": None,
+        "encounter_reference": "Encounter/example",
         "encounter_display": None,
+        "encounter_type": None,
         "effective_date_time": "2011-03-04T08:30:00+11:00",
         "effective_period_start": None,
         "effective_period_stop": None,
         "issued": "2011-03-04T11:45:33+11:00",
         "conclusion": "Core lab",
-    }
+    },
 ]
 
 

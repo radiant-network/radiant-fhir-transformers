@@ -11,10 +11,11 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
         "status_history_status": "arrived",
         "status_history_period_start": "2013-03-08",
         "status_history_period_end": None,
+        "id": "d101e3b2-fa22-48be-a375-6548d1eef9a5",
+        "encounter_id": "f203",
     },
 ]
 

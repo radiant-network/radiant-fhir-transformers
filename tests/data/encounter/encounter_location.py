@@ -10,7 +10,6 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
         "location_location_reference": None,
         "location_location_type": None,
         "location_location_display": "Example",
@@ -21,7 +20,9 @@ EXPECTED_OUTPUT = [
         "location_physical_type_text": None,
         "location_period_start": "2017-02-01T07:15:00+10:00",
         "location_period_end": "2017-02-01T08:45:00+10:00",
-    }
+        "id": "8afde402-4eef-442e-b299-01f7a706bb2e",
+        "encounter_id": "f203",
+    },
 ]
 
 

@@ -11,10 +11,11 @@ from .request_group_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "request_group_id": "kdn5-example",
-        "based_on_reference": "medication-request",
+        "based_on_reference": "MedicationRequest/medication-request",
         "based_on_type": None,
         "based_on_display": None,
+        "id": "18444c6d-fb61-43b6-85a6-9859102ab169",
+        "request_group_id": "kdn5-example",
     },
 ]
 

@@ -11,12 +11,13 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
         "verification_verified": True,
         "verification_verified_with_reference": None,
         "verification_verified_with_type": None,
         "verification_verified_with_display": None,
         "verification_verification_date": "2015-10-10",
+        "id": "212fd254-9b24-4b45-87e7-7be734d41dc0",
+        "consent_id": "consent-example-basic",
     },
 ]
 

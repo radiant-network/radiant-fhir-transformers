@@ -11,10 +11,11 @@ from .request_group_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "request_group_id": "kdn5-example",
-        "reason_reference_reference": "condition",
+        "reason_reference_reference": "Condition/condition",
         "reason_reference_type": None,
         "reason_reference_display": None,
+        "id": "9eb2a669-d83e-48a4-9950-3dd143fedc92",
+        "request_group_id": "kdn5-example",
     },
 ]
 

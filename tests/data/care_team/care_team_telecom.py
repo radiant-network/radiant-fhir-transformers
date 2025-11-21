@@ -11,22 +11,24 @@ from .care_team_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_team_id": "example",
         "telecom_system": "phone",
         "telecom_value": "215-590-3326",
         "telecom_use": "work",
         "telecom_rank": None,
         "telecom_period_start": None,
         "telecom_period_end": None,
+        "id": "080c7ec1-7cb5-4a34-bbce-880a60255bcb",
+        "care_team_id": "example",
     },
     {
-        "care_team_id": "example",
         "telecom_system": "fax",
         "telecom_value": "215-590-3606",
         "telecom_use": "work",
         "telecom_rank": None,
         "telecom_period_start": None,
         "telecom_period_end": None,
+        "id": "1081eb9c-5e5e-4028-b42f-e9de74d2630d",
+        "care_team_id": "example",
     },
 ]
 

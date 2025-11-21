@@ -11,16 +11,18 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
         "code_coding_system": "http://loinc.org",
         "code_coding_code": "58410-2",
         "code_coding_display": "Complete blood count (hemogram) panel - Blood by Automated count",
+        "id": "67644dd6-d9f8-452a-9d21-823eb629583d",
+        "diagnostic_report_id": "101",
     },
     {
-        "diagnostic_report_id": "101",
         "code_coding_system": None,
         "code_coding_code": "CBC",
         "code_coding_display": "MASTER FULL BLOOD COUNT",
+        "id": "9e5b301f-4090-4619-b452-835c9223a0f6",
+        "diagnostic_report_id": "101",
     },
 ]
 

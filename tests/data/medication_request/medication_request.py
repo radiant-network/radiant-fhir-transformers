@@ -11,8 +11,8 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "resource_type": "MedicationRequest",
         "id": "medrx0301",
+        "resource_type": "MedicationRequest",
         "status": "completed",
         "status_reason_text": "This therapy is a backup and will be used only if the preferred therapy fails.",
         "intent": "order",
@@ -26,21 +26,21 @@ EXPECTED_OUTPUT = [
         "medication_reference_reference": "med0310",
         "medication_reference_type": None,
         "medication_reference_display": None,
-        "subject_reference": "pat1",
+        "subject_reference": "Patient/pat1",
         "subject_type": "Patient",
         "subject_display": "Donald Duck",
-        "encounter_reference": "f201",
+        "encounter_reference": "Encounter/f201",
         "encounter_type": None,
         "encounter_display": "encounter who leads to this prescription",
         "authored_on": "2015-01-15",
-        "requester_reference": "f007",
+        "requester_reference": "Practitioner/f007",
         "requester_type": None,
         "requester_display": "Patrick Pump",
-        "performer_reference": "f204",
+        "performer_reference": "Practitioner/f204",
         "performer_type": None,
         "performer_display": "Carla Espinosa",
         "performer_type_text": "Nurse",
-        "recorder_reference": "ef81ZrgFqs7ufzYI2X9ixcA3",
+        "recorder_reference": "Practitioner/ef81ZrgFqs7ufzYI2X9ixcA3",
         "recorder_type": None,
         "recorder_display": "Epic User",
         "group_identifier_use": None,
@@ -79,7 +79,7 @@ EXPECTED_OUTPUT = [
         "prior_prescription_reference": None,
         "prior_prescription_type": None,
         "prior_prescription_display": None,
-    }
+    },
 ]
 
 

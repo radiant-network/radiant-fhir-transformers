@@ -11,66 +11,46 @@ from .allergy_intolerance import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "allergy_intolerance_id": "example_ai",
+        "reaction_note_text": None,
+        "reaction_note_author_string": None,
+        "reaction_note_time": None,
+        "reaction_exposure_route_coding_system": "http://snomed.info/sct",
+        "reaction_exposure_route_coding_code": "34206005",
+        "reaction_exposure_route_coding_display": "Subcutaneous route",
+        "reaction_manifestation_coding_system": None,
+        "reaction_manifestation_coding_code": None,
+        "reaction_manifestation_coding_display": None,
+        "reaction_substance_coding_system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "reaction_substance_coding_code": "1160593",
+        "reaction_substance_coding_display": "cashew nut allergenic extract Injectable Product",
         "reaction_substance_text": None,
-        "reaction_substance_coding": [
-            {
-                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                "code": "1160593",
-                "display": "cashew nut allergenic extract Injectable Product",
-            }
-        ],
-        "reaction_manifestation": [
-            {
-                "coding": [
-                    {
-                        "system": "http://snomed.info/sct",
-                        "code": "39579001",
-                        "display": "Anaphylactic reaction",
-                    }
-                ]
-            }
-        ],
         "reaction_description": "Challenge Protocol. Severe reaction to subcutaneous cashew extract. Epinephrine administered",
         "reaction_onset": "2012-06-12",
         "reaction_severity": "severe",
         "reaction_exposure_route_text": None,
-        "reaction_exposure_route_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "34206005",
-                "display": "Subcutaneous route",
-            }
-        ],
-        "reaction_note": None,
+        "id": "c3639a86-65bd-4203-8264-de350e3be625",
+        "allergy_intolerance_id": "example_ai",
     },
     {
-        "allergy_intolerance_id": "example_ai",
+        "reaction_note_text": "The patient reports that the onset of urticaria was within 15 minutes of eating cashews.",
+        "reaction_note_author_string": "Doctor J",
+        "reaction_note_time": "2014-02-14",
+        "reaction_exposure_route_coding_system": None,
+        "reaction_exposure_route_coding_code": None,
+        "reaction_exposure_route_coding_display": None,
+        "reaction_manifestation_coding_system": None,
+        "reaction_manifestation_coding_code": None,
+        "reaction_manifestation_coding_display": None,
+        "reaction_substance_coding_system": None,
+        "reaction_substance_coding_code": None,
+        "reaction_substance_coding_display": None,
         "reaction_substance_text": None,
-        "reaction_substance_coding": None,
-        "reaction_manifestation": [
-            {
-                "coding": [
-                    {
-                        "system": "http://snomed.info/sct",
-                        "code": "64305001",
-                        "display": "Urticaria",
-                    }
-                ]
-            }
-        ],
         "reaction_description": None,
         "reaction_onset": "2004",
         "reaction_severity": "moderate",
         "reaction_exposure_route_text": None,
-        "reaction_exposure_route_coding": None,
-        "reaction_note": [
-            {
-                "text": "The patient reports that the onset of urticaria was within 15 minutes of eating cashews.",
-                "authorString": "Doctor J",
-                "time": "2014-02-14",
-            }
-        ],
+        "id": "539bd818-7de1-40c4-98f5-56a04a35a658",
+        "allergy_intolerance_id": "example_ai",
     },
 ]
 

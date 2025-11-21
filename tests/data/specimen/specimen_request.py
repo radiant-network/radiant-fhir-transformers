@@ -11,10 +11,11 @@ from .specimen import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "specimen_id": "101",
-        "request_reference": "example",
+        "request_reference": "ServiceRequest/example",
         "request_display": None,
         "request_type": None,
+        "id": "61cd3667-ff63-4444-a511-662a35ca1f10",
+        "specimen_id": "101",
     },
 ]
 

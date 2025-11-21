@@ -134,7 +134,7 @@ RESOURCE = {
             "use": "official",
             "text": "Betty MyChart",
             "family": "MyChart",
-            "given": ["Betty"],
+            "given": ["Betty", "Elizabeth"],
         },
         {
             "use": "usual",

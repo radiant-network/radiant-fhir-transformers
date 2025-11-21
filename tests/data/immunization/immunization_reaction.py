@@ -11,12 +11,13 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
         "reaction_date": None,
         "reaction_detail_reference": None,
         "reaction_detail_type": None,
         "reaction_detail_display": None,
         "reaction_reported": False,
+        "id": "48ff1e34-1027-4474-afef-99b9ecf2827d",
+        "immunization_id": "example",
     },
 ]
 

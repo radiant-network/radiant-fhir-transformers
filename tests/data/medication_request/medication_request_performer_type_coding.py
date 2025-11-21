@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "performer_type_coding_system": "http://snomed.info/sct",
         "performer_type_coding_code": "26369006",
         "performer_type_coding_display": "Public Health Nurse",
-    }
+        "id": "b833b2ba-6159-47d7-9692-e84e2ed476b8",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

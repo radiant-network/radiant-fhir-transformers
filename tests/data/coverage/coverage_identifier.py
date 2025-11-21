@@ -11,13 +11,14 @@ from .coverage_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "coverage_id": "9876B1",
         "identifier_use": None,
         "identifier_type_text": None,
         "identifier_system": "http://benefitsinc.com/certificate",
         "identifier_value": "12345",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "0f244e38-20ca-4f79-8e56-20760b5be12a",
+        "coverage_id": "9876B1",
     },
 ]
 

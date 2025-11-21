@@ -15,15 +15,14 @@ from .medication_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_id": "med0301",
         "ingredient_item_codeable_concept": {
             "coding": [
                 {
                     "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
                     "code": "66955",
                     "display": "Vancomycin Hydrochloride",
-                }
-            ]
+                },
+            ],
         },
         "ingredient_item_reference": {
             "reference": "Medication/abcd",
@@ -38,7 +37,9 @@ EXPECTED_OUTPUT = [
         "ingredient_strength_denominator_unit": None,
         "ingredient_strength_denominator_system": "http://unitsofmeasure.org",
         "ingredient_strength_denominator_code": "mL",
-    }
+        "id": "41adc668-bae6-4d4c-9c1c-58122f927687",
+        "medication_id": "med0301",
+    },
 ]
 
 

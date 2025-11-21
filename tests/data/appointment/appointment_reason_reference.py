@@ -11,11 +11,12 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
         "reason_reference_reference": "Condition/example",
         "reason_reference_type": None,
         "reason_reference_display": "Severe burn of left ear",
-    }
+        "id": "c7f385ef-3409-486f-853f-950234c60df1",
+        "appointment_id": "example",
+    },
 ]
 
 

@@ -11,15 +11,14 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
-        "context_event_coding": [
-            {
-                "system": "http://ihe.net/xds/connectathon/eventCodes",
-                "code": "T-D8200",
-                "display": "Arm",
-            }
-        ],
+        "context_event_coding": {
+            "system": "http://ihe.net/xds/connectathon/eventCodes",
+            "code": "T-D8200",
+            "display": "Arm",
+        },
         "context_event_text": None,
+        "id": "d363682f-1b89-4762-a62d-2a272eb40c9f",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
 ]
 

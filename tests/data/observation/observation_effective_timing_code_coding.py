@@ -11,10 +11,11 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "effective_timing_code_coding_system": "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
         "effective_timing_code_coding_code": "PM",
         "effective_timing_code_coding_display": "PM",
+        "id": "19e42f19-6855-44a0-8a90-f8f7b3cb55ce",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

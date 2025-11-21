@@ -20,6 +20,8 @@ EXPECTED_OUTPUT = [
             }
         ],
         "reason_code_text": "Check for metastatic disease",
+        "id": "0bec9d4e-a32b-4289-b016-349209e261ba",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

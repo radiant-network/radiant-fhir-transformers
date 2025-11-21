@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
-        "supporting_information_reference": "biopsy",
+        "supporting_information_reference": "Procedure/biopsy",
         "supporting_information_type": "Procedure",
         "supporting_information_display": None,
-    }
+        "id": "e016598a-83c5-4899-b5da-982ed7062c41",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

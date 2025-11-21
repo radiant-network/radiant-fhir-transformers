@@ -11,8 +11,7 @@ from .specimen import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "specimen_id": "101",
-        "container_identifier": [{"value": "48736-15394-75465"}],
+        "container_identifier_value": "48736-15394-75465",
         "container_description": "Green Gel tube",
         "container_type_text": "Vacutainer",
         "container_type_coding": None,
@@ -29,6 +28,8 @@ EXPECTED_OUTPUT = [
         "container_specimen_additive_reference_reference": None,
         "container_specimen_additive_reference_display": None,
         "container_specimen_additive_reference_type": None,
+        "id": "41b26927-2725-482e-bcd2-92e9c896ff59",
+        "specimen_id": "101",
     },
 ]
 

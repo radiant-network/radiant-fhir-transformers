@@ -11,10 +11,11 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "part_of_reference": "procedure",
+        "part_of_reference": "Procedure/procedure",
         "part_of_type": None,
         "part_of_display": None,
+        "id": "1ec13925-6053-43eb-8c21-f3aeab9679d9",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

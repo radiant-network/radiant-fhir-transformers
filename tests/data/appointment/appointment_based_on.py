@@ -11,11 +11,12 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
         "based_on_reference": "ServiceRequest/myringotomy",
         "based_on_type": None,
         "based_on_display": None,
-    }
+        "id": "a7f0d789-fd30-4101-a574-f5e4eb064eee",
+        "appointment_id": "example",
+    },
 ]
 
 

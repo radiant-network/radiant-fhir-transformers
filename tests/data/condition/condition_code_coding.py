@@ -11,10 +11,11 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "condition_id": "f201",
         "code_coding_system": "http://snomed.info/sct",
         "code_coding_code": "386661006",
         "code_coding_display": "Fever",
+        "id": "74730882-a3c8-4d44-a27a-bfc0508184b6",
+        "condition_id": "f201",
     },
 ]
 

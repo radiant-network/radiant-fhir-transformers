@@ -11,10 +11,11 @@ from .care_plan import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_plan_id": "preg",
         "addresses_reference": "#p1",
         "addresses_display": "pregnancy",
         "addresses_type": None,
+        "id": "0a367ff0-164f-4770-8d91-fc47397f1914",
+        "care_plan_id": "preg",
     },
 ]
 

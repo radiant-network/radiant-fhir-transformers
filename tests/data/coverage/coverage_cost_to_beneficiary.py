@@ -8,39 +8,33 @@ from radiant_fhir_transform_cli.transform.classes.coverage import (
 from tests.data.base import FhirResourceTestHelper
 
 from .coverage_resource import RESOURCE
+from decimal import Decimal
 
 EXPECTED_OUTPUT = [
     {
-        "coverage_id": "9876B1",
-        "cost_to_beneficiary_type_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/coverage-copay-type",
-                "code": "gpvisit",
-            }
-        ],
+        "cost_to_beneficiary_exception_type": {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception",
+                    "code": "retired",
+                },
+            ],
+        },
+        "cost_to_beneficiary_exception_period": {
+            "start": "2018-01-01",
+            "end": "2018-12-31",
+        },
+        "cost_to_beneficiary_type_coding_system": "http://terminology.hl7.org/CodeSystem/coverage-copay-type",
+        "cost_to_beneficiary_type_coding_code": "gpvisit",
         "cost_to_beneficiary_type_text": None,
         "cost_to_beneficiary_value_quantity_value": None,
         "cost_to_beneficiary_value_quantity_unit": None,
         "cost_to_beneficiary_value_quantity_system": None,
         "cost_to_beneficiary_value_quantity_code": None,
-        "cost_to_beneficiary_value_money_value": 20.0,
+        "cost_to_beneficiary_value_money_value": Decimal("20.0"),
         "cost_to_beneficiary_value_money_currency": "USD",
-        "cost_to_beneficiary_exception": [
-            {
-                "type": {
-                    "coding": [
-                        {
-                            "system": "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception",
-                            "code": "retired",
-                        }
-                    ]
-                },
-                "period": {
-                    "start": "2018-01-01",
-                    "end": "2018-12-31",
-                },
-            }
-        ],
+        "id": "7a6fb296-3c51-42a9-9d3a-9284802b35ad",
+        "coverage_id": "9876B1",
     },
 ]
 

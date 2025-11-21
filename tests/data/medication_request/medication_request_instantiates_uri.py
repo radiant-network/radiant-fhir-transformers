@@ -11,9 +11,10 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "instantiates_uri": "uri",
-    }
+        "id": "423f09eb-c132-4d1d-9164-935da7058742",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

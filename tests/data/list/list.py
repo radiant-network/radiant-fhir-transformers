@@ -17,19 +17,19 @@ EXPECTED_OUTPUT = [
         "mode": "changes",
         "title": "Current Medication List",
         "code_text": "Medication Review",
-        "subject_reference": "example",
+        "subject_reference": "Patient/example",
         "subject_type": None,
         "subject_display": None,
-        "encounter_reference": "example",
+        "encounter_reference": "Encounter/example",
         "encounter_type": None,
         "encounter_display": None,
         "date": "2013-11-20T23:10:23+11:00",
-        "source_reference": "example",
+        "source_reference": "Patient/example",
         "source_type": None,
         "source_display": None,
         "ordered_by_text": None,
         "empty_reason_text": "The patient is not on any medications",
-    }
+    },
 ]
 
 

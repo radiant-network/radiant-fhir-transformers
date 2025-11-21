@@ -11,10 +11,11 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
-        "context_related_reference": "xcda",
+        "context_related_reference": "Patient/xcda",
         "context_related_type": None,
         "context_related_display": None,
+        "id": "61aea1e8-8ecb-4280-9a1c-3774838c1de1",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
 ]
 
