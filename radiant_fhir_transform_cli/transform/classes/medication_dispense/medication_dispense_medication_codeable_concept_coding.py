@@ -14,7 +14,11 @@ VIEW_DEFINITION = {
         {
             "column": [
                 {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "medication_dispense_id", "path": "id", "type": "string"},
+                {
+                    "name": "medication_dispense_id",
+                    "path": "id",
+                    "type": "string",
+                },
             ]
         },
         {

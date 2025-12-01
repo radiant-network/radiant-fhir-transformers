@@ -39,7 +39,11 @@ VIEW_DEFINITION = {
                     "path": "statusReasonReference.display",
                     "type": "string",
                 },
-                {"name": "category_text", "path": "category.text", "type": "string"},
+                {
+                    "name": "category_text",
+                    "path": "category.text",
+                    "type": "string",
+                },
                 {
                     "name": "medication_codeable_concept_text",
                     "path": "medicationCodeableConcept.text",
@@ -65,7 +69,11 @@ VIEW_DEFINITION = {
                     "path": "subject.reference",
                     "type": "string",
                 },
-                {"name": "subject_type", "path": "subject.type", "type": "string"},
+                {
+                    "name": "subject_type",
+                    "path": "subject.type",
+                    "type": "string",
+                },
                 {
                     "name": "subject_display",
                     "path": "subject.display",
@@ -76,7 +84,11 @@ VIEW_DEFINITION = {
                     "path": "context.reference",
                     "type": "string",
                 },
-                {"name": "context_type", "path": "context.type", "type": "string"},
+                {
+                    "name": "context_type",
+                    "path": "context.type",
+                    "type": "string",
+                },
                 {
                     "name": "context_display",
                     "path": "context.display",

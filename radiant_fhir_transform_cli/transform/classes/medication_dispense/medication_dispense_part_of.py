@@ -14,7 +14,11 @@ VIEW_DEFINITION = {
         {
             "column": [
                 {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "medication_dispense_id", "path": "id", "type": "string"},
+                {
+                    "name": "medication_dispense_id",
+                    "path": "id",
+                    "type": "string",
+                },
             ]
         },
         {
@@ -26,7 +30,11 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {"name": "part_of_type", "path": "type", "type": "string"},
-                {"name": "part_of_display", "path": "display", "type": "string"},
+                {
+                    "name": "part_of_display",
+                    "path": "display",
+                    "type": "string",
+                },
             ],
         },
     ],
