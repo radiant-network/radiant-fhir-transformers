@@ -21,8 +21,27 @@ VIEW_DEFINITION = {
             "forEach": "identifier",
             "column": [
                 {"name": "identifier_use", "path": "use", "type": "string"},
-                {"name": "identifier_system", "path": "system", "type": "string"},
+                {
+                    "name": "identifier_type_text",
+                    "path": "type.text",
+                    "type": "string",
+                },
+                {
+                    "name": "identifier_system",
+                    "path": "system",
+                    "type": "string",
+                },
                 {"name": "identifier_value", "path": "value", "type": "string"},
+                {
+                    "name": "identifier_period_start",
+                    "path": "period.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "identifier_period_end",
+                    "path": "period.end",
+                    "type": "dateTime",
+                },
             ],
         },
     ],

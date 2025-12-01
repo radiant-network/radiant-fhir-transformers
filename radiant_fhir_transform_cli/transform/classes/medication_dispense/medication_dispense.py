@@ -164,21 +164,6 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "receiver_reference",
-                    "path": "receiver.reference",
-                    "type": "string",
-                },
-                {
-                    "name": "receiver_type",
-                    "path": "receiver.type",
-                    "type": "string",
-                },
-                {
-                    "name": "receiver_display",
-                    "path": "receiver.display",
-                    "type": "string",
-                },
-                {
                     "name": "substitution_was_substituted",
                     "path": "substitution.wasSubstituted",
                     "type": "boolean",
