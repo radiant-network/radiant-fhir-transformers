@@ -1,201 +1,199 @@
-"""
-FHIR MedicationDispense transformer
-"""
+"""FHIR MedicationDispense transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {"id": {"fhir_key": "id", "type": "str"}},
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {
-            "resource_type": {
-                "fhir_key": "resourceType",
-                "type": "str",
-            }
-        },
-    },
-    {
-        "fhir_path": "status",
-        "columns": {"status": {"fhir_key": "status", "type": "str"}},
-    },
-    {
-        "fhir_path": "statusReasonCodeableConcept.text",
-        "columns": {
-            "status_reason_codeable_concept_text": {
-                "fhir_key": "text",
-                "type": "str",
-            }
-        },
-    },
-    {
-        "fhir_path": "statusReasonReference",
-        "fhir_reference": "status_reason_reference",
-        "columns": {
-            "status_reason_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "status_reason_reference_type": {"fhir_key": "type", "type": "str"},
-            "status_reason_reference_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "category.text",
-        "columns": {"category_text": {"fhir_key": "text", "type": "str"}},
-    },
-    {
-        "fhir_path": "medicationCodeableConcept.text",
-        "columns": {
-            "medication_codeable_concept_text": {
-                "fhir_key": "text",
-                "type": "str",
-            }
-        },
-    },
-    {
-        "fhir_path": "medicationReference",
-        "fhir_reference": "medication_reference_reference",
-        "columns": {
-            "medication_reference_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "medication_reference_type": {"fhir_key": "type", "type": "str"},
-            "medication_reference_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "subject",
-        "fhir_reference": "subject_reference",
-        "columns": {
-            "subject_reference": {"fhir_key": "reference", "type": "str"},
-            "subject_type": {"fhir_key": "type", "type": "str"},
-            "subject_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "context",
-        "fhir_reference": "context_reference",
-        "columns": {
-            "context_reference": {"fhir_key": "reference", "type": "str"},
-            "context_type": {"fhir_key": "type", "type": "str"},
-            "context_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "location",
-        "fhir_reference": "location_reference",
-        "columns": {
-            "location_reference": {"fhir_key": "reference", "type": "str"},
-            "location_type": {"fhir_key": "type", "type": "str"},
-            "location_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "type.text",
-        "columns": {"type_text": {"fhir_key": "text", "type": "str"}},
-    },
-    {
-        "fhir_path": "quantity",
-        "columns": {
-            "quantity_value": {"fhir_key": "value", "type": "str"},
-            "quantity_unit": {"fhir_key": "unit", "type": "str"},
-            "quantity_system": {"fhir_key": "system", "type": "str"},
-            "quantity_code": {"fhir_key": "code", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "daysSupply",
-        "columns": {
-            "days_supply_value": {"fhir_key": "value", "type": "str"},
-            "days_supply_unit": {"fhir_key": "unit", "type": "str"},
-            "days_supply_system": {"fhir_key": "system", "type": "str"},
-            "days_supply_code": {"fhir_key": "code", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "whenPrepared",
-        "columns": {
-            "when_prepared": {
-                "fhir_key": "whenPrepared",
-                "type": "datetime",
-            },
-        },
-    },
-    {
-        "fhir_path": "whenHandedOver",
-        "columns": {
-            "when_handed_over": {
-                "fhir_key": "whenHandedOver",
-                "type": "datetime",
-            },
-        },
-    },
-    {
-        "fhir_path": "destination",
-        "fhir_reference": "destination_reference",
-        "columns": {
-            "destination_reference": {"fhir_key": "reference", "type": "str"},
-            "destination_type": {"fhir_key": "type", "type": "str"},
-            "destination_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "receiver",
-        "fhir_reference": "receiver_reference",
-        "columns": {
-            "receiver_reference": {"fhir_key": "reference", "type": "str"},
-            "receiver_type": {"fhir_key": "type", "type": "str"},
-            "receiver_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "substitution",
-        "columns": {
-            "substitution_was_substituted": {
-                "fhir_key": "wasSubstituted",
-                "type": "bool",
-            },
-            "substitution_type_text": {
-                "fhir_key": "type.text",
-                "type": "str",
-            },
-        },
-    },
-]
+
+VIEW_DEFINITION = {
+    "resource": "MedicationDispense",
+    "name": "medication_dispense",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                    "type": "string",
+                },
+                {"name": "status", "path": "status", "type": "string"},
+                {
+                    "name": "status_reason_codeable_concept_text",
+                    "path": "statusReasonCodeableConcept.text",
+                    "type": "string",
+                },
+                {
+                    "name": "status_reason_reference",
+                    "path": "statusReasonReference.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "status_reason_reference_type",
+                    "path": "statusReasonReference.type",
+                    "type": "string",
+                },
+                {
+                    "name": "status_reason_reference_display",
+                    "path": "statusReasonReference.display",
+                    "type": "string",
+                },
+                {"name": "category_text", "path": "category.text", "type": "string"},
+                {
+                    "name": "medication_codeable_concept_text",
+                    "path": "medicationCodeableConcept.text",
+                    "type": "string",
+                },
+                {
+                    "name": "medication_reference_reference",
+                    "path": "medicationReference.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "medication_reference_type",
+                    "path": "medicationReference.type",
+                    "type": "string",
+                },
+                {
+                    "name": "medication_reference_display",
+                    "path": "medicationReference.display",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_reference",
+                    "path": "subject.reference",
+                    "type": "string",
+                },
+                {"name": "subject_type", "path": "subject.type", "type": "string"},
+                {
+                    "name": "subject_display",
+                    "path": "subject.display",
+                    "type": "string",
+                },
+                {
+                    "name": "context_reference",
+                    "path": "context.reference",
+                    "type": "string",
+                },
+                {"name": "context_type", "path": "context.type", "type": "string"},
+                {
+                    "name": "context_display",
+                    "path": "context.display",
+                    "type": "string",
+                },
+                {
+                    "name": "location_reference",
+                    "path": "location.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "location_type",
+                    "path": "location.type",
+                    "type": "string",
+                },
+                {
+                    "name": "location_display",
+                    "path": "location.display",
+                    "type": "string",
+                },
+                {"name": "type_text", "path": "type.text", "type": "string"},
+                {
+                    "name": "quantity_value",
+                    "path": "quantity.value",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_unit",
+                    "path": "quantity.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_system",
+                    "path": "quantity.system",
+                    "type": "string",
+                },
+                {
+                    "name": "quantity_code",
+                    "path": "quantity.code",
+                    "type": "string",
+                },
+                {
+                    "name": "days_supply_value",
+                    "path": "daysSupply.value",
+                    "type": "string",
+                },
+                {
+                    "name": "days_supply_unit",
+                    "path": "daysSupply.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "days_supply_system",
+                    "path": "daysSupply.system",
+                    "type": "string",
+                },
+                {
+                    "name": "days_supply_code",
+                    "path": "daysSupply.code",
+                    "type": "string",
+                },
+                {
+                    "name": "when_prepared",
+                    "path": "whenPrepared",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "when_handed_over",
+                    "path": "whenHandedOver",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "destination_reference",
+                    "path": "destination.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "destination_type",
+                    "path": "destination.type",
+                    "type": "string",
+                },
+                {
+                    "name": "destination_display",
+                    "path": "destination.display",
+                    "type": "string",
+                },
+                {
+                    "name": "receiver_reference",
+                    "path": "receiver.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "receiver_type",
+                    "path": "receiver.type",
+                    "type": "string",
+                },
+                {
+                    "name": "receiver_display",
+                    "path": "receiver.display",
+                    "type": "string",
+                },
+                {
+                    "name": "substitution_was_substituted",
+                    "path": "substitution.wasSubstituted",
+                    "type": "boolean",
+                },
+                {
+                    "name": "substitution_type_text",
+                    "path": "substitution.type.text",
+                    "type": "string",
+                },
+            ]
+        }
+    ],
+}
 
 
 class MedicationDispenseTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'MedicationDispense' resource in FHIR.
-
-    Transform MedicationDispense JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_schema (list[dict]): The transformation dictionary used to map
-          and transform the resource data
-
-    Methods:
-        __init__(self):
-            Initializes the MedicationDispenseTransformer instance with the resource
-            type 'MedicationDispense' and a transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("MedicationDispense", None, TRANSFORM_SCHEMA)
+        super().__init__("MedicationDispense", None, VIEW_DEFINITION)
