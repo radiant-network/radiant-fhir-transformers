@@ -12,16 +12,16 @@ from .condition_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "condition_id": "f201",
-        "stage_summary_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "14803004",
-                "display": "Temporary",
-            }
+        "stage_assessment": [
+            {"display": "MEDULLOBLASTOMA DIAGNOSIS", "reference": "foo"}
         ],
-        "stage_summary_text": None,
-        "stage_assessment": None,
-        "stage_type_coding": None,
+        "stage_summary_coding": [
+            {"code": "14803004", "display": "Temporary", "system": "sct"}
+        ],
+        "stage_summary_text": "Temporary",
+        "stage_type_coding": [
+            {"code": "14803004", "display": "Temporary", "system": "sct"}
+        ],
         "stage_type_text": None,
     }
 ]
