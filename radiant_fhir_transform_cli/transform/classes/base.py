@@ -224,7 +224,7 @@ class FhirResourceTransformer:
             self.resource_type,
             resource_idx,
             self.resource_subtype,
-            pformat(output),
+            len(output),
         )
         return output
 
