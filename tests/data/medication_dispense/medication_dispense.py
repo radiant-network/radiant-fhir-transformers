@@ -46,9 +46,6 @@ EXPECTED_OUTPUT = [
         "destination_reference": "ph",
         "destination_type": None,
         "destination_display": None,
-        "receiver_reference": "pat1",
-        "receiver_type": None,
-        "receiver_display": "Donald Duck",
         "substitution_was_substituted": None,
         "substitution_type_text": None,
     }
