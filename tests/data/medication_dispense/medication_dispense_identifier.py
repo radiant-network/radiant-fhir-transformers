@@ -13,8 +13,11 @@ EXPECTED_OUTPUT = [
     {
         "medication_dispense_id": "meddisp001",
         "identifier_use": "official",
+        "identifier_type_text": None,
         "identifier_system": "http://www.bmc.nl/portal/prescriptions",
         "identifier_value": "12345689",
+        "identifier_period_end": None,
+        "identifier_period_start": None,
     }
 ]
 
