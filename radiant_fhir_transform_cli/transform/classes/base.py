@@ -194,9 +194,20 @@ class FhirResourceTransformer:
         Returns:
             A list of flattened and post-processed row dictionaries.
         """
-        results = evaluate(
-            resources=[resource_dict], view_definition=self.view_definition
-        )
+        try:
+            results = evaluate(
+                resources=[resource_dict], view_definition=self.view_definition
+            )
+        except Exception:
+            logger.error(
+                "❌ Transform failed for %s %s. Subtype: %s. Input:\n%s",
+                self.resource_type,
+                resource_idx,
+                self.resource_subtype,
+                pformat(resource_dict),
+            )
+            raise
+
         output: list[dict[str, Any]] = []
 
         for row in results:
@@ -209,9 +220,10 @@ class FhirResourceTransformer:
             output.append(row)
 
         logger.info(
-            "Transformed %s %s into %s",
+            "Transformed %s %s. Subtype: %s. Rows: %s",
             self.resource_type,
             resource_idx,
+            self.resource_subtype,
             pformat(output),
         )
         return output
@@ -242,7 +254,7 @@ class FhirResourceTransformer:
 
     def transform_from_ndjson(
         self, ndjson_filepath: str
-    ) -> Generator[list[dict[str, Any]], None, None]:
+    ) -> list[dict[str, Any]]:
         """Transform an NDJSON file into row dictionaries per FHIR resource.
 
         Each line of the NDJSON file is parsed and evaluated using
@@ -254,9 +266,12 @@ class FhirResourceTransformer:
         Yields:
             Lists of row dictionaries representing each transformed resource.
         """
+        results = []
         with open(ndjson_filepath, "r") as f:
             for i, line in enumerate(f):
-                yield self.transform_resource(i, json.loads(line.strip()))
+                rows = self.transform_resource(i, json.loads(line.strip()))
+                results.extend(rows)
+        return results
 
     def transform_from_json(self, json_filepath: str) -> list[dict[str, Any]]:
         """Transform a JSON file of FHIR resources into tabular structures.
