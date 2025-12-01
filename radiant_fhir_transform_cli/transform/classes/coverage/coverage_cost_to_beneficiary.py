@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Coverage",
     "name": "coverage_cost_to_beneficiary",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "coverage_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "coverage_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "costToBeneficiary",
+            "forEachOrNull": "costToBeneficiary",
             "column": [
-                {
-                    "name": "cost_to_beneficiary_type_coding",
-                    "path": "type.coding",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "cost_to_beneficiary_type_text",
                     "path": "type.text",
@@ -61,11 +68,37 @@ VIEW_DEFINITION = {
                     "path": "valueMoney.currency",
                     "type": "string",
                 },
+            ],
+            "select": [
                 {
-                    "name": "cost_to_beneficiary_exception",
-                    "path": "exception",
-                    "type": "string",
-                    "collection": True,
+                    "forEachOrNull": "type.coding",
+                    "column": [
+                        {
+                            "name": "cost_to_beneficiary_type_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "cost_to_beneficiary_type_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "exception",
+                    "column": [
+                        {
+                            "name": "cost_to_beneficiary_exception_type",
+                            "path": "type",
+                            "type": "string",
+                        },
+                        {
+                            "name": "cost_to_beneficiary_exception_period",
+                            "path": "period",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

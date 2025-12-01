@@ -11,15 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
-        "reason_code_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "400097005",
-                "display": "Ingrowing nail",
-            }
-        ],
+        "reason_code_coding_system": "http://snomed.info/sct",
+        "reason_code_coding_code": "400097005",
+        "reason_code_coding_display": "Ingrowing nail",
         "reason_code_text": "Ingrowing nail",
+        "id": "3f6c2bc0-1009-4b78-8585-ed8a0ba1cdf0",
+        "procedure_id": "f201",
     },
 ]
 

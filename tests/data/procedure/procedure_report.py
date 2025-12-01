@@ -11,11 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
-        "report_reference": "chemotherapy",
+        "report_reference": "DiagnosticReport/chemotherapy",
         "report_type": None,
         "report_display": None,
-    }
+        "id": "13128a27-5269-4339-af19-df1a71d75570",
+        "procedure_id": "f201",
+    },
 ]
 
 

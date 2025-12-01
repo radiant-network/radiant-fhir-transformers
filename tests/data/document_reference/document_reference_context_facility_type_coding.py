@@ -11,10 +11,11 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "context_facility_type_coding_system": "http://www.ihe.net/xds/connectathon/healthcareFacilityTypeCodes",
         "context_facility_type_coding_code": "Outpatient",
         "context_facility_type_coding_display": "Outpatient",
+        "id": "375d5fb4-8687-40d7-ad57-86a472b6730c",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
 ]
 

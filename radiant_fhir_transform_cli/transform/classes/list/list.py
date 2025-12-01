@@ -12,16 +12,36 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
-                {"name": "mode", "path": "mode", "type": "string"},
-                {"name": "title", "path": "title", "type": "string"},
-                {"name": "code_text", "path": "code.text", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "mode",
+                    "path": "mode",
+                    "type": "string",
+                },
+                {
+                    "name": "title",
+                    "path": "title",
+                    "type": "string",
+                },
+                {
+                    "name": "code_text",
+                    "path": "code.text",
+                    "type": "string",
+                },
                 {
                     "name": "subject_reference",
                     "path": "subject.reference",
@@ -52,7 +72,11 @@ VIEW_DEFINITION = {
                     "path": "encounter.display",
                     "type": "string",
                 },
-                {"name": "date", "path": "date", "type": "dateTime"},
+                {
+                    "name": "date",
+                    "path": "date",
+                    "type": "dateTime",
+                },
                 {
                     "name": "source_reference",
                     "path": "source.reference",
@@ -78,8 +102,8 @@ VIEW_DEFINITION = {
                     "path": "emptyReason.text",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

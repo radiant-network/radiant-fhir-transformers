@@ -9,20 +9,29 @@ VIEW_DEFINITION = {
     "resource": "DiagnosticReport",
     "name": "diagnostic_report_presented_form",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "diagnostic_report_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
-            "forEach": "presentedForm",
+            "forEachOrNull": "presentedForm",
             "column": [
                 {
                     "name": "presented_form_content_type",
@@ -34,7 +43,11 @@ VIEW_DEFINITION = {
                     "path": "language",
                     "type": "string",
                 },
-                {"name": "presented_form_url", "path": "url", "type": "string"},
+                {
+                    "name": "presented_form_url",
+                    "path": "url",
+                    "type": "string",
+                },
                 {
                     "name": "presented_form_size",
                     "path": "size",

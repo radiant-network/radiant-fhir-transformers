@@ -10,11 +10,12 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
         "priority_coding_system": "http://snomed.info/sct",
         "priority_coding_code": "394849002",
         "priority_coding_display": "High priority",
-    }
+        "id": "f394c4ea-7054-411d-b5c2-85ac032acfe1",
+        "encounter_id": "f203",
+    },
 ]
 
 

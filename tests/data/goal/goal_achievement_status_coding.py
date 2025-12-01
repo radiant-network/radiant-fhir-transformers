@@ -11,10 +11,11 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "goal_id": "example",
         "achievement_status_coding_system": "http://terminology.hl7.org/CodeSystem/goal-achievement",
         "achievement_status_coding_code": "achieved",
         "achievement_status_coding_display": "Achieved",
+        "id": "99296dab-3476-48e0-8fb5-d78acf58e39a",
+        "goal_id": "example",
     },
 ]
 

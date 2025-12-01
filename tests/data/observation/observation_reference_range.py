@@ -11,7 +11,6 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "reference_range_low_value": None,
         "reference_range_low_unit": None,
         "reference_range_low_system": None,
@@ -32,6 +31,8 @@ EXPECTED_OUTPUT = [
         "reference_range_age_high_system": None,
         "reference_range_age_high_code": None,
         "reference_range_text": "Negative",
+        "id": "6769ff2b-30a4-4c83-b7ca-c950a6733d1c",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

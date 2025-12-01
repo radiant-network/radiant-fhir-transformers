@@ -11,10 +11,11 @@ from .body_structure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "body_structure_id": "tumor",
         "location_coding_system": "http://snomed.info/sct",
         "location_coding_code": "78961009",
         "location_coding_display": "Splenic structure (body structure)",
+        "id": "0f741cef-9f81-4639-83be-f5d0582b7875",
+        "body_structure_id": "tumor",
     },
 ]
 

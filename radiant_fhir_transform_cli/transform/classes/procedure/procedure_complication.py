@@ -9,24 +9,57 @@ VIEW_DEFINITION = {
     "resource": "Procedure",
     "name": "procedure_complication",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "procedure_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "procedure_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "complication",
+            "forEachOrNull": "complication",
             "column": [
                 {
-                    "name": "complication_coding",
-                    "path": "coding",
+                    "name": "complication_text",
+                    "path": "text",
                     "type": "string",
-                    "collection": True,
                 },
-                {"name": "complication_text", "path": "text", "type": "string"},
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "coding",
+                    "column": [
+                        {
+                            "name": "complication_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "complication_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "complication_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

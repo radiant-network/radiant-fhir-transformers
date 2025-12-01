@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Condition",
     "name": "condition_clinical_status_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "condition_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "condition_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "clinicalStatus.coding",
+            "forEachOrNull": "clinicalStatus.coding",
             "column": [
                 {
                     "name": "clinical_status_coding_system",

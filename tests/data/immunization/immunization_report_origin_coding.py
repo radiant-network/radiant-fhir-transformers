@@ -11,10 +11,11 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
         "report_origin_coding_system": "http://terminology.hl7.org/CodeSystem/immunization-origin",
         "report_origin_coding_code": "record",
         "report_origin_coding_display": None,
+        "id": "53517dcd-bdfd-43de-998a-64d92f9c71ad",
+        "immunization_id": "example",
     },
 ]
 

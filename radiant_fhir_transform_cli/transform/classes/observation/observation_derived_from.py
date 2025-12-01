@@ -9,23 +9,40 @@ VIEW_DEFINITION = {
     "resource": "Observation",
     "name": "observation_derived_from",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "observation_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "observation_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "derivedFrom",
+            "forEachOrNull": "derivedFrom",
             "column": [
                 {
                     "name": "derived_from_reference",
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "derived_from_type", "path": "type", "type": "string"},
+                {
+                    "name": "derived_from_type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "derived_from_display",
                     "path": "display",

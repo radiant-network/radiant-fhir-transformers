@@ -11,10 +11,11 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "goal_id": "example",
-        "outcome_reference_reference": "example",
+        "outcome_reference_reference": "Observation/example",
         "outcome_reference_type": None,
         "outcome_reference_display": "Body Weight Measured",
+        "id": "d8a41a5e-ef31-4b99-aa51-1dc5bb154492",
+        "goal_id": "example",
     },
 ]
 

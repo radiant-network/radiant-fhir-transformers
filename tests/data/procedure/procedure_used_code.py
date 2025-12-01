@@ -11,15 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
-        "used_code_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "9017009",
-                "display": "Ventricular intracranial catheter",
-            }
-        ],
+        "used_code_coding_system": "http://snomed.info/sct",
+        "used_code_coding_code": "9017009",
+        "used_code_coding_display": "Ventricular intracranial catheter",
         "used_code_text": None,
+        "id": "5a19f529-bc2a-4487-af78-a9a1d9c75e43",
+        "procedure_id": "f201",
     },
 ]
 

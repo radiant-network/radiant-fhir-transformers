@@ -11,20 +11,24 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "reason_code_text": "Cytopenia",
+        "id": "1c62f09f-69ce-4008-954b-03db4da721e1",
+        "medication_request_id": "medrx0301",
     },
     {
-        "medication_request_id": "medrx0301",
         "reason_code_text": "Immunocompromised state",
+        "id": "7d8faa5b-6257-4031-8586-96423af2e21f",
+        "medication_request_id": "medrx0301",
     },
     {
-        "medication_request_id": "medrx0301",
         "reason_code_text": "Need for pneumocystis prophylaxis",
+        "id": "b694953e-de96-4948-8564-611b666dcc3e",
+        "medication_request_id": "medrx0301",
     },
     {
-        "medication_request_id": "medrx0301",
         "reason_code_text": "Medulloblastoma",
+        "id": "7b901194-ecc8-4e38-9cea-570e464b8e46",
+        "medication_request_id": "medrx0301",
     },
 ]
 

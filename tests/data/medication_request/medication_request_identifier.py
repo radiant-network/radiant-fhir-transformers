@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "identifier_use": "official",
         "identifier_system": "http://www.bmc.nl/portal/prescriptions",
         "identifier_value": "12345689",
-    }
+        "id": "e5028d39-e91d-414d-91e5-5cadc965065c",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

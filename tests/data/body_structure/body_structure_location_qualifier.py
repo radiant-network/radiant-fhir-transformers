@@ -11,26 +11,24 @@ from .body_structure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "body_structure_id": "tumor",
-        "location_qualifier_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "419161000",
-                "display": "Unilateral left",
-            }
-        ],
+        "location_qualifier_coding": {
+            "system": "http://snomed.info/sct",
+            "code": "419161000",
+            "display": "Unilateral left",
+        },
         "location_qualifier_text": "Left",
+        "id": "75ae7e07-42be-47e4-ab73-67e034bfb042",
+        "body_structure_id": "tumor",
     },
     {
-        "body_structure_id": "tumor",
-        "location_qualifier_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "263929005",
-                "display": "Volar",
-            }
-        ],
+        "location_qualifier_coding": {
+            "system": "http://snomed.info/sct",
+            "code": "263929005",
+            "display": "Volar",
+        },
         "location_qualifier_text": "Volar",
+        "id": "3808d014-bbfc-4ce3-aa68-8858f3ab3d05",
+        "body_structure_id": "tumor",
     },
 ]
 

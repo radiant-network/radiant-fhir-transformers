@@ -11,13 +11,14 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "goal_id": "example",
         "identifier_use": None,
         "identifier_type_text": None,
         "identifier_system": None,
         "identifier_value": "123",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "d9dbe80b-fd5b-46f4-a5b6-8592c753f41b",
+        "goal_id": "example",
     },
 ]
 

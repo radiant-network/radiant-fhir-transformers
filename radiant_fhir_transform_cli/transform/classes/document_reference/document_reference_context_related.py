@@ -9,20 +9,29 @@ VIEW_DEFINITION = {
     "resource": "DocumentReference",
     "name": "document_reference_context_related",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "document_reference_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
-            "forEach": "context.related",
+            "forEachOrNull": "context.related",
             "column": [
                 {
                     "name": "context_related_reference",

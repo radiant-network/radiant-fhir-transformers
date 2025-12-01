@@ -9,27 +9,51 @@ VIEW_DEFINITION = {
     "resource": "Immunization",
     "name": "immunization_program_eligibility",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "immunization_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "immunization_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "programEligibility",
+            "forEachOrNull": "programEligibility",
             "column": [
-                {
-                    "name": "program_eligibility_coding",
-                    "path": "coding",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "program_eligibility_text",
                     "path": "text",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "coding",
+                    "column": [
+                        {
+                            "name": "program_eligibility_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "program_eligibility_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

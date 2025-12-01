@@ -11,20 +11,20 @@ from .organization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "organization_id": "2.16.840.1.113883.19.5",
-        "type_coding": [
-            {
-                "system": "urn:oid:2.16.840.1.113883.2.4.15.1060",
-                "code": "V6",
-                "display": "University Medical Hospital",
-            },
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
-                "code": "prov",
-                "display": "Healthcare Provider",
-            },
-        ],
+        "type_coding_system": "urn:oid:2.16.840.1.113883.2.4.15.1060",
+        "type_coding_code": "V6",
+        "type_coding_display": "University Medical Hospital",
         "type_text": None,
+        "id": "608cb346-6046-4c48-8bf0-22a6ce942859",
+        "organization_id": "2.16.840.1.113883.19.5",
+    },
+    {
+        "type_coding_system": "http://terminology.hl7.org/CodeSystem/organization-type",
+        "type_coding_code": "prov",
+        "type_coding_display": "Healthcare Provider",
+        "type_text": None,
+        "id": "c3058927-7d83-44b6-9d62-b18dd0375b52",
+        "organization_id": "2.16.840.1.113883.19.5",
     },
 ]
 

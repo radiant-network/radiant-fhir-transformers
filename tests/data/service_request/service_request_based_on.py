@@ -11,10 +11,11 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
         "based_on_reference": "somereferencestring",
         "based_on_display": "ServiceRequest for Myringotomy and insertion of tympanic ventilation tube",
         "based_on_type": None,
+        "id": "f0341ddc-766b-4db5-96d7-7e1748099ce4",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

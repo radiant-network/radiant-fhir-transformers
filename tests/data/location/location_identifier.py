@@ -11,22 +11,24 @@ from .location_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
         "identifier_use": "usual",
         "identifier_type_text": "NPI",
         "identifier_system": "http://hl7.org/fhir/sid/us-npi",
         "identifier_value": "1215921457",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "4da51db1-4ef9-4aa3-9800-0a381f1d01c4",
+        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
     },
     {
-        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
         "identifier_use": "usual",
         "identifier_type_text": None,
         "identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.2.686980",
         "identifier_value": "84275011",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "2c937fce-9f43-4297-a43a-16c0e9f9ff1d",
+        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
     },
 ]
 

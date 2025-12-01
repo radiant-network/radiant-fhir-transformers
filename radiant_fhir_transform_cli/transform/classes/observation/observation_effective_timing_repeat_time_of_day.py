@@ -9,22 +9,35 @@ VIEW_DEFINITION = {
     "resource": "Observation",
     "name": "observation_effective_timing_repeat_time_of_day",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "observation_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "observation_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "effectiveTiming.repeat.timeOfDay",
+            "forEachOrNull": "effectiveTiming.repeat.timeOfDay",
             "column": [
                 {
                     "name": "effective_timing_repeat_time_of_day",
                     "path": "$this",
                     "type": "string",
-                }
+                },
             ],
         },
     ],

@@ -9,20 +9,29 @@ VIEW_DEFINITION = {
     "resource": "AllergyIntolerance",
     "name": "allergy_intolerance_reaction",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "allergy_intolerance_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
-            "forEach": "reaction",
+            "forEachOrNull": "reaction",
             "column": [
                 {
                     "name": "reaction_substance_text",
@@ -30,23 +39,15 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "reaction_substance_coding",
-                    "path": "substance.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
-                    "name": "reaction_manifestation",
-                    "path": "manifestation",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "reaction_description",
                     "path": "description",
                     "type": "string",
                 },
-                {"name": "reaction_onset", "path": "onset", "type": "dateTime"},
+                {
+                    "name": "reaction_onset",
+                    "path": "onset",
+                    "type": "dateTime",
+                },
                 {
                     "name": "reaction_severity",
                     "path": "severity",
@@ -57,17 +58,87 @@ VIEW_DEFINITION = {
                     "path": "exposureRoute.text",
                     "type": "string",
                 },
+            ],
+            "select": [
                 {
-                    "name": "reaction_exposure_route_coding",
-                    "path": "exposureRoute.coding",
-                    "type": "string",
-                    "collection": True,
+                    "forEachOrNull": "substance.coding",
+                    "column": [
+                        {
+                            "name": "reaction_substance_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_substance_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_substance_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
                 },
                 {
-                    "name": "reaction_note",
-                    "path": "note",
-                    "type": "string",
-                    "collection": True,
+                    "forEachOrNull": "manifestation",
+                    "column": [
+                        {
+                            "name": "reaction_manifestation_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_manifestation_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_manifestation_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "exposureRoute.coding",
+                    "column": [
+                        {
+                            "name": "reaction_exposure_route_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_exposure_route_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_exposure_route_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "note",
+                    "column": [
+                        {
+                            "name": "reaction_note_text",
+                            "path": "text",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_note_author_string",
+                            "path": "authorString",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reaction_note_time",
+                            "path": "time",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

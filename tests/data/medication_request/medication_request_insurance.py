@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
-        "insurance_reference": "9876B1",
+        "insurance_reference": "Coverage/9876B1",
         "insurance_type": None,
         "insurance_display": None,
-    }
+        "id": "0709e1bb-9758-4b0c-95ea-1521c7e1781b",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

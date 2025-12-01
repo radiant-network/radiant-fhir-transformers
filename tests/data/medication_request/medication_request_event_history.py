@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "event_history_reference": "#signature",
         "event_history_type": None,
         "event_history_display": "Author's Signature",
-    }
+        "id": "052db895-0bdd-401d-8bb8-bfbc698eb036",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

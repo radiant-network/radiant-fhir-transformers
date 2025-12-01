@@ -11,11 +11,12 @@ from .list_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "list_id": "med-list",
         "code_coding_system": "http://snomed.info/sct",
         "code_coding_code": "182836005",
         "code_coding_display": "Review of medication",
-    }
+        "id": "3553ef48-909b-4799-8280-62290d57f499",
+        "list_id": "med-list",
+    },
 ]
 
 

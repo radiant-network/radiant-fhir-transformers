@@ -11,13 +11,14 @@ from .list_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "list_id": "med-list",
         "identifier_use": None,
         "identifier_type_text": None,
         "identifier_system": "urn:uuid:a9fcea7c-fcdf-4d17-a5e0-f26dda030b59",
         "identifier_value": "23974652",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "9b29bffe-9140-45e5-ba9b-f7f8aa38dc30",
+        "list_id": "med-list",
     },
 ]
 

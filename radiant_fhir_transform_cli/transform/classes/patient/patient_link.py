@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Patient",
     "name": "patient_link",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "patient_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "link",
+            "forEachOrNull": "link",
             "column": [
                 {
                     "name": "link_other_reference",
@@ -40,7 +53,11 @@ VIEW_DEFINITION = {
                     "path": "other.display",
                     "type": "string",
                 },
-                {"name": "link_type", "path": "type", "type": "string"},
+                {
+                    "name": "link_type",
+                    "path": "type",
+                    "type": "string",
+                },
             ],
         },
     ],

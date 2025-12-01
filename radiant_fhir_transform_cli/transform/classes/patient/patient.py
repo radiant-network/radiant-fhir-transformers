@@ -12,7 +12,11 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "identifier_mrn",
                     "path": "identifier.where(type.text = 'EPI').value",
@@ -38,9 +42,21 @@ VIEW_DEFINITION = {
                     "path": "name.where(use='official').family",
                     "type": "string",
                 },
-                {"name": "active", "path": "active", "type": "string"},
-                {"name": "birth_date", "path": "birthDate", "type": "string"},
-                {"name": "gender", "path": "gender", "type": "string"},
+                {
+                    "name": "active",
+                    "path": "active",
+                    "type": "string",
+                },
+                {
+                    "name": "birth_date",
+                    "path": "birthDate",
+                    "type": "string",
+                },
+                {
+                    "name": "gender",
+                    "path": "gender",
+                    "type": "string",
+                },
                 {
                     "name": "deceased_boolean",
                     "path": "deceasedBoolean",
@@ -81,8 +97,8 @@ VIEW_DEFINITION = {
                     "path": "communication.where(preferred=true).language.text",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

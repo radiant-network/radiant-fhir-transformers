@@ -11,12 +11,13 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
         "performer_type_coding_system": "http://orionhealth.com/fhir/apps/specialties",
         "performer_type_coding_version": None,
         "performer_type_coding_code": "ent",
         "performer_type_coding_display": "ENT",
         "performer_type_coding_user_selected": None,
+        "id": "cfa07124-1a64-46dc-ac56-ec4ea316b8ea",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

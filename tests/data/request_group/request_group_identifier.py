@@ -11,13 +11,14 @@ from .request_group_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "request_group_id": "kdn5-example",
         "identifier_use": None,
         "identifier_type_text": None,
         "identifier_system": None,
         "identifier_value": "requestgroup-kdn5",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "a62cd740-b9e7-427b-856d-3ea5f923ddf6",
+        "request_group_id": "kdn5-example",
     },
 ]
 

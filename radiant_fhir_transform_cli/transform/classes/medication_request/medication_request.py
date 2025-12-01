@@ -12,20 +12,36 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
                 {
                     "name": "status_reason_text",
                     "path": "statusReason.text",
                     "type": "string",
                 },
-                {"name": "intent", "path": "intent", "type": "string"},
-                {"name": "priority", "path": "priority", "type": "string"},
+                {
+                    "name": "intent",
+                    "path": "intent",
+                    "type": "string",
+                },
+                {
+                    "name": "priority",
+                    "path": "priority",
+                    "type": "string",
+                },
                 {
                     "name": "do_not_perform",
                     "path": "doNotPerform",
@@ -336,8 +352,8 @@ VIEW_DEFINITION = {
                     "path": "priorPrescription.display",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

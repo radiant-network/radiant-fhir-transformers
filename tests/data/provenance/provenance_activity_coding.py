@@ -11,11 +11,12 @@ from .provenance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "provenance_id": "provenance",
         "activity_coding_system": "http://terminology.hl7.org/CodeSystem/v3-DocumentCompletion",
         "activity_coding_code": "AU",
         "activity_coding_display": "authenticated",
-    }
+        "id": "88e90e47-403f-44a3-b9e3-8b90b0c87d84",
+        "provenance_id": "provenance",
+    },
 ]
 
 
