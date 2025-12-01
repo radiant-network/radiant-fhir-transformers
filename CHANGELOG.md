@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.3.0
+
+### Summary
+
+- Emojis: 🐛 x1
+- Categories: Fixes x1
+
+### New features and changes
+
+- [#100](https://github.com/radiant-network/radiant-fhir-transformers/pull/100) - 🐛 Fix transformer bugs - [ab5fe0fd](https://github.com/radiant-network/radiant-fhir-transformers/commit/ab5fe0fdc95206132d3321f2e25d6e3c4bdb0f45) by [znatty22](https://github.com/znatty22)
+
+
 ## Release 1.2.0
 
 ### Summary
