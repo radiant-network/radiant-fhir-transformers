@@ -14,7 +14,11 @@ VIEW_DEFINITION = {
         {
             "column": [
                 {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "medication_dispense_id", "path": "id", "type": "string"},
+                {
+                    "name": "medication_dispense_id",
+                    "path": "id",
+                    "type": "string",
+                },
             ]
         },
         {
@@ -39,6 +43,4 @@ VIEW_DEFINITION = {
 
 class MedicationDispenseTypeCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "MedicationDispense", "type_coding", VIEW_DEFINITION
-        )
+        super().__init__("MedicationDispense", "type_coding", VIEW_DEFINITION)

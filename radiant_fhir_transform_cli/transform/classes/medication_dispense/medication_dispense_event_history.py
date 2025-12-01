@@ -14,7 +14,11 @@ VIEW_DEFINITION = {
         {
             "column": [
                 {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "medication_dispense_id", "path": "id", "type": "string"},
+                {
+                    "name": "medication_dispense_id",
+                    "path": "id",
+                    "type": "string",
+                },
             ]
         },
         {
@@ -25,7 +29,11 @@ VIEW_DEFINITION = {
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "event_history_type", "path": "type", "type": "string"},
+                {
+                    "name": "event_history_type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "event_history_display",
                     "path": "display",
@@ -39,6 +47,4 @@ VIEW_DEFINITION = {
 
 class MedicationDispenseEventHistoryTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "MedicationDispense", "event_history", VIEW_DEFINITION
-        )
+        super().__init__("MedicationDispense", "event_history", VIEW_DEFINITION)
