@@ -15,23 +15,28 @@ VIEW_DEFINITION = {
             "column": [
                 {"name": "care_plan_id", "path": "id", "type": "string"},
                 {"name": "id", "path": "%id_uuid", "type": "string"},
+            ]
+        },
+        {
+            "forEach": "contributor",
+            "column": [
                 {
                     "name": "contributor_reference",
-                    "path": "contributor.reference",
+                    "path": "reference",
                     "type": "string",
                 },
                 {
                     "name": "contributor_display",
-                    "path": "contributor.display",
+                    "path": "display",
                     "type": "string",
                 },
                 {
                     "name": "contributor_type",
-                    "path": "contributor.type",
+                    "path": "type",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 
