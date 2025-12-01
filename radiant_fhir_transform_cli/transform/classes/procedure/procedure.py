@@ -1,171 +1,201 @@
-"""
-FHIR Procedure transformer
-"""
+"""FHIR Procedure transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {"id": {"fhir_key": "id", "type": "str"}},
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {
-            "resource_type": {"fhir_key": "resourceType", "type": "str"}
-        },
-    },
-    {
-        "fhir_path": "status",
-        "columns": {"status": {"fhir_key": "status", "type": "str"}},
-    },
-    {
-        "fhir_path": "statusReason.text",
-        "columns": {"status_reason_text": {"fhir_key": "text", "type": "str"}},
-    },
-    {
-        "fhir_path": "category.text",
-        "columns": {"category_text": {"fhir_key": "text", "type": "str"}},
-    },
-    {
-        "fhir_path": "code.text",
-        "columns": {"code_text": {"fhir_key": "text", "type": "str"}},
-    },
-    {
-        "fhir_path": "subject",
-        "fhir_reference": "subject_reference",
-        "columns": {
-            "subject_reference": {"fhir_key": "reference", "type": "str"},
-            "subject_type": {"fhir_key": "type", "type": "str"},
-            "subject_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "encounter",
-        "fhir_reference": "encounter_reference",
-        "columns": {
-            "encounter_reference": {"fhir_key": "reference", "type": "str"},
-            "encounter_type": {"fhir_key": "type", "type": "str"},
-            "encounter_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "performedDateTime",
-        "columns": {
-            "performed_date_time": {
-                "fhir_key": "performedDateTime",
-                "type": "datetime",
-            },
-        },
-    },
-    {
-        "fhir_path": "performedPeriod",
-        "columns": {
-            "performed_period_start": {"fhir_key": "start", "type": "datetime"},
-            "performed_period_end": {"fhir_key": "end", "type": "datetime"},
-        },
-    },
-    {
-        "fhir_path": "performedString",
-        "columns": {
-            "performed_string": {"fhir_key": "performedString", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "performedAge",
-        "columns": {
-            "performed_age_value": {"fhir_key": "value", "type": "str"},
-            "performed_age_unit": {"fhir_key": "unit", "type": "str"},
-            "performed_age_system": {"fhir_key": "system", "type": "str"},
-            "performed_age_code": {"fhir_key": "code", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "performedRange",
-        "columns": {
-            "performed_range_low_value": {
-                "fhir_key": "low.value",
-                "type": "str",
-            },
-            "performed_range_low_unit": {"fhir_key": "low.unit", "type": "str"},
-            "performed_range_low_system": {
-                "fhir_key": "low.system",
-                "type": "str",
-            },
-            "performed_range_low_code": {"fhir_key": "low.code", "type": "str"},
-            "performed_range_high_value": {
-                "fhir_key": "high.value",
-                "type": "str",
-            },
-            "performed_range_high_unit": {
-                "fhir_key": "high.unit",
-                "type": "str",
-            },
-            "performed_range_high_system": {
-                "fhir_key": "high.system",
-                "type": "str",
-            },
-            "performed_range_high_code": {
-                "fhir_key": "high.code",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "recorder",
-        "fhir_reference": "recorder_reference",
-        "columns": {
-            "recorder_reference": {"fhir_key": "reference", "type": "str"},
-            "recorder_type": {"fhir_key": "type", "type": "str"},
-            "recorder_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "asserter",
-        "fhir_reference": "asserter_reference",
-        "columns": {
-            "asserter_reference": {"fhir_key": "reference", "type": "str"},
-            "asserter_type": {"fhir_key": "type", "type": "str"},
-            "asserter_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "location",
-        "fhir_reference": "location_reference",
-        "columns": {
-            "location_reference": {"fhir_key": "reference", "type": "str"},
-            "location_type": {"fhir_key": "type", "type": "str"},
-            "location_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "outcome.text",
-        "columns": {"outcome_text": {"fhir_key": "text", "type": "str"}},
-    },
-]
+
+VIEW_DEFINITION = {
+    "resource": "Procedure",
+    "name": "procedure",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                    "type": "string",
+                },
+                {"name": "status", "path": "status", "type": "string"},
+                {
+                    "name": "status_reason_text",
+                    "path": "statusReason.text",
+                    "type": "string",
+                },
+                {
+                    "name": "category_text",
+                    "path": "category.text",
+                    "type": "string",
+                },
+                {"name": "code_text", "path": "code.text", "type": "string"},
+                {
+                    "name": "subject_reference",
+                    "path": "subject.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_type",
+                    "path": "subject.type",
+                    "type": "string",
+                },
+                {
+                    "name": "subject_display",
+                    "path": "subject.display",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_reference",
+                    "path": "encounter.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_type",
+                    "path": "encounter.type",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_display",
+                    "path": "encounter.display",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_date_time",
+                    "path": "performedDateTime",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "performed_period_start",
+                    "path": "performedPeriod.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "performed_period_end",
+                    "path": "performedPeriod.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "performed_string",
+                    "path": "performedString",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_age_value",
+                    "path": "performedAge.value",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_age_unit",
+                    "path": "performedAge.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_age_system",
+                    "path": "performedAge.system",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_age_code",
+                    "path": "performedAge.code",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_range_low_value",
+                    "path": "performedRange.low.value",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_range_low_unit",
+                    "path": "performedRange.low.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_range_low_system",
+                    "path": "performedRange.low.system",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_range_low_code",
+                    "path": "performedRange.low.code",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_range_high_value",
+                    "path": "performedRange.high.value",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_range_high_unit",
+                    "path": "performedRange.high.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_range_high_system",
+                    "path": "performedRange.high.system",
+                    "type": "string",
+                },
+                {
+                    "name": "performed_range_high_code",
+                    "path": "performedRange.high.code",
+                    "type": "string",
+                },
+                {
+                    "name": "recorder_reference",
+                    "path": "recorder.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "recorder_type",
+                    "path": "recorder.type",
+                    "type": "string",
+                },
+                {
+                    "name": "recorder_display",
+                    "path": "recorder.display",
+                    "type": "string",
+                },
+                {
+                    "name": "asserter_reference",
+                    "path": "asserter.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "asserter_type",
+                    "path": "asserter.type",
+                    "type": "string",
+                },
+                {
+                    "name": "asserter_display",
+                    "path": "asserter.display",
+                    "type": "string",
+                },
+                {
+                    "name": "location_reference",
+                    "path": "location.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "location_type",
+                    "path": "location.type",
+                    "type": "string",
+                },
+                {
+                    "name": "location_display",
+                    "path": "location.display",
+                    "type": "string",
+                },
+                {
+                    "name": "outcome_text",
+                    "path": "outcome.text",
+                    "type": "string",
+                },
+            ]
+        }
+    ],
+}
 
 
 class ProcedureTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Procedure' resource in FHIR.
-
-    Transform Procedure JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_schema (list[dict]): The transformation dictionary used to map
-          and transform the resource data
-
-    Methods:
-        __init__(self):
-            Initializes the ProcedureTransformer instance with the resource
-            type 'Procedure' and a transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Procedure", None, TRANSFORM_SCHEMA)
+        super().__init__("Procedure", None, VIEW_DEFINITION)

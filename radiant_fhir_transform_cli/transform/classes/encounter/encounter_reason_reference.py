@@ -1,57 +1,46 @@
-"""
-Fhir Encounter Reason Reference Transformer
-"""
+"""FHIR Encounter reason_reference transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Encounter",
+    "name": "encounter_reason_reference",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "encounter_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "encounter_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "reasonReference",
+            "column": [
+                {
+                    "name": "reason_reference_reference",
+                    "path": "reference",
+                    "type": "string",
+                },
+                {
+                    "name": "reason_reference_type",
+                    "path": "type",
+                    "type": "string",
+                },
+                {
+                    "name": "reason_reference_display",
+                    "path": "display",
+                    "type": "string",
+                },
+            ],
         },
-    },
-    {
-        "fhir_path": "reasonReference",
-        "columns": {
-            "reason_reference_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "reason_reference_type": {"fhir_key": "type", "type": "str"},
-            "reason_reference_display": {"fhir_key": "display", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class EncounterReasonReferenceTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Encounter' FHIR resource, specifically for the 'reasonReference' field.
-
-    This class transforms FHIR Encounter JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'reasonReference' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed, which is set to 'Encounter'.
-        resource_subtype (str): The subtype of the FHIR resource being transformed, set to 'reason_reference'.
-        transform_schema (list): A list of dictionaries defining how to transform the FHIR data.
-
-    Methods:
-        __init__(self):
-            Initializes the EncounterReasonReferenceTransformer instance with the resource type 'Encounter',
-            the resource subtype 'reason_reference', and the transformation schema.
-    """
-
     def __init__(self):
-        super().__init__("Encounter", "reason_reference", TRANSFORM_SCHEMA)
+        super().__init__("Encounter", "reason_reference", VIEW_DEFINITION)

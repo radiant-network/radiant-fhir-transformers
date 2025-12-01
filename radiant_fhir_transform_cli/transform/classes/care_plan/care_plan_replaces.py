@@ -1,64 +1,42 @@
-"""
-FHIR CarePlan Replacestransformer
-"""
+"""FHIR CarePlan replaces transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "CarePlan",
+    "name": "care_plan_replaces",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "care_plan_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "care_plan_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "replaces",
+            "column": [
+                {
+                    "name": "replaces_reference",
+                    "path": "reference",
+                    "type": "string",
+                },
+                {
+                    "name": "replaces_display",
+                    "path": "display",
+                    "type": "string",
+                },
+                {"name": "replaces_type", "path": "type", "type": "string"},
+            ],
         },
-    },
-    {
-        "fhir_path": "replaces",
-        "fhir_reference": "replaces_reference",
-        "columns": {
-            "replaces_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "replaces_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
-            "replaces_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
-        },
-    },
-]
+    ],
+}
 
 
 class CarePlanReplacesTransformer(FhirResourceTransformer):
-    """
-    Transformer class for the 'CarePlan' resource in FHIR, focusing on the 'replaces' element.
-
-    This class transforms FHIR CarePlan JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'replaces' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('CarePlan').
-        subtype (str): Specifies the sub-element of the resource to focus on ('replaces').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the CarePlanReplacesTransformer instance with the resource type 'CarePlan',
-            subtype 'replaces', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("CarePlan", "replaces", TRANSFORM_SCHEMA)
+        super().__init__("CarePlan", "replaces", VIEW_DEFINITION)

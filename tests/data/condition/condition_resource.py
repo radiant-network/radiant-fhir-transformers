@@ -96,8 +96,24 @@ RESOURCE = {
                         "code": "14803004",
                         "display": "Temporary",
                     }
-                ]
-            }
+                ],
+                "text": "Temporary",
+            },
+            "assessment": [
+                {
+                    "display": "MEDULLOBLASTOMA DIAGNOSIS",
+                    "reference": "Observation/foo",
+                },
+            ],
+            "type": {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "14803004",
+                        "display": "Temporary",
+                    }
+                ],
+            },
         }
     ],
     "note": [{"text": "This is a test note for the condition."}],

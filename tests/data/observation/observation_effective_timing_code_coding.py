@@ -7,7 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.observation import (
 )
 from tests.data.base import FhirResourceTestHelper
 
-from .observation_resource import RESOURCE_EFFECTIVE_TIMING as RESOURCE
+from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {

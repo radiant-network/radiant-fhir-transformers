@@ -48,9 +48,7 @@ def transform(
     if not output_dir:
         output_dir = os.path.join(os.getcwd())
 
-    logger.info("Writing CSV files to %s", output_dir)
-
-    # os.path.join(os.getcwd(), resource_type + ".csv")
+    logger.info("Output CSV files in %s", output_dir)
 
     try:
         # Instantiate transformer class based on resource type
@@ -85,6 +83,9 @@ def transform(
 
             # Write to csv
             transformer.write_to_csv(rows, output_filepath)
+            logger.info(
+                "Wrote %s results to %s", str(rt.__name__), output_filepath
+            )
 
     except Exception as e:
         logger.exception("❌ Failed to transform FHIR JSON data to csv!")

@@ -1,165 +1,196 @@
-"""
-FHIR AllergyIntolerance transformer
-"""
+"""FHIR AllergyIntolerance transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {"id": {"type": "str"}},
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {"resource_type": {"type": "str"}},
-    },
-    {
-        "fhir_path": "clinicalStatus.text",
-        "columns": {"clinical_status_text": {"type": "str"}},
-    },
-    {
-        "fhir_path": "verificationStatus.text",
-        "columns": {"verification_status_text": {"type": "str"}},
-    },
-    {
-        "fhir_path": "type",
-        "columns": {"type": {"type": "str"}},
-    },
-    {
-        "fhir_path": "criticality",
-        "columns": {"criticality": {"type": "str"}},
-    },
-    {
-        "fhir_path": "code.text",
-        "columns": {"code_text": {"type": "str"}},
-    },
-    {
-        "fhir_path": "patient",
-        "fhir_reference": "patient_reference",
-        "columns": {
-            "patient_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "patient_display": {"fhir_key": "display", "type": "str"},
-            "patient_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "encounter",
-        "fhir_reference": "encounter_reference",
-        "columns": {
-            "encounter_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "encounter_display": {"fhir_key": "display", "type": "str"},
-            "encounter_type": {
-                "fhir_key": "type",
-                "type": "str",
-            },
-        },
-    },
-    {
-        "fhir_path": "onsetDateTime",
-        "columns": {"onset_date_time": {"type": "datetime"}},
-    },
-    {
-        "fhir_path": "onsetAge",
-        "columns": {
-            "onset_age_value": {"fhir_key": "value", "type": "str"},
-            "onset_age_unit": {"fhir_key": "unit", "type": "str"},
-            "onset_age_system": {"fhir_key": "system", "type": "str"},
-            "onset_age_code": {"fhir_key": "code", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "onsetPeriod",
-        "columns": {
-            "onset_period_start": {"fhir_key": "start", "type": "datetime"},
-            "onset_period_end": {"fhir_key": "end", "type": "datetime"},
-        },
-    },
-    {
-        "fhir_path": "onsetRange",
-        "columns": {
-            "onset_range_low_value": {"fhir_key": "low.value", "type": "str"},
-            "onset_range_low_unit": {"fhir_key": "low.unit", "type": "str"},
-            "onset_range_low_system": {"fhir_key": "low.system", "type": "str"},
-            "onset_range_low_code": {"fhir_key": "low.code", "type": "str"},
-            "onset_range_high_value": {"fhir_key": "high.value", "type": "str"},
-            "onset_range_high_unit": {"fhir_key": "high.unit", "type": "str"},
-            "onset_range_high_system": {
-                "fhir_key": "high.system",
-                "type": "str",
-            },
-            "onset_range_high_code": {"fhir_key": "high.code", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "onsetString",
-        "columns": {"onset_string": {"type": "str"}},
-    },
-    {
-        "fhir_path": "recordedDate",
-        "columns": {"recorded_date": {"type": "datetime"}},
-    },
-    {
-        "fhir_path": "recorder",
-        "fhir_reference": "recorder_reference",
-        "columns": {
-            "recorder_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "recorder_display": {"fhir_key": "display", "type": "str"},
-            "recorder_type": {"fhir_key": "type", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "asserter",
-        "fhir_reference": "asserter_reference",
-        "columns": {
-            "asserter_reference": {
-                "fhir_key": "reference",
-                "type": "str",
-            },
-            "asserter_display": {"fhir_key": "display", "type": "str"},
-            "asserter_type": {"fhir_key": "type", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "lastOccurrence",
-        "columns": {"last_occurrence": {"type": "datetime"}},
-    },
-]
+VIEW_DEFINITION = {
+    "resource": "AllergyIntolerance",
+    "name": "allergy_intolerance",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                    "type": "string",
+                },
+                {
+                    "name": "clinical_status_text",
+                    "path": "clinicalStatus.text",
+                    "type": "string",
+                },
+                {
+                    "name": "verification_status_text",
+                    "path": "verificationStatus.text",
+                    "type": "string",
+                },
+                {"name": "type", "path": "type", "type": "string"},
+                {
+                    "name": "criticality",
+                    "path": "criticality",
+                    "type": "string",
+                },
+                {"name": "code_text", "path": "code.text", "type": "string"},
+                {
+                    "name": "patient_reference",
+                    "path": "patient.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_display",
+                    "path": "patient.display",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_type",
+                    "path": "patient.type",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_reference",
+                    "path": "encounter.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_display",
+                    "path": "encounter.display",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_type",
+                    "path": "encounter.type",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_date_time",
+                    "path": "onsetDateTime",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "onset_age_value",
+                    "path": "onsetAge.value",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_age_unit",
+                    "path": "onsetAge.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_age_system",
+                    "path": "onsetAge.system",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_age_code",
+                    "path": "onsetAge.code",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_period_start",
+                    "path": "onsetPeriod.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "onset_period_end",
+                    "path": "onsetPeriod.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "onset_range_low_value",
+                    "path": "onsetRange.low.value",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_range_low_unit",
+                    "path": "onsetRange.low.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_range_low_system",
+                    "path": "onsetRange.low.system",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_range_low_code",
+                    "path": "onsetRange.low.code",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_range_high_value",
+                    "path": "onsetRange.high.value",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_range_high_unit",
+                    "path": "onsetRange.high.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_range_high_system",
+                    "path": "onsetRange.high.system",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_range_high_code",
+                    "path": "onsetRange.high.code",
+                    "type": "string",
+                },
+                {
+                    "name": "onset_string",
+                    "path": "onsetString",
+                    "type": "string",
+                },
+                {
+                    "name": "recorded_date",
+                    "path": "recordedDate",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "recorder_reference",
+                    "path": "recorder.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "recorder_display",
+                    "path": "recorder.display",
+                    "type": "string",
+                },
+                {
+                    "name": "recorder_type",
+                    "path": "recorder.type",
+                    "type": "string",
+                },
+                {
+                    "name": "asserter_reference",
+                    "path": "asserter.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "asserter_display",
+                    "path": "asserter.display",
+                    "type": "string",
+                },
+                {
+                    "name": "asserter_type",
+                    "path": "asserter.type",
+                    "type": "string",
+                },
+                {
+                    "name": "last_occurrence",
+                    "path": "lastOccurrence",
+                    "type": "dateTime",
+                },
+            ]
+        }
+    ],
+}
 
 
 class AllergyIntoleranceTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'AllergyIntolerance' resource in FHIR.
-
-    Transform Patient JSON objects into flat dictionaries representing
-    rows in an output CSV file
-
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed
-        transform_dict (dict): The transformation dictionary used to map
-          and transform the resource data
-
-    Methods:
-        __init__(self):
-            Initializes the AllergyIntoleranceTransformer instance with the resource
-            type 'AllergyIntolerance' and a transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("AllergyIntolerance", None, TRANSFORM_SCHEMA)
+        super().__init__("AllergyIntolerance", None, VIEW_DEFINITION)

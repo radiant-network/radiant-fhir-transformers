@@ -1,162 +1,154 @@
-"""
-FHIR Encounter Hospitalization Transformer
-"""
+"""FHIR Encounter hospitalization transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
-        },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "encounter_id": {"fhir_key": "id", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "hospitalization",
-        "columns": {
-            # preAdmissionIdentifier
-            "hospitalization_pre_admission_identifier_type_text": {
-                "fhir_key": "preAdmissionIdentifier.type.text",
-                "type": "str",
-            },
-            "hospitalization_pre_admission_identifier_use": {
-                "fhir_key": "preAdmissionIdentifier.use",
-                "type": "str",
-            },
-            "hospitalization_pre_admission_identifier_system": {
-                "fhir_key": "preAdmissionIdentifier.system",
-                "type": "str",
-            },
-            "hospitalization_pre_admission_identifier_value": {
-                "fhir_key": "preAdmissionIdentifier.value",
-                "type": "str",
-            },
-            "hospitalization_pre_admission_identifier_period_start": {
-                "fhir_key": "preAdmissionIdentifier.period.start",
-                "type": "datetime",
-            },
-            "hospitalization_pre_admission_identifier_period_end": {
-                "fhir_key": "preAdmissionIdentifier.period.end",
-                "type": "datetime",
-            },
-            # origin
-            "hospitalization_origin_reference": {
-                "fhir_key": "origin.reference",
-                "type": "str",
-            },
-            "hospitalization_origin_type": {
-                "fhir_key": "origin.type",
-                "type": "str",
-            },
-            "hospitalization_origin_display": {
-                "fhir_key": "origin.display",
-                "type": "str",
-            },
-            # admitSource
-            # TODO: add support for multiple codings
-            "hospitalization_admit_source_coding": {
-                "fhir_key": "admitSource.coding",
-                "type": "str",
-            },
-            "hospitalization_admit_source_text": {
-                "fhir_key": "admitSource.text",
-                "type": "str",
-            },
-            # reAdmission
-            # TODO: add support for multiple codings
-            "hospitalization_readmission_coding": {
-                "fhir_key": "reAdmission.coding",
-                "type": "str",
-            },
-            "hospitalization_readmission_text": {
-                "fhir_key": "reAdmission.text",
-                "type": "str",
-            },
-            # dietPreference
-            # TODO: add support for multiple codings
-            "hospitalization_diet_preference_coding": {
-                "fhir_key": "dietPreference.coding",
-                "type": "str",
-            },
-            "hospitalization_diet_preference_text": {
-                "fhir_key": "dietPreference.text",
-                "type": "str",
-            },
-            # specialCourtesy
-            # TODO: add support for multiple codings
-            "hospitalization_special_courtesy_coding": {
-                "fhir_key": "specialCourtesy.coding",
-                "type": "str",
-            },
-            "hospitalization_special_courtesy_text": {
-                "fhir_key": "specialCourtesy.text",
-                "type": "str",
-            },
-            # specialArrangement
-            # TODO: add support for multiple codings
-            "hospitalization_special_arrangement_coding": {
-                "fhir_key": "specialArrangement.coding",
-                "type": "str",
-            },
-            "hospitalization_special_arrangement_text": {
-                "fhir_key": "specialArrangement.text",
-                "type": "str",
-            },
-            # destination
-            "hospitalization_destination_reference": {
-                "fhir_key": "destination.reference",
-                "type": "str",
-            },
-            "hospitalization_destination_type": {
-                "fhir_key": "destination.type",
-                "type": "str",
-            },
-            "hospitalization_destination_display": {
-                "fhir_key": "destination.display",
-                "type": "str",
-            },
-            # dischargeDisposition
-            # TODO: add support for multiple codings
-            "hospitalization_discharge_disposition_coding": {
-                "fhir_key": "dischargeDisposition.coding",
-                "type": "str",
-            },
-            "hospitalization_discharge_disposition_text": {
-                "fhir_key": "dischargeDisposition.text",
-                "type": "str",
-            },
-        },
-    },
-]
+
+VIEW_DEFINITION = {
+    "resource": "Encounter",
+    "name": "encounter_hospitalization",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "encounter_id", "path": "id", "type": "string"},
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "hospitalization_pre_admission_identifier_type_text",
+                    "path": "hospitalization.preAdmissionIdentifier.type.text",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_pre_admission_identifier_use",
+                    "path": "hospitalization.preAdmissionIdentifier.use",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_pre_admission_identifier_system",
+                    "path": "hospitalization.preAdmissionIdentifier.system",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_pre_admission_identifier_value",
+                    "path": "hospitalization.preAdmissionIdentifier.value",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_pre_admission_identifier_period_start",
+                    "path": "hospitalization.preAdmissionIdentifier.period.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "hospitalization_pre_admission_identifier_period_end",
+                    "path": "hospitalization.preAdmissionIdentifier.period.end",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "hospitalization_origin_reference",
+                    "path": "hospitalization.origin.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_origin_type",
+                    "path": "hospitalization.origin.type",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_origin_display",
+                    "path": "hospitalization.origin.display",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_admit_source_coding",
+                    "path": "hospitalization.admitSource.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "hospitalization_admit_source_text",
+                    "path": "hospitalization.admitSource.text",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_readmission_coding",
+                    "path": "hospitalization.reAdmission.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "hospitalization_readmission_text",
+                    "path": "hospitalization.reAdmission.text",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_diet_preference_coding",
+                    "path": "hospitalization.dietPreference.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "hospitalization_diet_preference_text",
+                    "path": "hospitalization.dietPreference.text",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "hospitalization_special_courtesy_coding",
+                    "path": "hospitalization.specialCourtesy.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "hospitalization_special_courtesy_text",
+                    "path": "hospitalization.specialCourtesy.text",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "hospitalization_special_arrangement_coding",
+                    "path": "hospitalization.specialArrangement.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "hospitalization_special_arrangement_text",
+                    "path": "hospitalization.specialArrangement.text",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "hospitalization_destination_reference",
+                    "path": "hospitalization.destination.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_destination_type",
+                    "path": "hospitalization.destination.type",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_destination_display",
+                    "path": "hospitalization.destination.display",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_discharge_disposition_coding",
+                    "path": "hospitalization.dischargeDisposition.coding",
+                    "type": "string",
+                },
+                {
+                    "name": "hospitalization_discharge_disposition_text",
+                    "path": "hospitalization.dischargeDisposition.text",
+                    "type": "string",
+                },
+            ]
+        }
+    ],
+}
 
 
 class EncounterHospitalizationTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Encounter' FHIR resource, specifically for the 'hospitalization' field.
-
-    This class transforms FHIR Encounter JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'hospitalization' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed, which is set to 'Encounter'.
-        resource_subtype (str): The subtype of the FHIR resource being transformed, set to 'hospitalization'.
-        transform_schema (list): A list of dictionaries defining how to transform the FHIR data.
-
-    Methods:
-    __init__():
-        Initializes the EncounterHospitalizationTransformer instance with the resource type 'Encounter',
-        subtype 'hospitalization', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Encounter", "hospitalization", TRANSFORM_SCHEMA)
+        super().__init__("Encounter", "hospitalization", VIEW_DEFINITION)

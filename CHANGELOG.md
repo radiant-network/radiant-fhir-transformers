@@ -1,5 +1,53 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.3.0
+
+### Summary
+
+- Emojis: 🐛 x1
+- Categories: Fixes x1
+
+### New features and changes
+
+- [#100](https://github.com/radiant-network/radiant-fhir-transformers/pull/100) - 🐛 Fix transformer bugs - [ab5fe0fd](https://github.com/radiant-network/radiant-fhir-transformers/commit/ab5fe0fdc95206132d3321f2e25d6e3c4bdb0f45) by [znatty22](https://github.com/znatty22)
+
+
+## Release 1.2.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#97](https://github.com/radiant-network/radiant-fhir-transformers/pull/97) -  :bug: Fix Raw Transformer to allow multiple resourceTypes - [2b530168](https://github.com/radiant-network/radiant-fhir-transformers/commit/2b530168566f412660798f5b43da01e463baecff) by [haynescd](https://github.com/haynescd)
+
+
+## Release 1.1.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#95](https://github.com/radiant-network/radiant-fhir-transformers/pull/95) -  Add helper method to extract cols from viewDef - [1ec2e34c](https://github.com/radiant-network/radiant-fhir-transformers/commit/1ec2e34c514a14f8798b2df3dde28591733a7f3c) by [haynescd](https://github.com/haynescd)
+
+
+## Release 1.0.0
+
+### Summary
+
+- Emojis: 💥 x1
+- Categories: Additions x1
+
+### New features and changes
+
+- [#93](https://github.com/radiant-network/radiant-fhir-transformers/pull/93) - 💥 Migrate to using SQL-on-FHIR standard - [065cdd04](https://github.com/radiant-network/radiant-fhir-transformers/commit/065cdd040acd9484930da81c2539de368f961ef5) by [znatty22](https://github.com/znatty22)
+
+
 ## Release 0.14.0
 
 ### Summary

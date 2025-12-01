@@ -12,7 +12,7 @@ from .care_team_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "care_team_id": "example",
-        "participant_role_coding": [None],
+        "participant_role_coding": None,
         "participant_role_text": ["responsiblePerson"],
         "participant_member_reference": "Patient/example",
         "participant_member_type": None,
@@ -25,7 +25,7 @@ EXPECTED_OUTPUT = [
     },
     {
         "care_team_id": "example",
-        "participant_role_coding": [None],
+        "participant_role_coding": None,
         "participant_role_text": ["adviser"],
         "participant_member_reference": "Practitioner/pr1",
         "participant_member_type": None,

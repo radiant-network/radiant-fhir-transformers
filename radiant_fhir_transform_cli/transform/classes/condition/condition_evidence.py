@@ -1,54 +1,43 @@
-"""
-FHIR Condition Evidence transformer
-"""
+"""FHIR Condition evidence transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Condition",
+    "name": "condition_evidence",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "condition_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "condition_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "evidence",
+            "column": [
+                {
+                    "name": "evidence_code",
+                    "path": "code",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "evidence_detail",
+                    "path": "detail",
+                    "type": "string",
+                    "collection": True,
+                },
+            ],
         },
-    },
-    {
-        "fhir_path": "evidence",
-        "columns": {
-            "evidence_code": {"fhir_key": "code", "type": "str"},
-            "evidence_detail": {"fhir_key": "detail", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class ConditionEvidenceTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Condition' resource in FHIR, focusing on the 'evidence' element.
-
-    This class transforms FHIR Condition JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'evidence' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Condition').
-        subtype (str): Specifies the sub-element of the resource to focus on ('evidence').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the ConditionEvidenceTransformer instance with the resource type 'Condition',
-            subtype 'evidence', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Condition", "evidence", TRANSFORM_SCHEMA)
+        super().__init__("Condition", "evidence", VIEW_DEFINITION)

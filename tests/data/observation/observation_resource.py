@@ -86,6 +86,23 @@ RESOURCE = {
         "display": "Hospital Encounter",
     },
     "effectiveDateTime": "2024-01-29T16:46:00Z",
+    "effectiveTiming": {
+        "event": ["2024-01-29T16:46:00Z"],
+        "repeat": {
+            "dayOfWeek": ["mon"],
+            "timeOfDay": ["16:46:00"],
+            "when": ["HS"],
+        },
+        "code": {
+            "coding": [
+                {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
+                    "code": "PM",
+                    "display": "PM",
+                }
+            ]
+        },
+    },
     "issued": "2024-01-29T16:46:57Z",
     "performer": [
         {
@@ -193,26 +210,4 @@ RESOURCE = {
             },
         },
     ],
-}
-
-RESOURCE_EFFECTIVE_TIMING = {
-    k: v for k, v in RESOURCE.items() if k != "effectiveDateTime"
-} | {
-    "effectiveTiming": {
-        "event": ["2024-01-29T16:46:00Z"],
-        "repeat": {
-            "dayOfWeek": ["mon"],
-            "timeOfDay": ["16:46:00"],
-            "when": ["HS"],
-        },
-        "code": {
-            "coding": [
-                {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation",
-                    "code": "PM",
-                    "display": "PM",
-                }
-            ]
-        },
-    }
 }

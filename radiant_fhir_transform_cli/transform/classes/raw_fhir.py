@@ -1,28 +1,30 @@
+from typing import Any, override
+
 from .base import FhirResourceTransformer
 
-TRANSFORM_SCHEMA = [
-    # Id
-    {
-        "fhir_path": "id",
-        "columns": {
-            "id": {"fhir_key": "id", "type": "str"},
+VIEW_DEFINITION = {
+    "resourceType": "ViewDefinition",
+    "resource": None,
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "id"},
+                {"name": "resource_type", "path": "resourceType"},
+                {"name": "json", "path": "$this"},
+            ]
         },
-    },
-    {
-        "fhir_path": "resourceType",
-        "columns": {
-            "resource_type": {"fhir_key": "resourceType", "type": "str"},
-        },
-    },
-    {
-        "fhir_path": "*",
-        "columns": {
-            "json": {"type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class RawFhirResourceTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__("fhir_resource", None, TRANSFORM_SCHEMA)
+        super().__init__("fhir_resource", None, VIEW_DEFINITION)
+
+    @override
+    def transform_resource(
+        self, resource_idx: int, resource_dict: dict[str, Any]
+    ) -> list[dict[str, Any]]:
+        resource_type = resource_dict["resourceType"]
+        self.view_definition["resource"] = resource_type
+        return super().transform_resource(resource_idx, resource_dict)

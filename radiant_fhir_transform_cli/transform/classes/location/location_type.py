@@ -1,52 +1,38 @@
-"""
-FHIR Location Type transformer
-"""
+"""FHIR Location type transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Location",
+    "name": "location_type",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "location_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "location_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "type",
+            "column": [
+                {
+                    "name": "type_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {"name": "type_text", "path": "text", "type": "string"},
+            ],
         },
-    },
-    {
-        "fhir_path": "type",
-        "columns": {
-            # TODO: Support for Nested Lists (See https://github.com/radiant-network/radiant-fhir-transformers/issues/34)
-            "type_coding": {"fhir_key": "coding", "type": "str"},
-            "type_text": {"fhir_key": "text", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class LocationTypeTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Location' resource in FHIR, focusing on the 'type' element.
-    This class transforms FHIR Location JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'type' field.
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Location').
-        subtype (str): Specifies the sub-element of the resource to focus on ('type').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-    Methods:
-        __init__():
-            Initializes the LocationTypeTransformer instance with the resource type 'Location',
-            subtype 'type', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Location", "type", TRANSFORM_SCHEMA)
+        super().__init__("Location", "type", VIEW_DEFINITION)

@@ -1,80 +1,78 @@
-"""
-FHIR Provenance Signature transformer
-"""
+"""FHIR Provenance signature transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Provenance",
+    "name": "provenance_signature",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "provenance_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "provenance_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "signature",
+            "column": [
+                {
+                    "name": "signature_type",
+                    "path": "type",
+                    "type": "string",
+                    "collection": True,
+                },
+                {"name": "signature_when", "path": "when", "type": "dateTime"},
+                {
+                    "name": "signature_who_reference",
+                    "path": "who.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "signature_who_type",
+                    "path": "who.type",
+                    "type": "string",
+                },
+                {
+                    "name": "signature_who_display",
+                    "path": "who.display",
+                    "type": "string",
+                },
+                {
+                    "name": "signature_on_behalf_of_reference",
+                    "path": "onBehalfOf.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "signature_on_behalf_of_type",
+                    "path": "onBehalfOf.type",
+                    "type": "string",
+                },
+                {
+                    "name": "signature_on_behalf_of_display",
+                    "path": "onBehalfOf.display",
+                    "type": "string",
+                },
+                {
+                    "name": "signature_target_format",
+                    "path": "targetFormat",
+                    "type": "string",
+                },
+                {
+                    "name": "signature_sig_format",
+                    "path": "sigFormat",
+                    "type": "string",
+                },
+            ],
         },
-    },
-    {
-        "fhir_path": "signature",
-        "columns": {
-            # TODO: Support for Nested Lists (See https://github.com/radiant-network/radiant-fhir-transformers/issues/34)
-            "signature_type": {"fhir_key": "type", "type": "str"},
-            "signature_when": {"fhir_key": "when", "type": "datetime"},
-            "signature_who_reference": {
-                "fhir_key": "who.reference",
-                "type": "str",
-            },
-            "signature_who_type": {"fhir_key": "who.type", "type": "str"},
-            "signature_who_display": {"fhir_key": "who.display", "type": "str"},
-            "signature_on_behalf_of_reference": {
-                "fhir_key": "onBehalfOf.reference",
-                "type": "str",
-            },
-            "signature_on_behalf_of_type": {
-                "fhir_key": "onBehalfOf.type",
-                "type": "str",
-            },
-            "signature_on_behalf_of_display": {
-                "fhir_key": "onBehalfOf.display",
-                "type": "str",
-            },
-            "signature_target_format": {
-                "fhir_key": "targetFormat",
-                "type": "str",
-            },
-            "signature_sig_format": {"fhir_key": "sigFormat", "type": "str"},
-            # TODO: Handling base64Binary Data Types in Transformers (See https://github.com/radiant-network/radiant-fhir-transformers/issues/53)
-            # "signature_data": {"fhir_key": "data", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class ProvenanceSignatureTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Provenance' resource in FHIR, focusing on the 'signature' element.
-
-    This class transforms FHIR Provenance JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'signature' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Provenance').
-        subtype (str): Specifies the sub-element of the resource to focus on ('signature').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the ProvenanceSignatureTransformer instance with the resource type 'Provenance',
-            subtype 'signature', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Provenance", "signature", TRANSFORM_SCHEMA)
+        super().__init__("Provenance", "signature", VIEW_DEFINITION)

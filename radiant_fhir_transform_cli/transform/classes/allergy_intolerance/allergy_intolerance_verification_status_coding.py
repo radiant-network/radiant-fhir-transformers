@@ -1,65 +1,54 @@
-"""
-FHIR AllergyIntolerance Verification Status Coding transformer
-"""
+"""FHIR AllergyIntolerance verification_status_coding transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "AllergyIntolerance",
+    "name": "allergy_intolerance_verification_status_coding",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "allergy_intolerance_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "allergy_intolerance_id": {"type": "str"},
+        {
+            "forEach": "verificationStatus.coding",
+            "column": [
+                {
+                    "name": "verification_status_coding_system",
+                    "path": "system",
+                    "type": "string",
+                },
+                {
+                    "name": "verification_status_coding_code",
+                    "path": "code",
+                    "type": "string",
+                },
+                {
+                    "name": "verification_status_coding_display",
+                    "path": "display",
+                    "type": "string",
+                },
+            ],
         },
-    },
-    {
-        "fhir_path": "verificationStatus.coding",
-        "columns": {
-            "verification_status_coding_system": {
-                "fhir_key": "system",
-                "type": "str",
-            },
-            "verification_status_coding_code": {
-                "fhir_key": "code",
-                "type": "str",
-            },
-            "verification_status_coding_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
-        },
-    },
-]
+    ],
+}
 
 
 class AllergyIntoleranceVerificationStatusCodingTransformer(
     FhirResourceTransformer
 ):
-    """
-    A transformer class for the 'AllergyIntolerance' resource in FHIR, focusing on the 'verificationStatus.coding' element.
-    This class transforms FHIR AllergyIntolerance JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'verificationStatus.coding' field.
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('AllergyIntolerance').
-        subtype (str): Specifies the sub-element of the resource to focus on ('verification_status_coding').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-    Methods:
-        __init__():
-            Initializes the AllergyIntoleranceVerificationStatusCodingTransformer instance with the resource type 'AllergyIntolerance',
-            subtype 'verification_status_coding', and the specified transformation dictionary.
-    """
-
     def __init__(self):
         super().__init__(
-            "AllergyIntolerance", "verification_status_coding", TRANSFORM_SCHEMA
+            "AllergyIntolerance", "verification_status_coding", VIEW_DEFINITION
         )

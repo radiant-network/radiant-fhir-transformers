@@ -1,58 +1,46 @@
-"""
-FHIR Coverage Relationship Coding transformer
-"""
+"""FHIR Coverage relationship_coding transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Coverage",
+    "name": "coverage_relationship_coding",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "coverage_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "coverage_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "relationship.coding",
+            "column": [
+                {
+                    "name": "relationship_coding_system",
+                    "path": "system",
+                    "type": "string",
+                },
+                {
+                    "name": "relationship_coding_code",
+                    "path": "code",
+                    "type": "string",
+                },
+                {
+                    "name": "relationship_coding_display",
+                    "path": "display",
+                    "type": "string",
+                },
+            ],
         },
-    },
-    {
-        "fhir_path": "relationship.coding",
-        "columns": {
-            "relationship_coding_system": {"fhir_key": "system", "type": "str"},
-            "relationship_coding_code": {"fhir_key": "code", "type": "str"},
-            "relationship_coding_display": {
-                "fhir_key": "display",
-                "type": "str",
-            },
-        },
-    },
-]
+    ],
+}
 
 
 class CoverageRelationshipCodingTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Coverage' resource in FHIR, focusing on the 'relationship.coding' element.
-
-    This class transforms FHIR Coverage JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'relationship.coding' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Coverage').
-        subtype (str): Specifies the sub-element of the resource to focus on ('relationship_coding').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the CoverageRelationshipCodingTransformer instance with the resource type 'Coverage',
-            subtype 'relationship_coding', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Coverage", "relationship_coding", TRANSFORM_SCHEMA)
+        super().__init__("Coverage", "relationship_coding", VIEW_DEFINITION)

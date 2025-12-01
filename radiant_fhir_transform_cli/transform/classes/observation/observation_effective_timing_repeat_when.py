@@ -1,55 +1,38 @@
-"""
-FHIR Observation EffectiveTiming Repeat When transformer
-"""
+"""FHIR Observation effective_timing_repeat_when transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Observation",
+    "name": "observation_effective_timing_repeat_when",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "observation_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "observation_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "effectiveTiming.repeat.when",
+            "column": [
+                {
+                    "name": "effective_timing_repeat_when",
+                    "path": "$this",
+                    "type": "string",
+                }
+            ],
         },
-    },
-    {
-        "fhir_path": "effectiveTiming.repeat.when",
-        "columns": {
-            "effective_timing_repeat_when": {"fhir_key": "when", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class ObservationEffectiveTimingRepeatWhenTransformer(FhirResourceTransformer):
-    """
-    Transformer class for the 'Observation' resource in FHIR, focusing on the 'effectiveTimining.repeat.when' element.
-
-    This class transforms FHIR Observation JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'effectiveTimining.repeat.when' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Observation').
-        subtype (str): Specifies the sub-element of the resource to focus on ('effective_timing_repeat_when').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the ObservationEffectiveTimingRepeatWhenTransformer instance with the resource type 'Observation',
-            subtype 'effective_timing_repeat_when', and the specified transformation dictionary.
-    """
-
     def __init__(self):
         super().__init__(
-            "Observation", "effective_timing_repeat_when", TRANSFORM_SCHEMA
+            "Observation", "effective_timing_repeat_when", VIEW_DEFINITION
         )

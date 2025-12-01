@@ -1,57 +1,44 @@
-"""
-FHIR Coverage Class transformer
-"""
+"""FHIR Coverage class transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-TRANSFORM_SCHEMA = [
-    # Primary Key
-    {
-        "fhir_path": None,
-        "columns": {
-            "id": {"fhir_key": None, "type": "str"},
+
+VIEW_DEFINITION = {
+    "resource": "Coverage",
+    "name": "coverage_class",
+    "status": "active",
+    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "select": [
+        {
+            "column": [
+                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "coverage_id", "path": "id", "type": "string"},
+            ]
         },
-    },
-    # Foreign Key
-    {
-        "fhir_path": "id",
-        "is_foreign_key": True,
-        "columns": {
-            "coverage_id": {"fhir_key": "id", "type": "str"},
+        {
+            "forEach": "class",
+            "column": [
+                {
+                    "name": "class_type_coding",
+                    "path": "type.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "class_type_text",
+                    "path": "type.text",
+                    "type": "string",
+                },
+                {"name": "class_value", "path": "value", "type": "string"},
+                {"name": "class_name", "path": "name", "type": "string"},
+            ],
         },
-    },
-    {
-        "fhir_path": "class",
-        "columns": {
-            # TODO: Support for Nested Lists (See https://github.com/radiant-network/radiant-fhir-transformers/issues/34)
-            "class_type_coding": {"fhir_key": "type.coding", "type": "str"},
-            "class_type_text": {"fhir_key": "type.text", "type": "str"},
-            "class_value": {"fhir_key": "value", "type": "str"},
-            "class_name": {"fhir_key": "name", "type": "str"},
-        },
-    },
-]
+    ],
+}
 
 
 class CoverageClassTransformer(FhirResourceTransformer):
-    """
-    A transformer class for the 'Coverage' resource in FHIR, focusing on the 'class' element.
-
-    This class transforms FHIR Coverage JSON objects into flat dictionaries suitable for CSV output,
-    extracting and processing information from the 'class' field.
-
-    Attributes:
-        resource_type (str): The type of FHIR resource being transformed ('Coverage').
-        subtype (str): Specifies the sub-element of the resource to focus on ('class').
-        transform_dict (dict): A dictionary defining the mapping and transformation rules for the resource data.
-
-    Methods:
-        __init__():
-            Initializes the CoverageClassTransformer instance with the resource type 'Coverage',
-            subtype 'class', and the specified transformation dictionary.
-    """
-
     def __init__(self):
-        super().__init__("Coverage", "class", TRANSFORM_SCHEMA)
+        super().__init__("Coverage", "class", VIEW_DEFINITION)
