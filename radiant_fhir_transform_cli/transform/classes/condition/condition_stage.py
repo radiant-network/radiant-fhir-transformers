@@ -35,11 +35,13 @@ VIEW_DEFINITION = {
                     "name": "stage_assessment",
                     "path": "assessment",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "stage_type_coding",
                     "path": "type.coding",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "stage_type_text",
