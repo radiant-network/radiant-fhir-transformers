@@ -138,9 +138,9 @@ class FhirResourceTransformer:
         Returns:
             The same row dictionary with all placeholder UUIDs replaced.
         """
-        for k, v in row.items():
-            if v == "uuid()":
-                row[k] = str(uuid.uuid4())
+        uuid_value = row.get("id")
+        if uuid_value and uuid_value == "uuid()":
+            row["id"] = str(uuid.uuid4())
         return row
 
     def _normalize_value(self, row: dict[str, Any]) -> dict[str, Any]:
@@ -220,7 +220,7 @@ class FhirResourceTransformer:
             output.append(row)
 
         logger.info(
-            "Transformed %s %s. Subtype: %s. Rows: %s",
+            "🏭 Transformed %s %s. Subtype: %s. Rows: %s",
             self.resource_type,
             resource_idx,
             self.resource_subtype,
