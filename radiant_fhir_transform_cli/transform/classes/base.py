@@ -22,6 +22,7 @@ The transformer is designed to:
 import csv
 import json
 import logging
+import time
 import uuid
 from collections.abc import Generator, Iterable
 from dataclasses import dataclass
@@ -194,9 +195,18 @@ class FhirResourceTransformer:
         Returns:
             A list of flattened and post-processed row dictionaries.
         """
+        start_time = time.perf_counter()
         try:
             results = evaluate(
                 resources=[resource_dict], view_definition=self.view_definition
+            )
+            duration = time.perf_counter() - start_time
+            logger.info(
+                "📊 Transformed %s %s (%s) in %.4f seconds",
+                self.resource_type,
+                resource_idx,
+                self.resource_subtype,
+                duration,
             )
         except Exception:
             logger.error(
@@ -210,6 +220,7 @@ class FhirResourceTransformer:
 
         output: list[dict[str, Any]] = []
 
+        start_time = time.perf_counter()
         for row in results:
             row = self._filter_out_empty_row(row)
             if not row:
@@ -219,12 +230,14 @@ class FhirResourceTransformer:
             self._normalize_value(row)
             output.append(row)
 
+        duration = time.perf_counter() - start_time
         logger.info(
-            "🏭 Transformed %s %s. Subtype: %s. Rows: %s",
+            "🏭 Transformed %s %s. Subtype: %s. Rows: %s in %.6f seconds",
             self.resource_type,
             resource_idx,
             self.resource_subtype,
             len(output),
+            duration,
         )
         return output
 
@@ -269,8 +282,15 @@ class FhirResourceTransformer:
         results = []
         with open(ndjson_filepath, "r") as f:
             for i, line in enumerate(f):
+                start_time = time.perf_counter()
                 rows = self.transform_resource(i, json.loads(line.strip()))
                 results.extend(rows)
+                duration = time.perf_counter() - start_time
+                logger.info(
+                    "⏰ Transformed  %s in %.4f seconds",
+                    i,
+                    duration,
+                )
         return results
 
     def transform_from_json(self, json_filepath: str) -> list[dict[str, Any]]:
