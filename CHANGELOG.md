@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.5.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#105](https://github.com/radiant-network/radiant-fhir-transformers/pull/105) -  :bug: Use bulk transform for raw_fhir transformer - [2aa17c8d](https://github.com/radiant-network/radiant-fhir-transformers/commit/2aa17c8d65f4f9c14a4b84ca09aa72d53449e7e7) by [znatty22](https://github.com/znatty22)
+
+
 ## Release 1.4.0
 
 ### Summary
