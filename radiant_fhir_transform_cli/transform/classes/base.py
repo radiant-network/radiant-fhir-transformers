@@ -178,8 +178,8 @@ class FhirResourceTransformer:
             row[fk_column] = fk_value.split("/")[-1]
         return row
 
-    def transform_resource(
-        self, resource_idx: int, resource_dict: dict[str, Any]
+    def transform_resources(
+        self, resources: list[dict]
     ) -> list[dict[str, Any]]:
         """Apply the ViewDefinition to a single FHIR resource.
 
@@ -196,15 +196,14 @@ class FhirResourceTransformer:
         """
         try:
             results = evaluate(
-                resources=[resource_dict], view_definition=self.view_definition
+                resources=resources, view_definition=self.view_definition
             )
         except Exception:
             logger.error(
-                "❌ Transform failed for %s %s. Subtype: %s. Input:\n%s",
+                "❌ Transform failed for %s %s. Subtype: %s",
+                len(resources),
                 self.resource_type,
-                resource_idx,
                 self.resource_subtype,
-                pformat(resource_dict),
             )
             raise
 
@@ -221,12 +220,30 @@ class FhirResourceTransformer:
 
         logger.info(
             "🏭 Transformed %s %s. Subtype: %s. Rows: %s",
+            len(resources),
             self.resource_type,
-            resource_idx,
             self.resource_subtype,
             len(output),
         )
         return output
+
+    def transform_resource(
+        self, resource_idx: int, resource_dict: dict[str, Any]
+    ) -> list[dict[str, Any]]:
+        """Apply the ViewDefinition to a single FHIR resource.
+
+        Evaluates the given resource using SQL-on-FHIR, filters out empty
+        rows, normalizes values, extracts foreign keys, and replaces any
+        UUID placeholders.
+
+        Args:
+            resource_idx: Index of the resource being transformed (for logging).
+            resource_dict: JSON dictionary representing a single FHIR resource.
+
+        Returns:
+            A list of flattened and post-processed row dictionaries.
+        """
+        return self.transform_resources([resource_dict])
 
     def column_metadata(self) -> list[ColumnMetaData]:
         """
@@ -268,9 +285,9 @@ class FhirResourceTransformer:
         """
         results = []
         with open(ndjson_filepath, "r") as f:
-            for i, line in enumerate(f):
-                rows = self.transform_resource(i, json.loads(line.strip()))
-                results.extend(rows)
+            rows = [json.loads(line.strip()) for i, line in enumerate(f)]
+            self.transform_resources(rows)
+
         return results
 
     def transform_from_json(self, json_filepath: str) -> list[dict[str, Any]]:
@@ -295,16 +312,14 @@ class FhirResourceTransformer:
             data = json.load(f)
             objs = [data] if isinstance(data, dict) else data
 
-        results: list[dict[str, Any]] = []
-        for i, resource in enumerate(objs):
-            row_dicts = self.transform_resource(i, resource)
-            results.extend(row_dicts)
+        results = self.transform_resources(objs)
 
         if not results:
             raise ValueError(
                 f"❌ {type(self).__name__} resulted in 0 non-empty rows! "
                 "Please check your ViewDefinition for errors."
             )
+
         return results
 
     def write_to_csv(
