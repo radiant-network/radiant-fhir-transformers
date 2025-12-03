@@ -1,5 +1,18 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.4.0
+
+### Summary
+
+- Emojis: ? x1, 🐛 x1
+- Categories: Fixes x1, Other Changes x1
+
+### New features and changes
+
+- [#103](https://github.com/radiant-network/radiant-fhir-transformers/pull/103) -  :sparkles: Transform resources in bulk - [88a654b7](https://github.com/radiant-network/radiant-fhir-transformers/commit/88a654b7a0d881577c130dbf47a5f3f1870a8f7c) by [znatty22](https://github.com/znatty22)
+- [#102](https://github.com/radiant-network/radiant-fhir-transformers/pull/102) - 🐛 Fix more View Definitions - [77ef90e9](https://github.com/radiant-network/radiant-fhir-transformers/commit/77ef90e9ea079a0e27fcd92b8d7022cbb2a71f97) by [znatty22](https://github.com/znatty22)
+
+
 ## Release 1.3.0
 
 ### Summary
