@@ -1,5 +1,7 @@
 from typing import Any, override
 
+from collections import defaultdict
+
 from .base import FhirResourceTransformer
 
 VIEW_DEFINITION = {
@@ -22,9 +24,16 @@ class RawFhirResourceTransformer(FhirResourceTransformer):
         super().__init__("fhir_resource", None, VIEW_DEFINITION)
 
     @override
-    def transform_resource(
-        self, resource_idx: int, resource_dict: dict[str, Any]
+    def transform_resources(
+        self, resources: list[dict]
     ) -> list[dict[str, Any]]:
-        resource_type = resource_dict["resourceType"]
-        self.view_definition["resource"] = resource_type
-        return super().transform_resource(resource_idx, resource_dict)
+        resources_by_type = defaultdict(list)
+        for resource in resources:
+            resources_by_type[resource["resourceType"]].append(resource)
+
+        output = []
+        for resource_type, resource_list in resources_by_type.items():
+            self.view_definition["resource"] = resource_type
+            output.extend(super().transform_resources(resource_list))
+
+        return output
