@@ -188,7 +188,18 @@ RESOURCE = {
         "text": "as needed text example",
     },
     "authoredOn": "2014-02-14",
-    "reasonCode": [{"text": "Check for metastatic disease"}],
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "90831000119105",
+                    "display": "Check for metastatic disease",
+                },
+            ],
+            "text": "Check for metastatic disease",
+        }
+    ],
     "performerType": {
         "coding": [
             {
