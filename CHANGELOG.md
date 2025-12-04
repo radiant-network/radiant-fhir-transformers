@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.6.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#107](https://github.com/radiant-network/radiant-fhir-transformers/pull/107) -  :bug: Fix ServiceRequest reason_code transformer - [d833a356](https://github.com/radiant-network/radiant-fhir-transformers/commit/d833a3566a8aafd32e3ea9448f9c1f2740ae5e53) by [znatty22](https://github.com/znatty22)
+
+
 ## Release 1.5.0
 
 ### Summary
