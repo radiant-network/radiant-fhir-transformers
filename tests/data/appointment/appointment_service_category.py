@@ -11,16 +11,13 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
-        "service_category_coding": [
-            {
-                "system": "http://example.org/service-category",
-                "code": "gp",
-                "display": "General Practice",
-            }
-        ],
+        "service_category_coding_system": "http://example.org/service-category",
+        "service_category_coding_code": "gp",
+        "service_category_coding_display": "General Practice",
         "service_category_text": None,
-    }
+        "id": "0f923cee-5c2e-4f44-9ed9-8207ccb3f58f",
+        "appointment_id": "example",
+    },
 ]
 
 

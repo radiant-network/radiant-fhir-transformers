@@ -9,24 +9,47 @@ VIEW_DEFINITION = {
     "resource": "CareTeam",
     "name": "care_team_category",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "care_team_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "care_team_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "category",
+            "forEachOrNull": "category",
             "column": [
                 {
-                    "name": "category_coding",
-                    "path": "coding",
+                    "name": "category_text",
+                    "path": "text",
                     "type": "string",
-                    "collection": True,
                 },
-                {"name": "category_text", "path": "text", "type": "string"},
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "coding",
+                    "column": [
+                        {
+                            "name": "category_coding",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

@@ -11,14 +11,10 @@ from .organization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "organization_id": "2.16.840.1.113883.19.5",
+        "address_line": "3401 Civic Center Boulevard",
         "address_use": None,
         "address_type": None,
         "address_text": None,
-        "address_line": [
-            "3401 Civic Center Boulevard",
-            "Children's Hospital of Phila",
-        ],
         "address_city": "Philadelphia",
         "address_district": None,
         "address_state": "Pennsylvania",
@@ -26,6 +22,23 @@ EXPECTED_OUTPUT = [
         "address_country": "United States",
         "address_period_start": None,
         "address_period_end": None,
+        "id": "bc5f4dc5-0e8b-44ea-8b89-c66db13b3c08",
+        "organization_id": "2.16.840.1.113883.19.5",
+    },
+    {
+        "address_line": "Children's Hospital of Phila",
+        "address_use": None,
+        "address_type": None,
+        "address_text": None,
+        "address_city": "Philadelphia",
+        "address_district": None,
+        "address_state": "Pennsylvania",
+        "address_postal_code": "19104",
+        "address_country": "United States",
+        "address_period_start": None,
+        "address_period_end": None,
+        "id": "45f44298-0a38-4362-841c-7ba0f9f656f2",
+        "organization_id": "2.16.840.1.113883.19.5",
     },
 ]
 

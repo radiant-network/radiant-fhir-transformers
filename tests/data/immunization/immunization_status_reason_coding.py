@@ -11,10 +11,11 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
         "status_reason_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
         "status_reason_coding_code": "MEDPREC",
         "status_reason_coding_display": "medical precaution",
+        "id": "40e0fd5e-e5bf-49e3-8db2-37758156121a",
+        "immunization_id": "example",
     },
 ]
 

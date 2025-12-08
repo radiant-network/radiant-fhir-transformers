@@ -11,14 +11,15 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "note_author_reference_reference": None,
         "note_author_reference_type": None,
         "note_author_reference_display": None,
         "note_author_string": None,
         "note_time": None,
         "note_text": "Patient told to take with food",
-    }
+        "id": "9b9a09fe-0c09-4751-91fa-f3990510b947",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

@@ -11,16 +11,13 @@ from .related_person_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "related_person_id": "benedicte",
-        "communication_language_coding": [
-            {
-                "system": "urn:ietf:bcp:47",
-                "code": "en-US",
-                "display": "English (United States)",
-            }
-        ],
+        "communication_language_coding_system": "urn:ietf:bcp:47",
+        "communication_language_coding_code": "en-US",
+        "communication_language_coding_display": "English (United States)",
         "communication_language_text": "American English",
         "communication_preferred": True,
+        "id": "a0da5d75-b77d-41e1-bb06-4f7195f3d6e3",
+        "related_person_id": "benedicte",
     },
 ]
 

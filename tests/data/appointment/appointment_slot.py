@@ -11,11 +11,12 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
         "slot_reference": "Slot/example",
         "slot_type": None,
         "slot_display": None,
-    }
+        "id": "af36322b-9c0a-4309-9dc4-56a1f1cc220f",
+        "appointment_id": "example",
+    },
 ]
 
 

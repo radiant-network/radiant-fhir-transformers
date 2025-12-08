@@ -11,10 +11,11 @@ from .specimen import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "specimen_id": "101",
         "type_coding_system": "http://snomed.info/sct",
         "type_coding_code": "122555007",
         "type_coding_display": "Venous blood specimen",
+        "id": "e6d72782-ee4b-4f93-a01c-037a10a22b69",
+        "specimen_id": "101",
     },
 ]
 

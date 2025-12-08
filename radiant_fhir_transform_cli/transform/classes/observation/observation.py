@@ -12,14 +12,26 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
-                {"name": "code_text", "path": "code.text", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "code_text",
+                    "path": "code.text",
+                    "type": "string",
+                },
                 {
                     "name": "subject_reference",
                     "path": "subject.reference",
@@ -205,7 +217,11 @@ VIEW_DEFINITION = {
                     "path": "effectiveInstant",
                     "type": "dateTime",
                 },
-                {"name": "issued", "path": "issued", "type": "dateTime"},
+                {
+                    "name": "issued",
+                    "path": "issued",
+                    "type": "dateTime",
+                },
                 {
                     "name": "value_quantity_value",
                     "path": "valueQuantity.value",
@@ -391,7 +407,11 @@ VIEW_DEFINITION = {
                     "path": "valueSampledData.data",
                     "type": "string",
                 },
-                {"name": "value_time", "path": "valueTime", "type": "string"},
+                {
+                    "name": "value_time",
+                    "path": "valueTime",
+                    "type": "string",
+                },
                 {
                     "name": "value_date_time",
                     "path": "valueDateTime",
@@ -452,8 +472,8 @@ VIEW_DEFINITION = {
                     "path": "device.display",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

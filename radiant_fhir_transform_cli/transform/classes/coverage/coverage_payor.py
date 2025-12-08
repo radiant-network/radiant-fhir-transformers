@@ -9,24 +9,45 @@ VIEW_DEFINITION = {
     "resource": "Coverage",
     "name": "coverage_payor",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "coverage_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "coverage_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "payor",
+            "forEachOrNull": "payor",
             "column": [
                 {
                     "name": "payor_reference",
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "payor_type", "path": "type", "type": "string"},
-                {"name": "payor_display", "path": "display", "type": "string"},
+                {
+                    "name": "payor_type",
+                    "path": "type",
+                    "type": "string",
+                },
+                {
+                    "name": "payor_display",
+                    "path": "display",
+                    "type": "string",
+                },
             ],
         },
     ],

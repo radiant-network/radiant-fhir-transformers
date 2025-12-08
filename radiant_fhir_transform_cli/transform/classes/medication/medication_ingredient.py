@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Medication",
     "name": "medication_ingredient",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "medication_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "medication_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "ingredient",
+            "forEachOrNull": "ingredient",
             "column": [
                 {
                     "name": "ingredient_item_codeable_concept",

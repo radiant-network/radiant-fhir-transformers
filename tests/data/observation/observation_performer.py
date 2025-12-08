@@ -11,16 +11,18 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "performer_reference": "erZ.j;lkj;lskdjfjffd",
+        "performer_reference": "Practitioner/erZ.j;lkj;lskdjfjffd",
         "performer_type": None,
         "performer_display": "Sammy, Test",
+        "id": "d3da4eaa-c73e-4952-863b-6d586407d986",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "performer_reference": "erZ.abcdefg",
+        "performer_reference": "Practitioner/erZ.abcdefg",
         "performer_type": None,
         "performer_display": "Charlie, Tester",
+        "id": "ce33dfbb-d4f1-45b7-aaf3-04ff7317c693",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

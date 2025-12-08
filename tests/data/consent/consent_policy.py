@@ -11,9 +11,10 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "consent_id": "consent-example-basic",
         "policy_authority": None,
         "policy_uri": "urn:uuid:53fefa32-fcbb-4ff8-8a92-55ee120877b7",
+        "id": "6a243c29-ef42-40e3-9c1a-a2af8b222c77",
+        "consent_id": "consent-example-basic",
     },
 ]
 

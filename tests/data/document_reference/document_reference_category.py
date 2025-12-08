@@ -11,15 +11,14 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
-        "category_coding": [
-            {
-                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
-                "code": "clinical-note",
-                "display": "Clinical Note",
-            }
-        ],
+        "category_coding": {
+            "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+            "code": "clinical-note",
+            "display": "Clinical Note",
+        },
         "category_text": "Clinical Note",
+        "id": "d9ccbc5b-659e-451e-ac05-bc2cb02aea39",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
 ]
 

@@ -9,12 +9,25 @@ VIEW_DEFINITION = {
     "resource": "Encounter",
     "name": "encounter_hospitalization",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "encounter_id", "path": "id", "type": "string"},
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "encounter_id",
+                    "path": "id",
+                    "type": "string",
+                },
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "hospitalization_pre_admission_identifier_type_text",
                     "path": "hospitalization.preAdmissionIdentifier.type.text",
@@ -61,62 +74,14 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "hospitalization_admit_source_coding",
-                    "path": "hospitalization.admitSource.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "hospitalization_admit_source_text",
                     "path": "hospitalization.admitSource.text",
                     "type": "string",
                 },
                 {
-                    "name": "hospitalization_readmission_coding",
-                    "path": "hospitalization.reAdmission.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "hospitalization_readmission_text",
                     "path": "hospitalization.reAdmission.text",
                     "type": "string",
-                },
-                {
-                    "name": "hospitalization_diet_preference_coding",
-                    "path": "hospitalization.dietPreference.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
-                    "name": "hospitalization_diet_preference_text",
-                    "path": "hospitalization.dietPreference.text",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
-                    "name": "hospitalization_special_courtesy_coding",
-                    "path": "hospitalization.specialCourtesy.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
-                    "name": "hospitalization_special_courtesy_text",
-                    "path": "hospitalization.specialCourtesy.text",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
-                    "name": "hospitalization_special_arrangement_coding",
-                    "path": "hospitalization.specialArrangement.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
-                    "name": "hospitalization_special_arrangement_text",
-                    "path": "hospitalization.specialArrangement.text",
-                    "type": "string",
-                    "collection": True,
                 },
                 {
                     "name": "hospitalization_destination_reference",
@@ -143,8 +108,130 @@ VIEW_DEFINITION = {
                     "path": "hospitalization.dischargeDisposition.text",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "hospitalization.admitSource.coding",
+                    "column": [
+                        {
+                            "name": "hospitalization_admit_source_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "hospitalization_admit_source_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "hospitalization_admit_source_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "hospitalization.reAdmission.coding",
+                    "column": [
+                        {
+                            "name": "hospitalization_readmission_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "hospitalization.dietPreference.coding",
+                    "column": [
+                        {
+                            "name": "hospitalization_diet_preference_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "hospitalization_diet_preference_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "hospitalization_diet_preference_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "hospitalization.dietPreference.text",
+                    "column": [
+                        {
+                            "name": "hospitalization_diet_preference_text",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "hospitalization.specialCourtesy.coding",
+                    "column": [
+                        {
+                            "name": "hospitalization_special_courtesy_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "hospitalization_special_courtesy_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "hospitalization_special_courtesy_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "hospitalization.specialCourtesy.text",
+                    "column": [
+                        {
+                            "name": "hospitalization_special_courtesy_text",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "hospitalization.specialArrangement.coding",
+                    "column": [
+                        {
+                            "name": "hospitalization_special_arrangement_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "hospitalization_special_arrangement_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "hospitalization_special_arrangement_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "hospitalization.specialArrangement.text",
+                    "column": [
+                        {
+                            "name": "hospitalization_special_arrangement_text",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
+            ],
+        },
     ],
 }
 

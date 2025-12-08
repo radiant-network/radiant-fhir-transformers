@@ -9,18 +9,35 @@ VIEW_DEFINITION = {
     "resource": "Observation",
     "name": "observation_extension",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "observation_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "observation_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "extension",
+            "forEachOrNull": "extension",
             "column": [
-                {"name": "extension_url", "path": "url", "type": "string"},
+                {
+                    "name": "extension_url",
+                    "path": "url",
+                    "type": "string",
+                },
                 {
                     "name": "extension_value_identifier_system",
                     "path": "valueIdentifier.system",

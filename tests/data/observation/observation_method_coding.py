@@ -11,10 +11,11 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "method_coding_system": "http://snomed.info/sct",
         "method_coding_code": "1240461000000109",
         "method_coding_display": "Measurement of severe acute respiratory syndrome coronavirus 2 antibody (observable entity)",
+        "id": "7b94ac6b-89be-476c-9ed1-ac245445fcbe",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

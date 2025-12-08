@@ -11,10 +11,11 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
         "performer_reference": "Practitioner/f202",
         "performer_display": None,
         "performer_type": None,
+        "id": "dce25021-68af-41c4-9141-03392a1744c7",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

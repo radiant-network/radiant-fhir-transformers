@@ -11,10 +11,11 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
-        "based_on_reference": "eD4Zh1drvNSQaox4sq5nvWDnOp6jrCft8Pdwty3sU8a83",
+        "based_on_reference": "ServiceRequest/eD4Zh1drvNSQaox4sq5nvWDnOp6jrCft8Pdwty3sU8a83",
         "based_on_type": None,
         "based_on_display": "Determination of Refractive State",
+        "id": "f7e0ec93-a211-41b0-84c2-df2eaa0302f0",
+        "procedure_id": "f201",
     },
 ]
 

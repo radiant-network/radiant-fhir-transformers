@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Immunization",
     "name": "immunization_report_origin_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "immunization_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "immunization_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "reportOrigin.coding",
+            "forEachOrNull": "reportOrigin.coding",
             "column": [
                 {
                     "name": "report_origin_coding_system",

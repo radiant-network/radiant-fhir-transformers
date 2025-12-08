@@ -9,23 +9,40 @@ VIEW_DEFINITION = {
     "resource": "Consent",
     "name": "consent_scope_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "consent_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "consent_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "scope.coding",
+            "forEachOrNull": "scope.coding",
             "column": [
                 {
                     "name": "scope_coding_system",
                     "path": "system",
                     "type": "string",
                 },
-                {"name": "scope_coding_code", "path": "code", "type": "string"},
+                {
+                    "name": "scope_coding_code",
+                    "path": "code",
+                    "type": "string",
+                },
                 {
                     "name": "scope_coding_display",
                     "path": "display",

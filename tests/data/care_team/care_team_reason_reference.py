@@ -11,10 +11,11 @@ from .care_team_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_team_id": "example",
-        "reason_reference_reference": "reason",
+        "reason_reference_reference": "Condition/reason",
         "reason_reference_type": "Condition",
         "reason_reference_display": "The justification that the procedure was performed",
+        "id": "61944660-6166-4ca5-a9e9-68d9673f8713",
+        "care_team_id": "example",
     },
 ]
 

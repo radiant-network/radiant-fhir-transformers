@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Observation",
     "name": "observation_component",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "observation_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "observation_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "component",
+            "forEachOrNull": "component",
             "column": [
-                {
-                    "name": "component_code_coding",
-                    "path": "code.coding",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "component_code_text",
                     "path": "code.text",
@@ -260,6 +267,28 @@ VIEW_DEFINITION = {
                     "name": "component_reference_range",
                     "path": "referenceRange",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "code.coding",
+                    "column": [
+                        {
+                            "name": "component_code_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "component_code_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "component_code_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

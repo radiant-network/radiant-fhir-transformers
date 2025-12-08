@@ -11,10 +11,11 @@ from .specimen import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "specimen_id": "101",
         "collection_body_site_coding_system": "http://snomed.info/sct",
         "collection_body_site_coding_code": "49852007",
         "collection_body_site_coding_display": "Structure of median cubital vein (body structure)",
+        "id": "cb5e2f7e-534a-4aba-bd83-ce92221e5f6c",
+        "specimen_id": "101",
     },
 ]
 

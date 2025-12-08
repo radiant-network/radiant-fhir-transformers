@@ -9,23 +9,40 @@ VIEW_DEFINITION = {
     "resource": "RequestGroup",
     "name": "request_group_code_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "request_group_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "request_group_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "code.coding",
+            "forEachOrNull": "code.coding",
             "column": [
                 {
                     "name": "code_coding_system",
                     "path": "system",
                     "type": "string",
                 },
-                {"name": "code_coding_code", "path": "code", "type": "string"},
+                {
+                    "name": "code_coding_code",
+                    "path": "code",
+                    "type": "string",
+                },
                 {
                     "name": "code_coding_display",
                     "path": "display",

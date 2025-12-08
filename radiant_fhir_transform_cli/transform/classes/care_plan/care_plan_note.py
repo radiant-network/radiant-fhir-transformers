@@ -9,18 +9,35 @@ VIEW_DEFINITION = {
     "resource": "CarePlan",
     "name": "care_plan_note",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "care_plan_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "care_plan_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "note",
+            "forEachOrNull": "note",
             "column": [
-                {"name": "note_text", "path": "text", "type": "string"},
+                {
+                    "name": "note_text",
+                    "path": "text",
+                    "type": "string",
+                },
                 {
                     "name": "note_author_string",
                     "path": "authorString",
@@ -41,7 +58,11 @@ VIEW_DEFINITION = {
                     "path": "authorReference.type",
                     "type": "string",
                 },
-                {"name": "note_time", "path": "time", "type": "dateTime"},
+                {
+                    "name": "note_time",
+                    "path": "time",
+                    "type": "dateTime",
+                },
             ],
         },
     ],

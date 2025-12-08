@@ -11,13 +11,14 @@ from .body_structure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "body_structure_id": "tumor",
         "identifier_use": None,
         "identifier_type_text": None,
         "identifier_system": "http://goodhealth.org/bodystructure/identifiers",
         "identifier_value": "12345",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "13cc0c6c-a660-468b-a2de-4ed8a8cf6484",
+        "body_structure_id": "tumor",
     },
 ]
 

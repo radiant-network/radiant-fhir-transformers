@@ -9,22 +9,35 @@ VIEW_DEFINITION = {
     "resource": "ServiceRequest",
     "name": "service_request_instantiates_uri",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "service_request_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "service_request_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "instantiatesUri",
+            "forEachOrNull": "instantiatesUri",
             "column": [
                 {
                     "name": "instantiates_uri_value",
                     "path": "value",
                     "type": "string",
-                }
+                },
             ],
         },
     ],

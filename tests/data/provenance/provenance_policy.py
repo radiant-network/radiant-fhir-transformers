@@ -11,9 +11,10 @@ from .provenance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "provenance_id": "provenance",
         "policy": "http://acme.com/fhir/Consent/25",
-    }
+        "id": "3814272c-3305-46f3-9b74-b24ba2643fc4",
+        "provenance_id": "provenance",
+    },
 ]
 
 

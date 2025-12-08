@@ -11,8 +11,9 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "effective_timing_repeat_day_of_week": "mon",
+        "id": "9b70e991-b07f-4dd8-8b4f-6fb8e47d3069",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

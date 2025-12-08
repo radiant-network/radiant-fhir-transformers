@@ -11,11 +11,12 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
         "supporting_information_reference": "DiagnosticReport/ultrasound",
         "supporting_information_type": None,
         "supporting_information_display": None,
-    }
+        "id": "90a076b5-50b8-4279-8ebf-8117fb9eeced",
+        "appointment_id": "example",
+    },
 ]
 
 

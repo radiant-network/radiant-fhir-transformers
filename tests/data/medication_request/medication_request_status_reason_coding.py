@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "status_reason_coding_system": "http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason",
         "status_reason_coding_code": "altchoice",
         "status_reason_coding_display": "Try another treatment first",
-    }
+        "id": "4d27c3a8-98a8-4d27-b800-4be671540ba0",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

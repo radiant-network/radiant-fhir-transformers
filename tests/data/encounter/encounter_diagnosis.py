@@ -10,34 +10,28 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
+        "diagnosis_use_coding_system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+        "diagnosis_use_coding_code": "AD",
+        "diagnosis_use_coding_display": "Admission diagnosis",
         "diagnosis_condition_reference": "Condition/stroke",
         "diagnosis_condition_type": None,
         "diagnosis_condition_display": None,
-        "diagnosis_use_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
-                "code": "AD",
-                "display": "Admission diagnosis",
-            }
-        ],
         "diagnosis_use_text": None,
         "diagnosis_rank": 1,
+        "id": "595cfae4-8e97-4273-96a2-ee18e3154009",
+        "encounter_id": "f203",
     },
     {
-        "encounter_id": "f203",
+        "diagnosis_use_coding_system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+        "diagnosis_use_coding_code": "DD",
+        "diagnosis_use_coding_display": "Discharge diagnosis",
         "diagnosis_condition_reference": "Condition/f201",
         "diagnosis_condition_type": None,
         "diagnosis_condition_display": None,
-        "diagnosis_use_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
-                "code": "DD",
-                "display": "Discharge diagnosis",
-            }
-        ],
         "diagnosis_use_text": None,
         "diagnosis_rank": None,
+        "id": "f212aad7-6cdc-4ad9-a554-adac30ccf789",
+        "encounter_id": "f203",
     },
 ]
 

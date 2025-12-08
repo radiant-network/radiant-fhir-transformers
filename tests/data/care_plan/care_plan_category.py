@@ -11,9 +11,10 @@ from .care_plan import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "care_plan_id": "preg",
         "category_coding": None,
         "category_text": "Weight management plan",
+        "id": "3f328cb2-75b4-4b99-80a6-38dd7b12b7ed",
+        "care_plan_id": "preg",
     },
 ]
 

@@ -11,10 +11,11 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
         "route_coding_system": "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
         "route_coding_code": "IM",
         "route_coding_display": "Injection, intramuscular",
+        "id": "f90ab5cf-b616-4c81-bd2d-78aaed709b96",
+        "immunization_id": "example",
     },
 ]
 

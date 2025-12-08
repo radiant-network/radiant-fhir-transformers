@@ -11,11 +11,12 @@ from .medication_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_id": "med0301",
         "identifier_use": "usual",
         "identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.2.698288",
         "identifier_value": "21279",
-    }
+        "id": "f7e3884a-ad1e-4378-ae31-c0a6125e9493",
+        "medication_id": "med0301",
+    },
 ]
 
 

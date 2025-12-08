@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Appointment",
     "name": "appointment_participant",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "appointment_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "appointment_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "participant",
+            "forEachOrNull": "participant",
             "column": [
-                {
-                    "name": "participant_type",
-                    "path": "type",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "participant_actor_reference",
                     "path": "actor.reference",
@@ -60,6 +67,18 @@ VIEW_DEFINITION = {
                     "name": "participant_period_end",
                     "path": "period.end",
                     "type": "dateTime",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "type",
+                    "column": [
+                        {
+                            "name": "participant_type",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

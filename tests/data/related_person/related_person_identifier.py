@@ -11,13 +11,14 @@ from .related_person_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "related_person_id": "benedicte",
         "identifier_use": "usual",
         "identifier_type_text": "INSEE",
         "identifier_system": "urn:oid:1.2.250.1.61",
         "identifier_value": "272117510400399",
         "identifier_period_start": None,
         "identifier_period_end": None,
+        "id": "17f3809c-df24-4e13-8176-252a8cedbcba",
+        "related_person_id": "benedicte",
     },
 ]
 

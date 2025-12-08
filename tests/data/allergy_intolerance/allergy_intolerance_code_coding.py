@@ -11,10 +11,11 @@ from .allergy_intolerance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "allergy_intolerance_id": "example_ai",
         "code_coding_system": "http://snomed.info/sct",
         "code_coding_code": "227493005",
         "code_coding_display": "Cashew nuts",
+        "id": "04eb3a47-73eb-4eb7-9a1c-a4473fa4f5e6",
+        "allergy_intolerance_id": "example_ai",
     },
 ]
 

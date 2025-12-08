@@ -11,22 +11,16 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "evidence_detail_reference": "Observation/f202",
+        "evidence_detail_display": "Temperature",
+        "evidence_code_coding": {
+            "system": "http://snomed.info/sct",
+            "code": "258710007",
+            "display": "degrees C",
+        },
+        "id": "6dbe2b45-1ad1-4338-8087-fd3a387af9ef",
         "condition_id": "f201",
-        "evidence_code": [
-            {
-                "coding": [
-                    {
-                        "system": "http://snomed.info/sct",
-                        "code": "258710007",
-                        "display": "degrees C",
-                    }
-                ]
-            }
-        ],
-        "evidence_detail": [
-            {"reference": "Observation/f202", "display": "Temperature"}
-        ],
-    }
+    },
 ]
 
 

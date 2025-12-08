@@ -9,24 +9,47 @@ VIEW_DEFINITION = {
     "resource": "ServiceRequest",
     "name": "service_request_order_detail",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "service_request_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "service_request_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "orderDetail",
+            "forEachOrNull": "orderDetail",
             "column": [
                 {
-                    "name": "order_detail_coding",
-                    "path": "coding",
+                    "name": "order_detail_text",
+                    "path": "text",
                     "type": "string",
-                    "collection": True,
                 },
-                {"name": "order_detail_text", "path": "text", "type": "string"},
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "coding",
+                    "column": [
+                        {
+                            "name": "order_detail_coding",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

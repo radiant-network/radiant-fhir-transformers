@@ -9,44 +9,96 @@ VIEW_DEFINITION = {
     "resource": "Condition",
     "name": "condition_stage",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "condition_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "condition_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "stage",
+            "forEachOrNull": "stage",
             "column": [
-                {
-                    "name": "stage_summary_coding",
-                    "path": "summary.coding",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "stage_summary_text",
                     "path": "summary.text",
                     "type": "string",
                 },
                 {
-                    "name": "stage_assessment",
-                    "path": "assessment",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
-                    "name": "stage_type_coding",
-                    "path": "type.coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
                     "name": "stage_type_text",
                     "path": "type.text",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "assessment",
+                    "column": [
+                        {
+                            "name": "stage_assessment_reference",
+                            "path": "reference",
+                            "type": "string",
+                        },
+                        {
+                            "name": "stage_assessment_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "summary.coding",
+                    "column": [
+                        {
+                            "name": "stage_summary_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "stage_summary_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "stage_summary_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "type.coding",
+                    "column": [
+                        {
+                            "name": "stage_type_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "stage_type_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "stage_type_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

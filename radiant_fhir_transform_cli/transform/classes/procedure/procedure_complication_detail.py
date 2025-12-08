@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Procedure",
     "name": "procedure_complication_detail",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "procedure_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "procedure_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "complicationDetail",
+            "forEachOrNull": "complicationDetail",
             "column": [
                 {
                     "name": "complication_detail_reference",

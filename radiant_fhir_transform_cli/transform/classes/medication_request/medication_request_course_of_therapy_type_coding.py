@@ -9,20 +9,29 @@ VIEW_DEFINITION = {
     "resource": "MedicationRequest",
     "name": "medication_request_course_of_therapy_type_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "medication_request_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
-            "forEach": "courseOfTherapyType.coding",
+            "forEachOrNull": "courseOfTherapyType.coding",
             "column": [
                 {
                     "name": "course_of_therapy_type_coding_system",

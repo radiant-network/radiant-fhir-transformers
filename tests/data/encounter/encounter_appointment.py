@@ -10,11 +10,12 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
         "appointment_reference": "Appointment/example",
         "appointment_type": None,
         "appointment_display": None,
-    }
+        "id": "f64a34d5-5770-465a-a81a-cb3b33d9fcd9",
+        "encounter_id": "f203",
+    },
 ]
 
 

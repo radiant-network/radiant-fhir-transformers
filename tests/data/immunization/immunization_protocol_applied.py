@@ -11,46 +11,36 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
+        "protocol_applied_target_disease_coding": {
+            "system": "http://snomed.info/sct",
+            "code": "40468003",
+        },
         "protocol_applied_series": "2-dose",
         "protocol_applied_authority_reference": None,
         "protocol_applied_authority_type": None,
         "protocol_applied_authority_display": None,
-        "protocol_applied_target_disease": [
-            {
-                "coding": [
-                    {
-                        "system": "http://snomed.info/sct",
-                        "code": "40468003",
-                    }
-                ]
-            }
-        ],
         "protocol_applied_dose_number_positive_int": 1,
         "protocol_applied_dose_number_string": None,
         "protocol_applied_series_doses_positive_int": None,
         "protocol_applied_series_doses_string": None,
+        "id": "f0809a34-4b6b-4a45-b7d3-a4fee39dbaa2",
+        "immunization_id": "example",
     },
     {
-        "immunization_id": "example",
+        "protocol_applied_target_disease_coding": {
+            "system": "http://snomed.info/sct",
+            "code": "66071002",
+        },
         "protocol_applied_series": "3-dose",
         "protocol_applied_authority_reference": None,
         "protocol_applied_authority_type": None,
         "protocol_applied_authority_display": None,
-        "protocol_applied_target_disease": [
-            {
-                "coding": [
-                    {
-                        "system": "http://snomed.info/sct",
-                        "code": "66071002",
-                    }
-                ]
-            }
-        ],
         "protocol_applied_dose_number_positive_int": 2,
         "protocol_applied_dose_number_string": None,
         "protocol_applied_series_doses_positive_int": None,
         "protocol_applied_series_doses_string": None,
+        "id": "6e8ccfc1-c0bd-446b-b260-c64db3c41a4c",
+        "immunization_id": "example",
     },
 ]
 

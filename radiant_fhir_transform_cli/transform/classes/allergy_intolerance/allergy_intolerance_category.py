@@ -9,21 +9,36 @@ VIEW_DEFINITION = {
     "resource": "AllergyIntolerance",
     "name": "allergy_intolerance_category",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "allergy_intolerance_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
-            "forEach": "category",
-            "column": [{"name": "category", "path": "$this", "type": "string"}],
+            "forEachOrNull": "category",
+            "column": [
+                {
+                    "name": "category",
+                    "path": "$this",
+                    "type": "string",
+                },
+            ],
         },
     ],
 }

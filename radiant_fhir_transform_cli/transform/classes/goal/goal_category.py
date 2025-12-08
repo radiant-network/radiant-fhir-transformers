@@ -9,24 +9,52 @@ VIEW_DEFINITION = {
     "resource": "Goal",
     "name": "goal_category",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "goal_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "goal_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "category",
+            "forEachOrNull": "category",
             "column": [
                 {
-                    "name": "category_coding",
-                    "path": "coding",
+                    "name": "category_text",
+                    "path": "text",
                     "type": "string",
-                    "collection": True,
                 },
-                {"name": "category_text", "path": "text", "type": "string"},
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "coding",
+                    "column": [
+                        {
+                            "name": "category_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "category_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

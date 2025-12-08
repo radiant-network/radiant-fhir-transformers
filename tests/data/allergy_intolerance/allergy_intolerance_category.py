@@ -9,7 +9,13 @@ from tests.data.base import FhirResourceTestHelper
 
 from .allergy_intolerance_resource import RESOURCE
 
-EXPECTED_OUTPUT = [{"allergy_intolerance_id": "example_ai", "category": "food"}]
+EXPECTED_OUTPUT = [
+    {
+        "category": "food",
+        "id": "edbc7300-fe00-4900-b96b-17ea12e78b95",
+        "allergy_intolerance_id": "example_ai",
+    },
+]
 
 
 class AllergyIntoleranceCategoryTestHelper(FhirResourceTestHelper):

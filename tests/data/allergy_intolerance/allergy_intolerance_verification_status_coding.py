@@ -11,10 +11,11 @@ from .allergy_intolerance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "allergy_intolerance_id": "example_ai",
         "verification_status_coding_system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
         "verification_status_coding_code": "confirmed",
         "verification_status_coding_display": "Confirmed",
+        "id": "3ccebc6c-0fb6-468d-b4c5-96acfb1269fc",
+        "allergy_intolerance_id": "example_ai",
     },
 ]
 

@@ -11,16 +11,18 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
+        "extension_url": "http://open.epic.com/FHIR/StructureDefinition/extension/template-id",
         "extension_value_identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.2.77777",
         "extension_value_identifier_value": "887",
-        "extension_url": "http://open.epic.com/FHIR/StructureDefinition/extension/template-id",
+        "id": "5e91870a-b7bb-4695-bae4-e2411914f0f7",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
+        "extension_url": "http://open.epic.com/FHIR/StructureDefinition/extension/template-id",
         "extension_value_identifier_system": "urn:oid:1.2.840.114350.1.13.20.3.7.2.707684",
         "extension_value_identifier_value": "555",
-        "extension_url": "http://open.epic.com/FHIR/StructureDefinition/extension/template-id",
+        "id": "1b39954e-35ca-41b4-a87d-673e94c84015",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

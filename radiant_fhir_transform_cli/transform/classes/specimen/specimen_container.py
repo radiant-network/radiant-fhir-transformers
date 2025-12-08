@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Specimen",
     "name": "specimen_container",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "specimen_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "specimen_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "container",
+            "forEachOrNull": "container",
             "column": [
-                {
-                    "name": "container_identifier",
-                    "path": "identifier",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "container_description",
                     "path": "description",
@@ -105,6 +112,18 @@ VIEW_DEFINITION = {
                     "name": "container_specimen_additive_reference_type",
                     "path": "specimen.additiveReference.type",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "identifier",
+                    "column": [
+                        {
+                            "name": "container_identifier_value",
+                            "path": "value",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

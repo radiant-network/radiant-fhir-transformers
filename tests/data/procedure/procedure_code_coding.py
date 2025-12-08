@@ -11,11 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
         "code_coding_system": "http://snomed.info/sct",
         "code_coding_code": "367336001",
         "code_coding_display": "Chemotherapy",
-    }
+        "id": "87fbc387-e1b1-4cfc-8d30-06627593d52f",
+        "procedure_id": "f201",
+    },
 ]
 
 

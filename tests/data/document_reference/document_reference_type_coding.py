@@ -11,28 +11,32 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "type_coding_system": "urn:oid:1.2.840.114350.1.13.5325.1.7.4.737880.5010",
         "type_coding_code": "1",
         "type_coding_display": "Progress Notes",
+        "id": "a4261d5f-9c10-4f22-801b-04b1409ccdcb",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "type_coding_system": "urn:oid:1.2.840.114350.1.72.727879.69848980",
         "type_coding_code": "1",
         "type_coding_display": "Progress Notes",
+        "id": "dff63f35-368f-46cb-a223-ada363b7cfb3",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "type_coding_system": "http://loinc.org",
         "type_coding_code": "11506-3",
         "type_coding_display": "Progress note",
+        "id": "4d28b69c-7afa-4973-815e-7d1012f4609a",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
     {
-        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
         "type_coding_system": "http://loinc.org",
         "type_coding_code": "75492-9",
         "type_coding_display": "Risk assessment and screening note",
+        "id": "3026e1eb-1b42-4a6e-bc57-efa0b2a539ce",
+        "document_reference_id": "eGTI41.Isi638FTkMSoEA47L5.WtT25eJ-zlSghkBD543",
     },
 ]
 

@@ -9,31 +9,46 @@ VIEW_DEFINITION = {
     "resource": "DocumentReference",
     "name": "document_reference_security_label",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "document_reference_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
-            "forEach": "securityLabel",
+            "forEachOrNull": "securityLabel",
             "column": [
-                {
-                    "name": "security_label_coding",
-                    "path": "coding",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "security_label_text",
                     "path": "text",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "coding",
+                    "column": [
+                        {
+                            "name": "security_label_coding",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

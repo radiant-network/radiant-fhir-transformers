@@ -9,27 +9,40 @@ VIEW_DEFINITION = {
     "resource": "MedicationRequest",
     "name": "medication_request_based_on",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
                 {
                     "name": "medication_request_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
-            "forEach": "basedOn",
+            "forEachOrNull": "basedOn",
             "column": [
                 {
                     "name": "based_on_reference",
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "based_on_type", "path": "type", "type": "string"},
+                {
+                    "name": "based_on_type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "based_on_display",
                     "path": "display",

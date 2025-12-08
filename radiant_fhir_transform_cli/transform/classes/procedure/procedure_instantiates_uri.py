@@ -9,18 +9,35 @@ VIEW_DEFINITION = {
     "resource": "Procedure",
     "name": "procedure_instantiates_uri",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "procedure_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "procedure_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "instantiatesUri",
+            "forEachOrNull": "instantiatesUri",
             "column": [
-                {"name": "instantiates_uri", "path": "$this", "type": "string"}
+                {
+                    "name": "instantiates_uri",
+                    "path": "$this",
+                    "type": "string",
+                },
             ],
         },
     ],

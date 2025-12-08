@@ -11,11 +11,12 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
-        "performer_reference": "1832473e-2fe0-452d-abe9-3cdb9879522f",
-        "performer_type": None,
+        "performer_reference": "Organization/1832473e-2fe0-452d-abe9-3cdb9879522f",
         "performer_display": "Acme Laboratory, Inc",
-    }
+        "performer_type": None,
+        "id": "e2e1852a-4392-4467-8abb-c699f4c21f12",
+        "diagnostic_report_id": "101",
+    },
 ]
 
 

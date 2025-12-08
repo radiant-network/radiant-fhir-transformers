@@ -11,22 +11,24 @@ from .organization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "organization_id": "2.16.840.1.113883.19.5",
         "telecom_system": "phone",
         "telecom_value": "215-590-3326",
         "telecom_use": "work",
         "telecom_rank": None,
         "telecom_period_start": None,
         "telecom_period_end": None,
+        "id": "3d5d922f-5f2a-4e6b-8dad-2e262d34e8f4",
+        "organization_id": "2.16.840.1.113883.19.5",
     },
     {
-        "organization_id": "2.16.840.1.113883.19.5",
         "telecom_system": "fax",
         "telecom_value": "215-590-3606",
         "telecom_use": "work",
         "telecom_rank": None,
         "telecom_period_start": None,
         "telecom_period_end": None,
+        "id": "e2d6ff09-a5f1-410d-838f-235b16ee9140",
+        "organization_id": "2.16.840.1.113883.19.5",
     },
 ]
 

@@ -11,16 +11,15 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
-        "conclusion_code_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "428763004",
-                "display": "Bacteremia due to staphylococcus",
-            }
-        ],
+        "conclusion_code_coding": {
+            "system": "http://snomed.info/sct",
+            "code": "428763004",
+            "display": "Bacteremia due to staphylococcus",
+        },
         "conclusion_code_text": None,
-    }
+        "id": "6b3d717e-dc5f-466e-ae67-9556455195f6",
+        "diagnostic_report_id": "101",
+    },
 ]
 
 

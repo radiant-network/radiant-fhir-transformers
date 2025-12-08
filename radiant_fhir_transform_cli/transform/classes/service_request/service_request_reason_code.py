@@ -9,23 +9,57 @@ VIEW_DEFINITION = {
     "resource": "ServiceRequest",
     "name": "service_request_reason_code",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "service_request_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "service_request_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "reasonCode",
+            "forEachOrNull": "reasonCode",
             "column": [
                 {
-                    "name": "reason_code_coding",
-                    "path": "coding",
-                    "collection": True,
+                    "name": "reason_code_text",
+                    "path": "text",
+                    "type": "string",
                 },
-                {"name": "reason_code_text", "path": "text", "type": "string"},
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "coding",
+                    "column": [
+                        {
+                            "name": "reason_code_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "readon_code_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "reason_code_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

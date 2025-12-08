@@ -17,7 +17,7 @@ EXPECTED_OUTPUT = [
         "intent": "plan",
         "title": None,
         "description": None,
-        "subject_reference": "1",
+        "subject_reference": "Patient/1",
         "subject_display": "Eve Everywoman",
         "subject_type": None,
         "encounter_reference": None,
@@ -27,8 +27,8 @@ EXPECTED_OUTPUT = [
         "period_end": "2013-10-01",
         "created": None,
         "author_reference": None,
-        "author_display": None,
         "author_type": None,
+        "author_display": None,
     },
 ]
 

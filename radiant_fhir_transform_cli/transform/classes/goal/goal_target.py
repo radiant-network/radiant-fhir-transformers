@@ -9,23 +9,30 @@ VIEW_DEFINITION = {
     "resource": "Goal",
     "name": "goal_target",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "goal_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "goal_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "target",
+            "forEachOrNull": "target",
             "column": [
-                {
-                    "name": "target_measure_coding",
-                    "path": "measure.coding",
-                    "type": "string",
-                    "collection": True,
-                },
                 {
                     "name": "target_measure_text",
                     "path": "measure.text",
@@ -195,6 +202,28 @@ VIEW_DEFINITION = {
                     "name": "target_due_duration_code",
                     "path": "dueDuration.code",
                     "type": "string",
+                },
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "measure.coding",
+                    "column": [
+                        {
+                            "name": "target_measure_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "target_measure_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "target_measure_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
                 },
             ],
         },

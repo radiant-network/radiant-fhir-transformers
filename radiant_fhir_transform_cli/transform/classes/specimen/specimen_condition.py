@@ -9,24 +9,57 @@ VIEW_DEFINITION = {
     "resource": "Specimen",
     "name": "specimen_condition",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "specimen_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "specimen_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "condition",
+            "forEachOrNull": "condition",
             "column": [
                 {
-                    "name": "condition_coding",
-                    "path": "coding",
+                    "name": "condition_text",
+                    "path": "text",
                     "type": "string",
-                    "collection": True,
                 },
-                {"name": "condition_text", "path": "text", "type": "string"},
+            ],
+            "select": [
+                {
+                    "forEachOrNull": "coding",
+                    "column": [
+                        {
+                            "name": "condition_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "condition_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "condition_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
             ],
         },
     ],

@@ -10,10 +10,19 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id"},
-                {"name": "resource_type", "path": "resourceType"},
-                {"name": "json", "path": "$this"},
-            ]
+                {
+                    "name": "id",
+                    "path": "id",
+                },
+                {
+                    "name": "resource_type",
+                    "path": "resourceType",
+                },
+                {
+                    "name": "json",
+                    "path": "$this",
+                },
+            ],
         },
     ],
 }

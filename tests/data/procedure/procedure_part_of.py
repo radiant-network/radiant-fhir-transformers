@@ -11,10 +11,11 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
-        "part_of_reference": "part-of-referenced-event",
+        "part_of_reference": "Procedure/part-of-referenced-event",
         "part_of_type": None,
         "part_of_display": "Part of referenced event",
+        "id": "25405367-bdc1-421b-a4a9-81e88420a0e5",
+        "procedure_id": "f201",
     },
 ]
 

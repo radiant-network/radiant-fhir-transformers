@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Specimen",
     "name": "specimen_collection_fasting_status_codeable_concept_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "specimen_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "specimen_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "collection.fastingStatusCodeableConcept.coding",
+            "forEachOrNull": "collection.fastingStatusCodeableConcept.coding",
             "column": [
                 {
                     "name": "collection_fasting_status_codeable_concept_coding_system",

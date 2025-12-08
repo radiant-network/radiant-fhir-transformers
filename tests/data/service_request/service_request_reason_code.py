@@ -11,16 +11,13 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
-        "reason_code_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "90831000119105",
-                "display": "Check for metastatic disease",
-            }
-        ],
+        "id": "e6462139-3e68-48fd-9c3c-c685c946710c",
+        "readon_code_coding_code": "90831000119105",
+        "reason_code_coding_display": "Check for metastatic disease",
+        "reason_code_coding_system": "sct",
         "reason_code_text": "Check for metastatic disease",
-    },
+        "service_request_id": "di_abcd_efg",
+    }
 ]
 
 

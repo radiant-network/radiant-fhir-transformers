@@ -9,23 +9,40 @@ VIEW_DEFINITION = {
     "resource": "Consent",
     "name": "consent_performer",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "consent_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "consent_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "performer",
+            "forEachOrNull": "performer",
             "column": [
                 {
                     "name": "performer_reference",
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "performer_type", "path": "type", "type": "string"},
+                {
+                    "name": "performer_type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "performer_display",
                     "path": "display",

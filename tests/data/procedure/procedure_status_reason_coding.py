@@ -11,11 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
         "status_reason_coding_system": "http://snomed.info/sct",
         "status_reason_coding_code": "182992009",
         "status_reason_coding_display": "Treatment completed (situation)",
-    }
+        "id": "40b5a39e-edc9-4758-8fb0-15f51974c823",
+        "procedure_id": "f201",
+    },
 ]
 
 

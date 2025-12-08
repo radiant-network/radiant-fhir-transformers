@@ -11,13 +11,14 @@ from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "appointment_id": "example",
-        "identifier_value": "123",
         "identifier_use": None,
         "identifier_system": "http://example.org/sampleappointment-identifier",
+        "identifier_value": "123",
+        "identifier_type_text": None,
         "identifier_period_start": None,
         "identifier_period_end": None,
-        "identifier_type_text": None,
+        "id": "08554ea5-1c2d-4c39-8245-964ed0b2cd22",
+        "appointment_id": "example",
     },
 ]
 

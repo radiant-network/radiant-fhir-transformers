@@ -11,9 +11,10 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "category_text": "Requests for medications in inpatient or acute care settings",
-    }
+        "id": "e222f750-97de-47ee-a598-10d62858f1f6",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

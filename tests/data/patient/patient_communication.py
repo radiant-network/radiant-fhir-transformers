@@ -11,16 +11,13 @@ from .patient import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
-        "communication_language_coding": [
-            {
-                "system": "urn:ietf:bcp:47",
-                "code": "en",
-                "display": "English",
-            }
-        ],
+        "communication_language_coding_system": "urn:ietf:bcp:47",
+        "communication_language_coding_code": "en",
+        "communication_language_coding_display": "English",
         "communication_language_text": "English",
         "communication_preferred": True,
+        "id": "8673008d-c032-4378-be94-a3a53da1d009",
+        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
 ]
 

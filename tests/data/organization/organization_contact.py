@@ -11,13 +11,10 @@ from .organization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "organization_id": "2.16.840.1.113883.19.5",
-        "contact_purpose_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/contactentity-type",
-                "code": "PRESS",
-            }
-        ],
+        "contact_telecom_system": "phone",
+        "contact_telecom_value": "022-655 2334",
+        "contact_purpose_coding_system": "http://terminology.hl7.org/CodeSystem/contactentity-type",
+        "contact_purpose_coding_code": "PRESS",
         "contact_purpose_text": None,
         "contact_name_use": None,
         "contact_name_text": None,
@@ -27,7 +24,6 @@ EXPECTED_OUTPUT = [
         "contact_name_suffix": None,
         "contact_name_period_start": None,
         "contact_name_period_end": None,
-        "contact_telecom": [{"system": "phone", "value": "022-655 2334"}],
         "contact_address_use": None,
         "contact_address_type": None,
         "contact_address_text": None,
@@ -39,15 +35,14 @@ EXPECTED_OUTPUT = [
         "contact_address_country": None,
         "contact_address_period_start": None,
         "contact_address_period_end": None,
+        "id": "ee421ad6-74f7-4099-88b2-2c9028b21946",
+        "organization_id": "2.16.840.1.113883.19.5",
     },
     {
-        "organization_id": "2.16.840.1.113883.19.5",
-        "contact_purpose_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/contactentity-type",
-                "code": "PATINF",
-            }
-        ],
+        "contact_telecom_system": "phone",
+        "contact_telecom_value": "022-655 2335",
+        "contact_purpose_coding_system": "http://terminology.hl7.org/CodeSystem/contactentity-type",
+        "contact_purpose_coding_code": "PATINF",
         "contact_purpose_text": None,
         "contact_name_use": None,
         "contact_name_text": None,
@@ -57,7 +52,6 @@ EXPECTED_OUTPUT = [
         "contact_name_suffix": None,
         "contact_name_period_start": None,
         "contact_name_period_end": None,
-        "contact_telecom": [{"system": "phone", "value": "022-655 2335"}],
         "contact_address_use": None,
         "contact_address_type": None,
         "contact_address_text": None,
@@ -69,6 +63,8 @@ EXPECTED_OUTPUT = [
         "contact_address_country": None,
         "contact_address_period_start": None,
         "contact_address_period_end": None,
+        "id": "6311491a-43b3-4c31-b83f-4bea14bef167",
+        "organization_id": "2.16.840.1.113883.19.5",
     },
 ]
 

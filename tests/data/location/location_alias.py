@@ -10,7 +10,11 @@ from tests.data.base import FhirResourceTestHelper
 from .location_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
-    {"location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819", "alias": "KNU"},
+    {
+        "alias": "KNU",
+        "id": "a98dd81d-33bc-4f2d-ae09-a30f514178f0",
+        "location_id": "3ad0687e-f477-468c-afd5-fcc2bf897819",
+    },
 ]
 
 

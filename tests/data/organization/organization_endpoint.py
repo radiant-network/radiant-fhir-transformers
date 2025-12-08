@@ -11,10 +11,11 @@ from .organization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "organization_id": "2.16.840.1.113883.19.5",
-        "endpoint_reference": "endpoint",
+        "endpoint_reference": "Endpoint/endpoint",
         "endpoint_type": None,
         "endpoint_display": None,
+        "id": "8e0a5178-563a-4ee4-afba-b8ec6a58b24c",
+        "organization_id": "2.16.840.1.113883.19.5",
     },
 ]
 

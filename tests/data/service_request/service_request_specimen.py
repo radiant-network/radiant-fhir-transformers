@@ -11,10 +11,11 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
         "specimen_reference": "#serum",
         "specimen_display": "Serum specimen",
         "specimen_type": None,
+        "id": "bc6b64a5-609b-401e-9d06-c71848b4ec2b",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

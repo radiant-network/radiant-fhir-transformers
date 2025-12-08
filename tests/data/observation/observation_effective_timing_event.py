@@ -11,8 +11,9 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "effective_timing_event": "2024-01-29T16:46:00Z",
+        "id": "d34f8bca-ea18-42cb-b4a2-e3cc87b3b59d",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

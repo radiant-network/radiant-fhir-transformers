@@ -9,19 +9,40 @@ VIEW_DEFINITION = {
     "resource": "Condition",
     "name": "condition_note",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "condition_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "condition_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "note",
+            "forEachOrNull": "note",
             "column": [
-                {"name": "note_text", "path": "text", "type": "string"},
-                {"name": "note_time", "path": "time", "type": "dateTime"},
+                {
+                    "name": "note_text",
+                    "path": "text",
+                    "type": "string",
+                },
+                {
+                    "name": "note_time",
+                    "path": "time",
+                    "type": "dateTime",
+                },
                 {
                     "name": "note_author_reference_reference",
                     "path": "authorReference.reference",

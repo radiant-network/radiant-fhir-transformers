@@ -11,10 +11,11 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "goal_id": "example",
         "description_coding_system": "http://snomed.info/sct",
         "description_coding_code": "243862009",
         "description_coding_display": "Obesity monitoring status (finding)",
+        "id": "32c04cab-6697-466c-945b-d7c1e7ac8c3f",
+        "goal_id": "example",
     },
 ]
 

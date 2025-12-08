@@ -11,11 +11,12 @@ from .list_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "list_id": "med-list",
         "ordered_by_coding_system": "http://terminology.hl7.org/CodeSystem/list-order",
         "ordered_by_coding_code": "entry-date",
         "ordered_by_coding_display": None,
-    }
+        "id": "03090095-1656-4fe3-adc5-ff6c43becfb2",
+        "list_id": "med-list",
+    },
 ]
 
 

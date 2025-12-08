@@ -10,11 +10,12 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "encounter_id": "f203",
         "account_reference": "Account/example",
         "account_type": None,
         "account_display": None,
-    }
+        "id": "bf04b48d-c79c-4b92-ae78-3467102e82c7",
+        "encounter_id": "f203",
+    },
 ]
 
 

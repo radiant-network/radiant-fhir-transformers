@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "ServiceRequest",
     "name": "service_request_insurance",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "service_request_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "service_request_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "insurance",
+            "forEachOrNull": "insurance",
             "column": [
                 {
                     "name": "insurance_reference",
@@ -30,7 +43,11 @@ VIEW_DEFINITION = {
                     "path": "display",
                     "type": "string",
                 },
-                {"name": "insurance_type", "path": "type", "type": "string"},
+                {
+                    "name": "insurance_type",
+                    "path": "type",
+                    "type": "string",
+                },
             ],
         },
     ],

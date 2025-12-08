@@ -11,10 +11,11 @@ from .request_group_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "request_group_id": "kdn5-example",
-        "replaces_reference": "request-group",
+        "replaces_reference": "RequestGroup/request-group",
         "replaces_type": None,
         "replaces_display": None,
+        "id": "8b634468-2f2d-423d-aa1f-bbfde633186f",
+        "request_group_id": "kdn5-example",
     },
 ]
 

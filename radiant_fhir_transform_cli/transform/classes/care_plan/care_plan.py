@@ -12,15 +12,31 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
-                {"name": "intent", "path": "intent", "type": "string"},
-                {"name": "title", "path": "title", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "intent",
+                    "path": "intent",
+                    "type": "string",
+                },
+                {
+                    "name": "title",
+                    "path": "title",
+                    "type": "string",
+                },
                 {
                     "name": "description",
                     "path": "description",
@@ -66,7 +82,11 @@ VIEW_DEFINITION = {
                     "path": "period.end",
                     "type": "dateTime",
                 },
-                {"name": "created", "path": "created", "type": "dateTime"},
+                {
+                    "name": "created",
+                    "path": "created",
+                    "type": "dateTime",
+                },
                 {
                     "name": "author_reference",
                     "path": "author.reference",
@@ -82,8 +102,8 @@ VIEW_DEFINITION = {
                     "path": "author.display",
                     "type": "string",
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

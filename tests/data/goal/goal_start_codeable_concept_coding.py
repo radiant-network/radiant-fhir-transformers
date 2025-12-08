@@ -11,10 +11,11 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "goal_id": "example",
         "start_codeable_concept_coding_system": "http://snomed.info/sct",
         "start_codeable_concept_coding_code": "414260005",
         "start_codeable_concept_coding_display": "First outpatient appointment date (finding)",
+        "id": "ca27f81c-e740-48bb-b89e-362f68996e97",
+        "goal_id": "example",
     },
 ]
 

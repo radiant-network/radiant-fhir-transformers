@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "Patient",
     "name": "patient_general_practitioner",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "patient_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "patient_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "generalPractitioner",
+            "forEachOrNull": "generalPractitioner",
             "column": [
                 {
                     "name": "general_practitioner_reference",

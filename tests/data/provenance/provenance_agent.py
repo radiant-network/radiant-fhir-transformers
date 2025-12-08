@@ -11,13 +11,8 @@ from .provenance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "provenance_id": "provenance",
-        "agent_type_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                "code": "AUT",
-            }
-        ],
+        "agent_type_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+        "agent_type_coding_code": "AUT",
         "agent_type_text": None,
         "agent_role": None,
         "agent_who_reference": "Practitioner/author",
@@ -26,15 +21,12 @@ EXPECTED_OUTPUT = [
         "agent_on_behalf_of_reference": None,
         "agent_on_behalf_of_type": None,
         "agent_on_behalf_of_display": None,
+        "id": "cbd448ba-18a2-41f2-b70d-897b9904e53a",
+        "provenance_id": "provenance",
     },
     {
-        "provenance_id": "provenance",
-        "agent_type_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                "code": "DEV",
-            }
-        ],
+        "agent_type_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+        "agent_type_coding_code": "DEV",
         "agent_type_text": None,
         "agent_role": None,
         "agent_who_reference": "Device/device",
@@ -43,6 +35,8 @@ EXPECTED_OUTPUT = [
         "agent_on_behalf_of_reference": None,
         "agent_on_behalf_of_type": None,
         "agent_on_behalf_of_display": None,
+        "id": "979c4ab6-8dac-43ac-8628-5a6e2334032a",
+        "provenance_id": "provenance",
     },
 ]
 

@@ -11,15 +11,12 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "goal_id": "example",
-        "outcome_code_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "262285001",
-                "display": "Weight decreased (finding)",
-            }
-        ],
+        "outcome_code_coding_system": "http://snomed.info/sct",
+        "outcome_code_coding_code": "262285001",
+        "outcome_code_coding_display": "Weight decreased (finding)",
         "outcome_code_text": None,
+        "id": "11d90d26-1670-48c7-aa14-35c7cc832424",
+        "goal_id": "example",
     },
 ]
 

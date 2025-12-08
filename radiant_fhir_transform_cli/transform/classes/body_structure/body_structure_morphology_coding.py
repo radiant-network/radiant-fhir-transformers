@@ -9,16 +9,29 @@ VIEW_DEFINITION = {
     "resource": "BodyStructure",
     "name": "body_structure_morphology_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "body_structure_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "body_structure_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "morphology.coding",
+            "forEachOrNull": "morphology.coding",
             "column": [
                 {
                     "name": "morphology_coding_system",

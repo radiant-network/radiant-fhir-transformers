@@ -18,7 +18,7 @@ EXPECTED_OUTPUT = [
         "class_display": "inpatient encounter",
         "service_type_text": "test",
         "priority_text": None,
-        "subject_reference": "f201",
+        "subject_reference": "Patient/f201",
         "subject_type": None,
         "subject_display": "Roel",
         "period_start": "2013-03-11",
@@ -28,13 +28,13 @@ EXPECTED_OUTPUT = [
         "length_unit": None,
         "length_system": None,
         "length_code": None,
-        "service_provider_reference": "2",
+        "service_provider_reference": "Organization/2",
         "service_provider_type": None,
         "service_provider_display": None,
-        "part_of_reference": "f203",
+        "part_of_reference": "Encounter/f203",
         "part_of_type": None,
         "part_of_display": None,
-    }
+    },
 ]
 
 

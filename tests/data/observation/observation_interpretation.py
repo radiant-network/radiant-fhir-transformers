@@ -11,15 +11,12 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "interpretation_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-                "code": "NEG",
-                "display": "Negative",
-            }
-        ],
+        "interpretation_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+        "interpretation_coding_code": "NEG",
+        "interpretation_coding_display": "Negative",
         "interpretation_text": None,
+        "id": "d567996a-7fe2-4ad1-ba7f-fdcd7eb14e4b",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

@@ -11,10 +11,11 @@ from .coverage_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "coverage_id": "9876B1",
-        "contract_reference": "INS-101",
+        "contract_reference": "Contract/INS-101",
         "contract_type": None,
         "contract_display": None,
+        "id": "963f460b-bb76-4a47-bd14-8bf2db08ca3a",
+        "coverage_id": "9876B1",
     },
 ]
 

@@ -11,10 +11,11 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "has_member_reference": "questionnaire-response",
+        "has_member_reference": "QuestionnaireResponse/questionnaire-response",
         "has_member_type": None,
         "has_member_display": None,
+        "id": "a6bc49dd-b051-4e5a-8bbb-e1473aad9418",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 

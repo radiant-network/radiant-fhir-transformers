@@ -11,11 +11,12 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "medication_request_id": "medrx0301",
         "course_of_therapy_type_coding_system": "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
         "course_of_therapy_type_coding_code": "acute",
         "course_of_therapy_type_coding_display": "Short course (acute) therapy",
-    }
+        "id": "2fcaa376-131c-43ab-83e5-6a00e60bcebf",
+        "medication_request_id": "medrx0301",
+    },
 ]
 
 

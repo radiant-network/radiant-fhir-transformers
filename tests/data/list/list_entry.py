@@ -11,36 +11,30 @@ from .list_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "list_id": "med-list",
-        "entry_flag_coding": [
-            {
-                "system": "http://nehta.gov.au/codes/medications/changetype",
-                "code": "01",
-                "display": "Prescribed",
-            }
-        ],
+        "entry_flag_coding_system": "http://nehta.gov.au/codes/medications/changetype",
+        "entry_flag_coding_code": "01",
+        "entry_flag_coding_display": "Prescribed",
         "entry_flag_text": None,
         "entry_deleted": False,
         "entry_date": None,
         "entry_item_reference": "#fmh-1",
         "entry_item_type": None,
         "entry_item_display": "hydroxocobalamin",
+        "id": "a82090ca-ea1c-4a57-a3c4-e50d3a3565e3",
+        "list_id": "med-list",
     },
     {
-        "list_id": "med-list",
-        "entry_flag_coding": [
-            {
-                "system": "http://nehta.gov.au/codes/medications/changetype",
-                "code": "02",
-                "display": "Cancelled",
-            }
-        ],
+        "entry_flag_coding_system": "http://nehta.gov.au/codes/medications/changetype",
+        "entry_flag_coding_code": "02",
+        "entry_flag_coding_display": "Cancelled",
         "entry_flag_text": None,
         "entry_deleted": True,
         "entry_date": None,
         "entry_item_reference": "#fmh-2",
         "entry_item_type": None,
         "entry_item_display": "Morphine Sulfate",
+        "id": "164974aa-513a-47b4-a45a-3d17f45f0a52",
+        "list_id": "med-list",
     },
 ]
 

@@ -9,23 +9,40 @@ VIEW_DEFINITION = {
     "resource": "Encounter",
     "name": "encounter_appointment",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [
+        {
+            "name": "id_uuid",
+            "valueString": "uuid()",
+        },
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
-                {"name": "encounter_id", "path": "id", "type": "string"},
-            ]
+                {
+                    "name": "id",
+                    "path": "%id_uuid",
+                    "type": "string",
+                },
+                {
+                    "name": "encounter_id",
+                    "path": "id",
+                    "type": "string",
+                },
+            ],
         },
         {
-            "forEach": "appointment",
+            "forEachOrNull": "appointment",
             "column": [
                 {
                     "name": "appointment_reference",
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "appointment_type", "path": "type", "type": "string"},
+                {
+                    "name": "appointment_type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "appointment_display",
                     "path": "display",

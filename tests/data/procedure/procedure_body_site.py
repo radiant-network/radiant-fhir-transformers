@@ -11,15 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
-        "body_site_coding": [
-            {
-                "system": "http://snomed.info/sct",
-                "code": "272676008",
-                "display": "Sphenoid bone",
-            }
-        ],
+        "body_site_coding_system": "http://snomed.info/sct",
+        "body_site_coding_code": "272676008",
+        "body_site_coding_display": "Sphenoid bone",
         "body_site_text": None,
+        "id": "6382bbfc-c4d3-47f7-90b7-58c554005049",
+        "procedure_id": "f201",
     },
 ]
 

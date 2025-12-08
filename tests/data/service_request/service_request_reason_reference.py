@@ -11,10 +11,11 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "service_request_id": "di_abcd_efg",
         "reason_reference_reference": None,
         "reason_reference_display": "Patient has a spinal fracture",
         "reason_reference_type": None,
+        "id": "d382ef18-e8b9-4978-9c70-1dd6e91f45ea",
+        "service_request_id": "di_abcd_efg",
     },
 ]
 

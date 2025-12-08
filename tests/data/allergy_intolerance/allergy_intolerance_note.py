@@ -11,13 +11,14 @@ from .allergy_intolerance import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "allergy_intolerance_id": "example_ai",
         "note_text": "The criticality is high becasue of the observed anaphylactic reaction when challenged with cashew extract.",
         "note_author_string": "Doctor J",
         "note_author_reference_reference": None,
         "note_author_reference_display": None,
         "note_author_reference_type": None,
         "note_time": "2014-02-14",
+        "id": "7fdce468-1e04-4088-8df8-b8d23ff8a3f3",
+        "allergy_intolerance_id": "example_ai",
     },
 ]
 

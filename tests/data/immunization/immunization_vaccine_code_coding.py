@@ -11,10 +11,11 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
         "vaccine_code_coding_system": "urn:oid:1.2.36.1.2001.1005.17",
         "vaccine_code_coding_code": "FLUVAX",
         "vaccine_code_coding_display": None,
+        "id": "9f6665a3-51d7-49e7-a34c-74875f9e82b1",
+        "immunization_id": "example",
     },
 ]
 

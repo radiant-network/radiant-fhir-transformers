@@ -12,14 +12,26 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
-                {"name": "scope_text", "path": "scope.text", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
+                {
+                    "name": "scope_text",
+                    "path": "scope.text",
+                    "type": "string",
+                },
                 {
                     "name": "patient_reference",
                     "path": "patient.reference",
@@ -35,7 +47,11 @@ VIEW_DEFINITION = {
                     "path": "patient.display",
                     "type": "string",
                 },
-                {"name": "date_time", "path": "dateTime", "type": "dateTime"},
+                {
+                    "name": "date_time",
+                    "path": "dateTime",
+                    "type": "dateTime",
+                },
                 {
                     "name": "source_attachment_content_type",
                     "path": "sourceAttachment.contentType",
@@ -111,14 +127,38 @@ VIEW_DEFINITION = {
                     "path": "provision.dataPeriod.end",
                     "type": "dateTime",
                 },
+            ],
+            "select": [
                 {
-                    "name": "provision_provision",
-                    "path": "provision.provision",
-                    "type": "string",
-                    "collection": True,
+                    "forEachOrNull": "provision.provision",
+                    "column": [
+                        {
+                            "name": "provision_provision_type",
+                            "path": "type",
+                            "type": "string",
+                        },
+                        {
+                            "name": "provision_provision_actor",
+                            "path": "actor",
+                            "type": "string",
+                            "collection": True,
+                        },
+                        {
+                            "name": "provision_provision_class",
+                            "path": "class",
+                            "type": "string",
+                            "collection": True,
+                        },
+                        {
+                            "name": "provision_provision_code",
+                            "path": "code",
+                            "type": "string",
+                            "collection": True,
+                        },
+                    ],
                 },
-            ]
-        }
+            ],
+        },
     ],
 }
 

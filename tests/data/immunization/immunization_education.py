@@ -11,11 +11,12 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "immunization_id": "example",
         "education_document_type": "253088698300010311120702",
         "education_reference": None,
         "education_publication_date": "2012-07-02",
         "education_presentation_date": "2013-01-10",
+        "id": "7f8cb2a0-0937-4080-a36d-ed7702b16619",
+        "immunization_id": "example",
     },
 ]
 

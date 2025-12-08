@@ -11,11 +11,12 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "procedure_id": "f201",
         "category_coding_system": "http://snomed.info/sct",
         "category_coding_code": "103693007",
         "category_coding_display": "Diagnostic procedure",
-    }
+        "id": "ee8d5408-99ba-46bd-9589-e2c1e45c4a9f",
+        "procedure_id": "f201",
+    },
 ]
 
 

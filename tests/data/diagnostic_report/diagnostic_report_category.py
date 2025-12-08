@@ -11,15 +11,14 @@ from .diagnostic_report_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "diagnostic_report_id": "101",
-        "category_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
-                "code": "HM",
-            }
-        ],
+        "category_coding": {
+            "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+            "code": "HM",
+        },
         "category_text": None,
-    }
+        "id": "80a136b9-8426-4bbc-a99b-f78704462d7a",
+        "diagnostic_report_id": "101",
+    },
 ]
 
 

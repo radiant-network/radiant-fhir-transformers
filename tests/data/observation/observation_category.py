@@ -11,25 +11,20 @@ from .observation_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "category_coding": [
-            {
-                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                "code": "laboratory",
-                "display": "Laboratory",
-            }
-        ],
+        "category_coding_system": "http://terminology.hl7.org/CodeSystem/observation-category",
+        "category_coding_code": "laboratory",
+        "category_coding_display": "Laboratory",
         "category_text": "Laboratory",
+        "id": "1acf4ec3-f950-42d7-b959-86dc3e345713",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
     {
-        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
-        "category_coding": [
-            {
-                "system": "urn:oid:1.2.840.114350.1.13.20.3.7.10.798268.30",
-                "code": "lab",
-            }
-        ],
+        "category_coding_system": "urn:oid:1.2.840.114350.1.13.20.3.7.10.798268.30",
+        "category_coding_code": "lab",
+        "category_coding_display": None,
         "category_text": "Lab",
+        "id": "720bc2b1-f7a1-4285-b447-f4d84819ae5a",
+        "observation_id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
     },
 ]
 
