@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.7.0
+
+### Summary
+
+- Emojis: ♻️ x1
+- Categories: Additions x1
+
+### New features and changes
+
+- [#99](https://github.com/radiant-network/radiant-fhir-transformers/pull/99) - ♻️ Modify ViewDefs to eliminate most lists - [de2b39c3](https://github.com/radiant-network/radiant-fhir-transformers/commit/de2b39c35082062c18cda3c9b8363c9d1dd54b73) by [znatty22](https://github.com/znatty22)
+
+
 ## Release 1.6.0
 
 ### Summary
