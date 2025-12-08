@@ -113,7 +113,7 @@ VIEW_DEFINITION = {
                 {
                     "name": "quantity_value",
                     "path": "quantity.value",
-                    "type": "string",
+                    "type": "decimal",
                 },
                 {
                     "name": "quantity_unit",
@@ -133,7 +133,7 @@ VIEW_DEFINITION = {
                 {
                     "name": "days_supply_value",
                     "path": "daysSupply.value",
-                    "type": "string",
+                    "type": "decimal",
                 },
                 {
                     "name": "days_supply_unit",

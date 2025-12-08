@@ -147,7 +147,7 @@ VIEW_DEFINITION = {
                 {
                     "name": "dosage_instruction_timing_repeat_period",
                     "path": "timing.repeat.period",
-                    "type": "string",
+                    "type": "decimal",
                 },
                 {
                     "name": "dosage_instruction_timing_repeat_period_max",
