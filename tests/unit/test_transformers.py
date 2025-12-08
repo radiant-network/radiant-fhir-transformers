@@ -113,15 +113,15 @@ def test_transformers(test_helper_cls):
     df_actual = df_actual[sorted(df_actual.columns)]
     df_expected = df_expected[sorted(df_expected.columns)]
 
-    # Remove id from subtype can't compare to uuid
-    if resource_subtype:
-        df_actual = df_actual.drop(columns=["id"])
-        df_expected = df_expected.drop(columns=["id"])
-
     print("********* Actual")
     pprint(df_actual.to_dict(orient="records"))
     print("********* Expected")
     pprint(df_expected.to_dict(orient="records"))
+
+    # Remove id from subtype can't compare to uuid
+    if resource_subtype:
+        df_actual = df_actual.drop(columns=["id"])
+        df_expected = df_expected.drop(columns=["id"])
 
     # Compare
     pd.testing.assert_frame_equal(

@@ -11,20 +11,19 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "stage_assessment": [
-            {"display": "MEDULLOBLASTOMA DIAGNOSIS", "reference": "foo"}
-        ],
-        "stage_summary_coding": [
-            {"code": "14803004", "display": "Temporary", "system": "sct"}
-        ],
-        "stage_summary_text": "Temporary",
-        "stage_type_coding": [
-            {"code": "14803004", "display": "Temporary", "system": "sct"}
-        ],
-        "stage_type_text": None,
-        "id": "c38a8a62-315f-4957-83b8-d70604ec1c9b",
         "condition_id": "f201",
-    },
+        "stage_assessment_display": "MEDULLOBLASTOMA DIAGNOSIS",
+        "stage_assessment_reference": "foo",
+        "stage_summary_coding_code": "14803004",
+        "stage_summary_coding_display": "Temporary",
+        "stage_summary_coding_system": "sct",
+        "stage_summary_text": "Temporary",
+        "stage_type_coding_code": "14803004",
+        "stage_type_coding_display": "Temporary",
+        "stage_type_coding_system": "sct",
+        "stage_type_text": None,
+        "id": "8bd1d458-b657-426a-9788-dad78479ab63",
+    }
 ]
 
 
