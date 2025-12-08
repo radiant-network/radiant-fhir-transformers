@@ -10,6 +10,7 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "id": None,
         "medication_dispense_id": "meddisp001",
         "dosage_instruction_sequence": 1,
         "dosage_instruction_text": "500mg IV q6h x 3 days",

@@ -3,7 +3,6 @@ Test helper class for FHIR resource type MedicationDispense subtype Type Coding
 """
 
 from radiant_fhir_transform_cli.transform.classes.medication_dispense import (
-    MedicationDispenseSubstitutionTypeCodingTransformer,
     MedicationDispenseTypeCodingTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
@@ -12,6 +11,7 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "id": None,
         "medication_dispense_id": "meddisp001",
         "type_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
         "type_coding_code": "EM",

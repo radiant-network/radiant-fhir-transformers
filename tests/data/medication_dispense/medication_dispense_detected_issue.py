@@ -10,6 +10,7 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "id": None,
         "medication_dispense_id": "meddisp001",
         "detected_issue_reference": "DetectedIssue/allergy",
         "detected_issue_type": None,

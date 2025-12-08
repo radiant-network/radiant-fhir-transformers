@@ -11,6 +11,7 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "id": None,
         "medication_dispense_id": "meddisp001",
         "substitution_type_coding_system": "http://terminology.hl7.org/CodeSystem/medicationdispense-category",
         "substitution_type_coding_code": "inpatient",

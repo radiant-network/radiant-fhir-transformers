@@ -10,6 +10,7 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "id": None,
         "medication_dispense_id": "meddisp001",
         "performer_actor_reference": "Practitioner/f006",
         "performer_actor_type": None,

@@ -11,6 +11,7 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "id": None,
         "medication_dispense_id": "meddisp001",
         "medication_codeable_concept_coding_system": "http://hl7.org/fhir/sid/ndc",
         "medication_codeable_concept_coding_code": "76388-713-25",

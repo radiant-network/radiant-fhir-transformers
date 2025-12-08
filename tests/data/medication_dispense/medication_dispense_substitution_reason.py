@@ -11,6 +11,7 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "id": None,
         "medication_dispense_id": "meddisp001",
         "substitution_reason_text": "Patient allergic to penicillin",
     }

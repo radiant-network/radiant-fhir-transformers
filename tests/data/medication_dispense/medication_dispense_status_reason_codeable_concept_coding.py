@@ -11,6 +11,7 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "id": None,
         "medication_dispense_id": "meddisp001",
         "status_reason_codeable_concept_coding_system": "http://terminology.hl7.org/CodeSystem/medicationdispense-status-reason",
         "status_reason_codeable_concept_coding_code": "refused",
