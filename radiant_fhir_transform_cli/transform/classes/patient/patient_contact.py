@@ -164,14 +164,31 @@ VIEW_DEFINITION = {
                     "forEachOrNull": "relationship",
                     "column": [
                         {
-                            "name": "contact_relationship_coding",
-                            "path": "coding",
-                            "type": "string",
-                        },
-                        {
                             "name": "contact_relationship_text",
                             "path": "text",
                             "type": "string",
+                        },
+                    ],
+                    "select": [
+                        {
+                            "forEachOrNull": "coding",
+                            "column": [
+                                {
+                                    "name": "contact_relationship_coding_system",
+                                    "path": "system",
+                                    "type": "string",
+                                },
+                                {
+                                    "name": "contact_relationship_coding_code",
+                                    "path": "code",
+                                    "type": "string",
+                                },
+                                {
+                                    "name": "contact_relationship_coding_display",
+                                    "path": "display",
+                                    "type": "string",
+                                },
+                            ],
                         },
                     ],
                 },
