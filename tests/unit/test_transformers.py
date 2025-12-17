@@ -132,6 +132,7 @@ def test_transformers(test_helper_cls):
                 "hash_md5",
                 "size_bytes",
                 "last_processed",
+                "status",
             ],
             inplace=True,
             errors="ignore",
@@ -215,6 +216,7 @@ def test_raw_fhir_transformer():
         "hash_md5",
         "size_bytes",
         "last_processed",
+        "status",
         "id",
         "resource_type",
         "json",
@@ -235,6 +237,7 @@ def test_raw_fhir_transformer():
             "org_short_code",
             "registry_short_code",
             "last_processed",
+            "status",
         ]
     )
     payload_str = json.dumps(

@@ -30,6 +30,10 @@ VIEW_DEFINITION = {
             "name": "hash_md5",
             "valueString": "",
         },
+        {
+            "name": "status",
+            "valueString": "",
+        },
     ],
     "select": [
         {
@@ -61,6 +65,10 @@ VIEW_DEFINITION = {
                 {
                     "name": "hash_md5",
                     "path": "%hash_md5",
+                },
+                {
+                    "name": "status",
+                    "path": "%status",
                 },
                 {
                     "name": "json",
