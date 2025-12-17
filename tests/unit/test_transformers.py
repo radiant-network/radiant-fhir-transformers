@@ -17,6 +17,8 @@ Tests include:
 
 """
 
+import json
+import hashlib
 from pprint import pprint
 
 import pandas as pd
@@ -27,6 +29,9 @@ from radiant_fhir_transform_cli.transform.classes.observation import (
 )
 from radiant_fhir_transform_cli.transform.classes.patient.patient_address import (
     PatientAddressTransformer,
+)
+from radiant_fhir_transform_cli.transform.classes.raw_fhir import (
+    RawFhirResourceTransformer,
 )
 from tests.data import test_helpers
 
@@ -118,6 +123,20 @@ def test_transformers(test_helper_cls):
     print("********* Expected")
     pprint(df_expected.to_dict(orient="records"))
 
+    # Remove columns that we don't need
+    for df in [df_actual, df_expected]:
+        df.drop(
+            columns=[
+                "org_short_code",
+                "registry_short_code",
+                "hash_md5",
+                "size_bytes",
+                "last_processed",
+            ],
+            inplace=True,
+            errors="ignore",
+        )
+
     # Remove id from subtype can't compare to uuid
     if resource_subtype:
         df_actual = df_actual.drop(columns=["id"])
@@ -182,9 +201,54 @@ def test_transformers_with_empty_rows():
     assert len(out) == 1
 
 
+def test_raw_fhir_transformer():
+    """
+    Test cols function to verify correct columns and computed values are
+    returned
+    """
+
+    transformer = RawFhirResourceTransformer()
+
+    expected_cols = [
+        "org_short_code",
+        "registry_short_code",
+        "hash_md5",
+        "size_bytes",
+        "last_processed",
+        "id",
+        "resource_type",
+        "json",
+    ]
+
+    column_metadata = transformer.column_metadata()
+    assert len(expected_cols) == len(column_metadata)
+    assert sorted(expected_cols) == sorted(
+        [meta.name for meta in column_metadata]
+    )
+
+    patient = {"id": "p1", "resourceType": "Patient"}
+    rows = transformer.transform_resources([patient])
+    assert len(rows) == 1
+    assert all(
+        rows[0][c] == ""
+        for c in [
+            "org_short_code",
+            "registry_short_code",
+            "last_processed",
+        ]
+    )
+    payload_str = json.dumps(
+        rows[0]["json"], sort_keys=True, separators=(",", ":")
+    )
+    payload_bytes = payload_str.encode("utf-8")
+    assert str(len(payload_bytes)) == rows[0]["size_bytes"]
+    payload_hash = hashlib.md5(payload_bytes).hexdigest()
+    assert rows[0]["hash_md5"] == payload_hash
+
+
 def test_transformers_cols():
     """
-    Test cols function to verify correct cols are return'd
+    Test cols function to verify correct columns are returned
     """
 
     transformer = PatientAddressTransformer()
@@ -205,7 +269,8 @@ def test_transformers_cols():
         "address_period_end",
     ]
 
-    assert len(expected_cols) == len(transformer.column_metadata())
+    column_metadata = transformer.column_metadata()
+    assert len(expected_cols) == len(column_metadata)
     assert sorted(expected_cols) == sorted(
-        [meta.name for meta in transformer.column_metadata()]
+        [meta.name for meta in column_metadata]
     )
