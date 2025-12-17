@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.8.1
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#113](https://github.com/radiant-network/radiant-fhir-transformers/pull/113) -  :sparkles: Add status col to fhir_resources table - [f322e340](https://github.com/radiant-network/radiant-fhir-transformers/commit/f322e340f6219e2c79d07059cac74606340b2a35) by [znatty22](https://github.com/znatty22)
+
+
 ## Release 1.8.0
 
 ### Summary
