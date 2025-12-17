@@ -1,5 +1,19 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.8.0
+
+### Summary
+
+- Emojis: ✨ x2, ? x1
+- Categories: Additions x2, Other Changes x1
+
+### New features and changes
+
+- [#111](https://github.com/radiant-network/radiant-fhir-transformers/pull/111) - ✨ Add and populate new columns in raw_fhir table - [9aed62b2](https://github.com/radiant-network/radiant-fhir-transformers/commit/9aed62b2489596d158aa36dd34805ba67bbbf4c6) by [znatty22](https://github.com/znatty22)
+- [#110](https://github.com/radiant-network/radiant-fhir-transformers/pull/110) -  :bug: Fix patient_contact transformer - [dc6d25c1](https://github.com/radiant-network/radiant-fhir-transformers/commit/dc6d25c10ec2511fd0628cd0c0c3d040e0ef336a) by [znatty22](https://github.com/znatty22)
+- [#90](https://github.com/radiant-network/radiant-fhir-transformers/pull/90) - ✨ Add MedicationDispense Transformers - [76fb5ef5](https://github.com/radiant-network/radiant-fhir-transformers/commit/76fb5ef5189e6ec398559893ee0f89d6149f31ce) by [awarkow](https://github.com/awarkow)
+
+
 ## Release 1.7.0
 
 ### Summary
