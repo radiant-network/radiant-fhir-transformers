@@ -1,8 +1,7 @@
-import json
 import hashlib
-from typing import Any, Tuple, override
-
+import json
 from collections import defaultdict
+from typing import Any, override
 
 from .base import FhirResourceTransformer
 
@@ -84,9 +83,7 @@ class RawFhirResourceTransformer(FhirResourceTransformer):
     def __init__(self):
         super().__init__("fhir_resource", None, VIEW_DEFINITION)
 
-    def _compute_payload_hash_and_size(
-        self, resource: dict[str, Any]
-    ) -> Tuple[str, int]:
+    def _compute_payload_hash_and_size(self, payload_str: str) -> tuple[str, int]:
         """
         Compute both the MD5 hash and the byte size of the FHIR
         resource payload.
@@ -104,10 +101,6 @@ class RawFhirResourceTransformer(FhirResourceTransformer):
             A tuple of:
                 (payload_hash: str, payload_size_bytes: int)
         """
-        # Canonical JSON serialization
-        payload_str = json.dumps(
-            resource, sort_keys=True, separators=(",", ":")
-        )
         payload_bytes = payload_str.encode("utf-8")
 
         # Compute SHA-256 hash
@@ -119,9 +112,7 @@ class RawFhirResourceTransformer(FhirResourceTransformer):
         return payload_hash, payload_size
 
     @override
-    def transform_resources(
-        self, resources: list[dict]
-    ) -> list[dict[str, Any]]:
+    def transform_resources(self, resources: list[dict]) -> list[dict[str, Any]]:
         resources_by_type = defaultdict(list)
         for resource in resources:
             resources_by_type[resource["resourceType"]].append(resource)
@@ -133,11 +124,14 @@ class RawFhirResourceTransformer(FhirResourceTransformer):
 
         updated_rows = []
         for row in output:
-            hash_value, size_bytes = self._compute_payload_hash_and_size(
-                row["json"]
+            # Canonical JSON serialization
+            payload_str = json.dumps(
+                row["json"], default=str, sort_keys=True, separators=(",", ":")
             )
+            hash_value, size_bytes = self._compute_payload_hash_and_size(payload_str)
             row["hash_md5"] = hash_value
             row["size_bytes"] = str(size_bytes)
+            row["json"] = payload_str
             updated_rows.append(row)
 
         return updated_rows
