@@ -56,6 +56,4 @@ VIEW_DEFINITION = {
 
 class MedicationRequestReasonReferenceTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "MedicationRequest", "reason_reference", VIEW_DEFINITION
-        )
+        super().__init__("MedicationRequest", "reason_reference", VIEW_DEFINITION)

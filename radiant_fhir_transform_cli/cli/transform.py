@@ -31,8 +31,7 @@ logger = logging.getLogger(__name__)
     "--resource-type",
     required=True,
     type=click.Choice(list(transformers.keys())),
-    help="Type of resource in the input file (e.g. Patient, Specimen) to "
-    "transform",
+    help="Type of resource in the input file (e.g. Patient, Specimen) to " "transform",
 )
 def transform(
     resource_type: str,
@@ -77,15 +76,11 @@ def transform(
             elif input_filepath.endswith(".json"):
                 rows = transformer.transform_from_json(input_filepath)
             else:
-                raise click.BadParameter(
-                    "❌ Input files may only be JSON or NDJSON files"
-                )
+                raise click.BadParameter("❌ Input files may only be JSON or NDJSON files")
 
             # Write to csv
             transformer.write_to_csv(rows, output_filepath)
-            logger.info(
-                "Wrote %s results to %s", str(rt.__name__), output_filepath
-            )
+            logger.info("Wrote %s results to %s", str(rt.__name__), output_filepath)
 
     except Exception as e:
         logger.exception("❌ Failed to transform FHIR JSON data to csv!")

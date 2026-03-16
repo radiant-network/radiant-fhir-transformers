@@ -27,11 +27,7 @@ def timestamp() -> str:
     else:
         utc_offset_sec = time.timezone
     utc_offset = datetime.timedelta(seconds=-utc_offset_sec)
-    t = (
-        datetime.datetime.now()
-        .replace(tzinfo=datetime.timezone(offset=utc_offset))
-        .isoformat()
-    )
+    t = datetime.datetime.now().replace(tzinfo=datetime.timezone(offset=utc_offset)).isoformat()
 
     return str(t)
 
@@ -42,9 +38,7 @@ def is_localhost(url: str) -> bool:
     """
     url = url.strip("/")
     host = urlparse(url).netloc.split(":")[0]
-    return (host in LOCAL_HOSTS) or (
-        any([url.startswith(h) for h in LOCAL_HOSTS])
-    )
+    return (host in LOCAL_HOSTS) or (any([url.startswith(h) for h in LOCAL_HOSTS]))
 
 
 def delete_safety_check(url: str, error_msg: str = None) -> None:

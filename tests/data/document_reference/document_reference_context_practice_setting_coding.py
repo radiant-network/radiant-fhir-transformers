@@ -20,9 +20,7 @@ EXPECTED_OUTPUT = [
 ]
 
 
-class DocumentReferenceContextPracticeSettingCodingTestHelper(
-    FhirResourceTestHelper
-):
+class DocumentReferenceContextPracticeSettingCodingTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'DocumentReference' resource.
 

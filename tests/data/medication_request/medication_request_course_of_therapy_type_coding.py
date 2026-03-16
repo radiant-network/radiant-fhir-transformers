@@ -20,9 +20,7 @@ EXPECTED_OUTPUT = [
 ]
 
 
-class MedicationRequestCourseOfTherapyTypeCodingTestHelper(
-    FhirResourceTestHelper
-):
+class MedicationRequestCourseOfTherapyTypeCodingTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'MedicationRequest' resource.
 

@@ -20,9 +20,7 @@ RESOURCE = {
             }
         ]
     },
-    "category": [
-        {"coding": [{"system": "http://loinc.org", "code": "59284-0"}]}
-    ],
+    "category": [{"coding": [{"system": "http://loinc.org", "code": "59284-0"}]}],
     "patient": {"reference": "Patient/f001", "display": "P. van de Heuvel"},
     "dateTime": "2016-05-11",
     "performer": [{"reference": "Patient/72"}],
@@ -97,9 +95,7 @@ RESOURCE = {
         "data": [
             {
                 "meaning": "authoredby",
-                "reference": {
-                    "reference": "DocumentReference/documentreference"
-                },
+                "reference": {"reference": "DocumentReference/documentreference"},
             }
         ],
         "provision": [
@@ -125,16 +121,8 @@ RESOURCE = {
                     }
                 ],
                 "code": [
-                    {
-                        "coding": [
-                            {"system": "http://loinc.org", "code": "34133-9"}
-                        ]
-                    },
-                    {
-                        "coding": [
-                            {"system": "http://loinc.org", "code": "18842-5"}
-                        ]
-                    },
+                    {"coding": [{"system": "http://loinc.org", "code": "34133-9"}]},
+                    {"coding": [{"system": "http://loinc.org", "code": "18842-5"}]},
                 ],
             }
         ],

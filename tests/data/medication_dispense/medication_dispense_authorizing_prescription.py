@@ -19,9 +19,7 @@ EXPECTED_OUTPUT = [
 ]
 
 
-class MedicationDispenseAuthorizingPrescriptionTestHelper(
-    FhirResourceTestHelper
-):
+class MedicationDispenseAuthorizingPrescriptionTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'MedicationDispense' resource.
 

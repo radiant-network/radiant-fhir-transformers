@@ -44,10 +44,6 @@ VIEW_DEFINITION = {
 }
 
 
-class MedicationRequestInstantiatesCanonicalTransformer(
-    FhirResourceTransformer
-):
+class MedicationRequestInstantiatesCanonicalTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "MedicationRequest", "instantiates_canonical", VIEW_DEFINITION
-        )
+        super().__init__("MedicationRequest", "instantiates_canonical", VIEW_DEFINITION)

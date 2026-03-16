@@ -56,6 +56,4 @@ VIEW_DEFINITION = {
 
 class DocumentReferenceContextRelatedTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "DocumentReference", "context_related", VIEW_DEFINITION
-        )
+        super().__init__("DocumentReference", "context_related", VIEW_DEFINITION)
