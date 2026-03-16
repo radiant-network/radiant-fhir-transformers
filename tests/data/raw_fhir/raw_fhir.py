@@ -7,13 +7,13 @@ from tests.data.base import FhirResourceTestHelper
 
 from .raw_fhir_resource import RESOURCE
 
-raw_fhir_str = json.dumps(RESOURCE)
+raw_fhir_str = json.dumps(RESOURCE, sort_keys=True, separators=(",", ":"))
 
 expected_output = [
     {
         "id": "fUru66DnsInJJFSK0eHsjU8K8GtyH6pkh0LeyaSldORw4",
         "resource_type": "Observation",
-        "json": RESOURCE,
+        "json": raw_fhir_str,
     }
 ]
 
