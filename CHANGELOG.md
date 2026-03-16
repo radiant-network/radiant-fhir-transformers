@@ -1,5 +1,18 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 1.9.0
+
+### Summary
+
+- Emojis: ? x2
+- Categories: Other Changes x2
+
+### New features and changes
+
+- [#116](https://github.com/radiant-network/radiant-fhir-transformers/pull/116) -  :rotating_light: Format files for new line length - [28a833fb](https://github.com/radiant-network/radiant-fhir-transformers/commit/28a833fb6af1cefe79cd22fb4dfb35c0bd6ae2b3) by [haynescd](https://github.com/haynescd)
+- [#115](https://github.com/radiant-network/radiant-fhir-transformers/pull/115) -  :bug: Handle JSON serialization (unknown types) like decimal and force json field to be serialized - [47e0642d](https://github.com/radiant-network/radiant-fhir-transformers/commit/47e0642d3ffebd7afe3d2ffcf22cbb2091243615) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 1.8.1
 
 ### Summary
