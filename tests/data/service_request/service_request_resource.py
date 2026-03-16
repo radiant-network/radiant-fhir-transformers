@@ -137,13 +137,9 @@ RESOURCE = {
         "display": "Judy Test",
     },
     "encounter": {"reference": "Encounter/example", "display": "1234encounter"},
-    "insurance": [
-        {"reference": "Coverage/abc-123", "display": "BCBS of Atlantis"}
-    ],
+    "insurance": [{"reference": "Coverage/abc-123", "display": "BCBS of Atlantis"}],
     "locationCode": [{"text": "Pediatrics"}],
-    "locationReference": [
-        {"reference": "Location/zyx-vut", "display": "The Pitt"}
-    ],
+    "locationReference": [{"reference": "Location/zyx-vut", "display": "The Pitt"}],
     "occurrenceDateTime": "2013-05-08T09:33:27+07:00",
     "occurrencePeriod": {
         "start": "2013-05-08",
@@ -213,9 +209,7 @@ RESOURCE = {
     "performer": [{"reference": "Practitioner/f202"}],
     "bodySite": [{"coding": [{"display": "Right arm"}], "text": "Right arm"}],
     "reasonReference": [{"display": "Patient has a spinal fracture"}],
-    "relevantHistory": [
-        {"reference": "#signature", "display": "Author's Signature"}
-    ],
+    "relevantHistory": [{"reference": "#signature", "display": "Author's Signature"}],
     "specimen": [{"reference": "#serum", "display": "Serum specimen"}],
     "supportingInfo": [{"reference": "#fasting", "display": "Fasting status"}],
     "patientInstruction": "Start with 30kg 10-15 repetitions for three sets and increase in increments of 5kg when you feel ready",

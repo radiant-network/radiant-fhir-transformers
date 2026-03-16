@@ -54,10 +54,6 @@ VIEW_DEFINITION = {
 }
 
 
-class MedicationRequestSupportingInformationTransformer(
-    FhirResourceTransformer
-):
+class MedicationRequestSupportingInformationTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "MedicationRequest", "supporting_information", VIEW_DEFINITION
-        )
+        super().__init__("MedicationRequest", "supporting_information", VIEW_DEFINITION)

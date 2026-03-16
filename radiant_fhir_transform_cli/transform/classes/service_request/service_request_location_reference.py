@@ -56,6 +56,4 @@ VIEW_DEFINITION = {
 
 class ServiceRequestLocationReferenceTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "ServiceRequest", "location_reference", VIEW_DEFINITION
-        )
+        super().__init__("ServiceRequest", "location_reference", VIEW_DEFINITION)

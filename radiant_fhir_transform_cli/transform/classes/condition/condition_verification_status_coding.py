@@ -56,6 +56,4 @@ VIEW_DEFINITION = {
 
 class ConditionVerificationStatusCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "Condition", "verification_status_coding", VIEW_DEFINITION
-        )
+        super().__init__("Condition", "verification_status_coding", VIEW_DEFINITION)

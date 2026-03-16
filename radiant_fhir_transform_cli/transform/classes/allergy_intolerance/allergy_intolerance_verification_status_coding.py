@@ -54,10 +54,6 @@ VIEW_DEFINITION = {
 }
 
 
-class AllergyIntoleranceVerificationStatusCodingTransformer(
-    FhirResourceTransformer
-):
+class AllergyIntoleranceVerificationStatusCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "AllergyIntolerance", "verification_status_coding", VIEW_DEFINITION
-        )
+        super().__init__("AllergyIntolerance", "verification_status_coding", VIEW_DEFINITION)

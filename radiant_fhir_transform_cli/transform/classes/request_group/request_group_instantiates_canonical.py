@@ -46,6 +46,4 @@ VIEW_DEFINITION = {
 
 class RequestGroupInstantiatesCanonicalTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "RequestGroup", "instantiates_canonical", VIEW_DEFINITION
-        )
+        super().__init__("RequestGroup", "instantiates_canonical", VIEW_DEFINITION)

@@ -56,6 +56,4 @@ VIEW_DEFINITION = {
 
 class SpecimenCollectionBodySiteCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "Specimen", "collection_body_site_coding", VIEW_DEFINITION
-        )
+        super().__init__("Specimen", "collection_body_site_coding", VIEW_DEFINITION)

@@ -56,6 +56,4 @@ VIEW_DEFINITION = {
 
 class ObservationEffectiveTimingCodeCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "Observation", "effective_timing_code_coding", VIEW_DEFINITION
-        )
+        super().__init__("Observation", "effective_timing_code_coding", VIEW_DEFINITION)

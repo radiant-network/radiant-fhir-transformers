@@ -56,6 +56,4 @@ VIEW_DEFINITION = {
 
 class ImmunizationStatusReasonCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "Immunization", "status_reason_coding", VIEW_DEFINITION
-        )
+        super().__init__("Immunization", "status_reason_coding", VIEW_DEFINITION)

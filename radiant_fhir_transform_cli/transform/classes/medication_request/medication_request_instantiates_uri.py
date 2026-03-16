@@ -46,6 +46,4 @@ VIEW_DEFINITION = {
 
 class MedicationRequestInstantiatesUriTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "MedicationRequest", "instantiates_uri", VIEW_DEFINITION
-        )
+        super().__init__("MedicationRequest", "instantiates_uri", VIEW_DEFINITION)

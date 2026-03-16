@@ -44,9 +44,7 @@ VIEW_DEFINITION = {
 }
 
 
-class ObservationEffectiveTimingRepeatTimeOfDayTransformer(
-    FhirResourceTransformer
-):
+class ObservationEffectiveTimingRepeatTimeOfDayTransformer(FhirResourceTransformer):
     def __init__(self):
         super().__init__(
             "Observation",

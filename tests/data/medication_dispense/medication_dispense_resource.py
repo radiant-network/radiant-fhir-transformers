@@ -78,9 +78,7 @@ RESOURCE = {
         {
             "sequence": 1,
             "text": "500mg IV q6h x 3 days",
-            "timing": {
-                "repeat": {"frequency": 1, "period": 6, "periodUnit": "h"}
-            },
+            "timing": {"repeat": {"frequency": 1, "period": 6, "periodUnit": "h"}},
             "route": {
                 "coding": [
                     {
@@ -145,7 +143,5 @@ RESOURCE = {
         "responsibleParty": [{"reference": "Practitioner/f007"}],
     },
     "detectedIssue": [{"reference": "DetectedIssue/allergy"}],
-    "eventHistory": [
-        {"reference": "#signature", "display": "Author's Signature"}
-    ],
+    "eventHistory": [{"reference": "#signature", "display": "Author's Signature"}],
 }

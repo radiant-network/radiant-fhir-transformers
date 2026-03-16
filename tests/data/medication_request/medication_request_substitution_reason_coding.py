@@ -20,9 +20,7 @@ EXPECTED_OUTPUT = [
 ]
 
 
-class MedicationRequestSubstitutionReasonCodingTestHelper(
-    FhirResourceTestHelper
-):
+class MedicationRequestSubstitutionReasonCodingTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'MedicationRequest' resource.
 

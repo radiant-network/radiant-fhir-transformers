@@ -22,9 +22,7 @@ RESOURCE = {
         ]
     },
     "vaccineCode": {
-        "coding": [
-            {"system": "urn:oid:1.2.36.1.2001.1005.17", "code": "FLUVAX"}
-        ],
+        "coding": [{"system": "urn:oid:1.2.36.1.2001.1005.17", "code": "FLUVAX"}],
         "text": "Fluvax (Influenza)",
     },
     "patient": {"reference": "Patient/example"},

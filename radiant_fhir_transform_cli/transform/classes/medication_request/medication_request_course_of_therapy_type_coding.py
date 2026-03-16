@@ -54,9 +54,7 @@ VIEW_DEFINITION = {
 }
 
 
-class MedicationRequestCourseOfTherapyTypeCodingTransformer(
-    FhirResourceTransformer
-):
+class MedicationRequestCourseOfTherapyTypeCodingTransformer(FhirResourceTransformer):
     def __init__(self):
         super().__init__(
             "MedicationRequest",

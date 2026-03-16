@@ -46,11 +46,7 @@ RESOURCE = {
             }
         ]
     },
-    "note": [
-        {
-            "text": "Both parents, both brothers and both children (twin) are still alive."
-        }
-    ],
+    "note": [{"text": "Both parents, both brothers and both children (twin) are still alive."}],
     "entry": [
         {
             "flag": {

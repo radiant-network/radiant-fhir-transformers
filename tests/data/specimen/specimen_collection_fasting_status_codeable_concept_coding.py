@@ -20,9 +20,7 @@ EXPECTED_OUTPUT = [
 ]
 
 
-class SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper(
-    FhirResourceTestHelper
-):
+class SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'Specimen' resource.
 
@@ -45,12 +43,8 @@ class SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper(
 
     resource_type = "Specimen"
     resource_subtype = "collection_fasting_status_codeable_concept_coding"
-    transformer = (
-        SpecimenCollectionFastingStatusCodeableConceptCodingTransformer
-    )
-    expected_table_name = (
-        "specimen_collection_fasting_status_codeable_concept_coding"
-    )
+    transformer = SpecimenCollectionFastingStatusCodeableConceptCodingTransformer
+    expected_table_name = "specimen_collection_fasting_status_codeable_concept_coding"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

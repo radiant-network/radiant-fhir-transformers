@@ -56,6 +56,4 @@ VIEW_DEFINITION = {
 
 class AppointmentAppointmentTypeCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "Appointment", "appointment_type_coding", VIEW_DEFINITION
-        )
+        super().__init__("Appointment", "appointment_type_coding", VIEW_DEFINITION)

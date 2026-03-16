@@ -56,6 +56,4 @@ VIEW_DEFINITION = {
 
 class DiagnosticReportResultsInterpreterTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "DiagnosticReport", "results_interpreter", VIEW_DEFINITION
-        )
+        super().__init__("DiagnosticReport", "results_interpreter", VIEW_DEFINITION)

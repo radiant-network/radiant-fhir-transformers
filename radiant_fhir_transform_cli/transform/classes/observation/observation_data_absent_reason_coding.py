@@ -56,6 +56,4 @@ VIEW_DEFINITION = {
 
 class ObservationDataAbsentReasonCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__(
-            "Observation", "data_absent_reason_coding", VIEW_DEFINITION
-        )
+        super().__init__("Observation", "data_absent_reason_coding", VIEW_DEFINITION)
