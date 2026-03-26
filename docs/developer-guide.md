@@ -1,5 +1,12 @@
 # 👨🏻‍💻 Developer Guide 
 
+If you are modifying existing views, authoring new ones, or updating the CLI wrapper:
+
+1. Refer to the official [SQL on FHIR v2 Specification](https://sql-on-fhir.org/ig/latest/) for
+advanced `ViewDefinition` syntax (like `unionAll` and `%rowIndex`).
+2. Run the local test suite via GitHub Actions locally or using `pytest` to ensure your views
+accurately flatten the FHIR graph without data loss.
+
 ## 🛠️ Setup Dev Environment
 
 ### Install Python
@@ -87,18 +94,67 @@ been implemented:
 ```python
 # radiant_fhir_transform_cli/transform/classes/patient.py
 
-TRANSFORM_DICT = {
-    "given_name": "name.where(use='official').given.first()",
-    "family_name": "name.where(use='official').family",
-    "active": "active",
-    "birth_date": "birthDate",
-    "gender": "gender",
+VIEW_DEFINITION = {
+    "resource": "Patient",
+    "name": "patient",
+    "status": "active",
+    "select": [
+        {
+            "column": [
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
+                {
+                    "name": "identifier_mrn",
+                    "path": "identifier.where(type.text = 'EPI').value",
+                    "type": "string",
+                },
+                {
+                    "name": "race",
+                    "path": "extension.where(url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-race').extension.where(url = 'text').valueString",
+                    "type": "string",
+                },
+                {
+                    "name": "ethnicity",
+                    "path": "extension.where(url = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity').extension.where(url = 'text').valueString",
+                    "type": "string",
+                },
+                {
+                    "name": "given_name",
+                    "path": "name.where(use='official').given.first()",
+                    "type": "string",
+                },
+                {
+                    "name": "family_name",
+                    "path": "name.where(use='official').family",
+                    "type": "string",
+                },
+                {
+                    "name": "active",
+                    "path": "active",
+                    "type": "string",
+                },
+                {
+                    "name": "birth_date",
+                    "path": "birthDate",
+                    "type": "string",
+                },
+                {
+                    "name": "gender",
+                    "path": "gender",
+                    "type": "string",
+                }
+            ],
+        },
+    ],
 }
-
 
 class PatientTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__("Patient", TRANSFORM_DICT)
+        super().__init__("Patient", None, VIEW_DEFINITION)
+
 ```
 
 ### Add to Imports
