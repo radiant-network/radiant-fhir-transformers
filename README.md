@@ -1,93 +1,82 @@
 # 🔥 Transform FHIR JSON to CSV
 
-This repository contains Python classes which use the
-[fhirpath-py](https://github.com/beda-software/fhirpath-py) library to
-transform FHIR JSON into CSV rows.
+Welcome to the **Radiant FHIR Transformers** repository. This project provides a scalable,
+standards-based Python pipeline for transforming raw, nested FHIR NDJSON into flat, tabular
+datasets (CSV) ready for analytics and machine learning workloads.
 
-A developer writes [FHIR Path expressions](https://www.hl7.org/fhir/fhirpath.html)
-to extract the value of a field from the JSON object. 
+## 🏗️ Architecture: SQL on FHIR (v2)
+
+This repository has been upgraded to implement the official **SQL on FHIR v2** standard. We no
+longer use custom Python dictionaries to define transformations. Instead, we use standard
+`ViewDefinition` JSON artifacts and evaluate them using the
+[SAS `sqlonfhir` Python engine](https://github.com/sassoftware/sqlonfhir).
+
+This architectural shift ensures:
+1. **Portability:** Our transformation schemas (`ViewDefinitions`) are decoupled from our Python
+code. They can be shared, versioned, and executed by any compliant runner.
+
+2. **Standardization:** We use official HL7 FHIRPath for extraction, unnesting arrays (`forEach`),
+and conditional filtering (`where`).
+
+3. **Pipeline Readiness:** The in-memory Python runner natively outputs flat dictionaries, making
+it trivial to convert to Pandas DataFrames or PySpark DataFrames for downstream processing in AWS
+(e.g., writing to S3 via EMR for Athena querying).
 
 ## 🏁 Quick Start
 
-### Define a Transformer
+### 1. Installation
 
-Define a transformer class in: `radiant_fhir_transform_cli/transform/classes`
+Ensure you have a modern Python environment (we recommend managing dependencies via Docker for consistency).
 
-This should fairly simple, as the only real implementation is the
-transform dictionary `transform_dict`:
-
-```python
-
-TRANSFORM_DICT = {
-    "given_name": "name.where(use='official').given.first()",
-    "family_name": "name.where(use='official').family",
-    "active": "active",
-    "birth_date": "birthDate",
-    "gender": "gender",
-}
-
-
-class PatientTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Patient", TRANSFORM_DICT)
+```bash
+# Install Radiant CLI tools
+pip install -e .
 ```
 
-### FHIR Path
+### 2. Define a ViewDefinition
 
-The values in the transform dictionary should be strings containing valid 
-FHIR path expressions. These expressions provide a way to extract the value 
-of a particular field in the FHIR JSON.
+Transformations are now defined as strictly typed `ViewDefinition` JSON objects. Create a new
+definition (e.g., `views/PatientDemographics.json`):
 
-The keys of the transform dictionary should be strings containing the 
-names of columns in a CSV file.
-
-It is often helpful to use the web site [fhirpath.js](https://hl7.github.io/fhirpath.js/)
-while you are writing FHIR path expressions to test them out in real time.
-
-### Test Transformer
-
-You can quickly test your transformer against data by running the following 
-CLI command.
-
-```shell
-$ radiant fhir transform --resource-type Patient --input-filepath=patient.json
-```
-
-If your `patient.json` file looked something like this:
-
-```
+```json
 {
-    "resourceType": "Patient",
-    "id": "eNuTIJvJoX5g5enjtR.Ul4ASEfAlFvJjiahhGyW1xd8x43",
-    "active": True,
-    "name": [
-        {
-            "use": "official",
-            "text": "Testing Careeverywhere",
-            "family": "Wong",
-            "given": ["Jason"],
-        },
-        {
-            "use": "usual",
-            "text": "Testing Careeverywhere",
-            "family": "Wong",
-            "given": ["Jason Sr"],
-        },
-    ],
-    "gender": "Male",
-    "birthDate": "2019-10-17",
-    ...
+  "resource": "Patient",
+  "name": "radiant_patient_demographics",
+  "select": [
+    {
+      "column": [
+        {"name": "patient_id", "path": "id"},
+        {"name": "active", "path": "active"},
+        {"name": "birth_date", "path": "birthDate"},
+        {"name": "gender", "path": "gender"}
+      ]
+    },
+    {
+      "forEach": "name.where(use='official').first()",
+      "column": [
+        {"name": "given_name", "path": "given.join(' ')"},
+        {"name": "family_name", "path": "family"}
+      ]
+    }
+  ]
 }
 ```
 
-Your CSV file should show something like:
+### 3. Run the Transformer
 
-| given_name | family_name | active | birth_date | gender |
------------- | ----------- | ------ | ---------- | ------ |
-Jason        | Wong        | True   | 2019-10-17 | Male   |
+You can test your view against a sample FHIR NDJSON file using the Radiant CLI. The CLI leverages
+the `sqlonfhir.evaluate()` function under the hood.
+
+```bash
+$ radiant fhir transform \
+    --view=views/PatientDemographics.json \
+    --input=patient.ndjson \
+    --output=output.csv
+```
 
 ## 👩‍💻 Developer Guide
 
-The [developer guide](docs/developer-guide.md) is for individuals that want to
-modify existing transformers or add new ones. This guide will provide all
-of the information necessary to make changes to the CLI code, and tests.
+The [developer guide](docs/developer-guide.md)  is for individuals that want to modify existing
+transformers or add new ones. This guide will provide all of the information necessary to make
+changes to the CLI code, and tests.
+
