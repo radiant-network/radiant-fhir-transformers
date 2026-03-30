@@ -40,7 +40,7 @@ class ImmunizationFundingSourceCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "funding_source_coding"
+    resource_component = "funding_source_coding"
     transformer = ImmunizationFundingSourceCodingTransformer
     expected_table_name = "immunization_funding_source_coding"
 

@@ -41,7 +41,7 @@ class AppointmentRequestedPeriodTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Appointment"
-    resource_subtype = "requested_period"
+    resource_component = "requested_period"
     transformer = AppointmentRequestedPeriodTransformer
     expected_table_name = "appointment_requested_period"
 

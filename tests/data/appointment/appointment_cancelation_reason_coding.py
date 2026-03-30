@@ -42,7 +42,7 @@ class AppointmentCancelationReasonCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Appointment"
-    resource_subtype = "cancelation_reason_coding"
+    resource_component = "cancelation_reason_coding"
     transformer = AppointmentCancelationReasonCodingTransformer
     expected_table_name = "appointment_cancelation_reason_coding"
 

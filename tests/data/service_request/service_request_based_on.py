@@ -42,7 +42,7 @@ class ServiceRequestBasedOnTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "based_on"
+    resource_component = "based_on"
     transformer = ServiceRequestBasedOnTransformer
     expected_table_name = "service_request_based_on"
 

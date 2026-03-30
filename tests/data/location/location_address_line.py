@@ -34,7 +34,7 @@ class LocationAddressLineTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Location"
-    resource_subtype = "address_line"
+    resource_component = "address_line"
     transformer = LocationAddressLineTransformer
     expected_table_name = "location_address_line"
 

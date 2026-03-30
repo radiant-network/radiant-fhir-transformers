@@ -59,7 +59,7 @@ class ServiceRequestContainedTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "contained"
+    resource_component = "contained"
     transformer = ServiceRequestContainedTransformer
     expected_table_name = "service_request_contained"
 

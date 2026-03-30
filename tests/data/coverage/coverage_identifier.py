@@ -43,7 +43,7 @@ class CoverageIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Coverage"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = CoverageIdentifierTransformer
     expected_table_name = "coverage_identifier"
 

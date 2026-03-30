@@ -89,7 +89,7 @@ class MedicationRequestDosageInstructionTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "dosage_instruction"
+    resource_component = "dosage_instruction"
     transformer = MedicationRequestDosageInstructionTransformer
     expected_table_name = "medication_request_dosage_instruction"
 

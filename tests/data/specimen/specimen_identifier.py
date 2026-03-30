@@ -45,7 +45,7 @@ class SpecimenIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = SpecimenIdentifierTransformer
     expected_table_name = "specimen_identifier"
 

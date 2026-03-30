@@ -53,7 +53,7 @@ class DocumentReferenceIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = DocumentReferenceIdentifierTransformer
     expected_table_name = "document_reference_identifier"
 

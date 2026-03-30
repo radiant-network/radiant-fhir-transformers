@@ -42,7 +42,7 @@ class BinaryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Binary"
-    resource_subtype = None
+    resource_component = None
     transformer = BinaryTransformer
     expected_table_name = "binary"
 

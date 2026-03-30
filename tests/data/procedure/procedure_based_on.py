@@ -42,7 +42,7 @@ class ProcedureBasedOnTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "based_on"
+    resource_component = "based_on"
     transformer = ProcedureBasedOnTransformer
     expected_table_name = "procedure_based_on"
 

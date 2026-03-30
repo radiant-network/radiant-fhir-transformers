@@ -77,7 +77,7 @@ class AllergyIntoleranceReactionTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "AllergyIntolerance"
-    resource_subtype = "reaction"
+    resource_component = "reaction"
     transformer = AllergyIntoleranceReactionTransformer
     expected_table_name = "allergy_intolerance_reaction"
 

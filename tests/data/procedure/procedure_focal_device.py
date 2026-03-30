@@ -46,7 +46,7 @@ class ProcedureFocalDeviceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "focal_device"
+    resource_component = "focal_device"
     transformer = ProcedureFocalDeviceTransformer
     expected_table_name = "procedure_focal_device"
 

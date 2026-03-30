@@ -40,7 +40,7 @@ class ProcedureInstantiatesCanonicalTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "instantiates_canonical"
+    resource_component = "instantiates_canonical"
     transformer = ProcedureInstantiatesCanonicalTransformer
     expected_table_name = "procedure_instantiates_canonical"
 

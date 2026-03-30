@@ -42,7 +42,7 @@ class ProcedureStatusReasonCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "status_reason_coding"
+    resource_component = "status_reason_coding"
     transformer = ProcedureStatusReasonCodingTransformer
     expected_table_name = "procedure_status_reason_coding"
 

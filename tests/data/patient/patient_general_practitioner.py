@@ -43,7 +43,7 @@ class PatientGeneralPractitionerTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Patient"
-    resource_subtype = "general_practitioner"
+    resource_component = "general_practitioner"
     transformer = PatientGeneralPractitionerTransformer
     expected_table_name = "patient_general_practitioner"
 

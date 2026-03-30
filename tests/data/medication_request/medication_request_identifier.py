@@ -42,7 +42,7 @@ class MedicationRequestIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = MedicationRequestIdentifierTransformer
     expected_table_name = "medication_request_identifier"
 

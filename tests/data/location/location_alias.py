@@ -35,7 +35,7 @@ class LocationAliasTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Location"
-    resource_subtype = "alias"
+    resource_component = "alias"
     transformer = LocationAliasTransformer
     expected_table_name = "location_alias"
 

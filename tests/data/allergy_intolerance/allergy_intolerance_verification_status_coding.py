@@ -37,7 +37,7 @@ class AllergyIntoleranceVerificationStatusCodingTestHelper(FhirResourceTestHelpe
     """
 
     resource_type = "AllergyIntolerance"
-    resource_subtype = "verification_status_coding"
+    resource_component = "verification_status_coding"
     transformer = AllergyIntoleranceVerificationStatusCodingTransformer
     expected_table_name = "allergy_intolerance_verification_status_coding"
 

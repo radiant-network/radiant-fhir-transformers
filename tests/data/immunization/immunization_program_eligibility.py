@@ -40,7 +40,7 @@ class ImmunizationProgramEligibilityTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "program_eligibility"
+    resource_component = "program_eligibility"
     transformer = ImmunizationProgramEligibilityTransformer
     expected_table_name = "immunization_program_eligibility"
 

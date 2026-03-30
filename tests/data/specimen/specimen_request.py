@@ -42,7 +42,7 @@ class SpecimenRequestTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "request"
+    resource_component = "request"
     transformer = SpecimenRequestTransformer
     expected_table_name = "specimen_request"
 

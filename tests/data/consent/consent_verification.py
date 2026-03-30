@@ -44,7 +44,7 @@ class ConsentVerificationTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Consent"
-    resource_subtype = "verification"
+    resource_component = "verification"
     transformer = ConsentVerificationTransformer
     expected_table_name = "consent_verification"
 

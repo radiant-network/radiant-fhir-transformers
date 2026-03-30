@@ -44,7 +44,7 @@ class ProvenanceEntityTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Provenance"
-    resource_subtype = "entity"
+    resource_component = "entity"
     transformer = ProvenanceEntityTransformer
     expected_table_name = "provenance_entity"
 

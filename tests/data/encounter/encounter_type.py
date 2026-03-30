@@ -31,7 +31,7 @@ class EncounterTypeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Encounter"
-    resource_subtype = "type"
+    resource_component = "type"
     transformer = EncounterTypeTransformer
     expected_table_name = "encounter_type"
 

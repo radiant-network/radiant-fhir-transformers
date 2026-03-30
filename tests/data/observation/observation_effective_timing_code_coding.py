@@ -40,7 +40,7 @@ class ObservationEffectiveTimingCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "effective_timing_code_coding"
+    resource_component = "effective_timing_code_coding"
     transformer = ObservationEffectiveTimingCodeCodingTransformer
     expected_table_name = "observation_effective_timing_code_coding"
 

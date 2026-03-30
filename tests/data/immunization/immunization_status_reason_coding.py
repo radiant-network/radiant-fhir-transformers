@@ -40,7 +40,7 @@ class ImmunizationStatusReasonCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "status_reason_coding"
+    resource_component = "status_reason_coding"
     transformer = ImmunizationStatusReasonCodingTransformer
     expected_table_name = "immunization_status_reason_coding"
 

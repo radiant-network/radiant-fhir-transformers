@@ -40,7 +40,7 @@ class MedicationRequestInstantiatesUriTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "instantiates_uri"
+    resource_component = "instantiates_uri"
     transformer = MedicationRequestInstantiatesUriTransformer
     expected_table_name = "medication_request_instantiates_uri"
 

@@ -41,7 +41,7 @@ class MedicationDispensePerformerTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationDispense"
-    resource_subtype = "performer"
+    resource_component = "performer"
     transformer = MedicationDispensePerformerTransformer
     expected_table_name = "medication_dispense_performer"
 

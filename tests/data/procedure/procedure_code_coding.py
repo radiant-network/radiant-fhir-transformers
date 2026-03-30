@@ -42,7 +42,7 @@ class ProcedureCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "code_coding"
+    resource_component = "code_coding"
     transformer = ProcedureCodeCodingTransformer
     expected_table_name = "procedure_code_coding"
 

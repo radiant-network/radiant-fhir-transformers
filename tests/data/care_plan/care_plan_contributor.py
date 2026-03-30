@@ -42,7 +42,7 @@ class CarePlanContributorTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CarePlan"
-    resource_subtype = "contributor"
+    resource_component = "contributor"
     transformer = CarePlanContributorTransformer
     expected_table_name = "care_plan_contributor"
 

@@ -43,7 +43,7 @@ class ConditionBodySiteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "body_site"
+    resource_component = "body_site"
     transformer = ConditionBodySiteTransformer
     expected_table_name = "condition_body_site"
 

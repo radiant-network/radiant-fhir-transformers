@@ -43,7 +43,7 @@ class GoalNoteCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = GoalNoteTransformer
     expected_table_name = "goal_note"
 

@@ -30,7 +30,7 @@ class EncounterServiceTypeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Encounter"
-    resource_subtype = "service_type_coding"
+    resource_component = "service_type_coding"
     transformer = EncounterServiceTypeCodingTransformer
     expected_table_name = "encounter_service_type_coding"
 

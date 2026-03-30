@@ -42,7 +42,7 @@ class CarePlanSupportingInfoTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CarePlan"
-    resource_subtype = "supporting_info"
+    resource_component = "supporting_info"
     transformer = CarePlanSupportingInfoTransformer
     expected_table_name = "care_plan_supporting_info"
 

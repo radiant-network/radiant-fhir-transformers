@@ -40,7 +40,7 @@ class MedicationRequestInstantiatesCanonicalTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "instantiates_canonical"
+    resource_component = "instantiates_canonical"
     transformer = MedicationRequestInstantiatesCanonicalTransformer
     expected_table_name = "medication_request_instantiates_canonical"
 

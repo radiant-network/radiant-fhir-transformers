@@ -40,7 +40,7 @@ class ObservationFocusTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "focus"
+    resource_component = "focus"
     transformer = ObservationFocusTransformer
     expected_table_name = "observation_focus"
 

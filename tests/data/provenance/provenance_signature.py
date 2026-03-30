@@ -51,7 +51,7 @@ class ProvenanceSignatureTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Provenance"
-    resource_subtype = "signature"
+    resource_component = "signature"
     transformer = ProvenanceSignatureTransformer
     expected_table_name = "provenance_signature"
 

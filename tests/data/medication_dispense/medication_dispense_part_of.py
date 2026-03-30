@@ -40,7 +40,7 @@ class MedicationDispensePartOfTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationDispense"
-    resource_subtype = "part_of"
+    resource_component = "part_of"
     transformer = MedicationDispensePartOfTransformer
     expected_table_name = "medication_dispense_part_of"
 

@@ -43,7 +43,7 @@ class ServiceRequestBodySiteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "body_site"
+    resource_component = "body_site"
     transformer = ServiceRequestBodySiteTransformer
     expected_table_name = "service_request_body_site"
 

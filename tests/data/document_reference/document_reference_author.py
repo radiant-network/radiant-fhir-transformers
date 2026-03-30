@@ -40,7 +40,7 @@ class DocumentReferenceAuthorTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "author"
+    resource_component = "author"
     transformer = DocumentReferenceAuthorTransformer
     expected_table_name = "document_reference_author"
 

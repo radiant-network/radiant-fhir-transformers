@@ -65,7 +65,7 @@ class OrganizationIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Organization"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = OrganizationIdentifierTransformer
     expected_table_name = "organization_identifier"
 

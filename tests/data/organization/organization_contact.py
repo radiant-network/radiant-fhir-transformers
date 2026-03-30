@@ -91,7 +91,7 @@ class OrganizationContactTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Organization"
-    resource_subtype = "contact"
+    resource_component = "contact"
     transformer = OrganizationContactTransformer
     expected_table_name = "organization_contact"
 

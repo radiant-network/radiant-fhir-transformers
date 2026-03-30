@@ -42,7 +42,7 @@ class DiagnosticReportBasedOnTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "based_on"
+    resource_component = "based_on"
     transformer = DiagnosticReportBasedOnTransformer
     expected_table_name = "diagnostic_report_based_on"
 

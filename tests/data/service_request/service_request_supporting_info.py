@@ -42,7 +42,7 @@ class ServiceRequestSupportingInfoTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "supporting_info"
+    resource_component = "supporting_info"
     transformer = ServiceRequestSupportingInfoTransformer
     expected_table_name = "service_request_supporting_info"
 

@@ -54,7 +54,7 @@ class ObservationCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "code_coding"
+    resource_component = "code_coding"
     transformer = ObservationCodeCodingTransformer
     expected_table_name = "observation_code_coding"
 

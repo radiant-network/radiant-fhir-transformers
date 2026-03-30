@@ -43,7 +43,7 @@ class ProvenanceReasonTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Provenance"
-    resource_subtype = "reason"
+    resource_component = "reason"
     transformer = ProvenanceReasonTransformer
     expected_table_name = "provenance_reason"
 

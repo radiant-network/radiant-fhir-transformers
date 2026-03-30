@@ -45,7 +45,7 @@ class ColumnMetaData:
     type: str | None
 
 
-def generate_table_name(resource_type: str, resource_subtype: str | None) -> str:
+def generate_table_name(resource_type: str, resource_component: str | None) -> str:
     """Generate a normalized table name for a FHIR resource.
 
     Converts the resource type and optional subtype from CamelCase to
@@ -53,14 +53,14 @@ def generate_table_name(resource_type: str, resource_subtype: str | None) -> str
 
     Args:
         resource_type: The FHIR resource type, e.g., "Patient" or "Observation".
-        resource_subtype: Optional subtype, e.g., "Component" or "Performer".
+        resource_component: Optional subtype, e.g., "Component" or "Performer".
 
     Returns:
         The normalized table name string.
     """
     table_name = camel_to_snake(resource_type)
-    if resource_subtype:
-        table_name = f"{table_name}_{camel_to_snake(resource_subtype)}"
+    if resource_component:
+        table_name = f"{table_name}_{camel_to_snake(resource_component)}"
     return table_name
 
 
@@ -73,7 +73,7 @@ class FhirResourceTransformer:
 
     Attributes:
         resource_type: The FHIR resource type (e.g., "Patient").
-        resource_subtype: Optional subtype for nested components.
+        resource_component: Optional subtype for nested components.
         table_name: Generated name for the output table or CSV.
         view_definition: SQL-on-FHIR ViewDefinition dict used to extract data.
     """
@@ -81,19 +81,19 @@ class FhirResourceTransformer:
     def __init__(
         self,
         resource_type: str,
-        resource_subtype: str | None,
+        resource_component: str | None,
         view_definition: dict,
     ) -> None:
         """Initialize a FHIR resource transformer.
 
         Args:
             resource_type: FHIR resource type to transform.
-            resource_subtype: Optional subtype for finer-grained naming.
+            resource_component: Optional subtype for finer-grained naming.
             view_definition: SQL-on-FHIR ViewDefinition defining extraction.
         """
         self.resource_type: str = resource_type
-        self.resource_subtype: str | None = resource_subtype
-        self.table_name: str = generate_table_name(resource_type, resource_subtype)
+        self.resource_component: str | None = resource_component
+        self.table_name: str = generate_table_name(resource_type, resource_component)
         self.view_definition: dict = view_definition
 
     def _filter_out_empty_row(self, row_dict: dict[str, Any]) -> dict[str, Any] | None:
@@ -193,7 +193,7 @@ class FhirResourceTransformer:
                 "❌ Transform failed for %s %s. Subtype: %s",
                 len(resources),
                 self.resource_type,
-                self.resource_subtype,
+                self.resource_component,
             )
             raise
 
@@ -212,7 +212,7 @@ class FhirResourceTransformer:
             "🏭 Transformed %s %s. Subtype: %s. Rows: %s",
             len(resources),
             self.resource_type,
-            self.resource_subtype,
+            self.resource_component,
             len(output),
         )
         return output

@@ -40,7 +40,7 @@ class GoalPriorityCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "priority_coding"
+    resource_component = "priority_coding"
     transformer = GoalPriorityCodingTransformer
     expected_table_name = "goal_priority_coding"
 

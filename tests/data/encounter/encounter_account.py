@@ -34,14 +34,14 @@ class EncounterAccountTestHelper(FhirResourceTestHelper):
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'Encounter'.
 
-        resource_subtype (str): The subtype of the FHIR resource being tested, set to 'account'.
+        resource_component (str): The subtype of the FHIR resource being tested, set to 'account'.
         resource (dict): The FHIR Encounter resource payload to be transformed.
         expected_output (list): The expected output after transformation of the FHIR resource.
         transformer_class (type): The class responsible for transforming the FHIR resource.
     """
 
     resource_type = "Encounter"
-    resource_subtype = "account"
+    resource_component = "account"
     transformer = EncounterAccountTransformer
     expected_table_name = "encounter_account"
 

@@ -43,7 +43,7 @@ class ImmunizationNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = ImmunizationNoteTransformer
     expected_table_name = "immunization_note"
 

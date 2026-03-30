@@ -40,7 +40,7 @@ class MedicationDispenseReceiverTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationDispense"
-    resource_subtype = "receiver"
+    resource_component = "receiver"
     transformer = MedicationDispenseReceiverTransformer
     expected_table_name = "medication_dispense_receiver"
 

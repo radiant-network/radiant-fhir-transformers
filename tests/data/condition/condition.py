@@ -88,7 +88,7 @@ class ConditionTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = None
+    resource_component = None
     transformer = ConditionTransformer
     expected_table_name = "condition"
 

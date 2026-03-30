@@ -61,7 +61,7 @@ class DocumentReferenceTypeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "type_coding"
+    resource_component = "type_coding"
     transformer = DocumentReferenceTypeCodingTransformer
     expected_table_name = "document_reference_type_coding"
 

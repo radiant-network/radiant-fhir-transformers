@@ -42,7 +42,7 @@ class MedicationRequestSubstitutionReasonCodingTestHelper(FhirResourceTestHelper
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "substitution_reason_coding"
+    resource_component = "substitution_reason_coding"
     transformer = MedicationRequestSubstitutionReasonCodingTransformer
     expected_table_name = "medication_request_substitution_reason_coding"
 

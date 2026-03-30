@@ -44,7 +44,7 @@ class DiagnosticReportCategoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "category"
+    resource_component = "category"
     transformer = DiagnosticReportCategoryTransformer
     expected_table_name = "diagnostic_report_category"
 

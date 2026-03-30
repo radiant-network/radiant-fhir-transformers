@@ -43,7 +43,7 @@ class ProcedureUsedCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "used_code"
+    resource_component = "used_code"
     transformer = ProcedureUsedCodeTransformer
     expected_table_name = "procedure_used_code"
 

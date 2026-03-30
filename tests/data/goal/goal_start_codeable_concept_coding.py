@@ -40,7 +40,7 @@ class GoalStartCodeableConceptCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "start_codeable_concept_coding"
+    resource_component = "start_codeable_concept_coding"
     transformer = GoalStartCodeableConceptCodingTransformer
     expected_table_name = "goal_start_codeable_concept_coding"
 

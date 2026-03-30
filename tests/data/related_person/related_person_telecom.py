@@ -43,7 +43,7 @@ class RelatedPersonTelecomTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RelatedPerson"
-    resource_subtype = "telecom"
+    resource_component = "telecom"
     transformer = RelatedPersonTelecomTransformer
     expected_table_name = "related_person_telecom"
 

@@ -42,7 +42,7 @@ class AppointmentBasedOnTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Appointment"
-    resource_subtype = "based_on"
+    resource_component = "based_on"
     transformer = AppointmentBasedOnTransformer
     expected_table_name = "appointment_based_on"
 

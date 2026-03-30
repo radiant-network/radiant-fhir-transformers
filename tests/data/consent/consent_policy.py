@@ -41,7 +41,7 @@ class ConsentPolicyTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Consent"
-    resource_subtype = "policy"
+    resource_component = "policy"
     transformer = ConsentPolicyTransformer
     expected_table_name = "consent_policy"
 

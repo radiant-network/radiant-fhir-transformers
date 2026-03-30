@@ -40,7 +40,7 @@ class CarePlanInstantiatesCanonicalTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CarePlan"
-    resource_subtype = "instantiates_canonical"
+    resource_component = "instantiates_canonical"
     transformer = CarePlanInstantiatesCanonicalTransformer
     expected_table_name = "care_plan_instantiates_canonical"
 

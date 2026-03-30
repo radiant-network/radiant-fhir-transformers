@@ -40,7 +40,7 @@ class OrganizationAliasTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Organization"
-    resource_subtype = "alias"
+    resource_component = "alias"
     transformer = OrganizationAliasTransformer
     expected_table_name = "organization_alias"
 

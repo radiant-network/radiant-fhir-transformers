@@ -42,7 +42,7 @@ class MedicationRequestCourseOfTherapyTypeCodingTestHelper(FhirResourceTestHelpe
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "course_of_therapy_type_coding"
+    resource_component = "course_of_therapy_type_coding"
     transformer = MedicationRequestCourseOfTherapyTypeCodingTransformer
     expected_table_name = "medication_request_course_of_therapy_type_coding"
 

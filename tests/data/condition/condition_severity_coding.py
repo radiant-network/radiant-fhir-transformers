@@ -42,7 +42,7 @@ class ConditionSeverityCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "severity_coding"
+    resource_component = "severity_coding"
     transformer = ConditionSeverityCodingTransformer
     expected_table_name = "condition_severity_coding"
 

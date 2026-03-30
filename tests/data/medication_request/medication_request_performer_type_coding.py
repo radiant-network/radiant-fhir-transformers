@@ -42,7 +42,7 @@ class MedicationRequestPerformerTypeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "performer_type_coding"
+    resource_component = "performer_type_coding"
     transformer = MedicationRequestPerformerTypeCodingTransformer
     expected_table_name = "medication_request_performer_type_coding"
 

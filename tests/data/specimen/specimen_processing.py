@@ -47,7 +47,7 @@ class SpecimenProcessingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "processing"
+    resource_component = "processing"
     transformer = SpecimenProcessingTransformer
     expected_table_name = "specimen_processing"
 

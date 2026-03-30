@@ -30,7 +30,7 @@ class EncounterPriorityCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Encounter"
-    resource_subtype = "priority_coding"
+    resource_component = "priority_coding"
     transformer = EncounterPriorityCodingTransformer
     expected_table_name = "encounter_priority_coding"
 

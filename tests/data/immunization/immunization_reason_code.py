@@ -40,7 +40,7 @@ class ImmunizationReasonCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "reason_code"
+    resource_component = "reason_code"
     transformer = ImmunizationReasonCodeTransformer
     expected_table_name = "immunization_reason_code"
 

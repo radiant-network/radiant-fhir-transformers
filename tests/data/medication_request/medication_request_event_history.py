@@ -42,7 +42,7 @@ class MedicationRequestEventHistoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "event_history"
+    resource_component = "event_history"
     transformer = MedicationRequestEventHistoryTransformer
     expected_table_name = "medication_request_event_history"
 

@@ -40,7 +40,7 @@ class DocumentReferenceContextEncounterTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "context_encounter"
+    resource_component = "context_encounter"
     transformer = DocumentReferenceContextEncounterTransformer
     expected_table_name = "document_reference_context_encounter"
 

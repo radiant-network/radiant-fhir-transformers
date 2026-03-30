@@ -50,7 +50,7 @@ class LocationIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Location"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = LocationIdentifierTransformer
     expected_table_name = "location_identifier"
 

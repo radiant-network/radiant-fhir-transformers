@@ -45,7 +45,7 @@ class ConsentIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Consent"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = ConsentIdentifierTransformer
     expected_table_name = "consent_identifier"
 

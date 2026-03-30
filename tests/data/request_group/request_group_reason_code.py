@@ -43,7 +43,7 @@ class RequestGroupReasonCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = "reason_code"
+    resource_component = "reason_code"
     transformer = RequestGroupReasonCodeTransformer
     expected_table_name = "request_group_reason_code"
 

@@ -43,7 +43,7 @@ class CareTeamIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CareTeam"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = CareTeamIdentifierTransformer
     expected_table_name = "care_team_identifier"
 

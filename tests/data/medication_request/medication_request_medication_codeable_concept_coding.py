@@ -42,7 +42,7 @@ class MedicationRequestMedicationCodeableConceptCodingTestHelper(FhirResourceTes
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "medication_codeable_concept_coding"
+    resource_component = "medication_codeable_concept_coding"
     transformer = MedicationRequestMedicationCodeableConceptCodingTransformer
     expected_table_name = "medication_request_medication_codeable_concept_coding"
 

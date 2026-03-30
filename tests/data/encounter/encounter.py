@@ -50,7 +50,7 @@ class EncounterTestHelper(FhirResourceTestHelper):
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'Encounter'.
 
-        resource_subtype (str): The subtype of the FHIR resource, which is None
+        resource_component (str): The subtype of the FHIR resource, which is None
           for this resource.
 
         transformer (class): The transformer class used for transforming the
@@ -60,7 +60,7 @@ class EncounterTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Encounter"
-    resource_subtype = None
+    resource_component = None
     transformer = EncounterTransformer
     expected_table_name = "encounter"
 

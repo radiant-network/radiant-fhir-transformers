@@ -56,7 +56,7 @@ class DiagnosticReportSpecimenTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "specimen"
+    resource_component = "specimen"
     transformer = DiagnosticReportSpecimenTransformer
     expected_table_name = "diagnostic_report_specimen"
 

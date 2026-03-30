@@ -42,7 +42,7 @@ class ServiceRequestInsuranceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "insurance"
+    resource_component = "insurance"
     transformer = ServiceRequestInsuranceTransformer
     expected_table_name = "service_request_insurance"
 

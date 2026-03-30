@@ -60,14 +60,14 @@ class EncounterHospitalizationTestHelper(FhirResourceTestHelper):
     Attributes:
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'Encounter'.
-        resource_subtype (str): The subtype of the FHIR resource being tested, set to 'hospitalization'.
+        resource_component (str): The subtype of the FHIR resource being tested, set to 'hospitalization'.
         transformer (type): The class responsible for transforming the FHIR resource.
         expected_table_name (str): The name of the table expected after transformation.
 
     """
 
     resource_type = "Encounter"
-    resource_subtype = "hospitalization"
+    resource_component = "hospitalization"
     transformer = EncounterHospitalizationTransformer
     expected_table_name = "encounter_hospitalization"
 

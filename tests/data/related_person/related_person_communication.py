@@ -42,7 +42,7 @@ class RelatedPersonCommunicationTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RelatedPerson"
-    resource_subtype = "communication"
+    resource_component = "communication"
     transformer = RelatedPersonCommunicationTransformer
     expected_table_name = "related_person_communication"
 

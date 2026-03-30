@@ -53,7 +53,7 @@ class CareTeamTelecomTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CareTeam"
-    resource_subtype = "telecom"
+    resource_component = "telecom"
     transformer = CareTeamTelecomTransformer
     expected_table_name = "care_team_telecom"
 

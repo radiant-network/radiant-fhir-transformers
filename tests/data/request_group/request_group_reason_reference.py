@@ -40,7 +40,7 @@ class RequestGroupReasonReferenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = "reason_reference"
+    resource_component = "reason_reference"
     transformer = RequestGroupReasonReferenceTransformer
     expected_table_name = "request_group_reason_reference"
 

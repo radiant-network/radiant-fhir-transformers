@@ -42,7 +42,7 @@ class DiagnosticReportResultsInterpreterTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "results_interpreter"
+    resource_component = "results_interpreter"
     transformer = DiagnosticReportResultsInterpreterTransformer
     expected_table_name = "diagnostic_report_results_interpreter"
 

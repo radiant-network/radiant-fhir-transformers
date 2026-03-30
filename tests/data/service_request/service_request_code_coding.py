@@ -42,7 +42,7 @@ class ServiceRequestCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "code_coding"
+    resource_component = "code_coding"
     transformer = ServiceRequestCodeCodingTransformer
     expected_table_name = "service_request_code_coding"
 

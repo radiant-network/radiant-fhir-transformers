@@ -65,7 +65,7 @@ class OrganizationAddressTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Organization"
-    resource_subtype = "address"
+    resource_component = "address"
     transformer = OrganizationAddressTransformer
     expected_table_name = "organization_address"
 

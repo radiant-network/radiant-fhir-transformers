@@ -40,7 +40,7 @@ class CoverageContractTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Coverage"
-    resource_subtype = "contract"
+    resource_component = "contract"
     transformer = CoverageContractTransformer
     expected_table_name = "coverage_contract"
 

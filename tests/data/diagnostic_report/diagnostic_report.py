@@ -52,7 +52,7 @@ class DiagnosticReportTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = None
+    resource_component = None
     transformer = DiagnosticReportTransformer
     expected_table_name = "diagnostic_report"
 

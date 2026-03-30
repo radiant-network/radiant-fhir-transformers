@@ -42,7 +42,7 @@ class LocationPhysicalTypeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Location"
-    resource_subtype = "physical_type_coding"
+    resource_component = "physical_type_coding"
     transformer = LocationPhysicalTypeCodingTransformer
     expected_table_name = "location_physical_type_coding"
 

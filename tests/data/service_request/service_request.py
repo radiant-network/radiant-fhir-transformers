@@ -90,7 +90,7 @@ class ServiceRequestTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = None
+    resource_component = None
     transformer = ServiceRequestTransformer
     expected_table_name = "service_request"
 

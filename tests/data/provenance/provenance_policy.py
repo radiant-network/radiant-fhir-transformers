@@ -40,7 +40,7 @@ class ProvenancePolicyTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Provenance"
-    resource_subtype = "policy"
+    resource_component = "policy"
     transformer = ProvenancePolicyTransformer
     expected_table_name = "provenance_policy"
 

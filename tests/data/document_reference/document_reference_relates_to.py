@@ -41,7 +41,7 @@ class DocumentReferenceRelatesToTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "relates_to"
+    resource_component = "relates_to"
     transformer = DocumentReferenceRelatesToTransformer
     expected_table_name = "document_reference_relates_to"
 

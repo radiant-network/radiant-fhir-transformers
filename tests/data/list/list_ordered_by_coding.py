@@ -40,7 +40,7 @@ class ListOrderedByCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "List"
-    resource_subtype = "ordered_by_coding"
+    resource_component = "ordered_by_coding"
     transformer = ListOrderedByCodingTransformer
     expected_table_name = "list_ordered_by_coding"
 

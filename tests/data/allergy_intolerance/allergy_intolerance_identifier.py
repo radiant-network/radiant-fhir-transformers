@@ -45,7 +45,7 @@ class AllergyIntoleranceIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "AllergyIntolerance"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = AllergyIntoleranceIdentifierTransformer
     expected_table_name = "allergy_intolerance_identifier"
 

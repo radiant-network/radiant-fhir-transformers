@@ -65,7 +65,7 @@ class MedicationIngredientTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Medication"
-    resource_subtype = "ingredient"
+    resource_component = "ingredient"
     transformer = MedicationIngredientTransformer
     expected_table_name = "medication_ingredient"
 

@@ -42,7 +42,7 @@ class AppointmentReasonCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Appointment"
-    resource_subtype = "reason_code"
+    resource_component = "reason_code"
     transformer = AppointmentReasonCodeTransformer
     expected_table_name = "appointment_reason_code"
 

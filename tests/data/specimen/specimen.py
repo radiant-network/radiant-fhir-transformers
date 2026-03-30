@@ -76,7 +76,7 @@ class SpecimenTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = None
+    resource_component = None
     transformer = SpecimenTransformer
     expected_table_name = "specimen"
 

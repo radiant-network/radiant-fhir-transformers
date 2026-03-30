@@ -42,7 +42,7 @@ class ServiceRequestRelevantHistoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "relevant_history"
+    resource_component = "relevant_history"
     transformer = ServiceRequestRelevantHistoryTransformer
     expected_table_name = "service_request_relevant_history"
 

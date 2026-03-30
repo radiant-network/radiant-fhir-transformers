@@ -43,7 +43,7 @@ class ListNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "List"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = ListNoteTransformer
     expected_table_name = "list_note"
 

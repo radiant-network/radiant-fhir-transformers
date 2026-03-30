@@ -40,7 +40,7 @@ class CoverageRelationshipCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Coverage"
-    resource_subtype = "relationship_coding"
+    resource_component = "relationship_coding"
     transformer = CoverageRelationshipCodingTransformer
     expected_table_name = "coverage_relationship_coding"
 

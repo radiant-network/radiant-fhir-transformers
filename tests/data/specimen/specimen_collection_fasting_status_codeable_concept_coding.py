@@ -42,7 +42,7 @@ class SpecimenCollectionFastingStatusCodeableConceptCodingTestHelper(FhirResourc
     """
 
     resource_type = "Specimen"
-    resource_subtype = "collection_fasting_status_codeable_concept_coding"
+    resource_component = "collection_fasting_status_codeable_concept_coding"
     transformer = SpecimenCollectionFastingStatusCodeableConceptCodingTransformer
     expected_table_name = "specimen_collection_fasting_status_codeable_concept_coding"
 

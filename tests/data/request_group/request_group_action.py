@@ -227,7 +227,7 @@ class RequestGroupActionTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = "action"
+    resource_component = "action"
     transformer = RequestGroupActionTransformer
     expected_table_name = "request_group_action"
 

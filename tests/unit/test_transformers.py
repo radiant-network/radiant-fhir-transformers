@@ -95,7 +95,7 @@ def test_transformers(test_helper_cls):
 
     # Instantiate transformer class based on resource type
     resource_type = test_helper_cls.resource_type
-    resource_subtype = test_helper.resource_subtype
+    resource_component = test_helper.resource_component
 
     cls = test_helper_cls.transformer
 
@@ -139,7 +139,7 @@ def test_transformers(test_helper_cls):
         )
 
     # Remove id from subtype can't compare to uuid
-    if resource_subtype:
+    if resource_component:
         df_actual = df_actual.drop(columns=["id"])
         df_expected = df_expected.drop(columns=["id"])
 

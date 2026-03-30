@@ -56,7 +56,7 @@ class RequestGroupTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = None
+    resource_component = None
     transformer = RequestGroupTransformer
     expected_table_name = "request_group"
 

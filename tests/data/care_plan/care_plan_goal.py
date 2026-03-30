@@ -42,7 +42,7 @@ class CarePlanGoalTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CarePlan"
-    resource_subtype = "goal"
+    resource_component = "goal"
     transformer = CarePlanGoalTransformer
     expected_table_name = "care_plan_goal"
 

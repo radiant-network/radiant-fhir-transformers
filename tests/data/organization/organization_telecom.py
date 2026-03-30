@@ -55,7 +55,7 @@ class OrganizationTelecomTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Organization"
-    resource_subtype = "telecom"
+    resource_component = "telecom"
     transformer = OrganizationTelecomTransformer
     expected_table_name = "organization_telecom"
 

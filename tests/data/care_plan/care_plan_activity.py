@@ -348,7 +348,7 @@ class CarePlanActivityTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CarePlan"
-    resource_subtype = "activity"
+    resource_component = "activity"
     transformer = CarePlanActivityTransformer
     expected_table_name = "care_plan_activity"
 

@@ -183,7 +183,7 @@ class PatientContactTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Patient"
-    resource_subtype = "contact"
+    resource_component = "contact"
     transformer = PatientContactTransformer
     expected_table_name = "patient_contact"
 

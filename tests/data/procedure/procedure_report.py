@@ -42,7 +42,7 @@ class ProcedureReportTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "report"
+    resource_component = "report"
     transformer = ProcedureReportTransformer
     expected_table_name = "procedure_report"
 

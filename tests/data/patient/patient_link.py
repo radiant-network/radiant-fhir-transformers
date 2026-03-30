@@ -53,7 +53,7 @@ class PatientLinkTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Patient"
-    resource_subtype = "link"
+    resource_component = "link"
     transformer = PatientLinkTransformer
     expected_table_name = "patient_link"
 

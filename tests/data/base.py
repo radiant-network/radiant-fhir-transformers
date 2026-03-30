@@ -26,7 +26,7 @@ class FhirResourceTestHelper:
     """
 
     resource_type = None
-    resource_subtype = None
+    resource_component = None
     transformer = None
     expected_table_name = None
 

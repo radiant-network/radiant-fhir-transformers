@@ -38,7 +38,7 @@ class ObservationEffectiveTimingRepeatWhenTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "effective_timing_repeat_when"
+    resource_component = "effective_timing_repeat_when"
     transformer = ObservationEffectiveTimingRepeatWhenTransformer
     expected_table_name = "observation_effective_timing_repeat_when"
 

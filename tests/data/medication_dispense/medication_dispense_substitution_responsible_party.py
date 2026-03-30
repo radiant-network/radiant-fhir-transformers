@@ -40,7 +40,7 @@ class MedicationDispenseSubstitutionResponsiblePartyTestHelper(FhirResourceTestH
     """
 
     resource_type = "MedicationDispense"
-    resource_subtype = "substitution_responsible_party"
+    resource_component = "substitution_responsible_party"
     transformer = MedicationDispenseSubstitutionResponsiblePartyTransformer
     expected_table_name = "medication_dispense_substitution_responsible_party"
 

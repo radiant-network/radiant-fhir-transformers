@@ -40,7 +40,7 @@ class ListCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "List"
-    resource_subtype = "code_coding"
+    resource_component = "code_coding"
     transformer = ListCodeCodingTransformer
     expected_table_name = "list_code_coding"
 

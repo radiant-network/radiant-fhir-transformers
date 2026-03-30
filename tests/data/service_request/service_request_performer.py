@@ -42,7 +42,7 @@ class ServiceRequestPerformerTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "performer"
+    resource_component = "performer"
     transformer = ServiceRequestPerformerTransformer
     expected_table_name = "service_request_performer"
 

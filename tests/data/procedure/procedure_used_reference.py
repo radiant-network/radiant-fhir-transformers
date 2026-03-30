@@ -42,7 +42,7 @@ class ProcedureUsedReferenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "used_reference"
+    resource_component = "used_reference"
     transformer = ProcedureUsedReferenceTransformer
     expected_table_name = "procedure_used_reference"
 

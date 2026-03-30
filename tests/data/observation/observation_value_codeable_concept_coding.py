@@ -54,7 +54,7 @@ class ObservationValueCodeableConceptCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "value_codeable_concept_coding"
+    resource_component = "value_codeable_concept_coding"
     transformer = ObservationValueCodeableConceptCodingTransformer
     expected_table_name = "observation_value_codeable_concept_coding"
 

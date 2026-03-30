@@ -42,7 +42,7 @@ class ProcedureReasonReferenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "reason_reference"
+    resource_component = "reason_reference"
     transformer = ProcedureReasonReferenceTransformer
     expected_table_name = "procedure_reason_reference"
 

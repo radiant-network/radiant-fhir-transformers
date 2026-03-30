@@ -48,7 +48,7 @@ class RelatedPersonAddressTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RelatedPerson"
-    resource_subtype = "address"
+    resource_component = "address"
     transformer = RelatedPersonAddressTransformer
     expected_table_name = "related_person_address"
 

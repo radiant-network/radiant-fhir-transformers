@@ -45,7 +45,7 @@ class ServiceRequestIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = ServiceRequestIdentifierTransformer
     expected_table_name = "service_request_identifier"
 

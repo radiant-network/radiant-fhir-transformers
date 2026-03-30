@@ -38,7 +38,7 @@ class RequestGroupInstantiatesCanonicalTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = "instantiates_canonical"
+    resource_component = "instantiates_canonical"
     transformer = RequestGroupInstantiatesCanonicalTransformer
     expected_table_name = "request_group_instantiates_canonical"
 

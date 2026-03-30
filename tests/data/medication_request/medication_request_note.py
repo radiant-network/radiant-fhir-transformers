@@ -45,7 +45,7 @@ class MedicationRequestNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = MedicationRequestNoteTransformer
     expected_table_name = "medication_request_note"
 

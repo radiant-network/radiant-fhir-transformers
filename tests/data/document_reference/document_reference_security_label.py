@@ -43,7 +43,7 @@ class DocumentReferenceSecurityLabelTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "security_label"
+    resource_component = "security_label"
     transformer = DocumentReferenceSecurityLabelTransformer
     expected_table_name = "document_reference_security_label"
 

@@ -34,7 +34,7 @@ class EncounterBasedOnTestHelper(FhirResourceTestHelper):
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'Encounter'.
 
-        resource_subtype (str): The subtype of the FHIR resource being tested, set to 'episode_of_care'.
+        resource_component (str): The subtype of the FHIR resource being tested, set to 'episode_of_care'.
 
         transformer (class): The transformer class used for transforming the FHIR resource.
 
@@ -42,7 +42,7 @@ class EncounterBasedOnTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Encounter"
-    resource_subtype = "based_on"
+    resource_component = "based_on"
     transformer = EncounterBasedOnTransformer
     expected_table_name = "encounter_based_on"
 

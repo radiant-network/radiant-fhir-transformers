@@ -49,7 +49,7 @@ class ObservationCategoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "category"
+    resource_component = "category"
     transformer = ObservationCategoryTransformer
     expected_table_name = "observation_category"
 

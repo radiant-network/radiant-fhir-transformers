@@ -42,7 +42,7 @@ class ConditionCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "code_coding"
+    resource_component = "code_coding"
     transformer = ConditionCodeCodingTransformer
     expected_table_name = "condition_code_coding"
 

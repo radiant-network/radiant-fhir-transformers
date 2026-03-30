@@ -47,7 +47,7 @@ class ObservationPerformerTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "performer"
+    resource_component = "performer"
     transformer = ObservationPerformerTransformer
     expected_table_name = "observation_performer"
 

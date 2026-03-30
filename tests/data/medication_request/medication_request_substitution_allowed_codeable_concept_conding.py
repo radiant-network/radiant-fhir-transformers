@@ -42,7 +42,7 @@ class MedicationRequestSubstitutionAllowedCodeableConceptCodingTestHelper(FhirRe
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "substitution_allowed_codeable_concept_coding"
+    resource_component = "substitution_allowed_codeable_concept_coding"
     transformer = MedicationRequestSubstitutionAllowedCodeableConceptCodingTransformer
     expected_table_name = "medication_request_substitution_allowed_codeable_concept_coding"
 

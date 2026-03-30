@@ -56,7 +56,7 @@ class CoverageTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Coverage"
-    resource_subtype = None
+    resource_component = None
     transformer = CoverageTransformer
     expected_table_name = "coverage"
 

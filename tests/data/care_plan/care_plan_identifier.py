@@ -45,7 +45,7 @@ class CarePlanIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CarePlan"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = CarePlanIdentifierTransformer
     expected_table_name = "care_plan_identifier"
 
