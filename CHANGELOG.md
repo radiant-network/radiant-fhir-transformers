@@ -10,8 +10,6 @@
 ### New features and changes
 
 - [#120](https://github.com/radiant-network/radiant-fhir-transformers/pull/120) -  :truck: Rename subtype to component - [c954735d](https://github.com/radiant-network/radiant-fhir-transformers/commit/c954735d2428c118c2117c1ab3126ef432b30e60) by [znatty22](https://github.com/znatty22)
-- [#118](https://github.com/radiant-network/radiant-fhir-transformers/pull/118) -  :memo: Update README and dev guide with new sqlonfhir standard - [08c59520](https://github.com/radiant-network/radiant-fhir-transformers/commit/08c595206de6de31ce70524cb72529165cfda3be) by [znatty22](https://github.com/znatty22)
-
 
 ## Release 1.9.0
 
