@@ -45,7 +45,7 @@ class ServiceRequestNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = ServiceRequestNoteTransformer
     expected_table_name = "service_request_note"
 

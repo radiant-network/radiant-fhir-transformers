@@ -40,7 +40,7 @@ class GoalAddressesTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "addresses"
+    resource_component = "addresses"
     transformer = GoalAddressesTransformer
     expected_table_name = "goal_addresses"
 

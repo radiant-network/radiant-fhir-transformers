@@ -47,7 +47,7 @@ class CareTeamTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CareTeam"
-    resource_subtype = None
+    resource_component = None
     transformer = CareTeamTransformer
     expected_table_name = "care_team"
 

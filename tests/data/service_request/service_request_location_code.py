@@ -42,7 +42,7 @@ class ServiceRequestLocationCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "location_code"
+    resource_component = "location_code"
     transformer = ServiceRequestLocationCodeTransformer
     expected_table_name = "service_request_location_code"
 

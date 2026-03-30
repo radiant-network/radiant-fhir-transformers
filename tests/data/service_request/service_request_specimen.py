@@ -42,7 +42,7 @@ class ServiceRequestSpecimenTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "specimen"
+    resource_component = "specimen"
     transformer = ServiceRequestSpecimenTransformer
     expected_table_name = "service_request_specimen"
 

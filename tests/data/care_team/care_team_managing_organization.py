@@ -40,7 +40,7 @@ class CareTeamManagingOrganizationTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CareTeam"
-    resource_subtype = "managing_organization"
+    resource_component = "managing_organization"
     transformer = CareTeamManagingOrganizationTransformer
     expected_table_name = "care_team_managing_organization"
 

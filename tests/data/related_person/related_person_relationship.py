@@ -51,7 +51,7 @@ class RelatedPersonRelationshipTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RelatedPerson"
-    resource_subtype = "relationship"
+    resource_component = "relationship"
     transformer = RelatedPersonRelationshipTransformer
     expected_table_name = "related_person_relationship"
 

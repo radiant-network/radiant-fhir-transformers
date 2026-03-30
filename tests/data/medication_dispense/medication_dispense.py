@@ -74,7 +74,7 @@ class MedicationDispenseTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationDispense"
-    resource_subtype = None
+    resource_component = None
     transformer = MedicationDispenseTransformer
     expected_table_name = "medication_dispense"
 

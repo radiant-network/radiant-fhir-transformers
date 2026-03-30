@@ -40,7 +40,7 @@ class CarePlanInstantiatesUriTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CarePlan"
-    resource_subtype = "instantiates_uri"
+    resource_component = "instantiates_uri"
     transformer = CarePlanInstantiatesUriTransformer
     expected_table_name = "care_plan_instantiates_uri"
 

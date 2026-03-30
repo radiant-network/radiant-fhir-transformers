@@ -43,7 +43,7 @@ class ImmunizationIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = ImmunizationIdentifierTransformer
     expected_table_name = "immunization_identifier"
 

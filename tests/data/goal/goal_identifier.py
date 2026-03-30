@@ -43,7 +43,7 @@ class GoalIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = GoalIdentifierTransformer
     expected_table_name = "goal_identifier"
 

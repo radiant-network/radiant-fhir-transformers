@@ -40,7 +40,7 @@ class ObservationHasMemberTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "has_member"
+    resource_component = "has_member"
     transformer = ObservationHasMemberTransformer
     expected_table_name = "observation_has_member"
 

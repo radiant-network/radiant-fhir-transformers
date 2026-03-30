@@ -36,7 +36,7 @@ class EncounterClassHistoryTestHelper(FhirResourceTestHelper):
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'Encounter'.
 
-        resource_subtype (str): The subtype of the FHIR resource being tested,
+        resource_component (str): The subtype of the FHIR resource being tested,
           which is set to 'class_history'.
 
         transformer: The transformer class used for transforming the FHIR resource.
@@ -45,7 +45,7 @@ class EncounterClassHistoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Encounter"
-    resource_subtype = "class_history"
+    resource_component = "class_history"
     transformer = EncounterClassHistoryTransformer
     expected_table_name = "encounter_class_history"
 

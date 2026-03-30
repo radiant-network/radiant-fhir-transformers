@@ -42,7 +42,7 @@ class ProcedureComplicationDetailTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "complication_detail"
+    resource_component = "complication_detail"
     transformer = ProcedureComplicationDetailTransformer
     expected_table_name = "procedure_complication_detail"
 

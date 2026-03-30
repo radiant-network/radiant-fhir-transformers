@@ -42,7 +42,7 @@ class MedicationRequestSupportingInformationTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "supporting_information"
+    resource_component = "supporting_information"
     transformer = MedicationRequestSupportingInformationTransformer
     expected_table_name = "medication_request_supporting_information"
 

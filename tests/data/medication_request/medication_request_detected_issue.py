@@ -42,7 +42,7 @@ class MedicationRequestDetectedIssueTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "detected_issue"
+    resource_component = "detected_issue"
     transformer = MedicationRequestDetectedIssueTransformer
     expected_table_name = "medication_request_detected_issue"
 

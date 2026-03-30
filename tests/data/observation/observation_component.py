@@ -143,7 +143,7 @@ class ObservationComponentTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "component"
+    resource_component = "component"
     transformer = ObservationComponentTransformer
     expected_table_name = "observation_component"
 

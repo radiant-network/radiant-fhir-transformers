@@ -42,7 +42,7 @@ class MedicationRequestReasonReferenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "reason_reference"
+    resource_component = "reason_reference"
     transformer = MedicationRequestReasonReferenceTransformer
     expected_table_name = "medication_request_reason_reference"
 

@@ -42,7 +42,7 @@ class MedicationRequestInsuranceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "insurance"
+    resource_component = "insurance"
     transformer = MedicationRequestInsuranceTransformer
     expected_table_name = "medication_request_insurance"
 

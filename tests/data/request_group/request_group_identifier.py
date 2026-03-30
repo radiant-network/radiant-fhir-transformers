@@ -43,7 +43,7 @@ class RequestGroupIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = RequestGroupIdentifierTransformer
     expected_table_name = "request_group_identifier"
 

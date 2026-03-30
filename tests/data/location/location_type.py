@@ -38,7 +38,7 @@ class LocationTypeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Location"
-    resource_subtype = "type"
+    resource_component = "type"
     transformer = LocationTypeTransformer
     expected_table_name = "location_type"
 

@@ -42,7 +42,7 @@ class DiagnosticReportImagingStudyTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "imaging_study"
+    resource_component = "imaging_study"
     transformer = DiagnosticReportImagingStudyTransformer
     expected_table_name = "diagnostic_report_imaging_study"
 

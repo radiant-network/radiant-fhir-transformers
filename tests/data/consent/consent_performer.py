@@ -42,7 +42,7 @@ class ConsentPerformerTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Consent"
-    resource_subtype = "performer"
+    resource_component = "performer"
     transformer = ConsentPerformerTransformer
     expected_table_name = "consent_performer"
 

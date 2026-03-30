@@ -40,7 +40,7 @@ class ImmunizationReportOriginCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "report_origin_coding"
+    resource_component = "report_origin_coding"
     transformer = ImmunizationReportOriginCodingTransformer
     expected_table_name = "immunization_report_origin_coding"
 

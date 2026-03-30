@@ -37,7 +37,7 @@ class ConditionNoteTestHelper(FhirResourceTestHelper):
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'Condition'.
 
-        resource_subtype (str): The subtype of the FHIR resource being tested, which
+        resource_component (str): The subtype of the FHIR resource being tested, which
           is set to 'note'.
 
         transformer: The transformer class used for transforming the FHIR resource.
@@ -46,7 +46,7 @@ class ConditionNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = ConditionNoteTransformer
     expected_table_name = "condition_note"
 

@@ -40,7 +40,7 @@ class GoalCategoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "category"
+    resource_component = "category"
     transformer = GoalCategoryTransformer
     expected_table_name = "goal_category"
 

@@ -40,7 +40,7 @@ class MedicationRequestCategoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "category"
+    resource_component = "category"
     transformer = MedicationRequestCategoryTransformer
     expected_table_name = "medication_request_category"
 

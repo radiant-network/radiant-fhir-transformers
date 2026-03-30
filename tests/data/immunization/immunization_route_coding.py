@@ -40,7 +40,7 @@ class ImmunizationRouteCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "route_coding"
+    resource_component = "route_coding"
     transformer = ImmunizationRouteCodingTransformer
     expected_table_name = "immunization_route_coding"
 

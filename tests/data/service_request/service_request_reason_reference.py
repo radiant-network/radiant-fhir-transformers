@@ -42,7 +42,7 @@ class ServiceRequestReasonReferenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "reason_reference"
+    resource_component = "reason_reference"
     transformer = ServiceRequestReasonReferenceTransformer
     expected_table_name = "service_request_reason_reference"
 

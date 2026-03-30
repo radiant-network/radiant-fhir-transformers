@@ -53,7 +53,7 @@ class ListTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "List"
-    resource_subtype = None
+    resource_component = None
     transformer = ListTransformer
     expected_table_name = "list"
 

@@ -40,7 +40,7 @@ class BodyStructureLocationCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "BodyStructure"
-    resource_subtype = "location_coding"
+    resource_component = "location_coding"
     transformer = BodyStructureLocationCodingTransformer
     expected_table_name = "body_structure_location_coding"
 

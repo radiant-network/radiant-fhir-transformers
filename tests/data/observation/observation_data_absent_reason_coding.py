@@ -40,7 +40,7 @@ class ObservationDataAbsentReasonCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "data_absent_reason_coding"
+    resource_component = "data_absent_reason_coding"
     transformer = ObservationDataAbsentReasonCodingTransformer
     expected_table_name = "observation_data_absent_reason_coding"
 

@@ -154,7 +154,7 @@ class DiagnosticReportResultTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "result"
+    resource_component = "result"
     transformer = DiagnosticReportResultTransformer
     expected_table_name = "diagnostic_report_result"
 

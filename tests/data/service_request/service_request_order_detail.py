@@ -51,7 +51,7 @@ class ServiceRequestOrderDetailTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "order_detail"
+    resource_component = "order_detail"
     transformer = ServiceRequestOrderDetailTransformer
     expected_table_name = "service_request_order_detail"
 

@@ -43,7 +43,7 @@ class ConsentProvisionDataTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Consent"
-    resource_subtype = "provision_data"
+    resource_component = "provision_data"
     transformer = ConsentProvisionDataTransformer
     expected_table_name = "consent_provision_data"
 

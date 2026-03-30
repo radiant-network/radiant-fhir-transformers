@@ -42,7 +42,7 @@ class ProvenanceActivityCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Provenance"
-    resource_subtype = "activity_coding"
+    resource_component = "activity_coding"
     transformer = ProvenanceActivityCodingTransformer
     expected_table_name = "provenance_activity_coding"
 

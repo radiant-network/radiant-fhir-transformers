@@ -40,7 +40,7 @@ class ListEmptyReasonCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "List"
-    resource_subtype = "empty_reason_coding"
+    resource_component = "empty_reason_coding"
     transformer = ListEmptyReasonCodingTransformer
     expected_table_name = "list_empty_reason_coding"
 

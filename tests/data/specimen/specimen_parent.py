@@ -42,7 +42,7 @@ class SpecimenParentTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "parent"
+    resource_component = "parent"
     transformer = SpecimenParentTransformer
     expected_table_name = "specimen_parent"
 

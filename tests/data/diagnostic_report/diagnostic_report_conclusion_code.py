@@ -45,7 +45,7 @@ class DiagnosticReportConclusionCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "conclusion_code"
+    resource_component = "conclusion_code"
     transformer = DiagnosticReportConclusionCodeTransformer
     expected_table_name = "diagnostic_report_conclusion_code"
 

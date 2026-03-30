@@ -41,7 +41,7 @@ class ImmunizationSubpotentReasonTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "subpotent_reason"
+    resource_component = "subpotent_reason"
     transformer = ImmunizationSubpotentReasonTransformer
     expected_table_name = "immunization_subpotent_reason"
 

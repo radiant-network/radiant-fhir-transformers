@@ -49,7 +49,7 @@ class MedicationRequestBasedOnTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "based_on"
+    resource_component = "based_on"
     transformer = MedicationRequestBasedOnTransformer
     expected_table_name = "medication_request_based_on"
 

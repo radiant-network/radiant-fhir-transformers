@@ -40,7 +40,7 @@ class ProcedureInstantiatesUriTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "instantiates_uri"
+    resource_component = "instantiates_uri"
     transformer = ProcedureInstantiatesUriTransformer
     expected_table_name = "procedure_instantiates_uri"
 

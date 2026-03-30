@@ -33,7 +33,7 @@ class EncounterReasonCodeTestHelper(FhirResourceTestHelper):
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'Encounter'.
 
-        resource_subtype (str): The subtype of the FHIR resource being tested, set to 'reason_code'.
+        resource_component (str): The subtype of the FHIR resource being tested, set to 'reason_code'.
 
         transformer (class): The transformer class used for transforming the FHIR resource.
 
@@ -41,7 +41,7 @@ class EncounterReasonCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Encounter"
-    resource_subtype = "reason_code"
+    resource_component = "reason_code"
     transformer = EncounterReasonCodeTransformer
     expected_table_name = "encounter_reason_code"
 

@@ -40,7 +40,7 @@ class ObservationBodySiteCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "body_site_coding"
+    resource_component = "body_site_coding"
     transformer = ObservationBodySiteCodingTransformer
     expected_table_name = "observation_body_site_coding"
 

@@ -40,7 +40,7 @@ class ServiceRequestInstantiatesUriTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "instantiates_uri"
+    resource_component = "instantiates_uri"
     transformer = ServiceRequestInstantiatesUriTransformer
     expected_table_name = "service_request_instantiates_uri"
 

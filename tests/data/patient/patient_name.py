@@ -83,7 +83,7 @@ class PatientNameTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Patient"
-    resource_subtype = "name"
+    resource_component = "name"
     transformer = PatientNameTransformer
     expected_table_name = "patient_name"
 

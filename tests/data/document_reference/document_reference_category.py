@@ -43,7 +43,7 @@ class DocumentReferenceCategoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "category"
+    resource_component = "category"
     transformer = DocumentReferenceCategoryTransformer
     expected_table_name = "document_reference_category"
 

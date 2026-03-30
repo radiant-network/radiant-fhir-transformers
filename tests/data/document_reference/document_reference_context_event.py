@@ -43,7 +43,7 @@ class DocumentReferenceContextEventTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "context_event"
+    resource_component = "context_event"
     transformer = DocumentReferenceContextEventTransformer
     expected_table_name = "document_reference_context_event"
 

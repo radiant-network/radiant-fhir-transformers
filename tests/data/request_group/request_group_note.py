@@ -43,7 +43,7 @@ class RequestGroupNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = RequestGroupNoteTransformer
     expected_table_name = "request_group_note"
 

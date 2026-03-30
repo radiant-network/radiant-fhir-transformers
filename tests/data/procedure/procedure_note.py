@@ -45,7 +45,7 @@ class ProcedureNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = ProcedureNoteTransformer
     expected_table_name = "procedure_note"
 

@@ -41,7 +41,7 @@ class ObservationInterpretationTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "interpretation"
+    resource_component = "interpretation"
     transformer = ObservationInterpretationTransformer
     expected_table_name = "observation_interpretation"
 

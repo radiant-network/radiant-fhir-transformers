@@ -56,7 +56,7 @@ class SpecimenContainerTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "container"
+    resource_component = "container"
     transformer = SpecimenContainerTransformer
     expected_table_name = "specimen_container"
 

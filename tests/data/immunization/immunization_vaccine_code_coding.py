@@ -40,7 +40,7 @@ class ImmunizationVaccineCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "vaccine_code_coding"
+    resource_component = "vaccine_code_coding"
     transformer = ImmunizationVaccineCodeCodingTransformer
     expected_table_name = "immunization_vaccine_code_coding"
 

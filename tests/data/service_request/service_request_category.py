@@ -45,7 +45,7 @@ class ServiceRequestCategoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "category"
+    resource_component = "category"
     transformer = ServiceRequestCategoryTransformer
     expected_table_name = "service_request_category"
 

@@ -49,7 +49,7 @@ class ConditionStageTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "stage"
+    resource_component = "stage"
     transformer = ConditionStageTransformer
     expected_table_name = "condition_stage"
 

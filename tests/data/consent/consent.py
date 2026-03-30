@@ -100,7 +100,7 @@ class ConsentTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Consent"
-    resource_subtype = None
+    resource_component = None
     transformer = ConsentTransformer
     expected_table_name = "consent"
 

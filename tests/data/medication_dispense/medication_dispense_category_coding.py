@@ -42,7 +42,7 @@ class MedicationDispenseCategoryCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationDispense"
-    resource_subtype = "category_coding"
+    resource_component = "category_coding"
     transformer = MedicationDispenseCategoryCodingTransformer
     expected_table_name = "medication_dispense_category_coding"
 

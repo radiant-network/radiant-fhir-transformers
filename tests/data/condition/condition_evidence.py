@@ -46,7 +46,7 @@ class ConditionEvidenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "evidence"
+    resource_component = "evidence"
     transformer = ConditionEvidenceTransformer
     expected_table_name = "condition_evidence"
 

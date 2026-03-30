@@ -49,7 +49,7 @@ class DiagnosticReportCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "code_coding"
+    resource_component = "code_coding"
     transformer = DiagnosticReportCodeCodingTransformer
     expected_table_name = "diagnostic_report_code_coding"
 

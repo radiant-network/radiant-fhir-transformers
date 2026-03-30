@@ -65,7 +65,7 @@ class ImmunizationProtocolAppliedTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "protocol_applied"
+    resource_component = "protocol_applied"
     transformer = ImmunizationProtocolAppliedTransformer
     expected_table_name = "immunization_protocol_applied"
 

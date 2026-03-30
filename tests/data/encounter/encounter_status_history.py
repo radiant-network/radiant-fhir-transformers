@@ -42,7 +42,7 @@ class EncounterStatusHistoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Encounter"
-    resource_subtype = "status_history"
+    resource_component = "status_history"
     transformer = EncounterStatusHistoryTransformer
     expected_table_name = "encounter_status_history"
 

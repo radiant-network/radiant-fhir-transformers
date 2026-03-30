@@ -37,7 +37,7 @@ class AllergyIntoleranceClinicalStatusCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "AllergyIntolerance"
-    resource_subtype = "clinical_status_coding"
+    resource_component = "clinical_status_coding"
     transformer = AllergyIntoleranceClinicalStatusCodingTransformer
     expected_table_name = "allergy_intolerance_clinical_status_coding"
 

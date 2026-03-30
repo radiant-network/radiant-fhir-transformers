@@ -40,7 +40,7 @@ class MedicationDispenseAuthorizingPrescriptionTestHelper(FhirResourceTestHelper
     """
 
     resource_type = "MedicationDispense"
-    resource_subtype = "authorizing_prescription"
+    resource_component = "authorizing_prescription"
     transformer = MedicationDispenseAuthorizingPrescriptionTransformer
     expected_table_name = "medication_dispense_authorizing_prescription"
 

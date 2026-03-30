@@ -46,7 +46,7 @@ class DocumentReferenceContentTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "content"
+    resource_component = "content"
     transformer = DocumentReferenceContentTransformer
     expected_table_name = "document_reference_content"
 

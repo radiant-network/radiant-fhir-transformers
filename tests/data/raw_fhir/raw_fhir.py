@@ -20,7 +20,7 @@ expected_output = [
 
 class RawFhirResourceTestHelper(FhirResourceTestHelper):
     resource_type = "fhir_resource"
-    resource_subtype = None
+    resource_component = None
     transformer = RawFhirResourceTransformer
     expected_table_name = "fhir_resource"
 

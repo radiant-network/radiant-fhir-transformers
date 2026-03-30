@@ -43,7 +43,7 @@ class RelatedPersonPhotoTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RelatedPerson"
-    resource_subtype = "photo"
+    resource_component = "photo"
     transformer = RelatedPersonPhotoTransformer
     expected_table_name = "related_person_photo"
 

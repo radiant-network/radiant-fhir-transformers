@@ -42,7 +42,7 @@ class SpecimenCollectionBodySiteCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "collection_body_site_coding"
+    resource_component = "collection_body_site_coding"
     transformer = SpecimenCollectionBodySiteCodingTransformer
     expected_table_name = "specimen_collection_body_site_coding"
 

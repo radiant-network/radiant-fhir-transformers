@@ -42,7 +42,7 @@ class ConsentPolicyRuleCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Consent"
-    resource_subtype = "policy_rule_coding"
+    resource_component = "policy_rule_coding"
     transformer = ConsentPolicyRuleCodingTransformer
     expected_table_name = "consent_policy_rule_coding"
 

@@ -42,7 +42,7 @@ class ConsentCategoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Consent"
-    resource_subtype = "category"
+    resource_component = "category"
     transformer = ConsentCategoryTransformer
     expected_table_name = "consent_category"
 

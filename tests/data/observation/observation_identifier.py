@@ -43,7 +43,7 @@ class ObservationIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = ObservationIdentifierTransformer
     expected_table_name = "observation_identifier"
 

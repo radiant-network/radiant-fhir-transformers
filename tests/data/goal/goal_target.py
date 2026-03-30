@@ -74,7 +74,7 @@ class GoalTargetTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "target"
+    resource_component = "target"
     transformer = GoalTargetTransformer
     expected_table_name = "goal_target"
 

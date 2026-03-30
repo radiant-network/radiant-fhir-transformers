@@ -38,7 +38,7 @@ class RequestGroupInstantiatesUriTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = "instantiates_uri"
+    resource_component = "instantiates_uri"
     transformer = RequestGroupInstantiatesUriTransformer
     expected_table_name = "request_group_instantiates_uri"
 

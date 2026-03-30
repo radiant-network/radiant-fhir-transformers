@@ -51,7 +51,7 @@ class ConditionCategoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "category"
+    resource_component = "category"
     transformer = ConditionCategoryTransformer
     expected_table_name = "condition_category"
 

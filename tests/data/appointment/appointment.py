@@ -39,7 +39,7 @@ class AppointmentTestHelper(FhirResourceTestHelper):
         resource_type (str): The type of FHIR resource being tested, which
           is set to 'Appointment'.
 
-        resource_subtype (str): The subtype of the FHIR resource, which is None
+        resource_component (str): The subtype of the FHIR resource, which is None
           for this resource.
 
         transformer (class): The transformer class used for transforming the
@@ -49,7 +49,7 @@ class AppointmentTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Appointment"
-    resource_subtype = None
+    resource_component = None
     transformer = AppointmentTransformer
     expected_table_name = "appointment"
 

@@ -42,7 +42,7 @@ class SpecimenTypeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "type_coding"
+    resource_component = "type_coding"
     transformer = SpecimenTypeCodingTransformer
     expected_table_name = "specimen_type_coding"
 

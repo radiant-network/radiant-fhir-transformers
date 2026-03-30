@@ -46,7 +46,7 @@ class DiagnosticReportPresentedFormTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "presented_form"
+    resource_component = "presented_form"
     transformer = DiagnosticReportPresentedFormTransformer
     expected_table_name = "diagnostic_report_presented_form"
 

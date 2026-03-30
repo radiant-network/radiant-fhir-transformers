@@ -45,7 +45,7 @@ class MedicationDispenseNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationDispense"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = MedicationDispenseNoteTransformer
     expected_table_name = "medication_dispense_note"
 

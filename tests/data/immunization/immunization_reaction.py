@@ -42,7 +42,7 @@ class ImmunizationReactionTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "reaction"
+    resource_component = "reaction"
     transformer = ImmunizationReactionTransformer
     expected_table_name = "immunization_reaction"
 

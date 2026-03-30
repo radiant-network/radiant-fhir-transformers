@@ -42,7 +42,7 @@ class ConsentProvisionSecurityLabelTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Consent"
-    resource_subtype = "provision_security_label"
+    resource_component = "provision_security_label"
     transformer = ConsentProvisionSecurityLabelTransformer
     expected_table_name = "consent_provision_security_label"
 

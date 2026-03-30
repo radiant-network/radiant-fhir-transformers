@@ -42,7 +42,7 @@ class LocationEndpointTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Location"
-    resource_subtype = "endpoint"
+    resource_component = "endpoint"
     transformer = LocationEndpointTransformer
     expected_table_name = "location_endpoint"
 

@@ -43,7 +43,7 @@ class AppointmentSpecialtyTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Appointment"
-    resource_subtype = "specialty"
+    resource_component = "specialty"
     transformer = AppointmentSpecialtyTransformer
     expected_table_name = "appointment_specialty"
 

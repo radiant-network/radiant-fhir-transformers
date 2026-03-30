@@ -42,7 +42,7 @@ class ConditionVerificationStatusCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "verification_status_coding"
+    resource_component = "verification_status_coding"
     transformer = ConditionVerificationStatusCodingTransformer
     expected_table_name = "condition_verification_status_coding"
 

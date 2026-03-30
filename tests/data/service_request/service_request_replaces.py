@@ -42,7 +42,7 @@ class ServiceRequestReplacesTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_subtype = "replaces"
+    resource_component = "replaces"
     transformer = ServiceRequestReplacesTransformer
     expected_table_name = "service_request_replaces"
 

@@ -55,7 +55,7 @@ class MedicationRequestReasonCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "MedicationRequest"
-    resource_subtype = "reason_code"
+    resource_component = "reason_code"
     transformer = MedicationRequestReasonCodeTransformer
     expected_table_name = "medication_request_reason_code"
 

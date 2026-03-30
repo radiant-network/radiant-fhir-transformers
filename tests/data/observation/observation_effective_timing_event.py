@@ -38,7 +38,7 @@ class ObservationEffectiveTimingEventTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "effective_timing_event"
+    resource_component = "effective_timing_event"
     transformer = ObservationEffectiveTimingEventTransformer
     expected_table_name = "observation_effective_timing_event"
 

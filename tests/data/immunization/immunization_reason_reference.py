@@ -40,7 +40,7 @@ class ImmunizationReasonReferenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "reason_reference"
+    resource_component = "reason_reference"
     transformer = ImmunizationReasonReferenceTransformer
     expected_table_name = "immunization_reason_reference"
 

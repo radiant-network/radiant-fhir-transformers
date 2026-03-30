@@ -45,7 +45,7 @@ class DiagnosticReportIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = DiagnosticReportIdentifierTransformer
     expected_table_name = "diagnostic_report_identifier"
 

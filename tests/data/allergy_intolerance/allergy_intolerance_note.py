@@ -45,7 +45,7 @@ class AllergyIntoleranceNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "AllergyIntolerance"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = AllergyIntoleranceNoteTransformer
     expected_table_name = "allergy_intolerance_note"
 

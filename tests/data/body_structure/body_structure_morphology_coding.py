@@ -40,7 +40,7 @@ class BodyStructureMorphologyCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "BodyStructure"
-    resource_subtype = "morphology_coding"
+    resource_component = "morphology_coding"
     transformer = BodyStructureMorphologyCodingTransformer
     expected_table_name = "body_structure_morphology_coding"
 

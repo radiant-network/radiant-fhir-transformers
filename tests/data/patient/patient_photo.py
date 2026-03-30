@@ -44,7 +44,7 @@ class PatientPhotoTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Patient"
-    resource_subtype = "photo"
+    resource_component = "photo"
     transformer = PatientPhotoTransformer
     expected_table_name = "patient_photo"
 

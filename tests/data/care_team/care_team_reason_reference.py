@@ -40,7 +40,7 @@ class CareTeamReasonReferenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CareTeam"
-    resource_subtype = "reason_reference"
+    resource_component = "reason_reference"
     transformer = CareTeamReasonReferenceTransformer
     expected_table_name = "care_team_reason_reference"
 

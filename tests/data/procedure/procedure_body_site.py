@@ -43,7 +43,7 @@ class ProcedureBodySiteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "body_site"
+    resource_component = "body_site"
     transformer = ProcedureBodySiteTransformer
     expected_table_name = "procedure_body_site"
 

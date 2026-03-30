@@ -56,7 +56,7 @@ class ObservationNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = ObservationNoteTransformer
     expected_table_name = "observation_note"
 

@@ -51,7 +51,7 @@ class SpecimenConditionTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "condition"
+    resource_component = "condition"
     transformer = SpecimenConditionTransformer
     expected_table_name = "specimen_condition"
 

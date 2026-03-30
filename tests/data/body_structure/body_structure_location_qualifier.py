@@ -53,7 +53,7 @@ class BodyStructureLocationQualifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "BodyStructure"
-    resource_subtype = "location_qualifier"
+    resource_component = "location_qualifier"
     transformer = BodyStructureLocationQualifierTransformer
     expected_table_name = "body_structure_location_qualifier"
 

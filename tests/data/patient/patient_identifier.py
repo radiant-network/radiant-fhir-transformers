@@ -148,7 +148,7 @@ class PatientIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Patient"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = PatientIdentifierTransformer
     expected_table_name = "patient_identifier"
 

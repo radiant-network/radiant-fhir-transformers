@@ -38,7 +38,7 @@ class ObservationEffectiveTimingRepeatDayOfWeekTestHelper(FhirResourceTestHelper
     """
 
     resource_type = "Observation"
-    resource_subtype = "effective_timing_repeat_day_of_week"
+    resource_component = "effective_timing_repeat_day_of_week"
     transformer = ObservationEffectiveTimingRepeatDayOfWeekTransformer
     expected_table_name = "observation_effective_timing_repeat_day_of_week"
 

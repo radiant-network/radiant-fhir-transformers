@@ -75,7 +75,7 @@ class ProcedureTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = None
+    resource_component = None
     transformer = ProcedureTransformer
     expected_table_name = "procedure"
 

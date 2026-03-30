@@ -40,7 +40,7 @@ class GoalAchievementStatusCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "achievement_status_coding"
+    resource_component = "achievement_status_coding"
     transformer = GoalAchievementStatusCodingTransformer
     expected_table_name = "goal_achievement_status_coding"
 

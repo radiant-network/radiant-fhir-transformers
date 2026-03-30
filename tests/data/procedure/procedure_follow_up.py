@@ -43,7 +43,7 @@ class ProcedureFollowUpTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "follow_up"
+    resource_component = "follow_up"
     transformer = ProcedureFollowUpTransformer
     expected_table_name = "procedure_follow_up"
 

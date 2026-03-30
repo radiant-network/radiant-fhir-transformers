@@ -40,7 +40,7 @@ class AllergyIntoleranceCategoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "AllergyIntolerance"
-    resource_subtype = "category"
+    resource_component = "category"
     transformer = AllergyIntoleranceCategoryTransformer
     expected_table_name = "allergy_intolerance_category"
 

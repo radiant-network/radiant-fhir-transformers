@@ -40,7 +40,7 @@ class GoalOutcomeReferenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "outcome_reference"
+    resource_component = "outcome_reference"
     transformer = GoalOutcomeReferenceTransformer
     expected_table_name = "goal_outcome_reference"
 

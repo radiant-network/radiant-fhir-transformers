@@ -43,7 +43,7 @@ class RelatedPersonIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RelatedPerson"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = RelatedPersonIdentifierTransformer
     expected_table_name = "related_person_identifier"
 

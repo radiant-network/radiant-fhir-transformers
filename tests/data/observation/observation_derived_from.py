@@ -40,7 +40,7 @@ class ObservationDerivedFromTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "derived_from"
+    resource_component = "derived_from"
     transformer = ObservationDerivedFromTransformer
     expected_table_name = "observation_derived_from"
 

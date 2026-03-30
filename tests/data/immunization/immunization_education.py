@@ -41,7 +41,7 @@ class ImmunizationEducationTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Immunization"
-    resource_subtype = "education"
+    resource_component = "education"
     transformer = ImmunizationEducationTransformer
     expected_table_name = "immunization_education"
 

@@ -45,7 +45,7 @@ class SpecimenNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Specimen"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = SpecimenNoteTransformer
     expected_table_name = "specimen_note"
 

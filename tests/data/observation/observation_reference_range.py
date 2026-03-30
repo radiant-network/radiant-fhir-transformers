@@ -57,7 +57,7 @@ class ObservationReferenceRangeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Observation"
-    resource_subtype = "reference_range"
+    resource_component = "reference_range"
     transformer = ObservationReferenceRangeTransformer
     expected_table_name = "observation_reference_range"
 

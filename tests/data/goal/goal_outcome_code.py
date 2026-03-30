@@ -41,7 +41,7 @@ class GoalOutcomeCodeTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "outcome_code"
+    resource_component = "outcome_code"
     transformer = GoalOutcomeCodeTransformer
     expected_table_name = "goal_outcome_code"
 

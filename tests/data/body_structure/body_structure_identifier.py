@@ -43,7 +43,7 @@ class BodyStructureIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "BodyStructure"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = BodyStructureIdentifierTransformer
     expected_table_name = "body_structure_identifier"
 

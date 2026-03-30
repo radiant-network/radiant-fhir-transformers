@@ -45,7 +45,7 @@ class CarePlanNoteTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CarePlan"
-    resource_subtype = "note"
+    resource_component = "note"
     transformer = CarePlanNoteTransformer
     expected_table_name = "care_plan_note"
 

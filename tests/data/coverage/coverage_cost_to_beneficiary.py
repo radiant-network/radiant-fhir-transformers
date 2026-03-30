@@ -59,7 +59,7 @@ class CoverageCostToBeneficiaryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Coverage"
-    resource_subtype = "cost_to_beneficiary"
+    resource_component = "cost_to_beneficiary"
     transformer = CoverageCostToBeneficiaryTransformer
     expected_table_name = "coverage_cost_to_beneficiary"
 

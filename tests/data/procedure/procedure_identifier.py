@@ -55,7 +55,7 @@ class ProcedureIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = ProcedureIdentifierTransformer
     expected_table_name = "procedure_identifier"
 

@@ -40,7 +40,7 @@ class DocumentReferenceContextRelatedTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "context_related"
+    resource_component = "context_related"
     transformer = DocumentReferenceContextRelatedTransformer
     expected_table_name = "document_reference_context_related"
 

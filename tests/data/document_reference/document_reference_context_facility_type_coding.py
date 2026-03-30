@@ -40,7 +40,7 @@ class DocumentReferenceContextFacilityTypeCodingTestHelper(FhirResourceTestHelpe
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "context_facility_type_coding"
+    resource_component = "context_facility_type_coding"
     transformer = DocumentReferenceContextFacilityTypeCodingTransformer
     expected_table_name = "document_reference_context_facility_type_coding"
 

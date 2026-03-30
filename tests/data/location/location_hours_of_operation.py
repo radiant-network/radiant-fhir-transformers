@@ -43,7 +43,7 @@ class LocationHourseOfOperationTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Location"
-    resource_subtype = "hours_of_operation"
+    resource_component = "hours_of_operation"
     transformer = LocationHoursOfOperationTransformer
     expected_table_name = "location_hours_of_operation"
 

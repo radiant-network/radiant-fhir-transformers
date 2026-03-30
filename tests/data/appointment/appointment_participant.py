@@ -78,7 +78,7 @@ class AppointmentParticipantTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Appointment"
-    resource_subtype = "participant"
+    resource_component = "participant"
     transformer = AppointmentParticipantTransformer
     expected_table_name = "appointment_participant"
 

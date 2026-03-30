@@ -50,7 +50,7 @@ class LocationTelecomTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Location"
-    resource_subtype = "telecom"
+    resource_component = "telecom"
     transformer = LocationTelecomTransformer
     expected_table_name = "location_telecom"
 

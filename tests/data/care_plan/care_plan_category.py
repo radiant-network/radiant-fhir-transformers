@@ -41,7 +41,7 @@ class CarePlanCategoryTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "CarePlan"
-    resource_subtype = "category"
+    resource_component = "category"
     transformer = CarePlanCategoryTransformer
     expected_table_name = "care_plan_category"
 

@@ -40,7 +40,7 @@ class GoalDescriptionCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Goal"
-    resource_subtype = "description_coding"
+    resource_component = "description_coding"
     transformer = GoalDescriptionCodingTransformer
     expected_table_name = "goal_description_coding"
 

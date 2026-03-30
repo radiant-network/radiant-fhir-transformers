@@ -55,7 +55,7 @@ class PatientTelecomTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Patient"
-    resource_subtype = "telecom"
+    resource_component = "telecom"
     transformer = PatientTelecomTransformer
     expected_table_name = "patient_telecom"
 

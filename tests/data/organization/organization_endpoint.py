@@ -42,7 +42,7 @@ class OrganizationEndpointTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Organization"
-    resource_subtype = "endpoint"
+    resource_component = "endpoint"
     transformer = OrganizationEndpointTransformer
     expected_table_name = "organization_endpoint"
 

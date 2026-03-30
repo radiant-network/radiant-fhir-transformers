@@ -40,7 +40,7 @@ class RequestGroupBasedOnTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = "based_on"
+    resource_component = "based_on"
     transformer = RequestGroupBasedOnTransformer
     expected_table_name = "request_group_based_on"
 

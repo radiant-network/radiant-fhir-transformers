@@ -45,7 +45,7 @@ class EncounterIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Encounter"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = EncounterIdentifierTransformer
     expected_table_name = "encounter_identifier"
 

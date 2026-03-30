@@ -42,7 +42,7 @@ class ConditionClinicalStatusCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "clinical_status_coding"
+    resource_component = "clinical_status_coding"
     transformer = ConditionClinicalStatusCodingTransformer
     expected_table_name = "condition_clinical_status_coding"
 

@@ -43,7 +43,7 @@ class BodyStructureImageTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "BodyStructure"
-    resource_subtype = "image"
+    resource_component = "image"
     transformer = BodyStructureImageTransformer
     expected_table_name = "body_structure_image"
 

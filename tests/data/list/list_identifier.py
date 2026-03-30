@@ -43,7 +43,7 @@ class ListIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "List"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = ListIdentifierTransformer
     expected_table_name = "list_identifier"
 

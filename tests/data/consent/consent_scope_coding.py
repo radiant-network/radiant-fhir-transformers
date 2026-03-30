@@ -42,7 +42,7 @@ class ConsentScopeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Consent"
-    resource_subtype = "scope_coding"
+    resource_component = "scope_coding"
     transformer = ConsentScopeCodingTransformer
     expected_table_name = "consent_scope_coding"
 

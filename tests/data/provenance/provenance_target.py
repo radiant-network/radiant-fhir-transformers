@@ -42,7 +42,7 @@ class ProvenanceTargetTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Provenance"
-    resource_subtype = "target"
+    resource_component = "target"
     transformer = ProvenanceTargetTransformer
     expected_table_name = "provenance_target"
 

@@ -80,7 +80,7 @@ class PatientAddressTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Patient"
-    resource_subtype = "address"
+    resource_component = "address"
     transformer = PatientAddressTransformer
     expected_table_name = "patient_address"
 

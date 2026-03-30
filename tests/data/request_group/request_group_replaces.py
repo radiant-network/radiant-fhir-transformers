@@ -40,7 +40,7 @@ class RequestGroupReplacesTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = "replaces"
+    resource_component = "replaces"
     transformer = RequestGroupReplacesTransformer
     expected_table_name = "request_group_replaces"
 

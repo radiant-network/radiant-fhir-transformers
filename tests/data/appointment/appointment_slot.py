@@ -42,7 +42,7 @@ class AppointmentSlotTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Appointment"
-    resource_subtype = "slot"
+    resource_component = "slot"
     transformer = AppointmentSlotTransformer
     expected_table_name = "appointment_slot"
 

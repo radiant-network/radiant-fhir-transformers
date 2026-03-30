@@ -40,7 +40,7 @@ class RequestGroupCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "RequestGroup"
-    resource_subtype = "code_coding"
+    resource_component = "code_coding"
     transformer = RequestGroupCodeCodingTransformer
     expected_table_name = "request_group_code_coding"
 

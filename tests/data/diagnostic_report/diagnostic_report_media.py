@@ -43,7 +43,7 @@ class DiagnosticReportMediaTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "DiagnosticReport"
-    resource_subtype = "media"
+    resource_component = "media"
     transformer = DiagnosticReportMediaTransformer
     expected_table_name = "diagnostic_report_media"
 

@@ -44,7 +44,7 @@ class OrganizationTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Organization"
-    resource_subtype = None
+    resource_component = None
     transformer = OrganizationTransformer
     expected_table_name = "organization"
 

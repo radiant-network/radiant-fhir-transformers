@@ -37,7 +37,7 @@ class AllergyIntoleranceCodeCodingTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "AllergyIntolerance"
-    resource_subtype = "code_coding"
+    resource_component = "code_coding"
     transformer = AllergyIntoleranceCodeCodingTransformer
     expected_table_name = "allergy_intolerance_code_coding"
 

@@ -40,7 +40,7 @@ class DocumentReferenceContextPracticeSettingCodingTestHelper(FhirResourceTestHe
     """
 
     resource_type = "DocumentReference"
-    resource_subtype = "context_practice_setting_coding"
+    resource_component = "context_practice_setting_coding"
     transformer = DocumentReferenceContextPracticeSettingCodingTransformer
     expected_table_name = "document_reference_context_practice_setting_coding"
 

@@ -63,7 +63,7 @@ class ProvenanceAgentTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Provenance"
-    resource_subtype = "agent"
+    resource_component = "agent"
     transformer = ProvenanceAgentTransformer
     expected_table_name = "provenance_agent"
 

@@ -49,7 +49,7 @@ class ProcedurePerformerTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Procedure"
-    resource_subtype = "performer"
+    resource_component = "performer"
     transformer = ProcedurePerformerTransformer
     expected_table_name = "procedure_performer"
 

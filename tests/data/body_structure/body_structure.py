@@ -44,7 +44,7 @@ class BodyStructureTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "BodyStructure"
-    resource_subtype = None
+    resource_component = None
     transformer = BodyStructureTransformer
     expected_table_name = "body_structure"
 

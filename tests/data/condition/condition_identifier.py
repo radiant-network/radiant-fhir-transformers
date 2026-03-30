@@ -45,7 +45,7 @@ class ConditionIdentifierTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "Condition"
-    resource_subtype = "identifier"
+    resource_component = "identifier"
     transformer = ConditionIdentifierTransformer
     expected_table_name = "condition_identifier"
 
