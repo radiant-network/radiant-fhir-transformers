@@ -284,6 +284,372 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
             ],
+            "select": [
+                {
+                    "forEachOrNull": "additionalInstruction",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_additional_instruction_text",
+                            "path": "text",
+                            "type": "string",
+                        },
+                    ],
+                    "select": [
+                        {
+                            "forEachOrNull": "coding",
+                            "column": [
+                                {
+                                    "name": "dosage_instruction_additional_instruction_coding_system",
+                                    "path": "system",
+                                    "type": "string",
+                                },
+                                {
+                                    "name": "dosage_instruction_additional_instruction_coding_code",
+                                    "path": "code",
+                                    "type": "string",
+                                },
+                                {
+                                    "name": "dosage_instruction_additional_instruction_coding_display",
+                                    "path": "display",
+                                    "type": "string",
+                                },
+                            ],
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "timing.event",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_timing_event",
+                            "path": "$this",
+                            "type": "datetime",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "timing.repeat.dayOfWeek",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_timing_repeat_day_of_week",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "timing.repeat.timeOfDay",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_timing_repeat_time_of_day",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "timing.repeat.when",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_timing_repeat_when",
+                            "path": "$this",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "timing.code.coding",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_timing_code_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_timing_code_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_timing_code_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "asNeededCodeableConcept.coding",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_as_needed_codeable_concept_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_as_needed_codeable_concept_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_as_needed_codeable_concept_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "site.coding",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_site_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_site_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_site_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "route.coding",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_route_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_route_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_route_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "method.coding",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_method_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_method_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_method_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+                {
+                    "forEachOrNull": "doseAndRate",
+                    "column": [
+                        {
+                            "name": "dosage_instruction_dose_and_rate_type_text",
+                            "path": "type.text",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_range_low_value",
+                            "path": "doseRange.low.value",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_range_low_unit",
+                            "path": "doseRange.low.unit",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_range_low_system",
+                            "path": "doseRange.low.system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_range_low_code",
+                            "path": "doseRange.low.code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_range_high_value",
+                            "path": "doseRange.high.value",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_range_high_unit",
+                            "path": "doseRange.high.unit",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_range_high_system",
+                            "path": "doseRange.high.system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_range_high_code",
+                            "path": "doseRange.high.code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_quantity_value",
+                            "path": "doseQuantity.value",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_quantity_unit",
+                            "path": "doseQuantity.unit",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_quantity_system",
+                            "path": "doseQuantity.system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_dose_quantity_code",
+                            "path": "doseQuantity.code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_ratio_numerator_value",
+                            "path": "rateRatio.numerator.value",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_ratio_numerator_unit",
+                            "path": "rateRatio.numerator.unit",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_ratio_numerator_system",
+                            "path": "rateRatio.numerator.system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_ratio_numerator_code",
+                            "path": "rateRatio.numerator.code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_ratio_denominator_value",
+                            "path": "rateRatio.denominator.value",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_ratio_denominator_unit",
+                            "path": "rateRatio.denominator.unit",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_ratio_denominator_system",
+                            "path": "rateRatio.denominator.system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_ratio_denominator_code",
+                            "path": "rateRatio.denominator.code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_range_low_value",
+                            "path": "rateRange.low.value",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_range_low_unit",
+                            "path": "rateRange.low.unit",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_range_low_system",
+                            "path": "rateRange.low.system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_range_low_code",
+                            "path": "rateRange.low.code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_range_high_value",
+                            "path": "rateRange.high.value",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_range_high_unit",
+                            "path": "rateRange.high.unit",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_range_high_system",
+                            "path": "rateRange.high.system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_range_high_code",
+                            "path": "rateRange.high.code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_quantity_value",
+                            "path": "rateQuantity.value",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_quantity_unit",
+                            "path": "rateQuantity.unit",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_quantity_system",
+                            "path": "rateQuantity.system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "dosage_instruction_dose_and_rate_rate_quantity_code",
+                            "path": "rateQuantity.code",
+                            "type": "string",
+                        },
+                    ],
+                    "select": [
+                        {
+                            "forEachOrNull": "type.coding",
+                            "column": [
+                                {
+                                    "name": "dosage_instruction_dose_and_rate_type_coding_system",
+                                    "path": "system",
+                                    "type": "string",
+                                },
+                                {
+                                    "name": "dosage_instruction_dose_and_rate_type_coding_code",
+                                    "path": "code",
+                                    "type": "string",
+                                },
+                                {
+                                    "name": "dosage_instruction_dose_and_rate_type_coding_display",
+                                    "path": "display",
+                                    "type": "string",
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ],
         },
     ],
 }

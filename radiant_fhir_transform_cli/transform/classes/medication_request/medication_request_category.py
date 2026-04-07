@@ -39,6 +39,28 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
             ],
+            "select": [
+                {
+                    "forEachOrNull": "coding",
+                    "column": [
+                        {
+                            "name": "category_coding_system",
+                            "path": "system",
+                            "type": "string",
+                        },
+                        {
+                            "name": "category_coding_code",
+                            "path": "code",
+                            "type": "string",
+                        },
+                        {
+                            "name": "category_coding_display",
+                            "path": "display",
+                            "type": "string",
+                        },
+                    ],
+                },
+            ],
         },
     ],
 }

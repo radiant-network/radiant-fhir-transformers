@@ -178,6 +178,11 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "group_identifier_type_text",
+                    "path": "groupIdentifier.type.text",
+                    "type": "string",
+                },
+                {
                     "name": "group_identifier_system",
                     "path": "groupIdentifier.system",
                     "type": "string",
@@ -186,6 +191,16 @@ VIEW_DEFINITION = {
                     "name": "group_identifier_value",
                     "path": "groupIdentifier.value",
                     "type": "string",
+                },
+                {
+                    "name": "group_identifier_period_start",
+                    "path": "groupIdentifier.period.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "group_identifier_period_end",
+                    "path": "groupIdentifier.period.end",
+                    "type": "dateTime",
                 },
                 {
                     "name": "course_of_therapy_type_text",
