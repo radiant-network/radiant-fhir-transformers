@@ -75,8 +75,13 @@ RESOURCE = {
     "identifier": [
         {
             "use": "official",
+            "type": {"text": "DFN"},
             "system": "http://www.bmc.nl/portal/prescriptions",
             "value": "12345689",
+            "period": {
+                "start": "2015-01-15",
+                "end": "2016-01-15",
+            },
         }
     ],
     "status": "completed",
