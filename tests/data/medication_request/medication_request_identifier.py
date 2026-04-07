@@ -12,8 +12,11 @@ from .medication_request_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "identifier_use": "official",
+        "identifier_type_text": "DFN",
         "identifier_system": "http://www.bmc.nl/portal/prescriptions",
         "identifier_value": "12345689",
+        "identifier_period_start": "2015-01-15",
+        "identifier_period_end": "2016-01-15",
         "id": "e5028d39-e91d-414d-91e5-5cadc965065c",
         "medication_request_id": "medrx0301",
     },
