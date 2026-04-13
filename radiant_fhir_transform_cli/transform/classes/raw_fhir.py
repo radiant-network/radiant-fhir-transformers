@@ -125,9 +125,7 @@ class RawFhirResourceTransformer(FhirResourceTransformer):
         updated_rows = []
         for row in output:
             # Canonical JSON serialization
-            payload_str = json.dumps(
-                row["json"], default=str, sort_keys=True, separators=(",", ":")
-            )
+            payload_str = row["json"]
             hash_value, size_bytes = self._compute_payload_hash_and_size(payload_str)
             row["hash_md5"] = hash_value
             row["size_bytes"] = str(size_bytes)
