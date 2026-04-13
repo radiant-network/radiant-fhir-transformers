@@ -1,5 +1,5 @@
 """
-Test helper class for FHIR resource type Appointment subtype Participant 
+Test helper class for FHIR resource type Appointment subtype Participant
 """
 
 from radiant_fhir_transform_cli.transform.classes.appointment.appointment_participant import (

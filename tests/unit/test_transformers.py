@@ -34,6 +34,9 @@ from radiant_fhir_transform_cli.transform.classes.raw_fhir import (
     RawFhirResourceTransformer,
 )
 from tests.data import test_helpers
+from tests.data.appointment.appointment_participant import (
+    AppointmentParticipantTestHelper,
+)
 
 pd.set_option("display.max_rows", None)
 pd.set_option("display.max_columns", None)
@@ -74,12 +77,34 @@ def normalize_reference_values(value):
                 result[key] = normalize_reference_values(val)
             else:
                 # Recursively process the value (might be a nested dict/list)
-                result[key] = normalize_reference_values(val)
+                result[key] = val
         return result
 
     if isinstance(value, list):
         # Recursively process each element in the list
         return [normalize_reference_values(item) for item in value]
+
+    # For other types (int, float, bool, etc.), return as-is
+    return value
+
+
+def serialize_complex_types(value):
+    if value is None:
+        return None
+
+    if isinstance(value, dict):
+        # Create a new dict and process each key-value pair
+        result = {}
+        for key, val in value.items():
+            if isinstance(val, (dict, list)):
+                result[key] = json.dumps(val, default=str, sort_keys=True, separators=(",", ":"))
+            else:
+                result[key] = val
+        return result
+
+    if isinstance(value, list):
+        # Recursively process each element in the list
+        return [serialize_complex_types(item) for item in value]
 
     # For other types (int, float, bool, etc.), return as-is
     return value
@@ -108,7 +133,8 @@ def test_transformers(test_helper_cls):
 
     # Normalize reference values
     actual = normalize_reference_values(actual)
-    expected_output = normalize_reference_values(test_helper.expected_output)
+    expected_output = serialize_complex_types(test_helper.expected_output)
+    expected_output = normalize_reference_values(expected_output)
 
     # Convert to DataFrames
     df_actual = pd.DataFrame(actual)
