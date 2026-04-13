@@ -152,6 +152,9 @@ class FhirResourceTransformer:
         for k, v in row.items():
             if isinstance(v, list) and len(v) == 0:
                 row[k] = None
+
+            elif isinstance(v, (list, dict)):
+                row[k] = json.dumps(v, default=str, sort_keys=True, separators=(",", ":"))
         return row
 
     def _extract_foreign_key_value(self, row: dict[str, Any]) -> dict[str, Any]:
