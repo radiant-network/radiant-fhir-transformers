@@ -138,20 +138,30 @@ class FhirResourceTransformer:
         return row
 
     def _normalize_value(self, row: dict[str, Any]) -> dict[str, Any]:
-        """Normalize values in a row to ensure consistent representation.
+        """
+        Normalize row values for consistent representation and schema compatibility.
 
-        Converts empty lists to ``None`` to avoid JSON serialization issues
-        and maintain a consistent null representation.
+        This method performs two critical transformations:
+        1.  **Null Consistency**: Converts empty lists to ``None`` to maintain a
+            uniform null representation across Spark/Iceberg.
+        2.  **Complex Type Serialization**: Serializes nested dictionaries and
+            lists into minified JSON strings. This ensures compatibility with
+            flat destination formats (like CSV) and prevents PyArrow
+            NotImplementedErrors when casting to string-based schemas.
 
         Args:
-            row: A row dictionary representing transformed values.
+            row: A dictionary representing a single transformed FHIR record.
 
         Returns:
-            The same row dictionary with normalized values.
+            The modified row dictionary with stringified complex types and
+            normalized nulls.
         """
         for k, v in row.items():
             if isinstance(v, list) and len(v) == 0:
                 row[k] = None
+
+            elif isinstance(v, (list, dict)):
+                row[k] = json.dumps(v, default=str, sort_keys=True, separators=(",", ":"))
         return row
 
     def _extract_foreign_key_value(self, row: dict[str, Any]) -> dict[str, Any]:

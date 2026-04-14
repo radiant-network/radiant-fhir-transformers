@@ -16,11 +16,11 @@ EXPECTED_OUTPUT = [
         "stage_assessment_reference": "foo",
         "stage_summary_coding_code": "14803004",
         "stage_summary_coding_display": "Temporary",
-        "stage_summary_coding_system": "sct",
+        "stage_summary_coding_system": "http://snomed.info/sct",
         "stage_summary_text": "Temporary",
         "stage_type_coding_code": "14803004",
         "stage_type_coding_display": "Temporary",
-        "stage_type_coding_system": "sct",
+        "stage_type_coding_system": "http://snomed.info/sct",
         "stage_type_text": None,
         "id": "8bd1d458-b657-426a-9788-dad78479ab63",
     }
