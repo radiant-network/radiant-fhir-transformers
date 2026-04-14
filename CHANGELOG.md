@@ -1,5 +1,17 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 2.1.0
+
+### Summary
+
+- Emojis: ? x1
+- Categories: Other Changes x1
+
+### New features and changes
+
+- [#123](https://github.com/radiant-network/radiant-fhir-transformers/pull/123) -  Normalize data when datatypes are list or obj for pyarrow - [3d004628](https://github.com/radiant-network/radiant-fhir-transformers/commit/3d0046282b1093122fa6af85e36ca16346e37c11) by [haynescd](https://github.com/haynescd)
+
+
 ## Release 2.0.0
 
 ### Summary
