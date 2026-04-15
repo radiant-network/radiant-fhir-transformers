@@ -75,8 +75,13 @@ RESOURCE = {
     "identifier": [
         {
             "use": "official",
+            "type": {"text": "DFN"},
             "system": "http://www.bmc.nl/portal/prescriptions",
             "value": "12345689",
+            "period": {
+                "start": "2015-01-15",
+                "end": "2016-01-15",
+            },
         }
     ],
     "status": "completed",
@@ -98,7 +103,7 @@ RESOURCE = {
                     "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
                     "code": "inpatient",
                     "display": "Inpatient",
-                }
+                },
             ],
             "text": "Requests for medications in inpatient or acute care settings",
         }
@@ -272,12 +277,13 @@ RESOURCE = {
             ],
             "patientInstruction": "Take one to two tablets every four to six hours as needed for rib pain",
             "timing": {
+                "event": ["2015-01-15", "2016-01-15"],
                 "repeat": {
                     "frequency": 1,
                     "period": 4,
                     "periodMax": 6,
                     "periodUnit": "h",
-                }
+                },
             },
             "asNeededCodeableConcept": {
                 "coding": [
