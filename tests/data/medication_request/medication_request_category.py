@@ -11,6 +11,13 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "category_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
+                "code": "inpatient",
+                "display": "Inpatient",
+            },
+        ],
         "category_text": "Requests for medications in inpatient or acute care settings",
         "id": "e222f750-97de-47ee-a598-10d62858f1f6",
         "medication_request_id": "medrx0301",
