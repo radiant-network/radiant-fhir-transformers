@@ -11,23 +11,91 @@ from .medication_request_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "reason_code_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "50820005",
+                "display": "Cytopenia (finding)",
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-9-cm",
+                "code": "289.9",
+                "display": "Unspecified diseases of blood and blood-forming organs",
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "D75.9",
+                "display": "Disease of blood and blood-forming organs, unspecified",
+            },
+        ],
         "reason_code_text": "Cytopenia",
         "id": "1c62f09f-69ce-4008-954b-03db4da721e1",
         "medication_request_id": "medrx0301",
     },
     {
+        "reason_code_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "370388006",
+                "display": "Patient immunocompromised (finding)",
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-9-cm",
+                "code": "279.9",
+                "display": "Unspecified disorder of immune mechanism",
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "D84.9",
+                "display": "Immunodeficiency, unspecified",
+            },
+        ],
         "reason_code_text": "Immunocompromised state",
-        "id": "7d8faa5b-6257-4031-8586-96423af2e21f",
+        "id": "1c62f09f-69ce-4008-954b-03db4da721e1",
         "medication_request_id": "medrx0301",
     },
     {
+        "reason_code_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "243815002",
+                "display": "Prevention status (finding)",
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-9-cm",
+                "code": "V07.8",
+                "display": "Other specified prophylactic or treatment measure",
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "Z29.89",
+                "display": "Encounter for other specified prophylactic measures",
+            },
+        ],
         "reason_code_text": "Need for pneumocystis prophylaxis",
-        "id": "b694953e-de96-4948-8564-611b666dcc3e",
+        "id": "1c62f09f-69ce-4008-954b-03db4da721e1",
         "medication_request_id": "medrx0301",
     },
     {
+        "reason_code_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "443333004",
+                "display": "Medulloblastoma (disorder)",
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-9-cm",
+                "code": "191.6",
+                "display": "Malignant neoplasm of cerebellum NOS",
+            },
+            {
+                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                "code": "C71.6",
+                "display": "Malignant neoplasm of cerebellum",
+            },
+        ],
         "reason_code_text": "Medulloblastoma",
-        "id": "7b901194-ecc8-4e38-9cea-570e464b8e46",
+        "id": "1c62f09f-69ce-4008-954b-03db4da721e1",
         "medication_request_id": "medrx0301",
     },
 ]
