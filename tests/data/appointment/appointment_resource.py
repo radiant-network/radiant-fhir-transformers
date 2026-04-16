@@ -28,7 +28,9 @@ RESOURCE = {
             ]
         }
     ],
-    "serviceType": [{"coding": [{"code": "52", "display": "General Discussion"}]}],
+    "serviceType": [
+        {"coding": [{"code": "52", "display": "General Discussion"}]}
+    ],
     "specialty": [
         {
             "coding": [
@@ -51,11 +53,15 @@ RESOURCE = {
     },
     "reasonCode": [
         {
-            "coding": [{"system": "http://snomed.info/sct", "code": "413095006"}],
+            "coding": [
+                {"system": "http://snomed.info/sct", "code": "413095006"}
+            ],
             "text": "Clinical Review",
         }
     ],
-    "reasonReference": [{"reference": "Condition/example", "display": "Severe burn of left ear"}],
+    "reasonReference": [
+        {"reference": "Condition/example", "display": "Severe burn of left ear"}
+    ],
     "priority": 5,
     "description": "Discussion on the results of your recent MRI",
     "supportingInformation": [{"reference": "DiagnosticReport/ultrasound"}],

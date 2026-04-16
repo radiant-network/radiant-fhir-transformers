@@ -380,5 +380,7 @@ RESOURCE = {
         },
     },
     "detectedIssue": [{"reference": "DetectedIssue/allergy"}],
-    "eventHistory": [{"reference": "#signature", "display": "Author's Signature"}],
+    "eventHistory": [
+        {"reference": "#signature", "display": "Author's Signature"}
+    ],
 }

@@ -172,7 +172,9 @@ RESOURCE = {
     },
     "device": {"reference": "Device/device"},
     "referenceRange": [{"text": "Negative"}],
-    "hasMember": [{"reference": "QuestionnaireResponse/questionnaire-response"}],
+    "hasMember": [
+        {"reference": "QuestionnaireResponse/questionnaire-response"}
+    ],
     "derivedFrom": [{"reference": "DocumentReference/document-reference"}],
     "component": [
         {

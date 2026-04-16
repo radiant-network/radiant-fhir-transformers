@@ -54,6 +54,10 @@ VIEW_DEFINITION = {
 }
 
 
-class MedicationRequestSubstitutionReasonCodingTransformer(FhirResourceTransformer):
+class MedicationRequestSubstitutionReasonCodingTransformer(
+    FhirResourceTransformer
+):
     def __init__(self):
-        super().__init__("MedicationRequest", "substitution_reason_coding", VIEW_DEFINITION)
+        super().__init__(
+            "MedicationRequest", "substitution_reason_coding", VIEW_DEFINITION
+        )

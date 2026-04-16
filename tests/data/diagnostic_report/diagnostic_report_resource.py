@@ -14,7 +14,9 @@ RESOURCE = {
         "status": "generated",
         "div": '<div xmlns="http://www.w3.org/1999/xhtml">\n\t\t\t\t\t\t<h3>CBC Report for Wile. E. COYOTE (MRN: 23453) issued 3-Mar 2011 11:45</h3>\n\t\t\t\t\t\t<pre>\nTest                  Units       Value       Reference Range\nHaemoglobin           g/L         176         135 - 180\nRed Cell Count        x10*12/L    5.9         4.2 - 6.0\nHaematocrit                       0.55+       0.38 - 0.52\nMean Cell Volume      fL          99+         80 - 98\nMean Cell Haemoglobin pg          36+         27 - 35\nPlatelet Count        x10*9/L     444         150 - 450\nWhite Cell Count      x10*9/L     4.6         4.0 - 11.0\nNeutrophils           %           20\nNeutrophils           x10*9/L     0.9---      2.0 - 7.5\nLymphocytes           %           20\nLymphocytes           x10*9/L     0.9-        1.1 - 4.0\nMonocytes             %           20\nMonocytes             x10*9/L     0.9         0.2 - 1.0\nEosinophils           %           20\nEosinophils           x10*9/L     0.92++      0.04 - 0.40\nBasophils             %           20\nBasophils             x10*9/L     0.92+++     &lt;0.21\n      </pre>\n\t\t\t\t\t\t<p>Acme Laboratory, Inc signed: Dr Pete Pathologist</p>\n\t\t\t\t\t</div>',
     },
-    "identifier": [{"system": "http://acme.com/lab/reports", "value": "5234342"}],
+    "identifier": [
+        {"system": "http://acme.com/lab/reports", "value": "5234342"}
+    ],
     "status": "final",
     "basedOn": [{"reference": "ServiceRequest/req"}],
     "category": [

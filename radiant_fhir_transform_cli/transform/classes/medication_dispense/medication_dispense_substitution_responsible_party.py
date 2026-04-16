@@ -45,7 +45,9 @@ VIEW_DEFINITION = {
 }
 
 
-class MedicationDispenseSubstitutionResponsiblePartyTransformer(FhirResourceTransformer):
+class MedicationDispenseSubstitutionResponsiblePartyTransformer(
+    FhirResourceTransformer
+):
     def __init__(self):
         super().__init__(
             "MedicationDispense",

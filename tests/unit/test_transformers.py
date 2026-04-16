@@ -97,7 +97,9 @@ def serialize_complex_types(value):
         result = {}
         for key, val in value.items():
             if isinstance(val, (dict, list)):
-                result[key] = json.dumps(val, default=str, sort_keys=True, separators=(",", ":"))
+                result[key] = json.dumps(
+                    val, default=str, sort_keys=True, separators=(",", ":")
+                )
             else:
                 result[key] = val
         return result
@@ -170,7 +172,9 @@ def test_transformers(test_helper_cls):
         df_expected = df_expected.drop(columns=["id"])
 
     # Compare
-    pd.testing.assert_frame_equal(df_actual, df_expected, check_dtype=False, check_exact=False)
+    pd.testing.assert_frame_equal(
+        df_actual, df_expected, check_dtype=False, check_exact=False
+    )
 
 
 def test_transformers_with_empty_rows():
@@ -248,7 +252,9 @@ def test_raw_fhir_transformer():
 
     column_metadata = transformer.column_metadata()
     assert len(expected_cols) == len(column_metadata)
-    assert sorted(expected_cols) == sorted([meta.name for meta in column_metadata])
+    assert sorted(expected_cols) == sorted(
+        [meta.name for meta in column_metadata]
+    )
 
     patient = {"id": "p1", "resourceType": "Patient"}
     rows = transformer.transform_resources([patient])
@@ -262,7 +268,9 @@ def test_raw_fhir_transformer():
             "status",
         ]
     )
-    payload_str = json.dumps(patient, sort_keys=True, default=str, separators=(",", ":"))
+    payload_str = json.dumps(
+        patient, sort_keys=True, default=str, separators=(",", ":")
+    )
     payload_bytes = payload_str.encode("utf-8")
 
     assert payload_str == rows[0]["json"]
@@ -296,4 +304,6 @@ def test_transformers_cols():
 
     column_metadata = transformer.column_metadata()
     assert len(expected_cols) == len(column_metadata)
-    assert sorted(expected_cols) == sorted([meta.name for meta in column_metadata])
+    assert sorted(expected_cols) == sorted(
+        [meta.name for meta in column_metadata]
+    )

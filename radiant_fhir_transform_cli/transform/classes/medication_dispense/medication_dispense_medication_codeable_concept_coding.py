@@ -45,7 +45,9 @@ VIEW_DEFINITION = {
 }
 
 
-class MedicationDispenseMedicationCodeableConceptCodingTransformer(FhirResourceTransformer):
+class MedicationDispenseMedicationCodeableConceptCodingTransformer(
+    FhirResourceTransformer
+):
     def __init__(self):
         super().__init__(
             "MedicationDispense",

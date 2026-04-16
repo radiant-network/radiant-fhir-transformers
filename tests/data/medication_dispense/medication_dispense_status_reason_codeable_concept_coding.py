@@ -20,7 +20,9 @@ EXPECTED_OUTPUT = [
 ]
 
 
-class MedicationDispenseStatusReasonCodeableConceptCodingTestHelper(FhirResourceTestHelper):
+class MedicationDispenseStatusReasonCodeableConceptCodingTestHelper(
+    FhirResourceTestHelper
+):
     """
     A helper class for testing transformations of the FHIR 'MedicationDispense' resource.
 
@@ -44,7 +46,9 @@ class MedicationDispenseStatusReasonCodeableConceptCodingTestHelper(FhirResource
     resource_type = "MedicationDispense"
     resource_component = "status_reason_codeable_concept_coding"
     transformer = MedicationDispenseStatusReasonCodeableConceptCodingTransformer
-    expected_table_name = "medication_dispense_status_reason_codeable_concept_coding"
+    expected_table_name = (
+        "medication_dispense_status_reason_codeable_concept_coding"
+    )
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

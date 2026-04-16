@@ -20,7 +20,9 @@ EXPECTED_OUTPUT = [
 ]
 
 
-class AllergyIntoleranceVerificationStatusCodingTestHelper(FhirResourceTestHelper):
+class AllergyIntoleranceVerificationStatusCodingTestHelper(
+    FhirResourceTestHelper
+):
     """
     A helper class for testing transformations of the FHIR 'AllergyIntolerance' resource.
     This class extends the FhirResourceTestHelper and is specifically

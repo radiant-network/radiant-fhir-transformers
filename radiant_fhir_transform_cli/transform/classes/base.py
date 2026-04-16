@@ -45,7 +45,9 @@ class ColumnMetaData:
     type: str | None
 
 
-def generate_table_name(resource_type: str, resource_component: str | None) -> str:
+def generate_table_name(
+    resource_type: str, resource_component: str | None
+) -> str:
     """Generate a normalized table name for a FHIR resource.
 
     Converts the resource type and optional subtype from CamelCase to
@@ -93,10 +95,14 @@ class FhirResourceTransformer:
         """
         self.resource_type: str = resource_type
         self.resource_component: str | None = resource_component
-        self.table_name: str = generate_table_name(resource_type, resource_component)
+        self.table_name: str = generate_table_name(
+            resource_type, resource_component
+        )
         self.view_definition: dict = view_definition
 
-    def _filter_out_empty_row(self, row_dict: dict[str, Any]) -> dict[str, Any] | None:
+    def _filter_out_empty_row(
+        self, row_dict: dict[str, Any]
+    ) -> dict[str, Any] | None:
         """Filter out a row where all non-ID columns are empty or None.
 
         Rows that contain only ID or foreign key values and have no populated
@@ -161,7 +167,9 @@ class FhirResourceTransformer:
                 row[k] = None
 
             elif isinstance(v, (list, dict)):
-                row[k] = json.dumps(v, default=str, sort_keys=True, separators=(",", ":"))
+                row[k] = json.dumps(
+                    v, default=str, sort_keys=True, separators=(",", ":")
+                )
         return row
 
     def _extract_foreign_key_value(self, row: dict[str, Any]) -> dict[str, Any]:
@@ -182,7 +190,9 @@ class FhirResourceTransformer:
             row[fk_column] = fk_value.split("/")[-1]
         return row
 
-    def transform_resources(self, resources: list[dict]) -> list[dict[str, Any]]:
+    def transform_resources(
+        self, resources: list[dict]
+    ) -> list[dict[str, Any]]:
         """Apply the ViewDefinition to a single FHIR resource.
 
         Evaluates the given resource using SQL-on-FHIR, filters out empty
@@ -197,7 +207,9 @@ class FhirResourceTransformer:
             A list of flattened and post-processed row dictionaries.
         """
         try:
-            results = evaluate(resources=resources, view_definition=self.view_definition)
+            results = evaluate(
+                resources=resources, view_definition=self.view_definition
+            )
         except Exception:
             logger.error(
                 "❌ Transform failed for %s %s. Subtype: %s",
@@ -269,7 +281,9 @@ class FhirResourceTransformer:
 
         return extract_cols(self.view_definition)
 
-    def transform_from_ndjson(self, ndjson_filepath: str) -> list[dict[str, Any]]:
+    def transform_from_ndjson(
+        self, ndjson_filepath: str
+    ) -> list[dict[str, Any]]:
         """Transform an NDJSON file into row dictionaries per FHIR resource.
 
         Each line of the NDJSON file is parsed and evaluated using
@@ -320,7 +334,9 @@ class FhirResourceTransformer:
 
         return results
 
-    def write_to_csv(self, rows: Iterable[dict[str, Any]], csv_filepath: str) -> None:
+    def write_to_csv(
+        self, rows: Iterable[dict[str, Any]], csv_filepath: str
+    ) -> None:
         """Write an iterable of row dictionaries to a CSV file.
 
         Opens the output CSV file and writes rows incrementally as they

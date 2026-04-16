@@ -5,7 +5,9 @@ RESOURCE = {
         "status": "generated",
         "div": '<div xmlns="http://www.w3.org/1999/xhtml">A human-readable rendering of the coverage</div>',
     },
-    "identifier": [{"system": "http://benefitsinc.com/certificate", "value": "12345"}],
+    "identifier": [
+        {"system": "http://benefitsinc.com/certificate", "value": "12345"}
+    ],
     "status": "active",
     "type": {
         "coding": [

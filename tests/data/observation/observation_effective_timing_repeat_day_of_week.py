@@ -18,7 +18,9 @@ EXPECTED_OUTPUT = [
 ]
 
 
-class ObservationEffectiveTimingRepeatDayOfWeekTestHelper(FhirResourceTestHelper):
+class ObservationEffectiveTimingRepeatDayOfWeekTestHelper(
+    FhirResourceTestHelper
+):
     """
     A helper class for testing transformations of the FHIR 'Observation' resource.
 

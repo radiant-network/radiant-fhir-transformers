@@ -82,7 +82,9 @@ RESOURCE = {
                     ]
                 }
             ],
-            "detail": [{"reference": "Observation/f202", "display": "Temperature"}],
+            "detail": [
+                {"reference": "Observation/f202", "display": "Temperature"}
+            ],
         }
     ],
     "stage": [

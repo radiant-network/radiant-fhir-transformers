@@ -94,7 +94,9 @@ RESOURCE = {
     "status": "active",
     "intent": "plan",
     "instantiatesUri": ["http://example.org/protocol-for-obesity"],
-    "instantiatesCanonical": ["http://example.org/fhir/CarePlanDefinition/KDN5"],
+    "instantiatesCanonical": [
+        "http://example.org/fhir/CarePlanDefinition/KDN5"
+    ],
     "basedOn": [{"display": "Management of Type 2 Diabetes"}],
     "replaces": [{"display": "Plan from urgent care clinic"}],
     "partOf": [{"display": "Overall wellness plan"}],
@@ -128,7 +130,9 @@ RESOURCE = {
             "detail": {
                 "kind": "Appointment",
                 "code": {
-                    "coding": [{"system": "http://example.org/mySystem", "code": "1an"}],
+                    "coding": [
+                        {"system": "http://example.org/mySystem", "code": "1an"}
+                    ],
                     "text": "First Antenatal encounter",
                 },
                 "status": "scheduled",
@@ -141,7 +145,9 @@ RESOURCE = {
                         }
                     }
                 },
-                "performer": [{"reference": "#pr1", "display": "Mavis Midwife"}],
+                "performer": [
+                    {"reference": "#pr1", "display": "Mavis Midwife"}
+                ],
                 "description": "The first antenatal encounter. This is where a detailed physical examination is performed.             and the pregnanacy discussed with the mother-to-be.",
             },
         },
@@ -149,7 +155,9 @@ RESOURCE = {
             "detail": {
                 "kind": "Appointment",
                 "code": {
-                    "coding": [{"system": "http://example.org/mySystem", "code": "an"}],
+                    "coding": [
+                        {"system": "http://example.org/mySystem", "code": "an"}
+                    ],
                     "text": "Follow-up Antenatal encounter",
                 },
                 "status": "not-started",
@@ -162,7 +170,9 @@ RESOURCE = {
                         }
                     }
                 },
-                "performer": [{"reference": "#pr1", "display": "Mavis Midwife"}],
+                "performer": [
+                    {"reference": "#pr1", "display": "Mavis Midwife"}
+                ],
                 "description": "The second antenatal encounter. Discuss any issues that arose from the first antenatal encounter",
             }
         },
@@ -170,7 +180,9 @@ RESOURCE = {
             "detail": {
                 "kind": "Appointment",
                 "code": {
-                    "coding": [{"system": "http://example.org/mySystem", "code": "del"}],
+                    "coding": [
+                        {"system": "http://example.org/mySystem", "code": "del"}
+                    ],
                     "text": "Delivery",
                 },
                 "status": "not-started",
@@ -183,7 +195,9 @@ RESOURCE = {
                         }
                     }
                 },
-                "performer": [{"reference": "#pr1", "display": "Mavis Midwife"}],
+                "performer": [
+                    {"reference": "#pr1", "display": "Mavis Midwife"}
+                ],
                 "description": "The delivery.",
             }
         },

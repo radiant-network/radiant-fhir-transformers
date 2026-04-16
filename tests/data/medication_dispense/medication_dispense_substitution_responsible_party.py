@@ -19,7 +19,9 @@ EXPECTED_OUTPUT = [
 ]
 
 
-class MedicationDispenseSubstitutionResponsiblePartyTestHelper(FhirResourceTestHelper):
+class MedicationDispenseSubstitutionResponsiblePartyTestHelper(
+    FhirResourceTestHelper
+):
     """
     A helper class for testing transformations of the FHIR 'MedicationDispense' resource.
 

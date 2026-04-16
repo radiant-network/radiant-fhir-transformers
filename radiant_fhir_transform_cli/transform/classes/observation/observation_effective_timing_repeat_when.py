@@ -46,4 +46,6 @@ VIEW_DEFINITION = {
 
 class ObservationEffectiveTimingRepeatWhenTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__("Observation", "effective_timing_repeat_when", VIEW_DEFINITION)
+        super().__init__(
+            "Observation", "effective_timing_repeat_when", VIEW_DEFINITION
+        )

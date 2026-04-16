@@ -23,7 +23,9 @@ VERBOTEN_PATTERNS = {
 }
 
 VERBOTEN_PATTERNS['"access_token":".+"'] = '"access_token":"<ACCESS_TOKEN>"'
-VERBOTEN_PATTERNS["'Authorization': '.+'"] = "'Authorization': '<AUTHORIZATION>'"
+VERBOTEN_PATTERNS["'Authorization': '.+'"] = (
+    "'Authorization': '<AUTHORIZATION>'"
+)
 
 MB_50 = 52428800
 MAX_BYTES = MB_50
@@ -78,7 +80,9 @@ def init_logger(log_level=None, log_dir=None, write_logs=True):
         filename = f"{DEFAULT_LOG_FILENAME}-{timestamp()}.log"
         log_filepath = os.path.join(log_dir, filename)
 
-        file_handler = RotatingFileHandler(log_filepath, mode="w", maxBytes=MB_50)
+        file_handler = RotatingFileHandler(
+            log_filepath, mode="w", maxBytes=MB_50
+        )
         file_handler.setFormatter(DEFAULT_FORMATTER)
 
         root.addHandler(file_handler)

@@ -47,4 +47,6 @@ VIEW_DEFINITION = {
 
 class MedicationDispenseCategoryCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__("MedicationDispense", "category_coding", VIEW_DEFINITION)
+        super().__init__(
+            "MedicationDispense", "category_coding", VIEW_DEFINITION
+        )

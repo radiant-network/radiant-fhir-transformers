@@ -56,4 +56,6 @@ VIEW_DEFINITION = {
 
 class MedicationRequestPerformerTypeCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__("MedicationRequest", "performer_type_coding", VIEW_DEFINITION)
+        super().__init__(
+            "MedicationRequest", "performer_type_coding", VIEW_DEFINITION
+        )
