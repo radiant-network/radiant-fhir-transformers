@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "reasonCode",
             "column": [
                 {
+                    "name": "reason_code_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "reason_code_text",
                     "path": "text",
                     "type": "string",

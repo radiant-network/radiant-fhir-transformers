@@ -13,7 +13,19 @@ EXPECTED_OUTPUT = [
     {
         "dosage_instruction_sequence": 1,
         "dosage_instruction_text": "one to two tablets every 4-6 hours as needed for rib pain",
+        "dosage_instruction_additional_instruction": [
+            {
+                "coding": [
+                    {
+                        "system": "http://snomed.info/sct",
+                        "code": "418914006",
+                        "display": "Warning. May cause drowsiness. If affected do not drive or operate machinery. Avoid alcoholic drink (qualifier value)",
+                    }
+                ]
+            }
+        ],
         "dosage_instruction_patient_instruction": "Take one to two tablets every four to six hours as needed for rib pain",
+        "dosage_instruction_timing_event": ["2015-01-15", "2016-01-15"],
         "dosage_instruction_timing_repeat_bounds_duration_value": None,
         "dosage_instruction_timing_repeat_bounds_duration_unit": None,
         "dosage_instruction_timing_repeat_bounds_duration_system": None,
@@ -38,13 +50,65 @@ EXPECTED_OUTPUT = [
         "dosage_instruction_timing_repeat_period": 4,
         "dosage_instruction_timing_repeat_period_max": 6,
         "dosage_instruction_timing_repeat_period_unit": "h",
+        "dosage_instruction_timing_repeat_day_of_week": None,
+        "dosage_instruction_timing_repeat_time_of_day": None,
+        "dosage_instruction_timing_repeat_when": None,
         "dosage_instruction_timing_repeat_offset": None,
-        "dosage_instruction_timing_code_text": None,
+        "dosage_instruction_timing_code": None,
         "dosage_instruction_as_needed_boolean": None,
+        "dosage_instruction_as_needed_codeable_concept_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "297217002",
+                "display": "Rib Pain (finding)",
+            }
+        ],
         "dosage_instruction_as_needed_codeable_concept_text": None,
+        "dosage_instruction_site_coding": None,
         "dosage_instruction_site_text": None,
+        "dosage_instruction_route_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "26643006",
+                "display": "Oral Route",
+            }
+        ],
         "dosage_instruction_route_text": None,
+        "dosage_instruction_method_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "421521009",
+                "display": "Swallow - dosing instruction imperative (qualifier value)",
+            }
+        ],
         "dosage_instruction_method_text": None,
+        "dosage_instruction_dose_and_rate": [
+            {
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                            "code": "ordered",
+                            "display": "Ordered",
+                        }
+                    ]
+                },
+                "doseRange": {
+                    "low": {
+                        "value": 1,
+                        "unit": "TAB",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                        "code": "TAB",
+                    },
+                    "high": {
+                        "value": 2,
+                        "unit": "TAB",
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm",
+                        "code": "TAB",
+                    },
+                },
+            }
+        ],
         "dosage_instruction_max_dose_per_period_numerator_value": None,
         "dosage_instruction_max_dose_per_period_numerator_unit": None,
         "dosage_instruction_max_dose_per_period_numerator_system": None,

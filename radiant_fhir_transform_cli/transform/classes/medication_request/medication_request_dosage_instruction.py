@@ -44,9 +44,21 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "dosage_instruction_additional_instruction",
+                    "path": "additionalInstruction",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "dosage_instruction_patient_instruction",
                     "path": "patientInstruction",
                     "type": "string",
+                },
+                {
+                    "name": "dosage_instruction_timing_event",
+                    "path": "timing.event",
+                    "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "dosage_instruction_timing_repeat_bounds_duration_value",
@@ -169,14 +181,33 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "dosage_instruction_timing_repeat_day_of_week",
+                    "path": "timing.repeat.dayOfWeek",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "dosage_instruction_timing_repeat_time_of_day",
+                    "path": "timing.repeat.timeOfDay",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "dosage_instruction_timing_repeat_when",
+                    "path": "timing.repeat.when",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "dosage_instruction_timing_repeat_offset",
                     "path": "timing.repeat.offset",
                     "type": "integer",
                 },
                 {
-                    "name": "dosage_instruction_timing_code_text",
-                    "path": "timing.code.text",
+                    "name": "dosage_instruction_timing_code",
+                    "path": "timing.code",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "dosage_instruction_as_needed_boolean",
@@ -184,9 +215,21 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "dosage_instruction_as_needed_codeable_concept_coding",
+                    "path": "asNeededCodeableConcept.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "dosage_instruction_as_needed_codeable_concept_text",
                     "path": "asNeededCodeableConcept.text",
                     "type": "string",
+                },
+                {
+                    "name": "dosage_instruction_site_coding",
+                    "path": "site.coding",
+                    "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "dosage_instruction_site_text",
@@ -194,14 +237,32 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "dosage_instruction_route_coding",
+                    "path": "route.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "dosage_instruction_route_text",
                     "path": "route.text",
                     "type": "string",
                 },
                 {
+                    "name": "dosage_instruction_method_coding",
+                    "path": "method.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "dosage_instruction_method_text",
                     "path": "method.text",
                     "type": "string",
+                },
+                {
+                    "name": "dosage_instruction_dose_and_rate",
+                    "path": "doseAndRate",
+                    "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "dosage_instruction_max_dose_per_period_numerator_value",
