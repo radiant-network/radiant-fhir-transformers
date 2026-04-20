@@ -20,6 +20,7 @@ The transformer is designed to:
 """
 
 import csv
+import hashlib
 import json
 import logging
 import uuid
@@ -117,21 +118,27 @@ class FhirResourceTransformer:
             return row_dict
         return None
 
-    def _resolve_uuid(self, row: dict[str, Any]) -> dict[str, Any]:
-        """Replace placeholder UUID strings with generated UUID4 values.
+    def _resolve_fhir_component_id(self, row: dict[str, Any]) -> dict[str, Any]:
+        """Resolve the id field using uuid() or hash_row() placeholder.
 
-        Fields that contain the literal value ``"uuid()"`` are replaced with
-        a newly generated UUID4 string.
+        Fields that contain ``"uuid()"`` are replaced with a newly generated
+        UUID4 string. Fields that contain ``"hash_row()"`` are replaced with
+        a SHA256 hash of the row's JSON representation (excluding last_processed
+        for deterministic IDs).
 
         Args:
-            row: A single row dictionary with possible UUID placeholders.
+            row: A single row dictionary with possible id placeholders.
 
         Returns:
-            The same row dictionary with all placeholder UUIDs replaced.
+            The same row dictionary with id placeholders resolved.
         """
-        uuid_value = row.get("id")
-        if uuid_value and uuid_value == "uuid()":
+        id_value = row.get("id")
+        if id_value == "uuid()":
             row["id"] = str(uuid.uuid4())
+        elif id_value == "hash_row()":
+            row_for_hash = {k: v for k, v in row.items() if k != "last_processed"}
+            row_str = json.dumps(row_for_hash, sort_keys=True, separators=(",", ":"))
+            row["id"] = hashlib.sha256(row_str.encode("utf-8")).hexdigest()
         return row
 
     def _normalize_value(self, row: dict[str, Any]) -> dict[str, Any]:
@@ -183,8 +190,8 @@ class FhirResourceTransformer:
         """Apply the ViewDefinition to a single FHIR resource.
 
         Evaluates the given resource using SQL-on-FHIR, filters out empty
-        rows, normalizes values, extracts foreign keys, and replaces any
-        UUID placeholders.
+        rows, normalizes values, extracts foreign keys, and resolves the id
+        field using uuid() or hash_row() placeholders.
 
         Args:
             resource_idx: Index of the resource being transformed (for logging).
@@ -214,7 +221,7 @@ class FhirResourceTransformer:
             if not row:
                 continue
             row["last_processed"] = batch_timestamp
-            self._resolve_uuid(row)
+            self._resolve_fhir_component_id(row)
             self._extract_foreign_key_value(row)
             self._normalize_value(row)
             output.append(row)
@@ -234,8 +241,8 @@ class FhirResourceTransformer:
         """Apply the ViewDefinition to a single FHIR resource.
 
         Evaluates the given resource using SQL-on-FHIR, filters out empty
-        rows, normalizes values, extracts foreign keys, and replaces any
-        UUID placeholders.
+        rows, normalizes values, extracts foreign keys, and resolves the id
+        field using uuid() or hash_row() placeholders.
 
         Args:
             resource_idx: Index of the resource being transformed (for logging).
