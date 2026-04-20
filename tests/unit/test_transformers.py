@@ -97,7 +97,9 @@ def serialize_complex_types(value):
         result = {}
         for key, val in value.items():
             if isinstance(val, (dict, list)):
-                result[key] = json.dumps(val, default=str, sort_keys=True, separators=(",", ":"))
+                result[key] = json.dumps(
+                    val, default=str, sort_keys=True, separators=(",", ":")
+                )
             else:
                 result[key] = val
         return result
@@ -170,7 +172,9 @@ def test_transformers(test_helper_cls):
         df_expected = df_expected.drop(columns=["id"])
 
     # Compare
-    pd.testing.assert_frame_equal(df_actual, df_expected, check_dtype=False, check_exact=False)
+    pd.testing.assert_frame_equal(
+        df_actual, df_expected, check_dtype=False, check_exact=False
+    )
 
 
 def test_transformers_with_empty_rows():
@@ -258,11 +262,19 @@ def test_raw_fhir_transformer():
         for c in [
             "org_short_code",
             "registry_short_code",
-            "last_processed",
             "status",
         ]
     )
-    payload_str = json.dumps(patient, sort_keys=True, default=str, separators=(",", ":"))
+    # Verify last_processed has ISO 8601 format with timezone
+    import re
+
+    last_processed = rows[0]["last_processed"]
+    assert last_processed and re.match(
+        r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d+-\d{2}:\d{2}", last_processed
+    )
+    payload_str = json.dumps(
+        patient, sort_keys=True, default=str, separators=(",", ":")
+    )
     payload_bytes = payload_str.encode("utf-8")
 
     assert payload_str == rows[0]["json"]
@@ -292,6 +304,7 @@ def test_transformers_cols():
         "address_country",
         "address_period_start",
         "address_period_end",
+        "last_processed",
     ]
 
     column_metadata = transformer.column_metadata()

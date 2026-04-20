@@ -4,6 +4,7 @@ from collections import defaultdict
 from typing import Any, override
 
 from .base import FhirResourceTransformer
+from radiant_fhir_transform_cli.utils.misc import timestamp
 
 VIEW_DEFINITION = {
     "resourceType": "ViewDefinition",
@@ -15,10 +16,6 @@ VIEW_DEFINITION = {
         },
         {
             "name": "registry_short_code",
-            "valueString": "",
-        },
-        {
-            "name": "last_processed",
             "valueString": "",
         },
         {
@@ -40,10 +37,6 @@ VIEW_DEFINITION = {
                 {
                     "name": "id",
                     "path": "id",
-                },
-                {
-                    "name": "last_processed",
-                    "path": "%last_processed",
                 },
                 {
                     "name": "resource_type",
@@ -124,6 +117,10 @@ class RawFhirResourceTransformer(FhirResourceTransformer):
 
         updated_rows = []
         for row in output:
+            # Populate last_processed timestamp
+            if row.get("last_processed") == "":
+                row["last_processed"] = timestamp()
+
             # Canonical JSON serialization
             payload_str = row["json"]
             hash_value, size_bytes = self._compute_payload_hash_and_size(payload_str)

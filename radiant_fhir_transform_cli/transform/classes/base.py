@@ -30,7 +30,7 @@ from typing import Any
 
 from sqlonfhir import evaluate
 
-from radiant_fhir_transform_cli.utils.misc import camel_to_snake
+from radiant_fhir_transform_cli.utils.misc import camel_to_snake, timestamp
 
 logger = logging.getLogger(__name__)
 
@@ -111,12 +111,9 @@ class FhirResourceTransformer:
         """
         id_col = "id"
         foreign_key_col = f"{camel_to_snake(self.resource_type)}_id"
+        skip_cols = {id_col, foreign_key_col, "last_processed"}
 
-        if not all(
-            str(row_dict.get(c)) in {"", "None"}
-            for c in row_dict
-            if c not in {id_col, foreign_key_col}
-        ):
+        if not all(str(row_dict.get(c)) in {"", "None"} for c in row_dict if c not in skip_cols):
             return row_dict
         return None
 
@@ -207,12 +204,16 @@ class FhirResourceTransformer:
             )
             raise
 
+        # Compute timestamp once per batch for consistency
+        batch_timestamp = timestamp()
+
         output: list[dict[str, Any]] = []
 
         for row in results:
             row = self._filter_out_empty_row(row)
             if not row:
                 continue
+            row["last_processed"] = batch_timestamp
             self._resolve_uuid(row)
             self._extract_foreign_key_value(row)
             self._normalize_value(row)
@@ -267,7 +268,11 @@ class FhirResourceTransformer:
                 cols.extend(extract_cols(child))
             return cols
 
-        return extract_cols(self.view_definition)
+        cols = extract_cols(self.view_definition)
+
+        cols.append(ColumnMetaData(name="last_processed", type="dateTime"))
+
+        return cols
 
     def transform_from_ndjson(self, ndjson_filepath: str) -> list[dict[str, Any]]:
         """Transform an NDJSON file into row dictionaries per FHIR resource.
