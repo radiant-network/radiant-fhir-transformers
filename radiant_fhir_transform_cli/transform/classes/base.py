@@ -46,6 +46,12 @@ class ColumnMetaData:
     type: str | None
 
 
+def hash_row(row: dict[str, Any], excluded_cols: list[str]) -> str:
+    row_for_hash = {k: v for k, v in row.items() if k not in excluded_cols}
+    row_str = json.dumps(row_for_hash, sort_keys=True, separators=(",", ":"), default=str)
+    return hashlib.sha256(row_str.encode()).hexdigest()
+
+
 def generate_table_name(resource_type: str, resource_component: str | None) -> str:
     """Generate a normalized table name for a FHIR resource.
 
@@ -96,6 +102,7 @@ class FhirResourceTransformer:
         self.resource_component: str | None = resource_component
         self.table_name: str = generate_table_name(resource_type, resource_component)
         self.view_definition: dict = view_definition
+        self.excluded_cols_in_hash: list[str] = ["last_processed"]
 
     def _filter_out_empty_row(self, row_dict: dict[str, Any]) -> dict[str, Any] | None:
         """Filter out a row where all non-ID columns are empty or None.
@@ -132,14 +139,16 @@ class FhirResourceTransformer:
         Returns:
             The same row dictionary with id placeholders resolved.
         """
-        id_value = row.get("id")
-        if id_value == "uuid()":
-            row["id"] = str(uuid.uuid4())
-        elif id_value == "hash_row()":
-            row_for_hash = {k: v for k, v in row.items() if k != "last_processed"}
-            row_str = json.dumps(row_for_hash, sort_keys=True, separators=(",", ":"))
-            row["id"] = hashlib.sha256(row_str.encode("utf-8")).hexdigest()
-        return row
+        match row.get("id"):
+            case "uuid()":
+                resolved_id = str(uuid.uuid4())
+            case "hash_row()":
+                resolved_id = hash_row(row, self.excluded_cols_in_hash)
+            case _:
+                logger.info("⚠️ Id constant placeholder not recongnized %s", row.get("id"))
+                return row  # nothing to resolve — return original unchanged
+
+        return {**row, "id": resolved_id}
 
     def _normalize_value(self, row: dict[str, Any]) -> dict[str, Any]:
         """
@@ -221,7 +230,7 @@ class FhirResourceTransformer:
             if not row:
                 continue
             row["last_processed"] = batch_timestamp
-            self._resolve_fhir_component_id(row)
+            row = self._resolve_fhir_component_id(row)
             self._extract_foreign_key_value(row)
             self._normalize_value(row)
             output.append(row)
