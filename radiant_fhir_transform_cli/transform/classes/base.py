@@ -230,7 +230,8 @@ class FhirResourceTransformer:
             if not row:
                 continue
             row["last_processed"] = batch_timestamp
-            row = self._resolve_fhir_component_id(row)
+            if self.resource_component:
+                row = self._resolve_fhir_component_id(row)
             self._extract_foreign_key_value(row)
             self._normalize_value(row)
             output.append(row)
