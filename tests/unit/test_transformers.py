@@ -19,6 +19,7 @@ Tests include:
 
 import hashlib
 import json
+from datetime import datetime
 from pprint import pprint
 
 import pandas as pd
@@ -97,9 +98,7 @@ def serialize_complex_types(value):
         result = {}
         for key, val in value.items():
             if isinstance(val, (dict, list)):
-                result[key] = json.dumps(
-                    val, default=str, sort_keys=True, separators=(",", ":")
-                )
+                result[key] = json.dumps(val, default=str, sort_keys=True, separators=(",", ":"))
             else:
                 result[key] = val
         return result
@@ -172,9 +171,7 @@ def test_transformers(test_helper_cls):
         df_expected = df_expected.drop(columns=["id"])
 
     # Compare
-    pd.testing.assert_frame_equal(
-        df_actual, df_expected, check_dtype=False, check_exact=False
-    )
+    pd.testing.assert_frame_equal(df_actual, df_expected, check_dtype=False, check_exact=False)
 
 
 def test_transformers_with_empty_rows():
@@ -266,15 +263,14 @@ def test_raw_fhir_transformer():
         ]
     )
     # Verify last_processed has ISO 8601 format with timezone
-    import re
-
     last_processed = rows[0]["last_processed"]
-    assert last_processed and re.match(
-        r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d+-\d{2}:\d{2}", last_processed
-    )
-    payload_str = json.dumps(
-        patient, sort_keys=True, default=str, separators=(",", ":")
-    )
+    try:
+        dt = datetime.fromisoformat(last_processed)
+        assert dt.tzinfo is not None, "Timestamp must have timezone info"
+    except ValueError:
+        pytest.fail(f"last_processed '{last_processed}' is not a valid ISO 8601 string")
+
+    payload_str = json.dumps(patient, sort_keys=True, default=str, separators=(",", ":"))
     payload_bytes = payload_str.encode("utf-8")
 
     assert payload_str == rows[0]["json"]
