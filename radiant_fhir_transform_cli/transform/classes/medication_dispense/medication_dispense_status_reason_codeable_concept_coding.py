@@ -9,11 +9,11 @@ VIEW_DEFINITION = {
     "resource": "MedicationDispense",
     "name": "medication_dispense_status_reason_codeable_concept_coding",
     "status": "active",
-    "constant": [{"name": "id_uuid", "valueString": "uuid()"}],
+    "constant": [{"name": "id_hash", "valueString": "hash_row()"}],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "id", "path": "%id_hash", "type": "string"},
                 {
                     "name": "medication_dispense_id",
                     "path": "id",
