@@ -19,6 +19,7 @@ Tests include:
 
 import hashlib
 import json
+from datetime import datetime
 from pprint import pprint
 
 import pandas as pd
@@ -258,10 +259,17 @@ def test_raw_fhir_transformer():
         for c in [
             "org_short_code",
             "registry_short_code",
-            "last_processed",
             "status",
         ]
     )
+    # Verify last_processed has ISO 8601 format with timezone
+    last_processed = rows[0]["last_processed"]
+    try:
+        dt = datetime.fromisoformat(last_processed)
+        assert dt.tzinfo is not None, "Timestamp must have timezone info"
+    except ValueError:
+        pytest.fail(f"last_processed '{last_processed}' is not a valid ISO 8601 string")
+
     payload_str = json.dumps(patient, sort_keys=True, default=str, separators=(",", ":"))
     payload_bytes = payload_str.encode("utf-8")
 
@@ -292,6 +300,7 @@ def test_transformers_cols():
         "address_country",
         "address_period_start",
         "address_period_end",
+        "last_processed",
     ]
 
     column_metadata = transformer.column_metadata()

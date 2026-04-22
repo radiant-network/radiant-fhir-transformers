@@ -11,8 +11,8 @@ VIEW_DEFINITION = {
     "status": "active",
     "constant": [
         {
-            "name": "id_uuid",
-            "valueString": "uuid()",
+            "name": "id_hash",
+            "valueString": "hash_row()",
         },
     ],
     "select": [
@@ -20,7 +20,7 @@ VIEW_DEFINITION = {
             "column": [
                 {
                     "name": "id",
-                    "path": "%id_uuid",
+                    "path": "%id_hash",
                     "type": "string",
                 },
                 {

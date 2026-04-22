@@ -11,15 +11,15 @@ VIEW_DEFINITION = {
     "status": "active",
     "constant": [
         {
-            "name": "id_uuid",
-            "valueString": "uuid()",
+            "name": "id_hash",
+            "valueString": "hash_row()",
         },
     ],
     "select": [
         {
             "column": [
                 {"name": "care_plan_id", "path": "id", "type": "string"},
-                {"name": "id", "path": "%id_uuid", "type": "string"},
+                {"name": "id", "path": "%id_hash", "type": "string"},
             ]
         },
         {

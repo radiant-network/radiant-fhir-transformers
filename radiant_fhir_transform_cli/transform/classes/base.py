@@ -20,6 +20,7 @@ The transformer is designed to:
 """
 
 import csv
+import hashlib
 import json
 import logging
 import uuid
@@ -30,7 +31,7 @@ from typing import Any
 
 from sqlonfhir import evaluate
 
-from radiant_fhir_transform_cli.utils.misc import camel_to_snake
+from radiant_fhir_transform_cli.utils.misc import camel_to_snake, timestamp
 
 logger = logging.getLogger(__name__)
 
@@ -43,6 +44,12 @@ class ColumnMetaData:
 
     name: str
     type: str | None
+
+
+def hash_row(row: dict[str, Any], excluded_cols: list[str]) -> str:
+    row_for_hash = {k: v for k, v in row.items() if k not in excluded_cols}
+    row_str = json.dumps(row_for_hash, sort_keys=True, separators=(",", ":"), default=str)
+    return hashlib.sha256(row_str.encode()).hexdigest()
 
 
 def generate_table_name(resource_type: str, resource_component: str | None) -> str:
@@ -95,6 +102,7 @@ class FhirResourceTransformer:
         self.resource_component: str | None = resource_component
         self.table_name: str = generate_table_name(resource_type, resource_component)
         self.view_definition: dict = view_definition
+        self.excluded_cols_in_hash: list[str] = ["last_processed"]
 
     def _filter_out_empty_row(self, row_dict: dict[str, Any]) -> dict[str, Any] | None:
         """Filter out a row where all non-ID columns are empty or None.
@@ -111,31 +119,36 @@ class FhirResourceTransformer:
         """
         id_col = "id"
         foreign_key_col = f"{camel_to_snake(self.resource_type)}_id"
+        skip_cols = {id_col, foreign_key_col, "last_processed"}
 
-        if not all(
-            str(row_dict.get(c)) in {"", "None"}
-            for c in row_dict
-            if c not in {id_col, foreign_key_col}
-        ):
+        if not all(str(row_dict.get(c)) in {"", "None"} for c in row_dict if c not in skip_cols):
             return row_dict
         return None
 
-    def _resolve_uuid(self, row: dict[str, Any]) -> dict[str, Any]:
-        """Replace placeholder UUID strings with generated UUID4 values.
+    def _resolve_fhir_component_id(self, row: dict[str, Any]) -> dict[str, Any]:
+        """Resolve the id field using uuid() or hash_row() placeholder.
 
-        Fields that contain the literal value ``"uuid()"`` are replaced with
-        a newly generated UUID4 string.
+        Fields that contain ``"uuid()"`` are replaced with a newly generated
+        UUID4 string. Fields that contain ``"hash_row()"`` are replaced with
+        a SHA256 hash of the row's JSON representation (excluding last_processed
+        for deterministic IDs).
 
         Args:
-            row: A single row dictionary with possible UUID placeholders.
+            row: A single row dictionary with possible id placeholders.
 
         Returns:
-            The same row dictionary with all placeholder UUIDs replaced.
+            The same row dictionary with id placeholders resolved.
         """
-        uuid_value = row.get("id")
-        if uuid_value and uuid_value == "uuid()":
-            row["id"] = str(uuid.uuid4())
-        return row
+        match row.get("id"):
+            case "uuid()":
+                resolved_id = str(uuid.uuid4())
+            case "hash_row()":
+                resolved_id = hash_row(row, self.excluded_cols_in_hash)
+            case _:
+                logger.info("⚠️ Id constant placeholder not recongnized %s", row.get("id"))
+                return row  # nothing to resolve — return original unchanged
+
+        return {**row, "id": resolved_id}
 
     def _normalize_value(self, row: dict[str, Any]) -> dict[str, Any]:
         """
@@ -186,8 +199,8 @@ class FhirResourceTransformer:
         """Apply the ViewDefinition to a single FHIR resource.
 
         Evaluates the given resource using SQL-on-FHIR, filters out empty
-        rows, normalizes values, extracts foreign keys, and replaces any
-        UUID placeholders.
+        rows, normalizes values, extracts foreign keys, and resolves the id
+        field using uuid() or hash_row() placeholders.
 
         Args:
             resource_idx: Index of the resource being transformed (for logging).
@@ -207,13 +220,18 @@ class FhirResourceTransformer:
             )
             raise
 
+        # Compute timestamp once per batch for consistency
+        batch_timestamp = timestamp()
+
         output: list[dict[str, Any]] = []
 
         for row in results:
             row = self._filter_out_empty_row(row)
             if not row:
                 continue
-            self._resolve_uuid(row)
+            row["last_processed"] = batch_timestamp
+            if self.resource_component:
+                row = self._resolve_fhir_component_id(row)
             self._extract_foreign_key_value(row)
             self._normalize_value(row)
             output.append(row)
@@ -233,8 +251,8 @@ class FhirResourceTransformer:
         """Apply the ViewDefinition to a single FHIR resource.
 
         Evaluates the given resource using SQL-on-FHIR, filters out empty
-        rows, normalizes values, extracts foreign keys, and replaces any
-        UUID placeholders.
+        rows, normalizes values, extracts foreign keys, and resolves the id
+        field using uuid() or hash_row() placeholders.
 
         Args:
             resource_idx: Index of the resource being transformed (for logging).
@@ -267,7 +285,11 @@ class FhirResourceTransformer:
                 cols.extend(extract_cols(child))
             return cols
 
-        return extract_cols(self.view_definition)
+        cols = extract_cols(self.view_definition)
+
+        cols.append(ColumnMetaData(name="last_processed", type="dateTime"))
+
+        return cols
 
     def transform_from_ndjson(self, ndjson_filepath: str) -> list[dict[str, Any]]:
         """Transform an NDJSON file into row dictionaries per FHIR resource.
