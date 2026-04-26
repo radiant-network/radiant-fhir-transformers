@@ -34,31 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "specialty",
             "column": [
                 {
+                    "name": "specialty_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "specialty_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "specialty_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "specialty_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "specialty_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

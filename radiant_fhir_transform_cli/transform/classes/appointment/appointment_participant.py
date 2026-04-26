@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "participant",
             "column": [
                 {
+                    "name": "participant_type",
+                    "path": "type",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "participant_actor_reference",
                     "path": "actor.reference",
                     "type": "string",
@@ -67,18 +73,6 @@ VIEW_DEFINITION = {
                     "name": "participant_period_end",
                     "path": "period.end",
                     "type": "dateTime",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "type",
-                    "column": [
-                        {
-                            "name": "participant_type",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

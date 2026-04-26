@@ -23,14 +23,16 @@ EXPECTED_OUTPUT = [
         "appointment_id": "example",
     },
     {
-        "participant_type": {
-            "coding": [
-                {
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                    "code": "ATND",
-                },
-            ],
-        },
+        "participant_type": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                        "code": "ATND",
+                    }
+                ]
+            }
+        ],
         "participant_actor_reference": "Practitioner/example",
         "participant_actor_type": None,
         "participant_actor_display": "Dr Adam Careful",
