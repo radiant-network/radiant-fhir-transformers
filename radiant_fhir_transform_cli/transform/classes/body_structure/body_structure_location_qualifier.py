@@ -34,21 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "locationQualifier",
             "column": [
                 {
+                    "name": "location_qualifier_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "location_qualifier_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "location_qualifier_coding",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
