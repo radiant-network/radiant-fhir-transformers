@@ -15,7 +15,6 @@ EXPECTED_OUTPUT = [
         "presented_form_language": "en-AU",
         "presented_form_url": None,
         "presented_form_size": None,
-        "presented_form_hash": "L9ThxnotKPzthJ7hu3bnORuT6xI=",
         "presented_form_title": "HTML Report",
         "presented_form_creation": None,
         "id": "30734c3e-ed3d-49ee-b4b8-818d28165c01",
