@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "provision.actor",
             "column": [
                 {
+                    "name": "provision_actor_role_coding",
+                    "path": "role.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "provision_actor_role_text",
                     "path": "role.text",
                     "type": "string",
@@ -52,23 +58,6 @@ VIEW_DEFINITION = {
                     "name": "provision_actor_reference_display",
                     "path": "reference.display",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "role.coding",
-                    "column": [
-                        {
-                            "name": "provision_actor_role_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "provision_actor_role_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
