@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "entry",
             "column": [
                 {
+                    "name": "entry_flag_coding",
+                    "path": "flag.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "entry_flag_text",
                     "path": "flag.text",
                     "type": "string",
@@ -62,28 +68,6 @@ VIEW_DEFINITION = {
                     "name": "entry_item_display",
                     "path": "item.display",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "flag.coding",
-                    "column": [
-                        {
-                            "name": "entry_flag_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "entry_flag_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "entry_flag_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
