@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "class",
             "column": [
                 {
+                    "name": "class_type_coding",
+                    "path": "type.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "class_type_text",
                     "path": "type.text",
                     "type": "string",
@@ -47,23 +53,6 @@ VIEW_DEFINITION = {
                     "name": "class_name",
                     "path": "name",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "type.coding",
-                    "column": [
-                        {
-                            "name": "class_type_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "class_type_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

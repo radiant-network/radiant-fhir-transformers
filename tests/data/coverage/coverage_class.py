@@ -11,8 +11,12 @@ from .coverage_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "class_type_coding_system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-        "class_type_coding_code": "group",
+        "class_type_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                "code": "group",
+            }
+        ],
         "class_type_text": None,
         "class_value": "CB135",
         "class_name": "Corporate Baker's Inc. Local #35",
@@ -20,8 +24,12 @@ EXPECTED_OUTPUT = [
         "coverage_id": "9876B1",
     },
     {
-        "class_type_coding_system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-        "class_type_coding_code": "subgroup",
+        "class_type_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                "code": "subgroup",
+            }
+        ],
         "class_type_text": None,
         "class_value": "123",
         "class_name": "Trainee Part-time Benefits",
@@ -29,8 +37,12 @@ EXPECTED_OUTPUT = [
         "coverage_id": "9876B1",
     },
     {
-        "class_type_coding_system": "http://terminology.hl7.org/CodeSystem/coverage-class",
-        "class_type_coding_code": "plan",
+        "class_type_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/coverage-class",
+                "code": "plan",
+            }
+        ],
         "class_type_text": None,
         "class_value": "B37FC",
         "class_name": "Full Coverage: Medical, Dental, Pharmacy, Vision, EHC",
