@@ -37,6 +37,7 @@ VIEW_DEFINITION = {
                     "name": "category_coding",
                     "path": "coding",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "category_text",

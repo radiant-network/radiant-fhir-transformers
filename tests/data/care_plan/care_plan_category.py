@@ -11,7 +11,13 @@ from .care_plan import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "category_coding": None,
+        "category_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "1362129009",
+                "display": "Intermittent fasting (finding)",
+            }
+        ],
         "category_text": "Weight management plan",
         "id": "3f328cb2-75b4-4b99-80a6-38dd7b12b7ed",
         "care_plan_id": "preg",

@@ -37,16 +37,19 @@ VIEW_DEFINITION = {
                     "name": "activity_outcome_codeable_concept",
                     "path": "outcomeCodeableConcept",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_outcome_reference",
                     "path": "outcomeReference",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_progress",
                     "path": "progress",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_reference_reference",
@@ -72,11 +75,19 @@ VIEW_DEFINITION = {
                     "name": "activity_detail_instantiates_canonical",
                     "path": "detail.instantiatesCanonical",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_instantiates_uri",
                     "path": "detail.instantiatesUri",
                     "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "activity_detail_code_coding",
+                    "path": "detail.code.coding",
+                    "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_code_text",
@@ -87,16 +98,19 @@ VIEW_DEFINITION = {
                     "name": "activity_detail_reason_code",
                     "path": "detail.reasonCode",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_reason_reference",
                     "path": "detail.reasonReference",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_goal",
                     "path": "detail.goal",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_status",
@@ -107,6 +121,7 @@ VIEW_DEFINITION = {
                     "name": "activity_detail_status_reason_coding",
                     "path": "detail.statusReason.coding",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_status_reason_text",
@@ -122,11 +137,7 @@ VIEW_DEFINITION = {
                     "name": "activity_detail_scheduled_timing_event",
                     "path": "detail.scheduledTiming.event",
                     "type": "dateTime",
-                },
-                {
-                    "name": "activity_detail_scheduled_timing_code",
-                    "path": "detail.scheduledTiming.code",
-                    "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_scheduled_timing_repeat_bounds_duration_value",
@@ -257,21 +268,35 @@ VIEW_DEFINITION = {
                     "name": "activity_detail_scheduled_timing_repeat_day_of_week",
                     "path": "detail.scheduledTiming.repeat.dayOfWeek",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_scheduled_timing_repeat_time_of_day",
                     "path": "detail.scheduledTiming.repeat.timeOfDay",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_scheduled_timing_repeat_when",
                     "path": "detail.scheduledTiming.repeat.when",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_scheduled_timing_repeat_offset",
                     "path": "detail.scheduledTiming.repeat.offset",
                     "type": "integer",
+                },
+                {
+                    "name": "activity_detail_scheduled_timing_code_coding",
+                    "path": "detail.scheduledTiming.code.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "activity_detail_scheduled_timing_code_text",
+                    "path": "detail.scheduledTiming.code.text",
+                    "type": "string",
                 },
                 {
                     "name": "activity_detail_scheduled_period_start",
@@ -304,13 +329,20 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "activity_detail_product_codeable_concept_text",
-                    "path": "detail.productCodeableConcept.text",
+                    "name": "activity_detail_performer",
+                    "path": "detail.performer",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "activity_detail_product_codeable_concept_coding",
                     "path": "detail.productCodeableConcept.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "activity_detail_product_codeable_concept_text",
+                    "path": "detail.productCodeableConcept.text",
                     "type": "string",
                 },
                 {
@@ -372,38 +404,6 @@ VIEW_DEFINITION = {
                     "name": "activity_detail_description",
                     "path": "detail.description",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "detail.code.coding",
-                    "column": [
-                        {
-                            "name": "activity_detail_code_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "activity_detail_code_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "activity_detail_code_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
-                },
-                {
-                    "forEachOrNull": "detail.performer",
-                    "column": [
-                        {
-                            "name": "activity_detail_performer",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
