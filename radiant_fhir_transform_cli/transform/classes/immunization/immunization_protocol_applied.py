@@ -54,6 +54,12 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "protocol_applied_target_disease",
+                    "path": "targetDisease",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "protocol_applied_dose_number_positive_int",
                     "path": "doseNumberPositiveInt",
                     "type": "integer",
@@ -72,18 +78,6 @@ VIEW_DEFINITION = {
                     "name": "protocol_applied_series_doses_string",
                     "path": "seriesDosesString",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "targetDisease",
-                    "column": [
-                        {
-                            "name": "protocol_applied_target_disease_coding",
-                            "path": "coding",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
