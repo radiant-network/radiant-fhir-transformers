@@ -73,6 +73,12 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "address_line",
+                    "path": "address.line",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "address_city",
                     "path": "address.city",
                     "type": "string",
@@ -161,18 +167,6 @@ VIEW_DEFINITION = {
                     "name": "availability_exceptions",
                     "path": "availabilityExceptions",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "address.line",
-                    "column": [
-                        {
-                            "name": "address_line",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

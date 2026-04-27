@@ -32,6 +32,7 @@ VIEW_DEFINITION = {
                     "name": "hours_of_operation_days_of_week",
                     "path": "hoursOfOperation.daysOfWeek",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "hours_of_operation_all_day",
