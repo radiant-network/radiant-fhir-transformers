@@ -11,9 +11,13 @@ from .goal_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "target_measure_coding_system": "http://loinc.org",
-        "target_measure_coding_code": "3141-9",
-        "target_measure_coding_display": "Weight Measured",
+        "target_measure_coding": [
+            {
+                "system": "http://loinc.org",
+                "code": "3141-9",
+                "display": "Weight Measured",
+            }
+        ],
         "target_measure_text": None,
         "target_detail_quantity_value": None,
         "target_detail_quantity_comparator": None,

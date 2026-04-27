@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "target",
             "column": [
                 {
+                    "name": "target_measure_coding",
+                    "path": "measure.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "target_measure_text",
                     "path": "measure.text",
                     "type": "string",
@@ -107,6 +113,7 @@ VIEW_DEFINITION = {
                     "name": "target_detail_codeable_concept_coding",
                     "path": "detailCodeableConcept.coding",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "target_detail_codeable_concept_text",
@@ -202,28 +209,6 @@ VIEW_DEFINITION = {
                     "name": "target_due_duration_code",
                     "path": "dueDuration.code",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "measure.coding",
-                    "column": [
-                        {
-                            "name": "target_measure_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "target_measure_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "target_measure_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
