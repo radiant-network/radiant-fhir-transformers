@@ -34,31 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "interpretation",
             "column": [
                 {
+                    "name": "interpretation_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "interpretation_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "interpretation_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "interpretation_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "interpretation_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

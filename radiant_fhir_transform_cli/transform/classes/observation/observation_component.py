@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "component",
             "column": [
                 {
+                    "name": "component_code_coding",
+                    "path": "code.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "component_code_text",
                     "path": "code.text",
                     "type": "string",
@@ -267,28 +273,6 @@ VIEW_DEFINITION = {
                     "name": "component_reference_range",
                     "path": "referenceRange",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "code.coding",
-                    "column": [
-                        {
-                            "name": "component_code_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "component_code_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "component_code_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
