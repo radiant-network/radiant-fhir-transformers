@@ -11,7 +11,7 @@ from .document_reference_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "relates_to_target_code": "appends",
+        "relates_to_code": "appends",
         "relates_to_target_reference": "DocumentReference/example",
         "relates_to_target_type": None,
         "relates_to_target_display": None,

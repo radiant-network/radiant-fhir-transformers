@@ -34,21 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "securityLabel",
             "column": [
                 {
+                    "name": "security_label_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "security_label_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "security_label_coding",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
