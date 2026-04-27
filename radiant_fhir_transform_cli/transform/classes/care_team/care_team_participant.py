@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "participant",
             "column": [
                 {
+                    "name": "participant_role",
+                    "path": "role",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "participant_member_reference",
                     "path": "member.reference",
                     "type": "string",
@@ -72,38 +78,6 @@ VIEW_DEFINITION = {
                     "name": "participant_period_end",
                     "path": "period.end",
                     "type": "dateTime",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "role.coding",
-                    "column": [
-                        {
-                            "name": "participant_role_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "participant_role_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "participant_role_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
-                },
-                {
-                    "forEachOrNull": "role.text",
-                    "column": [
-                        {
-                            "name": "participant_role_text",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
