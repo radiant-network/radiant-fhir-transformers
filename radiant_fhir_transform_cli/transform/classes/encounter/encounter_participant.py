@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "participant",
             "column": [
                 {
+                    "name": "participant_type",
+                    "path": "type",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "participant_period_start",
                     "path": "period.start",
                     "type": "dateTime",
@@ -57,18 +63,6 @@ VIEW_DEFINITION = {
                     "name": "participant_individual_display",
                     "path": "individual.display",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "type",
-                    "column": [
-                        {
-                            "name": "participant_type_coding",
-                            "path": "coding",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

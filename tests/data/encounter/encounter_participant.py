@@ -10,10 +10,16 @@ from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "participant_type_coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-            "code": "PART",
-        },
+        "participant_type": [
+            {
+                "coding": [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                        "code": "PART",
+                    }
+                ]
+            }
+        ],
         "participant_period_start": None,
         "participant_period_end": None,
         "participant_individual_reference": "Practitioner/f201",

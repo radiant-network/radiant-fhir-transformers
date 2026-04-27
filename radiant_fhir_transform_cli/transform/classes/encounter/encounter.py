@@ -28,13 +28,13 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "class_code",
-                    "path": "class.code",
+                    "name": "class_system",
+                    "path": "class.system",
                     "type": "string",
                 },
                 {
-                    "name": "class_system",
-                    "path": "class.system",
+                    "name": "class_code",
+                    "path": "class.code",
                     "type": "string",
                 },
                 {

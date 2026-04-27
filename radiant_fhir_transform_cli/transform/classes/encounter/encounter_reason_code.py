@@ -37,6 +37,7 @@ VIEW_DEFINITION = {
                     "name": "reason_code_coding",
                     "path": "coding",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "reason_code_text",
