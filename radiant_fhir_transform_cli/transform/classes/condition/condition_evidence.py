@@ -32,32 +32,18 @@ VIEW_DEFINITION = {
         },
         {
             "forEachOrNull": "evidence",
-            "column": [],
-            "select": [
+            "column": [
                 {
-                    "forEachOrNull": "code",
-                    "column": [
-                        {
-                            "name": "evidence_code_coding",
-                            "path": "coding",
-                            "type": "string",
-                        },
-                    ],
+                    "name": "evidence_code",
+                    "path": "code",
+                    "type": "string",
+                    "collection": True,
                 },
                 {
-                    "forEachOrNull": "detail",
-                    "column": [
-                        {
-                            "name": "evidence_detail_reference",
-                            "path": "reference",
-                            "type": "string",
-                        },
-                        {
-                            "name": "evidence_detail_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
+                    "name": "evidence_detail",
+                    "path": "detail",
+                    "type": "string",
+                    "collection": True,
                 },
             ],
         },

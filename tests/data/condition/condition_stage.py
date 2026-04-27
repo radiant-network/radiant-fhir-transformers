@@ -11,18 +11,30 @@ from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "condition_id": "f201",
-        "stage_assessment_display": "MEDULLOBLASTOMA DIAGNOSIS",
-        "stage_assessment_reference": "foo",
-        "stage_summary_coding_code": "14803004",
-        "stage_summary_coding_display": "Temporary",
-        "stage_summary_coding_system": "http://snomed.info/sct",
+        "stage_summary_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "14803004",
+                "display": "Temporary",
+            }
+        ],
         "stage_summary_text": "Temporary",
-        "stage_type_coding_code": "14803004",
-        "stage_type_coding_display": "Temporary",
-        "stage_type_coding_system": "http://snomed.info/sct",
+        "stage_assessment": [
+            {
+                "display": "MEDULLOBLASTOMA DIAGNOSIS",
+                "reference": "Observation/foo",
+            },
+        ],
+        "stage_type_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "14803004",
+                "display": "Temporary",
+            }
+        ],
         "stage_type_text": None,
         "id": "8bd1d458-b657-426a-9788-dad78479ab63",
+        "condition_id": "f201",
     }
 ]
 
