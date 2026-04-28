@@ -13,6 +13,7 @@ EXPECTED_OUTPUT = [
     {
         "id": "kdn5-example",
         "resource_type": "RequestGroup",
+        "group_identifier_use": None,
         "group_identifier_type_text": None,
         "group_identifier_system": "http://example.org/treatment-group",
         "group_identifier_value": "00001",
