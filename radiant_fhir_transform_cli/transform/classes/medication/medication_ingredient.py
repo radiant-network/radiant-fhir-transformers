@@ -34,13 +34,29 @@ VIEW_DEFINITION = {
             "forEachOrNull": "ingredient",
             "column": [
                 {
-                    "name": "ingredient_item_codeable_concept",
-                    "path": "itemCodeableConcept",
+                    "name": "ingredient_item_codeable_concept_coding",
+                    "path": "itemCodeableConcept.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "ingredient_item_codeable_concept_text",
+                    "path": "itemCodeableConcept.text",
                     "type": "string",
                 },
                 {
-                    "name": "ingredient_item_reference",
-                    "path": "itemReference",
+                    "name": "ingredient_item_reference_reference",
+                    "path": "itemReference.reference",
+                    "type": "string",
+                },
+                {
+                    "name": "ingredient_item_reference_type",
+                    "path": "itemReference.type",
+                    "type": "string",
+                },
+                {
+                    "name": "ingredient_item_reference_display",
+                    "path": "itemReference.display",
                     "type": "string",
                 },
                 {
@@ -51,7 +67,7 @@ VIEW_DEFINITION = {
                 {
                     "name": "ingredient_strength_numerator_value",
                     "path": "strength.numerator.value",
-                    "type": "integer",
+                    "type": "string",
                 },
                 {
                     "name": "ingredient_strength_numerator_unit",
@@ -71,7 +87,7 @@ VIEW_DEFINITION = {
                 {
                     "name": "ingredient_strength_denominator_value",
                     "path": "strength.denominator.value",
-                    "type": "integer",
+                    "type": "string",
                 },
                 {
                     "name": "ingredient_strength_denominator_unit",

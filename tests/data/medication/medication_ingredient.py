@@ -15,19 +15,17 @@ from .medication_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "ingredient_item_codeable_concept": {
-            "coding": [
-                {
-                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
-                    "code": "66955",
-                    "display": "Vancomycin Hydrochloride",
-                },
-            ],
-        },
-        "ingredient_item_reference": {
-            "reference": "Medication/abcd",
-            "display": "potassium phosphate",
-        },
+        "ingredient_item_codeable_concept_coding": [
+            {
+                "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                "code": "66955",
+                "display": "Vancomycin Hydrochloride",
+            },
+        ],
+        "ingredient_item_codeable_concept_text": None,
+        "ingredient_item_reference_reference": "Medication/abcd",
+        "ingredient_item_reference_type": None,
+        "ingredient_item_reference_display": "potassium phosphate",
         "ingredient_is_active": True,
         "ingredient_strength_numerator_value": 500,
         "ingredient_strength_numerator_unit": None,

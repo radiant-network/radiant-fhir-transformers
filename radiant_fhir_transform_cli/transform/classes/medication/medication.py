@@ -53,6 +53,46 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "amount_numerator_value",
+                    "path": "amount.numerator.value",
+                    "type": "string",
+                },
+                {
+                    "name": "amount_numerator_unit",
+                    "path": "amount.numerator.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "amount_numerator_system",
+                    "path": "amount.numerator.system",
+                    "type": "string",
+                },
+                {
+                    "name": "amount_numerator_code",
+                    "path": "amount.numerator.code",
+                    "type": "string",
+                },
+                {
+                    "name": "amount_denominator_value",
+                    "path": "amount.denominator.value",
+                    "type": "string",
+                },
+                {
+                    "name": "amount_denominator_unit",
+                    "path": "amount.denominator.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "amount_denominator_system",
+                    "path": "amount.denominator.system",
+                    "type": "string",
+                },
+                {
+                    "name": "amount_denominator_code",
+                    "path": "amount.denominator.code",
+                    "type": "string",
+                },
+                {
                     "name": "batch_lot_number",
                     "path": "batch.lotNumber",
                     "type": "string",
