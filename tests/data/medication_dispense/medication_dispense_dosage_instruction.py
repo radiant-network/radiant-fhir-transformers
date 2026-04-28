@@ -10,11 +10,11 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "id": None,
-        "medication_dispense_id": "meddisp001",
         "dosage_instruction_sequence": 1,
         "dosage_instruction_text": "500mg IV q6h x 3 days",
+        "dosage_instruction_additional_instruction": None,
         "dosage_instruction_patient_instruction": None,
+        "dosage_instruction_timing_event": None,
         "dosage_instruction_timing_repeat_bounds_duration_value": None,
         "dosage_instruction_timing_repeat_bounds_duration_unit": None,
         "dosage_instruction_timing_repeat_bounds_duration_system": None,
@@ -39,13 +39,51 @@ EXPECTED_OUTPUT = [
         "dosage_instruction_timing_repeat_period": 6,
         "dosage_instruction_timing_repeat_period_max": None,
         "dosage_instruction_timing_repeat_period_unit": "h",
+        "dosage_instruction_timing_repeat_day_of_week": None,
+        "dosage_instruction_timing_repeat_time_of_day": None,
+        "dosage_instruction_timing_repeat_when": None,
         "dosage_instruction_timing_repeat_offset": None,
-        "dosage_instruction_timing_code_text": None,
+        "dosage_instruction_timing_code": None,
         "dosage_instruction_as_needed_boolean": None,
+        "dosage_instruction_as_needed_codeable_concept_coding": None,
         "dosage_instruction_as_needed_codeable_concept_text": None,
+        "dosage_instruction_site_coding": None,
         "dosage_instruction_site_text": None,
+        "dosage_instruction_route_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "255560000",
+                "display": "Intravenous",
+            }
+        ],
         "dosage_instruction_route_text": None,
+        "dosage_instruction_method_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "420620005",
+                "display": "Push - dosing instruction imperative (qualifier value)",
+            }
+        ],
         "dosage_instruction_method_text": None,
+        "dosage_instruction_dose_and_rate": [
+            {
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/dose-rate-type",
+                            "code": "ordered",
+                            "display": "Ordered",
+                        }
+                    ]
+                },
+                "doseQuantity": {
+                    "value": 500,
+                    "unit": "mg",
+                    "system": "http://unitsofmeasure.org",
+                    "code": "mg",
+                },
+            }
+        ],
         "dosage_instruction_max_dose_per_period_numerator_value": None,
         "dosage_instruction_max_dose_per_period_numerator_unit": None,
         "dosage_instruction_max_dose_per_period_numerator_system": None,
@@ -62,6 +100,8 @@ EXPECTED_OUTPUT = [
         "dosage_instruction_max_dose_per_lifetime_unit": None,
         "dosage_instruction_max_dose_per_lifetime_system": None,
         "dosage_instruction_max_dose_per_lifetime_code": None,
+        "id": None,
+        "medication_dispense_id": "meddisp001",
     }
 ]
 

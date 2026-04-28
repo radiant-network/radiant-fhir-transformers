@@ -10,12 +10,13 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "id": None,
-        "medication_dispense_id": "meddisp001",
+        "performer_function_coding": None,
+        "performer_function_text": None,
         "performer_actor_reference": "Practitioner/f006",
         "performer_actor_type": None,
         "performer_actor_display": None,
-        "performer_function_text": None,
+        "id": None,
+        "medication_dispense_id": "meddisp001",
     }
 ]
 

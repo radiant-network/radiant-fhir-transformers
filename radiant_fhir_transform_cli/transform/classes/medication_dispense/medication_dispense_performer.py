@@ -9,11 +9,20 @@ VIEW_DEFINITION = {
     "resource": "MedicationDispense",
     "name": "medication_dispense_performer",
     "status": "active",
-    "constant": [{"name": "id_hash", "valueString": "hash_row()"}],
+    "constant": [
+        {
+            "name": "id_hash",
+            "valueString": "hash_row()",
+        }
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_hash", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_hash",
+                    "type": "string",
+                },
                 {
                     "name": "medication_dispense_id",
                     "path": "id",
@@ -24,6 +33,17 @@ VIEW_DEFINITION = {
         {
             "forEach": "performer",
             "column": [
+                {
+                    "name": "performer_function_coding",
+                    "path": "function.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "performer_function_text",
+                    "path": "function.text",
+                    "type": "string",
+                },
                 {
                     "name": "performer_actor_reference",
                     "path": "actor.reference",
@@ -37,11 +57,6 @@ VIEW_DEFINITION = {
                 {
                     "name": "performer_actor_display",
                     "path": "actor.display",
-                    "type": "string",
-                },
-                {
-                    "name": "performer_function_text",
-                    "path": "function.text",
                     "type": "string",
                 },
             ],

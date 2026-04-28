@@ -1,5 +1,5 @@
 """
-Test helper class for FHIR resource type MedicationDispense subtype Substitution Reason 
+Test helper class for FHIR resource type MedicationDispense subtype Substitution Reason
 """
 
 from radiant_fhir_transform_cli.transform.classes.medication_dispense import (
@@ -11,9 +11,16 @@ from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
+        "substitution_reason_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "394802001",
+                "display": "Patient allergic to penicillin",
+            }
+        ],
+        "substitution_reason_text": "Patient allergic to penicillin",
         "id": None,
         "medication_dispense_id": "meddisp001",
-        "substitution_reason_text": "Patient allergic to penicillin",
     }
 ]
 
