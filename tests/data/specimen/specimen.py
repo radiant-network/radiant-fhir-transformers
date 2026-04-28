@@ -14,6 +14,7 @@ EXPECTED_OUTPUT = [
         "id": "101",
         "resource_type": "Specimen",
         "accession_identifier_use": None,
+        "accession_identifier_type_text": None,
         "accession_identifier_system": "http://lab.acme.org/specimens/2011",
         "accession_identifier_value": "X352356",
         "accession_identifier_period_start": None,
@@ -44,12 +45,12 @@ EXPECTED_OUTPUT = [
         "collection_quantity_code": None,
         "collection_method_text": "Venous Line",
         "collection_body_site_text": "Right median cubital vein",
+        "collection_fasting_status_codeable_concept_text": "fasting since midnight",
         "collection_fasting_status_duration_value": "3",
         "collection_fasting_status_duration_comparator": None,
         "collection_fasting_status_duration_unit": "days",
         "collection_fasting_status_duration_system": "ucum.org",
         "collection_fasting_status_duration_code": "3d",
-        "collection_fasting_status_codeable_concept_text": "fasting since midnight",
     },
 ]
 

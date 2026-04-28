@@ -28,6 +28,11 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "accession_identifier_type_text",
+                    "path": "accessionIdentifier.type.text",
+                    "type": "string",
+                },
+                {
                     "name": "accession_identifier_system",
                     "path": "accessionIdentifier.system",
                     "type": "string",
@@ -178,6 +183,11 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "collection_fasting_status_codeable_concept_text",
+                    "path": "collection.fastingStatusCodeableConcept.text",
+                    "type": "string",
+                },
+                {
                     "name": "collection_fasting_status_duration_value",
                     "path": "collection.fastingStatusDuration.value",
                     "type": "string",
@@ -200,11 +210,6 @@ VIEW_DEFINITION = {
                 {
                     "name": "collection_fasting_status_duration_code",
                     "path": "collection.fastingStatusDuration.code",
-                    "type": "string",
-                },
-                {
-                    "name": "collection_fasting_status_codeable_concept_text",
-                    "path": "collection.fastingStatusCodeableConcept.text",
                     "type": "string",
                 },
             ],
