@@ -11,10 +11,10 @@ from .related_person_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "address_line": "43, Place du Marché Sainte Catherine",
         "address_use": None,
         "address_type": None,
         "address_text": None,
+        "address_line": ["43, Place du Marché Sainte Catherine"],
         "address_city": "Paris",
         "address_district": None,
         "address_state": None,

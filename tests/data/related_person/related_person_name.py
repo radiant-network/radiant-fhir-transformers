@@ -11,10 +11,10 @@ from .related_person_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "name_given": "Bénédicte",
         "name_use": None,
         "name_text": None,
         "name_family": "du Marché",
+        "name_given": ["Bénédicte"],
         "name_prefix": None,
         "name_suffix": None,
         "name_period_start": None,

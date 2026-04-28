@@ -34,21 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "relationship",
             "column": [
                 {
+                    "name": "relationship_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "relationship_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "relationship_coding",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

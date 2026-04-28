@@ -11,21 +11,18 @@ from .related_person_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "relationship_coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
-            "code": "N",
-        },
+        "relationship_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0131",
+                "code": "N",
+            },
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
+                "code": "WIFE",
+            },
+        ],
         "relationship_text": None,
         "id": "656bcce6-bf3f-4371-a5b9-dbd435045059",
-        "related_person_id": "benedicte",
-    },
-    {
-        "relationship_coding": {
-            "system": "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-            "code": "WIFE",
-        },
-        "relationship_text": None,
-        "id": "7a7c5e10-92d9-4dd9-988f-4c8e54b765fd",
         "related_person_id": "benedicte",
     },
 ]
