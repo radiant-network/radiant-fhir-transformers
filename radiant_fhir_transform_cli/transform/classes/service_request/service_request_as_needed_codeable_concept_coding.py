@@ -1,4 +1,4 @@
-"""FHIR ServiceRequest location_reference transformer"""
+"""FHIR ServiceRequest as_needed_codeable_concept_coding transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
@@ -7,7 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 
 VIEW_DEFINITION = {
     "resource": "ServiceRequest",
-    "name": "service_request_location_reference",
+    "name": "service_request_as_needed_codeable_concept_coding",
     "status": "active",
     "constant": [
         {
@@ -31,20 +31,20 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEachOrNull": "locationReference",
+            "forEachOrNull": "asNeededCodeableConcept.coding",
             "column": [
                 {
-                    "name": "location_reference_reference",
-                    "path": "reference",
+                    "name": "as_needed_codeable_concept_coding_system",
+                    "path": "system",
                     "type": "string",
                 },
                 {
-                    "name": "location_reference_type",
-                    "path": "type",
+                    "name": "as_needed_codeable_concept_coding_code",
+                    "path": "code",
                     "type": "string",
                 },
                 {
-                    "name": "location_reference_display",
+                    "name": "as_needed_codeable_concept_coding_display",
                     "path": "display",
                     "type": "string",
                 },
@@ -54,6 +54,6 @@ VIEW_DEFINITION = {
 }
 
 
-class ServiceRequestLocationReferenceTransformer(FhirResourceTransformer):
+class ServiceRequestAsNeededCodeableConceptCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__("ServiceRequest", "location_reference", VIEW_DEFINITION)
+        super().__init__("ServiceRequest", "as_needed_codeable_concept_coding", VIEW_DEFINITION)

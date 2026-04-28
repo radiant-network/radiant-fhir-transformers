@@ -12,8 +12,8 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "supporting_info_reference": "#fasting",
-        "supporting_info_display": "Fasting status",
         "supporting_info_type": None,
+        "supporting_info_display": "Fasting status",
         "id": "66dfba3b-cd74-464b-b277-132553f709b9",
         "service_request_id": "di_abcd_efg",
     },

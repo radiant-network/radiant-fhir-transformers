@@ -39,11 +39,6 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "performer_type_coding_version",
-                    "path": "version",
-                    "type": "string",
-                },
-                {
                     "name": "performer_type_coding_code",
                     "path": "code",
                     "type": "string",
@@ -51,11 +46,6 @@ VIEW_DEFINITION = {
                 {
                     "name": "performer_type_coding_display",
                     "path": "display",
-                    "type": "string",
-                },
-                {
-                    "name": "performer_type_coding_user_selected",
-                    "path": "userSelected",
                     "type": "string",
                 },
             ],

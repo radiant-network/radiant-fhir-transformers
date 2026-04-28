@@ -1,4 +1,4 @@
-"""FHIR ServiceRequest location_reference transformer"""
+"""FHIR ServiceRequest instantiates_canonical transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
@@ -7,7 +7,7 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 
 VIEW_DEFINITION = {
     "resource": "ServiceRequest",
-    "name": "service_request_location_reference",
+    "name": "service_request_instantiates_canonical",
     "status": "active",
     "constant": [
         {
@@ -31,21 +31,11 @@ VIEW_DEFINITION = {
             ],
         },
         {
-            "forEachOrNull": "locationReference",
+            "forEachOrNull": "instantiatesCanonical",
             "column": [
                 {
-                    "name": "location_reference_reference",
-                    "path": "reference",
-                    "type": "string",
-                },
-                {
-                    "name": "location_reference_type",
-                    "path": "type",
-                    "type": "string",
-                },
-                {
-                    "name": "location_reference_display",
-                    "path": "display",
+                    "name": "instantiates_canonical",
+                    "path": "$this",
                     "type": "string",
                 },
             ],
@@ -54,6 +44,6 @@ VIEW_DEFINITION = {
 }
 
 
-class ServiceRequestLocationReferenceTransformer(FhirResourceTransformer):
+class ServiceRequestInstantiatesCanonicalTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__("ServiceRequest", "location_reference", VIEW_DEFINITION)
+        super().__init__("ServiceRequest", "instantiates_canonical", VIEW_DEFINITION)

@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type ServiceRequest subtype reasonReference
+Test helper class for FHIR resource type ServiceRequest subtype instantiatesCanonical
 """
 
 from radiant_fhir_transform_cli.transform.classes import (
-    ServiceRequestReasonReferenceTransformer,
+    ServiceRequestInstantiatesCanonicalTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -11,16 +11,14 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "reason_reference_reference": None,
-        "reason_reference_type": None,
-        "reason_reference_display": "Patient has a spinal fracture",
-        "id": "d382ef18-e8b9-4978-9c70-1dd6e91f45ea",
+        "instantiates_canonical": "mycanonicalvalue.com",
+        "id": "e056b5d0-ab95-49e3-ad83-a22aafd0886d",
         "service_request_id": "di_abcd_efg",
     },
 ]
 
 
-class ServiceRequestReasonReferenceTestHelper(FhirResourceTestHelper):
+class ServiceRequestInstantiatesCanonicalTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'ServiceRequest' resource.
 
@@ -42,9 +40,9 @@ class ServiceRequestReasonReferenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_component = "reason_reference"
-    transformer = ServiceRequestReasonReferenceTransformer
-    expected_table_name = "service_request_reason_reference"
+    resource_component = "instantiates_canonical"
+    transformer = ServiceRequestInstantiatesCanonicalTransformer
+    expected_table_name = "service_request_instantiates_canonical"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

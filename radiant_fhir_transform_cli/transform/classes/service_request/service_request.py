@@ -23,8 +23,33 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "text_status",
-                    "path": "text.status",
+                    "name": "requisition_use",
+                    "path": "requisition.use",
+                    "type": "string",
+                },
+                {
+                    "name": "requisition_type_text",
+                    "path": "requisition.type.text",
+                    "type": "string",
+                },
+                {
+                    "name": "requisition_system",
+                    "path": "requisition.system",
+                    "type": "string",
+                },
+                {
+                    "name": "requisition_value",
+                    "path": "requisition.value",
+                    "type": "string",
+                },
+                {
+                    "name": "requisition_period_start",
+                    "path": "requisition.period.start",
+                    "type": "string",
+                },
+                {
+                    "name": "requisition_period_end",
+                    "path": "requisition.period.end",
                     "type": "string",
                 },
                 {
@@ -173,13 +198,13 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "subject_display",
-                    "path": "subject.display",
+                    "name": "subject_type",
+                    "path": "subject.type",
                     "type": "string",
                 },
                 {
-                    "name": "subject_type",
-                    "path": "subject.type",
+                    "name": "subject_display",
+                    "path": "subject.display",
                     "type": "string",
                 },
                 {
@@ -188,13 +213,13 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "encounter_display",
-                    "path": "encounter.display",
+                    "name": "encounter_type",
+                    "path": "encounter.type",
                     "type": "string",
                 },
                 {
-                    "name": "encounter_type",
-                    "path": "encounter.type",
+                    "name": "encounter_display",
+                    "path": "encounter.display",
                     "type": "string",
                 },
                 {
@@ -213,19 +238,120 @@ VIEW_DEFINITION = {
                     "type": "dateTime",
                 },
                 {
+                    "name": "occurrence_timing_event",
+                    "path": "occurrenceTiming.event",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_duration_value",
+                    "path": "occurrenceTiming.repeat.boundsDuration.value",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_duration_comparator",
+                    "path": "occurrenceTiming.repeat.boundsDuration.comparator",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_duration_unit",
+                    "path": "occurrenceTiming.repeat.boundsDuration.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_duration_system",
+                    "path": "occurrenceTiming.repeat.boundsDuration.system",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_duration_code",
+                    "path": "occurrenceTiming.repeat.boundsDuration.code",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_range_low_value",
+                    "path": "occurrenceTiming.repeat.boundsRange.low.value",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_range_low_unit",
+                    "path": "occurrenceTiming.repeat.boundsRange.low.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_range_low_system",
+                    "path": "occurrenceTiming.repeat.boundsRange.low.system",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_range_low_code",
+                    "path": "occurrenceTiming.repeat.boundsRange.low.code",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_range_high_value",
+                    "path": "occurrenceTiming.repeat.boundsRange.high.value",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_range_high_unit",
+                    "path": "occurrenceTiming.repeat.boundsRange.high.unit",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_range_high_system",
+                    "path": "occurrenceTiming.repeat.boundsRange.high.system",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_range_high_code",
+                    "path": "occurrenceTiming.repeat.boundsRange.high.code",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_period_start",
+                    "path": "occurrenceTiming.repeat.boundsPeriod.start",
+                    "type": "dateTime",
+                },
+                {
+                    "name": "occurrence_timing_repeat_bounds_period_end",
+                    "path": "occurrenceTiming.repeat.boundsPeriod.end",
+                    "type": "dateTime",
+                },
+                {
                     "name": "occurrence_timing_repeat_count",
                     "path": "occurrenceTiming.repeat.count",
-                    "type": "string",
+                    "type": "integer",
                 },
                 {
                     "name": "occurrence_timing_repeat_count_max",
                     "path": "occurrenceTiming.repeat.countMax",
+                    "type": "integer",
+                },
+                {
+                    "name": "occurrence_timing_repeat_duration",
+                    "path": "occurrenceTiming.repeat.duration",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_duration_max",
+                    "path": "occurrenceTiming.repeat.durationMax",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_duration_unit",
+                    "path": "occurrenceTiming.repeat.durationUnit",
                     "type": "string",
                 },
                 {
                     "name": "occurrence_timing_repeat_frequency",
                     "path": "occurrenceTiming.repeat.frequency",
-                    "type": "string",
+                    "type": "integer",
+                },
+                {
+                    "name": "occurrence_timing_repeat_frequency_max",
+                    "path": "occurrenceTiming.repeat.frequencyMax",
+                    "type": "integer",
                 },
                 {
                     "name": "occurrence_timing_repeat_period",
@@ -233,8 +359,47 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "occurrence_timing_repeat_period_max",
+                    "path": "occurrenceTiming.repeat.periodMax",
+                    "type": "string",
+                },
+                {
                     "name": "occurrence_timing_repeat_period_unit",
                     "path": "occurrenceTiming.repeat.periodUnit",
+                    "type": "string",
+                },
+                {
+                    "name": "occurrence_timing_repeat_day_of_week",
+                    "path": "occurrenceTiming.repeat.dayOfWeek",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "occurrence_timing_repeat_time_of_day",
+                    "path": "occurrenceTiming.repeat.timeOfDay",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "occurrence_timing_repeat_when",
+                    "path": "occurrenceTiming.repeat.when",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "occurrence_timing_repeat_offset",
+                    "path": "occurrenceTiming.repeat.offset",
+                    "type": "integer",
+                },
+                {
+                    "name": "occurrence_timing_code_coding",
+                    "path": "occurrenceTiming.code.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "occurrence_timing_code_text",
+                    "path": "occurrenceTiming.code.text",
                     "type": "string",
                 },
                 {
@@ -258,13 +423,13 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "requester_display",
-                    "path": "requester.display",
+                    "name": "requester_type",
+                    "path": "requester.type",
                     "type": "string",
                 },
                 {
-                    "name": "requester_type",
-                    "path": "requester.type",
+                    "name": "requester_display",
+                    "path": "requester.display",
                     "type": "string",
                 },
                 {

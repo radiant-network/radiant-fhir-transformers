@@ -39,13 +39,13 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "reason_reference_display",
-                    "path": "display",
+                    "name": "reason_reference_type",
+                    "path": "type",
                     "type": "string",
                 },
                 {
-                    "name": "reason_reference_type",
-                    "path": "type",
+                    "name": "reason_reference_display",
+                    "path": "display",
                     "type": "string",
                 },
             ],

@@ -39,13 +39,13 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "insurance_display",
-                    "path": "display",
+                    "name": "insurance_type",
+                    "path": "type",
                     "type": "string",
                 },
                 {
-                    "name": "insurance_type",
-                    "path": "type",
+                    "name": "insurance_display",
+                    "path": "display",
                     "type": "string",
                 },
             ],
