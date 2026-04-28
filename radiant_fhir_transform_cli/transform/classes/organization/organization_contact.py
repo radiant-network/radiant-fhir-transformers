@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "contact",
             "column": [
                 {
+                    "name": "contact_purpose_coding",
+                    "path": "purpose.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "contact_purpose_text",
                     "path": "purpose.text",
                     "type": "string",
@@ -57,16 +63,19 @@ VIEW_DEFINITION = {
                     "name": "contact_name_given",
                     "path": "name.given",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "contact_name_prefix",
                     "path": "name.prefix",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "contact_name_suffix",
                     "path": "name.suffix",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "contact_name_period_start",
@@ -77,6 +86,12 @@ VIEW_DEFINITION = {
                     "name": "contact_name_period_end",
                     "path": "name.period.end",
                     "type": "dateTime",
+                },
+                {
+                    "name": "contact_telecom",
+                    "path": "telecom",
+                    "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "contact_address_use",
@@ -97,6 +112,7 @@ VIEW_DEFINITION = {
                     "name": "contact_address_line",
                     "path": "address.line",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "contact_address_city",
@@ -132,38 +148,6 @@ VIEW_DEFINITION = {
                     "name": "contact_address_period_end",
                     "path": "address.period.end",
                     "type": "dateTime",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "purpose.coding",
-                    "column": [
-                        {
-                            "name": "contact_purpose_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "contact_purpose_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                    ],
-                },
-                {
-                    "forEachOrNull": "telecom",
-                    "column": [
-                        {
-                            "name": "contact_telecom_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "contact_telecom_value",
-                            "path": "value",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

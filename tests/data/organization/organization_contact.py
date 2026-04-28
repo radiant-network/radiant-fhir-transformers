@@ -11,10 +11,12 @@ from .organization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "contact_telecom_system": "phone",
-        "contact_telecom_value": "022-655 2334",
-        "contact_purpose_coding_system": "http://terminology.hl7.org/CodeSystem/contactentity-type",
-        "contact_purpose_coding_code": "PRESS",
+        "contact_purpose_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/contactentity-type",
+                "code": "PRESS",
+            }
+        ],
         "contact_purpose_text": None,
         "contact_name_use": None,
         "contact_name_text": None,
@@ -24,6 +26,12 @@ EXPECTED_OUTPUT = [
         "contact_name_suffix": None,
         "contact_name_period_start": None,
         "contact_name_period_end": None,
+        "contact_telecom": [
+            {
+                "system": "phone",
+                "value": "022-655 2334",
+            }
+        ],
         "contact_address_use": None,
         "contact_address_type": None,
         "contact_address_text": None,
@@ -39,10 +47,12 @@ EXPECTED_OUTPUT = [
         "organization_id": "2.16.840.1.113883.19.5",
     },
     {
-        "contact_telecom_system": "phone",
-        "contact_telecom_value": "022-655 2335",
-        "contact_purpose_coding_system": "http://terminology.hl7.org/CodeSystem/contactentity-type",
-        "contact_purpose_coding_code": "PATINF",
+        "contact_purpose_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/contactentity-type",
+                "code": "PATINF",
+            }
+        ],
         "contact_purpose_text": None,
         "contact_name_use": None,
         "contact_name_text": None,
@@ -52,6 +62,12 @@ EXPECTED_OUTPUT = [
         "contact_name_suffix": None,
         "contact_name_period_start": None,
         "contact_name_period_end": None,
+        "contact_telecom": [
+            {
+                "system": "phone",
+                "value": "022-655 2335",
+            }
+        ],
         "contact_address_use": None,
         "contact_address_type": None,
         "contact_address_text": None,
