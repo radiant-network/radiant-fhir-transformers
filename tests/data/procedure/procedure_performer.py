@@ -11,9 +11,13 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "performer_function_coding_system": "http://snomed.info/sct",
-        "performer_function_coding_code": "310512001",
-        "performer_function_coding_display": "Medical oncologist",
+        "performer_function_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "310512001",
+                "display": "Medical oncologist",
+            }
+        ],
         "performer_function_text": None,
         "performer_actor_reference": "Practitioner/f201",
         "performer_actor_type": None,

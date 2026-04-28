@@ -11,9 +11,13 @@ from .procedure_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "follow_up_coding_system": "http://snomed.info/sct",
-        "follow_up_coding_code": "183651009",
-        "follow_up_coding_display": "Chemotherapy follow-up (procedure)",
+        "follow_up_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "183651009",
+                "display": "Chemotherapy follow-up (procedure)",
+            }
+        ],
         "follow_up_text": None,
         "id": "6f591259-a534-4b3f-b539-424dd41d0bb5",
         "procedure_id": "f201",

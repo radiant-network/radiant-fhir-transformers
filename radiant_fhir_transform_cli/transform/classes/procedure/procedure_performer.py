@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "performer",
             "column": [
                 {
+                    "name": "performer_function_coding",
+                    "path": "function.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "performer_function_text",
                     "path": "function.text",
                     "type": "string",
@@ -67,28 +73,6 @@ VIEW_DEFINITION = {
                     "name": "performer_on_behalf_of_display",
                     "path": "onBehalfOf.display",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "function.coding",
-                    "column": [
-                        {
-                            "name": "performer_function_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "performer_function_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "performer_function_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

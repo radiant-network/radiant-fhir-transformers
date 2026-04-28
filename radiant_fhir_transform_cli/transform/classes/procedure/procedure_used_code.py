@@ -34,31 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "usedCode",
             "column": [
                 {
+                    "name": "used_code_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "used_code_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "used_code_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "used_code_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "used_code_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
