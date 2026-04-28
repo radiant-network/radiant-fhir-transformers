@@ -34,31 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "reason",
             "column": [
                 {
+                    "name": "reason_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "reason_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "reason_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "reason_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "reason_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

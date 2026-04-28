@@ -11,8 +11,12 @@ from .provenance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "agent_type_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-        "agent_type_coding_code": "AUT",
+        "agent_type_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                "code": "AUT",
+            }
+        ],
         "agent_type_text": None,
         "agent_role": None,
         "agent_who_reference": "Practitioner/author",
@@ -25,8 +29,12 @@ EXPECTED_OUTPUT = [
         "provenance_id": "provenance",
     },
     {
-        "agent_type_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-        "agent_type_coding_code": "DEV",
+        "agent_type_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                "code": "DEV",
+            }
+        ],
         "agent_type_text": None,
         "agent_role": None,
         "agent_who_reference": "Device/device",
