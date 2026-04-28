@@ -54,18 +54,13 @@ VIEW_DEFINITION = {
                     "type": "integer",
                 },
                 {
-                    "name": "photo_hash",
-                    "path": "hash",
-                    "type": "string",
-                },
-                {
                     "name": "photo_title",
                     "path": "title",
                     "type": "string",
                 },
                 {
                     "name": "photo_creation",
-                    "path": "id",
+                    "path": "creation",
                     "type": "dateTime",
                 },
             ],

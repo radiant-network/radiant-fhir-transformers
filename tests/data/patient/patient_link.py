@@ -13,7 +13,6 @@ EXPECTED_OUTPUT = [
     {
         "link_other_reference": "Patient/pat2",
         "link_other_type": None,
-        "link_other_identifier": None,
         "link_other_display": None,
         "link_type": "seealso",
         "id": "22212f72-861a-443c-bcbf-3621e29fdac5",
@@ -22,7 +21,6 @@ EXPECTED_OUTPUT = [
     {
         "link_other_reference": "Patient/pat3",
         "link_other_type": None,
-        "link_other_identifier": None,
         "link_other_display": None,
         "link_type": "seealso1",
         "id": "809ffcfd-e61d-4e6a-bb24-10ebad8d319d",

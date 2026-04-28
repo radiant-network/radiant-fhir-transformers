@@ -11,10 +11,13 @@ from .patient import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "name_given": "Betty",
         "name_use": "official",
         "name_text": "Betty MyChart",
         "name_family": "MyChart",
+        "name_given": [
+            "Betty",
+            "Elizabeth",
+        ],
         "name_prefix": None,
         "name_suffix": None,
         "name_period_start": None,
@@ -23,22 +26,10 @@ EXPECTED_OUTPUT = [
         "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
     {
-        "name_given": "Elizabeth",
-        "name_use": "official",
-        "name_text": "Betty MyChart",
-        "name_family": "MyChart",
-        "name_prefix": None,
-        "name_suffix": None,
-        "name_period_start": None,
-        "name_period_end": None,
-        "id": "14092221-fc54-47a3-8db0-0e29b8a85d6b",
-        "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
-    },
-    {
-        "name_given": "Betty",
         "name_use": "usual",
         "name_text": "Betty MyChart",
         "name_family": "MyChart",
+        "name_given": ["Betty"],
         "name_prefix": None,
         "name_suffix": None,
         "name_period_start": None,
@@ -47,10 +38,10 @@ EXPECTED_OUTPUT = [
         "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
     {
-        "name_given": "Betty",
         "name_use": "old",
         "name_text": "MYCHARTADMIN,BETTY",
         "name_family": "Mychartadmin",
+        "name_given": ["Betty"],
         "name_prefix": None,
         "name_suffix": None,
         "name_period_start": None,

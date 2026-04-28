@@ -173,7 +173,7 @@ RESOURCE = {
         },
         {
             "use": "old",
-            "line": ["1234 Adminsutration Blvd"],
+            "line": ["1234 Administration Blvd"],
             "city": "SOUTHAMPTON",
             "district": "Bucks",
             "state": "PA",

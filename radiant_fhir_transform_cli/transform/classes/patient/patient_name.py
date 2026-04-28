@@ -49,14 +49,22 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "name_given",
+                    "path": "given",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "name_prefix",
                     "path": "prefix",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "name_suffix",
                     "path": "suffix",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "name_period_start",
@@ -67,18 +75,6 @@ VIEW_DEFINITION = {
                     "name": "name_period_end",
                     "path": "period.end",
                     "type": "dateTime",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "given",
-                    "column": [
-                        {
-                            "name": "name_given",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

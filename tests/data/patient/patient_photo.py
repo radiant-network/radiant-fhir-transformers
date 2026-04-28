@@ -15,7 +15,6 @@ EXPECTED_OUTPUT = [
         "photo_language": None,
         "photo_url": "http://someimage.com",
         "photo_size": None,
-        "photo_hash": None,
         "photo_title": None,
         "photo_creation": None,
         "id": "5edee6ad-0c24-4d0c-8807-912d5afa9438",

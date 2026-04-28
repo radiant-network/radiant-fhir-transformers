@@ -44,11 +44,6 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "link_other_identifier",
-                    "path": "other.identifier",
-                    "type": "string",
-                },
-                {
                     "name": "link_other_display",
                     "path": "other.display",
                     "type": "string",

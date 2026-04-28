@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "communication",
             "column": [
                 {
+                    "name": "communication_language_coding",
+                    "path": "language.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "communication_language_text",
                     "path": "language.text",
                     "type": "string",
@@ -42,28 +48,6 @@ VIEW_DEFINITION = {
                     "name": "communication_preferred",
                     "path": "preferred",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "language.coding",
-                    "column": [
-                        {
-                            "name": "communication_language_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "communication_language_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "communication_language_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },
