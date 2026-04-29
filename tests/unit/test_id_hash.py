@@ -62,9 +62,9 @@ class TestFhirComponentId:
         result = transformer._resolve_fhir_component_id(test_row)
 
         uuid_pattern = r"^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
-        assert re.match(uuid_pattern, result["id"]), (
-            f"ID should be UUID4 format, got: {result['id']}"
-        )
+        assert re.match(
+            uuid_pattern, result["id"]
+        ), f"ID should be UUID4 format, got: {result['id']}"
 
     def test_uuid_generates_different_values(self):
         """Test that uuid() generates different values on each call."""
@@ -112,9 +112,9 @@ class TestFhirComponentId:
         result1 = transformer._resolve_fhir_component_id(row1)
         result2 = transformer._resolve_fhir_component_id(row2)
 
-        assert result1["id"] == result2["id"], (
-            "Hash should be the same regardless of last_processed value"
-        )
+        assert (
+            result1["id"] == result2["id"]
+        ), "Hash should be the same regardless of last_processed value"
 
     def test_hash_row_is_deterministic(self):
         """Test that same row data always produces the same hash."""
@@ -145,9 +145,9 @@ class TestFhirComponentId:
 
         for row in result:
             expected_hash = compute_expected_hash(row)
-            assert row["id"] == expected_hash, (
-                f"ID should match computed hash. Expected: {expected_hash}, Got: {row['id']}"
-            )
+            assert (
+                row["id"] == expected_hash
+            ), f"ID should match computed hash. Expected: {expected_hash}, Got: {row['id']}"
 
     @pytest.mark.parametrize(
         "test_helper_cls",
