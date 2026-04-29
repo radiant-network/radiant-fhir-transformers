@@ -11,8 +11,12 @@ from .immunization_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "performer_function_coding_system": "http://terminology.hl7.org/CodeSystem/v2-0443",
-        "performer_function_coding_code": "OP",
+        "performer_function_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+                "code": "OP",
+            }
+        ],
         "performer_function_text": None,
         "performer_actor_reference": "Practitioner/example",
         "performer_actor_type": None,
@@ -21,8 +25,12 @@ EXPECTED_OUTPUT = [
         "immunization_id": "example",
     },
     {
-        "performer_function_coding_system": "http://terminology.hl7.org/CodeSystem/v2-0443",
-        "performer_function_coding_code": "AP",
+        "performer_function_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0443",
+                "code": "AP",
+            }
+        ],
         "performer_function_text": None,
         "performer_actor_reference": "Practitioner/example",
         "performer_actor_type": None,

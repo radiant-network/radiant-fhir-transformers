@@ -9,11 +9,20 @@ VIEW_DEFINITION = {
     "resource": "MedicationDispense",
     "name": "medication_dispense_identifier",
     "status": "active",
-    "constant": [{"name": "id_hash", "valueString": "hash_row()"}],
+    "constant": [
+        {
+            "name": "id_hash",
+            "valueString": "hash_row()",
+        }
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_hash", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_hash",
+                    "type": "string",
+                },
                 {
                     "name": "medication_dispense_id",
                     "path": "id",
@@ -24,7 +33,11 @@ VIEW_DEFINITION = {
         {
             "forEach": "identifier",
             "column": [
-                {"name": "identifier_use", "path": "use", "type": "string"},
+                {
+                    "name": "identifier_use",
+                    "path": "use",
+                    "type": "string",
+                },
                 {
                     "name": "identifier_type_text",
                     "path": "type.text",
@@ -35,7 +48,11 @@ VIEW_DEFINITION = {
                     "path": "system",
                     "type": "string",
                 },
-                {"name": "identifier_value", "path": "value", "type": "string"},
+                {
+                    "name": "identifier_value",
+                    "path": "value",
+                    "type": "string",
+                },
                 {
                     "name": "identifier_period_start",
                     "path": "period.start",

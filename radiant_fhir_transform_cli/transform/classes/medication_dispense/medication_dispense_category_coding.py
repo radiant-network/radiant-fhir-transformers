@@ -9,11 +9,20 @@ VIEW_DEFINITION = {
     "resource": "MedicationDispense",
     "name": "medication_dispense_category_coding",
     "status": "active",
-    "constant": [{"name": "id_hash", "valueString": "hash_row()"}],
+    "constant": [
+        {
+            "name": "id_hash",
+            "valueString": "hash_row()",
+        }
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_hash", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_hash",
+                    "type": "string",
+                },
                 {
                     "name": "medication_dispense_id",
                     "path": "id",

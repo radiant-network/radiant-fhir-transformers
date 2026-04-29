@@ -34,21 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "context.event",
             "column": [
                 {
+                    "name": "context_event_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "context_event_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "context_event_coding",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

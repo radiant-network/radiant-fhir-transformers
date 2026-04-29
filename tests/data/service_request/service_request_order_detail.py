@@ -11,11 +11,13 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "order_detail_coding": {
-            "system": "http://snomed.info/sct",
-            "code": "243144002",
-            "display": "Patient triggered inspiratory assistance (procedure)",
-        },
+        "order_detail_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "243144002",
+                "display": "Patient triggered inspiratory assistance (procedure)",
+            }
+        ],
         "order_detail_text": "IPPB",
         "id": "3cbc1d6e-e409-4359-8c4f-4b7464c6b7b7",
         "service_request_id": "di_abcd_efg",

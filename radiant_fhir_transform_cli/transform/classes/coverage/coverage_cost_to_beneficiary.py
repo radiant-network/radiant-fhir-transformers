@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "costToBeneficiary",
             "column": [
                 {
+                    "name": "cost_to_beneficiary_type_coding",
+                    "path": "type.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "cost_to_beneficiary_type_text",
                     "path": "type.text",
                     "type": "string",
@@ -68,37 +74,11 @@ VIEW_DEFINITION = {
                     "path": "valueMoney.currency",
                     "type": "string",
                 },
-            ],
-            "select": [
                 {
-                    "forEachOrNull": "type.coding",
-                    "column": [
-                        {
-                            "name": "cost_to_beneficiary_type_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "cost_to_beneficiary_type_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                    ],
-                },
-                {
-                    "forEachOrNull": "exception",
-                    "column": [
-                        {
-                            "name": "cost_to_beneficiary_exception_type",
-                            "path": "type",
-                            "type": "string",
-                        },
-                        {
-                            "name": "cost_to_beneficiary_exception_period",
-                            "path": "period",
-                            "type": "string",
-                        },
-                    ],
+                    "name": "cost_to_beneficiary_exception",
+                    "path": "exception",
+                    "type": "string",
+                    "collection": True,
                 },
             ],
         },

@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "signature",
             "column": [
                 {
+                    "name": "signature_type",
+                    "path": "type",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "signature_when",
                     "path": "when",
                     "type": "dateTime",
@@ -77,28 +83,6 @@ VIEW_DEFINITION = {
                     "name": "signature_sig_format",
                     "path": "sigFormat",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "type",
-                    "column": [
-                        {
-                            "name": "signature_type_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "signature_type_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "signature_type_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

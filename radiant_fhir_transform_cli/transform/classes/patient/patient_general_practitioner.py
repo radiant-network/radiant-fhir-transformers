@@ -44,11 +44,6 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "general_practitioner_identifier",
-                    "path": "identifier",
-                    "type": "string",
-                },
-                {
                     "name": "general_practitioner_display",
                     "path": "display",
                     "type": "string",

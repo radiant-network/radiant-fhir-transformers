@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "contact",
             "column": [
                 {
+                    "name": "contact_relationship",
+                    "path": "relationship",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "contact_name_use",
                     "path": "name.use",
                     "type": "string",
@@ -52,16 +58,19 @@ VIEW_DEFINITION = {
                     "name": "contact_name_given",
                     "path": "name.given",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "contact_name_prefix",
                     "path": "name.prefix",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "contact_name_suffix",
                     "path": "name.suffix",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "contact_name_period_start",
@@ -72,6 +81,12 @@ VIEW_DEFINITION = {
                     "name": "contact_name_period_end",
                     "path": "name.period.end",
                     "type": "dateTime",
+                },
+                {
+                    "name": "contact_telecom",
+                    "path": "telecom",
+                    "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "contact_address_use",
@@ -87,6 +102,12 @@ VIEW_DEFINITION = {
                     "name": "contact_address_text",
                     "path": "address.text",
                     "type": "string",
+                },
+                {
+                    "name": "contact_address_line",
+                    "path": "address.line",
+                    "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "contact_address_city",
@@ -139,11 +160,6 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "contact_organization_identifier",
-                    "path": "organization.identifier",
-                    "type": "string",
-                },
-                {
                     "name": "contact_organization_display",
                     "path": "organization.display",
                     "type": "string",
@@ -157,70 +173,6 @@ VIEW_DEFINITION = {
                     "name": "contact_period_end",
                     "path": "period.end",
                     "type": "dateTime",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "relationship",
-                    "column": [
-                        {
-                            "name": "contact_relationship_text",
-                            "path": "text",
-                            "type": "string",
-                        },
-                    ],
-                    "select": [
-                        {
-                            "forEachOrNull": "coding",
-                            "column": [
-                                {
-                                    "name": "contact_relationship_coding_system",
-                                    "path": "system",
-                                    "type": "string",
-                                },
-                                {
-                                    "name": "contact_relationship_coding_code",
-                                    "path": "code",
-                                    "type": "string",
-                                },
-                                {
-                                    "name": "contact_relationship_coding_display",
-                                    "path": "display",
-                                    "type": "string",
-                                },
-                            ],
-                        },
-                    ],
-                },
-                {
-                    "forEachOrNull": "telecom",
-                    "column": [
-                        {
-                            "name": "contact_telecom_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "contact_telecom_value",
-                            "path": "value",
-                            "type": "string",
-                        },
-                        {
-                            "name": "contact_telecom_use",
-                            "path": "use",
-                            "type": "string",
-                        },
-                    ],
-                },
-                {
-                    "forEachOrNull": "address.line",
-                    "column": [
-                        {
-                            "name": "contact_address_line",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

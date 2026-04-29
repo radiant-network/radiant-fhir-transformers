@@ -54,19 +54,10 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "location_physical_type_coding_code",
-                    "path": "physicalType.coding.code",
+                    "name": "location_physical_type_coding",
+                    "path": "physicalType.coding",
                     "type": "string",
-                },
-                {
-                    "name": "location_physical_type_coding_system",
-                    "path": "physicalType.coding.system",
-                    "type": "string",
-                },
-                {
-                    "name": "location_physical_type_coding_display",
-                    "path": "physicalType.coding.display",
-                    "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "location_physical_type_text",

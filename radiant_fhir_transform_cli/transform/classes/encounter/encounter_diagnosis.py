@@ -49,6 +49,12 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "diagnosis_use_coding",
+                    "path": "use.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "diagnosis_use_text",
                     "path": "use.text",
                     "type": "string",
@@ -57,28 +63,6 @@ VIEW_DEFINITION = {
                     "name": "diagnosis_rank",
                     "path": "rank",
                     "type": "integer",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "use.coding",
-                    "column": [
-                        {
-                            "name": "diagnosis_use_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "diagnosis_use_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "diagnosis_use_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

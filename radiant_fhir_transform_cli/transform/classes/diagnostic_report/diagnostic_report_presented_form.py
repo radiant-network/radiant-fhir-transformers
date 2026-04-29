@@ -54,18 +54,13 @@ VIEW_DEFINITION = {
                     "type": "integer",
                 },
                 {
-                    "name": "presented_form_hash",
-                    "path": "hash",
-                    "type": "string",
-                },
-                {
                     "name": "presented_form_title",
                     "path": "title",
                     "type": "string",
                 },
                 {
                     "name": "presented_form_creation",
-                    "path": "url",
+                    "path": "creation",
                     "type": "dateTime",
                 },
             ],

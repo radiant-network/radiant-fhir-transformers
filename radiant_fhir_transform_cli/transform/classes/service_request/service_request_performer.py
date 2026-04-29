@@ -39,13 +39,13 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "performer_display",
-                    "path": "display",
+                    "name": "performer_type",
+                    "path": "type",
                     "type": "string",
                 },
                 {
-                    "name": "performer_type",
-                    "path": "type",
+                    "name": "performer_display",
+                    "path": "display",
                     "type": "string",
                 },
             ],

@@ -39,13 +39,13 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "location_reference_display",
-                    "path": "display",
+                    "name": "location_reference_type",
+                    "path": "type",
                     "type": "string",
                 },
                 {
-                    "name": "location_reference_type",
-                    "path": "type",
+                    "name": "location_reference_display",
+                    "path": "display",
                     "type": "string",
                 },
             ],

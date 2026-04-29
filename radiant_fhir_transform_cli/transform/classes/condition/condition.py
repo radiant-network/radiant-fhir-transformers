@@ -23,6 +23,21 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "clinical_status_text",
+                    "path": "clinicalStatus.text",
+                    "type": "string",
+                },
+                {
+                    "name": "verification_status_text",
+                    "path": "verificationStatus.text",
+                    "type": "string",
+                },
+                {
+                    "name": "severity_text",
+                    "path": "severity.text",
+                    "type": "string",
+                },
+                {
                     "name": "code_text",
                     "path": "code.text",
                     "type": "string",
@@ -250,21 +265,6 @@ VIEW_DEFINITION = {
                 {
                     "name": "asserter_type",
                     "path": "asserter.type",
-                    "type": "string",
-                },
-                {
-                    "name": "clinical_status_text",
-                    "path": "clinicalStatus.text",
-                    "type": "string",
-                },
-                {
-                    "name": "verification_status_text",
-                    "path": "verificationStatus.text",
-                    "type": "string",
-                },
-                {
-                    "name": "severity_text",
-                    "path": "severity.text",
                     "type": "string",
                 },
             ],

@@ -62,21 +62,25 @@ VIEW_DEFINITION = {
                     "name": "action_code",
                     "path": "code",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "action_documentation",
                     "path": "documentation",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "action_condition",
                     "path": "condition",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "action_related_action",
                     "path": "relatedAction",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "action_timing_date_time",
@@ -187,6 +191,7 @@ VIEW_DEFINITION = {
                     "name": "action_timing_timing_event",
                     "path": "timingTiming.event",
                     "type": "dateTime",
+                    "collection": True,
                 },
                 {
                     "name": "action_timing_timing_repeat_bounds_duration_value",
@@ -317,16 +322,19 @@ VIEW_DEFINITION = {
                     "name": "action_timing_timing_repeat_day_of_week",
                     "path": "timingTiming.repeat.dayOfWeek",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "action_timing_timing_repeat_time_of_day",
                     "path": "timingTiming.repeat.timeOfDay",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "action_timing_timing_repeat_when",
                     "path": "timingTiming.repeat.when",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "action_timing_timing_repeat_offset",
@@ -334,14 +342,27 @@ VIEW_DEFINITION = {
                     "type": "integer",
                 },
                 {
-                    "name": "action_timing_timing_code",
-                    "path": "timingTiming.code",
+                    "name": "action_timing_timing_code_coding",
+                    "path": "timingTiming.code.coding",
                     "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "action_timing_timing_code_text",
+                    "path": "timingTiming.code.text",
+                    "type": "string",
+                },
+                {
+                    "name": "action_participant",
+                    "path": "participant",
+                    "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "action_type_coding",
                     "path": "type.coding",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "action_type_text",
@@ -388,27 +409,11 @@ VIEW_DEFINITION = {
                     "path": "resource.display",
                     "type": "string",
                 },
-            ],
-            "select": [
                 {
-                    "forEachOrNull": "participant",
-                    "column": [
-                        {
-                            "name": "action_participant",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
-                },
-                {
-                    "forEachOrNull": "action",
-                    "column": [
-                        {
-                            "name": "action_action",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
+                    "name": "action_action",
+                    "path": "action",
+                    "type": "string",
+                    "collection": True,
                 },
             ],
         },

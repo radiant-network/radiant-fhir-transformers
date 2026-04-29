@@ -49,6 +49,12 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "address_line",
+                    "path": "line",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "address_city",
                     "path": "city",
                     "type": "string",
@@ -82,18 +88,6 @@ VIEW_DEFINITION = {
                     "name": "address_period_end",
                     "path": "period.end",
                     "type": "dateTime",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "line",
-                    "column": [
-                        {
-                            "name": "address_line",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

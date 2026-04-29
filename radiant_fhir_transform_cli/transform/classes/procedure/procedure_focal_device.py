@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "focalDevice",
             "column": [
                 {
+                    "name": "focal_device_action_coding",
+                    "path": "action.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "focal_device_action_text",
                     "path": "action.text",
                     "type": "string",
@@ -52,28 +58,6 @@ VIEW_DEFINITION = {
                     "name": "focal_device_manipulated_display",
                     "path": "manipulated.display",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "action.coding",
-                    "column": [
-                        {
-                            "name": "focal_device_action_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "focal_device_action_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "focal_device_action_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

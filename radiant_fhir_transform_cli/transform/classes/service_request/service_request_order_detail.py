@@ -34,21 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "orderDetail",
             "column": [
                 {
+                    "name": "order_detail_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "order_detail_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "order_detail_coding",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

@@ -1,9 +1,9 @@
 """
-Test helper class for FHIR resource type ServiceRequest subtype reasonReference
+Test helper class for FHIR resource type ServiceRequest subtype asNeededCodeableConceptCoding
 """
 
 from radiant_fhir_transform_cli.transform.classes import (
-    ServiceRequestReasonReferenceTransformer,
+    ServiceRequestAsNeededCodeableConceptCodingTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
@@ -11,16 +11,16 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "reason_reference_reference": None,
-        "reason_reference_type": None,
-        "reason_reference_display": "Patient has a spinal fracture",
-        "id": "d382ef18-e8b9-4978-9c70-1dd6e91f45ea",
+        "as_needed_codeable_concept_coding_system": "http://mysystem.org",
+        "as_needed_codeable_concept_coding_code": "123-yes",
+        "as_needed_codeable_concept_coding_display": None,
+        "id": "a36cb934-243e-4931-b2d7-e6f26e1e72e0",
         "service_request_id": "di_abcd_efg",
     },
 ]
 
 
-class ServiceRequestReasonReferenceTestHelper(FhirResourceTestHelper):
+class ServiceRequestAsNeededCodeableConceptCodingTestHelper(FhirResourceTestHelper):
     """
     A helper class for testing transformations of the FHIR 'ServiceRequest' resource.
 
@@ -42,9 +42,9 @@ class ServiceRequestReasonReferenceTestHelper(FhirResourceTestHelper):
     """
 
     resource_type = "ServiceRequest"
-    resource_component = "reason_reference"
-    transformer = ServiceRequestReasonReferenceTransformer
-    expected_table_name = "service_request_reason_reference"
+    resource_component = "as_needed_codeable_concept_coding"
+    transformer = ServiceRequestAsNeededCodeableConceptCodingTransformer
+    expected_table_name = "service_request_as_needed_codeable_concept_coding"
 
     def __init__(self):
         super().__init__(RESOURCE, EXPECTED_OUTPUT)

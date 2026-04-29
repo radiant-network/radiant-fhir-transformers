@@ -1,4 +1,4 @@
-"""FHIR Immunization subpotent_reason transformer"""
+"""FHIR ServiceRequest instantiates_canonical transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
@@ -6,8 +6,8 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 
 
 VIEW_DEFINITION = {
-    "resource": "Immunization",
-    "name": "immunization_subpotent_reason",
+    "resource": "ServiceRequest",
+    "name": "service_request_instantiates_canonical",
     "status": "active",
     "constant": [
         {
@@ -24,24 +24,18 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "immunization_id",
+                    "name": "service_request_id",
                     "path": "id",
                     "type": "string",
                 },
             ],
         },
         {
-            "forEachOrNull": "subpotentReason",
+            "forEachOrNull": "instantiatesCanonical",
             "column": [
                 {
-                    "name": "subpotent_reason_coding",
-                    "path": "coding",
-                    "type": "string",
-                    "collection": True,
-                },
-                {
-                    "name": "subpotent_reason_text",
-                    "path": "text",
+                    "name": "instantiates_canonical",
+                    "path": "$this",
                     "type": "string",
                 },
             ],
@@ -50,6 +44,6 @@ VIEW_DEFINITION = {
 }
 
 
-class ImmunizationSubpotentReasonTransformer(FhirResourceTransformer):
+class ServiceRequestInstantiatesCanonicalTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__("Immunization", "subpotent_reason", VIEW_DEFINITION)
+        super().__init__("ServiceRequest", "instantiates_canonical", VIEW_DEFINITION)

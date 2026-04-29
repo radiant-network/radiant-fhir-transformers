@@ -34,7 +34,7 @@ VIEW_DEFINITION = {
             "forEachOrNull": "relatesTo",
             "column": [
                 {
-                    "name": "relates_to_target_code",
+                    "name": "relates_to_code",
                     "path": "code",
                     "type": "string",
                 },

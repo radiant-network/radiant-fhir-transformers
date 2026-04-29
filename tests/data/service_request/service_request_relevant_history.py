@@ -12,8 +12,8 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "relevant_history_reference": "#signature",
-        "relevant_history_display": "Author's Signature",
         "relevant_history_type": None,
+        "relevant_history_display": "Author's Signature",
         "id": "d0faa48e-ce14-47c2-ad5d-5c3fa6396559",
         "service_request_id": "di_abcd_efg",
     },

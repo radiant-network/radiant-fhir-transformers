@@ -9,11 +9,20 @@ VIEW_DEFINITION = {
     "resource": "MedicationDispense",
     "name": "medication_dispense_substitution_reason",
     "status": "active",
-    "constant": [{"name": "id_hash", "valueString": "hash_row()"}],
+    "constant": [
+        {
+            "name": "id_hash",
+            "valueString": "hash_row()",
+        }
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_hash", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_hash",
+                    "type": "string",
+                },
                 {
                     "name": "medication_dispense_id",
                     "path": "id",
@@ -24,6 +33,12 @@ VIEW_DEFINITION = {
         {
             "forEach": "substitution.reason",
             "column": [
+                {
+                    "name": "substitution_reason_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
                 {
                     "name": "substitution_reason_text",
                     "path": "text",

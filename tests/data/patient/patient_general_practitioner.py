@@ -13,7 +13,6 @@ EXPECTED_OUTPUT = [
     {
         "general_practitioner_reference": "Practitioner/eGHJaqroQFAsUO8lEm-zIFw3",
         "general_practitioner_type": "Practitioner",
-        "general_practitioner_identifier": None,
         "general_practitioner_display": "Kathleen O Crocker, MD",
         "id": "6322fdca-01b5-4d30-8ca1-44cde78d02b0",
         "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",

@@ -34,26 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "serviceType",
             "column": [
                 {
+                    "name": "service_type_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "service_type_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "service_type_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                        {
-                            "name": "service_type_coding_display",
-                            "path": "display",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

@@ -34,8 +34,8 @@ VIEW_DEFINITION = {
             "forEachOrNull": "instantiatesUri",
             "column": [
                 {
-                    "name": "instantiates_uri_value",
-                    "path": "value",
+                    "name": "instantiates_uri",
+                    "path": "$this",
                     "type": "string",
                 },
             ],

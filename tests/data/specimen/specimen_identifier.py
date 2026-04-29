@@ -12,9 +12,9 @@ from .specimen_resource import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "identifier_use": None,
+        "identifier_type_text": None,
         "identifier_system": "http://ehr.acme.org/identifiers/collections",
         "identifier_value": "23234352356",
-        "identifier_type_text": None,
         "identifier_period_start": None,
         "identifier_period_end": None,
         "id": "7f438aae-8a16-412c-b95a-6f46425e2dde",

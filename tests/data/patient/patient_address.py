@@ -11,10 +11,10 @@ from .patient_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "address_line": "1234 Administration Blvd",
         "address_use": "home",
         "address_type": None,
         "address_text": None,
+        "address_line": ["1234 Administration Blvd"],
         "address_city": "SOUTHAMPTON",
         "address_district": "Bucks",
         "address_state": "PA",
@@ -26,10 +26,10 @@ EXPECTED_OUTPUT = [
         "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
     {
-        "address_line": "1234 Adminsutration Blvd",
         "address_use": "old",
         "address_type": None,
         "address_text": None,
+        "address_line": ["1234 Administration Blvd"],
         "address_city": "SOUTHAMPTON",
         "address_district": "Bucks",
         "address_state": "PA",
@@ -41,10 +41,10 @@ EXPECTED_OUTPUT = [
         "patient_id": "e.YgoDNAQq8oI3tDG15j9MgilHSfub5QZZlVysqken6o3",
     },
     {
-        "address_line": "1234 Administration Blvd",
         "address_use": "old",
         "address_type": None,
         "address_text": None,
+        "address_line": ["1234 Administration Blvd"],
         "address_city": "SOUTHAMPTON",
         "address_district": "Bucks",
         "address_state": "PA",

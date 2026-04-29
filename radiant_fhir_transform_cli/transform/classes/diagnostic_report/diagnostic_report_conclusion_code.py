@@ -34,21 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "conclusionCode",
             "column": [
                 {
+                    "name": "conclusion_code_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "conclusion_code_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "conclusion_code_coding",
-                            "path": "$this",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

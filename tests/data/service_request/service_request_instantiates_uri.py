@@ -11,7 +11,7 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "instantiates_uri_value": "myurivalue.com",
+        "instantiates_uri": "myurivalue.com",
         "id": "e056b5d0-ab95-49e3-ad83-a22aafd0886d",
         "service_request_id": "di_abcd_efg",
     },

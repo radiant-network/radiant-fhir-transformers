@@ -34,6 +34,11 @@ VIEW_DEFINITION = {
             "forEachOrNull": "identifier",
             "column": [
                 {
+                    "name": "identifier_use",
+                    "path": "use",
+                    "type": "string",
+                },
+                {
                     "name": "identifier_type_text",
                     "path": "type.text",
                     "type": "string",
@@ -46,11 +51,6 @@ VIEW_DEFINITION = {
                 {
                     "name": "identifier_value",
                     "path": "value",
-                    "type": "string",
-                },
-                {
-                    "name": "identifier_use",
-                    "path": "use",
                     "type": "string",
                 },
                 {

@@ -127,36 +127,7 @@ VIEW_DEFINITION = {
                     "path": "provision.dataPeriod.end",
                     "type": "dateTime",
                 },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "provision.provision",
-                    "column": [
-                        {
-                            "name": "provision_provision_type",
-                            "path": "type",
-                            "type": "string",
-                        },
-                        {
-                            "name": "provision_provision_actor",
-                            "path": "actor",
-                            "type": "string",
-                            "collection": True,
-                        },
-                        {
-                            "name": "provision_provision_class",
-                            "path": "class",
-                            "type": "string",
-                            "collection": True,
-                        },
-                        {
-                            "name": "provision_provision_code",
-                            "path": "code",
-                            "type": "string",
-                            "collection": True,
-                        },
-                    ],
-                },
+                # TODO: provision.provision (recursive) as consent_provision_provision (array of objects)
             ],
         },
     ],

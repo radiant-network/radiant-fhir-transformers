@@ -11,11 +11,13 @@ from .service_request import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "category_coding": {
-            "system": "http://snomed.info/sct",
-            "code": "103696004",
-            "display": "Patient referral to specialist",
-        },
+        "category_coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "103696004",
+                "display": "Patient referral to specialist",
+            }
+        ],
         "category_text": None,
         "id": "d728baee-b087-4ee6-9de3-77f82b355c97",
         "service_request_id": "di_abcd_efg",

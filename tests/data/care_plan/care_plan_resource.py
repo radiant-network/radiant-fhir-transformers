@@ -98,7 +98,18 @@ RESOURCE = {
     "basedOn": [{"display": "Management of Type 2 Diabetes"}],
     "replaces": [{"display": "Plan from urgent care clinic"}],
     "partOf": [{"display": "Overall wellness plan"}],
-    "category": [{"text": "Weight management plan"}],
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "1362129009",
+                    "display": "Intermittent fasting (finding)",
+                }
+            ],
+            "text": "Weight management plan",
+        }
+    ],
     "contributor": {
         "reference": "Practitioner/example",
         "display": "Peter Example",

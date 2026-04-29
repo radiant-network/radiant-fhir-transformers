@@ -39,13 +39,13 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "specimen_display",
-                    "path": "display",
+                    "name": "specimen_type",
+                    "path": "type",
                     "type": "string",
                 },
                 {
-                    "name": "specimen_type",
-                    "path": "type",
+                    "name": "specimen_display",
+                    "path": "display",
                     "type": "string",
                 },
             ],

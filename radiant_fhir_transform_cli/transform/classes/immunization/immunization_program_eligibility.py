@@ -34,26 +34,15 @@ VIEW_DEFINITION = {
             "forEachOrNull": "programEligibility",
             "column": [
                 {
+                    "name": "program_eligibility_coding",
+                    "path": "coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "program_eligibility_text",
                     "path": "text",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "coding",
-                    "column": [
-                        {
-                            "name": "program_eligibility_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "program_eligibility_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

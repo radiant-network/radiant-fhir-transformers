@@ -12,13 +12,21 @@ VIEW_DEFINITION = {
     "select": [
         {
             "column": [
-                {"name": "id", "path": "id", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "id",
+                    "type": "string",
+                },
                 {
                     "name": "resource_type",
                     "path": "resourceType",
                     "type": "string",
                 },
-                {"name": "status", "path": "status", "type": "string"},
+                {
+                    "name": "status",
+                    "path": "status",
+                    "type": "string",
+                },
                 {
                     "name": "status_reason_codeable_concept_text",
                     "path": "statusReasonCodeableConcept.text",
@@ -109,11 +117,15 @@ VIEW_DEFINITION = {
                     "path": "location.display",
                     "type": "string",
                 },
-                {"name": "type_text", "path": "type.text", "type": "string"},
+                {
+                    "name": "type_text",
+                    "path": "type.text",
+                    "type": "string",
+                },
                 {
                     "name": "quantity_value",
                     "path": "quantity.value",
-                    "type": "decimal",
+                    "type": "string",
                 },
                 {
                     "name": "quantity_unit",
@@ -133,7 +145,7 @@ VIEW_DEFINITION = {
                 {
                     "name": "days_supply_value",
                     "path": "daysSupply.value",
-                    "type": "decimal",
+                    "type": "string",
                 },
                 {
                     "name": "days_supply_unit",

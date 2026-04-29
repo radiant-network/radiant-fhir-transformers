@@ -12,8 +12,8 @@ from .service_request import RESOURCE
 EXPECTED_OUTPUT = [
     {
         "replaces_reference": "serviceRequest/banana",
-        "replaces_display": "Previous allergy test",
         "replaces_type": None,
+        "replaces_display": "Previous allergy test",
         "id": "7b22f44d-a119-4da9-b9ed-0f4ca4fed2c0",
         "service_request_id": "di_abcd_efg",
     },

@@ -34,23 +34,8 @@ VIEW_DEFINITION = {
             "forEachOrNull": "note",
             "column": [
                 {
-                    "name": "note_text",
-                    "path": "text",
-                    "type": "string",
-                },
-                {
-                    "name": "note_author_string",
-                    "path": "authorString",
-                    "type": "string",
-                },
-                {
                     "name": "note_author_reference_reference",
                     "path": "authorReference.reference",
-                    "type": "string",
-                },
-                {
-                    "name": "note_author_reference_display",
-                    "path": "authorReference.display",
                     "type": "string",
                 },
                 {
@@ -59,9 +44,24 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "note_author_reference_display",
+                    "path": "authorReference.display",
+                    "type": "string",
+                },
+                {
+                    "name": "note_author_string",
+                    "path": "authorString",
+                    "type": "string",
+                },
+                {
                     "name": "note_time",
                     "path": "time",
                     "type": "dateTime",
+                },
+                {
+                    "name": "note_text",
+                    "path": "text",
+                    "type": "string",
                 },
             ],
         },

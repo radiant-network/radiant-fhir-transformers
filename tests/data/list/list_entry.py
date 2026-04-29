@@ -11,9 +11,13 @@ from .list_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "entry_flag_coding_system": "http://nehta.gov.au/codes/medications/changetype",
-        "entry_flag_coding_code": "01",
-        "entry_flag_coding_display": "Prescribed",
+        "entry_flag_coding": [
+            {
+                "system": "http://nehta.gov.au/codes/medications/changetype",
+                "code": "01",
+                "display": "Prescribed",
+            }
+        ],
         "entry_flag_text": None,
         "entry_deleted": False,
         "entry_date": None,
@@ -24,9 +28,13 @@ EXPECTED_OUTPUT = [
         "list_id": "med-list",
     },
     {
-        "entry_flag_coding_system": "http://nehta.gov.au/codes/medications/changetype",
-        "entry_flag_coding_code": "02",
-        "entry_flag_coding_display": "Cancelled",
+        "entry_flag_coding": [
+            {
+                "system": "http://nehta.gov.au/codes/medications/changetype",
+                "code": "02",
+                "display": "Cancelled",
+            }
+        ],
         "entry_flag_text": None,
         "entry_deleted": True,
         "entry_date": None,

@@ -1,4 +1,4 @@
-"""FHIR MedicationDispense event_history transformer"""
+"""FHIR ServiceRequest as_needed_codeable_concept_coding transformer"""
 
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
@@ -6,14 +6,14 @@ from radiant_fhir_transform_cli.transform.classes.base import (
 
 
 VIEW_DEFINITION = {
-    "resource": "MedicationDispense",
-    "name": "medication_dispense_event_history",
+    "resource": "ServiceRequest",
+    "name": "service_request_as_needed_codeable_concept_coding",
     "status": "active",
     "constant": [
         {
             "name": "id_hash",
             "valueString": "hash_row()",
-        }
+        },
     ],
     "select": [
         {
@@ -24,27 +24,27 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "medication_dispense_id",
+                    "name": "service_request_id",
                     "path": "id",
                     "type": "string",
                 },
-            ]
+            ],
         },
         {
-            "forEach": "eventHistory",
+            "forEachOrNull": "asNeededCodeableConcept.coding",
             "column": [
                 {
-                    "name": "event_history_reference",
-                    "path": "reference",
+                    "name": "as_needed_codeable_concept_coding_system",
+                    "path": "system",
                     "type": "string",
                 },
                 {
-                    "name": "event_history_type",
-                    "path": "type",
+                    "name": "as_needed_codeable_concept_coding_code",
+                    "path": "code",
                     "type": "string",
                 },
                 {
-                    "name": "event_history_display",
+                    "name": "as_needed_codeable_concept_coding_display",
                     "path": "display",
                     "type": "string",
                 },
@@ -54,6 +54,6 @@ VIEW_DEFINITION = {
 }
 
 
-class MedicationDispenseEventHistoryTransformer(FhirResourceTransformer):
+class ServiceRequestAsNeededCodeableConceptCodingTransformer(FhirResourceTransformer):
     def __init__(self):
-        super().__init__("MedicationDispense", "event_history", VIEW_DEFINITION)
+        super().__init__("ServiceRequest", "as_needed_codeable_concept_coding", VIEW_DEFINITION)

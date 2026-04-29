@@ -34,18 +34,25 @@ VIEW_DEFINITION = {
             "forEachOrNull": "container",
             "column": [
                 {
+                    "name": "container_identifier",
+                    "path": "identifier",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "container_description",
                     "path": "description",
                     "type": "string",
                 },
                 {
-                    "name": "container_type_text",
-                    "path": "type.text",
-                    "type": "string",
-                },
-                {
                     "name": "container_type_coding",
                     "path": "type.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "container_type_text",
+                    "path": "type.text",
                     "type": "string",
                 },
                 {
@@ -89,41 +96,30 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
-                    "name": "container_specimen_additive_codeable_concept_text",
-                    "path": "specimen.additiveCodeableConcept.text",
+                    "name": "container_additive_codeable_concept_coding",
+                    "path": "additiveCodeableConcept.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
+                    "name": "container_additive_codeable_concept_text",
+                    "path": "additiveCodeableConcept.text",
                     "type": "string",
                 },
                 {
-                    "name": "container_specimen_additive_codeable_concept_coding",
-                    "path": "specimen.additiveCodeableConcept.coding",
+                    "name": "container_additive_reference_reference",
+                    "path": "additiveReference.reference",
                     "type": "string",
                 },
                 {
-                    "name": "container_specimen_additive_reference_reference",
-                    "path": "specimen.additiveReference.reference",
+                    "name": "container_additive_reference_display",
+                    "path": "additiveReference.display",
                     "type": "string",
                 },
                 {
-                    "name": "container_specimen_additive_reference_display",
-                    "path": "specimen.additiveReference.display",
+                    "name": "container_additive_reference_type",
+                    "path": "additiveReference.type",
                     "type": "string",
-                },
-                {
-                    "name": "container_specimen_additive_reference_type",
-                    "path": "specimen.additiveReference.type",
-                    "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "identifier",
-                    "column": [
-                        {
-                            "name": "container_identifier_value",
-                            "path": "value",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

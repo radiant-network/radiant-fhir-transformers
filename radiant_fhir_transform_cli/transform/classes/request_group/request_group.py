@@ -23,6 +23,11 @@ VIEW_DEFINITION = {
                     "type": "string",
                 },
                 {
+                    "name": "group_identifier_use",
+                    "path": "groupIdentifier.use",
+                    "type": "string",
+                },
+                {
                     "name": "group_identifier_type_text",
                     "path": "groupIdentifier.type.text",
                     "type": "string",

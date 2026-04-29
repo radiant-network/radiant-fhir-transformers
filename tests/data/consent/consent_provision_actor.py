@@ -11,8 +11,12 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "provision_actor_role_coding_system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-        "provision_actor_role_coding_code": "PRCP",
+        "provision_actor_role_coding": [
+            {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                "code": "PRCP",
+            }
+        ],
         "provision_actor_role_text": None,
         "provision_actor_reference_reference": "Practitioner/13",
         "provision_actor_reference_type": None,

@@ -13,7 +13,6 @@ EXPECTED_OUTPUT = [
     {
         "location_code_coding": None,
         "location_code_text": "Pediatrics",
-        "location_code_type": None,
         "id": "e349cfbd-36c1-466e-ba4a-1ba85d7d24e9",
         "service_request_id": "di_abcd_efg",
     },

@@ -11,9 +11,13 @@ from .provenance_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "signature_type_system": "urn:iso-astm:E1762-95:2013",
-        "signature_type_code": "1.2.840.10065.1.12.1.5",
-        "signature_type_display": "Verification Signature",
+        "signature_type": [
+            {
+                "system": "urn:iso-astm:E1762-95:2013",
+                "code": "1.2.840.10065.1.12.1.5",
+                "display": "Verification Signature",
+            }
+        ],
         "signature_when": "2015-08-27T08:39:24+10:00",
         "signature_who_reference": "Practitioner/signature",
         "signature_who_type": None,

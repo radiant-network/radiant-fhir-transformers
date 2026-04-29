@@ -34,6 +34,12 @@ VIEW_DEFINITION = {
             "forEachOrNull": "agent",
             "column": [
                 {
+                    "name": "agent_type_coding",
+                    "path": "type.coding",
+                    "type": "string",
+                    "collection": True,
+                },
+                {
                     "name": "agent_type_text",
                     "path": "type.text",
                     "type": "string",
@@ -42,6 +48,7 @@ VIEW_DEFINITION = {
                     "name": "agent_role",
                     "path": "role",
                     "type": "string",
+                    "collection": True,
                 },
                 {
                     "name": "agent_who_reference",
@@ -72,23 +79,6 @@ VIEW_DEFINITION = {
                     "name": "agent_on_behalf_of_display",
                     "path": "onBehalfOf.display",
                     "type": "string",
-                },
-            ],
-            "select": [
-                {
-                    "forEachOrNull": "type.coding",
-                    "column": [
-                        {
-                            "name": "agent_type_coding_system",
-                            "path": "system",
-                            "type": "string",
-                        },
-                        {
-                            "name": "agent_type_coding_code",
-                            "path": "code",
-                            "type": "string",
-                        },
-                    ],
                 },
             ],
         },

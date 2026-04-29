@@ -11,10 +11,7 @@ from .care_team_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "participant_role_text": "responsiblePerson",
-        "participant_role_coding_system": None,
-        "participant_role_coding_code": None,
-        "participant_role_coding_display": None,
+        "participant_role": [{"text": "responsiblePerson"}],
         "participant_member_reference": "Patient/example",
         "participant_member_type": None,
         "participant_member_display": "Peter James Chalmers",
@@ -27,10 +24,7 @@ EXPECTED_OUTPUT = [
         "care_team_id": "example",
     },
     {
-        "participant_role_text": "adviser",
-        "participant_role_coding_system": None,
-        "participant_role_coding_code": None,
-        "participant_role_coding_display": None,
+        "participant_role": [{"text": "adviser"}],
         "participant_member_reference": "Practitioner/pr1",
         "participant_member_type": None,
         "participant_member_display": "Dorothy Dietition",

@@ -9,11 +9,20 @@ VIEW_DEFINITION = {
     "resource": "MedicationDispense",
     "name": "medication_dispense_receiver",
     "status": "active",
-    "constant": [{"name": "id_hash", "valueString": "hash_row()"}],
+    "constant": [
+        {
+            "name": "id_hash",
+            "valueString": "hash_row()",
+        }
+    ],
     "select": [
         {
             "column": [
-                {"name": "id", "path": "%id_hash", "type": "string"},
+                {
+                    "name": "id",
+                    "path": "%id_hash",
+                    "type": "string",
+                },
                 {
                     "name": "medication_dispense_id",
                     "path": "id",
@@ -29,7 +38,11 @@ VIEW_DEFINITION = {
                     "path": "reference",
                     "type": "string",
                 },
-                {"name": "receiver_type", "path": "type", "type": "string"},
+                {
+                    "name": "receiver_type",
+                    "path": "type",
+                    "type": "string",
+                },
                 {
                     "name": "receiver_display",
                     "path": "display",

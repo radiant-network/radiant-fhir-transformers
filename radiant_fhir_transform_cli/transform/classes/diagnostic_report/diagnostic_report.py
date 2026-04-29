@@ -85,7 +85,7 @@ VIEW_DEFINITION = {
                 {
                     "name": "conclusion",
                     "path": "conclusion",
-                    "type": "dateTime",
+                    "type": "string",
                 },
             ],
         },

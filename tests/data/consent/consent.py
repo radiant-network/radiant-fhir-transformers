@@ -11,46 +11,6 @@ from .consent_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
     {
-        "provision_provision_type": "permit",
-        "provision_provision_actor": [
-            {
-                "role": {
-                    "coding": [
-                        {
-                            "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                            "code": "AUT",
-                        },
-                    ],
-                },
-                "reference": {
-                    "reference": "Practitioner/xcda-author",
-                },
-            },
-        ],
-        "provision_provision_class": [
-            {
-                "system": "urn:ietf:bcp:13",
-                "code": "application/hl7-cda+xml",
-            },
-        ],
-        "provision_provision_code": [
-            {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "34133-9",
-                    },
-                ],
-            },
-            {
-                "coding": [
-                    {
-                        "system": "http://loinc.org",
-                        "code": "18842-5",
-                    },
-                ],
-            },
-        ],
         "id": "consent-example-basic",
         "resource_type": "Consent",
         "status": "active",

@@ -57,6 +57,7 @@ VIEW_DEFINITION = {
                     "name": "entity_agent",
                     "path": "agent",
                     "type": "string",
+                    "collection": True,
                 },
             ],
         },
