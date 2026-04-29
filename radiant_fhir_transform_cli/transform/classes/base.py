@@ -102,7 +102,7 @@ class FhirResourceTransformer:
         self.resource_component: str | None = resource_component
         self.table_name: str = generate_table_name(resource_type, resource_component)
         self.view_definition: dict = view_definition
-        self.excluded_cols_in_hash: list[str] = ["last_processed"]
+        self.excluded_cols_in_hash: list[str] = ["id", "last_processed"]
 
     def _filter_out_empty_row(self, row_dict: dict[str, Any]) -> dict[str, Any] | None:
         """Filter out a row where all non-ID columns are empty or None.
