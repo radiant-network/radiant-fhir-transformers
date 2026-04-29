@@ -1,5 +1,21 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 2.2.0
+
+### Summary
+
+- Emojis: ? x2, 🚀 x1, ✨ x2
+- Categories: Additions x2, Ops x1, Other Changes x2
+
+### New features and changes
+
+- [#129](https://github.com/radiant-network/radiant-fhir-transformers/pull/129) -  :bug: Remove Id when calculating the Hash - [d11355ea](https://github.com/radiant-network/radiant-fhir-transformers/commit/d11355eafc2f1aff794e273d6b4aa5e0506f7b97) by [haynescd](https://github.com/haynescd)
+- [#128](https://github.com/radiant-network/radiant-fhir-transformers/pull/128) - 🚀 Apply Controlled Nested Handling Pattern to All FHIR View Definitions - [a8d7ca07](https://github.com/radiant-network/radiant-fhir-transformers/commit/a8d7ca07e501aa13e51a9b0368972e9a44640745) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#127](https://github.com/radiant-network/radiant-fhir-transformers/pull/127) - ✨ Apply Controlled Nested Handling Pattern to Observation View Definitions - [86a8e23b](https://github.com/radiant-network/radiant-fhir-transformers/commit/86a8e23b43c1996fb31726bc3aa1920a406f0d8f) by [liberaliscomputing](https://github.com/liberaliscomputing)
+- [#126](https://github.com/radiant-network/radiant-fhir-transformers/pull/126) -  Add last processed update - [24a89cc2](https://github.com/radiant-network/radiant-fhir-transformers/commit/24a89cc2ef4d6f654d2cdea9298fa53f4d8bc12e) by [haynescd](https://github.com/haynescd)
+- [#122](https://github.com/radiant-network/radiant-fhir-transformers/pull/122) - ✨ [PLAT-1057] Enhance MedicationRequest View Definitions with Controlled Nested Structure Handling - [b01b9f7d](https://github.com/radiant-network/radiant-fhir-transformers/commit/b01b9f7d7180ea79f92a1b392fd6fb0dfc62c229) by [liberaliscomputing](https://github.com/liberaliscomputing)
+
+
 ## Release 2.1.0
 
 ### Summary
