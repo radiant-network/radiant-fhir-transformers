@@ -46,8 +46,7 @@ def compute_expected_hash(row: dict) -> str:
     Returns:
         SHA256 hash of the row data
     """
-    row_for_hash = {k: v for k, v in row.items() if k != "last_processed"}
-    row_for_hash["id"] = "hash_row()"
+    row_for_hash = {k: v for k, v in row.items() if k not in ["id", "last_processed"]}
     row_str = json.dumps(row_for_hash, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(row_str.encode("utf-8")).hexdigest()
 
