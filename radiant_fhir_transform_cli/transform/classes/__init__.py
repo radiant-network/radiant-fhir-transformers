@@ -133,6 +133,7 @@ from radiant_fhir_transform_cli.transform.classes.medication_dispense import (
 
 from radiant_fhir_transform_cli.transform.classes.procedure import (
     ProcedureTransformer,
+    ProcedureDataAbsentReasonTransformer,
     ProcedureIdentifierTransformer,
     ProcedureInstantiatesCanonicalTransformer,
     ProcedureInstantiatesUriTransformer,
@@ -599,6 +600,7 @@ transformers = {
     ],
     "Procedure": [
         ProcedureTransformer,
+        ProcedureDataAbsentReasonTransformer,
         ProcedureIdentifierTransformer,
         ProcedureInstantiatesCanonicalTransformer,
         ProcedureInstantiatesUriTransformer,

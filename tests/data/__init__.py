@@ -316,6 +316,7 @@ from tests.data.procedure import (
     ProcedureCodeCodingTestHelper,
     ProcedureComplicationDetailTestHelper,
     ProcedureComplicationTestHelper,
+    ProcedureDataAbsentReasonTestHelper,
     ProcedureFocalDeviceTestHelper,
     ProcedureFollowUpTestHelper,
     ProcedureIdentifierTestHelper,
@@ -329,9 +330,9 @@ from tests.data.procedure import (
     ProcedureReasonReferenceTestHelper,
     ProcedureReportTestHelper,
     ProcedureStatusReasonCodingTestHelper,
-    ProcedureTestHelper,
     ProcedureUsedCodeTestHelper,
     ProcedureUsedReferenceTestHelper,
+    ProcedureTestHelper,
 )
 from tests.data.provenance import (
     ProvenanceActivityCodingTestHelper,
@@ -574,6 +575,7 @@ test_helpers = [
     OrganizationContactTestHelper,
     OrganizationEndpointTestHelper,
     ProcedureTestHelper,
+    ProcedureDataAbsentReasonTestHelper,
     ProcedureIdentifierTestHelper,
     ProcedureInstantiatesCanonicalTestHelper,
     ProcedureInstantiatesUriTestHelper,

@@ -1,4 +1,5 @@
 from .procedure import ProcedureTestHelper
+from .procedure_data_absent_reason import ProcedureDataAbsentReasonTestHelper
 from .procedure_identifier import ProcedureIdentifierTestHelper
 from .procedure_instantiates_canonical import (
     ProcedureInstantiatesCanonicalTestHelper,

@@ -1,4 +1,5 @@
 from .procedure import ProcedureTransformer
+from .procedure_data_absent_reason import ProcedureDataAbsentReasonTransformer
 from .procedure_identifier import ProcedureIdentifierTransformer
 from .procedure_instantiates_canonical import (
     ProcedureInstantiatesCanonicalTransformer,
