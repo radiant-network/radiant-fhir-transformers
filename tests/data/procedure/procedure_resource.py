@@ -1,6 +1,12 @@
 RESOURCE = {
     "resourceType": "Procedure",
     "id": "f201",
+    "extension": [
+        {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "not-applicable",
+        }
+    ],
     "identifier": [
         {
             "use": "usual",
