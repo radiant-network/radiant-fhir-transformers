@@ -79,7 +79,7 @@ def transform(
 
             # Write to csv
             transformer.write_to_csv(rows, output_filepath)
-            logger.info("Wrote %s results to %s", str(rt.__name__), output_filepath)
+            logger.info("Wrote %s results to %s", rt.__name__, output_filepath)
 
     except Exception:
         logger.exception("❌ Failed to transform FHIR JSON data to csv!")

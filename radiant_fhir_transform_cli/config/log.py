@@ -59,7 +59,7 @@ def init_logger(log_level=None, log_dir=None, write_logs=True):
     log_dir = log_dir or DEFAULT_LOG_DIR
 
     if isinstance(log_level, str):
-        log_level = logging._nameToLevel.get(str(log_level).upper())
+        log_level = logging._nameToLevel.get(log_level.upper(), logging.INFO)
 
     console_handler = logging.StreamHandler()
     console_handler.setFormatter(DEFAULT_FORMATTER)
