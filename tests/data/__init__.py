@@ -2,8 +2,6 @@
 Test data helper classes
 """
 
-from tests.data.raw_fhir.raw_fhir import RawFhirResourceTestHelper
-
 from tests.data.allergy_intolerance import (
     AllergyIntoleranceCategoryTestHelper,
     AllergyIntoleranceClinicalStatusCodingTestHelper,
@@ -217,6 +215,26 @@ from tests.data.medication import (
     MedicationIngredientTestHelper,
     MedicationTestHelper,
 )
+from tests.data.medication_dispense import (
+    MedicationDispenseAuthorizingPrescriptionTestHelper,
+    MedicationDispenseCategoryCodingTestHelper,
+    MedicationDispenseDetectedIssueTestHelper,
+    MedicationDispenseDosageInstructionTestHelper,
+    MedicationDispenseEventHistoryTestHelper,
+    MedicationDispenseIdentifierTestHelper,
+    MedicationDispenseMedicationCodeableConceptCodingTestHelper,
+    MedicationDispenseNoteTestHelper,
+    MedicationDispensePartOfTestHelper,
+    MedicationDispensePerformerTestHelper,
+    MedicationDispenseReceiverTestHelper,
+    MedicationDispenseStatusReasonCodeableConceptCodingTestHelper,
+    MedicationDispenseSubstitutionReasonTestHelper,
+    MedicationDispenseSubstitutionResponsiblePartyTestHelper,
+    MedicationDispenseSubstitutionTypeCodingTestHelper,
+    MedicationDispenseSupportingInformationTestHelper,
+    MedicationDispenseTestHelper,
+    MedicationDispenseTypeCodingTestHelper,
+)
 from tests.data.medication_request import (
     MedicationRequestBasedOnTestHelper,
     MedicationRequestCategoryTestHelper,
@@ -239,28 +257,6 @@ from tests.data.medication_request import (
     MedicationRequestSupportingInformationTestHelper,
     MedicationRequestTestHelper,
 )
-
-from tests.data.medication_dispense import (
-    MedicationDispenseTestHelper,
-    MedicationDispenseIdentifierTestHelper,
-    MedicationDispensePartOfTestHelper,
-    MedicationDispenseAuthorizingPrescriptionTestHelper,
-    MedicationDispenseDetectedIssueTestHelper,
-    MedicationDispenseEventHistoryTestHelper,
-    MedicationDispenseDosageInstructionTestHelper,
-    MedicationDispenseNoteTestHelper,
-    MedicationDispensePerformerTestHelper,
-    MedicationDispenseReceiverTestHelper,
-    MedicationDispenseSupportingInformationTestHelper,
-    MedicationDispenseCategoryCodingTestHelper,
-    MedicationDispenseMedicationCodeableConceptCodingTestHelper,
-    MedicationDispenseStatusReasonCodeableConceptCodingTestHelper,
-    MedicationDispenseSubstitutionTypeCodingTestHelper,
-    MedicationDispenseSubstitutionReasonTestHelper,
-    MedicationDispenseSubstitutionResponsiblePartyTestHelper,
-    MedicationDispenseTypeCodingTestHelper,
-)
-
 from tests.data.observation import (
     ObservationBasedOnTestHelper,
     ObservationBodySiteCodingTestHelper,
@@ -298,16 +294,16 @@ from tests.data.organization import (
     OrganizationTypeTestHelper,
 )
 from tests.data.patient import (
-    PatientTestHelper,
-    PatientIdentifierTestHelper,
-    PatientNameTestHelper,
-    PatientTelecomTestHelper,
     PatientAddressTestHelper,
-    PatientPhotoTestHelper,
-    PatientContactTestHelper,
     PatientCommunicationTestHelper,
+    PatientContactTestHelper,
     PatientGeneralPractitionerTestHelper,
+    PatientIdentifierTestHelper,
     PatientLinkTestHelper,
+    PatientNameTestHelper,
+    PatientPhotoTestHelper,
+    PatientTelecomTestHelper,
+    PatientTestHelper,
 )
 from tests.data.procedure import (
     ProcedureBasedOnTestHelper,
@@ -330,9 +326,9 @@ from tests.data.procedure import (
     ProcedureReasonReferenceTestHelper,
     ProcedureReportTestHelper,
     ProcedureStatusReasonCodingTestHelper,
+    ProcedureTestHelper,
     ProcedureUsedCodeTestHelper,
     ProcedureUsedReferenceTestHelper,
-    ProcedureTestHelper,
 )
 from tests.data.provenance import (
     ProvenanceActivityCodingTestHelper,
@@ -345,6 +341,7 @@ from tests.data.provenance import (
     ProvenanceTestHelper,
 )
 from tests.data.raw_fhir import RawFhirResourceTestHelper
+from tests.data.raw_fhir.raw_fhir import RawFhirResourceTestHelper
 from tests.data.related_person import (
     RelatedPersonAddressTestHelper,
     RelatedPersonCommunicationTestHelper,
@@ -369,29 +366,29 @@ from tests.data.request_group import (
     RequestGroupTestHelper,
 )
 from tests.data.service_request import (
-    ServiceRequestTestHelper,
+    ServiceRequestAsNeededCodeableConceptCodingTestHelper,
+    ServiceRequestBasedOnTestHelper,
+    ServiceRequestBodySiteTestHelper,
+    ServiceRequestCategoryTestHelper,
+    ServiceRequestCodeCodingTestHelper,
     ServiceRequestContainedTestHelper,
     ServiceRequestIdentifierTestHelper,
     ServiceRequestInstantiatesCanonicalTestHelper,
     ServiceRequestInstantiatesUriTestHelper,
-    ServiceRequestBasedOnTestHelper,
-    ServiceRequestReplacesTestHelper,
-    ServiceRequestCategoryTestHelper,
-    ServiceRequestCodeCodingTestHelper,
-    ServiceRequestOrderDetailTestHelper,
-    ServiceRequestAsNeededCodeableConceptCodingTestHelper,
-    ServiceRequestPerformerTypeCodingTestHelper,
-    ServiceRequestPerformerTestHelper,
+    ServiceRequestInsuranceTestHelper,
     ServiceRequestLocationCodeTestHelper,
     ServiceRequestLocationReferenceTestHelper,
+    ServiceRequestNoteTestHelper,
+    ServiceRequestOrderDetailTestHelper,
+    ServiceRequestPerformerTestHelper,
+    ServiceRequestPerformerTypeCodingTestHelper,
     ServiceRequestReasonCodeTestHelper,
     ServiceRequestReasonReferenceTestHelper,
-    ServiceRequestInsuranceTestHelper,
-    ServiceRequestSupportingInfoTestHelper,
-    ServiceRequestSpecimenTestHelper,
-    ServiceRequestBodySiteTestHelper,
-    ServiceRequestNoteTestHelper,
     ServiceRequestRelevantHistoryTestHelper,
+    ServiceRequestReplacesTestHelper,
+    ServiceRequestSpecimenTestHelper,
+    ServiceRequestSupportingInfoTestHelper,
+    ServiceRequestTestHelper,
 )
 from tests.data.specimen import (
     SpecimenCollectionBodySiteCodingTestHelper,

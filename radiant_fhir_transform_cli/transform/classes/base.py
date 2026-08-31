@@ -24,7 +24,7 @@ import hashlib
 import json
 import logging
 import uuid
-from collections.abc import Generator, Iterable
+from collections.abc import Iterable
 from dataclasses import dataclass
 from pprint import pformat
 from typing import Any

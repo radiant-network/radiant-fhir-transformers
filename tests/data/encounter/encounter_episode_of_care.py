@@ -6,6 +6,7 @@ from radiant_fhir_transform_cli.transform.classes.encounter.encounter_episode_of
     EncounterEpisodeOfCareTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
+
 from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [

@@ -4,9 +4,8 @@ All configuration values for the CLI
 
 import os
 
-
 # File paths and directories
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname((__file__))))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 ROOT_DATA_DIR = os.path.join(ROOT_DIR, "data")
 LOG_DIR = os.path.join(ROOT_DATA_DIR, "logs")
 

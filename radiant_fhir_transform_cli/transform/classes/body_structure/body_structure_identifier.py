@@ -4,7 +4,6 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-
 VIEW_DEFINITION = {
     "resource": "BodyStructure",
     "name": "body_structure_identifier",

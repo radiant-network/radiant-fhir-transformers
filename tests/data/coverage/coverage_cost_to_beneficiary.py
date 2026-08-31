@@ -2,13 +2,14 @@
 Test helper class for FHIR resource type Coverage subtype CostToBeneficiary
 """
 
+from decimal import Decimal
+
 from radiant_fhir_transform_cli.transform.classes.coverage import (
     CoverageCostToBeneficiaryTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
 
 from .coverage_resource import RESOURCE
-from decimal import Decimal
 
 EXPECTED_OUTPUT = [
     {

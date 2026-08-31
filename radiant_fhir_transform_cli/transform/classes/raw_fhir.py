@@ -1,10 +1,10 @@
 import hashlib
-import json
 from collections import defaultdict
 from typing import Any, override
 
-from .base import FhirResourceTransformer
 from radiant_fhir_transform_cli.utils.misc import timestamp
+
+from .base import FhirResourceTransformer
 
 VIEW_DEFINITION = {
     "resourceType": "ViewDefinition",

@@ -6,6 +6,7 @@ from radiant_fhir_transform_cli.transform.classes.encounter.encounter_reason_cod
     EncounterReasonCodeTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
+
 from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
