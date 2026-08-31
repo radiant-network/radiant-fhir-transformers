@@ -7,10 +7,6 @@ from radiant_fhir_transform_cli.transform.classes.medication import (
 )
 from tests.data.base import FhirResourceTestHelper
 
-RESOURCE = None
-
-EXPECTED_OUTPUT = None
-
 from .medication_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
