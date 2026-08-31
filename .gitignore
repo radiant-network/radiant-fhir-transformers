@@ -191,3 +191,5 @@ pyvenv.cfg
 
 *.csv
 *.json
+
+*.mise*

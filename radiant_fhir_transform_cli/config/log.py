@@ -41,7 +41,7 @@ class NoTokenFormatter(logging.Formatter):
         return s
 
 
-DEFAULT_FORMAT = "%(asctime)s - %(name)s" " -  %(levelname)s - %(message)s"
+DEFAULT_FORMAT = "%(asctime)s - %(name)s -  %(levelname)s - %(message)s"
 DEFAULT_FORMATTER = NoTokenFormatter(DEFAULT_FORMAT)
 
 

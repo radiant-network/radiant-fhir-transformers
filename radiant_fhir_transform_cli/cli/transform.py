@@ -31,7 +31,7 @@ logger = logging.getLogger(__name__)
     "--resource-type",
     required=True,
     type=click.Choice(list(transformers.keys())),
-    help="Type of resource in the input file (e.g. Patient, Specimen) to " "transform",
+    help="Type of resource in the input file (e.g. Patient, Specimen) to transform",
 )
 def transform(
     resource_type: str,

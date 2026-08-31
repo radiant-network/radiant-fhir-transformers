@@ -1,5 +1,5 @@
 """
-Test helper class for FHIR resource type Condition subtype Identifier 
+Test helper class for FHIR resource type Condition subtype Identifier
 """
 
 from radiant_fhir_transform_cli.transform.classes.condition.condition_identifier import (
