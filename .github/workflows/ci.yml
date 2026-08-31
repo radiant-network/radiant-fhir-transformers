@@ -2,61 +2,67 @@ name: ✅ CI
 
 on:
   pull_request:
-    types: [opened, reopened, edited, synchronize, closed]
+    types: [opened, reopened, synchronize]
 
 concurrency:
   group: ci-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
-permissions:
-      id-token: write   # This is required for requesting the JWT
-      contents: read    # This is required for actions/checkout
+permissions: {}
 
 jobs:
   lint:
     name: 🚨 Lint code
     runs-on: ubuntu-22.04
     timeout-minutes: 10
+    permissions:
+      contents: read
     steps:
       - name: 👩‍💻 Checkout code
-        uses: actions/checkout@v3
-
-      - name: 🐍 Setup Python
-        uses: actions/setup-python@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          python-version: "3.12"
+          persist-credentials: false
+
+      - name: 🐍 Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+
+      - name: 🐍 Set up Python
+        run: uv python install
 
       - name: 📦 Install deps
-        run: |
-          pip install black==24.10.0
+        run: uv sync --group dev
+
+      - name: 🎨 Format check
+        run: uv run ruff format --check
 
       - name: 🚨 Lint code
-        run: |
-          black --check --line-length 100 tests radiant_fhir_transform_cli
+        continue-on-error: true
+        run: uv run ruff check
+
+      - name: 🔍 Type check
+        continue-on-error: true
+        run: uv run pyrefly check
 
   test:
     name: ✅ Unit test
     runs-on: ubuntu-22.04
     timeout-minutes: 10
+    permissions:
+      contents: read
     steps:
       - name: 👩‍💻 Checkout code
-        uses: actions/checkout@v3
-
-      - name: 🐍 Setup Python
-        uses: actions/setup-python@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          python-version: "3.12"
+          persist-credentials: false
+
+      - name: 🐍 Install uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+
+      - name: 🐍 Set up Python
+        run: uv python install
 
       - name: 📦 Install deps
-        run: |
-          pip install --upgrade virtualenv
-          virtualenv -p python3 venv
-          source venv/bin/activate
-          pip install -e .
-          pip install .[dev]
+        run: uv sync --group dev
 
       - name: ✅ Unit Test
-        run: |
-          source venv/bin/activate
-          pytest --show-capture={no,stdout,stderr} ./tests/unit
-
+        run: uv run pytest --show-capture={no,stdout,stderr} ./tests/unit

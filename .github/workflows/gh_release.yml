@@ -8,38 +8,48 @@ on:
     types:
       - closed
 
-permissions:
-  contents: write
-  pull-requests: write
+concurrency:
+  group: gh-release-${{ github.event.pull_request.number || github.ref }}
+  # never cancel a release mid-flight
+  cancel-in-progress: false
+
+permissions: {}
 
 jobs:
   create_release:
+    name: 🏷️ Create release
     if: github.base_ref == 'main' && github.event.pull_request.merged && contains( github.event.pull_request.labels.*.name, 'release')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    permissions:
+      contents: write # creates the release and pushes the latest-release tag
     steps:
+      # persisted credentials are deliberate: the latest-release step pushes tags
+      - name: Checkout code # zizmor: ignore[artipacked]
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Setup Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
-          python-version: 3.12
+          python-version: "3.12"
 
       - name: Create tag from title and run asset script
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         id: find_tag_and_prepare_assets
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
-          TAG=$(echo ${{ github.event.pull_request.title }} | sed -E "s/^.*Release (.+\..+\..+)$/\1/g")
-          echo "::set-output name=tag::$TAG"
-          
+          TAG=$(echo "$PR_TITLE" | sed -E "s/^.*Release (.+\..+\..+)$/\1/g")
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
           SCRIPT=.github/prepare_assets.sh
-          if [ -f $SCRIPT ]; then 
-            chmod u+x $SCRIPT
-            $SCRIPT $TAG
+          if [ -f "$SCRIPT" ]; then
+            chmod u+x "$SCRIPT"
+            "$SCRIPT" "$TAG"
           fi
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e # v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -55,14 +65,16 @@ jobs:
           git push -f --tags
 
       - name: Upload Assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          UPLOAD_URL: ${{ steps.create_release.outputs.upload_url }}
         run: |
-          upload_url=${{ steps.create_release.outputs.upload_url }}
           if [ -f .github/release_assets.txt ]; then
             while IFS="" read -r FILE || [ -n "$FILE" ]
             do
-              curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                -H "Content-Type: $(file -b --mime-type $FILE)" \
+              curl -H "Authorization: token $GITHUB_TOKEN" \
+                -H "Content-Type: $(file -b --mime-type "$FILE")" \
                 --data-binary "@$FILE" \
-                "${upload_url%\{*}?name=$(basename $FILE)"
+                "${UPLOAD_URL%\{*}?name=$(basename "$FILE")"
             done < .github/release_assets.txt
           fi

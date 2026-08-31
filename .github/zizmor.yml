@@ -1,0 +1,7 @@
+rules:
+  archived-uses:
+    # actions/create-release is archived but kept deliberately: the release
+    # workflow's logic is inherited as-is; replacing the action is a bigger
+    # change than these CI updates should carry.
+    ignore:
+      - gh_release.yml
