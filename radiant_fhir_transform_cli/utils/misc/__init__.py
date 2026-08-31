@@ -3,7 +3,7 @@ Miscellaneous Utility Functions
 """
 
 import datetime
-import importlib
+import importlib.util
 import os
 import re
 import time
@@ -29,7 +29,7 @@ def timestamp() -> str:
     utc_offset = datetime.timedelta(seconds=-utc_offset_sec)
     t = datetime.datetime.now(datetime.timezone(offset=utc_offset)).isoformat()
 
-    return str(t)
+    return t
 
 
 def is_localhost(url: str) -> bool:
@@ -82,6 +82,8 @@ def import_module_from_file(filepath: str):
     """
     module_name = os.path.basename(filepath).split(".")[0]
     spec = importlib.util.spec_from_file_location(module_name, filepath)
+    if spec is None or spec.loader is None:
+        raise ImportError(f"Could not load module from {filepath}")
     imported_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(imported_module)
 
