@@ -19,12 +19,13 @@ dependencies = [
   "pandas==2.2.3",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
   "pytest==8.3.3",
   "pytest-mock==3.14.0",
   "faker==36.1.1",
-  "black==24.10.0",
+  "ruff==0.16.0",
+  "pyrefly==1.1.1",
 ]
 
 [project.scripts]
@@ -40,3 +41,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 exclude = ["data"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.pyrefly]
+project-includes = ["radiant_fhir_transform_cli", "tests"]

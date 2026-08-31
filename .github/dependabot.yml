@@ -1,0 +1,18 @@
+version: 2
+updates:
+  # Keeps hash-pinned actions in .github/workflows up to date: Dependabot bumps
+  # the SHA and its trailing `# vX.Y.Z` comment together, matching pinact's
+  # check format.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    # don't pick up releases younger than a week: gives the ecosystem time to
+    # catch a compromised release before we pull it in
+    cooldown:
+      default-days: 7
+    groups:
+      # one combined PR per run instead of one per action
+      github-actions:
+        patterns:
+          - "*"
