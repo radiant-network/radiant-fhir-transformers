@@ -4,7 +4,6 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-
 VIEW_DEFINITION = {
     "resource": "Specimen",
     "name": "specimen_type_coding",

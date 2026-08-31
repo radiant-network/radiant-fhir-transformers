@@ -4,7 +4,6 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-
 VIEW_DEFINITION = {
     "resource": "CareTeam",
     "name": "care_team_managing_organization",

@@ -4,7 +4,6 @@ from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
 )
 
-
 VIEW_DEFINITION = {
     "resource": "Appointment",
     "name": "appointment_reason_code",

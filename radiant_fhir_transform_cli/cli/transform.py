@@ -3,12 +3,11 @@ Commands to transform nested FHIR resource dicts into flat dicts representing
 rows in a CSV file
 """
 
-import os
 import logging
+import os
+from datetime import datetime
 
 import click
-
-from datetime import datetime
 
 from radiant_fhir_transform_cli.config.log import init_logger
 from radiant_fhir_transform_cli.transform.classes import transformers

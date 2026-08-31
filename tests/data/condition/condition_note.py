@@ -6,6 +6,7 @@ from radiant_fhir_transform_cli.transform.classes.condition import (
     ConditionNoteTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
+
 from .condition_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
