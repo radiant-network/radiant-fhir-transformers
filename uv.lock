@@ -273,7 +273,11 @@ name = "radiant-fhir-transform-cli"
 version = "2.2.1"
 source = { editable = "." }
 dependencies = [
+<<<<<<< HEAD
     { name = "pandas" },
+=======
+    { name = "click" },
+>>>>>>> 9bfd315 (pandas only used in testing, moved to dev)
     { name = "sqlonfhir" },
 ]
 
@@ -283,6 +287,7 @@ cli = [
 ]
 dev = [
     { name = "faker" },
+    { name = "pandas" },
     { name = "pyrefly" },
     { name = "pytest" },
     { name = "pytest-mock" },
@@ -291,7 +296,11 @@ dev = [
 
 [package.metadata]
 requires-dist = [
+<<<<<<< HEAD
     { name = "pandas", specifier = ">=2.2,<3" },
+=======
+    { name = "click", specifier = ">=8.1,<9" },
+>>>>>>> 9bfd315 (pandas only used in testing, moved to dev)
     { name = "sqlonfhir", specifier = ">=0.0.2,<0.1" },
 ]
 
@@ -299,6 +308,7 @@ requires-dist = [
 cli = [{ name = "click", specifier = "==8.1.7" }]
 dev = [
     { name = "faker", specifier = "==36.1.1" },
+    { name = "pandas", specifier = ">=2.2,<3" },
     { name = "pyrefly", specifier = "==1.1.1" },
     { name = "pytest", specifier = "==8.3.3" },
     { name = "pytest-mock", specifier = "==3.14.0" },
