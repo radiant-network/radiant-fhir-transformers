@@ -14,9 +14,9 @@ classifiers = [
     "Operating System :: Linux",
 ]
 dependencies = [
-  "click==8.1.7",
-  "sqlonfhir==0.0.2",
-  "pandas==2.2.3",
+  "click>=8.1,<9",
+  "sqlonfhir>=0.0.2,<0.1",
+  "pandas>=2.2,<3",
 ]
 
 [dependency-groups]
