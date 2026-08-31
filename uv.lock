@@ -274,13 +274,13 @@ version = "0.0.1"
 source = { editable = "." }
 dependencies = [
     { name = "click" },
-    { name = "pandas" },
     { name = "sqlonfhir" },
 ]
 
 [package.dev-dependencies]
 dev = [
     { name = "faker" },
+    { name = "pandas" },
     { name = "pyrefly" },
     { name = "pytest" },
     { name = "pytest-mock" },
@@ -290,13 +290,13 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "click", specifier = ">=8.1,<9" },
-    { name = "pandas", specifier = ">=2.2,<3" },
     { name = "sqlonfhir", specifier = ">=0.0.2,<0.1" },
 ]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "faker", specifier = "==36.1.1" },
+    { name = "pandas", specifier = ">=2.2,<3" },
     { name = "pyrefly", specifier = "==1.1.1" },
     { name = "pytest", specifier = "==8.3.3" },
     { name = "pytest-mock", specifier = "==3.14.0" },
