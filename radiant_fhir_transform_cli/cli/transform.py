@@ -63,7 +63,7 @@ def transform(
         for rt in resource_transformers:
             transformer = rt()
 
-            timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+            timestamp = datetime.now().astimezone().strftime("%Y%m%d%H%M%S")
 
             transfomer_name = transformer.table_name
 
@@ -81,6 +81,6 @@ def transform(
             transformer.write_to_csv(rows, output_filepath)
             logger.info("Wrote %s results to %s", str(rt.__name__), output_filepath)
 
-    except Exception as e:
+    except Exception:
         logger.exception("❌ Failed to transform FHIR JSON data to csv!")
-        raise e
+        raise
