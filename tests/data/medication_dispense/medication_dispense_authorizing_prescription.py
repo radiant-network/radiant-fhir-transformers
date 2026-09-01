@@ -6,6 +6,7 @@ from radiant_fhir_transform_cli.transform.classes.medication_dispense import (
     MedicationDispenseAuthorizingPrescriptionTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
+
 from .medication_dispense_resource import RESOURCE
 
 EXPECTED_OUTPUT = [

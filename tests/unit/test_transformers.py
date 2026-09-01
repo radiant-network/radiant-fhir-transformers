@@ -35,9 +35,6 @@ from radiant_fhir_transform_cli.transform.classes.raw_fhir import (
     RawFhirResourceTransformer,
 )
 from tests.data import test_helpers
-from tests.data.appointment.appointment_participant import (
-    AppointmentParticipantTestHelper,
-)
 
 pd.set_option("display.max_rows", None)
 pd.set_option("display.max_columns", None)

@@ -6,6 +6,7 @@ from radiant_fhir_transform_cli.transform.classes.appointment import (
     AppointmentTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
+
 from .appointment_resource import RESOURCE
 
 EXPECTED_OUTPUT = [

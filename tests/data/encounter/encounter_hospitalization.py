@@ -6,6 +6,7 @@ from radiant_fhir_transform_cli.transform.classes.encounter.encounter_hospitaliz
     EncounterHospitalizationTransformer,
 )
 from tests.data.base import FhirResourceTestHelper
+
 from .encounter_resource import RESOURCE
 
 EXPECTED_OUTPUT = [
