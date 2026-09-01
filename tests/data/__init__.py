@@ -341,7 +341,6 @@ from tests.data.provenance import (
     ProvenanceTestHelper,
 )
 from tests.data.raw_fhir import RawFhirResourceTestHelper
-from tests.data.raw_fhir.raw_fhir import RawFhirResourceTestHelper
 from tests.data.related_person import (
     RelatedPersonAddressTestHelper,
     RelatedPersonCommunicationTestHelper,

@@ -155,12 +155,8 @@ class TestFhirComponentId:
     def test_hash_row_with_multiple_resources(self, test_helper_cls):
         """Test hash generation with multiple resources."""
         test_helper = test_helper_cls()
-        resource_type = test_helper.resource_type
 
         # Instantiate transformer class based on resource type
-        resource_type = test_helper_cls.resource_type
-        resource_component = test_helper.resource_component
-
         cls = test_helper_cls.transformer
 
         transformer = cls()

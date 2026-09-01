@@ -117,7 +117,6 @@ def test_transformers(test_helper_cls):
     test_helper = test_helper_cls()
 
     # Instantiate transformer class based on resource type
-    resource_type = test_helper_cls.resource_type
     resource_component = test_helper.resource_component
 
     cls = test_helper_cls.transformer

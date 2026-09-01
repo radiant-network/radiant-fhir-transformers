@@ -45,5 +45,9 @@ exclude = ["data"]
 [tool.ruff]
 line-length = 100
 
+[tool.ruff.lint.per-file-ignores]
+# imports in __init__.py are deliberate re-exports (transformer/test-helper registries)
+"__init__.py" = ["F401"]
+
 [tool.pyrefly]
 project-includes = ["radiant_fhir_transform_cli", "tests"]
