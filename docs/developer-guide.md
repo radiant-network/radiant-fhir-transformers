@@ -145,16 +145,16 @@ VIEW_DEFINITION = {
                     "name": "gender",
                     "path": "gender",
                     "type": "string",
-                }
+                },
             ],
         },
     ],
 }
 
+
 class PatientTransformer(FhirResourceTransformer):
     def __init__(self):
         super().__init__("Patient", None, VIEW_DEFINITION)
-
 ```
 
 ### Add to Imports
@@ -165,13 +165,10 @@ of transformers here:
 ```python
 # radiant_fhir_transform_cli/transform/classes/__init__.py
 
-from radiant_fhir_transform_cli.transform.classes.patient import (
-    PatientTransformer
-)
+from radiant_fhir_transform_cli.transform.classes.patient import PatientTransformer
 
 # Map FHIR resource type to its transformer class
 transformers = {"Patient": PatientTransformer}
-
 ```
 
 ### Test Transformer
@@ -281,16 +278,12 @@ Once the test helper has been implemented, it needs to be added to the
 list of test helpers that will be run in the unit tests:
 
 ```python 
-
 # tests/data/__init__.py
 
 from tests.data.patient import PatientTestHelper
 
 
-test_helpers = {
-    PatientTestHelper.resource_type: PatientTestHelper
-}
-
+test_helpers = {PatientTestHelper.resource_type: PatientTestHelper}
 ```
 
 ### Run Tests 
