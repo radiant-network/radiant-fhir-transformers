@@ -19,6 +19,7 @@ dependencies = [
 ]
 
 [dependency-groups]
+cli = ["click==8.1.7"]
 dev = [
   "pytest==8.3.3",
   "pytest-mock==3.14.0",
