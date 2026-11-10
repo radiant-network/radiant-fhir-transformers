@@ -10,9 +10,9 @@ from .specimen_collection_method_coding import (
 )
 from .specimen_condition import SpecimenConditionTestHelper
 from .specimen_container import SpecimenContainerTestHelper
+from .specimen_identifier import SpecimenIdentifierTestHelper
 from .specimen_note import SpecimenNoteTestHelper
 from .specimen_parent import SpecimenParentTestHelper
-from .specimen_request import SpecimenRequestTestHelper
 from .specimen_processing import SpecimenProcessingTestHelper
+from .specimen_request import SpecimenRequestTestHelper
 from .specimen_type_coding import SpecimenTypeCodingTestHelper
-from .specimen_identifier import SpecimenIdentifierTestHelper

@@ -4,12 +4,12 @@ Setup the CLI logger
 The logger has a custom formatter which removes sensitive data
 """
 
+import logging
 import os
 import re
-import logging
 from logging.handlers import RotatingFileHandler
 
-from radiant_fhir_transform_cli.config import SECRETS, LOG_DIR
+from radiant_fhir_transform_cli.config import LOG_DIR, SECRETS
 from radiant_fhir_transform_cli.utils import timestamp
 
 DEFAULT_LOG_FILENAME = "radiant_fhir_transformer"

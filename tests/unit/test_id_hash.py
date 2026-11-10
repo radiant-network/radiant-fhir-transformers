@@ -21,14 +21,10 @@ import pytest
 from radiant_fhir_transform_cli.transform.classes.organization import (
     OrganizationIdentifierTransformer,
 )
-from radiant_fhir_transform_cli.transform.classes.patient import (
-    PatientNameTransformer,
-)
 from tests.data.organization.organization_address import OrganizationAddressTestHelper
 from tests.data.organization.organization_resource import (
     RESOURCE as ORGANIZATION_RESOURCE,
 )
-from tests.data.patient.patient import RESOURCE as PATIENT_RESOURCE
 from tests.data.patient.patient_name import PatientNameTestHelper
 
 
@@ -176,4 +172,4 @@ class TestFhirComponentId:
 
         for row in result:
             expected_hash = compute_expected_hash(row)
-            assert row["id"] == expected_hash, f"ID should match computed hash"
+            assert row["id"] == expected_hash, "ID should match computed hash"
