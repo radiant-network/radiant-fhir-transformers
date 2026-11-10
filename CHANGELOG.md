@@ -1,5 +1,19 @@
 # Radiant FHIR Resource Transformers Change History
 
+## Release 2.2.1
+
+### Summary
+
+- Emojis: 🛠️ x1, ? x1, ✨ x1
+- Categories: Additions x1, Other Changes x2
+
+### New features and changes
+
+- [#133](https://github.com/radiant-network/radiant-fhir-transformers/pull/133) - 🛠️ update gh actions, add uv ruff and pyrefly - [11cf0cf6](https://github.com/radiant-network/radiant-fhir-transformers/commit/11cf0cf6c1cbb1a86d5d1a4ecca4182076fa3e02) by [shanewilson](https://github.com/shanewilson)
+- [#138](https://github.com/radiant-network/radiant-fhir-transformers/pull/138) -  Optional click dep - [ce56689e](https://github.com/radiant-network/radiant-fhir-transformers/commit/ce56689ee6ec10db6ba6b9cd06c6544f6e7f6548) by [haynescd](https://github.com/haynescd)
+- [#131](https://github.com/radiant-network/radiant-fhir-transformers/pull/131) - ✨ [PLAT-1137] Add Data Absent Reason Extension Extraction for Procedure - [8b8580f7](https://github.com/radiant-network/radiant-fhir-transformers/commit/8b8580f778cd92c4917c9ff9da110cd85cb1f4ec) by [liberaliscomputing](https://github.com/liberaliscomputing)
+
+
 ## Release 2.2.0
 
 ### Summary
