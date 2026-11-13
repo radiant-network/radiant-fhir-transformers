@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ConsentPolicyRuleCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Consent", "policy_rule_coding", VIEW_DEFINITION)
+    resource_type = "Consent"
+    resource_component = "policy_rule_coding"
+    view_definition = VIEW_DEFINITION

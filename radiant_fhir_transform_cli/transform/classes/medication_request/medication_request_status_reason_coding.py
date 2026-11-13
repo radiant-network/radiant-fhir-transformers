@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class MedicationRequestStatusReasonCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("MedicationRequest", "status_reason_coding", VIEW_DEFINITION)
+    resource_type = "MedicationRequest"
+    resource_component = "status_reason_coding"
+    view_definition = VIEW_DEFINITION

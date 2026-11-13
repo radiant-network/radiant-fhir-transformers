@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureReasonReferenceTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "reason_reference", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "reason_reference"
+    view_definition = VIEW_DEFINITION

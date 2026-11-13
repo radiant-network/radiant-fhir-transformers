@@ -155,5 +155,6 @@ VIEW_DEFINITION = {
 
 
 class OrganizationContactTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Organization", "contact", VIEW_DEFINITION)
+    resource_type = "Organization"
+    resource_component = "contact"
+    view_definition = VIEW_DEFINITION

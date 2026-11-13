@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class RequestGroupCodeCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("RequestGroup", "code_coding", VIEW_DEFINITION)
+    resource_type = "RequestGroup"
+    resource_component = "code_coding"
+    view_definition = VIEW_DEFINITION

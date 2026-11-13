@@ -98,6 +98,12 @@ VIEW_DEFINITION = {
     "resource": "Patient",
     "name": "patient",
     "status": "active",
+    "constant": [
+        {
+            "name": "identifier_type",
+            "valueString": DEFAULT_IDENTIFIER_TYPE,
+        },
+    ],
     "select": [
         {
             "column": [
@@ -108,7 +114,7 @@ VIEW_DEFINITION = {
                 },
                 {
                     "name": "identifier_mrn",
-                    "path": "identifier.where(type.text = 'EPI').value",
+                    "path": "identifier.where(type.text = %identifier_type).value",
                     "type": "string",
                 },
                 {
@@ -153,9 +159,56 @@ VIEW_DEFINITION = {
 
 
 class PatientTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Patient", None, VIEW_DEFINITION)
+    resource_type = "Patient"
+    view_definition = VIEW_DEFINITION
 ```
+
+A transformer is declared with class attributes: `resource_type`, 
+`view_definition`, and (for child tables such as `patient_address`) 
+`resource_component`. There is no `__init__` to write.
+
+### Transformer Config
+
+Every transformer takes one optional config dict, so the same code can be 
+run against sources that differ in small ways:
+
+```python
+config = {"patient": {"identifier_type": "MRN"}}
+
+PatientTransformer()  # defaults (identifier_type = "EPI")
+PatientTransformer(config)  # identifier_mrn comes from the "MRN" identifier
+```
+
+The config shape is defined by the TypedDicts in 
+`radiant_fhir_transform_cli/transform/classes/fhir_resource_config.py`. It is 
+validated when a transformer is created: unknown keys raise `ValueError` and 
+values of the wrong type raise `TypeError`, so a misspelled option cannot 
+silently fall back to its default.
+
+To make a transformer configurable:
+
+1. Add the option to its section in `fhir_resource_config.py` (add a new 
+   section, keyed by resource, if there isn't one yet).
+2. Override `build_view_definition` and apply `self.config`:
+
+```python
+class PatientTransformer(FhirResourceTransformer):
+    resource_type = "Patient"
+    view_definition = VIEW_DEFINITION
+
+    @override
+    def build_view_definition(self) -> dict:
+        patient_config = self.config.get("patient", {})
+        identifier_type = patient_config.get("identifier_type", DEFAULT_IDENTIFIER_TYPE)
+        return with_string_constants(VIEW_DEFINITION, {"identifier_type": identifier_type})
+```
+
+`with_string_constants` sets ViewDefinition constants, which paths reference 
+as `%name`. For changes a constant can't express, build and return any 
+ViewDefinition you need. Two rules:
+
+- Config may change the values extracted, never the column names or types.
+- Return a new dict; never mutate the module-level `VIEW_DEFINITION`.
 
 ### Add to Imports
 

@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ListCodeCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("List", "code_coding", VIEW_DEFINITION)
+    resource_type = "List"
+    resource_component = "code_coding"
+    view_definition = VIEW_DEFINITION

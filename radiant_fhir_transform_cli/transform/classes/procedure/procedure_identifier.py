@@ -69,5 +69,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureIdentifierTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "identifier", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "identifier"
+    view_definition = VIEW_DEFINITION

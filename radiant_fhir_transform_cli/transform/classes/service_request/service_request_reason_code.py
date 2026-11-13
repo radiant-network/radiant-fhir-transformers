@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestReasonCodeTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "reason_code", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "reason_code"
+    view_definition = VIEW_DEFINITION

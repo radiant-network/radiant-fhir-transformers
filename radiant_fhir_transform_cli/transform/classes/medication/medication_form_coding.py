@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class MedicationFormCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Medication", "form_coding", VIEW_DEFINITION)
+    resource_type = "Medication"
+    resource_component = "form_coding"
+    view_definition = VIEW_DEFINITION

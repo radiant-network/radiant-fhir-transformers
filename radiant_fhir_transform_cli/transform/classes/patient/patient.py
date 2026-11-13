@@ -1,13 +1,26 @@
 """FHIR Patient transformer"""
 
+from typing import override
+
 from radiant_fhir_transform_cli.transform.classes.base import (
     FhirResourceTransformer,
+    with_string_constants,
 )
+
+# Identifier.type.text of the identifier used for the identifier_mrn column,
+# unless overridden by config["patient"]["identifier_type"]
+DEFAULT_IDENTIFIER_TYPE = "EPI"
 
 VIEW_DEFINITION = {
     "resource": "Patient",
     "name": "patient",
     "status": "active",
+    "constant": [
+        {
+            "name": "identifier_type",
+            "valueString": DEFAULT_IDENTIFIER_TYPE,
+        },
+    ],
     "select": [
         {
             "column": [
@@ -18,7 +31,7 @@ VIEW_DEFINITION = {
                 },
                 {
                     "name": "identifier_mrn",
-                    "path": "identifier.where(type.text = 'EPI').value",
+                    "path": "identifier.where(type.text = %identifier_type).value",
                     "type": "string",
                 },
                 {
@@ -103,5 +116,11 @@ VIEW_DEFINITION = {
 
 
 class PatientTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Patient", None, VIEW_DEFINITION)
+    resource_type = "Patient"
+    view_definition = VIEW_DEFINITION
+
+    @override
+    def build_view_definition(self) -> dict:
+        patient_config = self.config.get("patient", {})
+        identifier_type = patient_config.get("identifier_type", DEFAULT_IDENTIFIER_TYPE)
+        return with_string_constants(VIEW_DEFINITION, {"identifier_type": identifier_type})

@@ -84,5 +84,6 @@ VIEW_DEFINITION = {
 
 
 class DocumentReferenceContentTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("DocumentReference", "content", VIEW_DEFINITION)
+    resource_type = "DocumentReference"
+    resource_component = "content"
+    view_definition = VIEW_DEFINITION

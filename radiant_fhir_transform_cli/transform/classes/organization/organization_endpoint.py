@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class OrganizationEndpointTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Organization", "endpoint", VIEW_DEFINITION)
+    resource_type = "Organization"
+    resource_component = "endpoint"
+    view_definition = VIEW_DEFINITION

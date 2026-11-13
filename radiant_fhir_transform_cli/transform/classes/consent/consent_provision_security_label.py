@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ConsentProvisionSecurityLabelTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Consent", "provision_security_label", VIEW_DEFINITION)
+    resource_type = "Consent"
+    resource_component = "provision_security_label"
+    view_definition = VIEW_DEFINITION

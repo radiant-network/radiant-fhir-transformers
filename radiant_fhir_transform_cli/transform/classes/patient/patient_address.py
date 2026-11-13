@@ -95,5 +95,6 @@ VIEW_DEFINITION = {
 
 
 class PatientAddressTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Patient", "address", VIEW_DEFINITION)
+    resource_type = "Patient"
+    resource_component = "address"
+    view_definition = VIEW_DEFINITION

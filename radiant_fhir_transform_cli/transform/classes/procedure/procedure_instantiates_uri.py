@@ -44,5 +44,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureInstantiatesUriTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "instantiates_uri", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "instantiates_uri"
+    view_definition = VIEW_DEFINITION

@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class SpecimenRequestTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Specimen", "request", VIEW_DEFINITION)
+    resource_type = "Specimen"
+    resource_component = "request"
+    view_definition = VIEW_DEFINITION

@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class GoalAchievementStatusCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Goal", "achievement_status_coding", VIEW_DEFINITION)
+    resource_type = "Goal"
+    resource_component = "achievement_status_coding"
+    view_definition = VIEW_DEFINITION

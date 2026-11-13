@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class MedicationRequestDetectedIssueTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("MedicationRequest", "detected_issue", VIEW_DEFINITION)
+    resource_type = "MedicationRequest"
+    resource_component = "detected_issue"
+    view_definition = VIEW_DEFINITION

@@ -67,5 +67,6 @@ VIEW_DEFINITION = {
 
 
 class ConditionStageTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Condition", "stage", VIEW_DEFINITION)
+    resource_type = "Condition"
+    resource_component = "stage"
+    view_definition = VIEW_DEFINITION

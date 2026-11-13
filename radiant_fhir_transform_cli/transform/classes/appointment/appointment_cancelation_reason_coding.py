@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class AppointmentCancelationReasonCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Appointment", "cancelation_reason_coding", VIEW_DEFINITION)
+    resource_type = "Appointment"
+    resource_component = "cancelation_reason_coding"
+    view_definition = VIEW_DEFINITION

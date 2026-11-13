@@ -280,5 +280,6 @@ VIEW_DEFINITION = {
 
 
 class ObservationComponentTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Observation", "component", VIEW_DEFINITION)
+    resource_type = "Observation"
+    resource_component = "component"
+    view_definition = VIEW_DEFINITION

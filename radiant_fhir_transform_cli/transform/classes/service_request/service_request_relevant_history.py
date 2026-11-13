@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestRelevantHistoryTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "relevant_history", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "relevant_history"
+    view_definition = VIEW_DEFINITION

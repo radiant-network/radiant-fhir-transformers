@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class CoverageContractTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Coverage", "contract", VIEW_DEFINITION)
+    resource_type = "Coverage"
+    resource_component = "contract"
+    view_definition = VIEW_DEFINITION

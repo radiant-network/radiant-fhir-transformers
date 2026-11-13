@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ConsentScopeCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Consent", "scope_coding", VIEW_DEFINITION)
+    resource_type = "Consent"
+    resource_component = "scope_coding"
+    view_definition = VIEW_DEFINITION

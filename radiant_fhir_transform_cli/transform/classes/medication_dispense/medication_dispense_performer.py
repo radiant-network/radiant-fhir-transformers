@@ -65,5 +65,6 @@ VIEW_DEFINITION = {
 
 
 class MedicationDispensePerformerTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("MedicationDispense", "performer", VIEW_DEFINITION)
+    resource_type = "MedicationDispense"
+    resource_component = "performer"
+    view_definition = VIEW_DEFINITION

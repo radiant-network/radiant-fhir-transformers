@@ -69,5 +69,6 @@ VIEW_DEFINITION = {
 
 
 class ListIdentifierTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("List", "identifier", VIEW_DEFINITION)
+    resource_type = "List"
+    resource_component = "identifier"
+    view_definition = VIEW_DEFINITION

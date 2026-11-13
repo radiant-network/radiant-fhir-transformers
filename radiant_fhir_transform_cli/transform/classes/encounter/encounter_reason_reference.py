@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class EncounterReasonReferenceTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Encounter", "reason_reference", VIEW_DEFINITION)
+    resource_type = "Encounter"
+    resource_component = "reason_reference"
+    view_definition = VIEW_DEFINITION

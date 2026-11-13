@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class BodyStructureMorphologyCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("BodyStructure", "morphology_coding", VIEW_DEFINITION)
+    resource_type = "BodyStructure"
+    resource_component = "morphology_coding"
+    view_definition = VIEW_DEFINITION

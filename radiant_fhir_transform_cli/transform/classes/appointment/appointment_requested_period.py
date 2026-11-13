@@ -49,5 +49,6 @@ VIEW_DEFINITION = {
 
 
 class AppointmentRequestedPeriodTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Appointment", "requested_period", VIEW_DEFINITION)
+    resource_type = "Appointment"
+    resource_component = "requested_period"
+    view_definition = VIEW_DEFINITION

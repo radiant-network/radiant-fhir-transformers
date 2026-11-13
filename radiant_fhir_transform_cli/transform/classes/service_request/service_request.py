@@ -448,5 +448,5 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", None, VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    view_definition = VIEW_DEFINITION

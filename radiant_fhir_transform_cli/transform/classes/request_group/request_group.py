@@ -128,5 +128,5 @@ VIEW_DEFINITION = {
 
 
 class RequestGroupTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("RequestGroup", None, VIEW_DEFINITION)
+    resource_type = "RequestGroup"
+    view_definition = VIEW_DEFINITION
