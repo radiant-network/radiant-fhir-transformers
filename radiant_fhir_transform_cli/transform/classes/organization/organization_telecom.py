@@ -69,5 +69,6 @@ VIEW_DEFINITION = {
 
 
 class OrganizationTelecomTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Organization", "telecom", VIEW_DEFINITION)
+    resource_type = "Organization"
+    resource_component = "telecom"
+    view_definition = VIEW_DEFINITION

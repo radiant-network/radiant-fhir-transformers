@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class SpecimenConditionTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Specimen", "condition", VIEW_DEFINITION)
+    resource_type = "Specimen"
+    resource_component = "condition"
+    view_definition = VIEW_DEFINITION

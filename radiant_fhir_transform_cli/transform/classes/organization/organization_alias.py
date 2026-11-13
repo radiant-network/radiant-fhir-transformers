@@ -44,5 +44,6 @@ VIEW_DEFINITION = {
 
 
 class OrganizationAliasTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Organization", "alias", VIEW_DEFINITION)
+    resource_type = "Organization"
+    resource_component = "alias"
+    view_definition = VIEW_DEFINITION

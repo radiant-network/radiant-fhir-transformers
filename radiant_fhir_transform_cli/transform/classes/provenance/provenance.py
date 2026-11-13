@@ -68,5 +68,5 @@ VIEW_DEFINITION = {
 
 
 class ProvenanceTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Provenance", None, VIEW_DEFINITION)
+    resource_type = "Provenance"
+    view_definition = VIEW_DEFINITION

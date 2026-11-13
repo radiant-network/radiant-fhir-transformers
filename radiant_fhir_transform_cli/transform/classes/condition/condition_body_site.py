@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class ConditionBodySiteTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Condition", "body_site", VIEW_DEFINITION)
+    resource_type = "Condition"
+    resource_component = "body_site"
+    view_definition = VIEW_DEFINITION

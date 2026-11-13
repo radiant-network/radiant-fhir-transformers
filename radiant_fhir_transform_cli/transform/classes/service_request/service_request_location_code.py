@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestLocationCodeTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "location_code", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "location_code"
+    view_definition = VIEW_DEFINITION

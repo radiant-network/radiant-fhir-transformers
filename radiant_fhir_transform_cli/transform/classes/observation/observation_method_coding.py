@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ObservationMethodCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Observation", "method_coding", VIEW_DEFINITION)
+    resource_type = "Observation"
+    resource_component = "method_coding"
+    view_definition = VIEW_DEFINITION

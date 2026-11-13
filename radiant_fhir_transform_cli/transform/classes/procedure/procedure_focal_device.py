@@ -65,5 +65,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureFocalDeviceTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "focal_device", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "focal_device"
+    view_definition = VIEW_DEFINITION

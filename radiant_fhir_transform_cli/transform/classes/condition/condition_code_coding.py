@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ConditionCodeCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Condition", "code_coding", VIEW_DEFINITION)
+    resource_type = "Condition"
+    resource_component = "code_coding"
+    view_definition = VIEW_DEFINITION

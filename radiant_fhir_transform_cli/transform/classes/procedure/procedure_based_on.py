@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureBasedOnTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "based_on", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "based_on"
+    view_definition = VIEW_DEFINITION

@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ListEmptyReasonCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("List", "empty_reason_coding", VIEW_DEFINITION)
+    resource_type = "List"
+    resource_component = "empty_reason_coding"
+    view_definition = VIEW_DEFINITION

@@ -79,5 +79,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestContainedTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "contained", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "contained"
+    view_definition = VIEW_DEFINITION

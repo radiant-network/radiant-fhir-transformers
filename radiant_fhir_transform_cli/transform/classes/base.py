@@ -19,6 +19,7 @@ The transformer is designed to:
     or further analysis.
 """
 
+import copy
 import csv
 import hashlib
 import json
@@ -27,10 +28,14 @@ import uuid
 from collections.abc import Iterable
 from dataclasses import dataclass
 from pprint import pformat
-from typing import Any
+from typing import Any, ClassVar
 
 from sqlonfhir import evaluate
 
+from radiant_fhir_transform_cli.transform.classes.fhir_resource_config import (
+    FhirTransformerConfigTypeDef,
+    validate_config,
+)
 from radiant_fhir_transform_cli.utils.misc import camel_to_snake, timestamp
 
 logger = logging.getLogger(__name__)
@@ -71,6 +76,40 @@ def generate_table_name(resource_type: str, resource_component: str | None) -> s
     return table_name
 
 
+def with_string_constants(view_definition: dict, constants: dict[str, str]) -> dict:
+    """Return a copy of a ViewDefinition with string constants set.
+
+    This is the simplest way for config values to reach FHIRPath expressions:
+    the view references ``%name`` in a path and the value is supplied as a
+    ViewDefinition ``constant``. Existing constants with the same name are
+    replaced, others are appended. The input ViewDefinition is never mutated.
+
+    Note: sqlonfhir substitutes ``%name`` by plain text replacement, so a
+    constant name must not be a prefix of another one (e.g. ``id``/``id_hash``).
+
+    Args:
+        view_definition: The ViewDefinition to copy.
+        constants: Mapping of constant name to string value.
+
+    Returns:
+        A deep copy of the ViewDefinition with the constants applied.
+    """
+    view = copy.deepcopy(view_definition)
+    existing = {c["name"]: c for c in view.setdefault("constant", [])}
+    for name, value in constants.items():
+        if not isinstance(value, str):
+            raise TypeError(f"Constant '{name}' must be a string, got {type(value).__name__}")
+        # sqlonfhir substitutes constants into the path as a quoted literal
+        # without escaping, so escape here to keep the FHIRPath valid.
+        if name in existing:
+            for key in [k for k in existing[name] if k.startswith("value")]:
+                del existing[name][key]
+            existing[name]["valueString"] = value
+        else:
+            view["constant"].append({"name": name, "valueString": value})
+    return view
+
+
 class FhirResourceTransformer:
     """Base class for transforming FHIR resources into tabular data.
 
@@ -78,31 +117,66 @@ class FhirResourceTransformer:
     based on a provided `ViewDefinition`. Results are flattened into a list
     of dictionaries suitable for CSV or DataFrame export.
 
+    Subclasses declare what they transform with class attributes::
+
+        class PatientAddressTransformer(FhirResourceTransformer):
+            resource_type = "Patient"
+            resource_component = "address"
+            view_definition = VIEW_DEFINITION
+
+    and are instantiated with an optional config: ``PatientAddressTransformer()``
+    or ``PatientAddressTransformer(config)``. A subclass that uses config
+    overrides ``build_view_definition``.
+
     Attributes:
         resource_type: The FHIR resource type (e.g., "Patient").
         resource_component: Optional subtype for nested components.
         table_name: Generated name for the output table or CSV.
         view_definition: SQL-on-FHIR ViewDefinition dict used to extract data.
+            On the class this is the template; on an instance it is that
+            instance's own copy, with config applied.
+        config: The validated config this instance was built with.
     """
 
-    def __init__(
-        self,
-        resource_type: str,
-        resource_component: str | None,
-        view_definition: dict,
-    ) -> None:
+    resource_type: ClassVar[str]
+    resource_component: ClassVar[str | None] = None
+    view_definition: dict
+
+    def __init__(self, config: FhirTransformerConfigTypeDef | None = None) -> None:
         """Initialize a FHIR resource transformer.
 
         Args:
-            resource_type: FHIR resource type to transform.
-            resource_component: Optional subtype for finer-grained naming.
-            view_definition: SQL-on-FHIR ViewDefinition defining extraction.
+            config: Optional transformer config. See ``fhir_resource_config``.
+
+        Raises:
+            TypeError: If the class does not define ``resource_type`` and
+                ``view_definition``, or a config value has the wrong type.
+            ValueError: If the config has unknown keys.
         """
-        self.resource_type: str = resource_type
-        self.resource_component: str | None = resource_component
-        self.table_name: str = generate_table_name(resource_type, resource_component)
-        self.view_definition: dict = view_definition
+        cls = type(self)
+        for attr in ("resource_type", "view_definition"):
+            if not hasattr(cls, attr):
+                raise TypeError(f"{cls.__name__} must define the class attribute '{attr}'")
+
+        self.config: FhirTransformerConfigTypeDef = config or {}
+        validate_config(self.config)
+
+        self.table_name: str = generate_table_name(self.resource_type, self.resource_component)
+        self.view_definition = self.build_view_definition()
         self.excluded_cols_in_hash: list[str] = ["id", "last_processed"]
+
+    def build_view_definition(self) -> dict:
+        """Build this instance's ViewDefinition.
+
+        The default returns a copy of the class-level ``view_definition``.
+        Override to apply ``self.config``, e.g. with ``with_string_constants``.
+        Overrides must not change column names or types, and must return a new
+        dict rather than mutating the class-level ViewDefinition.
+
+        Returns:
+            The ViewDefinition this instance will evaluate.
+        """
+        return copy.deepcopy(type(self).view_definition)
 
     def _filter_out_empty_row(self, row_dict: dict[str, Any]) -> dict[str, Any] | None:
         """Filter out a row where all non-ID columns are empty or None.

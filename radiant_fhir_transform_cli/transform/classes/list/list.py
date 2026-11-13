@@ -108,5 +108,5 @@ VIEW_DEFINITION = {
 
 
 class ListTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("List", None, VIEW_DEFINITION)
+    resource_type = "List"
+    view_definition = VIEW_DEFINITION

@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureFollowUpTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "follow_up", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "follow_up"
+    view_definition = VIEW_DEFINITION

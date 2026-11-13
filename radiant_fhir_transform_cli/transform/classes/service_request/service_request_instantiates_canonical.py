@@ -44,5 +44,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestInstantiatesCanonicalTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "instantiates_canonical", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "instantiates_canonical"
+    view_definition = VIEW_DEFINITION

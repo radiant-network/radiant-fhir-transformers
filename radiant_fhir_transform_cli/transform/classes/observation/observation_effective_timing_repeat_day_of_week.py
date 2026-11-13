@@ -44,9 +44,6 @@ VIEW_DEFINITION = {
 
 
 class ObservationEffectiveTimingRepeatDayOfWeekTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__(
-            "Observation",
-            "effective_timing_repeat_day_of_week",
-            VIEW_DEFINITION,
-        )
+    resource_type = "Observation"
+    resource_component = "effective_timing_repeat_day_of_week"
+    view_definition = VIEW_DEFINITION

@@ -44,5 +44,6 @@ VIEW_DEFINITION = {
 
 
 class MedicationRequestInstantiatesCanonicalTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("MedicationRequest", "instantiates_canonical", VIEW_DEFINITION)
+    resource_type = "MedicationRequest"
+    resource_component = "instantiates_canonical"
+    view_definition = VIEW_DEFINITION

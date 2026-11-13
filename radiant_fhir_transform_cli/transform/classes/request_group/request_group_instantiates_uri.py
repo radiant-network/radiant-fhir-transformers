@@ -44,5 +44,6 @@ VIEW_DEFINITION = {
 
 
 class RequestGroupInstantiatesUriTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("RequestGroup", "instantiates_uri", VIEW_DEFINITION)
+    resource_type = "RequestGroup"
+    resource_component = "instantiates_uri"
+    view_definition = VIEW_DEFINITION

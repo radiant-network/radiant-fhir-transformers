@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class CarePlanCareTeamTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("CarePlan", "care_team", VIEW_DEFINITION)
+    resource_type = "CarePlan"
+    resource_component = "care_team"
+    view_definition = VIEW_DEFINITION

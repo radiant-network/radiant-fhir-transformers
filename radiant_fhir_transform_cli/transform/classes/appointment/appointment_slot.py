@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class AppointmentSlotTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Appointment", "slot", VIEW_DEFINITION)
+    resource_type = "Appointment"
+    resource_component = "slot"
+    view_definition = VIEW_DEFINITION

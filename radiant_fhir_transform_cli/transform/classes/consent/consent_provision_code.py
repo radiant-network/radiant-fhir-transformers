@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class ConsentProvisionCodeTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Consent", "provision_code", VIEW_DEFINITION)
+    resource_type = "Consent"
+    resource_component = "provision_code"
+    view_definition = VIEW_DEFINITION
