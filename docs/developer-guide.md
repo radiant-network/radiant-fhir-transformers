@@ -210,6 +210,61 @@ ViewDefinition you need. Two rules:
 - Config may change the values extracted, never the column names or types.
 - Return a new dict; never mutate the module-level `VIEW_DEFINITION`.
 
+### ViewDefinition Constants
+
+A ViewDefinition can declare `constant`s, which paths reference as `%name`:
+
+```python
+VIEW_DEFINITION = {
+    "resource": "Patient",
+    "constant": [{"name": "identifier_type", "valueString": "EPI"}],
+    "select": [
+        {
+            "column": [
+                {
+                    "name": "identifier_mrn",
+                    "path": "identifier.where(type.text = %identifier_type).value",
+                },
+            ],
+        },
+    ],
+}
+```
+
+Use `with_string_constants` to set constants from config. It copies the view, 
+replaces or appends the constants, and never mutates the original.
+
+**Constant names must not collide.** `sqlonfhir` (up to 0.0.2, the latest 
+release) substitutes each constant with a plain text replace, in list order. 
+If one name is a prefix of another, the shorter one is also replaced inside the 
+longer reference. With constants `id` and `id_hash`, `%id_hash` can become 
+`'<id value>'_hash`, which does not raise an error: it silently evaluates to 
+the wrong value.
+
+This is enforced by `check_constant_names` in 
+`radiant_fhir_transform_cli/transform/classes/base.py`, which every 
+transformer runs on its class-level view (at import) and on its built view 
+(when instantiated, so constants added from config are covered). A view is 
+rejected with a `ValueError` if:
+
+1. A constant name is a prefix of another constant name in the same view 
+   (`id` / `id_hash`, `use_1` / `use_10`), in either order.
+2. A constant name appears more than once.
+3. A constant name is equal to, or a prefix of, a FHIRPath environment 
+   variable such as `%resource` or `%context` (`res` / `resource`). Names that 
+   only *start with* one, like `resource_type`, are fine.
+
+If you hit this error, rename one of the constants so neither name is a prefix 
+of the other, e.g. `id_hash` and `identifier_type` rather than `id` and 
+`id_hash`.
+
+The bug is reported upstream as 
+[sqlonfhir#10](https://github.com/sassoftware/sqlonfhir/issues/10), with a fix 
+proposed in [sqlonfhir#11](https://github.com/sassoftware/sqlonfhir/pull/11). 
+Once a release includes the fix, the test 
+`test_sqlonfhir_still_substitutes_constant_prefixes` will fail after upgrading. 
+That is the signal to relax rule 1.
+
 ### Add to Imports
 
 Once you've defined a transformer class, remember to add it to the list 

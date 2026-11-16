@@ -7,7 +7,6 @@ import copy
 import pytest
 
 from radiant_fhir_transform_cli.transform.classes import transformers
-from radiant_fhir_transform_cli.transform.classes.base import FhirResourceTransformer
 from radiant_fhir_transform_cli.transform.classes.fhir_resource_config import (
     FhirTransformerConfigTypeDef,
     validate_config,
@@ -93,8 +92,3 @@ def test_invalid_config_is_rejected(config, error):
         validate_config(config)
     with pytest.raises(error):
         PatientTransformer(config)
-
-
-def test_transformer_without_class_attributes_is_rejected():
-    with pytest.raises(TypeError):
-        FhirResourceTransformer()

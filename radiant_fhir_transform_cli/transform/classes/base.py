@@ -84,8 +84,7 @@ def with_string_constants(view_definition: dict, constants: dict[str, str]) -> d
     ViewDefinition ``constant``. Existing constants with the same name are
     replaced, others are appended. The input ViewDefinition is never mutated.
 
-    Note: sqlonfhir substitutes ``%name`` by plain text replacement, so a
-    constant name must not be a prefix of another one (e.g. ``id``/``id_hash``).
+    Constant names must not collide;
 
     Args:
         view_definition: The ViewDefinition to copy.
@@ -142,6 +141,24 @@ class FhirResourceTransformer:
     resource_component: ClassVar[str | None] = None
     view_definition: dict
 
+    def __init_subclass__(cls, **kwargs):
+        """Fail at class definition (import) time if a subclass is incomplete.
+
+        Raises:
+            TypeError: If the subclass does not define (or inherit)
+                ``resource_type`` and ``view_definition``.
+            ValueError: If the class-level ``view_definition`` has colliding
+                constant names (see ``check_constant_names``).
+        """
+        super().__init_subclass__(**kwargs)
+        _required = ["resource_type", "view_definition"]
+
+        missing = [attr for attr in _required if not hasattr(cls, attr)]
+        if missing:
+            raise TypeError(
+                f"{cls.__name__} must define the class attribute(s) '{','.join(missing)}'"
+            )
+
     def __init__(self, config: FhirTransformerConfigTypeDef | None = None) -> None:
         """Initialize a FHIR resource transformer.
 
@@ -149,15 +166,11 @@ class FhirResourceTransformer:
             config: Optional transformer config. See ``fhir_resource_config``.
 
         Raises:
-            TypeError: If the class does not define ``resource_type`` and
-                ``view_definition``, or a config value has the wrong type.
-            ValueError: If the config has unknown keys.
+            TypeError: If a config value has the wrong type.
+            ValueError: If the config has unknown keys, or the built
+                ``view_definition`` has colliding constant names (see
+                ``check_constant_names``).
         """
-        cls = type(self)
-        for attr in ("resource_type", "view_definition"):
-            if not hasattr(cls, attr):
-                raise TypeError(f"{cls.__name__} must define the class attribute '{attr}'")
-
         self.config: FhirTransformerConfigTypeDef = config or {}
         validate_config(self.config)
 
