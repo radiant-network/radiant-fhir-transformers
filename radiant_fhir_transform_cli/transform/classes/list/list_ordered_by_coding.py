@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ListOrderedByCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("List", "ordered_by_coding", VIEW_DEFINITION)
+    resource_type = "List"
+    resource_component = "ordered_by_coding"
+    view_definition = VIEW_DEFINITION

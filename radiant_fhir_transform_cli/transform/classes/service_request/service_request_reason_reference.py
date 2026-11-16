@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestReasonReferenceTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "reason_reference", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "reason_reference"
+    view_definition = VIEW_DEFINITION

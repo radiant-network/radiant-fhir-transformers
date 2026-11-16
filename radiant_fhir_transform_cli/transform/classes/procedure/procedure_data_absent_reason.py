@@ -44,5 +44,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureDataAbsentReasonTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "data_absent_reason", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "data_absent_reason"
+    view_definition = VIEW_DEFINITION

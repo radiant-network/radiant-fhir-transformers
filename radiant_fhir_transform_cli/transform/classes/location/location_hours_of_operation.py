@@ -55,5 +55,6 @@ VIEW_DEFINITION = {
 
 
 class LocationHoursOfOperationTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Location", "hours_of_operation", VIEW_DEFINITION)
+    resource_type = "Location"
+    resource_component = "hours_of_operation"
+    view_definition = VIEW_DEFINITION

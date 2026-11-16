@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class DocumentReferenceContextEventTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("DocumentReference", "context_event", VIEW_DEFINITION)
+    resource_type = "DocumentReference"
+    resource_component = "context_event"
+    view_definition = VIEW_DEFINITION

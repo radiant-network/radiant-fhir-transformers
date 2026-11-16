@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestOrderDetailTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "order_detail", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "order_detail"
+    view_definition = VIEW_DEFINITION

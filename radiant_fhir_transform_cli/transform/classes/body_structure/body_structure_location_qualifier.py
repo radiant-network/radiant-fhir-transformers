@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class BodyStructureLocationQualifierTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("BodyStructure", "location_qualifier", VIEW_DEFINITION)
+    resource_type = "BodyStructure"
+    resource_component = "location_qualifier"
+    view_definition = VIEW_DEFINITION

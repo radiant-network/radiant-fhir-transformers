@@ -44,5 +44,6 @@ VIEW_DEFINITION = {
 
 
 class LocationAliasTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Location", "alias", VIEW_DEFINITION)
+    resource_type = "Location"
+    resource_component = "alias"
+    view_definition = VIEW_DEFINITION

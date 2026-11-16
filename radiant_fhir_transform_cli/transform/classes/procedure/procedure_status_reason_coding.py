@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureStatusReasonCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "status_reason_coding", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "status_reason_coding"
+    view_definition = VIEW_DEFINITION

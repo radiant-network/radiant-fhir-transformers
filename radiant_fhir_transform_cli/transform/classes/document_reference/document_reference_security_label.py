@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class DocumentReferenceSecurityLabelTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("DocumentReference", "security_label", VIEW_DEFINITION)
+    resource_type = "DocumentReference"
+    resource_component = "security_label"
+    view_definition = VIEW_DEFINITION

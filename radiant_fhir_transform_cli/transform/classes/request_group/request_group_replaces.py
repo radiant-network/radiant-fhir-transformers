@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class RequestGroupReplacesTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("RequestGroup", "replaces", VIEW_DEFINITION)
+    resource_type = "RequestGroup"
+    resource_component = "replaces"
+    view_definition = VIEW_DEFINITION

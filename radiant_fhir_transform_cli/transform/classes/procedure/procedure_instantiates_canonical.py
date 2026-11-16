@@ -44,5 +44,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureInstantiatesCanonicalTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "instantiates_canonical", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "instantiates_canonical"
+    view_definition = VIEW_DEFINITION

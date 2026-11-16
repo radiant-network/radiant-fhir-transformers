@@ -90,5 +90,6 @@ VIEW_DEFINITION = {
 
 
 class ProvenanceSignatureTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Provenance", "signature", VIEW_DEFINITION)
+    resource_type = "Provenance"
+    resource_component = "signature"
+    view_definition = VIEW_DEFINITION

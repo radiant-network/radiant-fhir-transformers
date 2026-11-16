@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class ImmunizationSubpotentReasonTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Immunization", "subpotent_reason", VIEW_DEFINITION)
+    resource_type = "Immunization"
+    resource_component = "subpotent_reason"
+    view_definition = VIEW_DEFINITION

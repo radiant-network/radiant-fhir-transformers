@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class DiagnosticReportConclusionCodeTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("DiagnosticReport", "conclusion_code", VIEW_DEFINITION)
+    resource_type = "DiagnosticReport"
+    resource_component = "conclusion_code"
+    view_definition = VIEW_DEFINITION

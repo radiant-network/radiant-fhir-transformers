@@ -54,9 +54,6 @@ VIEW_DEFINITION = {
 
 
 class SpecimenCollectionFastingStatusCodeableConceptCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__(
-            "Specimen",
-            "collection_fasting_status_codeable_concept_coding",
-            VIEW_DEFINITION,
-        )
+    resource_type = "Specimen"
+    resource_component = "collection_fasting_status_codeable_concept_coding"
+    view_definition = VIEW_DEFINITION

@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class AppointmentSupportingInformationTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Appointment", "supporting_information", VIEW_DEFINITION)
+    resource_type = "Appointment"
+    resource_component = "supporting_information"
+    view_definition = VIEW_DEFINITION

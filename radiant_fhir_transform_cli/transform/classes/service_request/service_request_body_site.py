@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestBodySiteTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "body_site", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "body_site"
+    view_definition = VIEW_DEFINITION

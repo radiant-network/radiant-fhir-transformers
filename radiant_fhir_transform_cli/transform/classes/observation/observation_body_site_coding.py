@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ObservationBodySiteCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Observation", "body_site_coding", VIEW_DEFINITION)
+    resource_type = "Observation"
+    resource_component = "body_site_coding"
+    view_definition = VIEW_DEFINITION

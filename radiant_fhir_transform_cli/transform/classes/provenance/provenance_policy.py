@@ -44,5 +44,6 @@ VIEW_DEFINITION = {
 
 
 class ProvenancePolicyTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Provenance", "policy", VIEW_DEFINITION)
+    resource_type = "Provenance"
+    resource_component = "policy"
+    view_definition = VIEW_DEFINITION

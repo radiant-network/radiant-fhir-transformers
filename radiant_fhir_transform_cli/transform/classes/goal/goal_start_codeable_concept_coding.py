@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class GoalStartCodeableConceptCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Goal", "start_codeable_concept_coding", VIEW_DEFINITION)
+    resource_type = "Goal"
+    resource_component = "start_codeable_concept_coding"
+    view_definition = VIEW_DEFINITION

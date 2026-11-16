@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class AllergyIntoleranceClinicalStatusCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("AllergyIntolerance", "clinical_status_coding", VIEW_DEFINITION)
+    resource_type = "AllergyIntolerance"
+    resource_component = "clinical_status_coding"
+    view_definition = VIEW_DEFINITION

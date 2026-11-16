@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class GoalPriorityCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Goal", "priority_coding", VIEW_DEFINITION)
+    resource_type = "Goal"
+    resource_component = "priority_coding"
+    view_definition = VIEW_DEFINITION

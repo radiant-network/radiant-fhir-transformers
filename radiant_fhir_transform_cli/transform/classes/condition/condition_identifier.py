@@ -69,5 +69,6 @@ VIEW_DEFINITION = {
 
 
 class ConditionIdentifierTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Condition", "identifier", VIEW_DEFINITION)
+    resource_type = "Condition"
+    resource_component = "identifier"
+    view_definition = VIEW_DEFINITION

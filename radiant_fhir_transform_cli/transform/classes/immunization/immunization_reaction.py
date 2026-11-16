@@ -64,5 +64,6 @@ VIEW_DEFINITION = {
 
 
 class ImmunizationReactionTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Immunization", "reaction", VIEW_DEFINITION)
+    resource_type = "Immunization"
+    resource_component = "reaction"
+    view_definition = VIEW_DEFINITION

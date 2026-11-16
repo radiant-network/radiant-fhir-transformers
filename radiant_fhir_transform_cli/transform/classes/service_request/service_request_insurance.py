@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestInsuranceTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "insurance", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "insurance"
+    view_definition = VIEW_DEFINITION

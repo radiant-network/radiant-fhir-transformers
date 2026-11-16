@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class LocationPhysicalTypeCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Location", "physical_type_coding", VIEW_DEFINITION)
+    resource_type = "Location"
+    resource_component = "physical_type_coding"
+    view_definition = VIEW_DEFINITION

@@ -98,5 +98,5 @@ VIEW_DEFINITION = {
 
 
 class GoalTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Goal", None, VIEW_DEFINITION)
+    resource_type = "Goal"
+    view_definition = VIEW_DEFINITION

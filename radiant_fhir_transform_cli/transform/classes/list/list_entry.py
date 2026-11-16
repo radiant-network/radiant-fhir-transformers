@@ -75,5 +75,6 @@ VIEW_DEFINITION = {
 
 
 class ListEntryTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("List", "entry", VIEW_DEFINITION)
+    resource_type = "List"
+    resource_component = "entry"
+    view_definition = VIEW_DEFINITION

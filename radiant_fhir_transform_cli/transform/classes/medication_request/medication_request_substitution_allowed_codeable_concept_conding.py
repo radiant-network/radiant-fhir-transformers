@@ -54,9 +54,6 @@ VIEW_DEFINITION = {
 
 
 class MedicationRequestSubstitutionAllowedCodeableConceptCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__(
-            "MedicationRequest",
-            "substitution_allowed_codeable_concept_coding",
-            VIEW_DEFINITION,
-        )
+    resource_type = "MedicationRequest"
+    resource_component = "substitution_allowed_codeable_concept_coding"
+    view_definition = VIEW_DEFINITION

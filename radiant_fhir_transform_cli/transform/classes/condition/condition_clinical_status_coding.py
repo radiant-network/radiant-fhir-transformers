@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ConditionClinicalStatusCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Condition", "clinical_status_coding", VIEW_DEFINITION)
+    resource_type = "Condition"
+    resource_component = "clinical_status_coding"
+    view_definition = VIEW_DEFINITION

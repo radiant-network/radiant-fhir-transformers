@@ -139,5 +139,6 @@ VIEW_DEFINITION = {
 
 
 class ObservationReferenceRangeTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Observation", "reference_range", VIEW_DEFINITION)
+    resource_type = "Observation"
+    resource_component = "reference_range"
+    view_definition = VIEW_DEFINITION

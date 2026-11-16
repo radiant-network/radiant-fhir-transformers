@@ -69,5 +69,6 @@ VIEW_DEFINITION = {
 
 
 class DiagnosticReportIdentifierTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("DiagnosticReport", "identifier", VIEW_DEFINITION)
+    resource_type = "DiagnosticReport"
+    resource_component = "identifier"
+    view_definition = VIEW_DEFINITION

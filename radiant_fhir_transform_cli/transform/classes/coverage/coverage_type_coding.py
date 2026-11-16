@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class CoverageTypeCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Coverage", "type_coding", VIEW_DEFINITION)
+    resource_type = "Coverage"
+    resource_component = "type_coding"
+    view_definition = VIEW_DEFINITION

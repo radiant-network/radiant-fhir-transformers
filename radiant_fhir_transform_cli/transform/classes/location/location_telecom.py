@@ -69,5 +69,6 @@ VIEW_DEFINITION = {
 
 
 class LocationTelecomTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Location", "telecom", VIEW_DEFINITION)
+    resource_type = "Location"
+    resource_component = "telecom"
+    view_definition = VIEW_DEFINITION

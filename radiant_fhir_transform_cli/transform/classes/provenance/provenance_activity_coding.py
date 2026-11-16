@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ProvenanceActivityCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Provenance", "activity_coding", VIEW_DEFINITION)
+    resource_type = "Provenance"
+    resource_component = "activity_coding"
+    view_definition = VIEW_DEFINITION

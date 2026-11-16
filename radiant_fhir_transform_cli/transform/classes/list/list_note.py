@@ -69,5 +69,6 @@ VIEW_DEFINITION = {
 
 
 class ListNoteTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("List", "note", VIEW_DEFINITION)
+    resource_type = "List"
+    resource_component = "note"
+    view_definition = VIEW_DEFINITION

@@ -73,8 +73,8 @@ VIEW_DEFINITION = {
 
 
 class RawFhirResourceTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("fhir_resource", None, VIEW_DEFINITION)
+    resource_type = "fhir_resource"
+    view_definition = VIEW_DEFINITION
 
     def _compute_payload_hash_and_size(self, payload_str: str) -> tuple[str, int]:
         """

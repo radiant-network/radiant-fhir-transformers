@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ObservationDerivedFromTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Observation", "derived_from", VIEW_DEFINITION)
+    resource_type = "Observation"
+    resource_component = "derived_from"
+    view_definition = VIEW_DEFINITION

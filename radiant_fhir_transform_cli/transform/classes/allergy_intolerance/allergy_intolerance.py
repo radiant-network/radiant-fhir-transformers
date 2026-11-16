@@ -203,5 +203,5 @@ VIEW_DEFINITION = {
 
 
 class AllergyIntoleranceTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("AllergyIntolerance", None, VIEW_DEFINITION)
+    resource_type = "AllergyIntolerance"
+    view_definition = VIEW_DEFINITION

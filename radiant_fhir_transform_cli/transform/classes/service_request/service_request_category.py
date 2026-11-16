@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestCategoryTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "category", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "category"
+    view_definition = VIEW_DEFINITION

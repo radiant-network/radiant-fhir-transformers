@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class LocationEndpointTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Location", "endpoint", VIEW_DEFINITION)
+    resource_type = "Location"
+    resource_component = "endpoint"
+    view_definition = VIEW_DEFINITION

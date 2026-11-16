@@ -273,5 +273,5 @@ VIEW_DEFINITION = {
 
 
 class ConditionTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Condition", None, VIEW_DEFINITION)
+    resource_type = "Condition"
+    view_definition = VIEW_DEFINITION

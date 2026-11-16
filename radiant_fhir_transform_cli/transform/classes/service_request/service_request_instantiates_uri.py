@@ -44,5 +44,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestInstantiatesUriTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "instantiates_uri", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "instantiates_uri"
+    view_definition = VIEW_DEFINITION

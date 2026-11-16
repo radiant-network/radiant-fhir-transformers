@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestAsNeededCodeableConceptCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "as_needed_codeable_concept_coding", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "as_needed_codeable_concept_coding"
+    view_definition = VIEW_DEFINITION

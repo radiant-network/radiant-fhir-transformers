@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ServiceRequestPerformerTypeCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("ServiceRequest", "performer_type_coding", VIEW_DEFINITION)
+    resource_type = "ServiceRequest"
+    resource_component = "performer_type_coding"
+    view_definition = VIEW_DEFINITION

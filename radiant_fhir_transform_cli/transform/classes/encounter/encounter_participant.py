@@ -70,5 +70,6 @@ VIEW_DEFINITION = {
 
 
 class EncounterParticipantTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Encounter", "participant", VIEW_DEFINITION)
+    resource_type = "Encounter"
+    resource_component = "participant"
+    view_definition = VIEW_DEFINITION

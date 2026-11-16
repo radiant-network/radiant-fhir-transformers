@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureComplicationDetailTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "complication_detail", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "complication_detail"
+    view_definition = VIEW_DEFINITION

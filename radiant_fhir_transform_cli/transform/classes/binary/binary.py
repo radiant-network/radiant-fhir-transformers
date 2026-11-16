@@ -53,5 +53,5 @@ VIEW_DEFINITION = {
 
 
 class BinaryTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Binary", None, VIEW_DEFINITION)
+    resource_type = "Binary"
+    view_definition = VIEW_DEFINITION

@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class BodyStructureLocationCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("BodyStructure", "location_coding", VIEW_DEFINITION)
+    resource_type = "BodyStructure"
+    resource_component = "location_coding"
+    view_definition = VIEW_DEFINITION

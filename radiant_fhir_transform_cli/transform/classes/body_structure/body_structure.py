@@ -63,5 +63,5 @@ VIEW_DEFINITION = {
 
 
 class BodyStructureTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("BodyStructure", None, VIEW_DEFINITION)
+    resource_type = "BodyStructure"
+    view_definition = VIEW_DEFINITION

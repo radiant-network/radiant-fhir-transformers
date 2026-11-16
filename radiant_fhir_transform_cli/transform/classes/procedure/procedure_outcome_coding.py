@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureOutcomeCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "outcome_coding", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "outcome_coding"
+    view_definition = VIEW_DEFINITION

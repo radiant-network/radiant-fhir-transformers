@@ -50,5 +50,6 @@ VIEW_DEFINITION = {
 
 
 class ProcedureBodySiteTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Procedure", "body_site", VIEW_DEFINITION)
+    resource_type = "Procedure"
+    resource_component = "body_site"
+    view_definition = VIEW_DEFINITION

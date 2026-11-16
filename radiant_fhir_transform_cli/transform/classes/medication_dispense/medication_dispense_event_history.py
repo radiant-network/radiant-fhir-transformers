@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class MedicationDispenseEventHistoryTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("MedicationDispense", "event_history", VIEW_DEFINITION)
+    resource_type = "MedicationDispense"
+    resource_component = "event_history"
+    view_definition = VIEW_DEFINITION

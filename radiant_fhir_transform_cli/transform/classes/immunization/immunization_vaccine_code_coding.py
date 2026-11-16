@@ -54,5 +54,6 @@ VIEW_DEFINITION = {
 
 
 class ImmunizationVaccineCodeCodingTransformer(FhirResourceTransformer):
-    def __init__(self):
-        super().__init__("Immunization", "vaccine_code_coding", VIEW_DEFINITION)
+    resource_type = "Immunization"
+    resource_component = "vaccine_code_coding"
+    view_definition = VIEW_DEFINITION
